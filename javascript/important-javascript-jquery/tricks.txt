@@ -36,7 +36,7 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/cre
 array filter from html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/accordion-tabs-tutorial.html
 
-elements filter
+elements filter array from
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/siblings-selector-by-arrayFrom-filter.html
 
 viewport animation
@@ -44,6 +44,8 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/vie
 
 web storage
 D:\office-work\assets\plugins\javascript\important-javascript-jquery\sessionStorage-localStorage\get-value-without-utm-source
+
+
 =====================================================================================================================
 
 
