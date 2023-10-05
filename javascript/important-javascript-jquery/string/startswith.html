@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myArray = [
+            'Blue Sky',
+            'light green',
+            'dark Green',
+            'Blue Van'
+        ];
+        
+        function getStartswith(a, b) {
+            return a.filter(e => e.toLowerCase().startsWith(b));
+        }
+        
+        function getEndswith(a, b) {
+            return a.filter(e => e.toLowerCase().endsWith(b));
+        }
+        
+        const result = getStartswith(myArray, 'blue');        
+        console.log(result);
+
+        const result1 = getEndswith(myArray, 'green');        
+        console.log(result1);
+    </script>
+</body>
+</html>
