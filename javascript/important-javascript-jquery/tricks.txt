@@ -33,11 +33,16 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add
 Accordion Tab => use in this => getAttribute, replace, trim, create array from html, after create array this has filter and match id then add remove class.
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/accordion-tabs-tutorial.html
 
+=======================
+
 array filter from html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/accordion-tabs-tutorial.html
 
 elements filter array from
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/siblings-selector-by-arrayFrom-filter.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/array-from-and-filter-image.by.img.src.html
+
+=======================
 
 viewport animation
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/viewport/viewport-multiple-perfect-animation-js.html

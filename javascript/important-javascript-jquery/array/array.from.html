@@ -11,6 +11,30 @@
 <script>
 const myArr = Array.from("ABCDEFG");
 document.getElementById("demo").innerHTML = myArr;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const arr = [1, 2, 3];
+const a = Array.from(arr, (x) => x + x);
+console.log(a); // [2, 4, 6]
+
+// or
+
+var new1 = [];
+arr.forEach(e => new1.push(e + e));
+console.log(new1); // [2, 4, 6]
 </script>
 
 </body>

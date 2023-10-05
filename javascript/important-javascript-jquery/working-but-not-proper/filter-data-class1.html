@@ -54,29 +54,32 @@
       </div>
 
     <script>
-        function change() {
+        function changeFunc() {
             let results = Array.from(document.querySelectorAll('.result > div'));
             console.log(results);
+            //console.log(document.querySelectorAll('.result > div'));
+
             // Hide all results
             results.forEach(function(result) {
-                result.style.display = 'none';
+                result.style.display = "none";
             });
             console.log(results);
+
             // Filter results to only those that meet ALL requirements:
             Array.from(document.querySelectorAll('.filter input[rel]:checked'), function(input) {
-                const attrib = input.getAttribute('rel');
                 results = results.filter(function(result) {
-                    return result.classList.contains(attrib);
+                    return result.classList.contains(input.getAttribute('rel'));
                 });
             });
+
             // Show those filtered results:
             results.forEach(function(result) {
-                result.style.display = 'block';
+                result.style.display = "block";
             });
         }
-        change();
+        //changeFunc();
         document.querySelectorAll("input").forEach(function(e){
-            e.addEventListener("change", change);
+            e.addEventListener("change", changeFunc);
         });
     </script>
 </body>

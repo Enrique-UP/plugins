@@ -78,8 +78,20 @@
     <hr>
     
     <script>
+        // for learning
+        console.log(Array.from("GeeksforGeeks"));
+        const arr = [10, 20, 30];
+        console.log(arr);
+        console.log(Array.from(arr));
+        console.log(Array.from([1, 2, 3], x => x + x));
+        const set = new Set(["foo", "bar", "baz", "foo"]);
+        Array.from(set);
+        console.log(Array.from(set));
+        // [ "foo", "bar", "baz" ]
+
+
         document.querySelectorAll(".demo").forEach(function(e){
-            //const allSiblings = Array.from(e.children).filter(e => e.classList.contains("active")); // returns all active siblings/elements
+            // const allSiblings = Array.from(e.children).filter(e => e.classList.contains("active")); // returns all active siblings/elements
             const allSiblings = Array.from(e.children).filter(e => !e.classList.contains("active")); // returns all unactive siblings/elements
             console.log(allSiblings);
             let li = "";

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="http://www.demo.com/images1.jpg" />
+    <img src=".images1.jpg" />
+    <img src="http://www.demo.com/images2.jpg" />
+    <img src=".images2.jpg" />
+    <img src="http://www.demo.com/images3.jpg" />
+    <img src=".images3.jpg" />
+    <script>
+        const sources = Array.from(document.querySelectorAll("img"), (image) => image.src);
+        console.log(sources);
+        const insecureSources = sources.filter((link) => link.startsWith("http://"));
+        console.log(insecureSources);
+    </script>
+</body>
+</html>
