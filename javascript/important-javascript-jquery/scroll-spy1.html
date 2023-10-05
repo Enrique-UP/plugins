@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    /* body{width:100%;height:100%;float:left;}
+    body > *{float:left;} */
+
+
+    div.scrolls_area {
+      width: 100%;
+      background: #000;
+      color: #fff;
+    }
+
+    div.scrolls_area .clear {
+      clear: both;
+    }
+
+    div.scrolls_area .container {
+      max-width: 100%;
+      width: 1170px;
+      margin: auto;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area {
+      width: 100%;
+      padding: 50px 0;
+      margin: 0;
+      float: left;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area>li {
+      float: left;
+      list-style: none;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area>li:nth-child(1) {
+      width: 25%;border-left:1px solid #778899;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area>li:nth-child(2) {
+      width: 75%;
+    }
+
+    div.scrolls_area.active ul.scroll_tabs_area>li.scroll_tabs {
+      position: fixed;
+      top: 50px;
+    }
+
+    div.scrolls_area.active ul.scroll_tabs_area>li:nth-child(2) {
+      margin-left: 25%;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area>li.scroll_tabs>a {
+      width: 100%;
+      float: left;
+      color: #778899;
+      padding: 10px 10px 10px 25px;
+      text-decoration: none;position:relative;transition:0.3s linear;
+    }
+
+    div.scrolls_area ul.scroll_tabs_area>li.scroll_tabs>a.active {
+      color: #fff;
+    }
+    div.scrolls_area ul.scroll_tabs_area>li.scroll_tabs>a.active::before{content:"";position:absolute;top:0;left:-2px;width:3px;height:100%;background: #fff;transition:0.3s linear;}
+
+    div.scrolls_area ul.scroll_tabs_area>li .section_area {
+      width: 100%;
+      float: left;
+      border-bottom: 1px solid red;
+      height: 500px;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height:900px;width:100%;background:#ccc;"></div>
+  <div class="scrolls_area">
+    <div class="container">
+      <ul class="scroll_tabs_area">
+        <li class="scroll_tabs">
+          <a href="#one" class="active">Upgrade Shopify Store 2.0</a>
+          <a href="#two">Shopify Store Setup</a>
+          <a href="#three">Shopify App Development</a>
+          <a href="#four">Shopify API Integration</a>
+          <a href="#five">Shopify Theme Design</a>
+          <a href="#six">Shopify Migration</a>
+          <a href="#seven">Shopify SEO/Marketing</a>
+          <a href="#eight">Shopify Maintenance & Support</a>
+          <a href="#nine">Shopify Plus Enterprise</a>
+        </li>
+        <li>
+          <div class="section_area" id="one"></div>
+          <!--section_area-->
+          <div class="section_area" id="two"></div>
+          <!--section_area-->
+          <div class="section_area" id="three"></div>
+          <!--section_area-->
+          <div class="section_area" id="four"></div>
+          <!--section_area-->
+          <div class="section_area" id="five"></div>
+          <!--section_area-->
+          <div class="section_area" id="six"></div>
+          <!--section_area-->
+          <div class="section_area" id="seven"></div>
+          <!--section_area-->
+          <div class="section_area" id="eight"></div>
+          <!--section_area-->
+          <div class="section_area" id="nine"></div>
+          <!--section_area-->
+        </li>
+      </ul>
+    </div>
+    <!--container-->
+    <div class="clear"></div>
+  </div>
+  <!--scrolls_area-->
+
+
+
+
+
+  <div style="height:900px;width:100%;background:#ccc;"></div>
+  <script src="../../jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var a = $(".scrolls_area").offset().top;
+      var b = $(".scrolls_area").height();
+      var c = $("div.scrolls_area ul.scroll_tabs_area>li.scroll_tabs").height();
+      console.log(c);
+      var body = $("body").height();
+      console.log("top =" + a);
+      console.log("body =" + body);
+      var bottom = body - a - b;
+      var top = a + b - c - 100;
+      console.log("bottom =" + bottom);
+      function func_scrolls_area() {
+        if ($(this).scrollTop() <= top && $(this).scrollTop() >= bottom) {
+          $(".scrolls_area").addClass("active");
+        } else {
+          $(".scrolls_area").removeClass("active");
+        }
+      };
+
+
+
+      function scroll_tabs() {
+        $('div.scrolls_area ul.scroll_tabs_area > li.scroll_tabs > a').each(function () {
+          var container = $(this).attr('href');
+          var containerOffset = $(container).offset().top;
+          var containerHeight = $(container).height();
+          var containerBottom = containerOffset + containerHeight;
+          var scrollPosition = $(document).scrollTop();
+          if (scrollPosition <= containerBottom - 20 && scrollPosition >= containerOffset - 20) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+
+
+        $("div.scrolls_area ul.scroll_tabs_area > li.scroll_tabs > a").click(function(e) {         
+          e.preventDefault();         
+          var section = $(this).attr("href");         
+          $("html, body").animate({         
+            scrollTop: $(section).offset().top - 0
+          }, 0);
+        });
+
+
+      };
+
+      $(window).on("scroll", scroll_tabs);
+      $(window).on("load", scroll_tabs());
+
+      $(window).on("scroll", func_scrolls_area);
+      $(window).on("load", func_scrolls_area());
+      
+
+    });
+
+  </script>
+</body>
+
+</html>

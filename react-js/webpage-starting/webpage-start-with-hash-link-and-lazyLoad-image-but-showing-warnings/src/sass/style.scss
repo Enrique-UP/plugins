@@ -1,0 +1,12 @@
+*{padding:0;margin:0;box-sizing: border-box;}
+main{
+    section{width:50%;background: #eee;text-align: center;border-bottom:5px solid red;height:1000px;}
+    ul{position: fixed;bottom:0;left:0;background: #ccc;
+        a{color:#333;text-decoration: none;}
+        .active{color:red;}
+        .notActive{color:#333;}
+    }
+    .container .row [class*="col"]{margin-bottom: 30px;}
+    .container.active{background: brown;color: white;}
+    section{transition: 1s linear;}
+}

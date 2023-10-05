@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;line-height: 1.5;}
+
+        .wcu{width:100%;position:relative;overflow: hidden;}
+        .wcu ul{width:100%;display: flex;flex-wrap: wrap;padding:100px 30px 70px;background: #f1f1f1;}
+        .wcu ul > li{width:50%;list-style: none;margin-bottom: 30px;}
+        .wcu ul > li:nth-child(odd){padding-right: 15px;}
+        .wcu ul > li:nth-child(even){padding-left: 15px;}
+        .wcu ul > li p{font-size:20px;cursor: pointer;padding:15px;background: #ddd;}
+
+        .content{position:absolute;left:0;right:0;margin:auto;width:100%;padding:0 30px;display: none;}
+        .content .icon{font-style: normal;cursor: pointer;float:right;}
+        .content p{background: #aaa;padding:15px;}
+    </style>
+</head>
+<body>
+    <div style="width:100%;height:200px;background: brown;"></div>
+    <div class="wcu"></div><!--wcu-->
+    <div style="width:100%;height:200px;background: brown;"></div>
+    <script>
+        (function(){
+            var element = document.createElement("ul");
+            document.querySelector(".wcu").append(element);
+            var ul = document.querySelector(".wcu > ul");
+
+            var para = "";
+            let content = [
+                {
+                    head: "1 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "1 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                },
+                {
+                    head: "2 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "2 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                },
+                {
+                    head: "3 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "3 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                },
+                {
+                    head: "4 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "4 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                },
+                {
+                    head: "5 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "5 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                },
+                {
+                    head: "6 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio.",
+                    text: "6 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+                }
+            ];
+            content.forEach(function(e){
+                para += `<li><p>${e.head}</p></li>`;
+            });
+            ul.innerHTML = para;
+
+            document.querySelector(".wcu").innerHTML += `
+                <div class="content">
+                    <i class="icon">X</i>
+                    <p></p>
+                </div><!--content-->
+            `;
+            var contentDiv = document.querySelector(".wcu .content");
+            var icon = contentDiv.querySelector(".wcu .content .icon");
+            var contentDivP = document.querySelector(".wcu .content p");
+            var link = document.querySelectorAll(".wcu ul > li > p");
+            var li = document.querySelectorAll(".wcu ul > li");
+            var a = 0;
+            function topVal(){
+                link.forEach(function(e, index){
+                    e.addEventListener("click", function(){
+                        contentDivP.innerText = content[index].text;
+                        contentDiv.style.display = "block";
+                        contentDiv.style.top = e.offsetTop + e.offsetHeight + "px";
+                        a = index;
+                        //console.log("a = " + a);
+                    });
+                   contentDiv.style.top = link[a].offsetTop + link[a].offsetHeight + "px";
+                });
+            }
+            window.addEventListener("resize", topVal());
+            window.addEventListener("resize", topVal);
+            
+
+            icon.addEventListener("click", function(){
+                this.closest(".content").style.display = "none";
+            });
+
+            document.querySelector(".wcu").addEventListener("click", function(e){
+                e.stopPropagation();
+            });
+            document.addEventListener("click", function(){
+                contentDiv.style.display = "none";
+            });
+        })();
+    </script>
+</body>
+</html>

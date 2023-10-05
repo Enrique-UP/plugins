@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div::before {
+            content: attr(data-parent) " - ";
+        }
+        /* div[data-columns*="1"] */
+        div[data-columns="12"]{width:100%;display: flex;background:brown;color:white;padding:10px;}
+    </style>
+</head>
+<body>
+    <div data-value="Value here..." data-number="10" data-parent="Parent shows in child" data-columns="12">&nbsp;Display Data</div>
+    <script>
+        var element = document.querySelector('div');        
+        element.dataset.value = "Lorem ipsum dolor"; // replacing data-value here
+        document.write(element.dataset.number);
+    </script>
+</body>
+</html>

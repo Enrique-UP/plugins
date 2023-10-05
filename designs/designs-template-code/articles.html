@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css-sass/grid.min.css" type="text/css" />
+    <style type="text/css">
+        main{width:100%;display: flex;flex-direction: column;overflow: hidden;}
+        main section{display: flex;padding:80px 0 50px;}
+        
+        .textArea{background: #15b9d5;padding:50px;display: flex;align-items: center;flex-direction: column;justify-content: center;height: 100%;}
+        .textArea .text{width:100%;display: flex;flex-direction: column;color:white;}
+        .textArea .text .sHead{text-transform: uppercase;margin-bottom: 10px;}
+        .textArea .text .head{font-weight: 800;font-size: 60px;line-height: 1.1;padding-bottom: 30px;margin-bottom: 30px;border-bottom:2px solid white;}
+        .textArea .text .texts{margin-bottom: 20px;font-size: 18px;}
+        .textArea .text .btns{display: flex;}
+        .textArea .text .btns a{color:#15b9d5;text-decoration: none;background: white;padding: 10px 30px;border-radius: 25px;text-transform: uppercase;}
+
+        .textArea1{padding:30px;display: flex;align-items: center;flex-direction: column;border:1px solid #ddd;height: 100%;}
+        .textArea1 .text{width:100%;display: flex;flex-direction: column;}
+        .textArea1 .text .sHead{text-transform: uppercase;margin-bottom: 10px;color:#9c9aa7;}
+        .textArea1 .text .head{font-weight: 800;font-size: 36px;line-height: 1.1;margin-bottom: 20px;color:#48525e;}
+        .textArea1 .text .texts{margin-bottom: 20px;font-size: 18px;color:#a0a0a0;line-height: 1.7;}
+        .textArea1 .text .btns{display: flex;}
+        .textArea1 .text .btns a{background:#15b9d5;text-decoration: none;color: white;padding: 10px 30px;border-radius: 25px;text-transform: uppercase;font-size: 14px;font-weight: 600;}
+
+        .box1{height:100%;}
+        
+        @media (max-width:575px){
+            main section{padding:50px 0 40px;}
+            .textArea, .textArea1{padding:30px 15px;}
+            .textArea .text .head{font-size: 40px;padding-bottom: 20px;margin-bottom: 20px;}
+            .textArea1 .text .head{font-size: 24px;}
+            .textArea .text .texts{font-size: 16px;}
+            .textArea1 .text .texts{font-size: 14px;}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div style="width:100%;height:500px;background: #eee;"></div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-xl-4">
+                        <div class="textArea">
+                            <div class="text">
+                                <p class="sHead">Our Proposal</p>
+                                <p class="head">Articles & News</p>
+                                <p class="texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut.</p>
+                                <p class="btns">
+                                    <a href="#">Our Blog</a>
+                                </p>
+                            </div><!--text-->
+                        </div><!--textArea-->
+                    </div><!--cols-->
+                    <div class="col-xs-12 col-xl-8">
+                        <div class="row box1"></div><!--row-->
+                    </div><!--cols-->
+                    <div class="col-xs-12">
+                        <div class="row box2"></div><!--row-->
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+        <div style="width:100%;height:500px;background: #eee;"></div>
+    </main>
+    <script>
+        (function(){
+            var data = [
+                {
+                    date: "January 1, 2025",
+                    head: "Travel Events 1",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    date: "February 2, 2026",
+                    head: "Best Beaches 2",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "March 3, 2023",
+                    head: "Magic Blooms 3",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "April 4, 2023",
+                    head: "Alternative Trips 4",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    date: "May 9, 2023",
+                    head: "Travel Events 5",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "June 13, 2023",
+                    head: "Travel Events 6",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "July 7, 2023",
+                    head: "Travel Events 7",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    date: "August 8, 2023",
+                    head: "Travel Events 8",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "September 30, 2023",
+                    head: "Travel Events 9",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut."
+                },
+                {
+                    date: "October 10, 2023",
+                    head: "Travel Events 10",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    date: "November 10, 2023",
+                    head: "Travel Events 11",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    date: "December 10, 2023",
+                    head: "Travel Events 12",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur ullam maxime! Eligendi dignissimos dicta molestias exnamut. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                }
+            ];
+
+            var sortData = data.sort( (a, b) => Number(new Date(a.date)) - Number(new Date(b.date)) );
+            console.log(sortData);
+
+            // filter by date
+            const date = new Date();
+            let day = date.getDate() - 1; // for -1 today
+            //day = day - 1; // showing today day = day -1; //for browser support firefox
+            let month = date.getMonth() + 1;
+            //console.log(month);
+            let year = date.getFullYear();
+            let d = `${year}-${month}-${day}`;
+            //console.log(d);
+            const today = new Date(d);
+            var newData = sortData.filter((item) => {
+                const filterDate = new Date(item.date);
+                return filterDate > today;  // remove >= from > for browser support firefox
+            });
+            //console.log(newData);
+
+
+
+            var box = 4;
+            if(newData.length < box){
+                for(var i = 0; i < newData.length; i++){
+                    document.querySelector(".box1").innerHTML += ele();
+                }
+            }else{
+                for(var i = 0; i < box; i++){
+                    document.querySelector(".box1").innerHTML += ele();
+                }
+                for(var i = box; i < newData.length; i++){
+                    document.querySelector(".box2").innerHTML += ele();
+                }
+            }
+
+            function ele(){
+                return `
+                        <div class="col-xs-12 col-md-6">
+                            <div class="textArea1">
+                                <div class="text">
+                                    <p class="sHead">${newData[i].date}</p>
+                                    <p class="head">${newData[i].head}</p>
+                                    <p class="texts">${newData[i].text}</p>
+                                    <p class="btns">
+                                        <a href="#">Read More</a>
+                                    </p>
+                                </div><!--text-->
+                            </div><!--textArea1-->
+                        </div><!--cols-->
+                    `
+            };
+
+
+            if(document.querySelector(".box1").children.length === 0){
+                document.querySelector(".box1").closest("section").remove();
+            }
+            if(document.querySelector(".box2").children.length === 0){
+                document.querySelector(".box2").closest("[class*='col-']").remove();
+            }
+            document.querySelectorAll(".box2 > *").forEach(function(e){
+                //e.classList = "";
+                //e.classList.add("col-xs-12",  "col-md-6", "col-xl-4");
+                e.classList.add("col-xl-4");
+            });
+
+            var cols = document.querySelectorAll(".container .row [class*='col-'] .row [class*='col-']");
+            for(var i = 0; i < cols.length; i++){
+                cols[i].parentNode.parentNode.style.marginBottom = "0";
+            }
+        })();
+    </script>
+</body>
+</html>

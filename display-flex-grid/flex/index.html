@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: DodgerBlue;
+            border: 1px solid black;
+        }
+
+        .flex>div {
+            background-color: #f1f1f1;
+            border: 1px solid #333;
+            text-align: center;
+            font-size: 20px;
+            width: 100%;
+            max-width: 100%;
+        }
+        .equalCol .col{
+            flex: 1 0 0%;
+            /* flex:1; */
+        }
+
+        /* .unEqualCol [class*="col-"] {
+            flex: 0 0 auto;
+        } */
+
+        .unEqualCol .col{
+            flex: 1 0 0%;
+            /* flex:1; */
+        }
+        :root {
+            --w1: 8.33%;
+            --w2: 16.67%;
+            --w3: 25%;
+        }
+
+        .unEqualCol .col-1 {
+            flex: 0 0 calc(var(--w1));
+        }
+
+        .unEqualCol .col-2 {
+            flex: 0 0 calc(var(--w2));
+        }
+
+        .unEqualCol .col-3 {
+            flex: 0 0 calc(var(--w3));
+        }
+
+        .unEqualCol .col-4 {
+            flex: 0 0 calc(var(--w3) + var(--w1));
+        }
+
+        .unEqualCol .col-5 {
+            flex: 0 0 calc(var(--w3) + var(--w2));
+        }
+
+        .unEqualCol .col-6 {
+            flex: 0 0 calc(var(--w3) * 2);
+        }
+
+        .unEqualCol .col-7 {
+            flex: 0 0 calc(var(--w3) * 2 + var(--w1));
+        }
+
+        .unEqualCol .col-8 {
+            flex: 0 0 calc(var(--w3) * 2 + var(--w2));
+        }
+
+        .unEqualCol .col-9 {
+            flex: 0 0 calc(var(--w3) * 3);
+        }
+
+        .unEqualCol .col-10 {
+            flex: 0 0 calc(var(--w3) * 3 + var(--w1));
+        }
+
+        .unEqualCol .col-11 {
+            flex: 0 0 calc(var(--w3) * 3 + var(--w2));
+        }
+
+        .unEqualCol .col-12 {
+            flex: 0 0 calc(var(--w3) * 4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flex Container</h1>
+    <div class="flex equalCol">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+    <h1>Flex Container grow, shrink, basis</h1>
+    <div class="flex unEqualCol">
+        <div class="col-1">1</div>
+        <div class="col-11">11</div>
+
+        <div class="col-2">2</div>
+        <div class="col-10">10</div>
+
+        <div class="col-3">3</div>
+        <div class="col-9">9</div>
+
+        <div class="col-4">4</div>
+        <div class="col-8">8</div>
+
+        <div class="col-5">5</div>
+        <div class="col-7">7</div>
+
+        <div class="col-6">6</div>
+        <div class="col">Col</div>
+
+        <div class="col-12">12</div>
+    </div>
+
+</body>
+
+</html>

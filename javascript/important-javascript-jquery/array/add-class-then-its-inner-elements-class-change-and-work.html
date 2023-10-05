@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding-top: 30px;}
+
+        .imageText{width:50%;margin:auto;padding:10px;color:white;}
+        .imageText:not(:last-child){margin-bottom: 30px;}
+        .one{background: #ff6563;}
+        .two{background: #fcb541;}
+        .three{background: #319bd7;}
+        .four{background: #1bbc9b;}
+        .five{background: #f15928;}
+    </style>
+</head>
+<body>
+    
+    <script>
+        const dataWeb = [
+            "one",
+            "two",
+            "three",
+            "four",
+            "five"
+        ];
+        dataWeb.forEach(function(e){
+            document.querySelector("body").innerHTML += `
+                <div class="imageText" data-web=${e}>
+                    <p class="image">Image</p>
+                    <p class="text">Text</p>
+                </div>
+            `;
+        });
+
+        document.querySelectorAll(".imageText").forEach(function(e){
+            const dataClass = e.getAttribute("data-web");
+            e.classList.add(dataClass);
+            e.querySelector(".image").classList.add(dataClass + "_image");
+            e.querySelector(".text").classList.add(dataClass + "_text");
+        });
+    </script>
+</body>
+</html>

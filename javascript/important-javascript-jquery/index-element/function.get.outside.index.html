@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:20px 20px 0;font-family: Arial, Helvetica, sans-serif;line-height: 1.5;}
+        div{width:100%;position: relative;}
+        div p{width:100%;background: #eee;padding:15px;cursor: pointer;margin-bottom: 50px;}
+        div > span{position: absolute;left:0;background:#ccc;padding:5px;cursor: pointer;display: none;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quas fuga, explicabo commodi laudantium earum quod nam ut quo suscipit sequi! Hic quasi molestiae eos unde corporis repellat, nemo, quae veritatis dolorum ratione ipsa odit consequatur esse impedit deserunt vel doloremque tempora? Dolore et amet a dolorem doloremque reiciendis quisquam, fuga ducimus inventore voluptas placeat, voluptatem esse aperiam libero id, tenetur ipsam obcaecati iure! Ipsa numquam dolore quidem ex cupiditate ab quam neque natus ducimus quos alias, accusantium dolorum est, at nihil fugit iste. Praesentium ullam, quisquam iste accusamus voluptates vel dignissimos quam nulla fugit culpa, ea, sunt quas repudiandae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum mollitia voluptate doloremque explicabo nostrum et autem ex a consequatur magni facilis est, qui repellendus hic iure distinctio! Rem eos delectus magni commodi debitis quisquam nulla harum quibusdam, vel repudiandae, cum, voluptate optio ipsam soluta ratione? Explicabo possimus cum cumque obcaecati.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis repellendus blanditiis at. Voluptatum sit consequuntur, eius quae itaque nostrum laborum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur saepe qui eius quas. Voluptate consequuntur, repellat quo sed reprehenderit expedita rerum necessitatibus quas nihil dolorem odit a, recusandae impedit debitis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus doloremque velit nisi, quibusdam molestias excepturi, iste quia laboriosam fuga explicabo? Aut, adipisci consequatur. Voluptatibus obcaecati repellendus natus aspernatur quae perferendis, eligendi aliquid, veritatis iure, libero deleniti mollitia adipisci ex porro? A, impedit, quaerat quo enim dolores facilis commodi inventore aspernatur exercitationem veniam quas ut perspiciatis, similique dignissimos iste natus corrupti dolor dolorum eius ab necessitatibus consequuntur! Ipsa expedita quae quasi eos maiores, voluptatum, exercitationem aspernatur dolore ipsam corrupti error laborum, culpa qui quo laudantium iusto cupiditate impedit. Aperiam suscipit blanditiis voluptates ea eos, aliquam non autem nisi, nemo veritatis corrupti architecto. Ut, excepturi! Accusantium atque omnis necessitatibus? Praesentium expedita at optio nostrum, maiores illum veniam cupiditate dicta quibusdam iure necessitatibus ducimus quaerat suscipit officia obcaecati excepturi vero reiciendis autem incidunt corporis rerum sequi culpa ad odit. Est, alias sint deserunt rem asperiores beatae eum possimus minus voluptatibus sed sapiente velit quos molestias nesciunt numquam consequatur impedit corporis placeat corrupti iure, magni porro officia! Fugiat est excepturi officia, ex doloremque vel natus! Fugiat possimus beatae alias atque vel! Dolorum, amet debitis expedita sunt excepturi, explicabo ullam optio sint, numquam eligendi eius. Doloribus quaerat libero ducimus earum incidunt enim tempore quasi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, libero.</p>
+        <span>Index Value</span>
+    </div>
+
+    <script>
+        (function(){
+            var link = document.querySelectorAll("p");
+            var span = document.querySelector("div > span");
+            var a = 0;
+            function topVal(){
+                link.forEach(function(e, index){
+                    e.addEventListener("click", function(){
+                        span.style.display = "block";
+                        span.style.top = e.offsetHeight + e.offsetTop + "px";
+                        span.innerHTML = index;
+                        a = index;
+                    });
+                    span.style.top = link[a].offsetHeight + link[a].offsetTop + "px";
+                });
+            }
+            span.addEventListener("click", function(){
+                this.style.display = "none";
+            });
+            window.addEventListener("load", topVal());
+            window.addEventListener("resize", topVal);
+        })();
+    </script>
+</body>
+</html>

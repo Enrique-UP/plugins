@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p class="demo"></p>
+<p class="demo1"></p>
+<p></p>
+
+<script>
+    document.querySelectorAll("p").forEach(function(e){
+        e.innerHTML = e.hasAttributes();
+    });
+</script>
+
+</body>
+</html>

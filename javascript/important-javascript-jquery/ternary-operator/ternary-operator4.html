@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="display:table">Active Class</h1>
+<p class="unactive">UnActive Class</h1>
+
+<script>
+    var element = document.querySelector("h1");
+    element.style.display = element.style.display == "block" ? "none" : "block";
+
+    var p = document.querySelector("p");
+    p.classList = p.classList == "active" ? "unactive" : "active";
+</script>
+</body>
+</html>

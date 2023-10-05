@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HrSlider</title>
+  <style>
+   body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.Sliders {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.Sliders .itemSlider {
+  height: 0;
+  transition-duration: 1s;
+}
+.Sliders .itemSlider img {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+}
+.Sliders .itemSlider:not(.Active) {
+  visibility: hidden;
+  opacity: 0;
+}
+.Sliders .buttonsSlider .next {
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 100px;
+  transition-duration: 0.1s;
+  font-size: 30px;
+}
+.Sliders .buttonsSlider .next:hover {
+  transform: translateY(-50%) scale(1.1, 1.1);
+}
+.Sliders .buttonsSlider .prev {
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 100px;
+  transition-duration: 0.1s;
+  font-size: 30px;
+}
+.Sliders .buttonsSlider .prev:hover {
+  transform: translateY(-50%) scale(1.1, 1.1);
+}
+
+.dots {
+  display: flex;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dots .dot {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  border-radius: 100px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.dots .dot:not(.ActiveDot) {
+  background-color: #fff;
+}
+
+.dot.ActiveDot {
+  background-color: #3ab381;
+}
+
+.itemSlider.Active {
+  visibility: visible;
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+    <div class="Sliders">
+        <div class="itemSlider Active">
+            <img src="../../owl-carousel//owl-carosel-thumbs-with-scroll/images/1.jpg" alt="pic">
+        </div>
+        <div class="itemSlider">
+            <img src="../../owl-carousel//owl-carosel-thumbs-with-scroll/images/2.jpg" alt="pic">
+        </div>
+        <div class="itemSlider">
+            <img src="../../owl-carousel//owl-carosel-thumbs-with-scroll/images/3.jpg" alt="pic">
+        </div>
+    </div><!--slidets-->
+      
+
+  
+  <script>
+    class Slider {
+    slideIndex = 1;
+    constructor(Options) {
+        this.items = Options;
+        this.initialSetting(this.items);
+        this.Buttons(this.items);
+        this.dots(this.items);
+        this.autoTime(this.items);
+    }
+
+    initialSetting() {
+        const { wrapper, dots, arrowBtn, auto, sliderClass } = this.items;
+
+        if (!wrapper) throw Error('Please Select Query Element');
+        if (typeof wrapper !== 'object') throw Error('Type Wrapper Must Object');
+
+        if (!sliderClass) throw Error('Please Select Slider Class');
+
+        if (dots && typeof dots != 'boolean') throw Error('Type dots Must Boolean');
+
+        if (arrowBtn && typeof arrowBtn != 'boolean') throw Error('Type Button Must Boolean');
+
+        if (auto && typeof auto != 'number') throw Error('Type Auto Must Number');
+        !auto ? (this.auto = 0) : (this.auto = auto);
+    }
+
+    Buttons() {
+        const { wrapper, arrowBtn } = this.items;
+        if (arrowBtn !== false) {
+            wrapper.insertAdjacentHTML(
+                'beforeEnd',
+                `
+                  <div class="buttonsSlider">
+                    <span class="next">
+                      &#8250;
+                    </span>
+                    <span class="prev">
+                      &#8249;
+                    </span>
+                  </div>
+                `
+            );
+
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+
+            prev.addEventListener('click', () => {
+                this.showSlider(--this.slideIndex);
+                this.clearTime();
+            });
+            next.addEventListener('click', () => {
+                this.showSlider(++this.slideIndex);
+                this.clearTime();
+            });
+        }
+    }
+
+    dots() {
+        const { wrapper, dots } = this.items;
+
+        if (dots !== false) {
+            this.itemSlider = wrapper.querySelectorAll('.itemSlider');
+            this.creatDots = [...this.itemSlider].map((element, index) => `<span class="dot" data-target="${++index}"></span>`);
+
+            const wrapperDots = document.createElement('div');
+            wrapperDots.classList.add('dots');
+            wrapperDots.innerHTML = this.creatDots.join('');
+            wrapper.insertAdjacentElement('afterEnd', wrapperDots);
+
+            document.querySelector('.dot').classList.add('ActiveDot');
+            this.allDot = document.querySelectorAll('.dots .dot');
+
+            this.allDot.forEach((element) => {
+                element.addEventListener('click', () => {
+                    this.slideIndex = element.getAttribute('data-target');
+                    this.showSlider(this.slideIndex);
+                    this.clearTime();
+                });
+            });
+        }
+    }
+
+    showSlider() {
+        let { currentSlider } = this.items;
+        if (this.slideIndex > this.itemSlider.length) this.slideIndex = 1;
+        if (this.slideIndex < 1) this.slideIndex = this.itemSlider.length;
+
+        const classActive = document.querySelectorAll('.Active');
+        const classActiveDot = document.querySelectorAll('.ActiveDot');
+        for (let item of classActive) item.classList.remove('Active');
+        for (let item of classActiveDot) item.classList.remove('ActiveDot');
+
+        this.itemSlider[this.slideIndex - 1].classList.add('Active');
+        this.allDot[this.slideIndex - 1].classList.add('ActiveDot');
+
+        currentSlider(this.itemSlider);
+    }
+
+    autoTime() {
+        if (this.auto !== 0) {
+            this.setTime = setInterval(() => {
+                this.showSlider(++this.slideIndex);
+            }, this.auto);
+        }
+    }
+
+    clearTime() {
+        clearInterval(this.setTime);
+        this.autoTime();
+    }
+}
+
+
+
+new Slider({
+    wrapper: document.querySelector('.Sliders'),
+    sliderClass: 'itemSlider',
+    auto: 4000, // false
+    dots: true,
+    arrowBtn: true,
+    currentSlider: (item) => {
+        console.log(item);
+    },
+});
+
+  </script>
+</body>
+</html>

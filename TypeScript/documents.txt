@@ -1,0 +1,24 @@
+// write on terminal npm by cmd
+npm install typescript -g
+tsc two.ts -w // for npm
+tsc.cmd file3.ts -w // for vs code terminal
+
+
+// for version checking
+tsc -v
+npm -v
+
+
+run time error // on browser
+compileration error // on text editor like vs code
+
+
+for see output of ts file 
+run in terminal vs code
+node file4.ts
+
+
+
+tsc.cmd --init
+tsc.cmd -w
+// for compiling all ts file into js file

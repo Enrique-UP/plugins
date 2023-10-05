@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <script>
+        greet();// Calling before declaration
+        function greet() {// Declaring
+            document.write('Function Hoisting:- A function can be called before declaring it.');
+        }
+
+
+
+        x = 1;
+		document.getElementById("p1").innerHTML = x ;
+		var x;
+    </script>
+</body>
+</html>

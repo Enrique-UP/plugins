@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="./data.js"></script>
+    <script>
+        var li = document.querySelectorAll("ul > li");
+        var totalLi = li.length;
+        for(var i = 0; i < totalLi; i++){
+            li[i].innerHTML += data[i].head;
+            li[i].innerHTML += data[i].text;
+        }
+    </script>
+</body>
+</html>

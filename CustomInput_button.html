@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Emailer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}    
+
+label.enroll_area_input {width: auto;float: left;position: relative;cursor: pointer;font-size: 16px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background: red;color: #fff;margin-bottom: 0;border-bottom: 1px solid #f1f1f1;font-weight: normal;}
+
+label.enroll_area_input input {position: absolute;opacity: 0;cursor: pointer;height: 0;width: 0;}
+
+label.enroll_area_input input:checked ~ .checkmark {background-color: #3db166;color: #fff;}
+
+label.enroll_area_input .checkmark{width:auto;float:left;position:relative;padding-left:20px;}
+    
+label.enroll_area_input .checkmark::before {
+width: 15px;height: 15px;content: "";position: absolute;z-index: 1;top: 15px;border: 2px solid #cd202c;left: 15px;}
+
+label.enroll_area_input input:checked ~ .checkmark::before{border-color: #fff;}
+</style>
+</head>
+<body>
+    <label class="enroll_area_input">
+      <input type="checkbox" />
+      <span class="checkmark">Lorem</span>
+    </label>
+</body>
+</html>

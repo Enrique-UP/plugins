@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    main{width:100%;float:left;}
+    main > *{width:100%;float:left;}
+    main header{height:200px;color:#fff;background: #000;}
+    main .banner{background-color: blue;color:#fff;height:1000px;}
+    main .scroll_area{width:34%;margin:100px 33%;border-left:3px solid #ccc;position: relative;}
+    main .scroll_area .progress_line{width:3px;background:brown;position:absolute;left:-3px;top:0;}
+    main .scroll_area > li{width:100%;float:left;list-style: none;margin-bottom:70px;position:relative;padding-left:100px;}
+    main .scroll_area > li .number{position: absolute;top: 50%;left: -27px;transform: translateY(-50%);-webkit-transform: translateY(-50%);background: #eee;width: 50px;height: 50px;border-radius: 100%;text-align: center;line-height: 50px;font-weight: bold;text-decoration: none;transition: 0.3s cubic-bezier(0.1,0.7,1.0,0.1);}
+    main .scroll_area > li p{width: 100%;float:left;background: #eee;border-radius:20px;padding:25px 20px;min-height: 50px;position:relative;transition: 0.3s cubic-bezier(0.1,0.7,1.0,0.1);}
+    main .scroll_area > li p::before{content:"";position:absolute;top:50%;left:-10px;transform: translateY(-50%);-webkit-transform: translateY(-50%);width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:10px solid #eee;}
+    main .scroll_area > li p span{width:100%;float:left;}
+    main .scroll_area > li p span.head{font-weight:bold;font-size:24px;margin-bottom: 10px;line-height: 1.1;}
+    main .scroll_area > li p span.txt{line-height: 1.5;text-align: justify;}
+    
+    main .scroll_area > li.active p{background:brown;color:#fff;}
+    main .scroll_area > li.active p::before{border-right-color:brown;}
+    main .scroll_area > li.active .number{background: brown;color:#fff;}
+
+
+    main .scroll_area > li:last-child{margin-bottom: 0;}
+    main .text{background-color: #eee;height:2500px;}
+    main footer{height:1000px;color:#fff;background: #000;}
+  </style>
+</head>
+<body>
+  <main>
+    <header>Header</header>
+    <section class="banner">Banner</section>
+    <ul class="scroll_area">
+        <i class="progress_line"></i>
+        <li>
+          <a data-target="#1" class="number">1</a>
+          <p id="1">
+            <span class="head">Heading here</span>
+            <span class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas, debitis excepturi suscipit lorem doloremque sed obcaecati iure consectetur ipsum amit sapiente enim quo dolores dignissimos tempore provident recusandae sunt dolor sit amit.</span>
+          </p>
+        </li>
+        <li>
+          <a data-target="#2" class="number">2</a>
+          <p id="2">
+            <span class="head">Heading here</span>
+            <span class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas, debitis excepturi suscipit lorem doloremque sed obcaecati iure consectetur ipsum amit sapiente enim quo dolores dignissimos tempore provident recusandae sunt dolor sit amit.</span>
+          </p>
+        </li>
+        <li>
+          <a data-target="#3" class="number">3</a>
+          <p id="3">
+            <span class="head">Heading here</span>
+            <span class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas, debitis excepturi suscipit lorem doloremque sed obcaecati iure consectetur ipsum amit sapiente enim quo dolores dignissimos tempore provident recusandae sunt dolor sit amit.</span>
+          </p>
+        </li>
+        <li>
+          <a data-target="#4" class="number">4</a>
+          <p id="4">
+            <span class="head">Heading here</span>
+            <span class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas, debitis excepturi suscipit lorem doloremque sed obcaecati iure consectetur ipsum amit sapiente enim quo dolores dignissimos tempore provident recusandae sunt dolor sit amit.</span>
+          </p>
+        </li>
+        <li>
+          <a data-target="#5" class="number">5</a>
+          <p id="5">
+            <span class="head">Heading here</span>
+            <span class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas, debitis excepturi suscipit lorem doloremque sed obcaecati iure consectetur ipsum amit sapiente enim quo dolores dignissimos tempore provident recusandae sunt dolor sit amit.</span>
+          </p>
+        </li>
+    </ul>
+    <section class="text"></section>
+    <footer>Footer</footer>
+  </main>
+  <script src="../../jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    function scroll_tabs()
+    {
+      console.clear();
+      var scroll = $(window).scrollTop() || $(document).scrollTop();
+      console.log("scroll = " + scroll);
+
+      var scroll_area_height = $(".scroll_area").height();
+      console.log("scroll_area_height = " + scroll_area_height);
+
+      var top = $("main .scroll_area").offset().top;
+      console.log("top + =" + top);
+
+      var bottom = top + scroll_area_height;
+      console.log("bottom + =" + bottom);
+
+      var wh = $(window).height() || $(document).height();
+      // var whbottom = wh/3 + wh/4;
+      var whbottom = wh/2;
+      console.log("wh = " + wh);
+
+      var numberWidth = $("main .scroll_area > li .number").width();
+      console.log("numberWidth = " + numberWidth);
+
+      var sp = scroll - top + whbottom + 100 - numberWidth/2;
+      console.log("sp = " + sp);
+
+      if (scroll >= sp && scroll <= bottom)
+      {
+        $("main .scroll_area .progress_line").height(sp).addClass('active');
+        $("main .scroll_area .progress_line").css("max-height", scroll_area_height).addClass('active');
+      }
+      else if(scroll >= top + scroll_area_height)
+      {
+        $("main .scroll_area .progress_line").css("max-height", scroll_area_height).removeClass('active');
+      }
+      else
+      {
+        $("main .scroll_area .progress_line").height(0).removeClass('active');
+      }
+
+      $('main .scroll_area > li .number').each(function ()
+      {
+        var a_attr = $(this).attr('data-target');
+        var a_attrOffset = $(a_attr).offset().top;
+        var a_attrHeight = $(a_attr).height();
+        var a_attrBottom = a_attrOffset + a_attrHeight;
+
+        if (scroll >= a_attrOffset - whbottom /* && scroll <= a_attrBottom */) {
+          $(this).parent().addClass('active');
+        } else {
+          $(this).parent().removeClass('active');
+        }
+      });        
+    };      
+    $(window).on("load scroll resize", scroll_tabs);
+  </script>
+</body>
+
+</html>

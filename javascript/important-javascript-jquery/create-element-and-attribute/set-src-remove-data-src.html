@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+
+        <p>Abcd</p>
+        <img data-src="something.jpg" />
+      
+        <p>Efgh</p>
+        <img data-src="something2.jpg" />
+      
+        <p>Ijkl</p>
+        <img data-src="something3.jpg" />
+      
+      </div>
+      
+      <div class="content">
+      
+        <p>Abcd</p>
+        <img data-src="something4.jpg" />
+      
+        <p>Efgh</p>
+        <img data-src="something5.jpg" />
+      
+        <p>Ijkl</p>
+        <img data-src="something6.jpg" />
+      
+      </div>
+    <script>
+        document.querySelectorAll("img").forEach(function(e, index) {
+          // if (e.getAttribute('data-src')) {
+          //   e.src = e.getAttribute('data-src');
+          //   e.removeAttribute('data-src');
+          // }
+          var dataSrc = e.getAttribute("data-src");
+          e.setAttribute("src", dataSrc);
+          e.removeAttribute("data-src");
+        });
+    </script>
+</body>
+</html>

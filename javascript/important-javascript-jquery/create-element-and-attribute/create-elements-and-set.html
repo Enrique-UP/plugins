@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header></header>
+        <section class="one"></section>
+        <section class="two"></section>
+        <section class="three"></section>
+        <footer></footer>
+    </main>
+    <script>
+        var element = document.createElement("div");
+        element.textContent = "Created New DIV Element";
+        //document.querySelector("header").append(element);
+        //document.querySelector("main .one").insertBefore(element, document.querySelector("main .one").children[0]);
+        //document.querySelector("main .one").insertAdjacentElement("beforebegin", element); // this is for tags
+        document.querySelector("main .one").insertAdjacentHTML("beforebegin", "<div>New Div</div>"); //this is for html
+
+        //createTextNode
+        //textContent
+        //innerText
+
+        // appendChild
+        // append
+        // insertBefore
+        // insertAdjacentHTML
+        // insertAdjacentElement
+		
+		// afterbegin
+		// afterend
+		// beforebegin
+		// beforeend
+    </script>
+</body>
+</html>

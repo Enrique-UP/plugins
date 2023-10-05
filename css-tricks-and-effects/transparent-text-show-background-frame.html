@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+/*/////////MAGIC//HERE////////*/
+.blue {
+  background: white;
+  color: black;
+  mix-blend-mode: lighten;
+}
+.black {
+  background: black;
+  color: white;
+  mix-blend-mode: multiply;
+}
+ .white {
+  background: white;
+  color: black;
+  mix-blend-mode: screen;
+}
+/*////////////////////////////*/
+.heading {
+  font-family: sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  width: 550px;
+  height: 120px;
+  line-height: 120px;
+  vertical-align: center;
+  text-align: center;
+  margin: 30px;
+}
+body {
+  background: url(../owl-carousel/images/2.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html {
+  height: 100%;
+  /* html needs a background color for -mix-blend-mode
+     to work in chrome */
+  background: white;
+}
+</style>
+</head>
+<body>
+    <h1 class="blue heading">SUPER-FLY</h1>
+    <h1 class="black heading">SUPER-FLY</h1>
+    <h1 class="white heading">SUPER-FLY</h1>
+</body>
+</html>

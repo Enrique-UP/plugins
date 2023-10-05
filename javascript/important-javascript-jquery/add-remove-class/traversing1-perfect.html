@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style type="text/css">
+*{padding:0;margin:0;box-sizing: border-box;}
+body{font-family: Arial, Helvetica, sans-serif;padding:0 20%;font-size:14px;line-height: 1.5;}
+
+.portfolio_area > ul{width:100%;float:left;padding:0;margin:0 0 30px;display: flex;border:7px solid #ccc;align-items: center;}
+.portfolio_area > ul > li{list-style: none;float:left;height: 200px;overflow: hidden;}
+.portfolio_area > ul > li:first-child{width:30%;}
+.portfolio_area > ul > li:nth-child(2){width:55%;display: flex;align-self: normal;flex-direction: column;border-left:7px solid #ccc;border-right:7px solid #ccc;}
+.portfolio_area > ul > li:last-child{width:15%;display: flex;justify-content: center;align-items: center;}
+.portfolio_area > ul > li .img{width:100%;float:left;}
+.portfolio_area > ul > li .head{width:100%;float:left;border-bottom:1px solid #ccc;padding:10px 15px;background: #eee;margin-bottom: 0;font-weight: bold;font-size:18px;}
+.portfolio_area > ul > li .text{width:100%;float:left;margin-bottom:0;padding:15px 15px;overflow: auto;text-align: justify;}
+.portfolio_area > ul > li > a{width:auto;float:left;text-decoration: none;background: #9eb89e;color:#fff;padding:7px 25px;font-weight: bold;}
+.portfolio_area > ul.active{background: #ddd;}
+</style>
+</head>
+<body>
+<div class="portfolio_area">
+    <ul class="port">
+        <li><img src="img.jpg" class="img" /></li>
+        <li>
+            <p class="head">Heading here</p>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe sed incidunt ipsa deleniti hic voluptas inventore, consectetur aut eaque qui et voluptatum sapiente! Enim, eos impedit modi sint aut deleniti mollitia cumque. Delectus debitis nam minima repellat.</p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">View</a>
+        </li>
+    </ul>
+    <ul class="port">
+        <li><img src="img1.jpg" class="img" /></li>
+        <li>
+            <p class="head">Heading here</p>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe sed incidunt ipsa deleniti hic voluptas inventore, consectetur aut eaque qui et voluptatum sapiente! Enim, eos impedit modi sint aut deleniti mollitia cumque. Delectus debitis nam minima repellat. Qui nihil, veniam quo optio culpa recusandae ducimus harum nam. Totam, nostrum non.</p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">View</a>
+        </li>
+    </ul>
+    <ul class="port">
+        <li><img src="img.jpg" class="img" /></li>
+        <li>
+            <p class="head">Heading here</p>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe sed incidunt ipsa deleniti hic voluptas inventore, consectetur aut eaque qui et voluptatum sapiente! Enim, eos impedit modi sint aut deleniti mollitia cumque. Delectus debitis nam minima repellat. Qui nihil, veniam quo optio culpa recusandae ducimus harum nam. Totam, nostrum non.</p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">View</a>
+        </li>
+    </ul>
+    <ul class="port">
+        <li><img src="img1.jpg" class="img" /></li>
+        <li>
+            <p class="head">Heading here</p>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe sed incidunt ipsa deleniti hic voluptas inventore, consectetur aut eaque qui et voluptatum sapiente! Enim, eos impedit modi sint aut deleniti mollitia cumque. Delectus debitis nam minima repellat. Qui nihil, veniam quo optio culpa recusandae ducimus harum nam. Totam, nostrum non.</p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">View</a>
+        </li>
+    </ul>
+    <ul class="port">
+        <li><img src="img.jpg" class="img" /></li>
+        <li>
+            <p class="head">Heading here</p>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe sed incidunt ipsa deleniti hic voluptas inventore, consectetur aut eaque qui et voluptatum sapiente! Enim, eos impedit modi sint aut deleniti mollitia cumque. Delectus debitis nam minima repellat. Qui nihil, veniam quo optio culpa recusandae ducimus harum nam. Totam, nostrum non.</p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">View</a>
+        </li>
+    </ul>
+</div><!--portfolio_area-->
+<script type="text/javascript">
+    // var a = document.querySelectorAll(".portfolio_area > ul > li > a");
+    // console.log(a);
+    
+    // for(var i = 0; i < a.length; i++){
+    //     a[i].addEventListener("click", function(){
+            
+    //         this.closest('ul').classList.add("active");
+    //         this.closest('ul').previousElementSibling.classList.remove("active");
+    //         this.closest('ul').nextElementSibling.classList.remove("active");
+    //     });
+    // }
+    
+    
+    // other short and good method
+    // const link = document.querySelectorAll(".portfolio_area > ul > li > a");
+    // // link[0].closest("ul").classList.add("active");
+    // link.forEach(function(e){
+    //     e.addEventListener("click", () => {
+    //         if (e.closest("ul").classList.contains("active")) {
+    //             e.closest("ul").classList.remove("active");
+    //         } else {
+    //         const active = document.querySelectorAll(".active");
+    //         active.forEach((ulactive) => {
+    //             ulactive.closest("ul").classList.remove("active");
+    //         });
+    //         e.closest("ul").classList.add("active");
+    //         }
+    //     });
+    // });  
+    
+    
+
+
+    const link = document.querySelectorAll(".portfolio_area > ul > li > a");
+    //link[0].closest("ul").classList.add("active");
+    for (var i = 0; i < link.length; i++){
+        link[i].addEventListener("click", function () {
+            if (this.closest("ul").classList.contains("active")){
+                //this.closest("ul").classList.add("active");
+                this.closest("ul").classList.remove("active");
+            } else {
+                const active = document.querySelectorAll(".portfolio_area > ul.active");
+                for (var j = 0; j < active.length; j++){
+                    active[j].classList.remove("active");
+                }
+                this.closest("ul").classList.add("active");
+            }
+        });
+    } 
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jQuery exzoom: Product Carousel Example</title>
+<link href="" rel="stylesheet" type="text/css">
+    <!--<script src="js/jquery-1.9.1.min.js"></script>-->
+    
+    <link href="jquery.exzoom.css" rel="stylesheet" type="text/css"/>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+    #exzoom {
+        width: 400px;
+        /*height: 400px;*/
+    }
+    
+    .hidden { display: none; }
+</style>
+</head>
+
+<body>
+<div class="exzoom hidden" id="exzoom">
+    <div class="exzoom_img_box">
+        <ul class='exzoom_img_ul'>
+            <li><img src="1.jpg"/></li>
+            <li><img src="2.jpg"/></li>
+            <li><img src="3.jpg"/></li>
+            <li><img src="4.jpg"/></li>
+            <li><img src="5.jpg"/></li>
+            <li><img src="6.jpg"/></li>
+            <li><img src="7.jpg"/></li>
+            <li><img src="8.jpg"/></li>
+        </ul>
+    </div>
+    <div class="exzoom_nav"></div>
+    <p class="exzoom_btn">
+        <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a>
+        <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+    </p>
+</div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <script src="jquery.exzoom.js"></script>
+<script type="text/javascript">
+
+    $('body').imagesLoaded( function() {
+  $("#exzoom").exzoom({
+        autoPlay: false,
+    });
+  $("#exzoom").removeClass('hidden')
+});
+
+</script>
+    
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        div{margin-bottom:30px;}
+        .active{background: red;color:white;}
+        .border{border:2px solid black;}
+    </style>
+</head>
+<body>
+    <div data-style>Data Style</div>
+    <div data-demo class="lorem">Data Demo</div>
+    <div data-style>Data Style</div>
+    <div data-demo class="lorem">Data Demo</div>
+
+    <script>
+        var elements = document.querySelectorAll("div");
+        elements.forEach(function(e){
+            if(e.hasAttribute("data-style")){
+                e.classList.add("active");
+            }
+            if(e.dataset){
+                e.classList.add("border");
+            }
+        });
+    </script>
+</body>
+</html>

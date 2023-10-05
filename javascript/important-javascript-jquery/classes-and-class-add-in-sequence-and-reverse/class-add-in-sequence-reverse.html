@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        ul.js > li[class*="li-"]{color:blue;}
+    </style>
+</head>
+<body>
+    <ul class="js">
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+    </ul>
+
+    
+    <script>
+		var ul = document.querySelector("ul.js");
+        var li = ul.querySelectorAll("li");
+        var totalLi = li.length;
+        
+        for(var i = 0; i < totalLi; i++){
+            li[i].getElementsByTagName("span")[0].innerText = i + 1;
+        }
+        
+        
+        
+        li.forEach(function(c){
+            if(totalLi > 0){
+               var revShow = totalLi--;
+            }
+            //c.setAttribute("class", "li-" + revShow);
+            c.classList.add("li-" + revShow);
+        });
+  </script>
+</body>
+</html>

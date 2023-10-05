@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Anonymous Function or Function Expression</h1>
+    <script>
+        let greet = function() {
+            document.write('Hi, there.');
+        }
+        greet();
+
+        document.write("<p>&nbsp;</p>");
+
+        // Function Expression
+        const add = function(a, b) {
+            document.write(a+b);
+        } 
+        // Calling function
+        add(2, 3);
+
+        document.write("<p>&nbsp;</p>");
+
+        // Single line of code
+        let add1 = (a, b) => a + b; 
+        document.write(add1(7, 8));
+    </script>
+</body>
+</html>

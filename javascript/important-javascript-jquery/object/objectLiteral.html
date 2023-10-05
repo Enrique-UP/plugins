@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // program to create JavaScript object using object literal
+const person = { 
+    name: 'John',
+    age: 20,
+    hobbies: ['reading', 'games', 'coding'],
+    greet: function() {
+        document.write('Hello everyone.');
+    },
+    score: {
+        maths: 90,
+        science: 80
+    }
+};
+
+document.write(typeof person); // object
+document.write("<br />");
+// accessing the object value
+document.write(person.name);
+document.write("<br />");
+document.write(person.hobbies[0]);
+document.write("<br />");
+person.greet();
+document.write("<br />");
+document.write(person.score.maths);
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Custom Nagivation Bar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="responsive-grid.css" type="text/css" />
+    <link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        body{font-family: Arial;font-size: 14px;}
+        .navigation_bar_area{width:100%;float:left;background: #333;padding:0;}
+        .navigation_bar_area .menu_text{width:100%;float:left;margin:0;padding:0 0 15px;border-bottom:1px solid #fff;display: none;}
+        .navigation_bar_area .menu_text > li{width:50%;float:left;list-style: none;}
+        .navigation_bar_area .menu_text > li.text{font-weight: bold;font-size: 18px;color:#fff;padding-top: 8px;}
+        .navigation_bar_area .menu_text > li .menu{width:38px;float:right;border:1px solid #fff;padding:10px 7px 5px;cursor: pointer;}
+        .navigation_bar_area .menu_text > li .menu > span{width:100%;float:left;height: 2px;background: #fff;margin-bottom: 5px;}
+        
+        .navigation_bar_area .navigation_bar{width:100%;float:left;padding:15px 0 0;margin:0;}
+        .navigation_bar_area .navigation_bar > li{width:auto;float:left;list-style: none;margin-right: 30px;position: relative;}
+        .navigation_bar_area .navigation_bar > li:nth-last-child(2){margin-right: 0;}
+        .navigation_bar_area .navigation_bar > li > a{display: block;color:#fff;text-decoration: none;font-weight: bold;padding-bottom: 15px;}
+        .navigation_bar_area .navigation_bar > li > a .fa{font-size: 10px;}
+        .navigation_bar_area .navigation_bar > li:hover > a{color:cyan;}
+        .navigation_bar_area .navigation_bar > li > a .fa-minus{width:0;height:0;visibility: hidden;}
+        .navigation_bar_area .navigation_bar > li:hover > a .fa-minus{width:auto;height:auto;visibility: visible;}
+        .navigation_bar_area .navigation_bar > li:hover > a .fa-plus{width:0;height:0;visibility: hidden;}
+        .navigation_bar_area .navigation_bar > li:hover > a .fa-minus{width:auto;height:auto;visibility: visible;}
+        .navigation_bar_area .navigation_bar > li > ul{width:200px;position: absolute;top:100%;left:0;background: #222;padding:0;margin:0;height: 0;visibility: hidden;z-index: 1;}
+        .navigation_bar_area .navigation_bar > li:hover > ul{height: auto;visibility: visible;}
+        .navigation_bar_area .navigation_bar > li > ul > li{width:100%;float:left;list-style: none;border-bottom:1px solid #fff;}
+        .navigation_bar_area .navigation_bar > li > ul > li:nth-last-child(2){border-bottom: none;}
+        .navigation_bar_area .navigation_bar > li > ul > li > a{width:100%;float:left;padding:10px 15px;color:#fff;text-decoration: none;}
+        @media (max-width:767px)
+        {
+            .navigation_bar_area{padding-top:15px;}
+            .navigation_bar_area .menu_text{display: block;border-bottom:none;}
+            .navigation_bar_area .navigation_bar{padding:0;height: 0;visibility: hidden;}
+            .navigation_bar_area .navigation_bar > li{width:100%;margin:0;}
+            .navigation_bar_area .navigation_bar > li{border-bottom:1px solid #fff;padding-top:10px;}
+            .navigation_bar_area .navigation_bar > li:nth-last-child(2){border-bottom:none;}
+            .navigation_bar_area .navigation_bar > li > ul{width:100%;position: static;float:left;}
+            .navigation_bar_area .navigation_bar > li:hover > ul{margin-bottom: 10px;}
+            .navigation_bar_area .navigation_bar.active{height: auto;visibility: visible;border-top:1px solid #fff;}
+        }
+    </style>
+</head>
+<body>
+<div class="navigation_bar_area">
+    <div class="c-container">
+        <div class="c-row">
+            <div class="col-lg-c12">
+                <ul class="menu_text">
+                    <li class="text">Menu</li>
+                    <li>
+                        <div class="menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!--menu-->
+                    </li>
+                </ul>
+                <ul class="navigation_bar">
+                    <li><a href="javascript:;">Home</a></li>
+                    <li><a href="javascript:;">About Us</a></li>
+                    <li>
+                        <a href="javascript:;">Services <i class="fa fa-plus"></i><i class="fa fa-minus"></i></a>
+                        <ul>
+                            <li><a href="javascript:;">Services One</a></li>
+                            <li><a href="javascript:;">Services Two</a></li>
+                            <li><a href="javascript:;">Services Three</a></li>
+                            <li><a href="javascript:;">Services Four</a></li>
+                            <div class="clear"></div><!--clear-->
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">Blogs <i class="fa fa-plus"></i><i class="fa fa-minus"></i></a>
+                        <ul>
+                            <li><a href="javascript:;">Blog One</a></li>
+                            <li><a href="javascript:;">Blog Two</a></li>
+                            <li><a href="javascript:;">Blog Three</a></li>
+                            <li><a href="javascript:;">Blog Four</a></li>
+                            <div class="clear"></div><!--clear-->
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">Contact Us</a></li>
+                    <div class="clear"></div><!--clear-->
+                </ul>
+            </div><!--cols-->
+        </div><!--c-row-->
+    </div><!--c-container-->
+</div><!--navigation_bar_area-->
+<script src="./jquery-2.2.4.min.js"></script>        
+<script type="text/javascript">
+    $(document).ready(function(){
+         if ($(window).width() <= 767) {
+             $("ul.navigation_bar").addClass("mobile_nav");
+         }
+        else {
+            $("ul.navigation_bar").removeClass("mobile_nav");
+        };
+        $(window).on('resize',function(){
+            if ($(window).width() <= 767) {   
+                //location.reload();
+                $("ul.navigation_bar").addClass("mobile_nav");
+            }
+            else {  
+              $("ul.navigation_bar").removeClass("mobile_nav");
+            }
+        }); 
+
+        $(".navigation_bar_area .menu_text > li .menu").click(function(){
+            $(".navigation_bar_area .navigation_bar").toggleClass("active");
+        });
+    });
+</script>
+</body>
+</html>

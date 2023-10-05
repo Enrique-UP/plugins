@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <ul class="js_li">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<script>
+    (function(){
+        var span = document.createElement("li");
+        span.innerText = "Span Add in Bottom";
+        document.querySelector("ul.js_li").appendChild(span);
+
+        var span1 = document.createElement("li");
+        span1.innerText = "Span Add in Top";
+        document.querySelector("ul.js_li").insertBefore(span1, document.querySelector("ul.js_li").children[0]);
+
+
+        const liTag = document.createElement("li");
+        const liTagText = document.createTextNode("Water");
+        liTag.appendChild(liTagText);
+        const list = document.querySelector("ul.js_li");
+        list.insertBefore(liTag, list.children[0]);
+
+        var li = document.querySelectorAll("ul.js_li > li");
+        var a = 0;
+        li.forEach(function(e){
+            if(a < li.length){
+                a++;
+            }
+            e.innerText += a;
+        });
+    })();
+</script>
+</body>
+</html>

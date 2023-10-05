@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css-sass/grid.min.css" type="text/css" />
+    <style type="text/css">
+        main{width:100%;display: flex;flex-direction: column;overflow: hidden;}
+        main section{background: #eee;}
+        main section.left .text{padding-right: 15px;}
+        main section.right .text{padding-left: 15px;}
+        main section.right .container .row{flex-direction: row-reverse;}
+        main section .text{padding-top: 80px;padding-bottom: 70px;display: flex;flex-direction: column;}
+        main section .text h1{font-size: 50px;font-weight: 800;margin-bottom: 20px;line-height: 1.1;}
+        main section .text p{font-size: 16px;margin-bottom: 10px;}
+        main section .text p.btn{display: flex;margin-top: 10px;}
+        main section .text p.btn > a{background: brown;color:white;padding:10px 20px;text-decoration: none;font-weight: bold;}
+        main section img{display: flex;width:100%;max-width:none;flex-shrink: 0;height: 100%;object-fit: cover;}
+        section .container .row [class*="col-"]{margin-bottom: 0;display: flex;align-items: center;}
+
+        @media (min-width:768px) and (max-width:991px){
+            main section .text {padding-top: 60px;padding-bottom: 50px;}
+            main section .text h1 {font-size: 40px;}
+            main section .text p{font-size: 14px;text-align: justify;}
+        }
+        @media (max-width:767px){
+            main section .text {padding-top: 50px;padding-bottom: 40px;}
+            main section .text h1 {font-size: 36px;}
+            main section .text p{font-size: 14px;text-align: justify;}
+            main section.right .text{padding-left: 0;}
+            main section.left .text{padding-right: 0;}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quas labore doloribus fuga corporis eos nisi vel aperiam voluptatibus? Molestias commodi consequatur suscipit autem esse corporis ipsum, nemo ipsam facilis maxime sequi atque reiciendis magni eligendi id iste culpa neque blanditiis unde. Asperiores architecto molestias corporis sit! Iste, perspiciatis adipisci.</p>
+                            <p class="btn"><a href="javascript:;">View more</a></p>
+                        </div><!--text-->
+                    </div><!--cols-->
+                    <div class="col-xs-12 col-md-6 image">
+                        <img src="../../owl-carousel/images/1.jpg" />
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+        <section class="right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quas labore doloribus fuga corporis eos nisi vel aperiam voluptatibus? Molestias commodi consequatur suscipit autem esse corporis ipsum, nemo ipsam facilis maxime sequi atque reiciendis magni eligendi id iste culpa neque blanditiis unde. Asperiores architecto molestias corporis sit! Iste, perspiciatis adipisci.</p>
+                            <p class="btn"><a href="javascript:;">View more</a></p>
+                        </div><!--text-->
+                    </div><!--cols-->
+                    <div class="col-xs-12 col-md-6 image">
+                        <img src="../../owl-carousel/images/2.jpg" />
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+        <section class="left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quas labore doloribus fuga corporis eos nisi vel aperiam voluptatibus? Molestias commodi consequatur suscipit autem esse corporis ipsum, nemo ipsam facilis maxime sequi atque reiciendis magni eligendi id iste culpa neque blanditiis unde. Asperiores architecto molestias corporis sit! Iste, perspiciatis adipisci.</p>
+                            <p class="btn"><a href="javascript:;">View more</a></p>
+                        </div><!--text-->
+                    </div><!--cols-->
+                    <div class="col-xs-12 col-md-6 image">
+                        <img src="../../owl-carousel/images/3.jpg" />
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+        <section class="right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quas labore doloribus fuga corporis eos nisi vel aperiam voluptatibus? Molestias commodi consequatur suscipit autem esse corporis ipsum, nemo ipsam facilis maxime sequi atque reiciendis magni eligendi id iste culpa neque blanditiis unde. Asperiores architecto molestias corporis sit! Iste, perspiciatis adipisci.</p>
+                            <p class="btn"><a href="javascript:;">View more</a></p>
+                        </div><!--text-->
+                    </div><!--cols-->
+                    <div class="col-xs-12 col-md-6 image">
+                        <img src="../../owl-carousel/images/1.jpg" />
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+    </main>
+
+    <script src="../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        function images(){
+            var windowWidth = $(window).width();
+            windowWidth = parseFloat(windowWidth);
+            console.log("windowWidth = " + windowWidth);
+            
+            var containerWidth = $("main .container").width();
+            containerWidth = parseFloat(containerWidth);
+            console.log("containerWidth = " + containerWidth);
+
+            var colWidth = $("main section .container .row [class*='col-']").width();
+            colWidth = parseFloat(colWidth);
+            console.log("colWidth = " + colWidth);
+
+            var colPadding = $("main section .container .row [class*='col-']").css("padding-left").replace("px", "");
+            colPadding = parseFloat(colPadding);
+            console.log("colPadding = " + colPadding);
+
+            var totalSpace = windowWidth - containerWidth;
+            totalSpace = parseFloat(totalSpace);
+            console.log("totalSpace = " + totalSpace);
+
+            var space = totalSpace/2;
+            space = parseFloat(space);
+            console.log("space = " + space);
+
+            if(windowWidth >= 768){
+                $("main section img").width(colWidth + space + colPadding);
+                $("main section.left img").css("margin-left", -colPadding);
+                $("main section.right img").css("margin-left", -space);
+            }else{
+                $("main section img").width(windowWidth);
+                $("main section img").css("margin-left", -space);
+            }
+        }
+        $(window).on("load", images());
+        $(window).on("resize", images);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div class="demoClass" id="demoId" data-s-no="Serial Number" data-style="color:red;" data-src="background-image:url(./demo.jpg)">Demo Element</div>
+
+    <script>
+        var element = document.querySelector(".demoClass");
+        element.dataset.classActive = "active";
+        console.log(element.dataset.sNo);
+                
+        let text = "";
+        // created object
+        text = {...element.dataset};
+        console.log(text);
+        // console.log(text.sNo);
+        // console.log(text.src);
+
+        // object showed in html
+        document.write(JSON.stringify(text));
+        document.write("<br>");
+        document.write(Object.keys(text));
+        document.write("<br>");
+        document.write(Object.values(text));
+        // console.log(Object.keys(text));
+
+        let arr = Object.keys(text);
+        console.log(arr);
+        
+        let text1 = "";
+        var a = 0;
+        for(let i in element.dataset){
+            var text2 = arr[a];
+            var result = text2.replace(/([A-Z])/g, " $1");
+            result = result.toLowerCase();
+            result = result.split(' ').join('-');
+
+            text1 += "<b>" + "data-" + result + "</b>" + " - " + element.dataset[i] + "<br>";
+            a++;
+        }
+        document.write("<br><br>" + text1);
+    </script>
+</body>
+</html>

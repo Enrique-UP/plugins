@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 500px;
+            height: 500px;
+            background: brown;
+            color: white;
+            margin: 100px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click Outside the Image to hide it!</h1>
+    <h3>Comment two js then check.</h3>
+    <div class="box">Box</div>
+    <img src="../../banner1.jpg" />
+    <div class="box1">Box1</div>
+
+
+    <script>
+        const box = document.querySelector(".box");
+        box.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+        document.addEventListener("click", function () {
+            box.style.display = "none";
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const img = document.querySelector('img');
+            if (!img.contains(e.target)) {
+                img.style.display = 'none';
+            }
+        });        
+    </script>
+
+
+
+    <script>
+        window.onload = function(){
+            const box1 = document.querySelector('.box1');
+            document.onclick = function(e){
+                if(e.target.className !== 'box1'){
+                    box1.style.display = 'none';
+                }
+            };
+        };
+    </script>
+</body>
+
+</html>

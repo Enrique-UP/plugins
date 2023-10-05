@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+   * {
+      box-sizing: border-box;
+   }
+   /* Slideshow container */
+.container 
+{
+  max-width: 80%;
+  position: relative;
+  margin:80px 200px 80px 200px;
+}
+
+/* Next & previous buttons */
+.prev, .next 
+{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 20px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    border-radius: 0 8px 8px 0;
+    user-select: none;
+    display: inline-block;  
+    border:none; 
+    font-family:"Book Antiqua";
+    transition: all 0.5s;
+  }
+
+  /* Position the "next button" to the right */
+  .next 
+  {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover 
+  {
+    background-color: rgba(0,0,0,0.8);
+  }
+</style>
+</head>
+<body>
+   <div class="container">
+      <img id="slider" src="../../../owl-carousel/owl-carosel-thumbs-with-scroll/images/1.jpg" width="100%" />
+    </div>
+
+<script src="./images.js"></script>
+<script>
+   var num = 0;
+   var slider = document.getElementById('slider');
+   function next()
+   {
+      num++;
+      if(num >= images.length){
+         num = 0;
+      }
+      slider.src = images[num];
+   }
+
+   function previous()
+   {
+      num--;
+      if(num < 0){
+         num = images.length - 1;
+      }
+      slider.src = images[num];
+   }
+</script>
+</body>
+</html>

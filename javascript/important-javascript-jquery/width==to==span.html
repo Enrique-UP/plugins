@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style type="text/css">
+    *{padding: 0;margin:0;box-sizing: border-box;}
+    body{font-family: sans-serif;}
+    .demo{max-width: 300px;overflow: auto;margin: auto;border:1px solid #ccc;width:1600px;}
+    .demo .parent{width:1000px;float:left;height: 1px;}
+    .demo > span{float:left;background: #ccc;padding:5px 10px;width:200px;}
+    
+</style>
+<div id="demo" class="demo">
+    <span>Box 1</span>    
+    <span>Box 2</span>
+    <span>Box 3</span>    
+    <span>Box 4</span>
+    <span>Box 5</span>    
+    <span>Box 6</span>
+    <span>Box 7</span>    
+    <span>Box 8</span>
+    <span>Box 9</span>    
+    <span>Box 10</span>
+</div><!--demo-->
+
+<script>
+var demoWidth = document.getElementById("demo").offsetWidth;
+var demoHeight = document.getElementById("demo").offsetHeight;
+console.log("Width = " + demoWidth + "px" + " And " + "Height = " + demoHeight + "px");
+    
+var totalSpan = document.getElementById("demo").children.length;
+console.log("Total children (span) = " + totalSpan);
+
+var span = document.getElementById("demo").children;
+var totalWidthSpan = 0;
+for(var i = 0; i < totalSpan; i++){
+    totalWidthSpan += span[i].offsetWidth;
+}
+console.log(totalWidthSpan);
+//$('#demo').css('width', totalWidthSpan);
+document.getElementById("demo").style.width = totalWidthSpan + 0 + "px";
+console.log(document.getElementById("demo").style.offsetWidth);
+</script>    
+</body>
+</html>
+
+
+
+
+
+

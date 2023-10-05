@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        window.location.host        www.example.com:8082
+        window.location.hostname    www.example.com
+        window.location.port        8082
+        window.location.protocol    http:
+        window.location.pathname    index.php
+        window.location.href        http://www.example.com:8082/index.php#tab2
+        window.location.hash        #tab2
+        window.location.search      ?foo=789
+        window.location.origin      https://example.com
+    </pre>
+    <script>
+        console.log(window.location.host + "host");
+        console.log(window.location.hostname + "hostname");
+        console.log(window.location.port + "port");
+        console.log(window.location.protocol + "protocol");
+        console.log(window.location.pathname + "pathname");
+        console.log(window.location.href + "href");
+        console.log(window.location.hash + "hash");
+        console.log(window.location.search + "search");
+        console.log(window.location.origin + "origin");
+
+        var path = window.location.pathname;
+    var page = path.split("/").pop();
+    console.log( page );
+    </script>
+
+    <script>
+        function func() {
+        var arr = ['GFG', 'gfg', 'g4g', 'GeeksforGeeks'];
+     
+        // Popping the last element from the array
+        console.log(arr.pop());
+    }
+    func();
+    </script>
+</body>
+</html>

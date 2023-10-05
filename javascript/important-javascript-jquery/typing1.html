@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var speed = 150;
+
+function typeWriter() {
+  if (i < 10) {
+    document.getElementById("demo").innerHTML += "<p>" + i + "</p>";
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+</body>
+</html>

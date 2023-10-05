@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        ul{display: flex;flex-direction: column;}
+        ul > li{display: flex;flex-direction: column;}
+        ul > li:not(:last-child){margin-bottom: 30px;}
+        ul > li > span{color:blue;text-decoration: underline;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+        <li>
+            <b></b>
+            <span></span>
+        </li>
+    </ul>
+    <script>
+        const data = [
+            {
+                head: "Head 1",
+                text: "Text 1",
+                link: "window.open('https://react.dev/')"
+            },
+            {
+                head: "Head 2",
+                text: "Text 2",
+                link: "window.open('https://react.dev/')"
+            },
+            {
+                head: "Head 3",
+                text: "Text 3",
+                link: "window.open('https://react.dev/')"
+            },
+            {
+                head: "Head 4",
+                text: "Text 4",
+                link: "window.open('https://react.dev/')"
+            },
+            {
+                head: "Head 5",
+                text: "Text 5",
+                link: "window.open('https://react.dev/')"
+            },
+            {
+                head: "Head 6",
+                text: "Text 6",
+                link: "window.open('https://react.dev/')"
+            }
+        ];
+        document.querySelectorAll("ul > li").forEach(function(e, index){
+            e.querySelector("b").innerHTML = data[index].head;
+            e.querySelector("span").innerHTML = data[index].text;
+            e.querySelector("span").setAttribute("onClick", data[index].link);
+        });
+    </script>
+</body>
+</html>

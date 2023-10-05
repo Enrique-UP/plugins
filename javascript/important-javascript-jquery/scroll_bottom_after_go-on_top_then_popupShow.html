@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        main{width:100%;display: flex;flex-direction: column;font-family: Arial, Helvetica, sans-serif;line-height: 1.7;}
+        main > *{display: flex;align-items: center;justify-content: center;}
+        main header{height:100px;background: #ccc;}
+        main .banner{height:500px;background: #eee;}
+        main aside{height: 1500px;background: lightcyan;}
+        main footer{height:400px;background: #ccc;}
+        main footer.active{background: lightseagreen;}
+    </style>
+</head>
+<body>
+    <main>
+        <header>Header</header>
+        <section class="banner">Banner</section>
+        <aside>Aside</aside>
+        <footer>Footer</footer>
+    </main>
+
+    <script>
+        function scroll(){
+            var scroll = document.documentElement.scrollTop;
+            //console.log("scroll = " + scroll);
+
+            var footer = document.querySelector("main footer");
+            var footerTop = footer.offsetTop;
+            //console.log("footerTop = " + footerTop);
+
+            var top = footerTop - footer.offsetHeight;
+            //console.log("top = " + top);
+
+            if(scroll >= top){
+                footer.classList.add("active");
+            }
+            if(footer.classList.contains("active") && scroll == 0){
+                footer.classList.remove("active");
+                confirm("Show");
+            }
+        }
+        // window.onload = function() {
+        //     function demo() {
+        //         confirm("Show");
+        //     }
+        //     setInterval(demo, 10000);
+        // }
+
+        // var demo = function () {
+        //     confirm("Show");
+        // }
+
+        function demo() {
+            confirm("Show");
+        }
+        setInterval(demo, 10000);
+        window.addEventListener("scroll", scroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        *{padding:0;margin: 0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+        section{width:50%;margin:50px auto 0;display: flex;flex-direction: column;}
+        .tabs{display: flex;justify-content: space-between;background: #ddd;}
+        .tabs > a{width:25%;text-align: center;padding:10px;text-decoration: none;font-weight: bold;font-size: 16px;color:#333;cursor: pointer;}
+        .tabs > a.active{background: red;color:white;}
+        .tabs > a:not(:last-child){border-right: 2px solid white;}
+        .tabsFields{display: flex;flex-direction: column;margin-top: 10px;border:1px solid #ccc;padding:10px;}
+        .tabsFields .tabsField{display: none;}
+        .tabsFields .tabsField.active{display: block;}
+    </style>
+</head>
+<body>
+    <section class="accordion">
+        <div class="tabs">
+            <a data-id="#one">Tab 1</a>
+            <a data-id="#two">Tab 2</a>
+            <a data-id="#three" class="active">Tab 3</a>
+            <a data-id="#four">Tab 4</a>
+        </div>
+        <!--tabs-->
+        <div class="tabsFields">
+            <div class="tabsField" id="one">Tab 1 Field</div><!--tabsField-->
+            <div class="tabsField" id="two">Tab 2 Field</div><!--tabsField-->
+            <div class="tabsField" id="three">Tab 3 Field</div><!--tabsField-->
+            <div class="tabsField" id="four">Tab 4 Field</div><!--tabsField-->
+        </div>
+        <!--tabsFields-->
+    </section>
+    
+    <script>
+        (function(){
+            document.querySelectorAll(".accordion .tabs > a.active").forEach(function(h){
+                document.querySelectorAll(h.getAttribute("data-id")).forEach(function(i){
+                    i.classList.add("active")
+                });
+            });
+            document.querySelectorAll(".accordion .tabs > a").forEach(function(e){
+                e.addEventListener("click", function(){
+                    
+                    e.closest(".accordion").querySelectorAll("a").forEach(function(g){
+                        g.classList.remove("active");
+                    });
+                    e.classList.add("active");
+
+
+                    e.closest(".accordion").querySelectorAll(".tabsField").forEach(function(g){
+                        g.classList.remove("active");
+                    });
+                    document.querySelectorAll(e.getAttribute("data-id")).forEach(function(f){
+                        f.classList.add("active");
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

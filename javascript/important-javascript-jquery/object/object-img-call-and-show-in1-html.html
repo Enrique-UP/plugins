@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="demo"></div><!--demo-->
+
+<script>
+let content = "<div class='container'>";
+const tags = [
+    {
+      text: "England"
+    },
+    {
+      text: "Sea"
+    },
+    {
+      text: "England"
+    },
+    {
+      text: "Sea"
+    },
+    {
+      text: "England"
+    },
+    {
+      text: "Sea"
+    }
+];
+var i = 0;
+tags.forEach(function(e) {
+  if(i < tags.length){
+      i++;
+  }
+  content += `
+    <div class="image_area">
+      <p><u><b>${i}:-</b></u> ${e.text}</p>
+    </div><!--image_area-->
+  `;
+});
+content += "</div><!--container-->";
+document.querySelector("div.demo").innerHTML = content;
+</script>
+</body>
+</html>

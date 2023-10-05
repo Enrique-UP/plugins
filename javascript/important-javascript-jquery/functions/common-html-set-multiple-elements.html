@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+
+    <script>
+        function ele(){
+            return `
+                <p>
+                    <b>Element</b>
+                    <i>Here...</i>
+                </p>
+            `
+        };
+        document.querySelector("#one").innerHTML = ele();
+        document.querySelector("#two").innerHTML = ele();
+        document.querySelector("#three").innerHTML = ele();
+    </script>
+</body>
+</html>

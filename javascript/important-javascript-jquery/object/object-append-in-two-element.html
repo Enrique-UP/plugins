@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+        ul{width:100%;display: flex;flex-direction: column;}
+        ul > li{padding:10px;color:white;}
+        .back-1{background: red;}
+        .back-2{background: green;}
+        .back-3{background: blue;}
+    </style>
+</head>
+<body>
+    <ul class="list-1"></ul>
+    <ul class="list-2"></ul>
+
+    <script>
+        function data(){
+            let wd = document || window;
+            let windowWidth = window.innerWidth;
+            console.log(windowWidth);
+            let ul1 = document.querySelector(".list-1");
+            let ul2 = document.querySelector(".list-2");
+            let ul1Text = "";
+            let ul2Text = "";
+            let texts = [
+                {text:"One"},
+                {text:"Two"},
+                {text:"Three"},
+                {text:"Four"},
+                {text:"Five"},
+                {text:"Six"},
+                {text:"Seven"},
+                {text:"Eight"},
+                {text:"Nine"},
+                {text:"Ten"},
+                {text:"Eleven"},
+                {text:"Twelve"},
+                {text:"Thirteen"},
+                {text:"Fourteen"},
+                {text:"Fifteen"}
+            ];
+            if(windowWidth >= 768){
+                var j = 5;
+                for(var i = 0; i < j; i++){
+                    ul1Text += "<li>" + texts[i].text + "</li>";
+                }
+                ul1.innerHTML = ul1Text;
+                for(var i = j; i < texts.length; i++){
+                    ul2Text += "<li>" + texts[i].text + "</li>";
+                }
+                ul2.innerHTML = ul2Text;
+                ul2.style.display = "block";
+            }else{
+                for(var i = 0; i < texts.length; i++){
+                    ul1Text += "<li>" + texts[i].text + "</li>";
+                }
+                ul1.innerHTML = ul1Text;
+                ul2.style.display = "none";
+            }
+
+            let li = document.querySelectorAll("li");
+            let k = 1;
+            for(let x of li){
+                if(k == 4){
+                    k = 1;
+                }
+                x.classList.add("back-" + k);
+                k++;
+            }
+        };
+        window.addEventListener("load", data);
+        window.addEventListener("resize", data);
+    </script>
+</body>
+</html>

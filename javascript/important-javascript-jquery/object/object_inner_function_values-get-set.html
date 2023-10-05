@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        (function(){
+            let object = {
+                //funcValue: func(a),
+                name : "DemoName",
+                class : "8th",
+                rollNo : 20,
+                sub: "English, Hindi, Maths, Science",
+                subjects: ["English", "Hindi", "Maths", "Science"],
+                func: function(){
+                    document.write("1- My name is <b><u>" + this.name + "</u></b>. I am class <b><u>" + this.class + "</u></b> student.");
+                },
+                func1: function(){
+                    var e = 100;
+                    var c = `2- My name is <b><u>${this.name}</u></b>. I am class <b><u>${this.class}</u></b> student.`;
+                    var d = "3- My name is <b><u>" + this.name + "</u></b>. I am class <b><u>" + this.class + "</u></b> student.";
+                    //console.log(c);
+                    // the console does not read the tags.
+                    document.write(c + "<br>" + d + "<br><br>");
+                },
+                // vls: this.func1(),
+                // vls: this.func1,
+                // this can't work.
+
+            }
+            
+            
+            //document.write(object.funcValue + "<br /><br />");
+
+            document.write(object.name + "<br /><br />");
+
+            document.write(object.sub + "<br /><br />");
+
+            document.write(object.subjects[0] + "<br />");
+            document.write(object.subjects + "<br /><br />");
+
+            object.func();            
+
+            document.write("<br /><br />");
+            
+            object.func1();
+
+            document.write("<br /><br />");
+
+            //console.log(object.vls);
+
+            function demo(){
+                document.write(`4- My name is ${object.name}. I am class ${object.class} student.`);
+            }demo();
+
+        })();
+        
+        
+
+        (function(){
+            // for object values only
+            const object1 = {
+                a: 'somestring',
+                b: 42,
+                c: false
+            };
+            console.log(Object.values(object1));
+            // for object values only
+            console.log(Object.values("foo")); // ['f', 'o', 'o']
+            // Other primitives have no own properties
+            console.log(Object.values(100)); // []
+
+
+            var a = "Lorem ipsum dolor1";
+            console.log(a);
+
+            function demo1(){
+                var b = "Lorem ipsum dolor2";
+                console.log(b);
+            }
+            demo1();
+        })();
+    </script>
+</body>
+</html>

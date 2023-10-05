@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Starting</h1>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+
+    <h1>Add Ending</h1>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+    <div>Ipsum</div>
+
+    <script>
+        var p = document.querySelectorAll("p");
+        var text = "";
+        for(var i = 0; i < p.length; i++){
+            text = p[i].innerHTML;
+            p[i].innerHTML = i + " " + text;
+        }
+
+        var div = document.querySelectorAll("div");
+        for(var i = 0; i < div.length; i++){
+            div[i].innerHTML += " " + i;
+        }
+    </script>
+</body>
+</html>

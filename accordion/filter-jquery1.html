@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;}
+    body{padding:30px 30px 0;font-family: Arial, Helvetica, sans-serif;font-size:14px;}
+    .fw{width:100%;float:left;margin-bottom: 30px;}
+    .tabs{width:100%;float:left;padding:0;margin:0;}
+    .tabs > li{width:auto;float:left;list-style: none;border:1px solid #ccc;margin:0 5px 5px 0;padding:5px 15px;cursor: pointer;}
+    .tabs > li.active{background: #111;color:#fff;border-color:transparent;}
+
+    .field{width:100%;float:left;padding:0;margin:0;}
+    .field > li{width:auto;float:left;margin-right: 10px;list-style: none;background:#ddd;padding:5px;display: none;}
+    
+</style>
+</head>
+<body>
+<div class="fw">
+    <ul class="tabs">
+        <li data-tab="[data-field='1']" class="active">One</li>
+        <li data-tab="[data-field='2']">Two</li>
+        <li data-tab="[data-field='3']">Three</li>
+        <li data-tab="[data-field='4']">Four</li>
+        <li data-tab="[data-field='5']">Five</li>
+    </ul>
+    <ul class="field">
+        <li data-field="1">1</li>
+        <li data-field="2">2</li>
+        <li data-field="3">3</li>
+        <li data-field="4">4</li>
+        <li data-field="5">5</li>
+        <li data-field="1">1</li>
+        <li data-field="2">2</li>
+        <li data-field="3">3</li>
+        <li data-field="4">4</li>
+        <li data-field="5">5</li>
+    </ul>
+</div><!--fw-->
+<div class="fw">
+    <ul class="tabs">
+        <li data-tab="[data-field='6']" class="active">One</li>
+        <li data-tab="[data-field='7']">Two</li>
+        <li data-tab="[data-field='8']">Three</li>
+        <li data-tab="[data-field='9']">Four</li>
+        <li data-tab="[data-field='10']">Five</li>
+    </ul>
+    <ul class="field">
+        <li data-field="6">1</li>
+        <li data-field="7">2</li>
+        <li data-field="8">3</li>
+        <li data-field="9">4</li>
+        <li data-field="10">5</li>
+        <li data-field="6">1</li>
+        <li data-field="7">2</li>
+        <li data-field="8">3</li>
+        <li data-field="9">4</li>
+        <li data-field="10">5</li>
+    </ul>
+</div><!--fw-->
+
+    
+
+<script src="../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".fw .tabs > li.active").each(function(){
+      $($(this).attr("data-tab")).show(); 
+    });
+    $(".fw .tabs > li").on("click", function(){
+      $(this).addClass("active");
+      $(this).siblings().removeClass("active");
+
+      $(this).closest(".fw").find(".field > li").hide();
+      $($(this).attr("data-tab")).show();
+    });
+});
+</script>
+</body>
+</html>

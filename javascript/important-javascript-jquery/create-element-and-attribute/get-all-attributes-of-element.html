@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="myImg" alt="Flower" src="klematis.jpg" width="150" height="113">
+
+<script>
+const atbts = document.getElementById("myImg").attributes;
+let text = "";
+for (let i = 0; i < atbts.length; i++) {
+  text += atbts[i].name + " = " + atbts[i].value + "<br>";
+}
+document.write("<p></p>" + text);
+</script>
+
+</body>
+</html>

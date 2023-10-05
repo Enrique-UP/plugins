@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p class="demo"></p>
+<!-- 
+<script>
+  //useful script for future use
+const menu = [
+    {
+        name: "buttermilk pancakes",
+        category: "breakfast"
+    },
+    {
+        name: "diner double",
+        category: "lunch"
+    },
+    {
+        name: "godzilla milkshake",
+        category: "dinner"
+    },
+    {
+        name: "country delight",
+        category: "breakfast"
+    },
+    {
+        name: "egg attack",
+        category: "lunch"
+    }
+];
+
+</script> -->
+<script>
+// let text = "";
+// const fruits = ["apple", "orange", "cherry"];
+// fruits.forEach(myFunction);
+
+// document.getElementById("demo").innerHTML = text;
+ 
+// function myFunction(item, index) {
+//   text += index + ": " + item + "<br>"; 
+// }
+
+
+let text = "";
+const fruits = [
+  "../../owl-carousel/owl-carosel-active-class/images/slider/1.jpg",
+  "../../owl-carousel/owl-carosel-active-class/images/slider/2.jpg",
+  "../../owl-carousel/owl-carosel-active-class/images/slider/3.jpg",
+  "../../owl-carousel/owl-carosel-active-class/images/slider/4.jpg"
+];
+fruits.forEach(function(item) {
+  text += "<img src=" + item + ">"; 
+});
+document.querySelector("p.demo").innerHTML = text;
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../../../owl-carousel/owl-active-class-with-animation-many-slides/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../owl-carousel/owl-active-class-with-animation-many-slides/css/owl.carousel.css" />
+    <link rel="stylesheet" href="../../../owl-carousel/owl-active-class-with-animation-many-slides/css/owl.theme.default.min.css" />
+    <style type="text/css">
+        .sliders_area{padding:0 30px;}
+        .fw{width: 100%;display: flex;flex-direction: column;}
+        .fw span{padding:7px 10px;background:brown;color:white;}
+        @media (max-width:991px){
+            .sliders_area{padding:0 10px;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sliders_area one">
+        <div class="owl-carousel owl-theme owl-custom-arrow"></div><!--owl-carousel-->
+    </div><!--sliders_area-->
+
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script src="../../../owl-carousel/owl-active-class-with-animation-many-slides/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $owlCarousel = $(".one .owl-carousel").owlCarousel({
+                margin: 30,
+                nav: true,
+                autoplay:true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin:10
+                    },
+                    576: {
+                        items: 3,
+                        margin:10
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+            $owlCarousel.trigger("refresh.owl.carousel");
+        });
+    </script>
+    <script type="text/javascript">
+        const items = [
+            {
+                head: "Lorem 1",
+                img: "../../../owl-carousel/images/1.jpg"
+            },
+            {
+                head: "Lorem 2",
+                img: "../../../owl-carousel/images/2.jpg"
+            },
+            {
+                head: "Lorem 3",
+                img: "../../../owl-carousel/images/3.jpg"
+            },
+            {
+                head: "Lorem 1",
+                img: "../../../owl-carousel/images/1.jpg"
+            },
+            {
+                head: "Lorem 2",
+                img: "../../../owl-carousel/images/2.jpg"
+            },
+            {
+                head: "Lorem 3",
+                img: "../../../owl-carousel/images/3.jpg"
+            }
+        ];
+        items.forEach(function(e){
+            document.querySelector(".one .owl-carousel").innerHTML += `
+                <div class="item">
+                    <div class="fw">
+                        <img src=${e.img} />
+                        <span>${e.head}</span>
+                    </div><!--fw-->
+                </div><!--item-->
+            `;
+        });
+    </script>
+</body>
+</html>

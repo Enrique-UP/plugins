@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        ul.jq > li[class*="li-"]{color:brown;}
+        ul.js > li[class*="li-"]{color:blue;}
+    </style>
+</head>
+<body>
+    <h1>Check Inspect Element code</h1>
+    <ul class="jq">
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+    </ul>
+    <ul class="js">
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+        <li><span></span> Lorem</li>
+    </ul>
+
+    <ul class="js_li">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+    <script src="../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        var i = 0;
+        $('ul.jq').find('li').each(function(){
+            if(i < $("ul.jq > li").length){
+                i++;
+            }
+            // else{
+            //     i = 1;
+            // }
+            $(this).addClass('li-' + i);
+            $(this).find("span").text(i);
+        });
+    </script>
+	<script>
+		var li = document.querySelectorAll("ul.js > li");
+        for (var i = 0; i < li.length; i++){
+		  li[i].classList.add("li-" + i);
+		  //li[i].children[0].innerText = i;
+          li[i].getElementsByTagName("span")[0].innerText = i;
+		}
+  </script>
+  <script>
+    (function(){
+        var li = document.querySelectorAll("ul.js_li > li");
+        var a = 0;
+        li.forEach(function(e){
+            if(a < li.length){
+                a++;
+            }
+            e.innerText = a;
+        });
+    })();
+</script>
+</body>
+</html>

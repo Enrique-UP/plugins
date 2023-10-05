@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="style.css">    
+</head>
+<body>
+    <div class="main">
+        <div class="checkbox_label">
+            <label>
+                <input type="checkbox" name="filter" value="view_all" checked />
+                <span>View All</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" value="dark" />
+                <span>Dark</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" value="medium" />
+                <span>Medium</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" value="light" />
+                <span>Light</span>
+            </label>
+        </div><!--checkbox_label-->
+        <div class="checkbox_details">
+            <p class="dark view_all">
+                <img src="images/demo.jpg">
+                <span>Dark</span>
+            </p>
+            <p class="light view_all">
+                <img src="images/demo.jpg">
+                <span>Light</span>
+            </p>
+            <p class="medium view_all">
+                <img src="images/demo.jpg">
+                <span>Medium</span>
+            </p>
+            <p class="dark view_all">
+                <img src="images/demo.jpg">
+                <span>Dark</span>
+            </p>
+            <p class="light view_all">
+                <img src="images/demo.jpg">
+                <span>Light</span>
+            </p>
+            <p class="medium view_all">
+                <img src="images/demo.jpg">
+                <span>Medium</span>
+            </p>
+            <p class="dark view_all">
+                <img src="images/demo.jpg">
+                <span>Dark</span>
+            </p>
+            <p class="light view_all">
+                <img src="images/demo.jpg">
+                <span>Light</span>
+            </p>
+            <p class="medium view_all">
+                <img src="images/demo.jpg">
+                <span>Medium</span>
+            </p>
+            <p class="dark view_all">
+                <img src="images/demo.jpg">
+                <span>Dark</span>
+            </p>
+            <p class="light view_all">
+                <img src="images/demo.jpg">
+                <span>Light</span>
+            </p>
+            <p class="medium view_all">
+                <img src="images/demo.jpg">
+                <span>Medium</span>
+            </p>
+            <p class="dark view_all">
+                <img src="images/demo.jpg">
+                <span>Dark</span>
+            </p>
+            <p class="light view_all">
+                <img src="images/demo.jpg">
+                <span>Light</span>
+            </p>
+            <p class="medium view_all">
+                <img src="images/demo.jpg">
+                <span>Medium</span>
+            </p>
+        </div><!--checkbox_details-->
+        <div class="clear"></div><!--clear-->
+    </div><!--main-->
+<script src="../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$("div.main div.checkbox_label label :checkbox").click(function() {
+   $("div.main div.checkbox_details > *").hide();
+   $("div.main div.checkbox_label label :checkbox:checked").each(function() {
+       $("." + $(this).val()).fadeIn('slow');
+   });
+});
+</script>
+</body>
+</html>

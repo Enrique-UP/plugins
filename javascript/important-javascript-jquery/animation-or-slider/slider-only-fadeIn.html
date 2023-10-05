@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .slider{width:100%;overflow: hidden;}
+        .slider .slides{width: 100%;opacity: 0;height: 0;transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;}
+        .slider .slides > img{width:100%;}
+        .slider .slides.active{opacity: 1;height: auto;}
+    </style>
+</head>
+
+<body>
+    <section class="slider">
+        <div class="slides"><img src="../../../owl-carousel/owl-carosel-thumbs-with-scroll/images/1.jpg" /></div><!--slides-->
+        <div class="slides"><img src="../../../owl-carousel/owl-carosel-thumbs-with-scroll/images/2.jpg" /></div><!--slides-->
+        <div class="slides"><img src="../../../owl-carousel/owl-carosel-thumbs-with-scroll/images/3.jpg" /></div><!--slides-->
+    </section>
+    <script>
+        const slides = document.querySelectorAll(".slider .slides");
+        let i = 1;
+        slides[0].classList.add("active");
+        setInterval(function () {
+            slides.forEach((img, i) => {
+                img.classList.remove('active');
+            })
+            if (i == slides.length) {
+                i = 0;
+            }
+            slides[i].classList.add('active');
+            i++;
+        }, 3000);
+    </script>
+</body>
+
+</html>

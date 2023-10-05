@@ -1,0 +1,44 @@
+https://www.youtube.com/watch?v=14R1mI47SOc
+Mridul Srivastava tutorial
+
+
+
+
+
+01. Open folder in vs code =>
+02. Signin on github account =>
+03. Go to top right corner (or click on profile) on github =>
+04. Go to Your repositories =>
+05. click on new =>
+06. write repository name (demofiles) =>
+07. after that click on create repository =>
+08. copy url by ctrl + l =>
+
+09. Go to return vs code =>
+10. click on share icon top left sidebar =>
+11. initialize repository =>
+12. type message on top left sidebar (new changes) =>
+13. then click on check icon =>
+14. click on popup to yes =>
+15. click on three dots on top left =>
+16. click on pull, push =>
+17. push to =>
+18. add remote =>
+19. copied url paste on top header then press enter =>
+20. after that type remote name (demo) then press enter =>
+21. go to return three dots =>
+22. go to pull push =>
+23. then click on push to =>
+24. go to top header and click =>
+25. click on already copied link =>
+Done.
+
+
+
+How do we clone git to local.
+1. open vs code.
+2. copy folder url from git.
+3. click on share top left sidebar.
+4. click on clone repository.
+5. go to middle top header & paste url and select.
+6. choose folder then done.

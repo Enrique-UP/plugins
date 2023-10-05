@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{font-size: 18px;}
+    </style>
+</head>
+<body>
+    <pre>
+        JavaScript Array Methods and Properties
+        Name 	        Description
+        at() 	        Returns an indexed element of an array
+        concat() 	    Joins arrays and returns an array with the joined arrays
+        constructor 	Returns the function that created the Array object's prototype
+        copyWithin() 	Copies array elements within the array, to and from specified positions
+        entries() 	    Returns a key/value pair Array Iteration Object
+        every() 	    Checks if every element in an array pass a test
+        fill() 	        Fill the elements in an array with a static value
+        filter() 	    Creates a new array with every element in an array that pass a test
+        find() 	        Returns the value of the first element in an array that pass a test
+        findIndex() 	Returns the index of the first element in an array that pass a test
+        flat() 	        Concatenates sub-array elements
+        flatMap() 	    Maps all array elements and creates a new flat array
+        forEach() 	    Calls a function for each array element
+        from() 	        Creates an array from an object
+        includes() 	    Check if an array contains the specified element
+        indexOf() 	    Search the array for an element and returns its position
+        isArray() 	    Checks whether an object is an array
+        join() 	        Joins all elements of an array into a string
+        keys() 	        Returns a Array Iteration Object, containing the keys of the original array
+        lastIndexOf() 	Search the array for an element, starting at the end, and returns its position
+        length 	        Sets or returns the number of elements in an array
+        map() 	        Creates a new array with the result of calling a function for each array element
+        pop() 	        Removes the last element of an array, and returns that element
+        prototype 	    Allows you to add properties and methods to an Array object
+        push() 	        Adds new elements to the end of an array, and returns the new length
+        reduce() 	    Reduce the values of an array to a single value (going left-to-right)
+        reduceRight() 	Reduce the values of an array to a single value (going right-to-left)
+        reverse() 	    Reverses the order of the elements in an array
+        shift() 	    Removes the first element of an array, and returns that element
+        slice() 	    Selects a part of an array, and returns the new array
+        some() 	        Checks if any of the elements in an array pass a test
+        sort() 	        Sorts the elements of an array
+        splice() 	Adds/Removes elements from an array
+        toString() 	Converts an array to a string, and returns the result
+        unshift() 	Adds new elements to the beginning of an array, and returns the new length
+        valueOf() 	Returns the primitive value of an array
+    </pre>
+    <pre>===============================================================================================================================</pre>
+    <pre>
+        const a = ["One", "Two", "Three", "Four"];
+
+        document.querySelector(".demo").innerHTML += "<b>:-</b> " + a;
+        document.querySelector(".demo1").innerHTML += "<b>:-</b> " + a.length;
+        document.querySelector(".demo2").innerHTML += "<b>:-</b> " + a.toString();
+        document.querySelector(".demo3").innerHTML += "<b>:-</b> " + a.join(" - ");
+
+
+
+
+
+
+
+
+        document.querySelector(".demo4").innerHTML += "<b>:-</b> " + a.pop(); // get last value
+        const b = ["Five", "Six", "Seven", "Eight"];
+        b.pop(); // remove last value
+        document.querySelector(".demo5").innerHTML += "<b>:-</b> " + b;
+
+        const c = ["Nine", "Ten", "Eleven", "Twelve"];
+        c.push("Push1", "Push2");
+        document.querySelector(".demo6").innerHTML += "<b>:-</b> " + c;
+
+
+
+
+
+
+
+
+        document.querySelector(".demo7").innerHTML += "<b>:-</b> " + a.shift(); // get first value
+        const d = ["Nine", "Ten", "Eleven", "Twelve"];
+        d.shift(); // remove first value
+        document.querySelector(".demo8").innerHTML += "<b>:-</b> " + d;
+        
+        const e = [1,2,3,4];
+        e.unshift("Unshift"); // add first value
+        document.querySelector(".demo9").innerHTML += "<b>:-</b> " + e;
+
+
+
+
+
+
+        
+        e[0] = "Replace";
+        document.querySelector(".demo10").innerHTML += "<b>:-</b> " + e;
+
+        e[e.length] = "Add"; // add in last
+        document.querySelector(".demo11").innerHTML += "<b>:-</b> " + e;
+
+        delete e[0];
+        document.querySelector(".demo12").innerHTML += "<b>:-</b> " + e;
+
+
+
+
+
+
+
+        document.querySelector(".demo13").innerHTML += "<b>:-</b> " + b.concat(c, e);
+        document.querySelector(".demo14").innerHTML += "<b>:-</b> " + b.concat("Concat");
+
+
+
+
+
+
+
+
+        const f = [[1,2], [3,4], [5,6]];
+        f.flat();
+        document.querySelector(".demo15").innerHTML += "<b>:-</b> " + f;
+        const g = [1,2,3,4,5,6];
+        document.querySelector(".demo16").innerHTML += "<b>:-</b> " + g.flatMap((e) => e*2);
+
+        document.querySelector(".demo17").innerHTML += "<b>:-</b> " + g.map((e) => e/2);
+
+        var text1 = "";
+        [1,2,3,4,5,6].forEach(function(e){
+            text1 += "e -" + e + "<br>";
+        });
+        document.querySelector(".demo41").innerHTML = text1;
+
+
+
+
+
+
+
+
+        let h = ["One", "Two", "Three", "Four", "Five"];
+        document.querySelector(".demo18").innerHTML += "<b>:-</b> " + h.slice(2); // after index two get value
+        document.querySelector(".demo19").innerHTML += "<b>:-</b> " + h.slice(2,4); // after index two & till the four get value
+        document.querySelector(".demo20").innerHTML += "<b>:-</b> " + h.slice(-2); // get value last two
+        document.querySelector(".demo21").innerHTML += "<b>:-</b> " + h.slice(-4, -1); // get value 3rd from last to after last
+
+        h.splice(2,0, "Splice 1", "Splice 2"); // starting after 2 and delete none or 0
+        document.querySelector(".demo22").innerHTML += "<b>:-</b> " + h;
+        
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(1,2); // starting after 1 and delete 2
+        document.querySelector(".demo23").innerHTML += "<b>:-</b> " + h;
+
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(0,1); // starting after 0 and delete 1
+        document.querySelector(".demo24").innerHTML += "<b>:-</b> " + h;
+
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(0,0); // starting after 0 and delete 0
+        document.querySelector(".demo25").innerHTML += "<b>:-</b> " + h;
+
+        const ages0 = [3, 10, 18, 19, 20];
+        document.querySelector(".demo37").innerHTML += "<b>:-</b> " + ages0.fill("Kiwi", 2,4); // sets value after two to forth
+
+
+
+
+
+
+
+
+        document.querySelector(".demo26").innerHTML += "<b>:-</b> " + h.valueOf(); // returns the array itself
+        document.querySelector(".demo27").innerHTML += "<b>:-</b> " + h; // returns the array itself
+
+        const kys = h.keys();
+        let text = "";
+        for (let x of kys) {
+            text += x + "<br>";
+        }
+        document.querySelector(".demo28").innerHTML += "<b>:-</b> " + text;
+        console.log(text);
+
+
+
+
+
+
+
+
+        document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h.at(2);
+        //document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h[2];
+
+        const ages = [3, 10, 18, 19, 20];
+        document.querySelector(".demo30").innerHTML += "<b>:-</b> " + ages.findIndex(checkAge);
+        function checkAge(age) {
+            return age > 18;
+        }
+
+        const fruits = ["Apple", "Orange", "Grapes", "Apple", "Mango", "Banana"];
+        let index = fruits.lastIndexOf("Apple");
+        document.querySelector(".demo31").innerHTML += "<b>:-</b> " + index;
+
+        const fruits1 = ["Banana", "Orange", "Apple", "Mango"]; 
+        const frt = fruits1.entries(); // returns array with keys and values
+        for (let x of frt) {
+            document.querySelector(".demo43").innerHTML += x + "<br>";
+        }
+
+
+
+
+
+
+        
+
+        h = ["Banana", "Apple", "Cat", "Eye", "Dog"];
+        document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h.sort();
+        document.querySelector(".demo30").innerHTML += "<b>:-</b> " + h.reverse();
+
+        document.querySelector(".demo31").innerHTML += "<b>:-</b> " + ages.some(checkAge); // only one has or contains then answer will True, True/False
+        const ages1 = [10, 40, 58, 59, 65];
+        document.querySelector(".demo32").innerHTML += "<b>:-</b> " + ages1.every(checkAge); // all contains then answer will True, True/False
+        document.querySelector(".demo33").innerHTML += "<b>:-</b> " + ages1.includes(2); // has or contains then answer will True/False
+        // not confirm now see more examples
+        document.querySelector(".demo34").innerHTML += "<b>:-</b> " + ages1.includes(40, 1); // 40 is value and 1 is starting point answer will True otherwise False.
+
+
+
+
+
+
+        document.querySelector(".demo35").innerHTML += "<b>:-</b> " + ages1.filter(e => e > 18); // filtered all values
+        document.querySelector(".demo36").innerHTML += "<b>:-</b> " + ages1.find(e => e > 18); // filtered only first value
+
+
+        
+
+
+
+
+
+        const number = [200, 100, 25, 50, 5];
+        document.querySelector(".demo38").innerHTML += "<b>:-</b> " + number.reduce((a,b) => a-b);
+        document.querySelector(".demo39").innerHTML += "<b>:-</b> " + number.reduceRight((a,b) => a-b);
+
+
+
+
+
+
+
+
+        document.querySelector(".demo40").innerHTML += "<b>:-</b> " + Array.isArray(number);
+
+
+
+        
+
+
+
+        document.querySelector(".demo42").innerHTML += "<b>:-</b> " + Array.from("Number"); // string to convert array
+    </pre>
+    <pre>===============================================================================================================================</pre>
+    <pre>
+        <p class="demo"><b>demo</b></p>
+        <p class="demo1"><b>demo1</b></p>
+        <p class="demo2"><b>demo2</b></p>
+        <p class="demo3"><b>demo3</b></p>
+        <p class="demo4"><b>demo4</b></p>
+        <p class="demo5"><b>demo5</b></p>
+        <p class="demo6"><b>demo6</b></p>
+        <p class="demo7"><b>demo7</b></p>
+        <p class="demo8"><b>demo8</b></p>
+        <p class="demo9"><b>demo9</b></p>
+        <p class="demo10"><b>demo10</b></p>
+        <p class="demo11"><b>demo11</b></p>
+        <p class="demo12"><b>demo12</b></p>
+        <p class="demo13"><b>demo13</b></p>
+        <p class="demo14"><b>demo14</b></p>
+        <p class="demo15"><b>demo15</b></p>
+        <p class="demo16"><b>demo16</b></p>
+        <p class="demo17"><b>demo17</b></p>
+        <p class="demo18"><b>demo18</b></p>
+        <p class="demo19"><b>demo19</b></p>
+        <p class="demo20"><b>demo20</b></p>
+        <p class="demo21"><b>demo21</b></p>
+        <p class="demo22"><b>demo22</b></p>
+        <p class="demo23"><b>demo23</b></p>
+        <p class="demo24"><b>demo24</b></p>
+        <p class="demo25"><b>demo25</b></p>
+        <p class="demo26"><b>demo26</b></p>
+        <p class="demo27"><b>demo27</b></p>
+        <p class="demo28"><b>demo28</b></p>
+        <p class="demo29"><b>demo29</b></p>
+        <p class="demo30"><b>demo30</b></p>
+        <p class="demo31"><b>demo31</b></p>
+        <p class="demo32"><b>demo32</b></p>
+        <p class="demo33"><b>demo33</b></p>
+        <p class="demo34"><b>demo34</b></p>
+        <p class="demo35"><b>demo35</b></p>
+        <p class="demo36"><b>demo36</b></p>
+        <p class="demo37"><b>demo37</b></p>
+        <p class="demo38"><b>demo38</b></p>
+        <p class="demo39"><b>demo39</b></p>
+        <p class="demo40"><b>demo40</b></p>
+        <p class="demo41"><b>demo41</b></p>
+        <p class="demo42"><b>demo42</b></p>
+        <p class="demo43"><b>demo43</b></p>
+    </pre>
+    <script>
+        const a = ["One", "Two", "Three", "Four"];
+
+        document.querySelector(".demo").innerHTML += "<b>:-</b> " + a;
+        document.querySelector(".demo1").innerHTML += "<b>:-</b> " + a.length;
+        document.querySelector(".demo2").innerHTML += "<b>:-</b> " + a.toString();
+        document.querySelector(".demo3").innerHTML += "<b>:-</b> " + a.join(" - ");
+
+
+
+
+
+
+
+
+        document.querySelector(".demo4").innerHTML += "<b>:-</b> " + a.pop(); // get last value
+        const b = ["Five", "Six", "Seven", "Eight"];
+        b.pop(); // remove last value
+        document.querySelector(".demo5").innerHTML += "<b>:-</b> " + b;
+
+        const c = ["Nine", "Ten", "Eleven", "Twelve"];
+        c.push("Push1", "Push2");
+        document.querySelector(".demo6").innerHTML += "<b>:-</b> " + c;
+
+
+
+
+
+
+
+
+        document.querySelector(".demo7").innerHTML += "<b>:-</b> " + a.shift(); // get first value
+        const d = ["Nine", "Ten", "Eleven", "Twelve"];
+        d.shift(); // remove first value
+        document.querySelector(".demo8").innerHTML += "<b>:-</b> " + d;
+        
+        const e = [1,2,3,4];
+        e.unshift("Unshift"); // add first value
+        document.querySelector(".demo9").innerHTML += "<b>:-</b> " + e;
+
+
+
+
+
+
+        
+        e[0] = "Replace";
+        document.querySelector(".demo10").innerHTML += "<b>:-</b> " + e;
+
+        e[e.length] = "Add"; // add in last
+        document.querySelector(".demo11").innerHTML += "<b>:-</b> " + e;
+
+        delete e[0];
+        document.querySelector(".demo12").innerHTML += "<b>:-</b> " + e;
+
+
+
+
+
+
+
+        document.querySelector(".demo13").innerHTML += "<b>:-</b> " + b.concat(c, e);
+        document.querySelector(".demo14").innerHTML += "<b>:-</b> " + b.concat("Concat");
+
+
+
+
+
+
+
+
+        const f = [[1,2], [3,4], [5,6]];
+        f.flat();
+        document.querySelector(".demo15").innerHTML += "<b>:-</b> " + f;
+        const g = [1,2,3,4,5,6];
+        document.querySelector(".demo16").innerHTML += "<b>:-</b> " + g.flatMap((e) => e*2);
+
+        document.querySelector(".demo17").innerHTML += "<b>:-</b> " + g.map((e) => e/2);
+
+        var text1 = "";
+        [1,2,3,4,5,6].forEach(function(e){
+            text1 += "e -" + e + "<br>";
+        });
+        document.querySelector(".demo41").innerHTML = text1;
+
+
+
+
+
+
+
+
+        let h = ["One", "Two", "Three", "Four", "Five"];
+        document.querySelector(".demo18").innerHTML += "<b>:-</b> " + h.slice(2); // after index two get value
+        document.querySelector(".demo19").innerHTML += "<b>:-</b> " + h.slice(2,4); // after index two & till the four get value
+        document.querySelector(".demo20").innerHTML += "<b>:-</b> " + h.slice(-2); // get value last two
+        document.querySelector(".demo21").innerHTML += "<b>:-</b> " + h.slice(-4, -1); // get value 3rd from last to after last
+
+        h.splice(2,0, "Splice 1", "Splice 2"); // starting after 2 and delete none or 0
+        document.querySelector(".demo22").innerHTML += "<b>:-</b> " + h;
+        
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(1,2); // starting after 1 and delete 2
+        document.querySelector(".demo23").innerHTML += "<b>:-</b> " + h;
+
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(0,1); // starting after 0 and delete 1
+        document.querySelector(".demo24").innerHTML += "<b>:-</b> " + h;
+
+        h = ["One", "Two", "Three", "Four", "Five"];
+        h.splice(0,0); // starting after 0 and delete 0
+        document.querySelector(".demo25").innerHTML += "<b>:-</b> " + h;
+
+        const ages0 = [3, 10, 18, 19, 20];
+        document.querySelector(".demo37").innerHTML += "<b>:-</b> " + ages0.fill("Kiwi", 2,4); // sets value after two to forth
+
+
+
+
+
+
+
+
+        document.querySelector(".demo26").innerHTML += "<b>:-</b> " + h.valueOf(); // returns the array itself
+        document.querySelector(".demo27").innerHTML += "<b>:-</b> " + h; // returns the array itself
+
+        const kys = h.keys();
+        let text = "";
+        for (let x of kys) {
+            text += x + "<br>";
+        }
+        document.querySelector(".demo28").innerHTML += "<b>:-</b> " + text;
+        console.log(text);
+
+
+
+
+
+
+
+
+        document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h.at(2);
+        //document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h[2];
+
+        const ages = [3, 10, 18, 19, 20];
+        document.querySelector(".demo30").innerHTML += "<b>:-</b> " + ages.findIndex(checkAge);
+        function checkAge(age) {
+            return age > 18;
+        }
+
+        const fruits = ["Apple", "Orange", "Grapes", "Apple", "Mango", "Banana"];
+        let index = fruits.lastIndexOf("Apple");
+        document.querySelector(".demo31").innerHTML += "<b>:-</b> " + index;
+
+        const fruits1 = ["Banana", "Orange", "Apple", "Mango"]; 
+        const frt = fruits1.entries(); // returns array with keys and values
+        for (let x of frt) {
+            document.querySelector(".demo43").innerHTML += x + "<br>";
+        }
+
+
+
+
+
+
+        
+
+        h = ["Banana", "Apple", "Cat", "Eye", "Dog"];
+        document.querySelector(".demo29").innerHTML += "<b>:-</b> " + h.sort();
+        document.querySelector(".demo30").innerHTML += "<b>:-</b> " + h.reverse();
+
+        document.querySelector(".demo31").innerHTML += "<b>:-</b> " + ages.some(checkAge); // only one has or contains then answer will True, True/False
+        const ages1 = [10, 40, 58, 59, 65];
+        document.querySelector(".demo32").innerHTML += "<b>:-</b> " + ages1.every(checkAge); // all contains then answer will True, True/False
+        document.querySelector(".demo33").innerHTML += "<b>:-</b> " + ages1.includes(2); // has or contains then answer will True/False
+        // not confirm now see more examples
+        document.querySelector(".demo34").innerHTML += "<b>:-</b> " + ages1.includes(40, 1); // 40 is value and 1 is starting point answer will True otherwise False.
+
+
+
+
+
+
+        document.querySelector(".demo35").innerHTML += "<b>:-</b> " + ages1.filter(e => e > 18); // filtered all values
+        document.querySelector(".demo36").innerHTML += "<b>:-</b> " + ages1.find(e => e > 18); // filtered only first value
+
+
+        
+
+
+
+
+
+        const number = [200, 100, 25, 50, 5];
+        document.querySelector(".demo38").innerHTML += "<b>:-</b> " + number.reduce((a,b) => a-b);
+        document.querySelector(".demo39").innerHTML += "<b>:-</b> " + number.reduceRight((a,b) => a-b);
+
+
+
+
+
+
+
+
+        document.querySelector(".demo40").innerHTML += "<b>:-</b> " + Array.isArray(number);
+
+
+
+        
+
+
+
+        document.querySelector(".demo42").innerHTML += "<b>:-</b> " + Array.from("Number"); // string to convert array
+    </script>
+</body>
+</html>

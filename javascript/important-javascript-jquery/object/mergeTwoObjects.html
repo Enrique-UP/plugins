@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // program to merge property of two objects
+        // object 1
+        const person = {
+            name: 'Jack',
+            age:26
+        }
+
+        // object 2
+        const student = {
+            gender: 'male'
+        }
+
+        // merge two objects
+        const newObj = Object.assign(person, student);
+
+        console.log(newObj);
+    </script>
+</body>
+</html>

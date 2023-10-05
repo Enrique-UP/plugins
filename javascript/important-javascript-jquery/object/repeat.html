@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+	<style type="text/css">
+		*{padding:0;margin: 0;box-sizing: border-box;}
+		:root{
+			--color:#333;
+			--red:red;
+			--green:green;
+			--blue:blue;
+			--brown:brown;
+			--yellow:yellow;			
+			--silver:silver;
+			--orange:orange;
+		}
+		body{padding:30px;}
+		[class*="li-"]{padding:5px;}
+		ul > li{color:var(--color);}
+	</style>
+</head>
+<body>
+    <ul class="paras"></ul><!--paras-->
+
+	<script>
+        (function(){
+			//=================================================================================================
+			let para = "";
+			const paraData = [
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."}
+			];
+			for(var i = 0; i < paraData.length; i++){
+				para += `<li>${i} :- ${paraData[i].text}</li>`;
+			}
+			document.querySelector(".paras").innerHTML += para;
+			//=================================================================================================
+			var li = document.querySelectorAll(".paras li");
+			let classsData = [
+				{color : "var(--red)"},
+				{color : "var(--green)"},
+				{color : "var(--blue)"},
+			];
+			//=================================================================================================
+			var demo = "";
+			for(var m = 0; m < li.length; m++){
+				classsData.forEach(function(e){
+					demo = `<p>${e.color}</p>`;					
+					document.write(demo);
+				});	
+					
+			}			
+		})();		
+    </script>
+</body>
+</html>

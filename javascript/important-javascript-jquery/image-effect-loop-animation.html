@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            width: 100%;
+            float: left;
+        }
+
+        main>* {
+            width: 100%;
+            float: left;
+            position: relative;
+        }
+
+        main section.banner {
+            height: 100vh;
+            background: #333;
+        }
+
+        main section.banner .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        main section.banner .img > span {
+            position: relative;
+            width: 5vw;
+            height: 5vh;
+            background: #fff;
+            animation: animate 0.7s ease-in-out forwards;
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: scale(0) translateY(1000px);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(0.5) translateY(1000px);
+                background: url(./images/banner.jpg);
+                background-position:center;
+                background-attachment:fixed;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0px);
+                background: url(./images/banner.jpg);
+                background-position:center;
+                background-attachment:fixed;
+            }
+        }
+        main section.banner .img > span:nth-child(even) {
+            animation: animate 1s ease-in-out forwards;
+        }
+        main section.banner .img > span:nth-child(7n+3) {
+            animation: animate 2.5s ease-in-out forwards;
+        }
+        main section.banner .img > span:nth-child(7n+7) {
+            animation: animate 1.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="banner">
+            <div class="img">
+                <span class="span"></span>
+            </div>
+            <!--img-->
+        </section>
+    </main>
+    <script>
+        var banner = document.getElementsByClassName("img")[0];
+        var span = document.getElementsByClassName("span");
+        for (var i = 1; i <= 400; i++) {
+            banner.innerHTML += "<span class='span'></span>";
+            span[i].style.animationDelay = i * 0.01 + "s";
+        }
+    </script>
+</body>
+</html>

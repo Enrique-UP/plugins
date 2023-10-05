@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .active{color:red;}
+    </style>
+</head>
+<body>
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Active</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Active</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+    <hr>
+    <ul class="demo1">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="act active">Active</li>
+        <li>Neque</li>
+    </ul>
+    <ul class="demo1" id="siblings"></ul>
+    <hr>
+    
+    <script>
+        document.querySelectorAll(".demo").forEach(function(e){
+            //const allSiblings = Array.from(e.children).filter(e => e.classList.contains("active")); // returns all active siblings/elements
+            const allSiblings = Array.from(e.children).filter(e => !e.classList.contains("active")); // returns all unactive siblings/elements
+            console.log(allSiblings);
+            let li = "";
+            allSiblings.forEach((f, index) => {
+                f.classList.add(`c-${index + 1}`);
+                li += `${f.outerHTML}`;
+            });
+            e.innerHTML = li;
+        });
+    </script>
+    <!-- <script>
+        document.querySelectorAll(".demo").forEach(function(e){
+            e.querySelectorAll("li").forEach(function(f){
+                if(f.classList.contains("active")){
+                    f.remove();
+                }
+            });            
+        });
+    </script> -->
+
+    <script>
+        const selected = document.querySelector('.act');
+        const theSelectedSibling = document.querySelector('#siblings'); 
+        const allSiblings = Array.from(selected.parentElement.children).filter(sibling => sibling.className !== selected.className);
+        allSiblings.forEach(sibling => {
+            theSelectedSibling.innerHTML += `${sibling.outerHTML}`;
+        });
+    </script>
+</body>
+
+</html>

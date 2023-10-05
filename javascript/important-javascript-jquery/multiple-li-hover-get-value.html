@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Javascript</title>
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+body{font-family:Arial, Helvetica, sans-serif;padding-top:30px;padding-bottom:20px;}
+div{width:100%;float:left;margin-bottom:10px;padding:0 15px;}
+    ul{width:282px;float:left;margin-left:200px;font-size:14px;}
+    ul > li{width:40px;height:40px;line-height:40px;float:left;list-style: none;text-align: center;transition:0.3s linear;cursor: pointer;}
+    ul > li:hover, ul > li.active{background:orange;color:#fff;}
+</style>
+</head>
+<body>
+    <div>
+        <ul id="calendar">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+    </div>
+<input id="date" type="text" value="0">
+<script src="../../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$("#calendar > li").hover(function(){
+    var a = $(this).text();
+    $("#date").val(a);
+});
+$("#calendar > li").click(function(){
+    $(this).addClass("active");
+    var a = $(this).text();
+    $("#date").val(a);
+});
+</script>
+</body>
+</html>

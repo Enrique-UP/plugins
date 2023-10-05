@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .animate .odd, .animate .even{text-decoration: underline;}
+        .animate .odd{color:blue;}
+        .animate .even{color:aqua;}
+        .animate .odd > span{color:red;}
+        .animate .odd > b{color:green;}
+
+        .animate .even > span{color:green;}
+        .animate .even > b{color:red;}
+    </style>
+</head>
+<body>
+    <ul class="animate">
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+    </ul>
+    <ul class="animate">
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+    </ul>
+    <ul class="animate">
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+        <li><span>Lorem</span> <b>Ipsum</b></li>
+    </ul>
+    <script>
+        document.querySelectorAll(".animate").forEach(function(e){
+            //var cnt = "";
+            for(var i = 0; i < e.children.length; i++){
+                if(i % 2 === 0){
+                    //cnt += "<li class='odd'>" + "<u>Odd</u> " + e.children[i].innerHTML + "</li>";
+                    e.children[i].classList.add("odd");
+                    e.children[i].querySelector("span").classList.add("right");
+                    e.children[i].querySelector("b").classList.add("left");
+                }else{
+                    //cnt += "<li class='even'>" + "<u>Even</u> " + e.children[i].innerHTML + "</li>";
+                    e.children[i].classList.add("even");
+                    e.children[i].querySelector("span").classList.add("left");
+                    e.children[i].querySelector("b").classList.add("right");
+                }
+            }
+            //e.innerHTML = cnt;
+        });
+    </script>
+</body>
+</html>

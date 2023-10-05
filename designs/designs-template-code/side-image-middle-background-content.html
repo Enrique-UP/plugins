@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css-sass/grid.min.css" type="text/css" />
+    <style type="text/css">
+        body{background: #f1f1f1;}
+        main{width:100%;display: flex;flex-direction: column;overflow: hidden;}
+        main section{display: flex;}
+        main section ul{width:100%;display: flex;}
+        main section ul > li{list-style: none;display:flex;position: relative;}
+        main section ul > li .textRotate{position:absolute;right: -207px;transform: rotate(90deg);-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);font-size: 100px;font-weight: 800;line-height: 1;z-index: 1;color: white;text-stroke-width: 2px;-webkit-text-stroke-width: 2px;-moz-text-stroke-width: 2px;text-stroke-color: white;-webkit-text-stroke-color: white;-moz-text-stroke-color: white;text-fill-color: transparent;-webkit-text-fill-color: transparent;-moz-text-fill-color: transparent;}
+        main section ul > li > img{object-fit: cover;width:100%;}
+        main section ul > li:nth-child(odd){width:25%;}
+        main section ul > li:nth-child(even){width:50%;background: white;align-items: center;}
+        main section .text{padding-top: 80px;padding-bottom: 70px;display: flex;flex-direction: column;padding-left: 50px;padding-right: 50px;width: 100%;}
+        main section .text h1{font-size: 50px;font-weight: 800;margin-bottom: 20px;line-height: 1.1;}
+        main section .text p{font-size: 16px;margin-bottom: 10px;}
+        main section .text p.btn{display: flex;margin-top: 10px;}
+        main section .text p.btn > a{background: brown;color:white;padding:10px 20px;text-decoration: none;font-weight: bold;}
+        
+        @media (max-width:1199px){
+            main section ul{flex-wrap: wrap;background: white;}
+            main section ul > li:nth-child(1){order:2;width:50%;}
+            main section ul > li:nth-child(2){order:1;width:100%;}
+            main section ul > li:nth-child(3){order:3;width:50%;}
+            main section .text{margin: auto;}
+            main section ul > li .textRotate {right: 0;transform: rotate(0);-webkit-transform: rotate(0);-moz-transform: rotate(0);left: 0;margin: auto;text-align: center;bottom:0;text-stroke-color: black;-webkit-text-stroke-color: black;-moz-text-stroke-color: black;}
+        }
+        @media (min-width:992px) and (max-width:1199px){
+            main section .text{width:992px;}
+            main section ul > li .textRotate{bottom:-9px;}   
+        }
+        @media (min-width:768px) and (max-width:991px){
+            main section .text{width:768px;}
+            main section ul > li .textRotate{bottom:-9px;}   
+        }
+        @media (min-width:576px) and (max-width:1199px){
+            main section .text{padding-left: 15px;padding-right: 15px;}
+        }
+        @media (max-width:991px){
+            main section .text {padding-top: 60px;padding-bottom: 50px;}
+            main section .text h1 {font-size: 40px;}
+            main section .text p{font-size: 14px;text-align: justify;}
+        }
+        @media (min-width:576px) and (max-width:991px){
+            main section ul > li .textRotate{bottom:-7px;font-size: 80px;}
+        }
+        @media (max-width:575px){
+            main section .text{padding-left: 10px;padding-right: 10px;}
+            main section ul > li > img{min-height: 160px;}
+            main section ul > li .textRotate{bottom:-4px;font-size: 50px;text-stroke-width: 1px;-webkit-text-stroke-width: 1px;-moz-text-stroke-width: 1px;}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <ul>
+                <li><img src="../../owl-carousel/images/2.jpg" /></li>
+                <li>
+                    <div class="text">
+                        <h1>Lorem ipsum dolor</h1>
+                        <p>Omnis sequi atque consequuntur eligendi in nesciunt reiciendis repudiandae porro enim quibusdam! Enim modi facilis commodi ab natus labore minima sequi et reiciendis voluptas, ea ipsum veritatis sapiente quis? Est, ea aperiam! Voluptas veniam ex qui totam eius sapiente, tempora debitis? Minus dolores expedita recusandae inventore quod officia voluptates, eaque tempora, dolore laudantium quas hic magni, dolorem distinctio nulla velit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusantium praesentium minus non distinctio, commodi tenetur totam sapiente vel? Magni soluta, eligendi ratione voluptate nihil labore necessitatibus corrupti consequuntur iusto! Veniam, exercitationem similique. Itaque animi ipsa ipsum voluptates vero facere numquam laboriosam minus neque perferendis, accusamus dolore tempora, debitis quam at deserunt nemo asperiores qui deleniti optio.</p>
+                        <p class="btn"><a href="javascript:;">View more</a></p>
+                    </div><!--text-->
+                    <span class="textRotate">Travel</span>
+                </li>
+                <li><img src="../../owl-carousel/images/3.jpg" /></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- <script src="../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        function images(){
+            
+
+            // if(windowWidth >= 768){}else{}
+        }
+        $(window).on("load", images());
+        $(window).on("resize", images);
+    </script> -->
+</body>
+</html>

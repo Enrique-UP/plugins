@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing:border-box;}
+        main{width:100%;display: flex;flex-direction: column;font-family: Arial, Helvetica, sans-serif;}
+        main section{width:100%;}
+        main section.blank{background: #eee;height:1200px;}
+        main section .videoArea{width:50%;margin:80px auto;}
+        main section .videoArea iframe{width:100%;height:500px;}
+        main section .videoArea .btns{width:100%;display: none;justify-content: space-between;}
+        main section .videoArea .btns > a{background: brown;color:white;padding:10px 50px;cursor: pointer;}
+        main section.active .videoArea .btns{display: flex;}
+        @media (max-width:767px){
+            main section .videoArea{width:100%;}    
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="blank"></section>
+        <section class="video">
+            <div class="videoArea">
+                <iframe src="https://www.youtube.com/embed/wVnihPbNhNs?si=RnCjoWx2uGevnNZW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="btns">
+                    <a class="play">Play</a>
+                    <a class="stop">Stop</a>
+                </p>
+            </div>
+        </section>
+        <section class="blank"></section>
+        <section class="video">
+            <div class="videoArea">
+                <iframe src="https://www.youtube.com/embed/2jnyiq9-jPg?si=nos-HiC1dcsvlosh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="btns">
+                    <a class="play">Play</a>
+                    <a class="stop">Stop</a>
+                </p>
+            </div>
+        </section>
+        <section class="blank"></section>
+        <section class="video">
+            <div class="videoArea">
+                <iframe src="https://www.youtube.com/embed/lnrOls_gpr8?si=VTp_SobYKaM5uLDx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="btns">
+                    <a class="play">Play</a>
+                    <a class="stop">Stop</a>
+                </p>
+            </div>
+        </section>
+        <section class="blank"></section>
+    </main>
+
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("main section .videoArea iframe").each(function(){
+                var setLink = $(this).attr("src");
+                $(this).attr("data-src", setLink);
+            });
+            $("main section.video .videoArea .btns > a.play").click(function(){
+                var link = $(this).closest(".btns").siblings("iframe").attr("src");
+                $(this).closest(".btns").siblings("iframe").attr("src", link + "&autoplay=1");
+                
+                $(this).siblings("a.stop").click(function(){
+                    $(this).closest(".btns").siblings("iframe").attr("src", link);
+                });
+            });
+
+
+            function animation() {
+                console.clear();
+                
+                var scroll = $(window).scrollTop();
+
+                var box = $("main > section.video");
+                for(var i = 0; i < box.length; i++){
+                    if(scroll >= box[i].offsetTop + box[i].offsetHeight){
+                        box[i].classList.remove("active");
+
+                        box.each(function(){
+                            var dataSrc = $(this).find("iframe").attr("data-src");
+                            $(this).find("iframe").attr("src", dataSrc);
+                        });
+                    }
+                    else if(scroll >= box[i].offsetTop + box[i].offsetHeight - window.innerHeight){
+                        box[i].classList.add("active");
+                    }
+                    else if(scroll <= box[i].offsetTop + box[i].offsetHeight){
+                        var dataSrc = box[i].find("iframe").attr("data-src");
+                        box[i].find("iframe").attr("src", dataSrc);
+                    }
+                    // for the one time animation we can comment the else condition
+                    else{
+                        box[i].classList.remove("active");
+                    }
+                }
+            }
+            window.addEventListener("load", animation);
+            window.addEventListener("scroll", animation);
+            window.addEventListener("resize", animation);
+        });
+    </script>
+</body>
+</html>

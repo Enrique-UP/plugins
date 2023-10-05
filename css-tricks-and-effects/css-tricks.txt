@@ -1,0 +1,5 @@
+If the transition is woking only mouseIn and not working proper on mouseOut then apply transition on boty element and its hover;
+p a::before{transition:all 0.3s linear;transition-delay: 0s;}
+p a:hover::before{width:100%;transition-delay: 0.3s;}
+See buttons1.html
+===================================================================================================================================

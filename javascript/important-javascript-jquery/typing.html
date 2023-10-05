@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Lorem ipsum dummy text blabla.';
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    //document.getElementById("demo").innerHTML += txt[i]; // both are working
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    *{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;padding:0;margin:0;}
+    div.marquee_area{width:100%;float:left;background: #333;font-family: arial;font-size:14px;padding:0 15px;}
+    
+    div.marquee_area div.items{display: flex;flex-direction: row;white-space: nowrap;flex-wrap: nowrap;overflow-x: scroll;padding:20px 0 10px;}
+    div.marquee_area div.item{width:auto;float:left;color:#fff;margin-right: 50px;position: relative;padding-left:20px;margin-bottom: 10px;}
+    div.marquee_area div.item::before{width:7px;height:7px;content:"";background: red;position: absolute;top:0;left:0;bottom:0;margin:auto;border-radius: 100%;-webkit-border-radius: 100%;-moz-border-radius: 100%;}
+</style>
+</head>
+<body>
+<div class="marquee_area">
+	<div class="item">Onelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Twolorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Threelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Onelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Twolorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Threelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Onelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Twolorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+    <div class="item">Threelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+</div><!--marquee_area-->
+<script type="text/javascript" src="../../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+var a = "<div class='items'>" + $(".marquee_area").html() + "</div>";
+$(".marquee_area").html(a);
+var width = $(".items").width();
+console.log(width);
+</script>    
+    
+<script type="text/javascript">
+jQuery(function ($) {
+    $.fn.hScroll = function (amount) {
+        amount = amount || 120;
+        $(this).bind("DOMMouseScroll mousewheel", function (event) {
+            var oEvent = event.originalEvent, 
+                direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+                position = $(this).scrollLeft();
+            position += direction > 0 ? -amount : amount;
+            $(this).scrollLeft(position);
+            event.preventDefault();
+        })
+    };
+});
+
+$(document).ready(function() {
+    $('.items').hScroll(); // You can pass (optionally) scrolling amount
+});
+</script>
+<script>
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box .boxArea{border:1px solid red;margin-bottom: 30px;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var userDetail = [
+            {name:"sunil",age:"24",place:"delhi",avatar:"./image/abc.jpg",country:"India"},
+            {name:"sujan",age:"22",place:"assam,",avatar:"./image/abc.jpg",country:"India"},
+            {name:"abishek",age:"26",place:"kolkata",avatar:"./image/abc.jpg",country:"India"},
+            {name:"chiranjeev",age:"20",place:"bangalore",avatar:"./image/abc.jpg",country:"India"},
+        ];
+        document.querySelector('.box').innerHTML = userDetail.map(e => `
+            <div class="boxArea">
+                <p>Name: ${e.name}</p>
+                <p>Age: ${e.age}</p>
+                <p>Place: ${e.place}</p>
+                <p>Country: ${e.country}</p>
+                <p>Avatar: ${e.avatar}</p>
+            </div>`
+        ).join("");
+    </script>
+</body>
+</html>

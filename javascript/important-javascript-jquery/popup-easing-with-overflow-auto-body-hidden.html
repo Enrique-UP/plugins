@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        a{background: #333;color: white;display: flex;width:100px;padding:10px 0;justify-content: center;cursor: pointer;}
+        .popup{width:100%;height:100%;padding:30px 15px;overflow-y: auto;background: rgba(0,0,0,0.5);position: fixed;left:0;top:0;z-index: 999;display:none;}
+        .popup .popuMid{display: table;width:100%;height:100%;}
+        .popup .popuMid .popuMidArea{display: table-cell;vertical-align: middle;width:100%;}
+        .popup .popuMid .popuMidArea .box{width:400px;height:400px;background:white;margin: auto;border:10px solid brown;border-left:none;border-right:none;position: relative;padding:30px;
+            transform: scale(0);
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            transition-duration: 0.3s;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+            -webkit-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+            -moz-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+        }
+        .popup .popuMid .popuMidArea .box > .close{position: absolute;top:0;right:0;font-style: normal;cursor: pointer;width:30px;height:30px;display: flex;justify-content: center;align-items: center;background: red;color:white;}
+        
+        body.active{overflow: hidden;}
+        body.active .popup{display: flex;}
+        body.active .popup .popuMid .popuMidArea .box.active{
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <a>Show Popup</a>
+    <div class="popup">
+        <div class="popuMid">
+            <div class="popuMidArea">
+                <div class="box">
+                    <i class="close">&#10006;</i>
+                    Write tags & content here...
+                </div><!--box-->
+            </div><!--popuMidArea-->
+        </div><!--popuMid-->
+    </div><!--popup-->
+    <script>
+        (function(){
+            const link = document.querySelector("a");
+            const body = document.querySelector("body");
+            const box = document.querySelector(".popup .popuMid .popuMidArea .box");
+            const close = document.querySelector(".popup .popuMid .popuMidArea .box > .close");
+            
+            link.addEventListener("click", showBox);
+            close.addEventListener("click", closeBox);
+
+            document.addEventListener("click", closeBox);
+            
+            link.addEventListener("click", outsideClick);
+            box.addEventListener("click", outsideClick);            
+
+            function showBox(){
+                body.classList.add("active");
+                setTimeout(function(){
+                    box.classList.add("active");
+                }, 400);
+            }
+            function closeBox(){
+                box.classList.remove("active");
+                setTimeout(function(){
+                    body.classList.remove("active");
+                }, 400);
+            }
+            function outsideClick(e){
+                e.stopPropagation();
+            }
+        })();
+    </script>
+</body>
+</html>

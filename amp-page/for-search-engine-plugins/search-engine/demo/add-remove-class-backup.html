@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html amp lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Product Browse Page</title>
+        <link rel="canonical" href="demo.html">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+     <style amp-custom>
+		div {
+		  height: 100px;
+		  width: 100px;
+		  background-color: green;
+		  margin-left: 100px;
+		}
+		.visible {
+		  opacity: 1;
+		}
+		.invisible {
+		  opacity: 0;
+		}
+		.left {
+		  transform: translatex(-50px)
+		}
+		.right {
+		  transform: translatex(50px)
+		}
+		button {
+		  margin-top:  1rem;
+		  margin-left: 1rem;
+		}
+	  </style>
+	</head>
+<body>
+  <amp-state id="magicBox">
+    <script type="application/json">
+      {
+        "visibleBox": {
+          "className": "visible"
+        },
+        "invisibleBox": {
+          "className": "invisible"
+        },
+        "moveLeft": {
+          "className": "left"
+        },
+        "moveRight": {
+          "className": "right"
+        }
+      }
+    </script>
+  </amp-state>
+  <div [class]="magicBox[animateBox].className"></div>
+  
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
+    Disappear
+  </button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
+    Reappear
+  </button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
+    Move Left
+  </button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
+    Move Right
+  </button>
+</body>
+
+</html>

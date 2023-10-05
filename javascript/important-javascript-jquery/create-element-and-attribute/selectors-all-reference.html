@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+    document.querySelector(".element")    
+    document.querySelectorAll(".elements")    
+    document.getElementById(id) 	Find an element by element id
+    document.getElementsByTagName(name) 	Find elements by tag name
+    document.getElementsByClassName(name) 	Find elements by class name
+
+
+    element.innerHTML =  new html content 	Change the inner HTML of an element
+    element.attribute = new value 	Change the attribute value of an HTML element
+    element.style.property = new style 	Change the style of an HTML element
+    element.setAttribute(attribute, value)
+
+
+    document.anchors
+    document.body
+    document.documentElement
+    document.embeds
+    document.forms
+    document.head
+    document.images
+    document.links
+    document.scripts
+    document.title
+    document.URL
+    document.getElementById("id01").nodeName; // h1 tag answer
+    document.getElementById("id01").nodeType
+
+    ELEMENT_NODE 	1 	<h1 class="heading">W3Schools</h1>
+    ATTRIBUTE_NODE 	2 	 class = "heading" (deprecated)
+    TEXT_NODE 	3 	W3Schools
+    COMMENT_NODE 	8 	<!-- This is a comment -->
+    DOCUMENT_NODE 	9 	The HTML document itself (the parent of <html>)
+    DOCUMENT_TYPE_NODE 	10 	<!Doctype html>
+
+
+    hasAttributes() //     element.attributes.length
+    The getAttribute() Method
+    The setAttribute() Method
+    The removeAttribute() Method
+    The hasAttribute() Method
+    The getAttributeNode() method
+    The setAttributeNode() method
+    The removeAttributeNode() method
+
+    
+    element.remove();
+    element.removeChild(child);
+
+
+    h2.insertAdjacentHTML("afterend", html);
+    h2.insertAdjacentElement("afterend", span);
+    element.insertBefore(para, child);
+    const h2 = document.getElementById("myH2");
+    let text = "My inserted text";
+    h2.insertAdjacentText("afterend", text);
+
+    afterbegin	After the beginning of the element (first child)
+    afterend	After the element
+    beforebegin	Before the element
+    beforeend	Before the end of the element (last child)
+
+
+    document.createElement(element) 	Create an HTML element
+    document.append(element) 	Add an HTML element
+    document.appendChild(element) 	Add an HTML element
+    document.removeChild(element) 	Remove an HTML element
+    document.replaceChild(new, old) 	Replace an HTML element
+    document.write(text) 	Write into the HTML output stream
+
+    element.children;
+    .length;
+    .size;
+    element.childElementCount;
+
+    element.offsetParent // body > div = body is offsetParent here...
+    
+    parentElement
+    The firstElementChild Property
+    The lastElementChild Property
+    The nextElementSibling Property
+    The previousElementSibling Property
+    .matches("element") // find()
+    .closeset("element") 
+    .contains("element") //has
+    .remove()
+    
+
+
+
+    parentNode
+    childNodes[nodenumber]
+    firstChild
+    lastChild
+    nextSibling // returns the whitespace also
+    previousSibling
+    
+    The childElementCount Property
+    The childNodes Property
+    The hasChildNodes() Method
+    nextSibling 
+    The previousSibling Property
+
+
+    The parentNode Property
+    The nodeName Property
+    The nodeType Property
+    The nodeValue Property  // node count the space also
+
+    element.matches(".container")
+    element.matches(".container, .wrapper")    // true false return
+
+    if (element.matches(".container")) {
+        text = "This element matches the CSS selector";
+    }
+
+
+    <ul id="myList"></ul>
+    let answer = document.getElementById("myList").hasChildNodes();
+    document.getElementById("demo").innerHTML = answer;
+    // answer false
+
+
+    text
+    textContent
+    innerText
+    innerHTML
+    outerHTML
+    outerText
+
+
+    The offsetTop Property
+    The offsetLeft Property
+    The offsetWidth Property
+    The offsetHeight Property
+
+
+    The clientTop Property
+    The clientLeft Property
+    The clientWidth Property
+    The clientHeight Property
+
+    toString()
+</pre>
+
+
+</body>
+</html>

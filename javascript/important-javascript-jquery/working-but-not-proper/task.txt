@@ -1,0 +1,8 @@
+1. onscroll => viewport video => play/otherwise pause.
+2. video play on click after scroll unviewport area then pause.
+3. Steper like akountobooks.com
+4. Array methods learn from w3schools.com.
+5. String learn.
+	I.  String methods
+	II. String search methods
+	III.String template literals

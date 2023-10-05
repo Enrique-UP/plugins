@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Custom Nagivation Bar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+        body{font-size: 14px;}
+        header{width:100%;float:left;background:#01a1dd;padding:10px 15px;font-family: arial;}
+        ul.navigation_bar{width:auto;float:right;}
+        ul.navigation_bar a{transition:0.3s linear;-webkit-transition:0.3s linear;-moz-transition:0.3s linear;text-decoration: none;display: block;}
+        ul.navigation_bar > li{width:auto;float:left;list-style: none;margin-right:30px;position: relative;}
+        ul.navigation_bar > li:last-child{margin-right: 0;}
+        ul.navigation_bar > li > a{display: block;background: #000;color:#fff;padding:12px 25px;}
+        ul.navigation_bar > li > ul{transform: scaleY(0);-webkit-transform: scaleY(0);-moz-transform: scaleY(0);-webkit-transition: transform 0.5s ease;-moz-transition: transform 0.5s ease;transition: transform 0.5s ease;-webkit-transform-origin: top;-moz-transform-origin: top;transform-origin: top;border: 1px solid rgba(134, 134, 134, 0.15);border-top: 3px solid #095099;position: absolute;top:100%;left:0;width:200px;background: #fff;padding:15px 15px 5px;margin:0;}
+        ul.navigation_bar > li:hover > ul{transform: scaleY(1);-webkit-transform: scaleY(1);-moz-transform: scaleY(1);}
+        ul.navigation_bar > li > ul > li{width:100%;float:left;list-style: none;text-align: left;margin-bottom: 10px;}
+        ul.navigation_bar > li > ul > li a{color:#000;}
+        ul.navigation_bar > li > ul > li > ul{transform: scaleX(0);-webkit-transform: scaleX(0);-moz-transform: scaleX(0);-webkit-transition: transform 0.5s ease;-moz-transition: transform 0.5s ease;transition: transform 0.5s ease;-webkit-transform-origin: left;-moz-transform-origin: left;transform-origin: left;border: 1px solid rgba(134, 134, 134, 0.15);position: absolute;top:-3px;left:198px;width:200px;background: #fff;padding:15px 15px 5px;margin:0;}
+        ul.navigation_bar > li > ul > li:hover > ul{transform: scaleX(1);-webkit-transform: scaleX(1);-moz-transform: scaleX(1);}
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="navigation_bar">
+            <li>
+                <a href="javascript:;">Home <i class="fa fa-angle-down"></i></a>
+                <ul>
+                    <li>
+                        <a href="javascript:;">Lorem Ipsum <i class="fa fa-angle-right"></i></a>
+                        <ul>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Lorem Ipsum <i class="fa fa-angle-right"></i></a>
+                        <ul>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Lorem Ipsum <i class="fa fa-angle-right"></i></a>
+                        <ul>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                            <li><a href="javascript:;">Lorem Ipsum</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">About Us <i class="fa fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">Blogs <i class="fa fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">Services <i class="fa fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">Contact Us <i class="fa fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                    <li><a href="javascript:;">Lorem Ipsum</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+</body>
+</html>

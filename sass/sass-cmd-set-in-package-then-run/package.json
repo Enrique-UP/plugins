@@ -1,0 +1,13 @@
+{
+  "name": "css1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch sass/style.scss:css/style.css --no-source-map --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

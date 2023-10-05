@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{font-family: Arial, Helvetica, sans-serif;}
+        section{display: flex;width:600px;margin:50px auto;border:1px solid black;}
+        section div.demo{width:25%;display: flex;}
+        section div.demo.active{background:red;color:white;}
+        section div.demo a{text-align: center;padding:10px;width:100%;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="demo active">
+            <a onclick="func(this)">Click here</a>
+        </div>
+        <div class="demo">
+            <a onclick="func(this)">Click here</a>
+        </div>
+        <div class="demo">
+            <a onclick="func(this)">Click here</a>
+        </div>
+        <div class="demo">
+            <a onclick="func(this)">Click here</a>
+        </div>
+    </section>
+
+    <script>
+        function func(e){
+            if(e.closest(".demo").classList.contains("active")){
+                e.closest(".demo").classList.remove("active");
+            }else{
+                document.querySelectorAll(".demo.active").forEach(function(f){
+                    f.closest(".demo").classList.remove("active");
+                });
+                e.closest(".demo").classList.add("active");
+            }
+        };
+    </script>
+</body>
+</html>

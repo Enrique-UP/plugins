@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div>Children</div>
+    <script>
+        (function(){
+            var element = document.createElement("div");
+            element.classList = "element";
+            element.innerHTML = "Create Element";
+            document.body.append(element);
+            document.querySelector("body").insertBefore(element, document.querySelector("body").children[0]);
+        }());
+    </script>
+</body>
+</html>
