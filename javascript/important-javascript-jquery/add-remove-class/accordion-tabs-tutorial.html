@@ -47,7 +47,8 @@
                         fAttr.push(f.getAttribute("id"));
                     });
                     console.log(fAttr);
-                    var id = fAttr.filter(el => el === attr);
+                    //var id = fAttr.filter(el => el === attr);
+                    var id = fAttr.find(el => el === attr);
                     console.log(id);
                     
                     field.forEach(function(g){
