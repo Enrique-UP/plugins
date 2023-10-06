@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .tabs label.active{color:red;}
+        ul > li{display: none;}
+        ul > li.active{display: block;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="tabs">
+            <label data-class=".all" class="all active">All</label>
+            <label data-class=".one">One</label>
+            <label data-class=".two">Two</label>
+            <label data-class=".three">Three</label>
+        </div>
+        <ul>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+        </ul>
+    </section>
+    <section>
+        <div class="tabs">
+            <label data-class=".all" class="all">All</label>
+            <label data-class=".one" class="active">One</label>
+            <label data-class=".two">Two</label>
+            <label data-class=".three">Three</label>
+        </div>
+        <ul>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="one">1</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="two">2</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+            <li class="three">3</li>
+        </ul>
+    </section>
+    <script>
+        (function(){
+            document.querySelectorAll("section").forEach(function(section){
+                section.querySelectorAll("ul > li").forEach(function(all){
+                    all.classList.add("all");
+                });
+                section.querySelectorAll(".tabs > label.active").forEach(function(defaultActive){
+                    section.querySelectorAll(defaultActive.getAttribute("data-class")).forEach(function(e){
+                        e.classList.add("active");
+                    });
+                });
+                section.querySelectorAll(".tabs > label").forEach(function(label){
+                    label.addEventListener("click", function(){
+                        if(label.classList.contains("active")){
+                            label.classList.remove("active");
+                            section.querySelectorAll(label.getAttribute("data-class")).forEach(function(dataClass){
+                                dataClass.classList.remove("active");
+                            });
+                            section.querySelectorAll(".tabs > label.active").forEach(function(active){
+                                section.querySelectorAll(active.getAttribute("data-class")).forEach(function(activeClass){
+                                    activeClass.classList.add("active");
+                                });
+                            });
+                        }else{
+                            label.classList.add("active");
+                            section.querySelectorAll(label.getAttribute("data-class")).forEach(function(dataClass){
+                                dataClass.classList.add("active");
+                            });
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

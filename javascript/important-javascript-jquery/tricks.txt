@@ -33,6 +33,9 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add
 Accordion Tab => use in this => getAttribute, replace, trim, create array from html, after create array this has filter and match id then add remove class.
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/accordion-tabs-tutorial.html
 
+Checkbox tab by get attribute
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/filter-data-class-checkbox-perfect.html
+
 =======================
 
 array filter from html

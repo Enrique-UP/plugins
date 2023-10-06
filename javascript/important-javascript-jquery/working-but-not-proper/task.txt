@@ -6,3 +6,5 @@
 	I.  String methods
 	II. String search methods
 	III.String template literals
+6. Number methods
+7. Custom image slider with all functionality.
