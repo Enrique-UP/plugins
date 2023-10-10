@@ -1,3 +1,12 @@
+Learn 
+Call, apply & Bind in JavaScript - Front End Interview 🔥 Episode 4 - In 20 Minutes
+https://www.youtube.com/watch?v=SaWTn1ZNTpo
+Async/Await, Promises, Callbacks - Async JavaScript Crash Course ( in One Video in Hindi )
+https://www.youtube.com/watch?v=bWaucYA1YRI
+
+
+
+
 1. onscroll => viewport video => play/otherwise pause.
 2. video play on click after scroll unviewport area then pause.
 3. Steper like akountobooks.com

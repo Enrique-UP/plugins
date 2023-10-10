@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        A closure is a function having access to the parent scope, even after the parent function has closed.
+        क्लोजर एक ऐसा फ़ंक्शन है जिसके पास पैरेंट फ़ंक्शन बंद होने के बाद भी पैरेंट स्कोप तक पहुंच होती है।
+        Or
+        In other words, closure is created when a child function keep the environment of the parent scope even after the parent function has already executed 
+        दूसरे शब्दों में, क्लोजर तब बनता है जब एक चाइल्ड फ़ंक्शन पैरेंट फ़ंक्शन के पहले ही निष्पादित होने के बाद भी पैरेंट स्कोप के वातावरण को बनाए रखता है
+        
+        
+        <b>// Example 1</b>
+        var sum = function(a){
+            console.log("Live Viewers " + a);
+            var c = 4;
+            return function(b){
+                return a + b + c;
+            }
+        }
+        var store = sum(2);
+        console.log(store(5));
+
+        <b>// Example 2</b>
+        var sumAll = function(a,b,c){
+            return {
+                sumTwo:function(){
+                    return a + b;
+                },
+                sumThree:function(){
+                    return a + b + c;
+                }
+            }
+        }
+        var store = sumAll(2,10,5);
+        console.log(store.sumTwo());
+        console.log(store.sumThree());
+
+        var store1 = sumAll(7,8,9);
+        console.log(store1.sumTwo());
+        console.log(store1.sumThree());
+    
+        <b>// Example 3</b>
+        function x(){
+            var a = 10;
+            function y(){
+                document.write(a + "<br>");
+            }
+            y();
+        }
+        x();
+    
+        <b>// Example 4</b>
+        function a(){
+            var a = 1000;
+            function b(){
+                document.write(a + "<br>");
+            }
+            a = 111;
+            return b;
+        }
+        var z = a();
+        console.log(z);
+        z();
+
+        <b>// Example 5</b>
+        function demo(){
+            var demo1 = 1000;
+            return function demo2(){
+                document.write(demo1 + "<br>");
+            };
+        }
+        //demo();
+        var z = demo();
+        console.log(z);
+        z();
+
+        <b>// Example 6</b>
+        function demos(){
+            var aa = 900;
+            function demosInner(){
+                var bb = 100;
+                function demosInner1(){
+                    document.write(aa,bb + "<br>");
+                }
+                demosInner1();
+            }
+            demosInner();
+        }
+        demos();
+    
+        <b>// Example 7</b>
+        function foo(){
+            var b = 1;
+            function inner(){
+                return b;
+            }
+            return inner;
+        }
+        var get_func_inner = foo();  
+        
+        console.log(get_func_inner());
+        console.log(get_func_inner());
+        console.log(get_func_inner());
+    </pre>
+    <p id="demo"></p>
+    <script>
+        // Example 1
+        var sum = function(a){
+            console.log("Live Viewers " + a);
+            var c = 4;
+            return function(b){
+                return a + b + c;
+            }
+        }
+        var store = sum(2);
+        console.log(store(5));
+
+        // Example 2
+        var sumAll = function(a,b,c){
+            return {
+                sumTwo:function(){
+                    return a + b;
+                },
+                sumThree:function(){
+                    return a + b + c;
+                }
+            }
+        }
+        var store = sumAll(2,10,5);
+        console.log(store.sumTwo());
+        console.log(store.sumThree());
+
+        var store1 = sumAll(7,8,9);
+        console.log(store1.sumTwo());
+        console.log(store1.sumThree());
+    </script>
+    <script>
+        // Example 3
+        function x(){
+            var a = 10;
+            function y(){
+                document.write(a + "<br>");
+            }
+            y();
+        }
+        x();
+    
+        // Example 4
+        function a(){
+            var a = 1000;
+            function b(){
+                document.write(a + "<br>");
+            }
+            a = 111;
+            return b;
+        }
+       var z = a();
+       console.log(z);
+        z();
+
+        // Example 5
+        function demo(){
+            var demo1 = 1000;
+            return function demo2(){
+                document.write(demo1 + "<br>");
+            };
+        }
+        //demo();
+        var z = demo();
+        console.log(z);
+        z();
+
+        // Example 6
+        function demos(){
+            var aa = 900;
+            function demosInner(){
+                var bb = 100;
+                function demosInner1(){
+                    document.write(aa,bb + "<br>");
+                }
+                demosInner1();
+            }
+            demosInner();
+        }
+        demos();
+    </script>
+
+    <script>
+        // Example 7
+        function foo(){
+            var b = 1;
+            function inner(){
+                return b;
+            }
+            return inner;
+        }
+        var get_func_inner = foo();  
+        
+        console.log(get_func_inner());
+        console.log(get_func_inner());
+        console.log(get_func_inner());
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let hello = "Hello"; 
+    function salutation() {  
+        let name = "Aayush";  
+        document.write(`${hello} ${name}!<br>`);  
+    }
+    salutation();
+
+    
+    function salutation1() {  
+        let name = "Aayush"; 
+        function greet() { 
+            document.write(`Hello ${name}!<br>`); 
+        } 
+        greet();  
+    }
+    salutation1();
+
+
+    function salutation2() { 
+        let name = 'Aayush';
+        function greet2() { 
+            document.write(`Hello ${name}!<br>`); 
+        } 
+        return greet2; 
+    } 
+    
+    let wish = salutation2(); 
+    wish();
+    </script>
+</body>
+</html>

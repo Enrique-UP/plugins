@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        let fun1 = (function () {
+            let done = false;
+            return function () {
+                if (!done) {
+                    done = true;
+                    document.write("Function Call one time");
+                }
+            };
+        })();
+        
+        function GFG_Fun() {
+            fun1();  // It is called and result 
+            fun1();  // It is not called.
+        } 
+        
+        GFG_Fun();
+    </pre>
+    <script>
+        let fun1 = (function () {
+            let done = false;
+            return function () {
+                if (!done) {
+                    done = true;
+                    document.write("Function Call one time");
+                }
+            };
+        })();
+        
+        function GFG_Fun() {
+            fun1();  // It is called and result 
+            fun1();  // It is not called.
+        } 
+        
+        GFG_Fun();
+    </script>
+</body>
+</html>
