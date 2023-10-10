@@ -43,6 +43,9 @@ https://simple-react-lightbox.dev/documentation/basic-usage
 https://www.youtube.com/watch?v=OzISPBpzwkI
 https://www.npmjs.com/package/simple-react-lightbox#getting-started
 
+If get error then delete webpack lock file then run.
+npm install node-polyfill-webpack-plugin --save-dev // for working this will not show in webpack config
+
 solve issue
 https://www.youtube.com/watch?v=u1PPNIBvQjk
 npm i process
