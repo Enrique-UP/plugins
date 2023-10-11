@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-<img id="myImg" alt="Flower" src="klematis.jpg" width="150" height="113">
+<p><img id="myImg1" data-alt="Flower1" src="../../../owl-carousel/images/1.jpg" width="150" height="110"></p><br><br>
+<p><img id="myImg2" data-alt="Flower2" src="../../../owl-carousel/images/2.jpg" width="150" height="120"></p><br><br>
+<p><img id="myImg3" data-alt="Flower3" src="../../../owl-carousel/images/3.jpg" width="150" height="130"></p>
 
 <script>
-const atbts = document.getElementById("myImg").attributes;
-let text = "";
-for (let i = 0; i < atbts.length; i++) {
-  text += atbts[i].name + " = " + atbts[i].value + "<br>";
-}
-document.write("<p></p>" + text);
+document.querySelectorAll("p > img").forEach(function(e){
+  var atr = e.attributes;
+  var text = "";
+  for(var i = 0; i < atr.length; i++){
+    text += "<br>" + atr[i].name + " :- " + atr[i].value;
+  }
+  e.parentElement.innerHTML += text;
+});
+
 </script>
 
 </body>
