@@ -6,6 +6,13 @@
 
 <p>The Array.from() method returns an Array object from any object with a length property or any iterable object.</p>
 
+<img src="http://www.demo.com/images1.jpg" />
+<img src=".images1.jpg" />
+<img src="http://www.demo.com/images2.jpg" />
+<img src=".images2.jpg" />
+<img src="http://www.demo.com/images3.jpg" />
+<img src=".images3.jpg" />
+
 <p id="demo"></p>
 
 <script>
@@ -37,5 +44,12 @@ arr.forEach(e => new1.push(e + e));
 console.log(new1); // [2, 4, 6]
 </script>
 
+
+<script>
+    const sources = Array.from(document.querySelectorAll("img"), e => e.src);
+    console.log(sources);
+    const insecureSources = sources.filter((link) => link.startsWith("http"));
+    console.log(insecureSources);
+</script>
 </body>
 </html>

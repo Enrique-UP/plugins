@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-size: 14px;font-family: Arial, Helvetica, sans-serif;text-align: center;}
+        div{background: red;color:white;padding:10px 0;font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div>Lorem</div>
+    <script>
+        var stop = setInterval(back, 1000);
+        function back(){
+            var div = document.querySelector("div");
+            div.style.background = div.style.background == "red" ? "green" : "red";
+            console.log("Start");
+        }
+        document.querySelector("div").addEventListener("click", function(e){
+            clearInterval(stop);
+            console.log("Stop");
+            setInterval(back, 1000);
+        });
+    </script>
+</body>
+</html>
