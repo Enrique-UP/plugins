@@ -6,6 +6,19 @@ document.querySelectorAll("main .fw").forEach(function(e){
 document.querySelectorAll(".container .row [class*=col-] [class*=col-]").forEach(function(e){
     e.parentElement.closest("[class*=col-]").style.marginBottom = 0;
 });
+// for color repeat
+document.querySelectorAll(".colors").forEach(function(a){
+	var listItems = a.querySelectorAll("data");
+	const totalClasses = 10;
+	var i = 1;
+	for (let li of listItems) {
+	  if (i > totalClasses){
+		i = 1;
+	  }
+	  li.style.setProperty("--bk1", `var(--b${i})`);
+	  i++;
+	}
+});
 
 function lazyLoadImage() {
   var scroll = document.documentElement.scrollTop;

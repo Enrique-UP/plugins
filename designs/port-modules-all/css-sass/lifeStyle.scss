@@ -2,7 +2,7 @@
 .lifeStyle{
     .row .row{height: 100%;}
     .outlineBox{height: 100%;}
-    data{display: flex;height: 100%;}
+    data{display: flex;height: 100%;width: 100%;}
     .figure{width:100%;display: flex;flex-direction: column;position: relative;height:100%;
         img{width:100%;height: 100%;object-fit: cover;
 		&.heightAuto{height: auto;}
