@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/common/common.scss";
@@ -13,6 +14,11 @@ import Aboutus from "./pages/Aboutus";
 import Contactus from "./pages/Contactus";
 
 function App() {
+  useEffect(() => {
+    document.querySelectorAll("main .fw").forEach(function (e) {
+      e.parentElement.classList.add("fwParent");
+  });
+  }, []);
   return (
     <>
       <Header />
