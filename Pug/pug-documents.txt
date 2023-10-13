@@ -12,5 +12,6 @@ D:\office-work\assets\plugins\pug\right-format\pug
 
 or 
 
+//=====use this method=====
 Go to pug folder inside then press ctrl + l then press cmd then code . then press cd pub then run below command.
 pug -w ./ -o ../ -P

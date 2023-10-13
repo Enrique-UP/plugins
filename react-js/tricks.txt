@@ -1,3 +1,7 @@
+===========================================
+in window server web.config
+in apache server .htaccess
+===========================================
 https://www.youtube.com/watch?v=RUku45vpSDU
 ===========================================
 for react 
