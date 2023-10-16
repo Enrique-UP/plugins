@@ -8,6 +8,8 @@ html
     body
         main 
             header This is a header tag.
+            h1 use this webpack
+            | pug -w ./ -o ./html -P
             section
                 p This is a paragraph tag.<br>
                     and This is a wrong method.
@@ -16,6 +18,18 @@ html
 
                 p This is a paragraph tag.<br>
                     span This is a wrong method.
+
+                
+                p 
+                    b Bold Text 
+                    |   This is bold text.
+
+
+                
+                p 
+                    | Lorem ipdum folor
+                    b Bold Text 
+                    |   This is bold text.
 
 
 
