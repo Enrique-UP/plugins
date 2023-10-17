@@ -4,25 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        .selectBox:not(:last-child){margin-bottom: 100px;}
+        .selectBox .sb1{margin-bottom: 10px;}
+        .selectBox .sb2{display: none;}
+        .selectBox .sb2.active{display: block;}
+        .selectBox .sb2 option{display: none;}
+        .selectBox .sb2 option.active{display: block;}
+    </style>
 </head>
 <body>
-    <select id="id1" onchange="myFunction()">
-        <option disabled selected>Please select</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-    </select>
-    <select id="id2" style="display: none;">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-    </select>
+    <div class="selectBox">
+        <select class="sb1">
+            <option disabled selected>Please Select</option>
+            <option value="toyota">Toyota Models</option>
+            <option value="volvo">Volvo Models</option>
+            <option value="maruti">Maruti Models</option>
+        </select>
+        <select class="sb2">
+            <option disabled selected>Please Select</option>
+            <option value="toyota">Toyota Model 1</option>
+            <option value="toyota">Toyota Model 2</option>
+            <option value="toyota">Toyota Model 3</option>
+            <option value="toyota">Toyota Model 4</option>
+            <option value="toyota">Toyota Model 5</option>
+            <option value="volvo">Volvo Model 1</option>
+            <option value="volvo">Volvo Model 2</option>
+            <option value="volvo">Volvo Model 3</option>
+            <option value="volvo">Volvo Model 4</option>
+            <option value="volvo">Volvo Model 5</option>
+            <option value="maruti">Maruti Model 1</option>
+            <option value="maruti">Maruti Model 2</option>
+            <option value="maruti">Maruti Model 3</option>
+            <option value="maruti">Maruti Model 4</option>
+            <option value="maruti">Maruti Model 5</option>
+        </select>
+    </div><!--selectBox-->
+    <div class="selectBox">
+        <select class="sb1">
+            <option disabled selected>Please Select</option>
+            <option value="toyota">Toyota Models</option>
+            <option value="volvo">Volvo Models</option>
+            <option value="maruti">Maruti Models</option>
+        </select>
+        <select class="sb2">
+            <option disabled selected>Please Select</option>
+            <option value="toyota">Toyota Model 1</option>
+            <option value="toyota">Toyota Model 2</option>
+            <option value="toyota">Toyota Model 3</option>
+            <option value="toyota">Toyota Model 4</option>
+            <option value="toyota">Toyota Model 5</option>
+            <option value="volvo">Volvo Model 1</option>
+            <option value="volvo">Volvo Model 2</option>
+            <option value="volvo">Volvo Model 3</option>
+            <option value="volvo">Volvo Model 4</option>
+            <option value="volvo">Volvo Model 5</option>
+            <option value="maruti">Maruti Model 1</option>
+            <option value="maruti">Maruti Model 2</option>
+            <option value="maruti">Maruti Model 3</option>
+            <option value="maruti">Maruti Model 4</option>
+            <option value="maruti">Maruti Model 5</option>
+        </select>
+    </div><!--selectBox-->
+    
 
     <script>
-        function myFunction() {
-            var x = document.getElementById("id1").value;
-            if (x == "3") document.getElementById("id2").style.display = "block";
-        }
+        document.querySelectorAll(".selectBox").forEach(function(e){
+            e.querySelector(".sb1, .sb2").value = "Please Select";
+            e.querySelector(".sb1").addEventListener("change", function(){
+                e.querySelector(".sb2").classList.add("active");
+                e.querySelector(".sb2").value = "Please Select";
+                var val = this.value;
+                //console.log(val);
+                e.querySelectorAll(".sb2 option").forEach(function(f){
+                    if(f.getAttribute("value") === val){
+                        f.classList.add("active");
+                    }else{
+                        f.classList.remove("active");
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
