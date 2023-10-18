@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const population = {
+            male: 4,
+            female: 93,
+            others: 10
+        };
+
+        let genders = Object.keys(population);
+        console.log(genders);
+        // ["male","female","others"]        
+
+        let val = Object.values(population);
+        console.log(val);
+        // [4, 93, 10]
+    </script>
+
+
+    <script>
+        const population1 = {
+            male: 4,
+            female: 93,
+            others: 10
+        };
+        let populationArr = Object.entries(population1);
+        for ([key, value] of populationArr){
+          console.log(key);
+          console.log(value);
+        } 
+        for (array of populationArr){
+            console.log(array);
+        }
+    </script>
+</body>
+</html>

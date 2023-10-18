@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dynamicArray = ["2007", "2008", "2009", "2010"];
+        const obj = Object.fromEntries(
+            dynamicArray.map(year => [year, {
+                something: "based",
+                on: year
+            }])
+        );
+        console.log(obj)
+    </script>
+</body>
+</html>
