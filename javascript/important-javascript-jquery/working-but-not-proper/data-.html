@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <ul>
+        <li data-value="1" data-text="Lorem" class="list">Lorem</li>
+        <li data-value="1" data-text="Lorem" class="list">Lorem</li>
+        <li data-value="1" data-text="Lorem" class="list">Lorem</li>
+        <li data-value="1" data-text="Lorem" class="list">Lorem</li>
+        <li data-value="1" data-text="Lorem" class="list">Lorem</li>
+    </ul>
+    <script>
+        var data = Array.from(document.querySelectorAll("ul > li"), e => e.attributes);
+        console.log(data);
+    </script>
+</body>
+</html>
