@@ -9,11 +9,21 @@
 <body>
     <a href="">Lorem</a>
 
+    <div id="cc">
+        <p>for using javascript property in jquery</p>
+    </div>
+    
     <script src="../../jquery-2.2.4.min.js"></script>
     <script>
         var a = $("a").prop('outerHTML');
         document.write(a);
         console.log(a);
+    </script>
+    <script>
+        $(document).ready(function() {
+            console.log($("#cc").prop("outerHTML"));
+            console.log($("#cc").prop("innerHTML"));
+        });
     </script>
 </body>
 </html>

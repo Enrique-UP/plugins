@@ -17,8 +17,17 @@
     <p data-value="4" class="list4" data-text="Ipsum4" data-name="name2"><b>Text Content here...</b></p>
   </div>
 
+  <br><br><br><br>
+
+  <div class="demo3">
+    <p data-value="1" class="list1" data-text="Ipsum1"><b>Text Content here...</b></p>
+    <p data-value="2" class="list2" data-text="Ipsum2"><b>Text Content here...</b></p>
+    <p data-value="3" class="list3" data-text="Ipsum3" data-name="name1"><b>Text Content here...</b></p>
+    <p data-value="4" class="list4" data-text="Ipsum4" data-name="name2"><b>Text Content here...</b></p>
+  </div>
+
   <script>
-    // method 1
+    // Method 1
     document.querySelectorAll("div.demo1 > p > img").forEach(function (e) {
       var atr = e.attributes;
       var text = "";
@@ -29,9 +38,19 @@
     });
   </script>
   <script>
-    // method 2
+    // Method 2
     document.querySelectorAll("div.demo2 > p").forEach(function (e) {
       for (let x of e.attributes) {
+        e.innerHTML += "<br />" + x.name + " - " + x.value;
+      }
+    });
+  </script>
+  <script>
+    // Method 3
+    var data = Array.from(document.querySelectorAll("div.demo3 > p"));
+    //var data = document.querySelectorAll("div.demo3 > p");
+    data.forEach(function(e){
+      for(let x of e.attributes){
         e.innerHTML += "<br />" + x.name + " - " + x.value;
       }
     });
