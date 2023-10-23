@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        select.select{display: none;}
+    </style>
+</head>
+<body>
+    <select class="select">
+        <option selected disabled>Please Select</option>
+        <option value="AZE">Azerbaijan</option>
+        <option value="ATG">Argentina</option>
+        <option value="BHR">Bahrain</option>
+        <option value="BGD">Bangladesh</option>
+        <option value="BLR">Belarus</option>
+    </select>
+
+    <script>
+        var select = document.querySelector(".select")
+        console.log(select.outerHTML);
+        var element = document.createElement("div");
+        element.classList = "selectBox";
+        element.innerHTML = select.outerHTML;
+        document.querySelector(".select").insertAdjacentElement("afterend", element);
+
+        let selectTag = document.querySelector(".selectBox > .select");
+        const ul = document.createElement("ul");
+        ul.innerHTML = selectTag.innerHTML;
+        ul.classList = select.classList;
+        selectTag.replaceWith(ul);
+
+        // document.querySelector(".selectBox > .select option").forEach(function(e){
+        //     const li = document.createElement("li");
+        //     e.replaceWith(li);
+        // });
+        
+        var option = Array.from(document.querySelectorAll(".selectBox > .select > option"), e => e.outerHTML);
+        console.log(option);
+        //option.toString;
+        var o = Array.from(option, f => f.replaceAll("option", "li"));
+        var i = Array.from(o, a => a.replaceAll("value", "data-value"));
+        console.log(o);
+
+        var h = "";
+        i.forEach(function(g){
+            h += g;
+        });
+        document.querySelector(".selectBox > .select").innerHTML = h;
+    </script>
+</body>
+</html>

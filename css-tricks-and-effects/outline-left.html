@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        div{width:50%;margin:0 auto;height:100px;background: #eee;}
+        div:not(:last-child){margin-bottom: 30px;}
+        .one{box-shadow: -2px 0px 0 #000;}
+        .two{box-shadow: 2px 0px 0 #000;}
+        .three{box-shadow: 0 -2px 0 #000;}
+        .four{box-shadow: 0 2px 0 #000;}
+        .five{width: calc(50% - 4px);height: calc(100px - 4px);box-shadow: 0px 0px 0px 2px #000;}
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+</body>
+</html>

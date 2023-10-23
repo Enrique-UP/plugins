@@ -7,10 +7,75 @@
 </head>
 <body>
     <p>Lorem</p>
+
+
+    <div>Hello world</div>
+
+
+    <aside>Aside</aside>
+
+
+    <select>
+        <option value="1">Lorem</option>
+        <option value="2">Ipsum</option>
+        <option value="3">Dolor</option>
+        <option value="4">Sit</option>
+        <option value="5">Ameet</option>
+    </select>
+
+
+
+
+
+
+
+
+    
+
+
+
     <script>
         var demo = document.querySelector("p");
-        var a = `<div class="add">${demo.innerHTML}</div>`;
+        var a = `<section class="add">${demo.innerHTML}</section>`;
         demo.outerHTML = a;
+    </script>
+
+
+
+    <script>
+        const div = document.querySelector("div");
+        const span = document.createElement("span");
+        span.classList = "span";
+        span.innerHTML = div.innerHTML;
+        div.parentNode.replaceChild(span, div);
+    </script>
+
+
+
+    <script>
+        const div1 = document.querySelector("aside");
+        const span1 = document.createElement("p");
+        span1.innerHTML = div1.innerHTML;
+        div1.replaceWith(span1);
+    </script>
+
+
+
+    <script>
+        var select = document.querySelector("select");
+        var ul = document.createElement("ul");
+        ul.innerHTML = select.innerHTML;
+        select.replaceWith(ul)
+
+        var arr = Array.from(document.querySelectorAll("ul > option"), e => e.outerHTML);
+        console.log(arr);
+        var a = Array.from(arr, e => e.replaceAll("option value", "li data-value"));
+        console.log(a);
+        var tags = "";
+        a.forEach(function(e){
+            tags += e;
+        });
+        document.querySelector("ul").innerHTML = tags;
     </script>
 </body>
 </html>

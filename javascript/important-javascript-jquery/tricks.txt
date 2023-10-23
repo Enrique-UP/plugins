@@ -8,17 +8,17 @@ https://softauthor.com/javascript-for-loop-click-event-issues-solutions/
 
 
 create object from element then create array then show its value in html.
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/get-all-dataset-perfect-tutorial.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\get-all-dataset-perfect-tutorial.html
 
 object in html in the below example
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/attributes-by-object-tutorials.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\attributes-by-object-tutorials.html
 
 create array from html then remove duplicate then show in html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/array/dulplicate-remove-show-perfect-tutorial.html
 
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/class-add-in-sequence-and-reverse/class-add-in-sequence.html
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/repeat-classes/loop-repeatation-perfect.html
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/repeat-classes/loop-repeatation-ums.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse/class-add-in-sequence.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-perfect.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-ums.html
 
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/table_responsive-js-dynamic.html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/duplicate-table-dynamically-show-mobile-js.html
@@ -28,20 +28,20 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/tex
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/object/whyChooseUs-dropdown_by_offsetTop.html
 
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ternary-operator/ternary-operator4.html
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/accordion-ternary-operator-tutorial.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-ternary-operator-tutorial.html
 
 Checkbox tab by get attribute
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/filter-data-class-checkbox-perfect.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\filter-data-class-checkbox-perfect.html
 
 ====================================================================================================================================================================================
 
 array filter from html
 Accordion Tab => use in this => getAttribute, replace, trim, create array from html, after create array this has filter and match id then add remove class.
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/add-remove-class/accordion-tabs-tutorial.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-tabs-tutorial.html
 
 elements filter by array from methods
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/siblings-selector-by-arrayFrom-filter.html
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/create-element-and-attribute/array-from-and-filter-image.by.img.src.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\siblings-selector-by-arrayFrom-filter.html
+D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\array-from-and-filter-image.by.img.src.html
 
 ====================================================================================================================================================================================
 
