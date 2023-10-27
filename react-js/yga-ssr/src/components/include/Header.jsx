@@ -1,23 +1,28 @@
 import React from "react";
+import { useEffect } from "react";
 import {NavLink, Link} from "react-router-dom";
 import logo from "../../images/logo.png";
 const Header = () => {
-    function showhide(){
-        document.getElementById("headerBottom").classList.add("active");
-    }
-    function hide(){
-        document.getElementById("headerBottom").classList.remove("active");
-    }
-    function scroll(){
-        var scroll = document.documentElement.scrollTop;
-        var headerHeight = document.querySelector("header").offsetHeight;
-        if(scroll >= headerHeight){
-            document.querySelector("header").classList.add("active");
-        }else{
-            document.querySelector("header").classList.remove("active");
+    useEffect(() => {
+        document.querySelector("#menu").addEventListener("click", function(){
+            document.getElementById("headerBottom").classList.add("active");
+        });
+        document.querySelector("#close").addEventListener("click", function(){
+            document.getElementById("headerBottom").classList.remove("active");
+        });
+
+        function scrollFunc(){
+            var scroll = document.documentElement.scrollTop;
+            var headerHeight = document.querySelector("header").offsetHeight;
+            if(scroll >= headerHeight){
+                document.querySelector("header").classList.add("active");
+            }else{
+                document.querySelector("header").classList.remove("active");
+            }
         }
-    }
-    window.addEventListener("scroll", scroll);
+        window.addEventListener("load", scrollFunc);
+        window.addEventListener("scroll", scrollFunc());
+    }, []);
     return (
     <>
       <header>
@@ -55,7 +60,7 @@ const Header = () => {
                         </span>
                     </a>
                 </div>
-                <i className="icon menu" id="menu" onClick={showhide}>&#xf0c9;</i>
+                <i className="icon menu" id="menu">&#xf0c9;</i>
             </div>
         </div>
         <div className="headerBottom" id="headerBottom">
@@ -64,7 +69,7 @@ const Header = () => {
                     <Link to="/">
                         <img src={logo} />
                     </Link>
-                    <i className="icon" id="close" onClick={hide}>&#xe803;</i>
+                    <i className="icon" id="close">&#xe803;</i>
                 </span>
                 <ul>
                     <li><NavLink to="/" exact="true">Home</NavLink></li>

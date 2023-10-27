@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../font-awesome-and-bootstrap-with-fonts/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+        p{padding:15px 15px 0;display: flex;}
+        p > a{display: flex;align-items: center;text-decoration: none;color:#000;}
+        p > a > i{margin-right:3px;}
+    </style>
+</head>
+<body>
+    <p><a class="number"></a></p>
+    <p><a class="email"></a></p>
+    <p><a class="address"></a></p>
+
+    <p><a class="number"></a></p>
+    <p><a class="email"></a></p>
+    <p><a class="address"></a></p>
+
+    <script>
+        document.querySelectorAll(".number").forEach(function(e){
+            var num = "+91-000-000-0000";
+            e.target = "_blank";
+            e.href = `tel:${num}`;
+            e.innerHTML += `
+                <i class="fa fa-phone"></i>
+                <span>${num}</span>
+            `;
+        });
+        document.querySelectorAll(".email").forEach(function(e){
+            var email = "demo@gmail.com";
+            e.target = "_blank";
+            e.href = `mailto:${email}`;
+            e.innerHTML += `
+                <i class="fa fa-envelope"></i>
+                <span>${email}</span>
+            `;
+        });
+        document.querySelectorAll(".address").forEach(function(e){
+            var address = "25-JP Nagar, Delhi.";
+            e.innerHTML += `
+                <i class="fa fa-map-marker"></i>
+                <span>${address}</span>
+            `;
+        });
+    </script>
+</body>
+</html>
