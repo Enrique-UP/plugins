@@ -12,6 +12,8 @@
     <div id="cc">
         <p>for using javascript property in jquery</p>
     </div>
+
+    <div id="demo">Demo</div>
     
     <script src="../../jquery-2.2.4.min.js"></script>
     <script>
@@ -23,6 +25,7 @@
         $(document).ready(function() {
             console.log($("#cc").prop("outerHTML"));
             console.log($("#cc").prop("innerHTML"));
+            $("#demo").get(0).style.setProperty("--width", 100 + "%");
         });
     </script>
 </body>

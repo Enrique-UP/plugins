@@ -18,9 +18,13 @@ $(window).scroll(function() {
           easing: 'swing',
           step: function() {
             $this.text(Math.floor(this.countNum));
+            // for comma
+            //$this.text(Math.floor(this.countNum).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
           },
           complete: function() {
             $this.text(this.countNum);
+            // for comma
+            //$this.text(Math.floor(this.countNum).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
             //alert('finished');
           }
 

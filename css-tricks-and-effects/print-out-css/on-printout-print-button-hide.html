@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        @media print {
+            .noPrint{display:none;}
+        }
+        h1{
+        color:#f6f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Print me</h1>
+    <h1 class="noPrint">no print</h1>
+    <button onclick="window.print();" class="noPrint">Print Me</button>
+</body>
+</html>

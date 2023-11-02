@@ -1,0 +1,58 @@
+@import "./fonts.scss";
+@import "./font-family.scss";
+
+*{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;font: inherit;}
+
+:root{
+    --c1:#101213;
+    --c2:#e3e6e0;
+    --c3:#9c9e9f;
+    --c4:#8f9192;
+}
+.fc{display:flex;flex-direction:column;}
+.center{display:flex;justify-content: center;align-items: center;}
+
+body{font-family: normal;font-size: 14px;line-height: 1.6;background: var(--c2);}
+html, body, main{height:100%;}
+main{width:800px;margin:0 auto;position: relative;@extend .fc;padding:100px;justify-content:space-between;
+    &::before, &::after{width:50%;height:100%;position: absolute;top:0;content:"";}
+    &::before{left:0;background: var(--c1);}
+    &::after{right:0;background: #fff;}
+    > *{width:100%;position: relative;z-index: 1;}
+
+    section{
+        header{display: flex;justify-content: space-between;padding-bottom:50px;
+            .left{color:var(--c3);line-height: 1.5;display: flex;align-items: center;text-transform: uppercase;letter-spacing: 1px;}
+            .right{@extend .fc;border:2px solid var(--c1);width:60px;padding:7px 15px;text-align: center;font-family:medium;
+                i:first-child{border-bottom:2px solid var(--c1);color:var(--c1);padding-bottom:2px;margin-bottom:2px;}
+            }
+        }
+    
+        div.dp{@extend .center;
+            > span{width:300px;display: flex;padding:25px;background:#fff;position:relative;
+                &::before{position: absolute;top:0;right:0;background: var(--c1);content: "";width:50%;height:100%;}
+                > img{width:100%;position: relative;}
+            }
+        }
+    }
+
+    footer{display: flex;flex-wrap:wrap;
+        > *{width:50%;}
+        .left{padding-right:50px;@extend .fc;text-transform:uppercase;
+            .name{color:#fff;font-size: 50px;line-height: 1.1;letter-spacing: 3px;margin-bottom: 5px;}
+            .post{color:var(--c3);font-size: 16px;letter-spacing: 1px;}
+        }
+        .right{padding-left:50px;
+            p{
+                &:not(:last-child){margin-bottom: 10px;}
+                &.head{font-family: bold;text-transform: uppercase;color:var(--c1);letter-spacing: 2px;font-size: 16px;}
+                &.text{display: flex;
+                    a{text-decoration: none;position: relative;padding-left:20px;color:var(--c4);
+                        .icon{position: absolute;top:0;left:0;color:var(--c1);}
+                    }
+                }
+            }
+        }
+        .full{width:100%;color: var(--c4);text-align: justify;padding-top: 10px;}
+    }
+}

@@ -70,10 +70,22 @@ html
                     input(type="text" disabled=true)
 
 
+                
+                - const name = "Enrique"
+                p Hi #{name}
+
+
 
                 - const myClasses = ["class1", "class2", "class3"]
                 div(class=myClasses) Adding multiple classes
                 div.my-div(class=myClasses) Adding multiple classes
+
+                - var classes = ['foo', 'bar', 'baz']
+                a(class=classes)
+                |
+                |
+                //- the class attribute may also be repeated to merge arrays
+                a.bang(class=classes class=['bing'])
 
 
 
@@ -93,10 +105,36 @@ html
                 
                 - const myAttribues = {"src":"./images/demo.jpg", "alt":"Demo Image"}
                 img&attributes(myAttribues)
+                div#foo(data-bar="foo")&attributes({'data-foo': 'bar'})
+
+
+
+                p !{"<i class='icon'>&#copy;</i>"}
+                p #{"<i class='icon'>&#copy;</i>"}
+                p 
+                    a(href="https://pugjs.org/language/interpolation.html" target="_blank") https://pugjs.org/language/interpolation.html
+                p 
+                    a: img
+                    //- <p><a><img /></a></p>
 
 
 
                 h1 For/Each Loop
+
+                - const employees = ['Angela', 'Jim', 'Nilson', 'Simone']
+                    ul
+                    each employee in employees
+                        li= employee
+                
+
+                mixin pet(name)
+                    li.pet= name
+                ul
+                    +pet('cat')
+                    +pet('dog')
+                    +pet('pig')
+
+
                 each a in [1, 2, 3, 4, 5]
                     p= a
 
