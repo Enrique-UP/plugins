@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Arrow Functions</title>
+<style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;}
+    body{padding:50px;}
+    h1{margin-bottom: 30px;}
+    p{margin-bottom: 10px;font-weight: bold;}
+</style>
+</head>
+<body>
+<h1>Spread & Rest Operators</h1>
+<h1>Spread Operators</h1>
+<p>
+    const numbers = [1, 2, 3];<br>
+    const newnumbers = [...numbers, 4];<br>
+    console.log(newnumbers);
+</p><br><br>
+<h1>Rest Operators</h1>
+<p>
+    const filter = (...args) => {<br>
+        return args.filter(el => el === 1);<br>
+    }<br>
+    console.log(filter(1, 2, 3));
+</p><br><br>
+<script type="text/javascript">
+    const numbers = [1, 2, 3];
+    const newnumbers = [...numbers, 4];
+    console.log(newnumbers);
+
+
+
+    const person = {
+        name: "Max"
+    };
+    const nperson = {
+        ...person,
+        age: 28
+    }
+    console.log(nperson);
+
+
+
+    const filter = (...args) => {
+        return args.filter(el => el === 1);
+    }
+    console.log(filter(1, 2, 3));
+</script>
+</body>
+</html>
