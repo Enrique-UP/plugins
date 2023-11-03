@@ -21,6 +21,16 @@
         .tip::before{content:"";font-weight: 800;}
 
         .pseudo{color:var(--myVar);}
+
+
+        #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+            display: none;
+        }
 	</style>
 </head>
 <body>
@@ -31,7 +41,8 @@
     <p class="tip">Tip</p>
     <div class="pseudo">Pseudo</div>
 
-
+    <button onclick="myFunction()">Try it</button>
+    <div id="myDIV">This is my DIV element.</div>
 
     <script>
         document.write("<br /><br />");
@@ -49,10 +60,15 @@
 
         document.querySelector(".pseudo").style.setProperty('--myVar', "purple");
 
-        document.write("Pseudo Elements:- " + window.getComputedStyle(document.querySelector('.tip'), '::before').fontWeight);
-
-
-        
+        document.write("Pseudo Elements:- " + window.getComputedStyle(document.querySelector('.tip'), '::before').fontWeight);       
     </script>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myDIV");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          }
+        }
+    </script>        
 </body>
 </html>
