@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul id="birds">
+  <li>Orange-winged parrot</li>
+  <li class="endangered">Philippine eagle</li>
+  <li>Great white pelican</li>
+  <li class="endangered">Philippine eagle</li>
+</ul>
+<ul id="birds1">
+  <li>Orange-winged parrot</li>
+  <li class="endangered">Philippine eagle</li>
+  <li>Great white pelican</li>
+  <li class="endangered">Philippine eagle</li>
+</ul>
+
+<script>
+const birds = document.querySelectorAll("#birds > li");
+for (const bird of birds) {
+  if (bird.matches(".endangered")) {
+    document.write(`The ${bird.textContent} is endangered!<br>`);
+  }
+}
+
+document.querySelectorAll("ul#birds1 > li").forEach(function(e){
+  if(e.matches(".endangered")){
+    e.innerHTML = "Demo";
+  }
+});
+
+</script>
+</body>
+</html>
