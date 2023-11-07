@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const mobileCart = [
+            {name: "iPhone 10", price: "$900", release_date: "2020-05-10"},
+            {name: "Galaxy S11", price: "$800", release_date: "2020-10-23"},
+            {name: "iPhone 8", price: "$600", release_date: "2018-06-03"},
+            {name: "iPhone 8", price: "$600", release_date: "2018-06-01"},
+            {name: "Pixel 4", price: "$700", release_date: "2020-03-11"},
+            {name: "Galaxy M6", price: "$500", release_date: "2019-05-26"},
+            {name: "Galaxy M6", price: "$500", release_date: "2023-09-26"},
+            {name: "Galaxy M6", price: "$500", release_date: "2023-06-08"}
+        ];
+
+        // List of mobile with release_date before year 2019 
+        // const mobileBefore2019 = mobileCart.filter((item) => {
+        //     const mobileRelease = new Date(item.release_date);
+        //     return mobileRelease.getFullYear() < 2019;
+        // });
+        // console.log(mobileBefore2019);
+        // mobileBefore2019;
+
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let d = `${year}-${month}-${day}`;
+        //console.log(d);
+        const fromDate = new Date(d);
+        const mobileFromDate = mobileCart.filter((item) => {
+            const mobileDate = new Date(item.release_date);
+            return mobileDate >= fromDate;
+        });
+        for(var i = 0; i < mobileFromDate.length; i++){
+            document.querySelector("body").innerHTML += `
+                <p>
+                    <span>${mobileFromDate[i].name}</span>
+                    <b><i><u>${mobileFromDate[i].price}</u></i></b>
+                    <span>${mobileFromDate[i].release_date}</span>
+                </p>
+            `;
+        }
+    </script>
+</body>
+</html>
