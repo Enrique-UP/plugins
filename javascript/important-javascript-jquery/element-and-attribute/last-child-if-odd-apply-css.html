@@ -68,8 +68,7 @@
     </ul>
     <script>
         (function(){
-            var ul = document.querySelectorAll("ul");
-            ul.forEach(function(e){
+            document.querySelectorAll("ul").forEach(function(e){
                 var num  = e.children.length;
                 if(num % 2 == 1){
                     //e.querySelector("li:nth-child(" + num + ")").style.width = "100%";

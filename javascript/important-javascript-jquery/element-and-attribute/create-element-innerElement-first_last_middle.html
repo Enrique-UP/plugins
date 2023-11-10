@@ -5,18 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Document</title>
+    <style>
+        .active{border:1px solid red;}
+    </style>
 </head>
 <body>
     <ul class="js_li">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+
+    <ul class="middle">
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+
+    <ul class="middle">
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
     </ul>
 
 <script>
     (function(){
         var span = document.createElement("li");
-        span.innerText = "Span Add in Bottom";
+        span.innerText = "Span Add in Bottom (append / appendChild)";
         document.querySelector("ul.js_li").appendChild(span);
 
         var span1 = document.createElement("li");
@@ -28,7 +46,7 @@
         const liTagText = document.createTextNode("Water");
         liTag.appendChild(liTagText);
         const list = document.querySelector("ul.js_li");
-        list.insertBefore(liTag, list.children[0]);
+        list.insertBefore(liTag, list.children[1]);
 
         var li = document.querySelectorAll("ul.js_li > li");
         var a = 0;
@@ -36,7 +54,22 @@
             if(a < li.length){
                 a++;
             }
-            e.innerText += a;
+            e.innerText = a + " - " + e.innerHTML;
+        });
+    })();
+</script>
+<script>
+    (function(){
+        document.querySelectorAll(".middle").forEach(function(e){
+            var childs = e.children.length;
+            var li = document.createElement("li");
+            li.innerHTML = "Create Element";
+            li.classList.add("active");
+            if(childs % 2 == 0){
+                e.insertBefore(li, e.children[(childs/2)]);
+            }else{
+                e.insertBefore(li, e.children[(childs/2) + 0.5]);
+            }
         });
     })();
 </script>

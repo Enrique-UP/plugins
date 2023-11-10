@@ -8,7 +8,11 @@
 <body>
     <main>
         <header></header>
-        <section class="one"></section>
+        <section class="one">
+            <p>Lorem</p>
+            <p>Lorem</p>
+            <p>Lorem</p>
+        </section>
         <section class="two"></section>
         <section class="three"></section>
         <footer></footer>
@@ -16,18 +20,19 @@
     <script>
         var element = document.createElement("div");
         element.textContent = "Created New DIV Element";
-        //document.querySelector("header").append(element);
-        //document.querySelector("main .one").insertBefore(element, document.querySelector("main .one").children[0]);
+        document.querySelector("header").append(element);
+        //document.querySelector("header").appendChild(element);
+        //document.querySelector("main .one").insertBefore(element, document.querySelector("main .one").children[2]);
         //document.querySelector("main .one").insertAdjacentElement("beforebegin", element); // this is for tags
-        document.querySelector("main .one").insertAdjacentHTML("beforebegin", "<div>New Div</div>"); //this is for html
+        //document.querySelector("main .one").insertAdjacentHTML("beforebegin", "<div>New Div</div>"); //this is for html
 
         //createTextNode
         //textContent
         //innerText
         //text
 
-        // appendChild
         // append
+        // appendChild
         // insertBefore
         // insertAdjacentHTML
         // insertAdjacentElement
