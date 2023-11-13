@@ -431,11 +431,13 @@ section.benefits{
         }
     }
 }
-section.audio{background: var(--c1);
+section.audio{background:url(../../images/banner1.webp) no-repeat top center;background-size:cover;position:relative;
+    &::before{width:100%;height:100%;position: absolute;top:0;left:0;content: "";background: var(--c1);opacity: 0.85;}
+    .container{position: relative;}
     .mainHead{
         .head, .detailsHead{color: white;}
     }
-    .audioArea{background: rgba(225,225,225,0.1);display: flex;flex-direction: column;border-radius: 10px;padding: 40px 40px 40px;color:white;height:100%;border:1px solid transparent;
+    .audioArea{background: rgba(225,225,225,0.1);display: flex;flex-direction: column;border-radius: 10px;padding: 40px 40px 40px;color:white;height:100%;border:1px solid #fff;
         > *:not(.icon){margin-bottom: 15px;}
         .icon:first-child{color:var(--b1);font-size:60px;margin-bottom: 20px;@extend .trans;}
         .icon:last-child{background: rgba(225,225,225,0.3);width:40px;height:40px;border-radius: 100%;display: flex;justify-content: center;align-items: center;margin-top: 5px;@extend .trans;}
