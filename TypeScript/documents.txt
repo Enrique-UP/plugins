@@ -1,24 +1,32 @@
-// write on terminal npm by cmd
+=========video-1
+download node js from https://nodejs.org/en/download => windows Installer
+go to folder then press ctrl + l => node -v
+
 npm install typescript -g
-tsc two.ts -w // for npm
-tsc.cmd file3.ts -w // for vs code terminal
+go to folder then press ctrl + l => tsc -v
+
+=========video-2
+for compiling only single file and again compiling
+go to terminal => tsc demo.ts
+// for showing result in terminal
+go to terminal => node demo.js
+
+=========video-3
+for auto compile
+go to terminal => tsc demo.ts -w
+
+=========video-4
+go to terminal => tsc.cmd demo.ts -w
 
 
-// for version checking
-tsc -v
-npm -v
-
-
-run time error // on browser
-compileration error // on text editor like vs code
-
-
-for see output of ts file 
-run in terminal vs code
-node file4.ts
-
-
-
+===========================================
+npm install typescript -g
 tsc.cmd --init
-tsc.cmd -w
-// for compiling all ts file into js file
+now created tsconfig.json file
+tsc.cmd --w
+
+tsconfig.json setting => go to tsfonfig.json file => add below code after "},"
+"include": [
+    "ts/"
+]
+===========================================
