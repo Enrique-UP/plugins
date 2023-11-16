@@ -17,7 +17,6 @@ import Testimonials from "./components/Testimonials";
 import Aboutus from "./components/Aboutus";
 import Services from "./components/Services";
 import Contactus from "./components/Contactus";
-import Demo from "./components/Demo";
 
 import Top from "./components/include/Top";
 
@@ -35,7 +34,6 @@ const App = () => {
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/testimonials" element={<Testimonials />} />
           <Route exact path="/contactus" element={<Contactus />} />
-          <Route exact path="/demo" element={<Demo />} />
           <Route path="*" element={<Navigate to="/" />} />
           {/*<Route path="*" element={"Page no found"} />*/}
         </Routes>

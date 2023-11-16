@@ -372,7 +372,20 @@ section.sectionTB{padding-top: 80px;padding-bottom: 50px;
 section.aboutUs{
     .banner{width:calc(33.33% - 30px);margin-right: 30px;margin-bottom: 30px;border:18px solid var(--b3);float:left;height:auto;}
     p{display: block;margin-bottom: 10px;}
-    .details{margin-bottom: 20px;}
+    .details{margin-bottom: 20px;
+        > ul, > ol{width:100%;padding:0;margin:0 0 10px;display:block;
+            > li{width:100%;margin-bottom: 5px;list-style-position: inside;
+                &::marker{color:var(--c2);}
+            }
+        }
+        > ol{
+            > li{
+                &::marker{font-weight: 600;}
+            }
+        }
+        b, strong{color:var(--c2);}
+        a{color:var(--b1);font-weight: 500;display: inline;}
+    }
     &{
         @media (min-width:576px) and (max-width:767px){
            .banner{width:40%;margin-right: 20px;margin-bottom: 10px;}
@@ -441,9 +454,9 @@ section.audio{background:url(../../images/banner1.webp) no-repeat top center;bac
         > *:not(.icon){margin-bottom: 15px;}
         .icon:first-child{color:var(--b1);font-size:60px;margin-bottom: 20px;@extend .trans;}
         .icon:last-child{background: rgba(225,225,225,0.3);width:40px;height:40px;border-radius: 100%;display: flex;justify-content: center;align-items: center;margin-top: 5px;@extend .trans;}
-        .heads{font-size: 20px;font-weight: 600;text-transform: capitalize;line-height: 1.5;}
+        .heads{font-size: 18px;font-weight: 600;text-transform: capitalize;line-height: 1.5;}
         .text{font-size: 16px;opacity: 0.7;}
-        &:hover{border-color:var(--b2);background:transparent;
+        &:hover{border-color:var(--b2);background: var(--c1);
             .icon:last-child{background:var(--b2);}
         }
     }
@@ -454,16 +467,17 @@ section.audio{background:url(../../images/banner1.webp) no-repeat top center;bac
     }
 }
 section.videoIcon{
-    .videoIconArea{display:flex;flex-direction:column;color:black;text-align:center;border:1px solid var(--border);border-radius: 10px;padding: 40px 40px 40px;height: 100%;
+    .videoIconArea{display:flex;flex-direction:column;color:var(--c2);border:1px solid var(--border);border-radius: 10px;padding: 40px 40px 40px;height: 100%;
         > *:not(.icon){margin-bottom: 15px;}
         .icon:first-child{font-size:50px;color:var(--b1);margin-bottom: 20px;}
-        .icon:last-child{background: rgba(225,225,225,0.3);width:40px;height:40px;border-radius: 100%;display: flex;justify-content: center;align-items: center;margin-top: 5px;margin: 0 auto;}
-        .heads{font-size: 20px;font-weight: 600;text-transform: capitalize;@extend .trans;line-height: 1.5;}
+        .icon:last-child{background: rgba(225,225,225,0.3);width:40px;height:40px;border-radius: 100%;display: flex;justify-content: center;align-items: center;margin-top: 5px;}
+        .heads{font-size: 18px;font-weight: 600;text-transform: capitalize;@extend .trans;line-height: 1.5;}
         .text{font-size: 16px;opacity: 0.7;@extend .trans;}
-        &:hover{border-color:var(--b2);
+        &:hover{border-color:var(--b2);background: var(--c1);
             .icon{
                 &:last-child{color:white;@extend .trans;background: var(--b2);}
             }
+            .heads{color:white;}
         }
     }
     &{
@@ -569,9 +583,9 @@ i.top{position:fixed;right:15px;bottom:40px;background: var(--b2);color:white;wi
 
 ul.testimonials_box {width: 100%;float: left;padding: 20px 20px 4px;margin: 0;border: 1px solid #ceced3;background: #fff;height: 100%;
     > li{width: 100%;float: left;position: relative;padding-left: 100px;list-style: none;
-        .icon{width: 80px;text-align: center;line-height: 80px;font-size: 40px;background: #84c340;color: #fff;position: absolute;left: 0;top: 0;}
+        .icon{width: 80px;text-align: center;line-height: 80px;font-size: 40px;background: var(--b2);color: #fff;position: absolute;left: 0;top: 0;}
         .name{font-weight: bold;font-size: 20px;text-transform: capitalize;margin: 0;color:var(--c1);}
-        .post{color: #84c340;text-transform: capitalize;margin-bottom: 8px;font-weight: bold;}
+        .post{color: var(--b1);text-transform: capitalize;margin-bottom: 8px;font-weight: bold;}
     }
     &{
         @media (max-width:575px){
