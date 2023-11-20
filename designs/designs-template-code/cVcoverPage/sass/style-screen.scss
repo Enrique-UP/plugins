@@ -19,7 +19,7 @@ body{font-family: regular;font-size: 14px;line-height: 1.6;color:var(--c1);}
 html, body, main, .cover{height:100%;}
 main{width:1000px;margin:0 auto;max-width: 100%;}
 .settings{display: none;font-size: 36px;}
-.cover{position: relative;@extend .fc;padding:100px;justify-content:space-between;page-break-after: always;display:none !important;
+.cover{position: relative;@extend .fc;padding:100px;justify-content:space-between;page-break-after: always;
     &::before, &::after{width:50%;height:100%;position: absolute;top:0;content:"";}
     &::before{left:0;background: var(--c1);}
     &::after{right:0;background: var(--c2);}
