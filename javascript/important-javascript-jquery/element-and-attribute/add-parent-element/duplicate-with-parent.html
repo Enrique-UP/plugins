@@ -9,11 +9,26 @@
     </style>
 </head>
 <body>
+    <p class="demo0">Lorem</p>
     <div class="demo">Lorem</div>
+    <p>&nbsp;</p>
+    <div class="demo1">Ipsum</div>
+    <p>&nbsp;</p>
+    <div class="demo2">Dolor</div>
 
+    
     <script>
+        var p = document.querySelector(".demo0");
+        p.outerHTML = `<div class="parent">${p.outerHTML}</div>`;
+            
         var element = document.querySelector(".demo");
         element.outerHTML += `<div class='active'>${element.outerHTML}</div>`;
+
+        var element1 = document.querySelector(".demo1");
+        element1.outerHTML += `${element1.outerHTML}`;
+
+        var element2 = document.querySelector(".demo2");
+        element2.outerHTML = `<div class='active'>${element2.outerHTML}</div>`;
     </script>
 </body>
 </html>
