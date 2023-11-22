@@ -18,13 +18,14 @@
 const birds = document.querySelectorAll("#birds > li");
 for (const bird of birds) {
   if (bird.matches(".endangered")) {
-    document.write(`The ${bird.textContent} is endangered!<br>`);
+    document.write(`<p style="background:#ddd;">The ${bird.textContent} is endangered!</p>`);
   }
 }
 
 document.querySelectorAll("ul#birds1 > li").forEach(function(e){
   if(e.matches(".endangered")){
     e.innerHTML = "Demo";
+    e.style.background = "#eee";
   }
 });
 

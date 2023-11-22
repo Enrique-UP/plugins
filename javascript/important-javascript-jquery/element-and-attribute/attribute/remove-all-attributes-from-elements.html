@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo1" data-Text="Text">Lorem 1</div>
+    <div class="demo1" data-Text="Text">Lorem 1</div>
+    <p>&nbsp;</p>
+    <div class="demo2" data-Text="Text">Lorem 2</div>
+    <div class="demo2" data-Text="Text">Lorem 2</div>
+    
+    
+    
+    <script>
+        document.querySelectorAll(".demo1").forEach((e) => [...e.attributes].forEach(attr => e.removeAttribute(attr.name)));
+
+        document.querySelectorAll(".demo2").forEach(function(e){
+            [...e.attributes].forEach(function(attr){
+                e.removeAttribute(attr.name);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -27,6 +27,8 @@
         <div>Lorem ipsum dolor</div>
         <div class="text5">Text 5</div>
         <div class="text6">Text 6</div>
+        <div class="text7">Text 7</div>
+        <div class="text8">Text 8</div>
         <div>Lorem ipsum dolor</div>
     </div>
 
@@ -68,13 +70,17 @@
 
         var t5 = document.querySelector(".demo1 > .text5");
         var t6 = document.querySelector(".demo1 > .text6");
-        console.log(t3.outerHTML, t4.outerHTML);
+        var t7 = document.querySelector(".demo1 > .text7");
+        var t8 = document.querySelector(".demo1 > .text8");
+        console.log(t5.outerHTML, t6.outerHTML, t7.outerHTML, t8.outerHTML);
         console.log("====");
 
-        var a = "<div class='parent'>" + t5.outerHTML + t6.outerHTML + "</div>";
+        var a = "<div class='parent'>" + t5.outerHTML + t6.outerHTML + t7.outerHTML + t8.outerHTML + "</div>";
         console.log(a);
         document.querySelector(".demo1 > .text5").outerHTML = a;
-        document.querySelector(".demo1 .parent").nextElementSibling.remove();
+        document.querySelectorAll(".demo1 > .text6, .demo1 > .text7, .demo1 > .text8").forEach(function(e){
+            e.remove();
+        });
     </script>
 </body>
 </html>
