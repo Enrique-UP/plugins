@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="box1">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+    </select>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <select id="box2">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+    </select>
+    <script>
+        document.getElementById("box1").onchange = function(){
+            document.getElementById("box2").value = this.value;
+        };
+    </script>
+</body>
+</html>

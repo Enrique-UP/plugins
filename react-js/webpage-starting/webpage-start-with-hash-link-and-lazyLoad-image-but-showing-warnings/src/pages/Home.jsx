@@ -5,40 +5,40 @@ import { useEffect } from "react";
 import img from "../images/image.jpg";
 
 const Home = () => {
-    useEffect(() => {
-        let observer = new window.IntersectionObserver(function (entries, self) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              loadImages(entry.target);
-              //loadImages2(entry.target);
-              self.unobserve(entry.target);
-            }
-          });
-        });
+    // useEffect(() => {
+    //     let observer = new window.IntersectionObserver(function (entries, self) {
+    //       entries.forEach((entry) => {
+    //         if (entry.isIntersecting) {
+    //           loadImages(entry.target);
+    //           //loadImages2(entry.target);
+    //           self.unobserve(entry.target);
+    //         }
+    //       });
+    //     });
     
-        const imgs = document.querySelectorAll("[data-src], [data-style]");
-        imgs.forEach((img) => {
-          observer.observe(img);
-        });
-        return () => {
-          imgs.forEach((img) => {
-            observer.unobserve(img);
-          });
-        };
-      }, []);
+    //     const imgs = document.querySelectorAll("[data-src], [data-style]");
+    //     imgs.forEach((img) => {
+    //       observer.observe(img);
+    //     });
+    //     return () => {
+    //       imgs.forEach((img) => {
+    //         observer.unobserve(img);
+    //       });
+    //     };
+    //   }, []);
     
-      const loadImages = (image) => {
-        image.src = image.dataset.src;
-        image.style = `background-image:url(${image.dataset.style})`;
+    //   const loadImages = (image) => {
+    //     image.src = image.dataset.src;
+    //     image.style = `background-image:url(${image.dataset.style})`;
         
-        if(image.hasAttribute("data-src")){
-            image.removeAttribute("data-src");
-            image.removeAttribute("style");
-        }
-        if(image.hasAttribute("data-style")){
-            image.removeAttribute("data-style");
-        }
-      };
+    //     if(image.hasAttribute("data-src")){
+    //         image.removeAttribute("data-src");
+    //         image.removeAttribute("style");
+    //     }
+    //     if(image.hasAttribute("data-style")){
+    //         image.removeAttribute("data-style");
+    //     }
+    //   };
     return(
         <>
             <CustomScript>
@@ -74,10 +74,10 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="image">
-                    <img data-src={img} />
+                    <img className="lazy" data-src={img} />
                 </section>
                 <section className="image">
-                    <div data-style={img}>Style</div>
+                    <div className="lazy" data-style={img}>Style</div>
                 </section>
                 <section>
                     <div className="container">

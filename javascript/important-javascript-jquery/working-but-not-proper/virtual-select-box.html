@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Document</title>
+    <link rel="stylesheet" href="../../../font-awesome.min.css" type="text/css" />
     <style type="text/css">
         *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:10px;font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
         select.select{display: none;}
 
         .selectBox{width:200px;border:1px solid #ccc;position:relative;display: flex;}
-        .selectBox > ul{position: absolute;top:100%;left:0;background: #fff;width: 100%;}
+        .selectBox > span{width:100%;padding:10px;position: relative;font-weight: 600;}
+        .selectBox > span::before{font-family: FontAwesome;content:"\f107";position: absolute;top:50%;transform: translateY(-50%);right:10px;}
+        .selectBox > ul{position: absolute;top:100%;left:0;background: #eee;width: 100%;padding:0;margin:0;display: flex;flex-direction: column;border:1px solid #ccc;transform: scaleY(0);transform-origin: top;transition: 0.3s linear;}
+        .selectBox.active > ul{transform: scaleY(1);}
+        .selectBox > ul > li{list-style: none;padding:7px 10px;}
+        .selectBox > ul > li:not(:last-child){border-bottom:1px solid #ccc;}
     </style>
 </head>
 <body>
@@ -21,6 +28,7 @@
         <option value="BGD">Bangladesh</option>
         <option value="BLR">Belarus</option>
     </select>
+    <p>sadf</p>
 
     <script>
         var select = document.querySelector(".select")
@@ -57,6 +65,11 @@
         let spanTag = document.createElement("span");
         spanTag.innerHTML = "Please Select";
         document.querySelector(".selectBox").insertBefore(spanTag, document.querySelector(".selectBox").children[0]);
+
+        document.querySelector(".selectBox").addEventListener("click", function(){
+            this.classList.toggle("active");
+            this.querySelector("span").style.setProperty("content", "\f106");
+        });
     </script>
 </body>
 </html>

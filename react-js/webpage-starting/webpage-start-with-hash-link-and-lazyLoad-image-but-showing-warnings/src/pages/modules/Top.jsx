@@ -23,7 +23,7 @@ const Top = () => {
 
   return (
     <>
-		{showButton && (<i onClick={scrollToTop} className="icon">&#8593;</i>)}
+		  {showButton && (<i onClick={scrollToTop} className="iconTop">&#8593;</i>)}
     </>
   );
 };

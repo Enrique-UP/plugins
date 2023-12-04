@@ -1,51 +1,23 @@
 import CustomScript from "./modules/CustomScript";
-import { useEffect } from "react";
 const Contact = () => {
-    useEffect(() => {
-        let observer = new window.IntersectionObserver(function (entries, self) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              loadImages(entry.target);
-              self.unobserve(entry.target);
-            }
-          });
-        });
-    
-        const imgs = document.querySelectorAll("section");
-        imgs.forEach((img) => {
-          observer.observe(img);
-        });
-        return () => {
-          imgs.forEach((img) => {
-            observer.unobserve(img);
-          });
-        };
-    }, []);    
-    const loadImages = (image) => {
-        image.style = `width:${image.dataset.width}`;
-        
-        if(image.hasAttribute("data-width")){
-            image.removeAttribute("data-width");
-        }
-    };
     const DataPropsdata = [
         {
-            text : "Contact Us 1",
+            text : "Contact Us 1 click here",
             link : () => window.open('https://react.dev/')
         },
         {
-            text : "Contact Us 2",
+            text : "Contact Us 2 click here",
             link : () => window.open('https://react.dev/')
         },
         {
-            text : "Contact Us 3",
+            text : "Contact Us 3 click here",
             link : () => window.open('https://react.dev/')
         }
     ];
     function DataPropsTag(props) {
         return(
             <>
-                <section data-width="100%">
+                <section>
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-12">
@@ -55,7 +27,9 @@ const Contact = () => {
                                         <div className="col-xs-12" onClick={props.link}>
                                             <p>{props.text}</p>
                                         </div>
-                                        <div className="col-xs-12"><a onClick={(e) => {e.target.closest(".container").classList.toggle("active")}}>{props.text} Click here...</a></div>
+                                        <div className="col-xs-12">
+                                            <a onClick={(e) => {e.target.closest(".container").classList.toggle("active")}}>{props.text} Click here...</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

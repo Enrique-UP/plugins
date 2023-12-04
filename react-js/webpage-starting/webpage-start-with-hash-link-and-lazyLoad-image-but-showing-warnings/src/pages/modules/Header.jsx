@@ -19,6 +19,8 @@ const Header = () => {
                 <li><NavHashLink to="/about" className="top">About Us</NavHashLink></li>
                 <li><NavHashLink className="notActive" to="/about#abouthash">Link to Hash Fragment</NavHashLink></li>
                 <li><NavLink to="/contact">Contact Us</NavLink></li>
+                <li><NavLink to="/lazyload">Lazy Load Image</NavLink></li>
+                <li><NavLink to="/content">Content Lazy Load</NavLink></li>
             </ul>
         </>
     )

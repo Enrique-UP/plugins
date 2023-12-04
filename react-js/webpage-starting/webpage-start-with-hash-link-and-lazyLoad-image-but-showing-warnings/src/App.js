@@ -12,6 +12,8 @@ import Top from "./pages/modules/Top";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import LazyLoadImage from "./pages/LazyLoadImage";
+import ContentSectionLazyLoad from "./pages/ContentSectionLazyLoad";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/lazyload" element={<LazyLoadImage />} />
+        <Route exact path="/content" element={<ContentSectionLazyLoad />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />

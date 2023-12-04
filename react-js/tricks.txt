@@ -73,7 +73,7 @@ https://www.youtube.com/watch?v=X1PI52QLanE
 scroll top
 https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/?ref=gcse
 ===========================================
-
+<form action="" className="form" onSubmit={(e) => {handleSubmit(e); sendEmail(e);}} >
 ===========================================
 
 ===========================================
