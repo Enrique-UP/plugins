@@ -11,12 +11,13 @@
         select.select{display: none;}
 
         .selectBox{width:200px;border:1px solid #ccc;position:relative;display: flex;}
-        .selectBox > span{width:100%;padding:10px;position: relative;font-weight: 600;}
+        .selectBox > span{width:100%;padding:10px;position: relative;font-weight: 600;cursor: default;}
         .selectBox > span::before{font-family: FontAwesome;content:"\f107";position: absolute;top:50%;transform: translateY(-50%);right:10px;}
         .selectBox > ul{position: absolute;top:100%;left:0;background: #eee;width: 100%;padding:0;margin:0;display: flex;flex-direction: column;border:1px solid #ccc;transform: scaleY(0);transform-origin: top;transition: 0.3s linear;}
         .selectBox.active > ul{transform: scaleY(1);}
-        .selectBox > ul > li{list-style: none;padding:7px 10px;}
+        .selectBox > ul > li{list-style: none;padding:7px 10px;cursor: default;}
         .selectBox > ul > li:not(:last-child){border-bottom:1px solid #ccc;}
+        .selectBox > ul > li[disabled]{opacity: 0.6;}
     </style>
 </head>
 <body>
@@ -28,7 +29,6 @@
         <option value="BGD">Bangladesh</option>
         <option value="BLR">Belarus</option>
     </select>
-    <p>sadf</p>
 
     <script>
         var select = document.querySelector(".select")
@@ -70,6 +70,12 @@
             this.classList.toggle("active");
             this.querySelector("span").style.setProperty("content", "\f106");
         });
+
+        document.querySelectorAll(".selectBox ul.select > li:not(:first-child)").forEach(function(e){
+            e.addEventListener("click", function(){
+                e.closest(".selectBox").querySelector("span").innerHTML = e.getAttribute("data-value");
+            });
+        })
     </script>
 </body>
 </html>

@@ -45,28 +45,20 @@ function FormArea() {
       <Formik initialValues={initialValues} validationSchema={FormValidation}>
         <Form ref={form} onSubmit={(f) => {sendEmail(f); handleSubmit(f)}}>
           <label htmlFor="name">Name</label><br />
-          <input type="text" name="user_name" value={values.user_name} onBlur={handleBlur} onChange={handleChange} />
-          <br />
-          {errors.user_name && <small>{errors.user_name}</small>}
-          <br />
+          <input type="text" name="user_name" value={values.user_name} onBlur={handleBlur} onChange={handleChange} /><br />
+          {errors.user_name && <small>{errors.user_name}</small>}<br />
 
           <label htmlFor="email">Email</label><br />
-          <input type="email" name="user_email" value={values.user_email} onBlur={handleBlur} onChange={handleChange} />
-          <br />
-          {errors.user_email && <small>{errors.user_email}</small>}
-          <br />
+          <input type="email" name="user_email" value={values.user_email} onBlur={handleBlur} onChange={handleChange} /><br />
+          {errors.user_email && <small>{errors.user_email}</small>}<br />
 
           <label htmlFor="password">Password</label><br />
-          <input type="password" name="user_password" value={values.user_password} onBlur={handleBlur} onChange={handleChange} />
-          <br />
-          {errors.user_password && <small>{errors.user_password}</small>}
-          <br />
+          <input type="password" name="user_password" value={values.user_password} onBlur={handleBlur} onChange={handleChange} /><br />
+          {errors.user_password && <small>{errors.user_password}</small>}<br />
 
           <label htmlFor="cpassword">Confirm Password</label><br />
-          <input type="password" name="user_cpassword" value={values.user_cpassword} onBlur={handleBlur} onChange={handleChange} />
-          <br />
-          {errors.user_cpassword && <small>{errors.user_cpassword}</small>}
-          <br />
+          <input type="password" name="user_cpassword" value={values.user_cpassword} onBlur={handleBlur} onChange={handleChange} /><br />
+          {errors.user_cpassword && <small>{errors.user_cpassword}</small>}<br />
 
           <button type="submit">Submit</button>
         </Form>

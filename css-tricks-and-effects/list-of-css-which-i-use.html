@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.5;}
+        ol > li::marker{color:black;font-weight: bold;}
+        ol > li{margin-bottom: 10px;color:#666;}
+        ol > li b{color:coral;font-weight: normal;}
+        ol > li strong{color:blue;}
+        ol > li i{text-decoration: underline;color:black;}
+        ol > li span{color:peru;}
+    </style>
+</head>
+<body>
+    <ol>
+        <li><strong>width</strong><br>width: auto|value|initial|inherit;</li>
+        <li><strong>min-width</strong><br>min-width: length|initial|inherit;</li>
+        <li><strong>max-width</strong><br>max-width: none|length|initial|inherit;</li>
+        <li><strong>height</strong><br>height: auto|length|initial|inherit;</li>
+        <li><strong>min-height</strong><br>min-height: length|initial|inherit;</li>
+        <li><strong>max-height</strong><br>max-width: none|length|initial|inherit;</li>
+        <li>
+            <strong>border</strong><br>
+            border-width: 2px;<br>
+            border-style: solid;<br>
+            border-color: red;<br>
+            <b>short hand property:-</b> border: 2px solid red;<br>
+        </li>
+        <li>
+            <strong>background</strong><br>
+            <span>background-color: red|rgba(0,0,0,0.5);</span><br>
+            <span>background-image: url("./images/banner.jpg");</span><br>
+            <span>background: linear-gradient(red,blue);|background: radial-gradient(red,blue);</span><br>
+            background-repeat: no-repeat;<br>
+            background-position: center center;<br>
+            background-size: cover|100% 100%;<br>
+            <b>short hand property:-</b> background: url("./images/banner.jpg") no-repeat center center / cover;
+        </li>
+        <li>transform: scale(1);</li>
+        <li>transition: 0.3s linear;</li>
+    </ol>
+</body>
+</html>

@@ -23,28 +23,20 @@ function FormArea1() {
         {({errors}) => (
           <Form>
             <label htmlFor="name">Name</label><br />
-            <Field type="text" name="user_name"></Field>
-            <br />
-            {errors.user_name && <small>{errors.user_name}</small>}
-            <br />
+            <Field type="text" name="user_name"></Field><br />
+            {errors.user_name && <small>{errors.user_name}</small>}<br />
 
             <label htmlFor="email">Email</label><br />
-            <Field type="email" name="user_email"></Field>
-            <br />
-            {errors.user_email && <small>{errors.user_email}</small>}
-            <br />
+            <Field type="email" name="user_email"></Field><br />
+            {errors.user_email && <small>{errors.user_email}</small>}<br />
 
             <label htmlFor="password">Password</label><br />
-            <Field type="password" name="user_password"></Field>
-            <br />
-            {errors.user_password && <small>{errors.user_password}</small>}
-            <br />
+            <Field type="password" name="user_password"></Field><br />
+            {errors.user_password && <small>{errors.user_password}</small>}<br />
 
             <label htmlFor="cpassword">Confirm Password</label><br />
-            <Field type="password" name="user_cpassword"></Field>
-            <br />
-            {errors.user_cpassword && <small>{errors.user_cpassword}</small>}
-            <br />
+            <Field type="password" name="user_cpassword"></Field><br />
+            {errors.user_cpassword && <small>{errors.user_cpassword}</small>}<br />
 
             <button type="submit">Submit</button>
           </Form>

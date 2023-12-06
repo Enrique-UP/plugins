@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{max-width: 50%;}
+.mask00 {
+  -webkit-mask-image: url(https://www.akounto.com/images/logo.svg);
+  mask-image: url(https://www.akounto.com/images/logo.svg);
+  -webkit-mask-size: 50%;
+  mask-size: 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center; 
+  mask-mode: luminance;
+  -webkit-mask-origin: content-box;
+  mask-origin: content-box; 
+}
+.mask0 {
+  -webkit-mask-image: url(https://www.akounto.com/images/logo.svg);
+  mask-image: url(https://www.akounto.com/images/logo.svg);
+  -webkit-mask-size: 50%;
+  mask-size: 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center; 
+}
+.mask1 {
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(black, transparent);
+}
+
+.mask2 {
+  -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+  mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+}
+
+.mask3 {
+  -webkit-mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.5) 50%);
+  mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.5));
+}
+
+.mask4 {
+  -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+  mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+}
+</style>
+</head>
+<body>
+<div class="mask00">
+    <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+</div>
+
+<div class="mask0">
+  <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+</div>
+
+<div class="mask1">
+  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+</div>
+
+<div class="mask2">
+  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+</div>
+
+<div class="mask3">
+  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+</div>
+
+<div class="mask4">
+  <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+</div>
+
+<p>mask-mode: match-source|luminance|alpha|initial|inherit;</p>
+<p>mask-origin: border-box|content-box|padding-box|margin-box|fill-box|stroke-box|view-box|initial|inherit;</p>
+</body>
+</html>
