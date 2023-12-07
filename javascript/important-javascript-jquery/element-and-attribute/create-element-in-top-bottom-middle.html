@@ -34,10 +34,12 @@
 <script>
     (function(){
         var span = document.createElement("li");
+        span.classList = "active";
         span.innerText = "Span Add in Bottom (append / appendChild)";
         document.querySelector("ul.js_li").appendChild(span);
 
         var span1 = document.createElement("li");
+        span1.classList = "active";
         span1.innerText = "Span Add in Top";
         document.querySelector("ul.js_li").insertBefore(span1, document.querySelector("ul.js_li").children[0]);
 

@@ -8,8 +8,8 @@
         *{padding:0;margin:0;box-sizing: border-box;}
         body{font-family: Arial, Helvetica, sans-serif;font-size:14px;}
         .boxes{display: flex;flex-wrap:wrap;}
-        .boxes .box{width:200px;height:200px;background:brown;color:white;font-weight:bold;}
-        .boxes .box:not(:last-child){margin-right: 10px;}
+        .boxes [data-common]{width:200px;height:200px;background:brown;color:white;font-weight:bold;}
+        .boxes [data-common]:not(:last-child){margin-right: 10px;}
 
 
         .method1{display: table;}
@@ -31,24 +31,52 @@
         .method5 > img{vertical-align: middle;
             height: 100%;object-fit: contain;
         }
+
+
+        .method6{display: grid;place-items: center center;
+            /* place-items: center end; */
+        }
+
+
+        .method7 {display: grid;}
+        .method7 > span{place-self: center center;}
+
+
+        .method8 {display: grid;place-content: center;}
+
+        .method9 {display: grid;}
+        .method9 > span{margin:auto;}
+
     </style>
 </head>
 <body>
     <div class="boxes">
-        <div class="box method1">
+        <div data-common="box" class="method1">
             <span>Middle</span>
         </div><!--box-->
-        <div class="box method2">
+        <div data-common="box" class="method2">
             <span>Middle</span>
         </div><!--box-->
-        <div class="box method3">
+        <div data-common="box" class="method3">
             <span>Middle</span>
         </div><!--box-->
-        <div class="box method4">
+        <div data-common="box" class="method4">
             <span>Middle</span>
         </div><!--box-->
-        <div class="box method5">
+        <div data-common="box" class="method5">
             <img src="../banner1.jpg" width="50" />
+        </div><!--box-->
+        <div data-common="box" class="method6">
+            <span>Middle</span>
+        </div><!--box-->
+        <div data-common="box" class="method7">
+            <span>Middle</span>
+        </div><!--box-->
+        <div data-common="box" class="method8">
+            <span>Middle</span>
+        </div><!--box-->
+        <div data-common="box" class="method9">
+            <span>Middle</span>
         </div><!--box-->
     </div><!--boxes-->
 </body>
