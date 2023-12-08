@@ -3,6 +3,7 @@
 <head>
     <style type="text/css">
         div{width:100%;padding-top:50px;padding-bottom: 50px;}
+        
         .one a[target] {background: green;}
         
         .two a[target="_blank"] {background-color: red;}/* or */
@@ -18,7 +19,17 @@
     </style>
 </head>
 <body>
-    <h1>CSS Attribute Selectors</h1>
+    <pre>
+        <b>All CSS Attribute Selectors</b>
+        <b>Selector 	        Example 	        Example description</b>
+        [attribute] 	        [target] 	        Selects all elements with a target attribute
+        [attribute=value] 	[target="_blank"] 	Selects all elements with target="_blank"
+        [attribute~=value] 	[title~="flower"] 	Selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
+        [attribute|=value] 	[lang|="en"] 	        Selects all elements with a lang attribute value starting with "en"
+        [attribute^=value] 	a[href^="https"] 	Selects all <a> elements with a href attribute value starting with "https"
+        [attribute$=value] 	a[href$=".pdf"] 	Selects all <a> elements with a href attribute value ending with ".pdf"
+        [attribute*=value] 	a[href*="w3schools"] 	Selects all <a> elements with a href attribute value containing the substring "w3schools"
+    </pre>
     <div class="one">
         <p><a href="https://www.w3schools.com">w3schools.com</a></p>
         <p><a href="http://www.disney.com" target="_blank">disney.com</a></p>
@@ -35,9 +46,9 @@
     </div><!--two-->
     <hr />
     <div class="three">
-        <img src="../banner1.jpg" title="klematis flower" width="150" height="113">
-        <img src="../banner1.jpg" title="flower" width="224" height="162">
-        <img src="../banner1.jpg" title="tree" width="200" height="358">
+        <img src="../../banner1.jpg" title="klematis flower" width="150" height="113">
+        <img src="../../banner1.jpg" title="flower" width="224" height="162">
+        <img src="../../banner1.jpg" title="tree" width="200" height="358">
     </div><!--three-->
     <hr />
     <div class="four">

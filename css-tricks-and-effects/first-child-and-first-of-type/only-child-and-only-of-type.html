@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		p:only-of-type {
+			background: red;
+		}
+		.p p:only-child {background: brown;}
+	</style>
+</head>
+
+<body>
+	<h2>:only-of-type</h2>
+	<div>
+		<p>This is a paragraph.</p>
+	</div>
+	<hr>
+	<div>
+		<p>This is a paragraph.</p>
+		<p>This is a paragraph.</p>
+	</div>
+	<hr>
+	<section>
+		<div>
+			<p>This is a paragraph.</p>
+		</div>
+		<div>
+			<div>
+				<p>This is a paragraph.</p>
+				<p>This is a paragraph.</p>
+			<div>
+		</div>
+	</section>
+	<hr>
+	<section>
+		<div>
+			<p>This is a paragraph.</p>
+			<div>
+				<div>
+					<p>This is a paragraph.</p>
+					<p>This is a paragraph.</p>
+				<div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<section>
+		<div>
+			<p>This is a paragraph.</p>
+			<div>
+				<div>
+					<p>This is a paragraph.</p>
+					<p>This is a paragraph.</p>
+				<div>
+				<p>This is a paragraph.</p>
+			</div>
+			<p>This is a paragraph.</p>
+		</div>
+	</section>
+
+	<h2>:only-child</h2>
+	<div class="p">
+		<p>This is a paragraph.</p>
+	</div>
+	<div class="p">
+		<span>This is a span.</span>
+		<p>This is a paragraph.</p>
+	</div>
+	<div class="p"><p>This is a paragraph.</p></div>
+</body>
+
+</html>

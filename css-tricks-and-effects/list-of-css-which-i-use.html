@@ -24,9 +24,25 @@
         <li><strong>max-height</strong><br>max-width: none|length|initial|inherit;</li>
         <li>
             <strong>border</strong><br>
-            border-width: 2px;<br>
-            border-style: solid;<br>
+            border-width:2px;<br />
+            border-width: 2px|25px 10px 4px 35px;<br>
             border-color: red;<br>
+            border-color: cyan|red green blue yellow;<br />
+            border-style: solid;<br />
+            border-style: dotted dashed solid double;<br>
+            border-style:
+            <pre>
+                dotted - Defines a dotted border
+                dashed - Defines a dashed border
+                solid - Defines a solid border
+                double - Defines a double border
+                groove - Defines a 3D grooved border. The effect depends on the border-color value
+                ridge - Defines a 3D ridged border. The effect depends on the border-color value
+                inset - Defines a 3D inset border. The effect depends on the border-color value
+                outset - Defines a 3D outset border. The effect depends on the border-color value
+                none - Defines no border
+                hidden - Defines a hidden border;
+            </pre>
             <b>short hand property:-</b> border: 2px solid red;<br>
         </li>
         <li>
@@ -37,10 +53,18 @@
             background-repeat: no-repeat;<br>
             background-position: center center;<br>
             background-size: cover|100% 100%;<br>
+            background-attachment: scroll|fixed|local|initial|inherit;<br />
             <b>short hand property:-</b> background: url("./images/banner.jpg") no-repeat center center / cover;
         </li>
-        <li>transform: scale(1);</li>
-        <li>transition: 0.3s linear;</li>
+        <li><strong>border-radius</strong></li>
+        <li><strong>font</strong></li>
+        <li><strong>transform: scale(1);</strong></li>
+        <li><strong>transition: 0.3s linear;</strong></li>
+        <li><strong>position</strong></li>
+        <li>
+            <strong>left,right,top,bottom</strong><br />
+            left: auto|length|initial|inherit;
+        </li>
     </ol>
 </body>
 </html>
