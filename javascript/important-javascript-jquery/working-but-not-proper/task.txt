@@ -20,3 +20,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 8. Select box change value then other select box show & change its option value.
 9. Add active class on accordion after refresh tab by session storage.
 https://support.themecatcher.net/quform-wordpress-v2/guides/customization/populating-a-select-menu-based-on-the-value-of-another-select-menu
+10. Get value outside of function

@@ -87,13 +87,14 @@
                    contentDiv.style.top = link[a].offsetTop + link[a].offsetHeight + "px";
                 });
             }
-            window.addEventListener("resize", topVal());
+            window.addEventListener("load", topVal());
             window.addEventListener("resize", topVal);
             
 
             icon.addEventListener("click", function(){
                 this.closest(".content").style.display = "none";
             });
+            
 
             document.querySelector(".wcu").addEventListener("click", function(e){
                 e.stopPropagation();

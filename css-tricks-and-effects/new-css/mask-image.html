@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+<style type="text/css">
 div{max-width: 50%;}
 .mask00 {
   -webkit-mask-image: url(https://www.akounto.com/images/logo.svg);
@@ -16,6 +16,7 @@ div{max-width: 50%;}
   -webkit-mask-origin: content-box;
   mask-origin: content-box; 
 }
+
 .mask0 {
   -webkit-mask-image: url(https://www.akounto.com/images/logo.svg);
   mask-image: url(https://www.akounto.com/images/logo.svg);
@@ -26,6 +27,7 @@ div{max-width: 50%;}
   -webkit-mask-position: center;
   mask-position: center; 
 }
+
 .mask1 {
   -webkit-mask-image: linear-gradient(black, transparent);
   mask-image: linear-gradient(black, transparent);
@@ -45,31 +47,49 @@ div{max-width: 50%;}
   -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
   mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
 }
+
+.mask5 {
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(black, transparent);
+}
+
+.mask6 {
+  mask: url(https://www.akounto.com/images/logo.svg) center / 50% no-repeat;
+  -webkit-mask: url(https://www.akounto.com/images/logo.svg) center / 50% no-repeat;
+}
 </style>
 </head>
 <body>
 <div class="mask00">
-    <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+    <img src="../../owl-carousel/images/1.jpg" alt="" width="100%">
 </div>
 
 <div class="mask0">
-  <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="100%">
 </div>
 
 <div class="mask1">
-  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="600">
 </div>
 
 <div class="mask2">
-  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="600">
 </div>
 
 <div class="mask3">
-  <img src="../owl-carousel/images/1.jpg" alt="" width="600">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="600">
 </div>
 
 <div class="mask4">
-  <img src="../owl-carousel/images/1.jpg" alt="" width="100%">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="100%">
+</div>
+
+<div class="mask5">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="100%">
+</div>
+
+<div class="mask6">
+  <img src="../../owl-carousel/images/1.jpg" alt="" width="100%">
 </div>
 
 <p>mask-mode: match-source|luminance|alpha|initial|inherit;</p>

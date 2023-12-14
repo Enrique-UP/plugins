@@ -8,7 +8,7 @@ https://softauthor.com/javascript-for-loop-click-event-issues-solutions/
 
 
 create object from element then create array then show its value in html.
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\get-all-dataset-perfect-tutorial.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/get-all-dataset-perfect-tutorial.html
 
 object in html in the below example
 D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\attributes-by-object-tutorials.html
@@ -46,7 +46,7 @@ D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and
 =================================================================================================================================================
 
 create array after that Multiple arrays length display in element
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/create-multiple-array-and-display-array-multiple-arrays-values-in-element.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/create-multiple-array-and-display-array-multiple-arrays-values-in-element.html
 
 =================================================================================================================================================
 
@@ -58,7 +58,7 @@ D:\office-work\assets\plugins\javascript\important-javascript-jquery\sessionStor
 =================================================================================================================================================
 
 create object from html then show in html 
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/create-object-from-html.attributes-then-show-in-html-tutorial.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/create-object-from-html.attributes-then-show-in-html-tutorial.html
 
 =================================================================================================================================================
 
