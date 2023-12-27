@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Document</title>
+    <link rel="stylesheet" href="../../../../font-awesome.min.css" type="text/css" />
     <style type="text/css">
         *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:10px;font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
         select.select{display: none;}
+
+        .selectBox{width:200px;border:1px solid #ccc;position:relative;display: flex;}
+        .selectBox > span{width:100%;padding:10px;position: relative;font-weight: 600;cursor: default;}
+        .selectBox > span::before{font-family: FontAwesome;content:"\f107";position: absolute;top:50%;transform: translateY(-50%);right:10px;}
+        .selectBox.active > span::before{content:"\f106";}
+        .selectBox > ul{position: absolute;top:100%;left:0;background: #eee;width: 100%;padding:0;margin:0;display: flex;flex-direction: column;border:1px solid #ccc;transform: scaleY(0);transform-origin: top;transition: 0.3s linear;z-index: 9;}
+        .selectBox.active > ul{transform: scaleY(1);}
+        .selectBox > ul > li{list-style: none;padding:7px 10px;cursor: default;}
+        .selectBox > ul > li:not(:last-child){border-bottom:1px solid #ccc;}
+        .selectBox > ul > li[disabled]{opacity: 0.6;}
     </style>
 </head>
 <body>
@@ -18,38 +30,73 @@
         <option value="BGD">Bangladesh</option>
         <option value="BLR">Belarus</option>
     </select>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <select class="select">
+        <option selected disabled>Please Select</option>
+        <option value="MG">Mango</option>
+        <option value="AP">Apple</option>
+        <option value="GP">Grapes</option>
+        <option value="BN">Banana</option>
+        <option value="PY">Papaya</option>
+    </select>
+
 
     <script>
-        var select = document.querySelector(".select")
-        console.log(select.outerHTML);
-        var element = document.createElement("div");
-        element.classList = "selectBox";
-        element.innerHTML = select.outerHTML;
-        document.querySelector(".select").insertAdjacentElement("afterend", element);
+        document.querySelectorAll(".select").forEach(function(e){
+            var element = document.createElement("div");
+            element.classList = "selectBox";
+            element.innerHTML = e.outerHTML;
+            e.insertAdjacentElement("afterend", element);
 
-        let selectTag = document.querySelector(".selectBox > .select");
-        const ul = document.createElement("ul");
-        ul.innerHTML = selectTag.innerHTML;
-        ul.classList = select.classList;
-        selectTag.replaceWith(ul);
+            var selectHtml = e.innerHTML;
+            var ul = document.createElement("ul");
+            e.nextElementSibling.querySelector(".select").replaceWith(ul);
+            e.nextElementSibling.querySelector("ul").innerHTML = selectHtml;
 
-        // document.querySelector(".selectBox > .select option").forEach(function(e){
-        //     const li = document.createElement("li");
-        //     e.replaceWith(li);
-        // });
-        
-        var option = Array.from(document.querySelectorAll(".selectBox > .select > option"), e => e.outerHTML);
-        console.log(option);
-        //option.toString;
-        var o = Array.from(option, f => f.replaceAll("option", "li"));
-        var i = Array.from(o, a => a.replaceAll("value", "data-value"));
-        console.log(o);
+            var option = Array.from(e.nextElementSibling.querySelectorAll("ul option"), e => e.outerHTML);
+            console.log(option);
+            var o = Array.from(option, f => f.replaceAll("option", "li"));
+            //console.log(o);
+            var i = Array.from(o, a => a.replaceAll("value", "data-value"));
+            console.log(i);
 
-        var h = "";
-        i.forEach(function(g){
-            h += g;
+            var h = "";
+            i.forEach(function(g){
+                h += g;
+            });
+            e.nextElementSibling.querySelector("ul").innerHTML = h;
+
+            var span = document.createElement("span");
+            span.innerHTML = "Please Select";
+            e.nextElementSibling.insertBefore(span, e.nextElementSibling.children[0]);
+
+            e.nextElementSibling.querySelector("span").addEventListener("click", function(){
+                document.querySelectorAll(".selectBox").forEach(function(a){
+                    a.classList.remove("active");
+                });
+                this.closest(".selectBox").classList.add("active");
+            });
+
+            e.nextElementSibling.querySelectorAll("ul > li:not(:first-child)").forEach(function(l){
+                l.addEventListener("click", function(){
+                    // l.closest(".selectBox").querySelector("span").innerHTML = l.getAttribute("data-value");
+                    l.closest(".selectBox").querySelector("span").innerHTML = l.innerHTML;
+                    l.closest(".selectBox").classList.remove("active");
+                });
+            });
         });
-        document.querySelector(".selectBox > .select").innerHTML = h;
+
+
+        document.querySelectorAll(".selectBox").forEach(function(e){
+            e.addEventListener("click", function(m){
+                m.stopPropagation();
+            });
+        });
+        document.addEventListener("click", function(){
+            document.querySelectorAll(".selectBox").forEach(function(e){
+                e.classList.remove("active");
+            });
+        });
     </script>
 </body>
 </html>
