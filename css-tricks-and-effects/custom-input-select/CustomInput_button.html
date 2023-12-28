@@ -14,22 +14,26 @@
       -moz-box-sizing: border-box
     }
 
+    body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+
     label {
       width: auto;
       float: left;
       position: relative;
       cursor: pointer;
-      font-size: 16px;
       background: red;
       color: #fff;
-      margin-bottom: 0;
       border-bottom: 1px solid #f1f1f1;
       font-weight: normal;
+      padding:5px 10px;
+      clear:both;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
     }
+
+    label:not(:last-child){margin-bottom: 10px;}
 
     label input {
       position: absolute;
@@ -39,31 +43,31 @@
       width: 0;
     }
 
-    label input:checked~.checkmark {
-      background-color: #3db166;
-      color: #fff;
-    }
-
     label .checkmark {
       width: auto;
       float: left;
       position: relative;
-      padding-left: 20px;
+      padding-left: 25px;
     }
 
     label .checkmark::before {
-      width: 15px;
-      height: 15px;
+      width: 14px;
+      height: 14px;
       content: "";
       position: absolute;
       z-index: 1;
-      top: 15px;
-      border: 2px solid #cd202c;
-      left: 15px;
+      top: 0;
+      left: 0;
+      border: 2px solid #000;
     }
 
     label input:checked~.checkmark::before {
       border-color: #fff;
+    }
+
+    label input:checked~.checkmark {
+      background-color: #3db166;
+      color: #fff;
     }
   </style>
 </head>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = "";
+        function one() {
+            a = 100;
+            //console.log(a);
+        }
+        one();
+        console.log(a);
+    </script>
+
+    <script>
+        function one() {
+            var b = 30;
+            return b;
+        }
+        
+        // one();
+
+        var res = one();
+        console.log(res);
+        
+        //or
+        
+        //console.log(one());
+    </script>
+
+    <script>
+        var c = ""; //Define global variable outside of function
+        function setGlobal(){
+            c = "Hello World!";
+        };
+        setGlobal();
+        console.log(c); //This will print out "Hello World"
+    </script>
+</body>
+</html>
