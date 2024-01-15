@@ -68,7 +68,12 @@
                 link: "window.open('https://react.dev/')"
             }
         ];
-        document.querySelectorAll("ul > li").forEach(function(e, index){
+        // document.querySelectorAll("ul > li").forEach(function(e, index){
+        //     e.querySelector("b").innerHTML = data[index].head;
+        //     e.querySelector("span").innerHTML = data[index].text;
+        //     e.querySelector("span").setAttribute("onClick", data[index].link);
+        // });
+        document.querySelectorAll("ul > li").forEach((e, index) => {
             e.querySelector("b").innerHTML = data[index].head;
             e.querySelector("span").innerHTML = data[index].text;
             e.querySelector("span").setAttribute("onClick", data[index].link);

@@ -6,42 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Lorem</p>
-
-
-    <div>Hello world</div>
-
-
-    <aside>Aside</aside>
-
-
-    <select>
-        <option value="1">Lorem</option>
-        <option value="2">Ipsum</option>
-        <option value="3">Dolor</option>
-        <option value="4">Sit</option>
-        <option value="5">Ameet</option>
-    </select>
-
-
-
-
-
-
-
-
-    
-
-
-
+    <p>Lorem - p tag</p>
     <script>
         var demo = document.querySelector("p");
         var a = `<section class="add">${demo.innerHTML}</section>`;
         demo.outerHTML = a;
     </script>
 
-
-
+    <div>Hello world - div tag</div>
     <script>
         const div = document.querySelector("div");
         const span = document.createElement("span");
@@ -49,18 +21,21 @@
         span.innerHTML = div.innerHTML;
         div.parentNode.replaceChild(span, div);
     </script>
-
-
-
+    
+    <aside>Aside - aside tag</aside>
     <script>
         const div1 = document.querySelector("aside");
         const span1 = document.createElement("p");
         span1.innerHTML = div1.innerHTML;
         div1.replaceWith(span1);
     </script>
-
-
-
+    <select>
+        <option value="1">Lorem</option>
+        <option value="2">Ipsum</option>
+        <option value="3">Dolor</option>
+        <option value="4">Sit</option>
+        <option value="5">Ameet</option>
+    </select>
     <script>
         var select = document.querySelector("select");
         var ul = document.createElement("ul");
@@ -76,6 +51,40 @@
             tags += e;
         });
         document.querySelector("ul").innerHTML = tags;
+    </script>
+
+    ====================
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+    ====================
+    <script>
+        document.querySelectorAll("dl").forEach(function(e){
+            e.querySelectorAll("dt").forEach(function(f){
+                const li = document.createElement("li");
+                li.innerHTML = f.innerHTML;
+                f.replaceWith(li);
+            });
+
+            e.querySelectorAll("dd").forEach(function(f){
+                const li = document.createElement("li");
+                li.innerHTML = f.innerHTML;
+                f.replaceWith(li);
+            });
+
+            const ul = document.createElement("ul");
+            ul.innerHTML = e.innerHTML;
+            e.replaceWith(ul);
+        });
     </script>
 </body>
 </html>

@@ -26,21 +26,30 @@
             "four",
             "five"
         ];
-        dataWeb.forEach(function(e){
+        dataWeb.forEach((e, i) => {
             document.querySelector("body").innerHTML += `
-                <div class="imageText" data-web=${e}>
+                <div class="imageText ${dataWeb[i]}">
                     <p class="image">Image</p>
                     <p class="text">Text</p>
                 </div>
             `;
         });
 
-        document.querySelectorAll(".imageText").forEach(function(e){
-            const dataClass = e.getAttribute("data-web");
-            e.classList.add(dataClass);
-            e.querySelector(".image").classList.add(dataClass + "_image");
-            e.querySelector(".text").classList.add(dataClass + "_text");
-        });
+        // dataWeb.forEach(function(e){
+        //     document.querySelector("body").innerHTML += `
+        //         <div class="imageText" data-web=${e}>
+        //             <p class="image">Image</p>
+        //             <p class="text">Text</p>
+        //         </div>
+        //     `;
+        // });
+
+        // document.querySelectorAll(".imageText").forEach(function(e){
+        //     const dataClass = e.getAttribute("data-web");
+        //     e.classList.add(dataClass);
+        //     e.querySelector(".image").classList.add(dataClass + "_image");
+        //     e.querySelector(".text").classList.add(dataClass + "_text");
+        // });
     </script>
 </body>
 </html>

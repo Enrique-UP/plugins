@@ -61,6 +61,10 @@ create object from html then show in html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/create-object-from-html.attributes-then-show-in-html-tutorial.html
 
 =================================================================================================================================================
+get inner value outside of function by sessionStorage
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/classes-style-and-class-add-in-sequence-and-reverse/add-remove-class/add-class-after-refresh-page.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/functions/access-variable-outside-the-function.html
+=================================================================================================================================================
 
 //for set data in local storage
 $(".final").click(function(){

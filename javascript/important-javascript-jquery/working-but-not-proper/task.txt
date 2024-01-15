@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 1. onscroll => viewport video => play/otherwise pause.
 2. video play on click after scroll unviewport area then pause.
 3. Steper like akountobooks.com
+
 4. Array methods learn from w3schools.com.
 5. String learn.
 	I.  String methods
@@ -17,7 +18,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 	III.String template literals
 6. Number methods
 7. Custom image slider with all functionality.
-8. Select box change value then other select box show & change its option value.
-9. Add active class on accordion after refresh tab by session storage.
-https://support.themecatcher.net/quform-wordpress-v2/guides/customization/populating-a-select-menu-based-on-the-value-of-another-select-menu
-10. Get value outside of function
+8. Get value outside of function
