@@ -186,7 +186,14 @@ const cars = ["Saab", "Volvo", "BMW"];
 const cars1 = new Array("Saab", "Volvo", "BMW");
 document.getElementById("array").innerHTML = cars;
 =================================================================================================================================================
-
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/get-all-heading-tag-and-change-in-a-tag-sidebar.html
+get all h1 to h6 heading dynamically
+for (var i = 1; i <= 6; i++) {
+	document.querySelectorAll("h" + i).forEach((e) => {
+		//e.className = "heading";
+		console.log(e);
+	});
+}
 =================================================================================================================================================
 
 =================================================================================================================================================

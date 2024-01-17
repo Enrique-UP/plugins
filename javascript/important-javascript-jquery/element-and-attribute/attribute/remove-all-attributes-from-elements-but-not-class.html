@@ -15,7 +15,11 @@
     
     
     <script>
-        document.querySelectorAll(".demo1").forEach((e) => [...e.attributes].forEach(attr => e.removeAttribute(attr.name)));
+        document.querySelectorAll(".demo1").forEach((e) => [...e.attributes].forEach(attr => {
+            var cls = e.getAttribute("class");
+            e.removeAttribute(attr.name);
+            e.setAttribute("class", cls);
+        }));
 
         document.querySelectorAll(".demo2").forEach(function(e){
             [...e.attributes].forEach(function(attr){

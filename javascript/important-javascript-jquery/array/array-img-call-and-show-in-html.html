@@ -44,13 +44,12 @@ const menu = [
 
 let text = "";
 const fruits = [
-  "../../owl-carousel/owl-carosel-active-class/images/slider/1.jpg",
-  "../../owl-carousel/owl-carosel-active-class/images/slider/2.jpg",
-  "../../owl-carousel/owl-carosel-active-class/images/slider/3.jpg",
-  "../../owl-carousel/owl-carosel-active-class/images/slider/4.jpg"
+  "../../../owl-carousel/images/1.jpg",
+  "../../../owl-carousel/images/2.jpg",
+  "../../../owl-carousel/images/3.jpg",
 ];
 fruits.forEach(function(item) {
-  text += "<img src=" + item + ">"; 
+  text += "<img width=200 src=" + item + ">"; 
 });
 document.querySelector("p.demo").innerHTML = text;
 </script>

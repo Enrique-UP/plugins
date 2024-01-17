@@ -6,14 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Lorem - p tag</p>
+    <p>1- p tag into section tag</p>
     <script>
         var demo = document.querySelector("p");
         var a = `<section class="add">${demo.innerHTML}</section>`;
         demo.outerHTML = a;
     </script>
-
-    <div>Hello world - div tag</div>
+    <p>=================================================================</p>
+    <div>2- div tag into span tag</div>
     <script>
         const div = document.querySelector("div");
         const span = document.createElement("span");
@@ -21,14 +21,16 @@
         span.innerHTML = div.innerHTML;
         div.parentNode.replaceChild(span, div);
     </script>
-    
-    <aside>Aside - aside tag</aside>
+    <p>=================================================================</p>
+    <aside>3- aside tag into p tag</aside>
     <script>
         const div1 = document.querySelector("aside");
         const span1 = document.createElement("p");
         span1.innerHTML = div1.innerHTML;
         div1.replaceWith(span1);
     </script>
+    <p>=================================================================</p>
+    <p>4- <b>Select and its option into ul and li</b></p>
     <select>
         <option value="1">Lorem</option>
         <option value="2">Ipsum</option>
@@ -52,8 +54,8 @@
         });
         document.querySelector("ul").innerHTML = tags;
     </script>
-
-    ====================
+    <p>=================================================================</p>
+    <p>5- <b>dl, dt and dd into ul and li</b></p>
     <dl>
         <dt>Coffee</dt>
         <dd>Black hot drink</dd>
@@ -66,7 +68,6 @@
         <dt>Milk</dt>
         <dd>White cold drink</dd>
     </dl>
-    ====================
     <script>
         document.querySelectorAll("dl").forEach(function(e){
             e.querySelectorAll("dt").forEach(function(f){
