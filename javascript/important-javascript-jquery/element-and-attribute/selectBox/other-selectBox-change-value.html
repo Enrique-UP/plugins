@@ -6,21 +6,41 @@
     <title>Document</title>
 </head>
 <body>
-    <select id="box1">
-        <option value="1" >1</option>
-        <option value="2" >2</option>
-    </select>
-    <br /><br />
-    <br /><br />
-    <br /><br />
-    <br /><br />
-    <select id="box2">
-        <option value="1" >1</option>
-        <option value="2" >2</option>
-    </select>
+   <div class="selects">
+        <select class="s1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <select class="s2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+   </div>
+   <p class="selectNumber">
+        <select>
+            <option value="+1-000-000-0000" data-val="tel:+10000000000">US</option>
+            <option value="+61-000-000-0000" data-val="tel:+610000000000" selected>AUS</option>
+            <option value="+44-000-000-0000" data-val="tel:+440000000000">ENG</option>
+        </select>
+        <a target="_blank" href=""></a>
+    </p>
+
+
+
     <script>
-        document.getElementById("box1").onchange = function(){
-            document.getElementById("box2").value = this.value;
+        document.querySelector(".selects .s1").onchange = function(){
+            document.querySelector(".selects .s2").value = this.value;
+        }
+    </script>
+
+    <script>
+        document.querySelectorAll(".selectNumber select option[selected]").forEach(function(e){
+            e.closest(".selectNumber").querySelector("a").setAttribute("href", e.dataset.val);
+            e.closest(".selectNumber").querySelector("a").innerHTML = e.value;
+        });
+        document.querySelector(".selectNumber select").onchange = function(){
+            this.closest(".selectNumber").querySelector("a").innerHTML = this.value;
+            this.closest(".selectNumber").querySelector("a").setAttribute("href", this.options[this.selectedIndex].dataset.val);
         };
     </script>
 </body>
