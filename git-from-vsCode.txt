@@ -15,7 +15,7 @@ Mridul Srivastava tutorial
 08. copy url by ctrl + l =>
 
 09. Go to return vs code =>
-10. click on share icon top left sidebar =>
+10. click on share icon (source control) top left sidebar =>
 11. initialize repository =>
 12. type message on top left sidebar (new changes) =>
 13. then click on check icon =>
