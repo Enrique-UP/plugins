@@ -7,10 +7,10 @@
     <style type="text/css">
         *{padding:0;margin:0;box-sizing: border-box;}
         a{background: #333;color: white;display: flex;width:100px;padding:10px 0;justify-content: center;cursor: pointer;}
-        .popup{width:100%;height:100%;padding:30px 15px;overflow-y: auto;background: rgba(0,0,0,0.5);position: fixed;left:0;top:0;z-index: 999;display:none;}
-        .popup .popuMid{display: table;width:100%;height:100%;}
-        .popup .popuMid .popuMidArea{display: table-cell;vertical-align: middle;width:100%;}
-        .popup .popuMid .popuMidArea .box{width:400px;height:400px;background:white;margin: auto;border:10px solid brown;border-left:none;border-right:none;position: relative;padding:30px;
+        .linkBtnPopup{width:100%;height:100%;padding:30px 15px;overflow-y: auto;background: rgba(0,0,0,0.5);position: fixed;left:0;top:0;z-index: 999;display:none;}
+        .linkBtnPopup .popuMid{display: table;width:100%;height:100%;}
+        .linkBtnPopup .popuMid .popuMidArea{display: table-cell;vertical-align: middle;width:100%;}
+        .linkBtnPopup .popuMid .popuMidArea .box{width:400px;height:400px;background:white;margin: auto;border:10px solid brown;border-left:none;border-right:none;position: relative;padding:30px;
             transform: scale(0);
             -webkit-transform: scale(0);
             -moz-transform: scale(0);
@@ -21,11 +21,11 @@
             -webkit-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
             -moz-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
         }
-        .popup .popuMid .popuMidArea .box > .close{position: absolute;top:0;right:0;font-style: normal;cursor: pointer;width:30px;height:30px;display: flex;justify-content: center;align-items: center;background: red;color:white;}
+        .linkBtnPopup .popuMid .popuMidArea .box > .close{position: absolute;top:0;right:0;font-style: normal;cursor: pointer;width:30px;height:30px;display: flex;justify-content: center;align-items: center;background: red;color:white;}
         
         body.active{overflow: hidden;}
-        body.active .popup{display: flex;}
-        body.active .popup .popuMid .popuMidArea .box.active{
+        body.active .linkBtnPopup{display: flex;}
+        body.active .linkBtnPopup .popuMid .popuMidArea .box.active{
             transform: scale(1);
             -webkit-transform: scale(1);
             -moz-transform: scale(1);
@@ -33,8 +33,11 @@
     </style>
 </head>
 <body>
-    <a>Show Popup</a>
-    <div class="popup">
+    <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a>
+    <div class="linkBtnPopup">
         <div class="popuMid">
             <div class="popuMidArea">
                 <div class="box">
@@ -43,37 +46,34 @@
                 </div><!--box-->
             </div><!--popuMidArea-->
         </div><!--popuMid-->
-    </div><!--popup-->
+    </div><!--linkBtnPopup-->
     <script>
         (function(){
-            //for on load hide a tag and const link
-            window.setTimeout(showBox, 4000);
+            //========================================
+            //for on load showing hide the a tags and const link and uncomment below code of window.
+            //window.setTimeout(showBox, 4000);
+            //========================================
 
-
-            const link = document.querySelector("a");
+            const link = document.querySelectorAll(".linkBtn");
             const body = document.querySelector("body");
-            const box = document.querySelector(".popup .popuMid .popuMidArea .box");
-            const close = document.querySelector(".popup .popuMid .popuMidArea .box > .close");
+            const box = document.querySelector(".linkBtnPopup .popuMid .popuMidArea .box");
+            const close = document.querySelector(".linkBtnPopup .popuMid .popuMidArea .box > .close");
             
-            link.addEventListener("click", showBox);
+            link.forEach((e) => e.addEventListener("click", showBox));
             close.addEventListener("click", closeBox);
 
             document.addEventListener("click", closeBox);
             
-            link.addEventListener("click", outsideClick);
+            link.forEach((e) => e.addEventListener("click", outsideClick));
             box.addEventListener("click", outsideClick);            
 
             function showBox(){
                 body.classList.add("active");
-                setTimeout(function(){
-                    box.classList.add("active");
-                }, 400);
+                setTimeout(() => box.classList.add("active"), 400);
             }
             function closeBox(){
                 box.classList.remove("active");
-                setTimeout(function(){
-                    body.classList.remove("active");
-                }, 400);
+                setTimeout(() => body.classList.remove("active"), 400);
             }
             function outsideClick(e){
                 e.stopPropagation();
