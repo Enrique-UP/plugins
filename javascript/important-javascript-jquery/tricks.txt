@@ -13,6 +13,9 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ele
 object in html in the below example
 D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\attributes-by-object-tutorials.html
 
+create object by elements class and elements sorted by class
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/sort-elements-by-class.html
+
 create array from html then remove duplicate then show in html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/array/dulplicate-remove-show-perfect-tutorial.html
 

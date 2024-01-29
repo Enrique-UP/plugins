@@ -19,4 +19,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 6. Number methods
 7. Custom image slider with all functionality.
 8. Get value outside of function
-9. Sort elements by class="head-2", class="head-3", class="head-1"
+

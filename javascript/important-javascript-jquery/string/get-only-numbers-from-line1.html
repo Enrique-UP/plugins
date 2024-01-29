@@ -9,7 +9,7 @@
 <body>
     <p>Lorm ipsum ip(518)0 237-4368 0Lorm ipsum ip</p>
     <script>
-        var str = 'Lorm ipsum ip(518)0 237-4368 0Lorm ipsum ip';
+        var str = 'Lorm ipsum ip(518)0 237-4368 0Lorm ipsum ip-#%&';
         document.write(str.replace(/[^0-9]/g,''));
         document.write("<br>");
         document.write(str.replace(/[^0-9]/g,'' + "<br>"));
@@ -17,6 +17,39 @@
         var txt = str.toLowerCase();
         //var txt = str;
         document.write(txt.replace(/[^a-z]/g,''));
+    </script>
+
+    <script>
+        var str = "abc123xyAz456BBa()";
+        var resultString = "";
+        for (let char of str) {
+            if (isNaN(char)) {
+                resultString += char;
+            }
+        }
+        console.log(resultString);
+    </script>
+
+    <script>
+        var str = "Hello123World456";
+        var resultString1 = str.split("")
+            .filter(char => isNaN(char))
+            .join("-");
+
+        console.log(resultString1);
+    </script>
+
+    <script>
+        var str = "Hello World2024!";
+        var newStr = str.replace(/\d/g, '');
+        console.log(newStr);
+
+
+
+        //console.log(str.replace(/[\W\d]/g, "")); // without number & special character
+        // console.log(str.replace(/[a-z]/g, "")); // only number remove
+        // console.log(str.replace(/[^a-zA-Z]/g, "")); // only number remove
+        //console.log(c + " =", str.replace(/[0-9]/g, "")); // only number remove
     </script>
 </body>
 </html>

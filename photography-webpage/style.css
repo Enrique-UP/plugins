@@ -29,6 +29,7 @@ ul.backgrounds-color li:nth-child(5){background:#f7a915;}
 .main-container .left-container ul.left-container{border:none;}
 .left-container ul.left-container{list-style:none;}
 .left-container ul.left-container .image{width:100%; height:92px; background:#666666; border:3px solid #40403e; overflow:hidden;}
+.left-container ul.left-container .image > img{width: 100%;height: 100%;object-fit: cover;}
 .left-container ul.left-container .text{padding:5px 0 15px; color:#666;}
 .left-container a{text-decoration:none;}
 .left-container a:hover{text-decoration:none;}
@@ -93,8 +94,9 @@ ul.images a li:nth-child(18){margin-right:0px;}
 }
 .gallery-photos .photo-thumbnails .thumbnail img {
 	display: block;
-	width: auto;
-	max-height: 100%;
+	width:100%;
+	height: 100%;
+	object-fit: cover;
 	margin: 0 auto;
 }
 .photo-thumbnails .thumbnail{padding:0; background:none; border:3px solid #40403e; margin-top:20px;}

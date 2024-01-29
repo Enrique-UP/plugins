@@ -41,6 +41,7 @@
           if (dataSrc) {
             e.src = dataSrc; // or
             //e.setAttribute("src", dataSrc);
+            //delete e.dataset.src;
             e.removeAttribute('data-src');
           }
         });

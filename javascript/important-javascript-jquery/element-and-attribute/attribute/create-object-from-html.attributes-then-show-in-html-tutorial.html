@@ -15,6 +15,7 @@
         document.querySelectorAll("img").forEach(function(e){
             var attr = {...e.attributes};
             console.log(attr);
+            //delete e.dataset.class;
 
             var arrKeys = Object.keys(attr);
             var arrValues = Object.values(attr);
