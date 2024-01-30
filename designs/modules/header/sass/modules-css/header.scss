@@ -1,4 +1,4 @@
-header{display:flex;flex-direction:column;display:none;
+header{display:flex;flex-direction:column;
     > *{position: relative;width:100%;}
     .headerTop{background: var(--back3);padding:7px 0;
         > .container{display: flex;justify-content: space-between;flex-direction: row;}

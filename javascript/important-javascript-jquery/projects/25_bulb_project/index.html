@@ -21,7 +21,7 @@
     <button id="onOffButton" onclick="toggleBulb()">ON</button>
 
     <div class="bulb-container">
-      <img id="bulb" src="OFFbulb.jpg" alt="" />
+      <img id="bulb" src="../../../../images/pic_bulboff.gif" alt="" />
     </div>
 
     <script>
@@ -29,12 +29,12 @@
       const turnOn = () => {
         //bulb on
         let imgOb = document.getElementById("bulb");
-        imgOb.setAttribute("src", "ONbulb.jpg");
+        imgOb.setAttribute("src", "../../../../images/pic_bulbon.gif");
       };
 
       const turnOff = () => {
         let imgOb = document.getElementById("bulb");
-        imgOb.setAttribute("src", "OFFbulb.jpg");
+        imgOb.setAttribute("src", "../../../../images/pic_bulboff.gif");
       };
 
       //toggle
@@ -47,7 +47,7 @@
         let buttonText = buttonOb.innerHTML;
         // console.log(buttonText);
 
-        if (srcValue == "OFFbulb.jpg") {
+        if (srcValue == "../../../../images/OFFbulb.gif") {
           turnOn();
           buttonOb.innerHTML = "OFF";
         } else {
