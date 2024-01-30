@@ -5,46 +5,46 @@
     *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
     body{font-family:arial;font-size:14px;}
     
-    .accordion_area{width:100%;float:left;}
-    .accordion_area .accordion_tabs{width:100%;float:left;}
-    .accordion_area .accordion_body{width:100%;float:left;}
+    .accordionArea{width:100%;float:left;}
+    .accordionArea .accordionTabs{width:100%;float:left;}
+    .accordionArea .accordionBody{width:100%;float:left;}
     
-    .accordion_area .accordion_tabs a{width:auto;float:left;padding:10px 15px;font-size:16px;background: #ddd;cursor: pointer;}
-    .accordion_area .accordion_tabs a.active_tab{background: red;color:#fff;}
-    .accordion_area .accordion_body > *{display: none;}
-    .accordion_area .accordion_body > *.active_item{display: block;}
+    .accordionArea .accordionTabs a{width:auto;float:left;padding:10px 15px;font-size:16px;background: #ddd;cursor: pointer;}
+    .accordionArea .accordionTabs a.active_tab{background: red;color:#fff;}
+    .accordionArea .accordionBody > *{display: none;}
+    .accordionArea .accordionBody > *.active{display: block;}
 </style>
 </head>
 <body>
-<div class="accordion_area">
-    <div class="accordion_tabs">
+<div class="accordionArea">
+    <div class="accordionTabs">
         <a data-target="#one" class="active_tab">One</a>
         <a data-target="#two">Two</a>
         <a data-target="#three">Three</a>
-    </div><!--accordion_tabs-->
-    <div class="accordion_body">
-        <div id="one" class="accordion_body_show active_item">
+    </div><!--accordionTabs-->
+    <div class="accordionBody">
+        <div id="one" class="accordionBody_show active">
             OneLorem
-        </div><!--accordion_body_show-->
-        <div id="two" class="accordion_body_show">
+        </div><!--accordionBody_show-->
+        <div id="two" class="accordionBody_show">
             TwoLorem
-        </div><!--accordion_body_show-->
-        <div id="three" class="accordion_body_show">
+        </div><!--accordionBody_show-->
+        <div id="three" class="accordionBody_show">
             ThreeLorem
-        </div><!--accordion_body_show-->
-    </div><!--accordion_body-->
-</div><!--accordion_area-->
+        </div><!--accordionBody_show-->
+    </div><!--accordionBody-->
+</div><!--accordionArea-->
 
     
 
 <script src="../jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
-    $(".accordion_area .accordion_tabs > a").on("click", function(){
+    $(".accordionArea .accordionTabs > a").on("click", function(){
       $(this).addClass("active_tab");
       $(this).siblings("a").removeClass("active_tab");
 
-      $($(this).attr("data-target")).slideDown().addClass("active_item");
-      $($(this).attr("data-target")).siblings().slideUp().removeClass("active_item");
+      $($(this).attr("data-target")).slideDown().addClass("active");
+      $($(this).attr("data-target")).siblings().slideUp().removeClass("active");
     });
 </script>
 </body>

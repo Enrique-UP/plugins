@@ -15,23 +15,41 @@
         <li>Lorem</li>
         <li>Lorem</li>
         <li>Lorem</li>
+        <li>Lorem</li>
     </ul>
 
-    <script>
+    <!-- <script>
         (function(){
-            const ulLi = document.querySelectorAll("ul > li");
-            for(var i = 0; i < ulLi.length; i++){
-                ulLi[i].innerText += ` ${i + 1}`;
+            const li = document.querySelectorAll("ul > li");
+            for(var i = 0; i < li.length; i++){
+                li[i].innerText += ` ${i + 1}`;
                 (function(i){
-                    ulLi[i].addEventListener('click', function(){
-                        ulLi.forEach(e => e.classList.remove("active"));
-                        ulLi[i].classList.add("active");
+                    li[i].addEventListener('click', function(){
+                        li.forEach(e => e.classList.remove("active"));
+                        li[i].classList.add("active");
                         window.sessionStorage.setItem("IndexValue", i + 1);
                     });
                 })(i);
             }
             if(window.sessionStorage.getItem("IndexValue")){
-                ulLi.forEach(e => e.classList.remove("active"));
+                li.forEach((e) => e.classList.remove("active"));
+                document.querySelector(`ul > li:nth-child(${window.sessionStorage.getItem("IndexValue")})`).classList.add("active");
+            }
+        })();
+    </script> -->
+    <script>
+        (function(){
+            const li = document.querySelectorAll("ul > li");
+            document.querySelectorAll("ul > li").forEach((e,i) => {
+                e.innerText += ` ${i + 1}`;
+                e.addEventListener("click", () => {
+                    li.forEach((f) => f.classList.remove("active"));
+                    e.classList.add("active");
+                    window.sessionStorage.setItem("IndexValue", i + 1);
+                });
+            });
+            if(window.sessionStorage.getItem("IndexValue")){
+                li.forEach((e) => e.classList.remove("active"));
                 document.querySelector(`ul > li:nth-child(${window.sessionStorage.getItem("IndexValue")})`).classList.add("active");
             }
         })();

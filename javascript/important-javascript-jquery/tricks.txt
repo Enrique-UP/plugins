@@ -67,6 +67,7 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ele
 get inner value outside of function by sessionStorage
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/classes-style-and-class-add-in-sequence-and-reverse/add-remove-class/add-class-after-refresh-page.html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/functions/access-variable-outside-the-function.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/functions/show-inside-function-value-to-outside1.html
 =================================================================================================================================================
 
 //for set data in local storage
@@ -144,11 +145,7 @@ const listItems = numbers.map((number) => <li>{number}</li>);
 OR
 return (
 	<ul>
-	  {
-		animals.map(
-			(animal, index) => (<li key={index}>{animal}</li>)
-		)
-	  }
+	  {animals.map((animal, index) => (<li key={index}>{animal}</li>))}
 	</ul>
 );
 
@@ -199,7 +196,7 @@ for (var i = 1; i <= 6; i++) {
 }
 =================================================================================================================================================
 selector
- document.querySelectorAll("[class*='head-']").forEach((e) => {
+document.querySelectorAll("[class*='head-']").forEach((e) => {
 	var cls = e.classList;
 	console.log(cls);
 });
