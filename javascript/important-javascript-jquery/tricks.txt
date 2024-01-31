@@ -10,41 +10,39 @@ https://softauthor.com/javascript-for-loop-click-event-issues-solutions/
 create object from element then create array then show its value in html.
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/get-all-dataset-perfect-tutorial.html
 
-object in html in the below example
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\attributes-by-object-tutorials.html
-
 create object by elements class and elements sorted by class
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/element-and-attribute/attribute/sort-elements-by-class.html
 
 create array from html then remove duplicate then show in html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/array/dulplicate-remove-show-perfect-tutorial.html
 
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse/class-add-in-sequence.html
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-perfect.html
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-ums.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse/class-add-in-sequence.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-perfect.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\repeat-classes/loop-repeatation-ums.html
 
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/table_responsive-js-dynamic.html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/duplicate-table-dynamically-show-mobile-js.html
 
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/text-overflow/text_overflow-and3....html
 
+good example for set inner function value to outside
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/object/whyChooseUs-dropdown_by_offsetTop.html
 
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ternary-operator/ternary-operator4.html
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-ternary-operator-tutorial.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-ternary-operator-tutorial.html
 
 Checkbox tab by get attribute
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\filter-data-class-checkbox-perfect.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\filter-data-class-checkbox-perfect.html
 
 =================================================================================================================================================
 
 array filter from html
 Accordion Tab => use in this => getAttribute, replace, trim, create array from html, after create array this has filter and match id then add remove class.
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-tabs-tutorial.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\classes-style-and-class-add-in-sequence-and-reverse\add-remove-class\accordion-tabs-tutorial.html
 
 elements filter by array from methods
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\siblings-selector-by-arrayFrom-filter.html
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\array-from-and-filter-image.by.img.src.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\element-and-attribute\siblings-selector-by-arrayFrom-filter.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\element-and-attribute\array-from-and-filter-image.by.img.src.html
 
 =================================================================================================================================================
 
@@ -55,8 +53,8 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ele
 
 viewport animation
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/viewport/viewport-multiple-perfect-animation-js.html
-web storage
-D:\office-work\assets\plugins\javascript\important-javascript-jquery\sessionStorage-localStorage\get-value-without-utm-source
+web storage always open with http
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery\sessionStorage-localStorage\get-value-without-utm-source
 
 =================================================================================================================================================
 
@@ -65,8 +63,7 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/ele
 
 =================================================================================================================================================
 get inner value outside of function by sessionStorage
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/classes-style-and-class-add-in-sequence-and-reverse/add-remove-class/add-class-after-refresh-page.html
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/functions/access-variable-outside-the-function.html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/classes-style-and-class-add-in-sequence-and-reverse/add-remove-class/add-class-after-refresh-page-by-sessionStorage.html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/functions/show-inside-function-value-to-outside1.html
 =================================================================================================================================================
 

@@ -17,6 +17,6 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 	II. String search methods
 	III.String template literals
 6. Number methods
-7. Custom image slider with all functionality.
-8. Get value outside of function
 
+7. Custom image slider with all functionality.
+8. Get value and set outside of function

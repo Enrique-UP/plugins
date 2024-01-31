@@ -15,6 +15,22 @@
         <li>Lorem</li>
         <li>Lorem</li>
         <li>Lorem</li>
+    </ul>
+    <ul>
+        <li class="active">Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li class="active">Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
         <li>Lorem</li>
     </ul>
 
@@ -37,7 +53,7 @@
             }
         })();
     </script> -->
-    <script>
+    <!-- <script>
         (function(){
             const li = document.querySelectorAll("ul > li");
             document.querySelectorAll("ul > li").forEach((e,i) => {
@@ -52,6 +68,27 @@
                 li.forEach((e) => e.classList.remove("active"));
                 document.querySelector(`ul > li:nth-child(${window.sessionStorage.getItem("IndexValue")})`).classList.add("active");
             }
+        })();
+    </script> -->
+
+    <script>
+        (function(){
+            document.querySelectorAll("ul").forEach((e,a) => {
+                e.querySelectorAll("li").forEach((f,i) => {
+                    f.innerText += ` ${i + 1}`;
+                    f.addEventListener("click", () => {
+                        f.parentElement.querySelectorAll("li").forEach((g) => g.classList.remove("active"));
+                        f.classList.add("active");
+                        window.sessionStorage.setItem("IndexValue-" + a, i + 1);
+                    });                    
+                });
+            });
+            document.querySelectorAll("ul").forEach((e,a) => {
+                if(window.sessionStorage.getItem("IndexValue-" + a)){
+                    e.querySelectorAll("li").forEach((e) => e.classList.remove("active"));
+                    e.querySelector(`li:nth-child(${window.sessionStorage.getItem("IndexValue-" + a)})`).classList.add("active");
+                }
+            });
         })();
     </script>
 </body>
