@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <ol class="people">
+        <li>Adam</li>
+        <li>Charles</li>
+        <li>John</li>
+        <li>Amanda</li>
+        <li>Emma</li>
+        <li>Emily</li>
+        <li class="lawyer">Saul Goodman</li>
+        <li>Hank</li>
+        <li>Walter</li>
+        <li>Skyler</li>
+        <li>Jesse</li>
+    </ol>
+
+    <script>
+        let lawyer = document.querySelector(".lawyer");
+        let prev_siblings = [];
+        let prev_elem = lawyer.previousElementSibling;
+        while(prev_elem) {
+            prev_siblings.push(prev_elem); 
+            prev_elem = prev_elem.previousElementSibling;
+        }
+        // Array(6) [ li, li, li, li, li, li ] 
+        console.log(prev_siblings);
+        /* 
+        Emily 
+        Emma 
+        Amanda 
+        John 
+        Charles 
+        Adam 
+        */
+        for(sibling of prev_siblings) {
+            console.log(sibling.textContent);
+        }
+
+
+    
+        let next_siblings = [];
+        let next_elem = lawyer.nextElementSibling;
+        while(next_elem) {
+            next_siblings.push(next_elem);
+            next_elem = next_elem.nextElementSibling;
+        }
+        // Array(4) [ li, li, li, li ] 
+        console.log(next_siblings);
+        /* 
+        Hank 
+        Walter 
+        Skyler 
+        Jesse 
+        */
+        for(sibling of next_siblings) {
+            console.log(sibling.textContent);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add Read More Link</title>
+
+</head>
+<body>
+	<p class="para">
+		<span>Nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</span>
+		<a href="javascript:viewMore(0);">read more</a>
+	</p>
+	<p class="para">
+		<span>Praesent euismod nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</span>
+		<a href="javascript:viewMore(1);">read more</a>
+	</p>
+	<p class="para">
+		<span>Ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</span>
+		<a href="javascript:viewMore(2);">read more</a>
+	</p>
+	
+	
+
+<script>
+
+    var origText = [];
+	(function () {
+
+
+		
+	var span = document.querySelectorAll(".para span");
+	for(var i = 0; i < span.length; i++){
+
+		origText.push(span[i].innerText);
+		var originalText = i +":- "+ span[i].innerText;
+		console.log(originalText);
+
+		var sliceText = originalText.slice(0, 100) + "..."
+		span[i].innerText = sliceText;
+
+
+
+		
+		//span[i].nextElementSibling.addEventListener("click", function () {			
+		//	console.log(originalText);
+		//});
+
+	}
+	})();
+
+
+
+
+	function viewMore(idx) {
+
+		var span = document.querySelectorAll(".para span");
+		span[idx].innerText = origText[idx];
+        //(lnkReadMore + idx).innerHTML = "Read less";
+	}
+
+</script>
+</body>
+</html>

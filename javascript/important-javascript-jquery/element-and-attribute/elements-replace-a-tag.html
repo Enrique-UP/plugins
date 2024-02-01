@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box bx" data-call="+1" data-num="number"><span>Call Us:-</span> +1-000-000-0000</div><br>
+    <div class="box bx" data-call="+2"><span>Call Us:-</span> +1-000-000-0000</div><br>
+    <div class="box bx" data-call="+3" data-num="number"><span>Call Us:-</span> +1-000-000-0000</div><br>
+    <div class="box bx" data-call="+4"><span>Call Us:-</span> +1-000-000-0000</div><br>
+    <div class="box bx" data-call="+5" data-num="number"><span>Call Us:-</span> +1-000-000-0000</div><br>
+
+    <script>
+        document.querySelectorAll(".box").forEach((e) => {
+            var a = document.createElement("a");
+            a.innerHTML = e.innerHTML;
+            for(var x of e.attributes){
+                a.setAttribute(x.name, x.value);
+            }
+            e.replaceWith(a);
+            a.href = "tel:+1-000-000-0000";
+            a.target = "_blank";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .red{
+  color:red;
+  }
+.yellow{
+  color:yellow;
+  }
+.green{
+  color:green;
+  }
+.blue{
+  color:blue;
+  }
+    </style>
+</head>
+<body>
+<ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+    <li>Six</li>
+    <li>Seven</li>
+    <li>Eight</li>
+  <li>Nine</li>
+    <li>Ten</li>
+    <li>Eleven</li>
+    <li>Twelve</li>
+</ul>
+
+<script src="../../../../jquery-2.2.4.min.js"></script>
+<script>
+    var classNames=['red','yellow','green','blue'];
+    $('li').each(function(i) {
+        $(this).addClass(classNames[i%4]);
+    });
+</script>
+</body>
+</html>

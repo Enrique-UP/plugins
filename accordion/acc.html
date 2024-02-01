@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .tabsContent p{display: none;}
+    </style>
+</head>
+<body>
+    <div class="tabsLink">
+        <a href="#1">One</a>
+        <a href="#2">Two</a>
+        <a href="#3">Three</a>
+    </div>
+    <div class="tabsContent">
+        <p id="1">One Content...</p>
+        <p id="2">Two Content...</p>
+        <p id="3">Three Content...</p>
+    </div>
+
+    <script src="../jquery-2.2.4.min.js"></script>
+    <script>
+        $($("a:first-child").attr("href")).show();
+        $("a:first-child").addClass("active");
+        
+        $("a").click(function(){
+            $($(this).attr("href")).fadeToggle();
+            $($(this).attr("href")).siblings().hide();
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+        });
+    </script>
+</body>
+</html>

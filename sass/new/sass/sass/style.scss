@@ -1,0 +1,22 @@
+@import "./_fonts";
+@import "./_common";
+@import "./_color";
+@import "./_mixin";
+@import "./_var";
+
+
+
+main{@include fw;
+    & > *{@include fw;}
+    header{height:100px;background: $grey1;
+        @media (max-width:$mw1199){
+            &{background: $grey2;}
+        }
+    }
+    [class^="col-"]{background: $grey3;height: 200px;}
+    footer{height:100px;background: $grey1;
+        @media (max-width:$mw1199){
+            &{background: $grey2;}
+        }
+    }
+}

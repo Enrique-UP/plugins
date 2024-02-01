@@ -1,0 +1,31 @@
+What is Pug (Jade) language?
+About PUG. pug. js, also known as PUG, is a Javascript library that was previously known as JADE. It is an easy-to-code template engine used to code HTML in a more readable fashion. One upside to PUG is that it equips developers to code reusable HTML documents by pulling data dynamically from the API.
+
+//=====use this method=====
+folder structure
+D:\office-work\assets\plugins\Pug\right-format
+after that create folder structure like above folder structure.
+Go to new created folder then press ctrl + l then press cmd then code . then press in run command.
+npm install pug -g
+pug -w ./pug -o ./ -P
+===========================
+
+
+for include use format
+pug=>index.pug
+pug=>include/common.pug
+After that, use the above command for compile by this method common.pug file will not compile only index.pug file will compile.
+===========================
+
+
+
+
+
+
+
+npm install pug -g
+or 
+npm install pug-cli -g
+pug -w ./ -o ./html -P
+pug -w ./pug -o ./html -P
+pug -w ./pug -o ./ -P

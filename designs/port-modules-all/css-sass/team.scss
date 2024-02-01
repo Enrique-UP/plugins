@@ -1,0 +1,65 @@
+@import "./common/common.scss";
+.team{
+    .teamArea{width:100%;position: relative;flex-direction: column;overflow: hidden;
+        > img{width:100%;}
+        span, i{position: absolute;}
+        span{left:15px;color:white;line-height:1.2;
+            > b{font-weight: 800;}
+            > em{font-style: normal;}
+            &.name{display:flex;flex-direction: column;bottom:90px;font-size: 20px;}
+            &.post{bottom:15px;font-style: italic;}
+        }
+        i{bottom:0;width:0;height:0;}
+        .leftArrow{left:0;border-right:300px solid transparent;border-bottom:300px solid var(--b2);}
+        .rightArrow{right:0;border-left:200px solid transparent;border-bottom:120px solid var(--b3);}
+        .bottomArrow{left: -75px;border-left: 100px solid rgba(0,0,0,0);border-right: 700px solid rgba(0,0,0,0);border-bottom: 60px solid var(--b10);}
+    }
+    &{
+        @media (min-width:1200px) and (max-width:1399px){
+            &{
+                .teamArea{
+                    .name{bottom:80px;}
+                    .leftArrow{border-right-width: 300px;border-bottom-width: 250px;}
+                    .bottomArrow{border-left-width: 95px;}
+                }
+            }
+        }
+        @media (min-width:992px) and (max-width:1199px){
+            &{
+                .teamArea{
+                    span{
+                        &.name{bottom: 80px;}
+                    }
+                    .leftArrow{border-right-width: 250px;border-bottom-width: 250px;}
+                    .rightArrow{border-left-width: 150px;border-bottom-width: 100px;}
+                    .bottomArrow{border-left-width: 100px;border-right-width: 445px;border-bottom-width: 60px;}
+                }
+            }
+        }
+        @media (min-width:576px) and (max-width:767px){
+            &{
+                .teamArea{
+                    span{
+                        &.name{bottom: 80px;}
+                    }
+                    .leftArrow{border-right-width: 300px;border-bottom-width: 250px;}
+                    .rightArrow{border-left-width: 150px;border-bottom-width: 100px;}
+                    .bottomArrow{border-left-width: 100px;border-right-width: 500px;border-bottom-width: 60px;}
+                }
+            }
+        }
+        @media (max-width:575px){
+            &{
+                .teamArea{
+                    span{left:10px;
+                        &.name{bottom: 65px;font-size: 16px;}
+                        &.post{bottom:10px;}
+                    }
+                    .leftArrow{border-right-width: 230px;border-bottom-width: 170px;}
+                    .rightArrow{border-left-width: 150px;border-bottom-width: 100px;}
+                    .bottomArrow{border-left-width: 90px;border-bottom-width: 45px;}
+                }
+            }
+        }
+    }
+}

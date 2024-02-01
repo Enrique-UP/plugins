@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<body style="text-align:center">
+    <p>COUNTS</p>
+    <div id="counter"></div><!--counts-->
+    <div id="counter1"></div><!--counts-->
+  
+    <script>
+        let counts = setInterval(updated);
+        let upto = 0;
+        function updated(){
+            var count= document.getElementById("counter");
+            count.innerHTML = ++upto;
+            if(upto === 100){
+                clearInterval(counts);
+            }
+        }
+    </script>
+
+<script>
+    let counts1 = setInterval(updated);
+    let upto1 = 100;
+    function updated(){
+        var count1 = document.getElementById("counter1");
+        count1.innerHTML=--upto1;
+        if(upto1 === 0) {
+            clearInterval(counts1);
+        }
+    }
+</script>
+</body>
+</html>

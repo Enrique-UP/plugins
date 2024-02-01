@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+<body>
+    <script src="../../jquery-2.2.4.min.js"></script>
+    <script>
+        $(window).on("load scroll resize", function(){
+            var ww = $(window).width() || $(document).width();
+            document.getElementById("demo").style.color = "white";
+            if(ww >= 768){
+                document.getElementById("demo").innerHTML = "Desktop";
+                document.getElementById("demo").style.background = "red";
+            }
+            else{
+                document.getElementById("demo").innerHTML = "Mobile";
+                document.getElementById("demo").style.background = "blue";
+            }
+        });
+    </script>
+</body>
+</html>

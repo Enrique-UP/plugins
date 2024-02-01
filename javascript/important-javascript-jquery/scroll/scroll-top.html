@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Document Object</h1>
+<h2>The addEventListener() Method</h2>
+
+<p style="margin-top:1000px">Click anywhere in the document to display "Hello World!".</p>
+
+<p id="demo"></p>
+<p class="top">Top</p>
+<p><a href="javascript:;">Link</a></p>
+<p><a href="javascript:;">Link</a></p>
+<p><a href="javascript:;">Link</a></p>
+<p><a href="javascript:;">Link</a></p>
+<script>
+var links = document.querySelectorAll(".top, a");
+console.log(links);
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+      //document.body.scrollTop = 0; // For Safari
+      //document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    });
+}
+
+// $(".top").click(function(){
+//     $('html, body').animate({scrollTop:(0)}, 1000);
+// });
+</script>
+</body>
+</html>

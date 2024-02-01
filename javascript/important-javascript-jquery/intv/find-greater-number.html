@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Find greater number</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+const points = [40, 10, 1, 20, 100, 5, 25, 10, 300, 0];
+
+document.write("Method 1 for finding Greatest Number:- " + Math.max(...points));
+
+document.getElementById("demo1").innerHTML = points;  
+document.getElementById("demo2").innerHTML = points.sort();
+
+points.sort(function(a, b){
+	return a - b
+});
+
+document.getElementById("demo3").innerHTML = points.pop();
+
+
+</script>
+
+</body>
+</html>

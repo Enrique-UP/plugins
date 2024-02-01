@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>It works with https://. For example http://localhost/ajax/</h1>
+<header></header>
+<footer></footer>
+
+<script>
+fetch("./header.html")
+  .then(response => {return response.text()})
+  .then(data => {document.querySelector("header").innerHTML = data});
+
+fetch("./footer.html")
+  .then(response => {return response.text()})
+  .then(data => {document.querySelector("footer").innerHTML = data});
+</script>
+
+</body>
+</html>

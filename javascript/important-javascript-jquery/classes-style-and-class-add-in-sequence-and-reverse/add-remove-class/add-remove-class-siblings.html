@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;}
+        .links{width:100%;float:left;padding:30px;}
+        .links > a{width:auto;float:left;margin:0 30px 30px 0;}
+        .links > a:last-child{margin: 0;}
+        .links > a.active{background: red;}
+    </style>
+</head>
+<body>
+    <div class="links">
+        <a href="javascript:;">Item 1</a>
+        <a href="javascript:;">Item 2</a>
+        <a href="javascript:;">Item 3</a>
+        <a href="javascript:;">Item 4</a>
+        <a href="javascript:;">Item 5</a>
+    </div><!--links-->
+    <script>
+        var a = document.querySelectorAll(".links > a");
+        a[0].classList.add("active");
+        for (var i = 0; i <= a.length; i++){
+            a[i].addEventListener("click", function(){
+                for (var b = 0; b < a.length; b++){
+                    a[b].classList.remove("active");
+                    //a[b].closest("a").classList.remove("active");
+                }
+                this.classList.add("active");
+            });
+        }
+    </script>
+</body>
+</html>

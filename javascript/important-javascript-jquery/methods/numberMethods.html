@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number Methods</h1>
+    <ol>
+        <li>toString() Returns a number as a string</li>
+        <li>toFixed() Returns a number written with a number of decimals</li>
+        <li>ValueOf() Returns a number as a number</li>
+    </ol>
+    
+    <script>
+        document.write("<p><b>toString</b></p>");
+        let x = 123;
+        document.write("let x = 123 after that x.toString() = " + x.toString() + "<br>");
+        document.write("(123).toString() = " + (123).toString() + "<br>");
+        document.write("(100 + 23).toString() = " + (100 + 23).toString());
+
+        document.write("<p><b>toFixed</b></p>");
+        document.write(x.toFixed(0) + "<br>");
+        document.write(x.toFixed(1) + "<br>");
+        document.write(x.toFixed(2) + "<br>");
+        document.write(x.toFixed(4) + "<br>");
+        document.write(x.toFixed(6));
+
+        document.write("<p><b>valueOf</b></p>");
+        x = 123;
+        document.write(x.valueOf() + "<br>");
+        document.write((123).valueOf() + "<br>");
+        document.write((100 + 23).valueOf());
+
+
+        document.write("<p>The <b>Number()</b> method can be used to convert JavaScript variables to numbers:</p>" + Number(true) + "<br>" + Number(false) + "<br>" + Number("10") + "<br>" + Number("  10") + "<br>" + Number("10  ") + "<br>" + Number(" 10  ") + "<br>" + Number("10.33") + "<br>" + Number("10,33") + "<br>" + Number("10 33") + "<br>" + Number("John") + "<br><br>");
+
+        document.write("<p>The global JavaScript function <b>parseInt()</b> converts strings to numbers:</p>" + parseInt("-10") + "<br>" + parseInt("-10.33") + "<br>" + parseInt("10") + "<br>" + parseInt("10.33") + "<br>" + parseInt("10 6") + "<br>" + parseInt("10 years") + "<br>" + parseInt("years 10") + "<br><br>");
+
+        document.write("<p>The <b>parseFloat()</b> method converts strings to numbers:</p>" + parseFloat("10") + "<br>" +   parseFloat("10.33") + "<br>" + parseFloat("10 6") + "<br>" + parseFloat("10 years") + "<br>" + parseFloat("years 10") + "<br><br>");
+        
+        
+        
+        
+        
+        
+        
+        
+        document.write(`
+            <h2>Number Object Methods</h2>
+            <ol>
+                <li>Number.isInteger()	Returns true if the argument is an integer</li>
+                <li>Number.isSafeInteger()	Returns true if the argument is a safe integer</li>
+                <li>Number.parseFloat()	Converts a string to a number</li>
+                <li>Number.parseInt()	Converts a string to a whole number</li>
+            </ol>
+        `);      
+
+        document.write("<p><b>isInteger</b></p>");
+        document.write(Number.isInteger(10) + "<br>" + Number.isInteger(10.5));
+        
+        document.write("<p><b>isSafeInteger</b></p>");
+        document.write(Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890));
+
+        document.write("<p><b>parseFloat</b></p>");
+        document.write(Number.parseFloat("10") + "<br>" + Number.parseFloat("10.33") + "<br>" + Number.parseFloat("10 20 30") + "<br>" + Number.parseFloat("10 years") + "<br>" + Number.parseFloat("years 10"));
+
+        document.write("<p><b>parseInt</b></p>");
+        document.write(Number.parseInt("-10") + "<br>" + Number.parseInt("-10.33") + "<br>" + Number.parseInt("10") + "<br>" +   Number.parseInt("10.33") + "<br>" + Number.parseInt("10 6") + "<br>" + Number.parseInt("10 years") + "<br>" + Number.parseInt("years 10"));
+    </script>
+</body>
+</html>

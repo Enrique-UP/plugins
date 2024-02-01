@@ -1,0 +1,21 @@
+mixin data(e)
+    div(class=`tabDetail ${e.tab}`)
+        div.headSelect
+            div 
+                div.day
+                    span Day
+                    span= e.date
+                div.arrival Arrival
+            div.btn
+                a(href="javascript:;" class="link") + Add Comment
+        div.back1 Upon arrival in Male, you will be transferred to your resort by Speedboat transfer. Enjoy the rest of the afternoon at leisure to enjoy the hotels facilities.
+
+
++data({tab:"tab-1", date:"1"})
++data({tab:"tab-2", date:"2"})
++data({tab:"tab-3", date:"3"})
++data({tab:"tab-4", date:"4"})
++data({tab:"tab-5", date:"5"})
++data({tab:"tab-6", date:"6"})
++data({tab:"tab-7", date:"7"})
++data({tab:"tab-8", date:"8"})

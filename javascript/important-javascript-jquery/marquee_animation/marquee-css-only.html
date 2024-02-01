@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    *{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;padding:0;margin:0;}
+
+    div.marquee_area{width:100%;display:flex;background: #333;font-family: arial;font-size:14px;padding:0 15px;}
+    div.marquee_area div.marquee{width:100%;overflow: hidden;display: flex;}
+    div.marquee_area div.marquee div.items{width:auto;display: flex;flex-direction: row;white-space: nowrap;flex-wrap: nowrap;padding:10px 0;margin-left:30%;animation:marquee 50s linear infinite;-webkit-animation:marquee 50s linear infinite;-moz-animation:marquee 50s linear infinite;flex-shrink: 0;}
+    div.marquee_area div.marquee div.items:hover{animation-play-state: paused;-webkit-animation-play-state: paused;-moz-animation-play-state: paused;}
+    @keyframes marquee
+    {
+        form    {margin-left:30%;}
+        to      {margin-left:-2050px;}
+    }
+    @-webkit-keyframes marquee
+    {
+        form    {margin-left:30%;}
+        to      {margin-left:-2050px;}
+    }
+    @-moz-keyframes marquee
+    {
+        form    {margin-left:30%;}
+        to      {margin-left:-2050px;}
+    }
+    div.marquee_area div.marquee div.items div.item{width:auto;color:#fff;margin-right: 50px;position: relative;padding-left:20px;}
+    div.marquee_area div.marquee div.items div.item::before{width:7px;height:7px;content:"";background: red;position: absolute;top:0;left:0;bottom:0;margin:auto;border-radius: 100%;-webkit-border-radius: 100%;-moz-border-radius: 100%;}
+</style>
+</head>
+<body>
+<div class="marquee_area">
+	<div class="marquee">
+        <div class="items">
+            <div class="item">Onelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+            <div class="item">Twolorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+            <div class="item">Threelorem ipsum dolor lorem ipsum dolor sit amit lorem ipsum dolor sit amit loremipsum dolor sit amit.</div><!--item-->
+        </div><!--items-->
+	</div><!--marquee-->
+</div><!--marquee_area-->
+</body>
+</html>

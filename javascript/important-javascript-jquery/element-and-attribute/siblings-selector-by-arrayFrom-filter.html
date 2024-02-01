@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .active{color:red;}
+    </style>
+</head>
+<body>
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Active</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Active</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li class="active">Active</li>
+        <li>Neque</li>
+        <li>Quisquam</li>
+        <li>Qui</li>
+        <li class="active">Active</li>
+        <li>Consectetur</li>
+    </ul>
+    <hr>
+    <ul class="demo1">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="act active">Active</li>
+        <li>Neque</li>
+    </ul>
+    <ul class="demo1" id="siblings"></ul>
+    <hr>
+    <ul class="demo2">
+        <li class="dm">Lorem</li>
+        <li class="dm">Ipsum</li>
+        <li class="dm">Dolor</li>
+        <li class="dm">Sit</li>
+        <li class="active">Neque</li>
+        <li class="dm">Lorem</li>
+        <li class="dm">Ipsum</li>
+        <li class="dm">Dolor</li>
+        <li class="dm">Sit</li>
+        <li class="dm">Quisquam</li>
+        <li class="dm">Qui</li>
+        <li class="dm">Consectetur</li>
+    </ul>
+    
+    <script>
+        // for learning
+        console.log(Array.from("GeeksforGeeks"));
+        const arr = [10, 20, 30];
+        console.log(arr);
+        console.log(Array.from(arr));
+        console.log(Array.from([1, 2, 3], x => x + x));
+        const set = new Set(["foo", "bar", "baz", "foo"]);
+        Array.from(set);
+        console.log(Array.from(set));
+        // [ "foo", "bar", "baz" ]
+
+
+        document.querySelectorAll(".demo").forEach(function(e){
+            // const allSiblings = Array.from(e.children).filter(e => e.classList.contains("active")); // returns all active siblings/elements
+            const allSiblings = Array.from(e.children).filter(e => !e.classList.contains("active")); // returns all unactive siblings/elements
+            console.log(allSiblings);
+            let li = "";
+            allSiblings.forEach((f, index) => {
+                f.classList.add(`c-${index + 1}`);
+                li += `${f.outerHTML}`;
+            });
+            e.innerHTML = li;
+        });
+    </script>
+    <!-- <script>
+        document.querySelectorAll(".demo").forEach(function(e){
+            e.querySelectorAll("li").forEach(function(f){
+                if(f.classList.contains("active")){
+                    f.remove();
+                }
+            });            
+        });
+    </script> -->
+
+    <script>
+        const selected = document.querySelector('.act');
+        const theSelectedSibling = document.querySelector('#siblings'); 
+        const allSiblings = Array.from(selected.parentElement.children).filter(sibling => sibling.className !== selected.className);
+        allSiblings.forEach(sibling => {
+            theSelectedSibling.innerHTML += `${sibling.outerHTML}`;
+        });
+    </script>
+    <script>
+        console.log("==============================");
+        var elem = document.querySelector(".demo2 .active");
+        let siblings = [...elem.parentElement.children].filter(child => child !== elem);
+        console.log(siblings);
+        console.log("==============================");
+    </script>
+</body>
+
+</html>

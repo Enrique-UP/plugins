@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <pre>
+        <b>
+        classList Properties and Methods
+        Name 	Description
+        </b>
+        add() 	        Adds one or more tokens to the list
+        contains() 	Returns true if the list contains a class
+        entries() 	Returns an Iterator with key/value pairs from the list
+        forEach() 	Executes a callback function for each token in the list
+        item() 	        Returns the token at a specified index
+        keys() 	        Returns an Iterator with the keys in the list
+        length 	        Returns the number of tokens in the list
+        remove() 	Removes one or more tokens from the list
+        replace() 	Replaces a token in the list
+        supports() 	Returns true if a token is one of an attribute's supported tokens
+        toggle() 	Toggles between tokens in the list
+        value 	        Returns the token list as a string
+        values() 	Returns an Iterator with the values in the list
+    </pre>
+    <p class="demo">Lorem</p>
+    <p class="demo">Lorem</p>
+    <p class="demo">Lorem</p>
+    <p class="demo demo1 demo2">Lorem</p>
+    <p class="demo">Lorem</p>
+    <p class="contains">Contains</p>
+    <p class="className">className</p>
+    <p class="demo3"></p>
+    <p class="demo4 demo5 demo6">Lorem</p>
+    <p class="demo7 demo8 demo9">Lorem</p>
+    <div id="elem" class="dmo">Hello World!</div>
+
+    <script>
+        document.getElementsByTagName("p")[0].classList.add("active");
+        document.getElementsByTagName("p")[1].classList.remove("demo");
+        document.getElementsByTagName("p")[2].classList.replace("demo", "replaceClass");
+        document.getElementsByTagName("p")[3].classList = "";
+        document.getElementsByTagName("p")[3].classList.add("demoNew");
+        document.getElementsByTagName("p")[4].classList.add("active", "active1", "active2");
+
+        if(document.getElementsByTagName("p")[5].classList.contains("contains")){
+            document.getElementsByTagName("p")[5].innerHTML += " Added";
+        }
+
+        document.getElementsByClassName("className")[0].className = "classNameNew";
+        //document.getElementsByClassName("className")[0].className += " " + "classNameNew";
+        //document.getElementsByClassName("className")[0].className += " " + "classNameNew classNameNewOne";
+        //document.getElementsByClassName("className")[0].className = "classNameNew classNameNewOne";
+
+        var classes = ["one", "two", "three"];
+        document.getElementsByClassName("demo3")[0].classList.add(...classes);
+
+        var classes1 = ["demo5", "demo6"];
+        document.getElementsByClassName("demo4")[0].classList.remove(...classes1);
+
+        document.getElementsByClassName("demo7")[0].classList.remove("demo8", "demo9");
+
+        var elem = document.getElementById('elem');
+        ['first','second','third'].forEach(item => elem.classList.add(item));
+    </script>
+</body>
+</html>
