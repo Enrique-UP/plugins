@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style type="text/css">
+        a{width:auto;float:left;clear: both;}
+        a:not(:last-child){margin-bottom: 10px;}
+    </style>
+<body>
+    <a href="number">number</a>
+    <a href="mail">mail</a>
+    <a href="number">+91-000-000-0000</a>
+    <a href="mail">mailto:info@demo.com</a>
+    <a href="number">+91-000-000-0000</a>
+
+    <a href="javascript:;">View More</a>
+    <a href="javascript:;">Blank href attribute</a>
+    <a href="javascript:;">View More</a>
+    <a href="javascript:;">Blank href attribute</a>
+
+
+    <script>
+        document.querySelectorAll("a").forEach((e) => {
+            if(e.getAttribute("href") == "number"){
+                e.href = "tel:+91-000-000-0000";
+                e.innerHTML = "+91-000-000-0000";
+                e.target = "_blank";
+            }else if(e.getAttribute("href") == "mail"){
+                e.href = "mailto:info@demo.com";
+                e.innerHTML = "info@demo.com";
+                e.target = "_blank";
+            }
+
+
+            // e.href = a.trim();
+            // e.href = a.replaceAll(" ", "");
+            // var b = e.href;
+            // if(b.startsWith("tel:") || b.startsWith("mailto:")){
+            //     e.setAttribute("target", "_blank");
+            // }
+        });
+    </script>
+</body>
+</html>
