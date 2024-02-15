@@ -7,17 +7,16 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 
 
 
-1. onscroll => viewport video => play/otherwise pause.
-2. video play on click after scroll unviewport area then pause.
-3. Steper like akountobooks.com
-
-4. Array methods learn from w3schools.com.
-5. String learn.
+1. Array methods learn from w3schools.com.
+2. String learn.
 	I.  String methods
 	II. String search methods
 	III.String template literals
-6. Number methods
+3. Number methods
+
+4. onscroll => viewport video => play/otherwise pause.
+5. video play on click after scroll unviewport area then pause.
+6. Steper like akountobooks.com
 
 7. Custom image slider with all functionality.
 8. Get value and set outside of function
-9. Popup like snva atf.
