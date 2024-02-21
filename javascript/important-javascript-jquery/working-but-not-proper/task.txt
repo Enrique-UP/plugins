@@ -20,3 +20,5 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 
 7. Custom image slider with all functionality.
 8. Get value and set outside of function
+9. display none and block transition not work
+10. display margin-top auto and set buttom on bottom
