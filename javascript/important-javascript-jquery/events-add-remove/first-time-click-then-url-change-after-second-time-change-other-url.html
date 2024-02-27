@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a>Click here</a><br><br>
+    <a>Click here</a><br><br>
+    <a>Click here</a><br><br>
+    <a>Click here</a><br><br>
+    <a>Click here</a>
+
+    <script>
+        document.querySelectorAll("a").forEach(function(e){
+            e.addEventListener("click", func1);
+            e.addEventListener("click", function(){
+                e.removeEventListener("click", func1);
+                e.addEventListener("click", func2);
+            });
+        });
+
+        function func1(){
+            alert("Function 1");
+        }
+
+        function func2(){
+            alert("Function 2");
+        }
+    </script>
+</body>
+</html>
