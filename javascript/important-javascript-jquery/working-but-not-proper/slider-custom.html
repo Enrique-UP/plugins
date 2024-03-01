@@ -89,19 +89,19 @@
 				ind = [...slides].indexOf(active);
 				console.log(ind);
 				
-				slides.forEach((e) => e.classList.remove("active"));
+				// slides.forEach((e) => e.classList.remove("active"));
 				
 				if(e.classList.contains("left")){
 					if(ind == 0){
-						slides[totalSlides-1].classList.add("active");
+						document.querySelector(".slider .arrows > .left").style.display = "flex";
 					}else{
-						slides[ind-1].classList.add("active");
+						document.querySelector(".slider .arrows > .left").style.display = "none";
 					}
 				}else{
 					if(ind == totalSlides-1){
-						slides[0].classList.add("active");
+						document.querySelector(".slider .arrows > .right").style.display = "none";
 					}else{
-						slides[ind+1].classList.add("active");
+						document.querySelector(".slider .arrows > .right").style.display = "flex";
 					}
 				}
 

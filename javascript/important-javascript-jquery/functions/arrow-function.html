@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <a></a>
+    <a></a>
+
+    <div></div>
+    <div></div>
+    
     <script>
         const great = (a, b) => {
             if (a > b) {
@@ -19,6 +25,31 @@
         }
 
         document.write(great(8, 5));
+    </script>
+    <script>
+        document.querySelectorAll("a").forEach(e => {
+            e.text = "Link";
+            e.setAttribute("href", "democlass.html");
+        }
+        );
+
+        document.querySelectorAll("div").forEach(e => e.innerText = "Link");
+
+        // for single line
+        //e => e.innerText = "Link"
+
+        //for multiple line
+        // .forEach((f, index) => {
+        //     f.classList.add(`c-${index + 1}`);
+        //     li += `${f.outerHTML}`;
+        // });
+
+        //Or
+
+        //for multiple line
+        // function(e){
+        //     return e !== active
+        // }
     </script>
 </body>
 
