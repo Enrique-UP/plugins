@@ -30,18 +30,18 @@
         console.log(window.location.origin + "origin");
 
         var path = window.location.pathname;
-    var page = path.split("/").pop();
-    console.log( page );
+        var page = path.split("/").pop();
+        console.log(page);
     </script>
 
     <script>
+        console.log("==========================================================");
         function func() {
-        var arr = ['GFG', 'gfg', 'g4g', 'GeeksforGeeks'];
-     
-        // Popping the last element from the array
-        console.log(arr.pop());
-    }
-    func();
+            var arr = ['GFG', 'gfg', 'g4g', 'GeeksforGeeks'];
+            console.log(arr.pop());
+            arr.pop();
+            console.log(arr);
+        }func();
     </script>
 </body>
 </html>

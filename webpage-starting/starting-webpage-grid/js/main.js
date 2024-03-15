@@ -18,10 +18,6 @@ $(".slider").owlCarousel({
 });
 
 // for fw not spacing
-document.querySelectorAll("main .fw").forEach(function(e){
-    e.parentElement.classList.add("fwp");
-});
+document.querySelectorAll("main .fw").forEach((e) => e.parentElement.classList.add("fwp"));
 // set margin-bottom of col parent col
-document.querySelectorAll(".row [class*=col-] [class*=col-]").forEach(function(e){
-    e.parentElement.closest("[class*=col-]").style.marginBottom = 0;
-});
+document.querySelectorAll(".row [class*=col-] [class*=col-]").forEach((e) => e.parentElement.closest("[class*=col-]").style.marginBottom = 0);
