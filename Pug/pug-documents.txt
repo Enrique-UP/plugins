@@ -12,10 +12,11 @@ pug -w ./pug -o ./ -P
 
 
 for include use format
-pug=>index.pug
-pug=>include/common.pug
+pug/index.pug
+pug/include/common.pug
 After that, use the above command for compile by this method common.pug file will not compile only index.pug file will compile.
 ===========================
+pug -w ./pug/index.pug -o ./ -P
 
 
 
