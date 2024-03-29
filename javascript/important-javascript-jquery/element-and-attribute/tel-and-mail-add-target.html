@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../../../font-awesome.min.css" />
+    <style type="text/css">
+        a{width:auto;float:left;clear: both;text-decoration: none;}
+        a > i{font-style: normal;margin-right: 2px;display: inline-block;}
+        p{width:100%;float:left;}
+        a:not(:last-child){margin-bottom: 10px;}
+    </style>
+<body>
+    <a href="?number?"><i>&#x0260E;</i><span>?number?</span></a>
+    <a href="?mail?"><i>&#x2709;</i><span>?mail?</span></a>
+    <a href="?number?"><i>&#x0260E;</i>?number?</a>
+    <a href="?mail?"><i>&#x2709;</i><span>?mail?</span></a>
+    <a href="?number?"><i>&#x0260E;</i><span>?number?</span></a>
+    <a href="?mail?"><i>&#x2709;</i><span>?mail?</span></a>
+    <p>&nbsp;</p>
+    <a href="?fb?"><i class="fa fa-facebook"></i></a>
+    <a href="?tw?"><i class="fa fa-twitter"></i></a>
+    <p>&nbsp;</p>
+
+    <a href="javascript:;">View More</a>
+    <a href="javascript:;">Blank href attribute</a>
+    <a href="javascript:;">View More</a>
+    <a href="javascript:;">Blank href attribute</a>
+
+
+    <script>
+        document.querySelectorAll("a").forEach((e) => {
+            if(e.getAttribute("href") == "?number?"){
+                e.href = "tel:+910000000000";
+                e.innerHTML = e.innerHTML.replaceAll("?number?", "+91-000-000-0000");
+                e.target = "_blank";
+            }
+            else if(e.getAttribute("href") == "?mail?"){
+                e.href = "mailto:info@demo.com";
+                e.innerHTML = e.innerHTML.replaceAll("?mail?", "info@demo.com");
+                e.target = "_blank";
+            }
+            else if(e.getAttribute("href") == "?fb?"){
+                e.href = "https://www.facebook.com";
+                e.target = "_blank";
+            }
+            else if(e.getAttribute("href") == "?tw?"){
+                e.href = "https://www.twitter.com";
+                e.target = "_blank";
+            }
+        });
+    </script>
+</body>
+</html>

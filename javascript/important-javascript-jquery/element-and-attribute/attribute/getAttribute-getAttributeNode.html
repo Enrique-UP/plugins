@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+.democlass {
+  color: red;
+}
+</style>
+
+<body>
+<p class="democlass1"><b>The Element Object</b></p>
+<p class="democlass1"><b>The Element Object</b></p>
+
+<p class="democlass2"><b>The Element Object</b></p>
+<p class="democlass2"><b>The Element Object</b></p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+  document.querySelectorAll(".democlass1").forEach(function(e){
+    const classValue = e.getAttribute("class");
+    document.querySelector("#demo").innerHTML += classValue + "<br>";
+  });  
+
+  document.querySelectorAll(".democlass2").forEach(function(e){
+    const classValue = e.getAttributeNode("class");
+    document.querySelector("#demo1").innerHTML += classValue.value + "<br>";
+  });
+</script>
+
+</body>
+</html>

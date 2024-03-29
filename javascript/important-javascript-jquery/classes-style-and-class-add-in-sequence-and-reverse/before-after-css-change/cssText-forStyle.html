@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="myP" style="background-color:brown;font-size:55px;border:10px dashed white;color:white;outline:10px solid black;">This is a paragraph.</p>
+<p id="idHere">Button</p>
+
+
+<script>
+  document.write("<br><br>");
+  document.write(document.getElementById("myP").style.cssText += "padding:30px;font-weight:800;");
+  document.write("<br><br>");
+  document.write(document.getElementById("myP").style.border);
+  document.write("<br><br>");
+  document.write("<br><br>");
+  
+  idHere.style.cssText = `
+    color: white !important;
+    background-color: blue;
+    width: 100px;
+    text-align: center;
+    padding:10px;
+  `;
+  document.write(idHere.style.cssText);
+</script>
+</body>
+</html>

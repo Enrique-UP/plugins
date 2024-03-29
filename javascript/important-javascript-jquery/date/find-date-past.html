@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    let text;
+    const today = new Date();
+    const someday = new Date();
+    someday.setFullYear(2023, 5, 6); // yy/mm + 1/dd
+    if (someday > today) {
+        text = "After";
+    } else {
+        text = "Before";
+    }
+    document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

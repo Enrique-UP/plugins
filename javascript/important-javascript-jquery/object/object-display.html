@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Object Methods and Properties</h1>
+    <pre>
+        Name 	            Description
+        constructor 	    Returns the function that created an object's prototype
+        keys() 	            Returns an Array Iterator object with the keys of an object
+        prototype 	    Let you to add properties and methods to JavaScript objects
+        toString() 	    Converts an object to a string and returns the result
+        valueOf() 	    Returns the primitive value of an object
+    </pre>
+    
+    <h1>Some common solutions to display JavaScript objects are:</h1>
+    <ol>
+        <li>Displaying the Object Properties by name</li>
+        <li>Displaying the Object Properties in a Loop</li>
+        <li>Displaying the Object using Object.values()</li>
+        <!-- <li>Displaying the Object using Object.keys()</li> -->
+        <li>Displaying the Object using JSON.stringify()</li>
+    </ol>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="text"></p>
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <h4>
+        JSON. stringify() converts JavaScript objects or values into JSON strings.
+        <br>JSON. parse() transforms JSON strings back into JavaScript objects or values.
+    </h4>
+
+
+    <script>
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        document.getElementById("demo").innerHTML = person;
+
+        
+        
+        
+        
+        const info = {
+            name: 'Amit Gupta' ,
+            email: 'xyz@gmail.com',
+            age: 22,
+            dob: '08/02/2000',
+        };
+        for (const key in info) {
+            document.write(`${key}: ${info[key]}<br>`);
+        }
+
+
+
+
+
+        // Displaying Object Properties
+        const person1 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        document.getElementById("demo1").innerHTML = person1.name + " " + person1.age + " " + person1.city + " :-: " + person1["city"];
+        //document.getElementById("demo1").innerHTML = person1[0] + " " + person1[1] + " " + person1[2]; // this is working in array only
+
+
+
+
+
+        // Displaying the Object in a Loop
+        const person2 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        let txt = "";
+        for (let x in person2) {
+            txt += person2[x] + " ";
+        };
+        document.getElementById("demo2").innerHTML = txt;
+
+
+
+
+
+        // Using Object.values()
+        const person3 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        const myArray = Object.values(person3);
+        document.getElementById("demo3").innerHTML = myArray;
+
+
+
+
+        // Using JSON.stringify()
+        const person4 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        let myString = JSON.stringify(person4);
+        document.getElementById("demo4").innerHTML = myString;
+        //document.getElementById("demo4").innerHTML = person4.name;
+
+
+
+
+        //This is  using to create array/object from the elements.
+        // Stringify Arrays
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        let myString1 = JSON.stringify(arr);
+        document.getElementById("demo5").innerHTML = myString1;
+        
+            var obj = {"name":"John", "age":"39", "city":"New York"};
+            var text = JSON.stringify(obj, function (key, value) {
+                if (key == "city") {
+                    return value.toUpperCase();
+                } else {
+                    return value;
+                }
+            });
+            document.getElementById("text").innerHTML = text; 
+            console.log(text);
+
+            // parse arrays
+            var text1 = '["John", "age", "city"]';
+            const myArr = JSON.parse(text1);
+            // const myArr = JSON.stringify(text1);
+            document.getElementById("text1").innerHTML = myArr;
+
+
+            const text2 = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}'; // Convert a string into a function.
+            const obj1 = JSON.parse(text2);
+            obj1.age = eval("(" + obj1.age + ")");
+            document.getElementById("text2").innerHTML = obj1.name + ", " + obj1.age();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="ads">This ads can run on 1 to 30.</div>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    
+    <script>
+        const si = setInterval(date, 100);
+        function date(){
+            var currentDate = new Date().getSeconds();
+            //var currentDate = 7; // for testing purpose
+            document.getElementById("demo").innerHTML = currentDate;
+            document.getElementById("demo1").innerHTML = currentDate;
+            if(currentDate > 29){
+                //clearInterval(si);// only for one time
+                document.getElementById("demo").style.display = "none";
+                document.getElementById("demo").innerHTML = "Expired";
+            }else{
+                document.getElementById("demo").style.display = "block";
+                document.getElementById("demo").innerHTML = currentDate;
+            }
+        }
+    </script>
+</body>
+</html>

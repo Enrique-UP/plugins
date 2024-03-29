@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:30px;}
+        section{width: 100%;height: 100px;border: solid black 1px;position: relative;}
+        section:not(:last-child){margin-bottom: 30px;}
+        section > div{position: absolute;background-color: lightblue;}
+        aside{width: 100%;height: 100px;border: solid black 1px;position: relative;}
+        aside:not(:last-child){margin-bottom: 30px;}
+        aside > div{position: absolute;background-color: lightblue;width: 100%;}
+        
+        .inset > div{inset:30px;
+            /* inset: 30px 10px 30px 0; */
+        }
+
+        .inset-inline > div{height: 100%;inset-inline: 10px 50px;}
+        .inset-inline-start > div{inset-inline-start: 50px;inset-inline-end: 0;}
+        .inset-inline-end > div{inset-inline-start: 0;inset-inline-end: 50px;}
+
+        .inset-block > div{inset-block: 10px 10px;}
+        .inset-block-start > div{inset-block-start: 50px;inset-block-end: 0;}
+        .inset-block-end > div{inset-block-start: 0;inset-block-end: 50px;}
+    </style>
+</head>
+<body>
+    <section class="inset">
+        <div>Inset</div>
+    </section>
+    <section class="inset-inline">
+        <div>inset-inline</div>
+    </section>
+    <section class="inset-inline-start">
+        <div>inset-inline-start</div>
+    </section>
+    <section class="inset-inline-end">
+        <div>inset-inline-end</div>
+    </section>
+
+    <aside class="inset-block">
+        <div>inset-block</div>
+    </aside>
+    <aside class="inset-block-start">
+        <div>inset-block-start</div>
+    </aside>
+    <aside class="inset-block-end">
+        <div>inset-block-end</div>
+    </aside>
+
+    <ul>
+        <li>inset:50px 50px 50px 50px;</li>
+        
+        <li>inset-inline:10px 50px;</li>
+        <li>inset-inline-start: 50px;</li>
+        <li>inset-inline-end: 50px;</li>
+
+        <li>inset-block:10px 50px;</li>
+        <li>inset-block-start:50px;</li>
+        <li>inset-block-end:50px;</li>
+    </ul>
+    
+</body>
+</html>

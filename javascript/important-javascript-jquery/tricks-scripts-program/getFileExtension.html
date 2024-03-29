@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // program to get the file extension
+
+function getFileExtension(filename){
+
+// get file extension
+const extension = filename.split('.').pop();
+return extension;
+}
+
+// passing the filename
+const result1 = getFileExtension('module.js');
+document.write(result1);
+
+const result2 = getFileExtension('module.txt');
+document.write(result2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add Read More Link</title>
+
+</head>
+<body>
+	<h4>By css</h4>
+	<div style="width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;">Praesent euismod nec nulla</div>
+	
+	<h4>By js for characters</h4>
+	<p class="para">Nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+	<p class="para">Praesent euismod nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+	<p class="para">Ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+	<h4>By js for words</h4>
+	<p class="words">Nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+	<p class="words">Praesent euismod nec nulla ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+	<p class="words">Ultrices maximus. Vivamus imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna vehicula aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit amet.</p>
+
+<script>
+var para = document.querySelectorAll(".para");
+for(var i = 0; i < para.length; i++){
+	//console.log(para[i]);
+	var text = para[i].innerText;
+	console.log(text);
+	para[i].innerText = text.slice(0, 100) + "...";
+}
+
+
+var words = document.querySelectorAll(".words");
+for(var i = 0; i < words.length; i++){
+	var text = words[i].innerText;
+	//words[i].innerText = words[i].innerText.split(" ").length;
+	words[i].innerText = text.split(" ").slice(0, 50); // for comma
+	//words[i].innerText = words[i].innerText.replace(/,/g, " ") + "..."; or
+	words[i].innerText = words[i].innerText.replaceAll(",", " ") + "...";
+	//.replace(" ", " ")
+	//.replaceAll(" ", " ")	
+}
+</script>
+</body>
+</html>
