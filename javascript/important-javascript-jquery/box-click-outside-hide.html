@@ -16,11 +16,26 @@
     </style>
 </head>
 <body>
-    <h1>Click Outside the Image to hide it!</h1>
-    <h3>Comment two js then check.</h3>
+    <h1>Click Outside the Box to hide it!</h1>
+    <section>
+        <div class="box" style="background: green;"></div>
+    </section>
     <div class="box">Box</div>
     <img src="../../banner1.jpg" />
     <div class="box1">Box1</div>
+
+    
+
+    <!-- <script src="../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $("section .box").click(function(e) {
+            e.stopPropagation();
+        });
+        $(document).click(function (){
+            $("section .box").css("display", "none");
+        });
+    </script> -->
+
 
 
     <script>
@@ -31,14 +46,6 @@
         document.addEventListener("click", function () {
             box.style.display = "none";
         });
-
-        // function closeBox(){
-        //     $(".linkBtnPopup .popuMid .popuMidArea .box").removeClass("active");
-        // }
-        // $(".linkBtnPopup .popuMid .popuMidArea .box").click(function(e) {
-        //     e.stopPropagation();
-        // });
-        // $(".linkBtnPopup").click(closeBox);
     </script>
 
 
