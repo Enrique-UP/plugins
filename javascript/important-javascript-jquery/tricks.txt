@@ -81,7 +81,7 @@ $(".final").click(function(){
 		data.push({"qus":head,"ans":text});
 	});
 	console.log(data);
-	localStorage.setItem("sd",JSON. stringify(data) );
+	localStorage.setItem("sd",JSON. stringify(data));
 
 	$(this).closest(".steps").find(".pricingLink").attr("target", "_blank");
 	$(this).closest(".steps").find(".pricingLink").attr("href", link);
