@@ -17,6 +17,11 @@
         window.location.hash        #tab2
         window.location.search      ?foo=789
         window.location.origin      https://example.com
+
+        =======================================================================
+        document.domain
+        let dmn = "www.example.com";
+        console.log("Replace www = " + dmn.replace("www.", "")); // example.com
     </pre>
     <script>
         console.log(window.location.host + "host");
@@ -32,6 +37,8 @@
         var path = window.location.pathname;
         var page = path.split("/").pop();
         console.log(page);
+
+        console.log(document.domain + " document.domain");
     </script>
 
     <script>
@@ -42,6 +49,13 @@
             arr.pop();
             console.log(arr);
         }func();
+        console.log("==========================================================");
+    </script>
+    <script>
+        //let dmn = window.location.hostname;
+        //let dmn = "example.com";
+        let dmn = "www.example.com";
+        console.log("Replace www = " + dmn.replace("www.", ""));
     </script>
 </body>
 </html>

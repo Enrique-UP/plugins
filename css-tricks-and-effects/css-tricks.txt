@@ -5,6 +5,8 @@ See buttons/buttons1.html
 ===================================================================================================================================
 <span class="phone">&#128222;</span>
 .phone{filter: brightness(0) invert(1);color:#fff;}
+.phone{filter: brightness(0) invert(100%);}
+// white
 .phone{filter: brightness(0) invert(0);color: black;}
 
 &star;
