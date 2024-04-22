@@ -9,19 +9,24 @@
     </style>
 </head>
 <body>
+    <p class="head-10">10 head-10</p>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, labore!</div>
     
     <p class="head-3">33333 head-3</p>
     <p class="head-1">11111  head-1</p>
+    <p class="head-9">9 head-9</p>
+    <p class="head-8">8 head-8</p>
 
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, labore!</div>
     
     <p class="head-5">55555 head-5</p>
     <p class="head-2">22222 head-2</p>
+    <p class="head-7">7 head-7</p>
 
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, labore!</div>
     
     <p class="head-4">44444 head-4</p>
+    <p class="head-6">6 head-6</p>
     
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, labore!</div>
 
@@ -41,7 +46,7 @@
             details.datas = e.getAttribute("data-class");
             details.push({...details});
         });
-        //console.log(details);
+        console.log(details);
         
         details.sort((a, b) => a.datas - b.datas);
         console.log(details);
