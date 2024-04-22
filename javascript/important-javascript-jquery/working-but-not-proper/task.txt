@@ -23,5 +23,3 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 9. Parameters function
 10. Document anywhere then redirect to another page and also click on a tag then redirect to another page
 11. Text slider with array
-12. Get padding-bottom from the class and after that add more padd on the class by js
-13. file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/box-click-outside-hide.html not working when onclick box show then outside of box click then this is not working

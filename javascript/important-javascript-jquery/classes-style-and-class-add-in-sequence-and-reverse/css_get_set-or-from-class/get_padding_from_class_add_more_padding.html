@@ -13,7 +13,9 @@
     <div class="box" id="box">Box</div>
 
     <script>
-        const cssObj = window.getComputedStyle(box, null).getPropertyValue("padding-top");
+        //const cssObj = window.getComputedStyle(box, null).getPropertyValue("padding-top");
+        const cssObj = window.getComputedStyle(box).getPropertyValue("padding-top");
+
 
         console.log(cssObj, typeof cssObj); // 20px string
 
@@ -21,6 +23,15 @@
         console.log(a, typeof a); // 20 number
         
         box.style.paddingTop = a + 30 + "px";
+
+        
+
+
+        // This method will only get inine style attribute css.
+        //console.log(box.style.padding);
+        console.log(box.style.paddingTop);
+
+        //console.log(getStyle(document.getElementById("box"), "padding-top"));
     </script>
 </body>
 </html>
