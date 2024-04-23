@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p class="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+let text = "";
+const fruits = [
+  "../../../sliders/owl-carousel/images/1.jpg",
+  "../../../sliders/owl-carousel/images/2.jpg",
+  "../../../sliders/owl-carousel/images/3.jpg",
+];
+fruits.forEach(function(item) {
+  text += "<img width=200 src=" + item + ">";
+});
+document.querySelector("p.demo").innerHTML = text;
+
+
+
+
+let text1 = "";
+const fruits1 = ["apple", "orange", "cherry"];
+fruits1.forEach(function(item, index){
+  text1 += index + ": " + item + "<br>";
+});
+document.getElementById("demo1").innerHTML = text1;
+</script>
+<script>
+  const menu = [
+      {
+          name: "buttermilk pancakes",
+          category: "breakfast"
+      },
+      {
+          name: "diner double",
+          category: "lunch"
+      },
+      {
+          name: "godzilla milkshake",
+          category: "dinner"
+      },
+      {
+          name: "country delight",
+          category: "breakfast"
+      },
+      {
+          name: "egg attack",
+          category: "lunch"
+      }
+  ];
+  let text2 = "";
+  menu.forEach(function(item, index){
+    text2 += index + ":- " + item.name + "<br><br>";
+  });
+  document.getElementById("demo2").innerHTML = text2;
+</script>
+</body>
+</html>

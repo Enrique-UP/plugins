@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #E7E9EB;
+}
+
+#myDIV {
+  height: 300px;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+#blueDiv {
+  justify-self: left;
+}
+</style>
+</head>
+<body>
+
+<h1>The justify-self property</h1>
+
+<div id="myDIV">
+  <div style='background-color:coral;'>Red grid item</div>
+  <div id="blueDiv" style='background-color:lightblue;'>Blue grid item</div>
+  <div style='background-color:pink;'>Pink grid item</div>
+</div>
+
+</body>
+</html>

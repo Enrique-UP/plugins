@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        *{padding:0;margin: 0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+        section{width:50%;margin:50px auto 0;display: flex;flex-direction: column;}
+        .tabs{display: flex;justify-content: space-between;background: #ddd;}
+        .tabs > a{width:25%;text-align: center;padding:10px;text-decoration: none;font-weight: bold;font-size: 16px;color:#333;cursor: pointer;}
+        .tabs > a.active{background: red;color:white;}
+        .tabs > a:not(:last-child){border-right: 2px solid white;}
+        .tabsFields{display: flex;flex-direction: column;margin-top: 10px;border:1px solid #ccc;padding:10px;}
+        .tabsFields .tabsField{display: none;}
+        .tabsFields .tabsField.active{display: block;}
+    </style>
+</head>
+<body>
+    <section class="accordion">
+        <div class="tabs">
+            <a class="active">Tab 1</a>
+            <a>Tab 2</a>
+            <a>Tab 3</a>
+            <a>Tab 4</a>
+        </div><!--tabs-->
+        <div class="tabsFields">
+            <div class="tabsField">Tab 1 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 2 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 3 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 4 Field</div><!--tabsField-->
+        </div><!--tabsFields-->
+    </section>
+    <section class="accordion">
+        <div class="tabs">
+            <a>Tab 1</a>
+            <a>Tab 2</a>
+            <a class="active">Tab 3</a>
+            <a>Tab 4</a>
+        </div><!--tabs-->
+        <div class="tabsFields">
+            <div class="tabsField">Tab 1 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 2 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 3 Field</div><!--tabsField-->
+            <div class="tabsField">Tab 4 Field</div><!--tabsField-->
+        </div><!--tabsFields-->
+    </section>
+    <!-- <script>
+        (function(){
+            document.querySelectorAll(".accordion .tabs > a").forEach(function(e, ind){
+                if(e.classList.contains("active")){
+                    e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField")[ind].classList.add("active");
+                }
+
+                e.addEventListener("click", function(f){
+                    e.parentElement.querySelectorAll("a").forEach(function(g){
+                        g.classList.remove("active");
+                    });
+                    e.classList.add("active");
+                    
+                    e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField").forEach(function(g){
+                        g.classList.remove("active");
+                    });
+                    e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField")[ind].classList.add("active");
+                });
+            });
+        })();
+    </script> -->
+    <script>
+        (function(){
+            document.querySelectorAll(".accordion").forEach(function(i){
+                i.querySelectorAll(".tabs > a").forEach(function(e, ind){
+                    if(e.classList.contains("active")){
+                        e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField")[ind].classList.add("active");
+                    }
+
+                    e.addEventListener("click", function(f){
+                        e.parentElement.querySelectorAll("a").forEach(function(g){
+                            g.classList.remove("active");
+                        });
+                        e.classList.add("active");
+                        
+                        e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField").forEach(function(g){
+                            g.classList.remove("active");
+                        });
+                        e.closest(".accordion").querySelectorAll(".tabsFields > .tabsField")[ind].classList.add("active");
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .p{background: red;color:white;font-weight: bold;}
+    </style>
+</head>
+<body>
+<h1>We can not get only applied css by javascript we can use getcomputedStyle & this returns large number of css.</h1>
+<p class="p">This is a paragraph.</p>
+
+
+<script src="../../../../jquery-2.2.4.min.js"></script>
+<script>
+    document.write(document.querySelector(".p").classList);
+    document.write("<br /><br />");
+    document.write(document.querySelector(".p").classList.value);
+    document.write("<br /><br />");
+    document.write(document.querySelector(".p").getAttribute("class"));
+    document.write("<br /><br />");
+    document.write(document.querySelector(".p").className);
+    document.write("<br /><br /><br /><br />");
+
+
+    document.write(getComputedStyle(document.querySelector('.p')).backgroundColor);
+    document.write("<br /><br />");
+    document.write(getComputedStyle(document.querySelector('.p')).color);
+    document.write("<br /><br />");
+    document.write(getComputedStyle(document.querySelector('.p')).fontWeight);
+    document.write("<br /><br />");
+    
+
+    
+</script>
+
+</body>
+</html>

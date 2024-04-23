@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Wk</title>
+    <script src='fontawesome.js'></script>
+
+<style>
+*{padding: 0;margin: 0;outline: 0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+
+body{font-family: arial;font-size:14px;}
+.clear{clear:both;}
+
+.main{width:100%;float:left;overflow: hidden;padding-top:50px;}
+
+
+.sidebar .full_width.about_us .about_us_img{width:100%;float:left;}
+.sidebar .full_width.about_us > p{width:100%;float:left;background:#eee;padding:20px 15px;position: relative;margin:0;}
+.sidebar .full_width.about_us > p > a{width:100%;color:red;clear:both;float:left;}
+
+
+
+.sidebar{width:100%;float:left;}
+.sidebar .sidebar_head{width:100%;float:left;padding:15px;background: red;color:#fff;font-weight: bold;text-transform: uppercase;font-size: 18px;line-height: 1.1;}
+
+.sidebar .full_width{width:100%;float:left;margin-bottom: 30px;}
+.sidebar .full_width.call_us{background:#eee;padding:20px 15px;position: relative;}
+.sidebar .full_width.call_us .details{width:100%;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);text-align: left;padding:0 40% 0 15px;}
+.sidebar .full_width.call_us .details + .details_image{width:40%;float:left;margin-left: 60%;padding-left: 15px;}
+.sidebar .full_width.call_us .details > p{width:100%;float:left;margin-bottom: 15px;}
+.sidebar .full_width.call_us .details > .head{font-weight: bold;font-size: 18px;position: relative;padding-bottom: 10px;color:#323232;}
+.sidebar .full_width.call_us .details > .head::after{content:"";width:50px;height:3px;background: #000;position: absolute;left:0;bottom:0;}
+.sidebar .full_width.call_us .details > .text{color:#8c8c8c;}
+.sidebar .full_width.call_us .details > a{float:left;margin:0;}
+
+
+.sidebar .full_width.reviews .text_top{width:100%;float:left;background: red;color:#fff;padding:15px;line-height: 1.5;margin-bottom: 30px;position: relative;}
+.sidebar .full_width.reviews .text_top::after{width:0;height:0;content: "";border:10px solid transparent;border-top-color:red;position: absolute;left:15px;top:100%;}
+.sidebar .full_width.reviews .image_text{width:100%;float:left;position: relative;padding-left: 75px;}
+.sidebar .full_width.reviews .image_text > img{position: absolute;top:0;left:0;width:60px;border-radius: 100%;-webkit-border-radius: 100%;-moz-border-radius: 100%;}
+.sidebar .full_width.reviews .image_text > p{width:100%;float:left;margin:3px 0;}
+.sidebar .full_width.reviews .image_text > .head{font-weight: bold;font-size: 18px;color:#323232;}
+.sidebar .full_width.reviews .image_text > .text{color:#8c8c8c;}
+.sidebar .full_width.reviews .image_text > .stars > .fa{display: inline-block;color:orange;}
+
+.sidebar .full_width .item p.head_text{position: absolute;bottom:15px;left:15px;width:auto;font-weight: bold;color:#fff;line-height: 1;}
+.sidebar .full_width .item p.head_text > span{width:100%;float:left;text-shadow: 0 0 1px #000;-webkit-text-shadow: 0 0 1px #000;-moz-text-shadow: 0 0 1px #000;}
+.sidebar .full_width .item p.head_text > span.head{font-size: 18px;margin-bottom: 3px;}
+
+.sidebar .full_width .owl-controls{width: 100%;position: absolute;bottom:15px;left:0;}
+.sidebar .full_width .owl-controls .owl-nav{width:auto;float:right;padding:0 10px;}
+.sidebar .full_width .owl-controls .owl-nav > *{width:auto;float:left;margin:0 5px;font-size: 20px;color:#fff;text-shadow: 0 0 1px #000;-webkit-text-shadow: 0 0 1px #000;-moz-text-shadow: 0 0 1px #000;line-height: 1;}
+
+.sidebar .full_width.ads_five{background: url(images/1.jpg) no-repeat top center;background-size:cover;height: 400px;position: relative;overflow: hidden;}
+.sidebar .full_width.ads_five .texts{position: absolute;left:0;bottom:15px;width:100%;text-align: center;padding:15px;}
+.sidebar .full_width.ads_five .texts::before{width: 500px;height: 500px;content: "";position: absolute;left:0;top:-40px;background:#000;opacity: 0.8;transform: rotate(170deg);-webkit-transform: rotate(170deg);-moz-transform: rotate(170deg);}
+.sidebar .full_width.ads_five .texts > *{position: relative;}
+.sidebar .full_width.ads_five .texts .head{font-weight: bold;font-size: 20px;color:#fff;margin-bottom: 10px;line-height: 1.3;}
+.sidebar .full_width.ads_five .texts .head + a{color:#fff;display: inline-block;}
+
+.offers{width:100%;float:left;margin-bottom: 30px;text-align: center;border:1px solid #ccc;padding:15px;color:#323232;}
+.offers > i{margin-bottom:5px;color:#8c8c8c;font-size: 20px;}
+
+.sidebar .full_width.reviews, .sidebar .full_width.lifestyle, .sidebar .full_width.childhood, .sidebar .full_width.team, .sidebar .full_width.about_us, .sidebar .full_width.call_us, .sidebar .sidebar_head, .sidebar .full_width.ads_five{display:none;}    
+</style>
+<link rel="stylesheet" type="text/css" href="../../../font-awesome.min.css" />
+<link rel="stylesheet" href="owl.carousel.css" type="text/css" />
+</head>
+<body>
+<div class="main">
+	<div class="c-container">
+		<div class="c-row">
+            <div class="col-lg-c12">
+                <div class="c-row">
+                     <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-music"></i>
+                            <p>Listening Music</p>
+                        </a>
+                    </div><!--cols-->
+                     <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-file-video-o"></i>
+                            <p>Watching Movies</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-picture-o"></i>
+                            <p>Viewing Nature Scenes</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-gamepad"></i>
+                            <p>Games & Sports</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fas fa-train"></i>
+                            <p>Traveling</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-cutlery"></i>
+                            <p>Fond of Food</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-motorcycle"></i>
+                            <p>Biking</p>
+                        </a>
+                    </div><!--cols-->
+                    <div class="col-lg-c2">
+                        <a class="offers" href="">
+                            <i class="fa fa-car"></i>
+                            <p>Car Driving</p>
+                        </a>
+                    </div><!--cols-->
+                </div><!--c-row-->
+            </div><!--cols-->
+            <div class="col-lg-c3">
+				<div class="sidebar">
+					<div class="c-row">
+                        <div class="col-lg-c12">
+							<div class="full_width">
+								sdf
+							</div><!--full_width-->
+						</div><!--cols-->
+						<div class="col-lg-c12">
+							<div class="full_width about_us">
+								<img src="images/s.jpg" class="about_us_img" />
+                                <p>Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit. <a href="javascript:;">Explore More</a></p>
+							</div><!--full_width-->
+						</div><!--cols-->
+                        <div class="col-lg-c12">
+							<div class="full_width ads_five">
+								<div class="texts">
+                                    <p class="head">Lorem ipsum<br />dolor sit amit</p>
+                                    <a href="">Lorem</a>
+                                </div><!--texts-->
+							</div><!--full_width-->
+						</div><!--cols-->
+					</div><!--c-row-->
+				</div><!--sidebar-->
+			</div><!--cols-->
+            <div class="col-lg-c6">
+				adsf
+			</div><!--cols-->
+			<div class="col-lg-c3">
+				<div class="sidebar">
+					<div class="c-row">
+						<div class="col-lg-c12">
+							<div class="full_width call_us">
+								<div class="details">
+									<p class="head">Got a questions?</p>
+									<p class="text">Lorem ipsum dolor sit amit lorem</p>
+									<a>0000000000</a>
+								</div><!--details-->
+								<img src="images/1.jpg" class="details_image" />
+							</div><!--full_width-->
+						</div><!--cols-->
+						<div class="col-lg-c12">
+                            <div class="full_width reviews">
+								<div class="item">
+                                    <div class="text_top">
+                                        Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit.
+                                    </div><!--text_top-->
+                                    <div class="image_text">
+                                        <img src="images/s.jpg" />
+                                        <p class="head">Head</p>
+                                        <p class="text">Lorem ipsum dolor sit</p>
+                                        <p class="stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </p>
+                                    </div><!--image_text-->
+					            </div><!--item-->
+                                <div class="item">
+                                    <div class="text_top">
+                                        Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit.
+                                    </div><!--text_top-->
+                                    <div class="image_text">
+                                        <img src="images/s.jpg" />
+                                        <p class="head">Head</p>
+                                        <p class="text">Lorem ipsum dolor sit</p>
+                                        <p class="stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </p>
+                                    </div><!--image_text-->
+					            </div><!--item-->
+                                <div class="item">
+                                    <div class="text_top">
+                                        Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit.
+                                    </div><!--text_top-->
+                                    <div class="image_text">
+                                        <img src="images/s.jpg" />
+                                        <p class="head">Head</p>
+                                        <p class="text">Lorem ipsum dolor sit</p>
+                                        <p class="stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </p>
+                                    </div><!--image_text-->
+					            </div><!--item-->
+							</div><!--full_width-->
+						</div><!--cols-->
+                        <div class="col-lg-c12">
+                            <p class="sidebar_head">Lorem Ipsum</p>
+							<div class="full_width lifestyle">
+								<div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+                                <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+                                <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+							</div><!--full_width-->
+						</div><!--cols-->
+                        <div class="col-lg-c12">
+                            <p class="sidebar_head">Lorem Ipsum</p>
+							<div class="full_width childhood">
+								<div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+                                <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+                                <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+							</div><!--full_width-->
+						</div><!--cols-->
+                        <div class="col-lg-c12">
+                            <p class="sidebar_head">Lorem Ipsum</p>
+							<div class="full_width team">
+								<div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+					            <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+                                <div class="item">
+					                <img src="images/s.jpg" width="100%" />
+                                    <p class="head_text">
+                                        <span class="head">Head</span>
+                                        <span class="text">Text</span>
+                                    </p>
+					            </div><!--item-->
+							</div><!--full_width-->
+						</div><!--cols-->
+					</div><!--c-row-->
+				</div><!--sidebar-->
+			</div><!--cols-->
+		</div><!--c-row-->
+	</div><!--c-container-->
+</div><!--main-->
+<script src="../../../jquery-2.2.4.min.js"></script>
+<script src="../../../owl-carosel/owl-carosel-active-class/js/owl.carousel.min.js"></script>
+<script type="text/javascript">
+    $('.sidebar .full_width.reviews, .sidebar .full_width.lifestyle, .sidebar .full_width.childhood, .sidebar .full_width.team').owlCarousel({
+        loop: true,
+        autoplay:true,
+        margin:0,
+        items:1,
+        nav: true,
+        dots:false,
+        navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+        responsiveClass:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        //animateOut: 'fadeOut',
+        //animateIn: 'fadeIn',
+        thumbs:false
+    });  
+</script>
+</body>
+</html>

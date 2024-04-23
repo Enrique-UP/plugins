@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        a{float:left;clear:both;}
+        .link:not(:last-child){margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <a class="link" href="demo.com">Lorem</a>
+    <a class="link" href="demo.com">Lorem</a>
+    <a class="link" href="demo.com">Lorem</a>
+    <a class="link" href="demo.com">Lorem</a>
+
+    <script>
+        document.addEventListener("click", function(){
+            window.location.href = "https://www.google.com/";
+        });
+
+        document.querySelectorAll("*").forEach(function(e){
+            e.removeAttribute("href");
+            e.removeAttribute("onclick");
+        });
+    </script>
+</body>
+</html>

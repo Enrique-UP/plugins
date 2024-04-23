@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><a href="javascript:;" class="topS">Link Section</a></p>
+<p><a href="javascript:;" class="topS">Link Section</a></p>
+<p><a href="javascript:;" class="topS">Link Section</a></p>
+<p><a href="javascript:;" class="topS">Link Section</a></p>
+<p style="margin-top:1000px">Click anywhere in the document to display "Hello World!".</p>
+<section style="width:100%;height:500px;background: #ccc;">Section</section>
+
+<p style="margin-top:1000px">Click anywhere in the document to display "Hello World!".</p>
+<p id="demo"></p>
+<p class="top">Top</p>
+<p><a href="javascript:;" class="topA">Link Top</a></p>
+<p><a href="javascript:;" class="topA">Link Top</a></p>
+<p><a href="javascript:;" class="topA">Link Top</a></p>
+<p><a href="javascript:;" class="topA">Link Top</a></p>
+<script>
+document.querySelectorAll(".top, .topA").forEach((e) => {
+  e.addEventListener("click", function(){
+      //document.body.scrollTop = 0; // For Safari
+      //document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll(".topS").forEach((e) => {
+  e.addEventListener("click", function(){
+      //document.body.scrollTop = 0; // For Safari
+      //document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      window.scrollTo({ top: document.querySelector("section").offsetTop, behavior: 'smooth' });
+  });
+});
+
+// $(".top").click(function(){
+//     $('html, body').animate({scrollTop:(0)}, 1000);
+// });
+</script>
+</body>
+</html>

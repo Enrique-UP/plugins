@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.5;}
+        .slider{width:100%;display: flex;overflow: hidden;position: relative;max-width: 50%;margin:0 auto;}
+        .slider .slide{width:100%;display: none;visibility: hidden;opacity: 0;transition: 0.3s linear;}
+        .slider .slide > img{width:100%;}
+        .slider .slide.active{display: flex;visibility: visible;opacity: 1;}
+        .slider .slide > span{position: absolute;left:0;right:0;bottom:0;background: rgba(0,0,0,0.5);color: #fff;text-align: center;font-size: 20px;padding:10px;}
+
+        .arrow{position: absolute;top:50%;transform: translateY(-50%);background: rgba(0,0,0,0.5);width:50px;height: 50px;display: flex;justify-content: center;align-items: center;border-radius: 100%;color:#fff;cursor: pointer;}
+        .arrow.left{left:15px;}
+        .arrow.right{right:15px;}
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slide"><img src="../../../sliders/owl-carousel/images/1.jpg" /><span>1</span></div><!--slide-->
+        <div class="slide"><img src="../../../sliders/owl-carousel/images/2.jpg" /><span>2</span></div><!--slide-->
+        <div class="slide"><img src="../../../sliders/owl-carousel/images/3.jpg" /><span>3</span></div><!--slide-->
+
+        <span class="arrow left">&#10094;</span>
+        <span class="arrow right">&#10095;</span>
+    </div><!--slider-->
+    <script>
+        let flag = 0;
+         
+        
+        function controller(x){
+            flag = flag + x;
+            slideShow(flag);  
+        }
+        slideShow(flag); 
+
+
+        function slideShow(num){
+            let slides = document.getElementsByClassName("slide");
+
+            if(num == slides.length){
+                flag = 0;
+                num = 0;
+            }
+            if(num < 0){
+                flag = slides.length - 1;
+                num = slides.length - 1;
+            }
+
+            for(let y of slides){
+                y.classList.remove("active");
+            }
+
+            slides[num].classList.add("active");
+        }
+
+        document.querySelector(".arrow.left").addEventListener("click", function(){
+            controller(-1);
+        });
+        document.querySelector(".arrow.right").addEventListener("click", function(){
+            controller(1);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>jQuery Zoom Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {box-sizing:border-box;margin: 0;padding: 0;}
+        main{width:100%;float:left;font-family: Arial, Helvetica, sans-serif;font-size:14px;}
+        main > *{width:100%;float:left;position:relative;}
+        main header{height:100px;background: #000;color:#fff;}
+        main .banner{height:800px;background:blueviolet;color:#fff;}
+        main ul{padding:0;margin:0;}
+        main ul > li{float:left;list-style: none;}
+        main ul > li:nth-child(1){width:30%;position: relative;}
+        main ul > li:nth-child(2){width:70%;height: 1500px;background-color: brown;color:#fff;}
+        main > ul > li .sidebar{width:100%;float:left;height:250px;background-color: cadetblue;position:absolute;}
+        main .text{height:1500px;background-color:tomato;}
+        main footer{height:500px;background: #000;color:#fff;}
+        
+        @media (max-width:991px){
+            main > ul > li .sidebar{position:static;}
+        }
+        @media (max-width:575px){
+            main ul > li:nth-child(1){width:100%;}
+            main ul > li:nth-child(2){width:100%;}
+        }
+    </style>    
+</head>
+<body>
+    <main>
+        <header>Header</header>
+        <section class="banner">Banner</section>
+        <ul>
+            <li>
+                <div class="sidebar">Sidebar</div><!--sidebar-->
+            </li>
+            <li>
+                Right
+            </li>
+        </ul>
+        <section class="text"></section>
+        <footer>Footer</footer>
+    </main>
+
+
+
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script>
+        function scl(){
+            var ww = $(window).width() || $(document).width();
+            
+            if(ww >= 992){
+                console.clear();
+                console.log("ww = " + ww);
+            
+                var scroll = $(window).scrollTop() || $(document).scrollTop();
+                console.log("scroll = " + scroll);
+
+                var top = $("main > ul > li:nth-child(1)").offset().top;
+                console.log("top = " + top);
+
+                var sidebarHeight = $("main > ul > li .sidebar").height();
+                console.log("sidebarHeight = " + sidebarHeight);
+
+                var ulHeight = $("main > ul").height();
+                console.log("ulHeight = " + ulHeight);
+
+                var ptop = scroll - top;
+                console.log("ptop = " + ptop);
+
+                var mainHeight = $("main").height();
+                console.log("mainHeight = " + mainHeight);
+                
+                var bottom = top + ulHeight - sidebarHeight;
+                console.log("bottom = " + bottom);
+                
+                
+                var sidebarWidth = $("main > ul > li:nth-child(1)").width();
+                console.log("sidebarWidth = " + sidebarWidth);
+                $("main > ul > li .sidebar").css("width", sidebarWidth);
+                $("main > ul > li:nth-child(2)").css("margin-left", sidebarWidth);
+
+                if(scroll >= top && scroll <= bottom){
+                    $("main > ul > li .sidebar").css({
+                        position: "fixed",
+                        top: "0"
+                    });
+                }else if(scroll >= bottom){
+                    $("main > ul > li .sidebar").css({
+                        position: "absolute",
+                        top: ulHeight - sidebarHeight + "px"
+                    });
+                }
+                else{
+                    $("main > ul > li .sidebar").css({
+                        position: "absolute",
+                        top: "0"
+                    });
+                }
+            }
+            if(ww <= 991){
+                $("main > ul > li .sidebar").removeAttr("style");
+                $("main > ul > li:nth-child(2)").removeAttr("style");
+            }
+        }
+        $(window).on("load", scl);
+        $(window).on("scroll", scl);
+        $(window).on("resize", scl);
+    </script>
+</body>
+</html>

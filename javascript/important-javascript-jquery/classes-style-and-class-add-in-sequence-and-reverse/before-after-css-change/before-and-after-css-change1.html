@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+         #box::after{
+            content: 'This is after';
+            background-color: var(--boxAfterBackColor,red);
+            font-size: var(--boxAfterFontSize,16px);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Lorem</div>
+    <script>
+        var box = document.getElementById("box");
+
+        //for getting before or after css here no need of these lines & it is only for learning purpose
+        var boxAfter = window.getComputedStyle(box, "::after");
+        console.log("background-color: " + boxAfter.backgroundColor);
+
+        box.style.setProperty('--boxAfterBackColor','green');
+    </script>
+</body>
+</html>

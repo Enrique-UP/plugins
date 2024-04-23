@@ -1,0 +1,19 @@
+npm install -g sass
+
+for creating new package.json file in our project
+npm init --yes
+
+go in package.json file
+and replace "scripts" to 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch sass/style.scss:css/style.min.css --no-source-map --style compressed"
+},
+
+after that run
+npm run build-css
+
+after run this command sass will automatically compile
+===========================================================================
+Command for multiple files compile in one time
+sass --watch sass/home.scss:css/home.css sass/about.scss:css/about.css --no-source-map

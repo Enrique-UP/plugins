@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="myElement">Element</div>
+    <script>
+        // Set the display property of the element to none using CSS
+        document.getElementById("myElement").style.display = "none";
+
+        // Remove the display property after the page loads using the DOMContentLoaded event
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("myElement").style.display = "block";
+        });
+    </script>
+</body>
+</html>

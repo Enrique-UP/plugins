@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{padding:0;margin:0;box-sizing:border-box;}
+#container {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  border: solid black 1px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+  
+#container > div {
+  display:flex;
+
+  aspect-ratio: 2 / 1;
+  /* Twice width of height */
+  
+  /* aspect-ratio: 0.5; */
+  /* Twice height of width */
+
+  /* aspect-ratio: 1 / 1; */
+  /* or */
+  /* aspect-ratio: 1; */
+  /* square */
+
+  /* aspect-ratio: 2; */
+  /* Twice width of height */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+</style>
+</head>
+<body>
+
+<h3>CSS aspect-ratio property.</h3>
+<p>Resize browser window to see how the layout behaves.</p>
+<p>Div elements with images inside are organized in responsive grid layout to make it look good on all devices. CSS aspect-ratio property adjusts height automatically to maintain correct ratio between width and height of div element. Correct ratio between width and height of the image is also maintained with the object-fit property set to cover.</p>
+
+<div id="container">
+  <div><img src="../../sliders/owl-carousel/images/1.jpg" alt="alley" width="460" height="345"></div>
+  <div><img src="../../sliders/owl-carousel/images/2.jpg" alt="flowers by the street" width="460" height="345"></div>
+  <div><img src="../../sliders/owl-carousel/images/3.jpg" alt="mountains" width="600" height="400"></div>
+  <div><img src="../../sliders/owl-carousel/images/1.jpg" alt="Cinque Terre" width="600" height="400"></div>
+</div>
+
+<p><a href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_aspect-ratio&preval=2" target="_blank">https://www.w3schools.com/cssref/playdemo.php?filename=playcss_aspect-ratio&preval=2</a></p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let people = [
+            {name: 'Rachel', age: 24},
+            {name: 'David', age: 16},
+            {name: 'Aakash', age: 23},
+            {name: 'Franklin', age: 26},
+            {name: 'Ricky', age: 17}
+        ];
+        let adults = people.filter(big => big.age >= 18);
+        console.log(adults);
+    </script>
+    <script>
+        let cities = [
+            {name: 'Los Angeles', population: 3792621},
+            {name: 'New York', population: 8175133},
+            {name: 'Chicago', population: 2695598},
+            {name: 'Houston', population: 2099451},
+            {name: 'Philadelphia', population: 1526006}
+        ];
+        let bigCities = [];
+        for (let i = 0; i < cities.length; i++) {
+            if (cities[i].population > 3000000) {
+                bigCities.push(cities[i]);
+            }
+        }
+        console.log(bigCities);
+    </script>
+    <script>
+        let employees = [
+            { name: "Tony Stark", department: "IT" },
+            { name: "Peter Parker", department: "Pizza Delivery" },
+            { name: "Bruce Wayne", department: "IT" },
+            { name: "Clark Kent", department: "Editing" }
+        ];        
+        let output = employees.filter(employee => employee.department == "IT");
+        for (let i = 0; i < output.length; i++) {
+            console.log(output[i].name);
+        };
+    </script>
+    <script>
+        let users = [
+            { name: 'John', age: 25, occupation: 'gardener' },
+            { name: 'Ashok', age: 39, occupation: 'programmer' },
+            { name: 'Lenny', age: 51, occupation: 'programmer' },
+            { name: 'Andrew', age: 43, occupation: 'teacher' },
+            { name: 'Peter', age: 81, occupation: 'teacher' },
+            { name: 'Anna', age: 47, occupation: 'programmer' },
+            { name: 'Albert', age: 76, occupation: 'programmer' },
+        ];
+        let filteredUsers = [];
+        for (let i= 0; i < users.length; i++) {
+            if (users[i].age > 40 && users[i].occupation === 'programmer' ) {
+                filteredUsers = [...filteredUsers, users[i]];
+                //filteredUsers.push(users[i]); //Or
+            }
+        }
+        console.log(filteredUsers);
+    </script>
+    <script>
+        const score = {
+            Nathan: 8,
+            Mia: 10,
+            Jack: 7,
+            Sunny: 6,
+        };
+
+        const scoreArr = Object.entries(score);
+        // const filteredArr = scoreArr.filter(function ([key, value]) {
+        //     return key !== "Jack";
+        // });
+        const filteredArr = scoreArr.filter(([key, value]) => key !== "Jack");
+        console.log(filteredArr);
+    </script>
+</body>
+</html>

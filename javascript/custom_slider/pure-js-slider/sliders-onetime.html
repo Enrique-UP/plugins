@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        a{background: brown;color:white;padding:10px 20px;cursor: pointer;display: inline-block;}
+        a:not(:last-child){margin: 0 10px 10px 0;}
+        .slider{display: none;animation: slider 0.3s linear;opacity: 1;visibility: visible;}
+        @keyframes slider {
+            from    {opacity: 0;visibility: hidden;height: 0;}
+            to      {opacity: 1;visibility: visible;height: auto;}
+        }
+        .slider.active{display: flex;}
+        .slider .slide{background: brown;color:#fff;padding:5px;animation: slides 0.3s linear;opacity: 1;visibility: visible;display: none;}
+        @keyframes slides {
+            from    {opacity: 0;visibility: hidden;height: 0;}
+            to      {opacity: 1;visibility: visible;height: auto;}
+        }
+        .slider .slide.active{display: flex;}
+    </style>
+</head>
+<body>
+    <a class="btn1">Button 1</a><a class="btn2">Button 2</a>
+    <h1>Slider 1</h1>
+    <div class="slider s1">
+        <div class="slide">S1 - 1</div>
+        <div class="slide">S1 - 2</div>
+        <div class="slide">S1 - 3</div>
+        <div class="slide">S1 - 4</div>
+        <div class="slide">S1 - 5</div>
+    </div>
+    <h1>Slider 2</h1>
+    <div class="slider s2">
+        <div class="slide">S2 - 1</div>
+        <div class="slide">S2 - 2</div>
+        <div class="slide">S2 - 3</div>
+    </div>
+    <script>
+        document.querySelectorAll("a").forEach(function(e){
+            e.addEventListener("click", function(){
+                let slides = "";
+                if(e.classList.contains("btn1")){
+                    document.querySelector(".s1").classList.add("active");
+                    slides = document.querySelectorAll(".s1 .slide");
+                }else{
+                    document.querySelector(".s2").classList.add("active");
+                    slides = document.querySelectorAll(".s2 .slide");
+                }
+                
+                setTimeout(slider(), 300);
+                function slider(){
+                    let ind = 0;
+                    function showSlides() {
+                        for (let i = 0; i < slides.length; i++) {
+                            slides[i].classList.remove("active");
+                        }
+                        ind++;
+
+                        if (ind > slides.length) {
+                            ind = slides.length
+                        }
+
+                        slides[ind - 1].classList.add("active");
+
+                        setTimeout(showSlides, 1000);
+                    }
+                    showSlides();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

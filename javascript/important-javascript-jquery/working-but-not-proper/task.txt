@@ -1,0 +1,25 @@
+Learn 
+Call, apply & Bind in JavaScript - Front End Interview 🔥 Episode 4 - In 20 Minutes
+https://www.youtube.com/watch?v=SaWTn1ZNTpo
+Async/Await, Promises, Callbacks - Async JavaScript Crash Course ( in One Video in Hindi )
+https://www.youtube.com/watch?v=bWaucYA1YRI
+
+
+
+
+1. Array methods learn from w3schools.com
+2. String learn
+	I.   String methods
+	II.  String search methods
+	III. String template literals
+3. Number methods
+
+4. onscroll => viewport video => play/otherwise pause
+5. Video play on click after scroll unviewport area then pause
+6. Steper like akountobooks.com
+
+7. Custom image slider with all functionality
+8. Display none and block transition not work
+9. Parameters function
+10. Document anywhere then redirect to another page and also click on a tag then redirect to another page
+11. Text slider with array

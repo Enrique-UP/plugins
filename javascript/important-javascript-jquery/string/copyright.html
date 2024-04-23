@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <footer class="footer1">Copyright &copy; - All right reserved.</footer>
+        <footer class="footer2">Copyright &copy; - All right reserved.</footer>
+        <footer class="footer3">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - All right reserved.</footer>
+        <script>
+            (function(){
+                document.querySelector(".footer1").innerHTML = document.querySelector(".footer1").innerHTML.replace("-", new Date().getFullYear() + " - ");
+
+                document.querySelector(".footer2").innerHTML = document.querySelector(".footer2").innerHTML.replace("©", "© " + new Date().getFullYear() + " ");
+            })();
+        </script>
+    </body>
+</html>
