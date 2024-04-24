@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+    <section class="boxes">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box orange">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </section>
+    <script>
+        const boxes = document.getElementsByClassName("box");
+        for(box of boxes) {
+            if(box.classList.contains("orange")) {
+                box.remove();
+            }
+        }
+    </script>
     
     <script>
         document.write("<h1>For of loop using array or string</h1>");
@@ -36,6 +51,20 @@
         txt += person[x] + " ";
     }
     document.write(txt);
+    </script>
+
+
+
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <script>
+        for(const box of document.querySelector("ul").getElementsByTagName("li")) {
+            box.classList.add("circle");
+        }
     </script>
 </body>
 </html>

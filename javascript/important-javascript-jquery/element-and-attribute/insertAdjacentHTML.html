@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Lorem</div>
+    <script>
+        const box = `<div id='box'>
+                        <a href="#" id='button-1'>Link</a>
+                    </div>`;
+        document.querySelector("body").insertAdjacentHTML("afterbegin", box);
+    </script>
+</body>
+</html>

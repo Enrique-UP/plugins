@@ -21,5 +21,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 7. Custom image slider with all functionality
 8. Display none and block transition not work
 9. Parameters function
-10. Document anywhere then redirect to another page and also click on a tag then redirect to another page
-11. Text slider with array
+10. Text slider with array
