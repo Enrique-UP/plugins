@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><img src="" /></p>
+    <p><img src="" /> Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet. <img src="" /></p>
+    <script>
+        document.querySelectorAll("p").forEach(function(e){
+            if(e.innerText.length > 0){
+                e.querySelectorAll("img").forEach((f) => {
+                    f.style.margin = "5px 0 10px";
+                });
+            }else{
+                e.querySelectorAll("img").forEach((f) => {
+                    f.style.marginBottom = "10px";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
