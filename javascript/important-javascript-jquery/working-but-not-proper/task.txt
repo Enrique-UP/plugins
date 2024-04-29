@@ -13,12 +13,13 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 	II.  String search methods
 	III. String template literals
 3. Number methods
+4. Math Methods
 
-4. onscroll => viewport video => play/otherwise pause
-5. Video play on click after scroll unviewport area then pause
-6. Steper like akountobooks.com
+5. onscroll => viewport video => play/otherwise pause
+6. Video play on click after scroll unviewport area then pause
+7. Steper like akountobooks.com
 
-7. Custom image slider with all functionality
-8. Display none and block transition not work
-9. Parameters function
-10. Text slider with array
+8. Custom image slider with all functionality
+9. Display none and block transition not work
+10. Parameters function
+11. Text slider with array
