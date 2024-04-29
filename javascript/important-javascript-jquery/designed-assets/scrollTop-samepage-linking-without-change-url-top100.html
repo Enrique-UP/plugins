@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{font-family: Arial, Helvetica, sans-serif;font-size:10px;line-height: 1.5;}
+    header{width:100%;height:200px;background: #ddd;}
+    ul.ig{width:100%;float:left;padding:0;margin:0;}
+    ul.ig > li{width:100%;float:left;list-style: none;
+      height:150px;background-color: #eee;
+    }
+    ul.ig > li#top{background: #ccc;}
+  </style>
+</head>
+<body>
+  <header>Header</header>
+  <ul class="ig">
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li id="top">Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+    <li>Lorem <span></span></li>
+  </ul>
+  <a href="#top">Load More</a>
+  <!-- <script>
+    document.querySelector("a").addEventListener("click", function(e){
+          e.preventDefault();
+        	// var a = document.querySelector("a").href;
+          var a = document.querySelector("a").attributes["href"].value;
+          console.log(a);
+          //document.querySelector(a).style.background = "red";
+          var top = document.querySelector("ul.ig > li" + a).offsetTop;
+          console.log(top);
+          window.scrollTo(0, top - 100);
+      });
+  </script> -->
+
+  <script>
+    window.addEventListener("load", function(){
+      var header = document.querySelector("header").offsetHeight;
+      // if(window.scrollTop()==header){
+      //   document.querySelector("header").classList.add("active");
+      // }
+      console.log(header);
+      document.querySelector("a").addEventListener("click", function(e){
+        e.preventDefault();
+        var a = this.attributes["href"].value;
+        var top = document.querySelector(a).offsetTop;
+        window.scrollTo(0, top - header);
+      });
+    });
+  </script>
+</body>
+</html>

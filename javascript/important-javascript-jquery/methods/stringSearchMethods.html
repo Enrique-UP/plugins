@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Search Methods</h1>
+    <ol>
+        <li>String indexOf()</li>
+        <li>String lastIndexOf()</li>
+        <li>String search()</li>
+        <li>String match()</li>
+        <li>String matchAll()</li>
+        <li>String includes()</li>
+        <li>String startsWith()</li>
+        <li>String endsWith()</li>
+    </ol>
+    
+    <script>
+        document.write("<p><b>1:- indexOf</b></p>");
+        let text = "Please locate where 'locate' occurs!";
+        let index = text.indexOf("locate");
+        document.write(index);
+
+        document.write("<p><b>2:- lastIndexOf</b></p>");
+        let index1 = text.lastIndexOf("locate");
+        document.write(index1);
+        document.write("<br>");
+        let index2 = text.indexOf("John");
+        document.write(index2);
+        document.write("<br>");
+        let index3 = text.indexOf("locate",15);
+        document.write(index3);
+        document.write("<br>");
+        let index4 = text.lastIndexOf("locate",15);
+        document.write(index4);
+
+        document.write("<p><b>3:- search</b></p>");
+        let index5 = text.search("locate");
+        document.write(index5);
+        document.write("<br>");
+        let index6 = text.search(/locate/);
+        document.write(index6);
+
+        document.write("<p><b>4:- match</b></p>");
+        let text1 = "The rain in SPAIN stays mainly in the plain";
+        let myArr = text1.match("ain");
+        document.write(myArr.length + " " + myArr);
+        document.write("<br>");
+        let myArr1 = text1.match(/ain/);
+        document.write(myArr1.length + " " + myArr1);
+        document.write("<br>");
+        let myArr2 = text1.match(/ain/g);
+        document.write(myArr2.length + " " + myArr2);
+        document.write("<br>");
+        let myArr3 = text1.match(/ain/gi);
+        document.write(myArr3.length + " " + myArr3);
+
+        document.write("<p><b>5:- matchAll</b></p>");
+        let text2 = "I love cats. Cats are very easy to love. Cats are very popular."
+        const iterator = text2.matchAll("Cats");
+        document.write(Array.from(iterator));
+        document.write("<br>");
+        const iterator1 = text2.matchAll(/Cats/g);
+        document.write(Array.from(iterator1));
+        document.write("<br>");
+        const iterator2 = text2.matchAll(/Cats/gi);
+        document.write(Array.from(iterator2));
+
+        document.write("<p><b>6:- includes</b></p>");
+        document.write("Check if a string includes 'world'<br>");
+        let text3 = "Hello world, welcome to the universe.";
+        document.write(text3.includes("world"));
+        document.write("<br>");
+        document.write("Check if a string includes 'world' starting from position 12:<br>");
+        document.write(text3.includes("world" , 12));
+
+        document.write("<p><b>7:- startsWith</b></p>");
+        let txt = text3.startsWith("Hello");
+        document.write(txt);
+        document.write("<br>");
+        let txt1 = text3.startsWith("world");
+        document.write(txt1);
+        document.write("<br>");
+        let txt2 = text3.startsWith("world", 5);
+        document.write(txt2);
+        document.write("<br>");
+        let txt3 = text3.startsWith("world", 6);
+        document.write(txt3);
+
+        document.write("<p><b>8:- endsWith</b></p>");
+        let text4 = "John Doe";
+        document.write(text4.endsWith("Doe"));
+        document.write("<br>");
+        document.write("Check in the 11 first characters of a string ends with 'world':<br>");
+        document.write(text3.endsWith("world", 11));
+    </script>
+</body>
+</html>

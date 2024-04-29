@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        html{scroll-behavior: smooth;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+        .datas{width:100%;display: flex;flex-direction: column;}
+        .datas > data{display: none;width:200px;background: #eee;height: 300px;margin-bottom: 30px;font-size: 24px;font-weight: bold;align-items: center;justify-content: center;}
+        .datas > data.show{display: flex;}
+        a{padding: 10px 15px;background: brown;color:white;text-decoration: none;}
+    </style>
+</head>
+<body>
+<main>
+    <div class="datas">
+        <data>01</data>
+        <data>02</data>
+        <data>03</data>
+        <data>04</data>
+        <data>05</data>
+        <data>06</data>
+        <data>07</data>
+        <data>08</data>
+        <data>09</data>
+        <data>10</data>
+        <data>11</data>
+        <data>12</data>
+        <data>13</data>
+        <data>14</data>
+        <data>15</data>
+        <data>16</data>
+        <data>17</data>
+        <data>18</data>
+        <data>19</data>
+        <data>20</data>
+        <data>21</data>
+        <data>22</data>
+        <data>23</data>
+        <data>24</data>
+        <data>25</data>
+        <data>26</data>
+        <data>27</data>
+        <data>28</data>
+        <data>29</data>
+        <data>30</data>
+    </div><!--datas-->
+    <a href="#top">Load More</a>
+</main>
+
+<script>
+    (function(){
+        var defaultShow = 5;
+        var limit = 3;
+        
+        var data = document.querySelectorAll(".datas > data");
+        var totalData = document.querySelectorAll(".datas > data").length;
+        console.log("totalData = " + totalData);
+        var link = document.querySelector("a");
+        
+        if(totalData < limit){
+            for(var i = 0; i < totalData; i++){
+                data[i].classList.add("show");
+            }
+            link.remove();
+            //alert(1);
+        }
+        else{
+            for(var i = 0; i < defaultShow; i++){
+                data[i].classList.add("show");
+            }
+            //alert(2);
+            var dataShow = document.querySelectorAll(".datas > data.show").length;
+            console.log("dataShow = " + dataShow);
+            var rest = totalData - dataShow;
+            console.log("rest = " + rest);
+
+            i -= 1;
+            link.addEventListener("click", function(e){
+                console.clear();
+
+                document.querySelectorAll(".datas > data.show").forEach(function(f){
+                    f.removeAttribute("id", "top");
+                });
+
+                if(rest < limit){
+                    for(var j = i; j <= i + rest; j++){
+                        data[j].classList.add("show");
+                    }
+                    i += rest;
+                    //alert(1);
+                    var lirest = totalData - rest + 1;
+                    document.querySelector(".datas > data.show:nth-child(" + lirest + ")").setAttribute("id", "top");
+                }else{
+                    for(var j = i; j <= i + limit; j++){
+                        data[j].classList.add("show");
+                    }
+                    i += limit;
+                    //alert(2);
+                    var li = dataShow + 1;
+                    document.querySelector(".datas > data.show:nth-child(" + li + ")").setAttribute("id", "top");
+                }
+
+                var top = document.querySelector(".datas > data#top").offsetTop - 0;
+                window.scrollTo(0, top);
+
+                e.preventDefault();
+
+                totalData = document.querySelectorAll(".datas > data").length;
+                console.log("totalData = " + totalData);
+                dataShow = document.querySelectorAll(".datas > data.show").length;
+                console.log("dataShow = " + dataShow);
+                rest = totalData - dataShow;
+                console.log("rest = " + rest);
+
+                li = dataShow - limit + 1;
+                lirest = totalData - rest + 1;
+                
+                if(totalData === dataShow){
+                    this.remove();
+                }
+            });            
+        }
+    })();
+</script>
+</body>
+</html>

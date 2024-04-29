@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Select</title>
+    
+</head>
+<body>
+    <div class="selectBox">
+        <p>Lorem</p>
+        <select>
+            <option>USA: +1</option>
+            <option>UK: +44</option>
+            <option>Mexico: +52</option>
+            <option>India: +91</option>
+            <option>China: +86</option>
+        </select>
+    </div><!--selectBox-->
+
+    <script src="../../../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var select = $(".selectBox select option:selected").val();
+            var t = select.replace(/[^0-9]/g,'');
+            $("p").text("+" + t);
+
+            $(".selectBox select").change(function() {
+                var txt = $(this).find("option:selected").text();
+                var num = txt.replace(/[^0-9]/g,'')
+                $("p").text("+" + num);
+            });
+        });
+    </script>
+</body>
+</html>

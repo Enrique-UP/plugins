@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="description" content="Load more content using jQuery.">
+<meta name="author" content="Raihan Reza">
+<title>Load more content using jQuery</title>
+<style type="text/css">
+ul > li {
+    display:none;list-style:decimal;
+}
+
+#loadMore {
+    padding: 10px;
+    text-align: center;
+    background-color: #33739E;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+<ul class="container">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li> 
+</ul>
+<a href="#" id="loadMore">Load More</a>
+<script src="../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("ul > li").slice(0, 5).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("ul > li:hidden").slice(0, 5).slideDown();
+        if ($("ul > li:hidden").length == 0) {
+            $("#loadMore").fadeOut('slow');
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Always use with https or xampp localhost otherwise this will not work on firefox.</h1>
+    <h1>Without add utm the value of p tag is changing.</h1>
+    <p></p>
+
+    <script>
+        if(window.localStorage.getItem("number") == 1){
+            document.querySelector("p").innerHTML = "You clicked <b>" + window.localStorage.getItem("number") + "<sup>st</sup> </b><u>One</u> child.";
+        }
+        else if(window.localStorage.getItem("number") == 2){
+            document.querySelector("p").innerHTML = "You clicked <b>" + window.localStorage.getItem("number") + "<sup>nd</sup> </b><u>Two</u> child.";
+        }
+        else if(window.localStorage.getItem("number") == 3){
+            document.querySelector("p").innerHTML = "You clicked <b>" + window.localStorage.getItem("number") + "<sup>rd</sup> </b><u>Three</u> child.";
+        }
+        else if(window.localStorage.getItem("number") == 4){
+            document.querySelector("p").innerHTML = "You clicked <b>" + window.localStorage.getItem("number") + "<sup>th</sup> </b><u>Four</u> child.";
+        }
+
+        // if(window.localStorage.getItem("number")){
+        //     document.querySelector("p").innerHTML = "You clicked " + window.localStorage.getItem("number") + " child.";
+        // }
+        else{
+            //document.querySelector("body").innerHTML += "<h2>No data</h2>";
+            window.location.replace("http://localhost/sessionStorage-localStorage/");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1 id="demo">Output is </h1>
+
+<pre>
+  function renderApp() {
+    document.getElementById("demo").innerHTML = "Welcome!";
+  }
+  
+  function renderLogin() {
+    document.getElementById("demo").innerHTML = "Please log in";
+  }
+  
+  let authenticated = true;
+  authenticated ? renderApp() : renderLogin();
+
+
+
+
+  Try changing the "authenticated" variable to false, and run the code to see what happens.
+</pre>
+<script>
+function renderApp() {
+  document.getElementById("demo").innerHTML += "Welcome!";
+}
+
+function renderLogin() {
+  document.getElementById("demo").innerHTML = "Please log in";
+}
+
+let authenticated = true;
+
+authenticated ? renderApp() : renderLogin();
+
+</script>
+</body>
+</html>

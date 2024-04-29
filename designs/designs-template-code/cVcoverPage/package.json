@@ -1,0 +1,13 @@
+{
+  "name": "cVcoverPage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch sass/style-screen.scss:css/style-screen.min.css sass/style-print.scss:css/style-print.min.css --no-source-map --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

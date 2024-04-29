@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../webpage-starting/starting-webpage-bootstrap5/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./css-sass/css/disclaimer.min.css" type="text/css" />
+</head>
+<body>
+    <main>
+        <section class="disclaimer">
+            <div class="container">
+                <div class="fw">
+                    <span>Disclaimer:-</span>
+                    <ul class="marquee">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus atque, iste molestiae delectus 1.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus atque, iste molestiae delectus 2.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus atque, iste molestiae delectus 3.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus atque, iste molestiae delectus 4.</li>
+                    </ul>
+                    <i>Read More</i>
+                </div><!--fw-->
+            </div><!--container-->
+            <div class="container marqueePopup">
+                <div class="fwidth">
+                    <p class="head"><i class="icon">&#xe039;</i></p>
+                    <ul class="lists"></ul>
+                </div><!--fwidth-->
+            </div><!--container-->
+        </section>
+    </main>    
+    <script src="./js/include.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        function marquee(){
+            var id = document.querySelectorAll(".marquee");
+            var disWidth = document.querySelector("main .disclaimer .fw>span").offsetWidth;
+            var tid = 0;
+            for(var j = 0; j < id.length; j++){
+                tid = id[j].offsetWidth - (2 * disWidth);
+                id[j].style.width = tid + "px";    
+                id[j].style.setProperty("--x", -tid + "px");
+                var time = (tid/100) * 2;
+                id[j].style.animationDuration = time + "s";   
+            }
+        }
+        window.addEventListener("resize", marquee);
+        window.addEventListener("load", marquee);
+
+        (function(){
+            var text = document.querySelector("main .disclaimer .fw>span").innerText;
+            document.querySelector("main .disclaimer .marqueePopup .head").innerHTML += text;
+
+            var ul = document.querySelector("main .disclaimer .marquee").innerHTML;
+            document.querySelector("main .disclaimer .marqueePopup .fwidth>ul").innerHTML = ul;
+
+            document.querySelector("main .disclaimer .fw>i").addEventListener("click", function(){
+                document.querySelector("main .disclaimer .marqueePopup").style.display = "block";
+                setTimeout(function(){
+                    document.querySelector("main .disclaimer .marqueePopup").querySelector(".fwidth").classList.add("active");
+                }, 300);
+            });
+            document.querySelector("main .disclaimer .marqueePopup .head .icon").addEventListener("click", function(){
+                document.querySelector("main .disclaimer .marqueePopup").querySelector(".fwidth").classList.remove("active");
+                setTimeout(function(){
+                    document.querySelector("main .disclaimer .marqueePopup").style.display = "none";
+                }, 300);
+            });
+        })();
+    </script>
+</body>
+</html>

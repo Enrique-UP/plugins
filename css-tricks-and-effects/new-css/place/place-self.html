@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#container {
+  width: 60%;
+  aspect-ratio: 3/2;
+  border: solid black 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#container > div {
+  width: 60%;
+  aspect-ratio: 2;
+  margin: 2px;
+  background-color: coral;
+}
+
+#myDiv {
+  border: solid black 3px;
+  place-self: end;
+}
+</style>
+</head>
+<body>
+
+<h1>The place-self Property</h1>
+
+<p>Place an individual grid item in the block and inline directions with the place-self property.</p>
+
+<div id="container">
+  <div></div>
+  <div id="myDiv"></div>
+  <div></div>
+  <div></div>
+</div>
+<pre>
+  place-self: auto;
+  place-self: normal;
+  place-self: stretch;
+  place-self: center;
+  place-self: center left;
+  place-self: center right;
+  place-self: start;
+  place-self: end;
+  place-self: center end;
+  place-self: stretch end;
+  place-self: end stretch;
+  place-self: last baseline;
+  place-self: end start;
+</pre>
+</body>
+</html>

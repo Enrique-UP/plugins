@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animation</title>
+<link rel="stylesheet" type="text/css" href="style-edit.css">  
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+        .main{width:100%;float:left;margin:0;padding:0 40%;}
+        h1{width:100%;float:left;height: 300px;text-align: center;padding-top:135px;}
+        h1:nth-child(odd){background: #999;color:#fff;}
+        h1:nth-child(even){background: #333;color:#fff;}
+    </style>
+</head>
+<body>
+<div class="main">
+<h1 class="animate bounceIn">bounceIn</h1>
+<h1 class="animate bounceInDown">bounceInDown</h1>
+<h1 class="animate bounceInLeft">bounceInLeft</h1>
+<h1 class="animate bounceInRight">bounceInRight</h1>
+<h1 class="animate bounceInUp">bounceInUp</h1>
+
+<h1 class="animate fadeIn">fadeIn</h1>
+<h1 class="animate fadeInUp">fadeInUp</h1>
+<h1 class="animate fadeInDown">fadeInDown</h1>
+<h1 class="animate fadeInLeft">fadeInLeft</h1>
+<h1 class="animate fadeInRight">fadeInRight</h1>
+<h1 class="animate fadeInUpBig">fadeInUpBig</h1>
+<h1 class="animate fadeInDownBig">fadeInDownBig</h1>
+<h1 class="animate fadeInLeftBig">fadeInLeftBig</h1>
+<h1 class="animate fadeInRightBig">fadeInRightBig</h1>
+
+<h1 class="animate rotateIn">rotateIn</h1>
+<h1 class="animate rotateInDownLeft">rotateInDownLeft</h1>
+<h1 class="animate rotateInDownRight">rotateInDownRight</h1>
+<h1 class="animate rotateInUpLeft">rotateInUpLeft</h1>
+<h1 class="animate rotateInUpRight">rotateInUpRight</h1>
+
+<h1 class="animate zoomIn">zoomIn</h1>
+<h1 class="animate zoomInDown">zoomInDown</h1>
+<h1 class="animate zoomInLeft">zoomInLeft</h1>
+<h1 class="animate zoomInRight">zoomInRight</h1>
+<h1 class="animate zoomInUp">zoomInUp</h1>
+
+<h1 class="animate slideInDown">slideInDown</h1>
+<h1 class="animate slideInLeft">slideInLeft</h1>
+<h1 class="animate slideInRight">slideInRight</h1>
+<h1 class="animate slideInUp">slideInUp</h1>
+</div>
+    
+    
+<script src="../../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+(function($) {
+  $.fn.visible = function(partial) {
+    
+      var $t            = $(this),
+          $w            = $(window),
+          viewTop       = $w.scrollTop(),
+          viewBottom    = viewTop + $w.height(),
+          _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+    
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+    
+})(jQuery);
+
+$(window).scroll(function(event) {
+  
+  $(".animate").each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("active"); 
+    } else {
+      el.removeClass("active");
+    }
+  });
+  
+});
+</script>
+</body>
+</html>

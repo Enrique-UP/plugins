@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The Array.from() method returns an Array object from any object with a length property or any iterable object.</p>
+
+<img src="https://cdn.pixabay.com/photo/2023/11/02/02/05/watercolor-8359561_640.png" />
+<img src="./images1.jpg" />
+<img src="https://cdn.pixabay.com/photo/2023/10/28/16/27/mountains-8347890_960_720.jpg" />
+<img src="./images2.jpg" />
+<img src="https://cdn.pixabay.com/photo/2023/11/03/15/14/ai-generated-8363265_640.png" />
+<img src="./images3.jpg" />
+
+<p id="demo"></p>
+
+
+<div class="paras">
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+</div>
+
+<script>
+    const myArr = Array.from("ABCDEFG");
+    document.getElementById("demo").innerHTML = myArr;
+
+
+    const arr = [1, 2, 3];
+    const a = Array.from(arr, (x) => x + x);
+    console.log(a); // [2, 4, 6]
+
+    // or
+
+    var new1 = [];
+    arr.forEach(e => new1.push(e + e));
+    console.log(new1); // [2, 4, 6]
+</script>
+
+
+<script>
+    var src = Array.from(document.querySelectorAll("img"), e => e.src);
+    console.log(src);
+    var httpSrc = src.filter(f => f.startsWith("https"));
+    console.log(httpSrc);
+</script>
+
+
+<script>
+    var para = document.querySelectorAll(".paras p");
+    var elements = Array.from(para);
+    console.log(elements);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        a{float:left;clear:both;}
+        .link:not(:last-child){margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <div class="link" href="#"><span>?number?</span></div>
+    <div class="link">
+        ?number?
+        <span>?number?</span>
+    </div>
+
+    <a class="link"><span>?number?</span></a>
+    <a class="link"><span>?number?</span></a>
+
+    <a class="link" href="#">?number?</a>
+    <a class="link" href="tel:?number?">?number?</a>
+    
+    <a>Lorem</a>
+
+    <script>
+        // let number = "+1-000-000-0000";
+        let number = "+1 (000) 000 0000";
+
+        document.querySelectorAll(".link").forEach((e) => {
+            if(e.tagName.toLocaleLowerCase() != "a"){
+                var a = document.createElement("a");
+                a.innerHTML = e.innerHTML;
+                for(var x of e.attributes){
+                    a.setAttribute(x.name, x.value);
+                }
+                e.replaceWith(a);
+            }
+        });
+        document.querySelectorAll(".link").forEach((e) => {
+            e.href = "tel:+" + number.replace(/[^0-9]/g,'');
+            e.target = "_blank";
+            e.innerHTML = e.innerHTML.replaceAll("?number?", number);
+        });
+    </script>
+</body>
+</html>

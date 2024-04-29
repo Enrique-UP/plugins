@@ -1,0 +1,10 @@
+*{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+body{font-family: Arial;font-size: 14px;}
+
+div.clear{clear:both;}
+.main{width:500px;margin:auto;background: #eee;padding:30px 30px 30px;position: relative;}
+.main input{width:100%;float:left;padding:10px 15px;border:1px solid #ccc;outline:none;}
+.main div.checkbox_label{width:100%;margin-bottom: 30px;display: flex;justify-content: space-between;}
+.main > ul{width:100%;float:left;background: #f5f5f5;max-width: 440px;position: absolute;top:90px;left:30px;overflow: auto;max-height: 266px;display: none;}
+.main > ul > li{width:100%;float:left;list-style: none;border:1px solid #ccc;margin-top:-1px;padding:10px 15px;font-size: 12px;}
+.main > ul > li > a{color:#999;text-decoration: none;}

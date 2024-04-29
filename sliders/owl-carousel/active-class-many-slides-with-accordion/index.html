@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lake Resort || Responsive BootStrap HTML 5 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">    
+</head>
+<body>
+<div class="main">
+    <div class="sliders">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="accordion_area">
+                        <div class="accordion_tabs">
+                            <a data-target="#one" class="active">Slider One</a>
+                            <a data-target="#two">Slider Two</a>
+                            <a data-target="#three">Slider Three</a>
+                        </div><!--accordion_tabs-->
+                        <div class="accordion_tabs_open">
+                            <div class="accordion_tabs_open_area active" id="one">
+                                <div class="slider-one">
+                                    <div class="item">
+                                        <img src="../images/1.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/1.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/1.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/1.jpg" width="100%" />
+                                    </div><!--item-->
+                                </div><!--slider-->
+                            </div><!--accordion_tabs_open_area-->
+                            <div class="accordion_tabs_open_area" id="two">
+                                <div class="slider-two">
+                                    <div class="item">
+                                        <img src="../images/2.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/2.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/2.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/2.jpg" width="100%" />
+                                    </div><!--item-->
+                                </div><!--slider-->
+                            </div><!--accordion_tabs_open_area-->
+                            <div class="accordion_tabs_open_area" id="three">
+                                <div class="slider-three">
+                                    <div class="item">
+                                        <img src="../images/3.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/3.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/3.jpg" width="100%" />
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <img src="../images/3.jpg" width="100%" />
+                                    </div><!--item-->
+                                </div><!--slider-->
+                            </div><!--accordion_tabs_open_area-->
+                        </div><!--accordion_tabs-->
+                    </div><!--accordion_area-->
+                </div><!--cols-->
+            </div><!--row-->
+        </div><!--container-->
+    </div><!--sliders-->
+</div><!--main-->      
+    <script src="../../jquery-2.2.4.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $("div.sliders div.slider-one, div.sliders div.slider-two, div.sliders div.slider-three").owlCarousel({
+            loop: true,
+            autoplay:true,
+            margin:15,
+            items:4,
+            dots: false,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+            responsiveClass:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                621:{
+                    items:2
+                },
+                768:{
+                    items:3
+                },
+                992:{
+                    items:4
+                }
+            },
+        });  
+    </script>
+    <script type="text/javascript">
+        $(".main .sliders .accordion_area .accordion_tabs > a").on("click", function(){
+          $(this).addClass("active");
+          $(this).siblings("a").removeClass("active");
+          
+          $($(this).attr("data-target")).addClass("active");
+          $($(this).attr("data-target")).siblings().removeClass("active");
+        });
+    </script>
+  </body>
+</html>

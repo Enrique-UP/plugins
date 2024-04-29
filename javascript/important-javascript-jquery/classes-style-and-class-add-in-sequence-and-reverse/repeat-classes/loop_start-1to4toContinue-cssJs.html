@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-size: 14px;font-family: Arial, Helvetica, sans-serif;color: white;}
+        ul{width:100%;display: flex;flex-direction: column;}
+        ul > li{padding:10px;}
+        .one{background: brown;}
+        .two{background: #333;}
+        .three{background: orange;}
+    </style>
+</head>
+<body>
+    <ul class="ul-1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br /><br />
+    <ul class="ul-1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br /><br />
+    <ul class="ul-2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br /><br />
+    <ul class="ul-3">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        let classes = [
+            {one:"one"},
+            {one:"two"},
+            {one:"three"}
+        ];
+        var ul = document.querySelectorAll(".ul-1, .ul-2, .ul-3");
+        for(var i = 0; i < ul.length; i++){
+            var one = ul[i].querySelectorAll("li:nth-child(3n + 1)");
+            for(var j = 0; j < one.length; j++){
+                // one[j].classList.add("one");
+                // one[j].innerHTML = "one";
+                one[j].classList.add(classes[0].one);
+                one[j].innerHTML = "one";
+            }
+
+            var two = ul[i].querySelectorAll("li:nth-child(3n + 2)");
+            for(var j = 0; j < two.length; j++){
+                two[j].classList.add(classes[1].one);
+                two[j].innerHTML = "two";
+            }
+
+            var three = ul[i].querySelectorAll("li:nth-child(3n + 3)");
+            for(var j = 0; j < three.length; j++){
+                three[j].classList.add(classes[2].one);
+                three[j].innerHTML = "three";
+            }
+        }
+
+
+
+        // var one = document.querySelectorAll("li:nth-child(3n + 1)");
+        // for(var i = 0; i < one.length; i++){
+        //     one[i].classList.add("one");
+        //     one[i].innerHTML = "one";
+        // }
+        // var two = document.querySelectorAll("li:nth-child(3n + 2)");
+        // for(var i = 0; i < two.length; i++){
+        //     two[i].classList.add("two");
+        //     two[i].innerHTML = "two";
+        // }
+        // var three = document.querySelectorAll("li:nth-child(3n + 3)");
+        // for(var i = 0; i < three.length; i++){
+        //     three[i].classList.add("three");
+        //     three[i].innerHTML = "three";
+        // }
+    </script>
+</body>
+</html>
