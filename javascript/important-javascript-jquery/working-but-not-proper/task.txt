@@ -23,3 +23,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 9. Display none and block transition not work
 10. Parameters function
 11. Text slider with array
+12. popup on mobile full width and height show with content & work on close button

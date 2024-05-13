@@ -17,3 +17,5 @@ after run this command sass will automatically compile
 ===========================================================================
 Command for multiple files compile in one time
 sass --watch sass/home.scss:css/home.css sass/about.scss:css/about.css --no-source-map
+sass --watch sass/style.scss:css/style.min.css --no-source-map --style compressed
+sass --watch sass/style.scss:css/style.css
