@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="./style.css" type="text/css" /> -->
     <style type="text/css">
         /* We can use below css also by adding external stylesheet. */
         :root{
@@ -30,17 +30,37 @@
     </main>
     <a href="javascript:;" class="dark">Dark</a>
     <script>
-        document.querySelector(".dark").addEventListener("click", function(){
-            document.querySelector("head").innerHTML += `
-                <style type="text/css">
-                    :root{
-                        --one:cyan;
-                        --two:#333;
-                        --three:green;
-                    }
-                </style>
-            `;
-        });
+        // document.querySelector(".dark").addEventListener("click", function(){
+        //     document.querySelector("head").innerHTML += `
+        //         <style type="text/css">
+        //             :root{
+        //                 --one:cyan;
+        //                 --two:#333;
+        //                 --three:green;
+        //             }
+        //         </style>
+        //     `;
+        // });
+
+        (function(){
+            const span = document.querySelectorAll(".field > span");
+            var text = "";
+            var link = "text.html?child-";
+            //var data=[];
+            span.forEach(function(e){
+                e.addEventListener("click", function(){
+                    text = e.innerText;
+                    window.localStorage.setItem("number", text);
+                    document.querySelector("a").href = link + window.localStorage.getItem("number");
+                    document.querySelector("a").style.display = "flex";
+                });
+            });
+            if(window.localStorage.getItem("number")){
+                document.querySelector("a").href = link + window.localStorage.getItem("number");
+            }else{
+                document.querySelector("a").style = "display:none";
+            }
+        })();
     </script>
 </body>
 </html>

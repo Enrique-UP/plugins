@@ -8,6 +8,9 @@ after that create folder structure like above folder structure.
 Go to new created folder then press ctrl + l then press cmd then code . then press in run command.
 npm install pug -g
 pug -w ./pug -o ./ -P
+
+pug -w ./pug/include -o ./ -P
+====only watch include folder===good example
 ===========================
 
 
@@ -30,3 +33,28 @@ npm install pug-cli -g
 pug -w ./ -o ./html -P
 pug -w ./pug -o ./html -P
 pug -w ./pug -o ./ -P
+
+pug -w ./pages -o ../ -P
+
+
+===========================================
+npm init -y
+npm i pug express
+
+The updated Dependencies in package.json file will look like:
+"dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+}
+
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1", 
+"pugtohtml": "pug --output-style compressed -o dist/html/ assets/pug/*.pug"
+},
+
+"pugtohtml": "pug --watch -o ./ pug/ --style compressed"
+
+
+npm install pug
+npm install pug-cli -g
+npm run pugtohtml

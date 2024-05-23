@@ -23,4 +23,7 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 9. Display none and block transition not work
 10. Parameters function
 11. Text slider with array
-12. popup on mobile full width and height show with content & work on close button
+12. Popup on mobile full width and height show with content & work on close button
+13. Infinite scroll
+14. Scroll change body and other scroll box
+14. add span on all character, rotate and reverse column. (Scroll for more information)
