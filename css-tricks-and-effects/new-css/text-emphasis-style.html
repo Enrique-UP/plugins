@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p.ex1 {
+  text-emphasis-style: filled; 
+}
+
+p.ex2 {
+  text-emphasis-style: open; 
+}
+
+p.ex3 {
+  text-emphasis-style: double-circle; 
+}
+
+p.ex4 {
+  text-emphasis-style: "#"; 
+} 
+</style>
+<style>
+  h3.ex1 {
+    text-emphasis: double-circle red;
+    text-emphasis-position: over;
+  }
+  
+  h3.ex2 {
+    text-emphasis: triangle blue;
+    text-emphasis-position: under;  
+  }
+  
+  h3.ex3 {
+    writing-mode: vertical-rl;
+    text-emphasis: triangle blue;
+    text-emphasis-position: under right;  
+  }
+  
+  h3.ex4 {
+    writing-mode: vertical-rl;
+    text-emphasis: triangle blue;
+    text-emphasis-position: under left;  
+  }
+  </style>
+</head>
+<body>
+
+<h1>The text-emphasis-style Property</h1>
+
+<p class="ex1">This is some text.</p>
+
+<p class="ex2">This is some text.</p>
+
+<p class="ex3">This is some text.</p>
+
+<p class="ex4">This is some text.</p>
+
+<br><br>
+<h1>The text-emphasis-position Property</h1>
+
+<h3 class="ex1">This is some text.</h3>
+
+<h3 class="ex2">This is some text.</h3>
+
+<h3 class="ex3">This is some text.</h3>
+
+<h3 class="ex4">This is some text.</h3>
+
+<p><b>text-emphasis-style: none|filled|open|dot|circle|double-circle|triangle|sesame|string|color|initial|inherit;</b></p>
+</body>
+</html>
