@@ -1,8 +1,0 @@
-@import "./grid.scss";
-body{font-family: Arial, Helvetica, sans-serif;}
-main {@extend .fw;overflow: hidden;display:flex;flex-direction:column;
-    > *{@extend .fw;}
-    .slider {
-        background: #ccc;
-    }
-  }

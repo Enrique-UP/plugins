@@ -1,8 +1,0 @@
-phpLoop-data.php
-
-Create this file in xammp folder like C:\xampp\htdocs\quickBooks-new-site phpLoop-data.php
-
-Open on browser
-http://localhost/quickBooks-new-site/phpLoop-data.php
-or
-http://localhost/quickBooks-new-site/phpLoop-data.html
