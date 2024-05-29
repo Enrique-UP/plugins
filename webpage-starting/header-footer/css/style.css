@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+:root {
+  --c1:#111827;
+  --c2:#9CA3AF;
+  --c3:#e7002a;
+  --c4:#44AC21;
+  --c5:#92989F;
+  --c6:#E4E8EC;
+  --back:#ECF7E9;
+}
+
+.fc, form.formArea, main, header .navigation .navBar, header .navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.fwp {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fwp .fw {
+  width: 100%;
+}
+
+.trans, a {
+  transition: 0.3s cubic-bezier(0, 0, 1, 1);
+  -webkit-transition: 0.3s cubic-bezier(0, 0, 1, 1);
+  -moz-transition: 0.3s cubic-bezier(0, 0, 1, 1);
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontello.eot?67095526");
+  src: url("../fonts/fontello.eot?67095526#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?67095526") format("woff"), url("../fonts/fontello.ttf?67095526") format("truetype"), url("../fonts/fontello.svg?67095526#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  padding: 44px 0;
+  background: var(--back);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+header .navigation {
+  width: auto;
+}
+header .navigation .navBar {
+  justify-content: center;
+}
+header .navigation .mobHead {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--back);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header .navigation .mobHead .logoMob {
+  display: flex;
+  width: 100px;
+}
+header .navigation .mobHead .icon {
+  font-size: 24px;
+  color: var(--c3);
+  cursor: pointer;
+}
+header .navigation ul {
+  display: flex;
+  counter-reset: count;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+header .navigation ul > li {
+  list-style: none;
+  display: flex;
+}
+header .navigation ul > li:not(:last-child) {
+  margin-right: 96px;
+}
+header .navigation ul > li a {
+  color: var(--c2);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+header .navigation ul > li a::before {
+  counter-increment: count;
+  content: "0" counter(count);
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+header .navigation ul > li a:hover, header .navigation ul > li a:active, header .navigation ul > li a:focus, header .navigation ul > li a.active {
+  color: var(--c1);
+}
+header .menu {
+  display: none;
+  align-items: center;
+  font-size: 20px;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  header .navigation {
+    display: flex !important;
+  }
+  header .container {
+    align-items: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    padding: 20px 0;
+  }
+  header .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+  }
+  header .navigation .navArea {
+    overflow: auto;
+    min-height: 100%;
+  }
+  header .navigation .navBar {
+    background: #fff;
+    justify-content: flex-start;
+    position: relative;
+    left: -100%;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    min-height: 100%;
+  }
+  header .navigation .navBar > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header .navigation.active {
+    display: flex !important;
+  }
+  header .navigation .mobHead {
+    display: flex;
+    position: sticky;
+    top: 0;
+  }
+  header .navigation ul {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  header .navigation ul > li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  header .navigation ul > li a::before {
+    justify-content: flex-start;
+  }
+  header .menu {
+    display: flex;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .navigation .navBar {
+    width: 60%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .navigation .navBar {
+    width: 75%;
+  }
+}
+@media (max-width: 575px) {
+  header .navigation .navBar {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+footer {
+  padding: 94px 0;
+  background: var(--back);
+}
+footer .logo {
+  display: flex;
+  margin-bottom: 28px;
+}
+footer .links {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .links > a {
+  color: inherit;
+  font-size: 16px;
+}
+footer .links > a:not(:last-child) {
+  margin-right: 32px;
+}
+footer .bottom {
+  display: flex;
+  align-items: flex-end;
+}
+footer .formArea .fw {
+  display: flex;
+  font-size: 16px;
+}
+footer .formArea .fw > * {
+  height: 40px;
+}
+footer .formArea .fw .form-control {
+  border-radius: 8px;
+}
+footer .formArea .fw button {
+  margin-left: 8px;
+  border-radius: 8px;
+  background: var(--c4);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+}
+footer hr {
+  margin: 80px 0 30px;
+  border-color: var(--c6);
+}
+footer .links1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .links1 > a, footer .links1 > span {
+  color: var(--c5);
+}
+footer .links1 > span {
+  margin: 0 20px;
+}
+footer .copy {
+  color: var(--c5);
+  text-align: right;
+}
+
+@media (max-width: 991px) {
+  footer {
+    padding: 50px 0;
+  }
+  footer hr {
+    margin: 30px 0;
+  }
+  footer .fw {
+    display: flex;
+    justify-content: center;
+  }
+  footer .links {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  footer .links1 {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  footer .copy {
+    text-align: center;
+  }
+  footer .links > a {
+    font-size: 14px;
+  }
+  footer .links > a:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 991px) {
+  footer form.formArea {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 575px) {
+  footer form.formArea {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  footer .formArea .fw {
+    flex-direction: column;
+  }
+  footer .formArea .fw button {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--c1);
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+main > * {
+  width: 100%;
+  position: relative;
+}
+
+form.formArea {
+  width: 100%;
+}
+form.formArea .head {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/*# sourceMappingURL=style.css.map */

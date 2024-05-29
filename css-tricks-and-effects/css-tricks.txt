@@ -1,0 +1,15 @@
+If the transition is woking only mouseIn and not working proper on mouseOut then apply transition on both element and its hover;
+p a::before{transition:all 0.3s linear;transition-delay: 0s;}
+p a:hover::before{width:100%;transition-delay: 0.3s;}
+See buttons/buttons1.html
+===================================================================================================================================
+<span class="phone">&#128222;</span>
+.phone{filter: brightness(0) invert(1);color:#fff;}
+.phone{filter: brightness(0) invert(100%);}
+// white
+.phone{filter: brightness(0) invert(0);color: black;}
+
+img{mix-blend-mode: color-dodge;} // white
+
+&star;
+&starf;

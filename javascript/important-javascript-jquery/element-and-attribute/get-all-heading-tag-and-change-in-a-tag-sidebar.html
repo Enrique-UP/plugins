@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .heading{font-size: 20px;}
+        section > p:not(:last-child){margin-bottom: 100px;}
+        .side{position: fixed;top:0;right:0;background: #ccc;width: 200px;padding:20px 15px 15px;display: flex;flex-direction: column;}
+        .side > a{margin-bottom: 5px;text-decoration: none;color:blue;font-size: 14px;}
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h2>Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h3>Lorem</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h4>Lorem</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h5>Lorem</h5>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h6>Lorem</h6>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h2>Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h3>Lorem</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h4>Lorem</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h5>Lorem</h5>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h6>Lorem</h6>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h2>Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h3>Lorem</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h4>Lorem</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h5>Lorem</h5>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+        <h6>Lorem</h6>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, porro.</p>
+    </section>
+    <div class="side"></div>
+    <script>
+        (function(){
+            for (var i = 1; i <= 6; i++) {
+                document.querySelectorAll("section h" + i).forEach((e) => e.className = "heading");
+            }
+
+            document.querySelectorAll("section .heading").forEach((e, i) => {
+                e.id += `heading-${i + 1}`;
+                e.innerHTML += `-${i + 1}`;
+            });
+
+            document.querySelectorAll(".heading").forEach((e) => document.querySelector(".side").innerHTML += e.outerHTML);
+
+            document.querySelectorAll(".side > *").forEach((e) => {
+                var a = document.createElement("a");
+                a.innerHTML = e.innerHTML;
+                for(var x of e.attributes){
+                    a.setAttribute(x.name, x.value);
+                    a.setAttribute("href", "#" + a.getAttribute("id"));
+                    a.removeAttribute("id");
+                    a.removeAttribute("class");
+                }
+                e.replaceWith(a);
+            });
+
+        })();
+    </script>
+</body>
+
+</html>

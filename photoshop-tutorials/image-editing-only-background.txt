@@ -1,0 +1,14 @@
+Good tutorial for image editing background
+In this tutorial only background we can change and subject image girl will not be change.
+https://www.youtube.com/shorts/zlomFl0KSVQ
+
+https://www.youtube.com/watch?v=cWzBJ2Uyblk
+
+select => subject
+select => save selection (give any name)
+deselect = ctrl + d
+increase width or height or both.
+edit => content-awereness scale
+protect (top of the screen) => select given name
+transform the image.
+done==============

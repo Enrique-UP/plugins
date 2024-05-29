@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  <p>Lorem</p>
+  
+
+  <script src="../../../../jquery-2.2.4.min.js"></script>
+  <script>
+    var listItems = $("p");
+    var i = 1;
+    for (let li of listItems) {
+      if (i == 4){
+        i = 1;
+      }
+      $(li).html(i + ":- " + $(li).html());
+      i++;
+    }
+  </script>
+</body>
+
+</html>

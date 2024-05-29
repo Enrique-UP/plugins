@@ -1,0 +1,108 @@
+@import "./common/common.scss";
+//@import "./contentText.scss";
+.brandingProjects{
+    .brandingProjectsArea{width:100%;float:left;padding:0;margin-bottom: 30px;border:1px solid var(--bk2);
+        > li{float:left;list-style: none;height: 350px;position: relative;background-size: 100%;background-repeat: no-repeat;background-position: top center;overflow: hidden;
+            &.image{width:30%;
+                &.demo{background-image: url(../images/1.jpg);}
+            }
+            &.text{width:50%;border-left:10px solid var(--bk2);border-right:10px solid var(--bk2);
+                > *{width:100%;float:left;margin:0;}
+                .head{background:var(--g2);color:white;font-weight: bold;font-size: 22px;padding:10px 15px;
+                    &::before{content:"Lorem ispsum dolor";}
+                }
+                .category{background:var(--bk4);padding:10px 15px;font-weight: bold;color:var(--g2);}
+                .aboutHead{background:var(--bk3);padding:10px 15px;color:var(--b1);font-weight: bold;}
+                .content{height: 208px;overflow: auto;padding:20px 15px;border-top:1px solid var(--bk2);
+                    &::before{content:"Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem isum dolor sit amit lorem ipsum dolor sit amit.";}
+                }
+            }
+            &.buttons{width:20%;display: flex;justify-content: center;align-items: center;flex-direction: column;background: var(--b1);margin-bottom: 0;
+                > *{width:auto;margin:7px 0;color:white;}
+                .year{font-weight: bold;font-size: 18px;}
+                .btn{padding:10px 20px;transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;cursor: pointer;}
+                .btn{
+                    &.one{border:1px solid white;}
+                    &.two{background: white;color:var(--g2);}
+                    &:hover, &.active{background: var(--g2);border-color:transparent;color:white;}
+                }
+
+            }
+            &.active{animation:image 5s linear infinite;-webkit-animation:image 5s linear infinite;-moz-animation:image 5s linear infinite;}
+            @keyframes image{
+                0%		{background-position: top center;}
+                50%		{background-position: bottom center;}
+                100%	{background-position: top center;}
+            }
+            @-webkit-keyframes image{
+                0%		{background-position: top center;}
+                50%		{background-position: bottom center;}
+                100%	{background-position: top center;}
+            }
+            @-moz-keyframes image{
+                0%		{background-position: top center;}
+                50%		{background-position: bottom center;}
+                100%	{background-position: top center;}
+            }
+        }
+    }
+    &{
+        @media (min-width:992px) and (max-width:1199px){
+            &{
+                .brandingProjectsArea{
+                    > li{height:280px;
+                        &.text{width:45%;}
+                        &.buttons{width:25%;}
+                    }
+                }
+            }
+        }
+        @media (min-width:768px) and (max-width:991px){
+            &{
+                .brandingProjectsArea{
+                    > li{height:280px;
+                        &.text{width:45%;
+                            .content{height:139px;}
+                        }
+                        &.buttons{width:25%;
+                            .btn{padding:10px 12px;}
+                        }
+                    }
+                }
+            }
+        }
+        @media (min-width:576px) and (max-width:767px){
+            &{
+                .brandingProjectsArea{
+                    > li{height:270px;
+                        &.image{width:40%;}
+                        &.text{width:60%;border-right: none;
+                            .content{height:129px;padding:10px 15px;}
+                        }
+                        &.buttons{width:100%;height:100px;border-top:10px solid var(--bk2);flex-direction: row;
+                            > *{margin:0 10px;}
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width:575px){
+            &{
+                .brandingProjectsArea{border-width:10px;display: flex;flex-direction: column;
+                    > li{height:250px;
+                        &.image{width:100%;order:1;border-bottom:10px solid var(--bk2);}
+                        &.text{width:100%;border-right: none;border-left:none;height: auto;order:2;
+                            .content{height: auto;text-align: justify;}
+                            .head{word-break: break-all;line-height: 1.3;padding:10px;font-size: 14px;}
+                            .aboutHead, .category, .content{padding:10px;}
+                        }
+                        &.buttons{width:100%;order:3;border-top:10px solid var(--bk2);height:auto;flex-direction: row;flex-wrap:wrap;padding:10px 0;
+                            .year{font-size:14px;width: 100%;text-align: center;margin:0 0 10px;}
+                            .btn{padding:6px 10px;margin:0 5px;font-size: 14px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

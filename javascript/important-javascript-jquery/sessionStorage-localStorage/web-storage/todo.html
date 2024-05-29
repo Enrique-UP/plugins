@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APPLICATION</title>
+    <link href="../../../../webpage-starting/starting-webpage-bootstrap5/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-primary">
+    <div class="container my-2">
+      <h1 class="text-center text-white">TODO APPLICATION</h1>
+      <div class="card">
+        <div class="card-body">
+          <form action="#">
+            <input id="title" type="text" class="form-control" placeholder="Enter todo title" />
+            <br />
+            <textarea id="desc" cols="30" rows="10" class="form-control" placeholder="Enter todo description"></textarea>
+            <div class="container text-center mt-2">
+              <button onclick="add_todo()" class="btn btn-primary">ADD TODO</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="main-content" id="main-content"></div>
+    </div>
+
+    <script>
+      const add_todo = () => {
+        let title = document.getElementById("title").value;
+        let desc = document.getElementById("desc").value;
+        let todos = [];
+        //string
+        let localTodos = localStorage.getItem("todos");
+        if (localTodos != null) {
+          todos = JSON.parse(localTodos);
+        }
+        let todoObject = {
+          title: title,
+          desc: desc,
+          id: Math.trunc(Math.random() * 1000),
+        };
+        todos.push(todoObject);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        showTodo();
+        //case:
+        // localStorage.setItem(todos, [{title,desc},{title,desc},{title,desc}]);
+        //todos=>[]
+      };
+      //show the data
+      const showTodo = () => {
+        let todoString = localStorage.getItem("todos");
+        let content = "";
+        if (todoString == null) {
+          //no todo
+          content += "<h3 class='text-white'>NO TODO TO SHOW</h3>";
+        } else {
+          let todos = JSON.parse(todoString);
+          for (let todo of todos.reverse()) {
+            content += `
+              <div class='card mt-2'>
+                <div class='card-body'>
+                  <h3>${todo.title}</h3>
+                  <p>${todo.desc}</p>
+                </div>
+              </div>
+              `;
+          }
+        }
+        document.getElementById("main-content").innerHTML = content;
+      };
+      showTodo();
+    </script>
+  </body>
+</html>

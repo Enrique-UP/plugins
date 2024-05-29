@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Flex Box</title>
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+body{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:1.7;}
+h1{width:100%;float:left;font-size:30px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h2{width:100%;float:left;font-size:28px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h3{width:100%;float:left;font-size:26px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h4{width:100%;float:left;font-size:22px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h5{width:100%;float:left;font-size:20px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h6{width:100%;float:left;font-size:18px;text-align:center;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #000;margin-bottom:30px;padding-bottom:10px;}
+h3 + h4{border-bottom:none;margin-bottom:0;}
+
+main{width:500px;max-width:100%;margin:auto;background:#fff;}
+main div.clear{clear:both;}
+main section{width:100%;float:left;background:#ccc;margin-bottom:100px;padding:30px 15px 0;}
+main section > p{width:100%;float:left;margin:10px 0 20px;}
+main section > p.head{text-align:center;font-size:16px;font-weight:bold;}
+main section > p.highlight{padding:10px;background:#fff;}
+
+main section ul{display:flex;clear:both;margin-bottom:20px;background:#aaa;padding:15px 15px 5px;}
+main section ul.height{height:300px;}
+main section ul > li{width:100px;list-style:none;background:brown;color:#fff;margin-bottom:10px;margin-right:10px;padding:20px 10px;text-align:center;}
+
+main section ul.flex-direction-column{flex-direction: column;}
+
+main section ul.flex-direction-column-reverse{flex-direction: column-reverse;}
+
+main section ul.flex-derection-row{flex-direction: row;}
+
+main section ul.flex-derection-row{flex-direction: row-reverse;}
+
+main section ul.flex-wrap-wrap{flex-wrap: wrap;}
+
+main section ul.flex-wrap-nowrap{flex-wrap: nowrap;}
+
+main section ul.flex-wrap-wrap-reverse{flex-wrap: wrap-reverse;}
+
+main section ul.flex-flow-row-wrap{flex-flow: row wrap;}
+
+main section ul.flex-flow-column-wrap{flex-flow: column wrap;}
+
+main section ul.justify-content{justify-content: center;}
+
+main section ul.justify-content-flex-start{justify-content: flex-start;}
+
+main section ul.justify-content-flex-end{justify-content: flex-end;}
+
+main section ul.justify-content-space-around{justify-content: space-around;}
+main section ul.justify-content-space-around > li{margin-right:0;}
+
+main section ul.justify-content-space-between{justify-content: space-between;}
+main section ul.justify-content-space-between > li{margin-right:0;}
+
+main section ul.align-items-center{align-items:center;}
+
+main section ul.align-items-flex-start{align-items:flex-start;}
+
+main section ul.align-items-flex-end{align-items:flex-end;}
+
+main section ul.align-items-stretch{align-items:stretch;}
+
+main section ul.align-items-baseline{align-items: baseline;}
+
+main section ul.align-content-space-between{align-content:space-between;flex-wrap: wrap;}
+
+main section ul.align-content-space-around{align-content:space-around;flex-wrap: wrap;}
+
+main section ul.align-content-stretch{align-content:stretch;flex-wrap: wrap;}
+
+main section ul.flex-flow-row-nowrap{flex-flow:row nowrap;}
+main section ul.flex-flow-row-reverse-nowrap{flex-flow:row-reverse nowrap;}
+main section ul.flex-flow-column-nowrap{flex-flow:column nowrap;}
+main section ul.flex-flow-column-reverse-nowrap{flex-flow:column-reverse nowrap;}
+main section ul.flex-flow-row-wrap{flex-flow:row wrap;}
+main section ul.flex-flow-row-reverse-wrap{flex-flow:row-reverse wrap;}
+main section ul.flex-flow-column-wrap{flex-flow:column wrap;}
+main section ul.flex-flow-column-reverse-wrap{flex-flow:column-reverse wrap;}
+main section ul.flex-flow-row-wrap-reverse{flex-flow:row wrap-reverse;}
+main section ul.flex-flow-row-reverse-wrap-reverse{flex-flow:row-reverse wrap-reverse;}
+main section ul.flex-flow-column-wrap-reverse{flex-flow:column wrap-reverse;}
+main section ul.flex-flow-column-reverse-wrap-reverse{flex-flow:column-reverse wrap-reverse}
+
+
+
+
+main section ul.align-content-center{align-content:center;flex-wrap: wrap;}
+
+main section ul.align-content-flex-start{align-content:flex-start;flex-wrap: wrap;}
+
+main section ul.align-content-flex-end{align-content:flex-end;flex-wrap: wrap;}
+
+main section ul.align-content-center{align-content:center;justify-content: center;}
+main section ul.align-content-center > li{margin-right:0;}
+
+main section ul.order{align-items: stretch;}
+main section ul.order > li:first-child{order:3;}
+main section ul.order > li:nth-child(2){order:1;}
+main section ul.order > li:nth-child(3){order:4;}
+main section ul.order > li:last-child{order:2;}
+
+main section ul.flex > li{flex: 1;}
+
+main section ul.flex-grow{align-items: stretch;}
+main section ul.flex-grow > li{width:auto;}
+main section ul.flex-grow > li:first-child{flex-grow:1;}
+main section ul.flex-grow > li:nth-child(2){flex-grow:2;}
+main section ul.flex-grow > li:last-child{flex-grow:7;}
+
+main section ul.flex-shrink{align-items: stretch;}
+main section ul.flex-shrink > li:nth-child(7){flex-shrink:0;}
+
+main section ul.flex-basis{align-items: stretch;}
+main section ul.flex-basis > li:nth-child(2){flex-basis:200px;}
+
+main section ul.flex-grow-shrink-width{align-items: stretch;}
+main section ul.flex-grow-shrink-width > li:nth-child(3){flex: 0 0 200px;}
+
+main section ul.align-self-center{height:200px;}
+main section ul.align-self-center > li:nth-child(2){align-self:center;}
+
+main section ul.align-self-start{height:200px;}
+main section ul.align-self-start > li:first-child{align-self:flex-start;}
+
+main section ul.align-self-end{height:200px;}
+main section ul.align-self-end > li:last-child{align-self:flex-end;}
+</style>
+</head>
+<body>
+<main>
+	<section>
+		<h1>display: flex;</h1>
+		<p class="highlight"><b>display</b> flex;</p>
+		<ul class="display-flex">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+		<p><b>Note:-</b> If we remove padding & add width then the li will not be overflow. These are flexible items.</p>
+	</section>
+	<section>
+		<h4>1- flex: direction;</h4>
+		<p class="highlight"><b>flex-direction:</b> row|row-reverse|column|column-reverse|initial|inherit;</p>
+		<p class="head">(a) flex-direction: column;</p>
+		<ul class="flex-direction-column">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(b) flex-direction: column-reverse;</p>
+		<ul class="flex-direction-column-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(c) flex-direction: row;</p>
+		<ul class="flex-derection-row">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(d) flex-direction: row-reverse;</p>
+		<ul class="flex-derection-row">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	</section>
+	<section>
+		<h4>2- justify-content</h4>
+		<p class="highlight"><b>justify-content:</b>  flex-start|flex-end|center|space-between|space-around|initial|inherit;</p>
+		<p class="head">(a) justify-content: center;</p>
+		<ul class="justify-content">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(b) justify-content: flex-start;</p>
+		<ul class="justify-content-flex-start">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(c) justify-content: flex-end;</p>
+		<ul class="justify-content-flex-end">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(d) justify-content: space-around;</p>
+		<ul class="justify-content-space-around">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(e) justify-content: space-between;</p>
+		<ul class="justify-content-space-between">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h4>3- align-items</h4>
+		<p class="highlight"><b>align-items:</b> stretch|center|flex-start|flex-end|baseline|initial|inherit;</p>
+		<p class="head">(a) align-items: center;</p>
+		<ul class="height align-items-center">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(b) align-items:flex-start;</p>
+		<ul class="height align-items-flex-start">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(c) align-items:flex-end;</p>
+		<ul class="height align-items-flex-end">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(d) align-items:stretch;</p>
+		<ul class="height align-items-stretch">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(e) align-items:baseline;</p>
+		<ul class="height align-items-baseline">
+			<li style="height:100px;margin-top:10px;">1</li>
+			<li style="height:125px;margin-top:20px;">2</li>
+			<li style="height:150px;">3</li>
+		</ul>
+	</section>
+	<section>
+		<h4>4- flex-wrap</h4>
+		<p class="highlight"><b>flex-wrap:</b> nowrap|wrap|wrap-reverse|initial|inherit;</p>
+		<p class="head">(a) flex-wrap: wrap;</p>
+		<ul class="flex-wrap-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(b) flex-wrap: nowrap;</p>
+		<ul class="flex-wrap-nowrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(c) flex-wrap: wrap-reverse;</p>
+		<ul class="flex-wrap-wrap-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(d) flex-flow: row wrap;</p>
+		<p>The flex-flow property is a shorthand property for the flex-direction and the flex-wrap properties.</p>
+		<ul class="flex-flow-row-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(e) flex-flow: column wrap;</p>
+		<p>The flex-flow property is a shorthand property for the flex-direction and the flex-wrap properties.</p>
+		<ul class="flex-flow-column-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h4>5- align-content</h4>
+		<p class="highlight"><b> align-content:</b> stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;</p>
+		<p class="head">(a) align-content:space-between;</p>
+		<ul class="height align-content-space-between">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(b) align-content:space-around;</p>
+		<ul class="height align-content-space-around">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(c) align-content:stretch;</p>
+		<ul class="height align-content-stretch">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(d) align-content:center;</p>
+		<ul class="height align-content-center">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(e) align-content:flex-start;</p>
+		<ul class="height align-content-flex-start">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(f) align-content:flex-end;</p>
+		<ul class="height align-content-flex-end">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<p class="head">(g) align-content:center;</p>
+		<ul class="height align-content-center">
+			<li>1</li>
+		</ul>
+	</section>
+	<section>
+		<h4>6- flex:flow;</h4>
+		<p class="highlight"><b>flex-flow:</b> row nowrap | row-reverse nowrap | column nowrap | column-reverse nowrap | row wrap | row-reverse wrap | column wrap | column-reverse wrap | row wrap-reverse | row-reverse wrap-reverse | column wrap-reverse | column-reverse wrap-reverse | initial;</p>
+		<p class="head">(a) flex-flow:row nowrap;</p>
+		<ul class="flex-flow-row-nowrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(b) flex-flow:row-reverse nowrap;</p>
+		<ul class="flex-flow-row-reverse-nowrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(c) flex-flow:column nowrap;</p>
+		<ul class="flex-flow-column-nowrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(d) flex-flow:column-reverse nowrap;</p>
+		<ul class="flex-flow-column-reverse-nowrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(e) flex-flow:row wrap;</p>
+		<ul class="flex-flow-row-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(f) flex-flow:row-reverse wrap;</p>
+		<ul class="flex-flow-row-reverse-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(g) flex-flow:column wrap;</p>
+		<ul class="flex-flow-column-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(h) flex-flow:column-reverse wrap;</p>
+		<ul class="flex-flow-column-reverse-wrap">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(i) flex-flow:row wrap-reverse;</p>
+		<ul class="flex-flow-row-wrap-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(j) flex-flow:row-reverse wrap-reverse;</p>
+		<ul class="flex-flow-row-reverse-wrap-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(k) flex-flow:column wrap-reverse;</p>
+		<ul class="flex-flow-column-wrap-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(l) flex-flow:column-reverse wrap-reverse;</p>
+		<ul class="flex-flow-column-reverse-wrap-reverse">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	</section>
+	<section>
+		<h4>7- order</h4>
+		<p class="highlight"><b>order:</b> number|initial|inherit;</p>
+		<ul class="order">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</section>
+	<section>
+		<h4>8- align-self</h4>
+		<p class="highlight"><b>align-self:</b> auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;</p>
+		<p class="head">(a) align-self:center;</p>
+		<ul class="align-self-center">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<p class="head">(b) align-self:flex-start;</p>
+		<ul class="align-self-start">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<p class="head">(c) align-self:flex-end;</p>
+		<ul class="align-self-end">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</section>
+	<section>
+		<h4>9- flex</h4>
+		<p class="highlight"><b>flex:</b> flex-grow flex-shrink flex-basis|auto|initial|inherit;</p>
+		<ul class="flex">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(a) flex-grow</p>
+		<p class="highlight"><b>flex-grow:</b> number|initial|inherit;</p>
+		<ul class="flex-grow">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">(b) flex-shrink</p>
+		<p class="highlight"><b>flex-shrink:</b> number|initial|inherit;</p>
+		<ul class="flex-shrink">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+		<p class="head">(c) flex-basis</p>
+		<p class="highlight"><b>flex-basis:</b> number|auto|initial|inherit;</p>
+		<ul class="flex-basis">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p class="head">Example</p>
+		<ul class="flex-grow-shrink-width">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<p>Make the third flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels:</p>
+	</section>
+	<div class="clear"></div>
+</main>
+</body>
+</html>

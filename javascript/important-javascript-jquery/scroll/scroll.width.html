@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        section{width:100%;display: flex;flex-direction: column;padding-top:30px;}
+        section .container{width:100%;max-width:1200px;margin:auto;background: #eee;height:700px;margin-bottom: 30px;position: relative;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">Lorem 1</div>
+        <div class="container">Lorem 2</div>
+    </section>
+
+    <script>
+        function container(){
+            var wd = window || document;
+            var w = wd.innerWidth;
+            var sw = window.innerWidth - document.documentElement.offsetWidth;
+            var wd = w - sw;
+            document.write(sw + "<br>");
+            document.write(wd);
+            
+        };
+        window.addEventListener("load", container());
+        window.addEventListener("resize", container);
+    </script>
+</body>
+</html>

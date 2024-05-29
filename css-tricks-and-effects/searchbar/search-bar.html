@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../font-awesome.min.css">
+<style type="text/css">
+  *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+  body{padding:20px;font-family: arial;font-size: 14px;line-height: 1.3;}
+  form.search_bar{width:100%;float:left;position: relative;margin-bottom: 30px;}
+  form.search_bar input{width:100%;float:left;padding:15px;border:1px solid #ccc;}
+  form.search_bar a.fa{position: absolute;top:0;right:0;height: 48px;width:48px;border:1px solid #ccc;background: green;color:#fff;text-align: center;line-height: 46px;cursor: pointer;text-decoration: none;}
+  form.search_bar a.fa-search{display: block;}
+  form.search_bar a.fa-times{display: none;}
+  form.search_bar .dropdown{position: absolute;top:100%;left:0;width:100%;background:#eee;padding:0;margin:0;height: 0;opacity: 0;visibility: hidden;transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;z-index: 1;max-height: 196px;overflow: auto;}
+  form.search_bar .dropdown > li{width:100%;float:left;list-style: none;padding:10px 15px;border:1px solid #ccc;margin-top: -1px;}
+  form.search_bar .dropdown > li > a{width:auto;float:left;color:#333;text-decoration: none;}
+  form.search_bar.active a.fa-search{display: none;}
+  form.search_bar.active a.fa-times{display: block;}
+  form.search_bar.active .dropdown{height: auto;opacity: 1;visibility: visible;}
+</style>
+</head>
+<body>
+<form class="search_bar">
+  <input type="text" placeholder="Search.." />
+  <a class="fa fa-search" href="#top"></a>
+  <a class="fa fa-times"></a>
+  <ul class="dropdown">
+    <li><a href="javascript:;" data-target="one">One Item</a></li>
+    <li><a href="javascript:;" data-target="two">Two Item</a></li>
+    <li><a href="javascript:;" data-target="three">Three Item</a></li>
+    <li><a href="javascript:;" data-target="four">Four Item</a></li>
+    <li><a href="javascript:;" data-target="five">Five Item</a></li>
+    <li><a href="javascript:;" data-target="six">Six Item</a></li>
+    <li><a href="javascript:;" data-target="seven">Seven Item</a></li>
+    <li><a href="javascript:;" data-target="eight">Eight Item</a></li>
+    <li><a href="javascript:;" data-target="nine">Nine Item</a></li>
+    <li><a href="javascript:;" data-target="ten">Ten Item</a></li>
+  </ul>
+</form>
+
+<script src="../../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  
+  $("form.search_bar input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(this).siblings(".dropdown").children("li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+  
+  $("form.search_bar input").click(function(){
+    $(this).parent(".search_bar").addClass("active");
+    $(this).siblings(".dropdown").children("li").show();
+  });
+  
+  $("form.search_bar a.fa-search").click(function(){
+    $(this).siblings("input").val("").removeAttr("value", "");
+  });
+
+  $("form.search_bar a.fa-times").click(function(){
+      $(this).parent(".search_bar").removeClass("active");
+      $(this).siblings("input").val("");
+  });
+
+  $("form.search_bar .dropdown > li > a").click(function(){
+      $(this).parent().parent().parent().removeClass("active");
+      $(this).parent().parent().siblings("input").val("");
+      var link = $(this).attr("data-target");
+      // this is for <a> tag
+      // $(this).parent().parent().siblings("a.fa-search").attr("href", link + ".html");
+      // this is for link hiding
+      $(this).parent().parent().siblings("a.fa-search").removeAttr("href");
+      $(this).parent().parent().siblings("a.fa-search").click(function(){
+        window.location = link + ".html";
+      });
+  });
+
+  $("form.search_bar").click(function(e){
+      e.stopPropagation();
+      $(document).click(function(){
+        $("form.search_bar").removeClass("active");
+        $("form.search_bar").children("input").val("").removeAttr("value", "");
+        $("form.search_bar a.fa-search").removeAttr("href", "javascript:;");
+      });
+  });
+
+  $("form.search_bar .dropdown > li > a").click(function(){
+    $(this).parent().parent().siblings("input").val($(this).text()).attr("value", $(this).text());
+  });
+
+});
+</script>
+</body>
+</html>

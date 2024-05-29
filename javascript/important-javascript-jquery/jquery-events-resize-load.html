@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{box-sizing:border-box;padding:0;margin:0;}
+.section{width:100%;float:left;margin-bottom:10px;background:#ccc;height:100px;}
+.active{background:red;}
+</style>
+</head>
+<body>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+
+<script src="../../jquery-2.2.4.min.js"></script>
+<script>
+$(document).ready(function() {
+    function mobileViewUpdate() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth >= 991) {
+            $(".section").addClass("active");
+        }else{
+            $(".section").removeClass("active");
+        }
+    }
+ 
+    //$(window).load(mobileViewUpdate());
+    // or
+    $(window).on("load", mobileViewUpdate());
+    //resize is not working
+    $(window).on("resize", mobileViewUpdate());
+    
+    $(window).on({
+        //load is not working
+        load: function(){
+            mobileViewUpdate(); 
+        },
+        resize: function(){
+            mobileViewUpdate(); 
+        }
+    });
+
+
+
+
+
+
+});
+</script>
+</body>
+</html>
