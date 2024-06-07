@@ -26,4 +26,4 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 12. Popup on mobile full width and height show with content & work on close button
 13. Infinite scroll
 14. Scroll change body and other scroll box
-14. add span on all character, rotate and reverse column. (Scroll for more information)
+15. add span on all character, rotate and reverse column. (Scroll for more information)
