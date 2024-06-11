@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Table Responsive by JS</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #ccc;
+    }
+
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
+
+    @media (max-width:991px) {
+      table thead {
+        display: none;
+      }
+
+      table tr {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        background-color: #eee;
+        margin-bottom: 5px;
+      }
+
+      table tr:last-child {
+        margin-bottom: 0;
+      }
+
+      table tr td {
+        width: 100%;
+        display: block;
+        position: relative;
+        padding: 8px 8px 8px calc(40% + 24px)
+      }
+
+      table td::before {
+        content: attr(data-head) " -";
+        width: 40%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #ccc;
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Heading 1</th>
+        <th>Heading 2</th>
+        <th>Heading 3</th>
+        <th>Heading 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+        <td>UP</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+        <td>UP</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+        <td>UP</td>
+      </tr>
+      <tr>
+        <td>Island Trading</td>
+        <td>Helen Bennett</td>
+        <td>UK</td>
+        <td>UP</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Heading 5</th>
+        <th>Heading 6</th>
+        <th>Heading 7</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Island Trading</td>
+        <td>Helen Bennett</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Laughing Bacchus Winecellars</td>
+        <td>Yoshi Tannamuri</td>
+        <td>Canada</td>
+      </tr>
+      <tr>
+        <td>Magazzini Alimentari Riuniti</td>
+        <td>Giovanni Rovelli</td>
+        <td>Italy</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Heading 8</th>
+        <th>Heading 9</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+      </tr>
+      <tr>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Heading 10</th>
+        <th>Heading 11</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+        <td>LoremText</td>
+      </tr>
+      <tr>
+        <td>LoremText</td>
+        <td>IpsumText</td>
+        <td>LoremText</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- this js not proper working, for sometime wrong method  -->
+  <!-- <script>
+    var window = window || document;
+    window.addEventListener("load", function(){
+      var table = document.querySelectorAll("table");
+      table.forEach(function(e){
+        var th = e.querySelectorAll("thead tr th");
+        for(var i = 0; i < th.length; i++){
+          var text = th[i].innerText;
+          
+          var tr = e.querySelectorAll("tbody tr");
+          for(var t = 0; t < tr.length; t++){
+            tr[t].querySelectorAll("td:nth-child("+ i +")").forEach(function(d){
+              d.setAttribute("data-head", text);
+            });
+          }
+        }
+      });
+    });
+  </script> -->
+  <script>
+    window.addEventListener("load", function(){
+      var table = document.querySelectorAll("table");
+      for(var t = 0; t < table.length; t++){
+        var th = table[t].querySelectorAll("thead th");
+
+        for(var h = 0; h < th.length; h++){
+          var text = th[h].innerText;
+          var tr = table[t].querySelectorAll("tbody tr");
+
+          for(var r = 0; r < tr.length; r++){
+            var td = tr[r].querySelectorAll("td");
+            
+            for(var d = 0; d < td.length; d++){
+              td[h].setAttribute("data-head", text);
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

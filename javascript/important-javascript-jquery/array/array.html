@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+
+<p id="array"></p>
+<p id="array1"></p>
+
+<p id="at"></p>
+<p id="concat"></p>
+<p id="copyWithin"></p>
+
+<script>
+    const cars = ["Saab", "Volvo", "BMW"]; // const cars1 = new Array("Saab", "Volvo", "BMW"); // both are same
+    document.getElementById("array").innerHTML = cars;
+
+    const cars1 = new Array("Saab", "Volvo", "BMW");
+    document.getElementById("array1").innerHTML = cars1;
+
+
+
+
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("at").innerHTML = fruits.at(2); // fruits[2];
+
+
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin"];
+    document.getElementById("concat").innerHTML = arr1.concat(arr2, arr3);
+
+
+    const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("copyWithin").innerHTML = fruits1.copyWithin(2,0);
+</script>
+
+</body>
+</html>

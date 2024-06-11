@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>An American mathematician named Haskell Curry developed this technique, that’s why it is called currying.</h1>
+    <h1>Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function. That is, when we turn a function call sum(1,2,3) into sum(1)(2)(3)</h1>
+<pre>
+function calculateVolume(length, breadth, height) {
+    return length * breadth * height;
+}
+console.log(calculateVolume(4, 5, 6));
+</pre>
+    <script>
+        function calculateVolume(length, breadth, height) {
+            return length * breadth * height;
+        }
+        console.log(calculateVolume(4, 5, 6));
+    </script>
+</body>
+</html>

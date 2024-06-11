@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .box{color:blue;margin:0;}
+
+        #ex1{background-color: red;}
+    </style>
+    
+</head>
+<body>
+    <div class="box" style="border:1px solid red;padding:5px;"></div>
+
+    
+    <div id="ex1">Some text.</div>
+
+
+    <script>
+        let box = document.querySelector(".box");
+
+        // get from style attributes
+        console.log(box.style.padding);
+        console.log(box.style.getPropertyValue("padding"));
+
+        // get from css class
+        console.log(window.getComputedStyle(box).color);
+        console.log(window.getComputedStyle(box).margin);
+        console.log(window.getComputedStyle(box).getPropertyValue("color"));
+        console.log(window.getComputedStyle(box).getPropertyValue("margin"));
+
+        
+        document.styleSheets[0].cssRules[1].style.setProperty("background-color", "yellow");// not change style tag position and inside position of #ex1
+        //.removeProperty()
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Javascript</title>
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+body{font-family:Arial, Helvetica, sans-serif;padding-top:30px;padding-bottom:20px;}
+div{width:100%;float:left;margin-bottom:10px;padding:0 15px;}
+</style>
+</head>
+<body>
+    <div>
+        <input id="number1" type="text" value="" onkeyup="number1()" />
+        <input id="number2" type="text" value="" onkeyup="number2()" />
+    </div>
+    <div>
+        <button id="multiply" onclick="multiply()">Multiply</button>
+        <button id="divide" onclick="divide()">Divide</button>
+    </div>
+    <div>
+        <span id="demo1">Number1</span>
+        <span id="demo2">Number2</span>
+    </div>
+    <div>
+        <span id="demo3">Multiply</span>
+        <span id="demo4">Divide</span>
+    </div>
+<script type="text/javascript">
+function number1(){
+    var number1 = document.getElementById("number1").value;
+    document.getElementById("demo1").innerHTML = number1;
+};
+function number2(){
+    var number2 = document.getElementById("number2").value;
+    document.getElementById("demo2").innerHTML = number2;
+};
+function multiply(){
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var multiply = number1 * number2;
+    document.getElementById("demo3").innerHTML = "Multiply = " + multiply;
+};
+function divide(){
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var divide = number1 / number2;
+    document.getElementById("demo4").innerHTML = "Divide = " + divide;
+};
+</script>
+</body>
+</html>

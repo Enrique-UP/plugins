@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <img class="demo1" width="200">
+    <br />
+    <img class="demo2" width="200">
+    <script>
+        var attrCreate = document.createAttribute("src");
+        attrCreate.value = "../../../../sliders/owl-carousel/images/1.jpg";
+        document.querySelector("img.demo1").attributes.setNamedItem(attrCreate);
+
+        document.querySelector("img.demo2").src = "../../../../sliders/owl-carousel/images/2.jpg";
+    </script>
+</body>
+</html>

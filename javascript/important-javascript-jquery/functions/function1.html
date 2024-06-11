@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <ul>
+    <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+    <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+    <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+  </ul>
+
+  <script>
+    function showDetails(e) {
+      var type = e.getAttribute("data-animal-type");
+      alert("The " + e.innerHTML + " is a " + type + ".");
+    }
+  </script>
+</body>
+</html>

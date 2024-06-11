@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/1.jpg" width="100" />
+    
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/2.jpg" width="100" />
+    
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/3.jpg" width="100" />
+
+      <p>Demo</p>
+      <img src="../../../../sliders/owl-carousel/images/3.jpg" width="100" />
+    </div>
+    
+    <div class="content">
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/1.jpg" width="100" />
+    
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/2.jpg" width="100" />
+    
+      <p>Demo</p>
+      <img data-src="../../../../sliders/owl-carousel/images/3.jpg" width="100" />      
+
+      <p>Demo</p>
+      <img src="../../../../sliders/owl-carousel/images/3.jpg" width="100" />
+    </div>
+
+    <script>
+        document.querySelectorAll("img").forEach(function(e, index) {
+          var dataSrc = e.getAttribute('data-src');
+          if (dataSrc) {
+            e.src = dataSrc; // or
+            //e.setAttribute("src", dataSrc);
+            //delete e.dataset.src;
+            e.removeAttribute('data-src');
+          }
+        });
+    </script>
+</body>
+</html>

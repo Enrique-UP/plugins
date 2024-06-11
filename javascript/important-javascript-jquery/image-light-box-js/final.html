@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../font-awesome.min.css">
+  <style type="text/css">
+    * {padding: 0;margin: 0;box-sizing: border-box;}
+    body{font-family: Arial, Helvetica, sans-serif;font-size:10px;line-height: 1.5;}
+
+    form.search_bar{width:100%;float:left;position: relative;margin-bottom: 30px;}
+    form.search_bar input{width:100%;float:left;padding:15px;border:1px solid #ccc;}
+    form.search_bar a.fa{position: absolute;top:0;right:0;height: 48px;width:48px;border:1px solid #ccc;background: green;color:#fff;text-align: center;line-height: 46px;cursor: pointer;text-decoration: none;}
+    form.search_bar a.fa-search{display: block;}
+    form.search_bar a.fa-times{display: none;}
+    form.search_bar .dropdown{position: absolute;top:100%;left:0;width:100%;background:#eee;padding:0;margin:0;height: 0;opacity: 0;visibility: hidden;transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;z-index: 1;max-height: 196px;overflow: auto;}
+    form.search_bar .dropdown > li{width:100%;float:left;list-style: none;padding:10px 15px;border:1px solid #ccc;margin-top: -1px;}
+    form.search_bar .dropdown > li > a{width:auto;float:left;color:#333;text-decoration: none;}
+    form.search_bar.active a.fa-search{display: none;}
+    form.search_bar.active a.fa-times{display: block;}
+    form.search_bar.active .dropdown{height: auto;opacity: 1;visibility: visible;}
+
+
+
+
+
+
+    ul.ig{width:100%;float:left;padding:0;margin:0;column-count: 2;column-fill: balance;}
+    ul.ig > li{width:100%;float:left;list-style: none;background-color: #eee;border:1px solid #ccc;margin-bottom: 10px;}
+    ul.ig > li > span{width:100%;float:left;}
+    ul.ig > li > img{width:200px;height:150px;float:left;}
+    /* .lazy[data-src]{display:none;}
+    .lazy[src]{display:block;}
+    */
+    ul.ig > li.active{display: block;}
+    ul.ig > li#top{background: #ccc;}
+
+
+
+
+
+    .slide_show{position:fixed;top:0;left:0;width:100%;height:100%;z-index: 999;background:rgba(0,0,0,0.8);align-items: center;justify-content: center;display: none;}
+    .slide_show > img{width:300px;}
+    .slide_show > b{position: absolute;top:30px;right:30px;z-index: 999;color:#fff;font-size:40px;cursor: pointer;}
+    .slide_show > i{position:absolute;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);cursor: pointer;font-size: 40px;z-index: 999;color:#fff;}
+    .slide_show > i.prev{left:20px;}
+    .slide_show > i.next{right:20px;}
+    .slide_show.active{display: flex;flex-wrap: wrap;}
+    .slide_show .total_current{width: 100%;text-align: center;color:#fff;}
+  </style>
+</head>
+<body>
+  <form class="search_bar">
+    <input type="text" placeholder="Search.." />
+    <a class="fa fa-search" href="#top"></a>
+    <a class="fa fa-times"></a>
+  </form>
+  <ul class="ig"></ul>
+  <div class="slide_show">
+    <img />
+    <i class="prev">&#8592;</i>
+    <i class="next">&#8594;</i>
+    <b>&times;</b>
+
+    <div class="total_current">
+        <span class="current"></span> || <span class="total"></span>
+    </div><!--total_current-->
+  </div><!--slide_show-->
+  
+  
+  
+
+
+
+
+
+  
+
+  <script src="../../../jquery-2.2.4.min.js"></script>
+  <script>
+    let content = "";
+    const tags = [
+        //{img: "", data: ""},
+        {data: "1"},
+        {data: "1"},
+        {data: "1"},
+        {data: "1"},
+        {data: "2"},
+        {data: "2"},
+        {data: "2"},
+        {data: "2"},
+        {data: "3"},
+        {data: "3"},
+        {data: "3"},
+        {data: "3"},
+        {data: "4"},
+        {data: "4"},
+        {data: "4"},
+        {data: "4"}
+    ];
+    tags.forEach(function(e) {
+      //content += "<li>" + "<span></span>" + "<img src=" + e.img + ".jpg" + "/>" + "</li>";
+      content += "<li>" + "<img class=\"lazy\" />" + "<span>" + e.data + "</span>" + "</li>";
+    });
+    document.querySelector("ul.ig").innerHTML = content;
+    // for set default reverse images in img tag by data-src lazy load
+    //======================================================================//
+    window.addEventListener("load", function (){
+      var ul = document.querySelector("ul.ig");
+      var li = ul.children;
+      var revShow = "";
+      var rev = li.length;
+      document.querySelectorAll("ul.ig > li").forEach(function(et){
+        if(rev > 0){
+          revShow = rev--;
+        }
+        console.log(revShow);
+        et.getElementsByTagName("img")[0].setAttribute("data-src", "./images/" + revShow + ".jpg");
+      });
+    });
+    </script>
+    <script type="text/javascript">
+      function lazyloadimage(){
+          var window_height = $(window).height();
+          var scroll = $(window).scrollTop();
+          var window_bottom = window_height + scroll;
+          
+          $(".lazy").each(function(){
+              var animate_height = $(this).height();
+              var animate_top = $(this).offset().top;
+              var animate_bottom = animate_height + animate_top;
+          
+              if(animate_top <= window_bottom && animate_bottom >= scroll){
+                  // for img tag
+                  var srcValue = $(this).attr("data-src");
+                  console.log(srcValue);
+                  $(this).attr("src", srcValue);
+                  $(this).removeAttr("data-src");
+
+                  // for style
+                  var styleValue = $(this).attr("data-style");
+                  console.log(styleValue);
+                  $(this).attr("style", styleValue);
+                  $(this).removeAttr("data-style");
+              }
+          });
+      }
+      $(window).on("load scroll resize", lazyloadimage);
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $("form.search_bar input").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("ul.ig > li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            var a = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            a.siblings("img").attr("data-src");
+            a.siblings("img").attr("src", a);
+            a.siblings("img").removeAttr("data-src");
+            
+          });
+        });
+        
+        $("form.search_bar input").click(function(){
+          $(this).parent(".search_bar").addClass("active");
+          $(this).siblings("ul.ig > li").find("span").show();
+        });
+        
+        $("form.search_bar a.fa-search").click(function(){
+          $(this).siblings("input").val("").removeAttr("value", "");
+        });
+      
+        $("form.search_bar a.fa-times").click(function(){
+            $(this).parent(".search_bar").removeClass("active");
+            $(this).siblings("input").val("");
+        });
+      
+        
+      
+        $("form.search_bar").click(function(e){
+            e.stopPropagation();
+            $(document).click(function(){
+              $("form.search_bar").removeClass("active");
+              $("form.search_bar").children("input").val("").removeAttr("value", "");
+              $("form.search_bar").children("input").val("");
+              $("ul.ig > li").show();
+            });
+        });
+      
+        $("form.search_bar .dropdown > li > a").click(function(){
+          $(this).parent().parent().siblings("input").val($(this).text()).attr("value", $(this).text());
+        });
+      
+      });
+      </script>
+
+<script type="text/javascript">
+  $(".ig > li > img").on("click", slide_show);
+  function slide_show(){
+      $(".slide_show").addClass("active");
+      var imgSrc = $(this).attr("src");
+      $(".slide_show img").attr("src", imgSrc);
+      $(this).parent().addClass("current");
+
+      $(".slide_show > i.prev").show();
+      $(".slide_show > i.next").show();
+  };
+  
+  $(".slide_show > i.prev").on("click", prev);
+  function prev(){
+      $(".ig > li.current").each(function(){
+          $(this).prev().addClass("current").children("img").attr("src");
+          var prev = $(this).prev().addClass("current").children("img").attr("src");
+          $(this).removeClass("current");
+          $(".slide_show img").attr("src", prev);
+      });
+  }
+
+  $(".slide_show > i.next").on("click", next);
+  function next(){
+      $(".ig > li.current").each(function(){
+          $(this).next().addClass("current").children("img").attr("src");
+          var next = $(this).next().addClass("current").children("img").attr("src");
+          $(this).removeClass("current");
+          $(".slide_show img").attr("src", next);                
+      });
+  }
+  
+  $(".slide_show > b").on("click", slide_remove);
+  function slide_remove(){
+      $(this).closest(".slide_show").removeClass("active");
+      $(this).siblings("img").removeAttr("src");
+      $(".ig > li").removeClass("current");
+  };
+
+
+  
+
+
+  var i = 0;
+  $('.ig').find('li').each(function(){
+      if(i < $(".ig > li").length){
+          i++;
+      }
+      // else{
+      //     i = 1;
+      // }
+      $(this).addClass('li-' + i);
+  });
+
+
+  $(".slide_show > i.prev").on("click", function(){
+      $(".slide_show > i.next").show();
+      $('.ig').find('li:first-child.current').each(function(){
+          $(".slide_show > i.prev").hide();
+      });
+  });
+
+  $(".slide_show > i.next").on("click", function(){
+      $(".slide_show > i.prev").show();
+      $('.ig').find('li:last-child.current').each(function(){
+          $(".slide_show > i.next").hide();
+      });
+  });
+
+
+  $(".ig > li:first-child > img").on("click", function(){
+      $(".slide_show > i.next").show();
+      $('.ig').find('li:first-child.current').each(function(){
+          $(".slide_show > i.prev").hide();
+      });
+  });
+
+  $(".ig > li:last-child > img").on("click", function(){
+      $(".slide_show > i.prev").show();
+      $('.ig').find('li:last-child.current').each(function(){
+          $(".slide_show > i.next").hide();
+      });
+  });
+
+
+  var totalLi = $(".ig > li").length;
+  console.log("totalLi = " + totalLi);
+  $(".slide_show .total_current .total").text(totalLi);
+  $(".ig > li > img, .slide_show > i.prev, .slide_show > i.next").on("click", function () {
+      var index = $(".ig > li.current").index() + 1;
+      console.log("index = " + index);
+      $(".slide_show .total_current .current").text(index);
+  });
+</script>
+</body>
+</html>

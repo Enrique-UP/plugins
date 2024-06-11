@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="myDIV">myDIV</div>
+
+<div class="demo">
+    <!-- <p>Demo</p> -->
+    <span>Demo</span>
+</div>
+<p>Demo</p>
+<p>Demo</p>
+
+<script>
+let answer = document.contains(document.getElementById("myDIV"));
+if(answer){
+    document.write(answer);
+    document.write("<br>");
+}
+
+
+let answer1 = document.contains(document.querySelector(".demo > p"));
+if(answer1){
+    document.write(answer1);
+}else{
+    document.write(answer1);
+}
+</script>
+
+</body>
+</html>

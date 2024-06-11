@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .active{color:red;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active">Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li class="active">Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li class="active">Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+
+    <!-- <script>
+        (function(){
+            const li = document.querySelectorAll("ul > li");
+            for(var i = 0; i < li.length; i++){
+                li[i].innerText += ` ${i + 1}`;
+                (function(i){
+                    li[i].addEventListener('click', function(){
+                        li.forEach(e => e.classList.remove("active"));
+                        li[i].classList.add("active");
+                        window.sessionStorage.setItem("IndexValue", i + 1);
+                    });
+                })(i);
+            }
+            if(window.sessionStorage.getItem("IndexValue")){
+                li.forEach((e) => e.classList.remove("active"));
+                document.querySelector(`ul > li:nth-child(${window.sessionStorage.getItem("IndexValue")})`).classList.add("active");
+            }
+        })();
+    </script> -->
+    <!-- <script>
+        (function(){
+            const li = document.querySelectorAll("ul > li");
+            document.querySelectorAll("ul > li").forEach((e,i) => {
+                e.innerText += ` ${i + 1}`;
+                e.addEventListener("click", () => {
+                    li.forEach((f) => f.classList.remove("active"));
+                    e.classList.add("active");
+                    window.sessionStorage.setItem("IndexValue", i + 1);
+                });
+            });
+            if(window.sessionStorage.getItem("IndexValue")){
+                li.forEach((e) => e.classList.remove("active"));
+                document.querySelector(`ul > li:nth-child(${window.sessionStorage.getItem("IndexValue")})`).classList.add("active");
+            }
+        })();
+    </script> -->
+
+    <script>
+        (function(){
+            document.querySelectorAll("ul").forEach((e,a) => {
+                e.querySelectorAll("li").forEach((f,i) => {
+                    f.innerText += ` ${i + 1}`;
+                    f.addEventListener("click", () => {
+                        f.parentElement.querySelectorAll("li").forEach((g) => g.classList.remove("active"));
+                        f.classList.add("active");
+                        window.sessionStorage.setItem("IndexValue-" + a, i + 1);
+                    });                    
+                });
+            });
+            document.querySelectorAll("ul").forEach((e,a) => {
+                if(window.sessionStorage.getItem("IndexValue-" + a)){
+                    e.querySelectorAll("li").forEach((e) => e.classList.remove("active"));
+                    e.querySelector(`li:nth-child(${window.sessionStorage.getItem("IndexValue-" + a)})`).classList.add("active");
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

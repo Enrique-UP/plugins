@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../webpage-starting/starting-webpage-bootstrap5/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./css-sass/css/whyChooseUs.min.css" type="text/css" />
+</head>
+<body>
+    <main>
+        <section class="section">Blank</section>
+        <section class="section whyChooseUs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4 justify">
+                        <h1 class="heading left">Main <span>Heading</span><i>Lorem ipsum dolor</i></h1>
+                        <div class="imageArea">
+                            <img src="./images/delete/ads1.jpg" />
+                            <div class="contacts">
+                                <a class="number"><i class="icon">&#xe001;</i><span class="txt"></span></a>
+                                <a class="mail"><i class="icon">&#xe002;</i><span class="txt"></span></a>
+                                <span>
+                                    <a class="fb"><i class="icon">&#xe021;</i></a>
+                                    <a class="tw"><i class="icon">&#xe022;</i></a>
+                                    <a class="lin"><i class="icon">&#xe023;</i></a>
+                                    <a class="ins"><i class="icon">&#xe024;</i></a>
+                                    <a class="skype"><i class="icon">&#xe026;</i></a>
+                                    <a class="wapp"><i class="icon fwt">&#xe025;</i></a>
+                                </span>
+                            </div><!--contacts-->
+                        </div><!--imageArea-->
+                    </div><!--cols-->
+                    <div class="col-12 col-lg-8">
+                        <div class="outlineBox clred">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident saepe laudantium deleniti alias cum quisquam velit perferendis sed facere rem facilis voluptas atque, magni cumque. Ratione, aliquam! Natus, iusto voluptatem architecto eaque, repellendus libero et perspiciatis quasi facilis ab commodi dolores hic sint rerum enim deserunt dicta similique delectus deleniti!</div><!--outlineBox-->
+                        <div class="fw">
+                            <div class="row"></div><!--row-->
+                        </div><!--fw-->
+                    </div><!--cols-->
+                </div><!--row-->
+            </div><!--container-->
+        </section>
+        <section class="section">Blank</section>
+    </main>
+    <script src="./js/include.js"></script>
+    <script>
+        var wcuCnt = "";
+        const wcuData = [
+            {
+                head: "1 Lorem ipsum dolor sit amet consectetur",
+                text: "1 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "2 Lorem ipsum dolor sit amet",
+                text: "2 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "3 Lorem ipsum dolor sit amet consectetur adipisicing",
+                text: "3 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "4 Lorem ipsum dolor sit",
+                text: "4 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "5 Lorem ipsum dolor sit amet",
+                text: "5 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "6 Lorem ipsum dolor sit amet",
+                text: "6 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "7 Lorem ipsum dolor sit amet consectetur adipisicing",
+                text: "7 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "8 Lorem ipsum dolor sit",
+                text: "8 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio amet consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "9 Lorem ipsum dolor sit amet",
+                text: "9 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            },
+            {
+                head: "10 Lorem ipsum dolor sit amet",
+                text: "10 Lorem ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio consectetur adipisicing elit ipsam vero dolor odio ipsum dolor sit amet consectetur adipisicing elit ipsam vero dolor odio."
+            }
+        ];
+        wcuData.forEach(function(e){
+            wcuCnt += `
+                <div class="col col-lg-12 col-xl-6">
+                    <a href="javascript:;" class="wcuArea">
+                        <span>${e.head}</span>
+                        <b class="Typewriter"><i>More Details</i></b>
+                    </a>
+                </div><!--cols-->
+            `;
+        });
+        document.querySelector(".whyChooseUs .outlineBox ~ .fw > .row").innerHTML = wcuCnt;
+        document.querySelector(".whyChooseUs .outlineBox ~ .fw").innerHTML += `
+            <div class="popupElement">
+                <i class="icon">&#xe039;</i>
+                <strong>Details</strong>
+                <p></p>
+            </div>
+        `;
+
+        var link = document.querySelectorAll(".whyChooseUs .wcuArea");
+        var popupElement = document.querySelector(".whyChooseUs .popupElement");
+        var popupElementP = document.querySelector(".whyChooseUs .popupElement > p");
+        var icon = popupElement.querySelector(".icon");
+
+        var a = 0;
+        function topVal(){
+            link.forEach(function(e, index){
+                e.addEventListener("click", function(){
+                    popupElementP.innerText = wcuData[index].text;
+                    popupElement.style.display = "flex";
+                    popupElement.style.top = e.offsetTop + e.offsetHeight + "px";
+                    a = index;
+                });
+                popupElement.style.top = link[a].offsetTop + link[a].offsetHeight + "px";
+            });
+        }
+        window.addEventListener("resize", topVal());
+        window.addEventListener("resize", topVal);        
+
+        icon.addEventListener("click", function(){
+            this.closest(".popupElement").style.display = "none";
+        });
+
+        document.querySelector(".whyChooseUs").addEventListener("click", function(e){
+            e.stopPropagation();
+        });
+        document.addEventListener("click", function(){
+            popupElement.style.display = "none";
+        });
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
