@@ -1,1 +1,0 @@
-document.querySelector("header").innerHTML = '<div>Header Mobile</div><!--header-->';
