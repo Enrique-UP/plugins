@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../webpage-starting/starting-webpage-grid/css/grid.min.css"  type="text/css" />
+    <style type="text/css">
+        main{display: flex;flex-direction: column;width: 100%;}
+        main > *{width: 100%;}
+        .headerTop{background: #333;color: #fff;height: 50px;}
+        header{height: 100px;background: brown;position: sticky;top:0;}
+        aside{height: 2500px;background: #aaa;}
+        section{display: flex;flex-direction: column;}
+        .aside{background: #ddd;height: 2000px;}
+        footer{background: #333;color:#fff;height:1500px;}
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="headerTop">Header Top</div>
+            <header>Header</header>
+            <aside>aside 1</aside>
+        </section>
+        <div class="aside">aside 2</div>
+        <footer>Footer</footer>
+    </main>
+</body>
+</html>
