@@ -71,10 +71,10 @@
                 var a = document.createElement("a");
                 a.innerHTML = e.innerHTML;
                 for(var x of e.attributes){
-                    a.setAttribute(x.name, x.value);
-                    a.setAttribute("href", "#" + a.getAttribute("id"));
-                    a.removeAttribute("id");
-                    a.removeAttribute("class");
+                    // a.setAttribute(x.name, x.value);
+                    a.setAttribute("href", "#" + e.getAttribute("id"));
+                    // a.removeAttribute("id");
+                    // a.removeAttribute("class");
                 }
                 e.replaceWith(a);
             });
