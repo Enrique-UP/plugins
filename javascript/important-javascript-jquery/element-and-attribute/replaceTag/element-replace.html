@@ -32,7 +32,7 @@
     <p>=================================================================</p>
     <p>4- <b>Select and its option into ul and li</b></p>
     <select>
-        <option value="1">Lorem</option>
+        <option checked value="1">Lorem</option>
         <option value="2">Ipsum</option>
         <option value="3">Dolor</option>
         <option value="4">Sit</option>
@@ -42,17 +42,26 @@
         var select = document.querySelector("select");
         var ul = document.createElement("ul");
         ul.innerHTML = select.innerHTML;
-        select.replaceWith(ul)
+        select.replaceWith(ul);
 
-        var arr = Array.from(document.querySelectorAll("ul > option"), e => e.outerHTML);
-        console.log(arr);
-        var a = Array.from(arr, e => e.replaceAll("option value", "li data-value"));
-        console.log(a);
-        var tags = "";
-        a.forEach(function(e){
-            tags += e;
+        ul.querySelectorAll("option").forEach((e) => {
+            const li = document.createElement("li");
+            li.innerHTML = e.innerHTML;
+            for(const x of e.attributes) li.setAttribute(x.name, x.value);
+            e.replaceWith(li);
+
+            li.setAttribute("data-value", e.getAttribute("value"));
+            li.removeAttribute("value");
+            li.removeAttribute("checked");
         });
-        document.querySelector("ul").innerHTML = tags;
+
+        // var arr = Array.from(document.querySelectorAll("ul > option"), e => e.outerHTML);
+        // console.log(arr);
+        // var a = Array.from(arr, e => e.replaceAll("option value", "li data-value"));
+        // console.log(a);
+        // var tags = "";
+        // a.forEach((e) => tags += e);
+        // document.querySelector("ul").innerHTML = tags;
     </script>
     <p>=================================================================</p>
     <p>5- <b>dl, dt and dd into ul and li</b></p>
@@ -70,13 +79,7 @@
     </dl>
     <script>
         document.querySelectorAll("dl").forEach(function(e){
-            e.querySelectorAll("dt").forEach(function(f){
-                const li = document.createElement("li");
-                li.innerHTML = f.innerHTML;
-                f.replaceWith(li);
-            });
-
-            e.querySelectorAll("dd").forEach(function(f){
+            e.querySelectorAll("dt, dd").forEach(function(f){
                 const li = document.createElement("li");
                 li.innerHTML = f.innerHTML;
                 f.replaceWith(li);
