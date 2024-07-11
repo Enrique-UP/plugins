@@ -35,6 +35,8 @@
         .content.c7 li:first-of-type{color: red;}
         .content.c7 li:not(:first-of-type, :last-of-type){color: grey;}
         .content.c7 li:last-of-type{color: blue;}
+
+        .content.c8 li ~ li{color:orange;} /* not first child selector or sibling selector */
     </style>
 </head>
 <body>
@@ -155,6 +157,20 @@
     
     <h1>C7</h1>
     <div class="content c7">
+        <ul>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ul>
+    </div>
+
+
+
+
+    <h1>C8</h1>
+    <div class="content c8">
         <ul>
             <li>Lorem</li>
             <li>Lorem</li>
