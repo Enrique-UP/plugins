@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        div{background: blue;width:100px;height:100px;}
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+    <script>
+        var i = 0;
+        var images = document.querySelectorAll("div");
+        setInterval(function(){ 
+
+if(i == 0) {
+  images[i].style.background = 'red';
+} else {
+  images[i - 1].style.background = 'brown';
+  images[i].style.background = 'red';
+}
+
+i++;
+
+}, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    .grid-container > :first-child {grid-area: one;}
+    .grid-container > :nth-child(2) {grid-area: two;}
+    .grid-container > :last-child {grid-area: three;}
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "one one two"
+        "one one three"
+        "one one three";
+      gap: 30px;
+      background-color: #2196F3;
+      padding: 30px;
+    }
+    .grid-container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+    @media (min-width:576px) and (max-width:767px) {
+      .grid-container {grid-template-areas: 
+      "one one"
+      "two three" 
+      "two three";}
+    }
+    @media (max-width:575px) {
+      .grid-container {grid-template-areas: "one" "two" "three";}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+
+</html>

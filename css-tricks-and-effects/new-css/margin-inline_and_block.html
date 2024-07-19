@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{padding:0;margin: 0;box-sizing: border-box;}
+    .main{display: inline-flex;border: 2px solid black;flex-direction: column;}
+div {
+  border: 1px solid red;
+  box-sizing: border-box;
+  width: 300px;
+}
+
+.e1{margin-inline: 50px 30px;}
+.e2{margin-inline-start:50px;}
+.e3{margin-inline-end: 50px;}
+.e4{margin-block: 50px;}
+.e5{margin-block-start:50px;}
+.e6{margin-block-end: 50px;}
+</style>
+</head>
+<body>
+<div class="main">
+  <h1>The margin-inline Property</h1>
+  <div class="e1">This div element has a margin of 50 pixels at the start and end in the inline direction.</div>
+  <div class="e2">This div element has no specified margin.</div>
+  <div class="e3">This div element has no specified margin.</div>
+  <br><br>
+  <h1>The margin-block Property</h1>
+  <div class="e4">This div element has a margin of 50 pixels at the start and end in the inline direction.</div>
+  <div class="e5">This div element has no specified margin.</div>
+  <div class="e6">This div element has no specified margin.</div>
+</div>
+</body>
+</html>

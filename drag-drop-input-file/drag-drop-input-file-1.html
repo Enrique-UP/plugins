@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Image Upload with Preview and Delete</title>
+    <script src="../jquery-2.2.4.min.js"></script>
+    <style>
+        .preview {
+            display: inline-block;
+            margin: 10px;
+        }
+        .preview img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="file-input" multiple>
+    <div id="preview-container"></div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").on("change", function(){
+                var files = $(this)[0].files;
+                $("#preview-container").empty();
+                if(files.length > 0){
+                    for(var i = 0; i < files.length; i++){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            $("<div class='preview'><img src='" + e.target.result + "'><button class='delete'>Delete</button></div>").appendTo("#preview-container");
+                        };
+                        reader.readAsDataURL(files[i]);
+                    }
+                }
+            });
+        $("#preview-container").on("click", ".delete", function(){
+                $(this).parent(".preview").remove();
+                $("#file-input").val(""); // Clear input value if needed
+            });
+        });
+    </script>
+</body>
+</html>

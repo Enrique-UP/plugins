@@ -1,0 +1,16 @@
+doctype html
+head
+  title Webpage
+  include ../include/head
+main
+  include ../include/header
+  section
+    .container
+      .row
+        .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+          .row
+            .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-12 pug -w ./pug/pages -o ./ -P
+              br
+              | npm run build-css
+  include ../include/footer
+include ../include/script

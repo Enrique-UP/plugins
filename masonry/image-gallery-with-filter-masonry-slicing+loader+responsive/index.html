@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Isotope Masonry Layout</title>
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="css/css-filter/styles.css">
+    
+    <!--<link rel="stylesheet" href="css/css-gallery/jquery.fancybox.min.css" />-->
+</head>
+<body>
+    <main>
+    <div class="projects-wrapper">
+        <!-- Project Filtering -->
+        <ul id="filterNav" class="filters-list">
+            <li data-filter="*" class="active">All Items</li>
+            <li data-filter=".man">Man</li>
+            <li data-filter=".woman">Woman</li>
+            <li data-filter=".animal">Animal</li>
+            <li data-filter=".other">Other</li>
+        </ul>
+
+        <!-- Project Items List -->
+        <div class="projects-list">
+          <div class="project-item man">
+                <img data-src="../img/1.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item man">
+                <img data-src="../img/2.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item other">
+                <img data-src="../img/3.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item animal">
+                <img data-src="../img/4.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item other">
+                <img data-src="../img/5.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item other disable">
+                <img data-src="../img/6.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item man disable">
+                <img data-src="../img/7.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item man disable woman">
+                <img data-src="../img/8.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable woman">
+                <img data-src="../img/9.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable woman">
+                <img data-src="../img/10.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable man">
+                <img data-src="../img/11.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable woman">
+                <img data-src="../img/12.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable man">
+                <img data-src="../img/13.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable man">
+                <img data-src="../img/14.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable other">
+                <img data-src="../img/15.jpg" alt="">
+          </div><!--project-item-->
+          <div class="project-item disable animal">
+                <img data-src="../img/16.jpg" alt="">
+                <!--<a href="../img/16.jpg" data-fancybox="gallery">							 
+                    <img src="../img/16.jpg" alt="">
+                </a>-->
+          </div><!--project-item-->
+            
+    </div><!--projects-list-->
+</div><!--projects-wrapper-->
+    <button class="more">Load More</button>
+    </main>
+    <!-- JavaScipts -->
+    <script src="js/js-filter/jquery.min.js"></script>
+    <script src="js/js-filter/isotope.pkgd.min.js"></script>
+    <script src="js/js-filter/functions.js"></script>
+    
+    <!--<script src="js/js-gallery/plugins.js"></script>-->
+
+    <script type="text/javascript">
+        /*$("button.more").click(function(){
+            $(".project-item").fadeIn();
+            $(".load_image img").each(function() {
+                $(this).attr("src", $(this).attr("data-src")).removeAttr("data-src");
+            }); 
+            $(window).resize();
+        });*/
+        $(".filters-list li").click(function(){
+            $(window).resize();
+        });        
+    </script>
+    <script type="text/javascript">
+    $(function () {
+        //for default showing li
+        $(".projects-list .project-item").slice(0, 5).fadeIn().addClass('active');
+        //for default showing li img
+        var eleLen = $(".projects-list > .project-item").length;
+        console.log(eleLen);
+        var i = 0;
+        for(i = 1; i <= 5; i++){
+            $(".projects-list .project-item:nth-child("+i+") img").attr("src", $(".projects-list .project-item:nth-child("+i+") img").attr("data-src")).removeAttr("data-src").fadeIn();
+        }
+        //console.log(i);
+        i -= 1;
+        $("button").on('click', function (e) {
+            e.preventDefault();
+            $(".projects-list .project-item:hidden").slice(0, 5).fadeIn();
+//            if ($(".projects-list .project-item:hidden").length == 0) {
+//                $("button").fadeOut('slow');
+//            }
+            //after clicking showing li img
+            console.log(i);
+            for(var j = i; j <= i+5; j++){
+                $(".projects-list .project-item:nth-child("+j+")").removeClass('disable');
+                $(".projects-list .project-item:nth-child("+j+") img").attr("src", $(".projects-list .project-item:nth-child("+j+") img").attr("data-src")).removeAttr("data-src").fadeIn();
+            }
+            i = i + 5;
+            $(window).resize();
+            if ($(".projects-list .project-item.disable").length == 0) {
+                $("button").fadeOut('slow');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

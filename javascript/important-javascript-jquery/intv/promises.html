@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Promise is something that is achieved or completed in the future.</h1>
+  वादा वह चीज़ है जो भविष्य में हासिल की जाती है या पूरी की जाती है।
+<pre>
+var promise = new Promise(function(resolve, reject) { 
+  const x = 5; 
+  const y = 5;
+  if(x === y) { 
+    resolve(); 
+  } else { 
+    reject(); 
+  } 
+}); 
+    
+// promise
+// .then(function() { 
+//     document.write('Success, You are a GEEK'); 
+// })
+// .catch(function(){
+//     document.write('Some error has occurred'); 
+// });
+
+//////////// Or
+
+promise.then(
+    function(){ 
+        document.write('Success, You are a GEEK'); 
+    },
+    function(){
+        document.write('Some error has occurred'); 
+    }
+);
+
+
+
+</pre>
+
+<script>
+var promise = new Promise(function(resolve, reject) { 
+  const x = 5; 
+  const y = 5;
+  if(x === y) { 
+    resolve(); 
+  } else { 
+    reject(); 
+  } 
+}); 
+    
+// promise
+// .then(function() { 
+//     document.write('Success, You are a GEEK'); 
+// })
+// .catch(function(){
+//     document.write('Some error has occurred'); 
+// });
+
+//////////// Or
+
+promise.then(
+    function(){ 
+        document.write('Success, You are a GEEK'); 
+    },
+    function(){
+        document.write('Some error has occurred'); 
+    }
+);
+</script>
+
+</body>
+</html>

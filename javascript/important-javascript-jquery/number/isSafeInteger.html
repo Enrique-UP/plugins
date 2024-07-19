@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Numbers</h1>
+<h2>The Number.isSafeInteger() Method</h2>
+
+<p>Number.isSafeInteger() returns true if a value is a safe integer and of datatype Number:</p>
+
+<p id="demo"></p>
+
+<p>Number.isSafeInteger() is not supported in Internet Explorer.</p>
+
+<script>
+let result =
+"Is 123 a safe integer? " + Number.isSafeInteger(123) + "<br>" +
+"Is +123 a safe integer? " + Number.isSafeInteger(-123) + "<br>" +
+"Is '123' a safe integer? " + Number.isSafeInteger('123');
+
+document.getElementById("demo").innerHTML = result;
+</script>
+
+</body>
+</html>

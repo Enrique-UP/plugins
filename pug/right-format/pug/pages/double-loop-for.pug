@@ -1,0 +1,39 @@
+mixin post(e)
+    div.col-12.col-sm-6.col-md-4
+        a.post
+            img(src= e.img)
+            p.tech 
+                span Technology
+            p.txt The Impact of Technology on the Workplace: How Technology is Changing
+            p.read 9 min read
+            p.dp
+                img(src="./assets/images/dp1.jpg")
+                span Ernie Smith
+                em August 20, 2022
+doctype html
+html
+    body
+        mixin posts(e)
+            section.posts 
+                .container 
+                    h3.heading1= e.head
+                    .row
+                        +post({img:"./assets/images/post1.jpg"})
+                        +post({img:"./assets/images/post2.jpg"})
+                        +post({img:"./assets/images/post3.jpg"})
+                        .col-12.center 
+                            a(href="javascript:;") View All Blogs
+                            hr
+        +posts({head:"Latest Post"})
+        +posts({head:"Packages"})
+        +posts({head:"Dubai"})
+        +posts({head:"Germany"})
+        section.posts 
+            .container 
+                h3.heading1 USA
+                .row
+                    +post({img:"./assets/images/post1.jpg"})
+                    +post({img:"./assets/images/post2.jpg"})
+                    +post({img:"./assets/images/post3.jpg"})
+                    .col-12.center 
+                        a(href="javascript:;") View All Blogs

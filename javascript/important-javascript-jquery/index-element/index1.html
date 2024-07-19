@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+    <p>Lorem</p>
+
+    <h4>Ipsum</h4>
+    <h4>Ipsum</h4>
+    <h4>Ipsum</h4>
+    <h4>Ipsum</h4>
+
+    <script>
+        var arr = ["One", "Two", "Three", "Four"];
+        
+        var a = 0;
+        document.querySelectorAll("p").forEach(function(e){
+            e.innerText = arr[a] + " - " + e.innerText;
+            a++;
+        });
+        
+        document.querySelectorAll("h4").forEach(function(e, index){
+            e.innerText = arr[index] + " - " + e.innerText;
+        });
+    </script>
+</body>
+</html>

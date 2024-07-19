@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Custom Nagivation Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+        body{font-size: 14px;font-family: arial;}
+        ul.navigation_bar > li > ul{}
+        ul.navigation_bar > li:hover > ul{}
+        
+        .popup{width:100%;height:100%;top:0;left:0;}
+        .popup.active{z-index: 999;position: fixed;}
+        .popup.active::before{width:100%;height:100%;left:0;top:0;position: absolute;content:"";background: rgba(0,0,0,0.5);}
+        .popup .center{position: absolute;top:0;left:50%;transform: translate(-50%,0);-webkit-transform: translate(-50%,0);-moz-transform: translate(-50%,0);width:700px;}
+        .popup .center .center_main{width:100%;float:left;background: #fff;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;padding-bottom:5px;transform: scaleY(0);-webkit-transform: scaleY(0);-moz-transform: scaleY(0);-webkit-transition: 0.3s ease;-moz-transition: 0.3s ease;transition: 0.3s ease;-webkit-transform-origin: top;-moz-transform-origin: top;transform-origin: top;margin-top: 0;}
+        .popup.active .center .center_main{transform: scaleY(1);-webkit-transform: scaleY(1);-moz-transform: scaleY(1);margin-top: 60px;}
+        .popup .center .center_main > *{width:100%;float:left;padding:0 15px;}
+        .popup .center .center_main .head{border-bottom:1px solid #ccc;padding-top: 12px;padding-bottom: 12px;font-weight: bold;font-size:18px;position: relative;margin-bottom: 15px;}
+        .popup .center .center_main .head > i{position: absolute;top:12px;right:15px;font-style: normal;cursor: pointer;}
+        a{padding:12px 25px;border:none;cursor: pointer;background:#ddd;display: inline-block;text-decoration: none;color:#000;}
+        .popup .center .center_main .text{margin-bottom: 10px;line-height: 1.7;text-align: justify;}
+        @media (max-width:767px)
+        {
+            .popup .center{width:290px;}
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;" data-target="#popup" class="data-target">Click</a>
+    <div class="popup" id="popup">
+        <div class="center">
+            <div class="center_main">
+                <p class="head">MainHeading <i>X</i></p>
+                <p class="text">Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit. Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit. Lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit lorem ipsum dolor sit amit.</p>
+            </div><!--center_main-->
+        </div><!--center-->
+    </div><!--disclaimer_popup-->
+<script src="../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".data-target").on("click", function(){
+	  $($(this).attr("data-target")).addClass("active");
+	});
+	$(".popup .center .center_main .head > i").click(function(){
+		$(".popup").removeClass('active');
+	});
+});  
+</script>
+</body>
+</html>

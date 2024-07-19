@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The children Property</h2>
+
+<p>The tag names of the body's children are:</p>
+<p id="demo"></p>
+
+<script>
+const collection = document.body.children;
+let text = "";
+for (let i = 0; i < collection.length; i++) {
+  text += collection[i].tagName + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
