@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --c1:#0477BF;
+  --c2:#FB8832;
+  --c3:#f6f8ff;
+  --c4:#97989F;
+  --c5:#181A2A;
+  --c6:#5D6B82;
+  --border:#E8E8EA;
+}
+
+.trans, header .navBar nav > ul > li .dropDown, a {
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+}
+
+.dc, footer .sites > a, header .number .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  background: var(--c1);
+  padding: 14px 0;
+}
+header .fw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .number {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  line-height: 1.1;
+}
+header .number .icon {
+  width: 33px;
+  height: 33px;
+  background: #fff;
+  border-radius: 100%;
+  margin-right: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+header .number .icon::before {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  content: "";
+  background: var(--c2);
+  border-radius: 100%;
+}
+header .number .icon > span {
+  position: relative;
+  line-height: 1;
+}
+header .logo {
+  display: flex;
+}
+header .logo > img {
+  width: 154px;
+}
+header .menu {
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: none;
+  cursor: pointer;
+}
+header .navBar {
+  display: flex;
+}
+header .navBar nav {
+  display: flex;
+}
+header .navBar nav .logo {
+  display: none;
+}
+header .navBar nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header .navBar nav > ul > li {
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+header .navBar nav > ul > li:not(:last-child) {
+  margin-right: 24px;
+}
+header .navBar nav > ul > li > a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+header .navBar nav > ul > li > .icon {
+  color: #fff;
+  padding-left: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+header .navBar nav > ul > li .dropDown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 20px;
+  margin: 0;
+  background: var(--c3);
+  width: 250px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  transform-origin: top;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+}
+header .navBar nav > ul > li .dropDown > li {
+  list-style: none;
+  display: flex;
+  font-size: 14px;
+}
+header .navBar nav > ul > li .dropDown > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+header .navBar nav > ul > li .dropDown > li > a {
+  color: var(--c4);
+}
+header .navBar nav > ul > li .dropDown > li > a:hover, header .navBar nav > ul > li .dropDown > li > a:active, header .navBar nav > ul > li .dropDown > li > a:focus {
+  color: var(--c5);
+}
+header .navBar nav > ul > li .icon:hover ~ .dropDown {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+}
+header .navBar .close {
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .navBar nav > ul > li > a {
+    font-size: 14px;
+  }
+  header .navBar nav > ul > li:not(:last-child) {
+    margin-right: 20px;
+  }
+  header .navBar nav > ul > li > .icon {
+    padding-left: 4px;
+  }
+}
+@media (max-width: 991px) {
+  header .navBar {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+  }
+  header .navBar nav {
+    width: 500px;
+    max-width: 100%;
+    background: #fff;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-left: -200%;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+  }
+  header .navBar.active {
+    left: 0;
+  }
+  header .navBar.active nav {
+    margin-left: 0;
+  }
+  header .navBar nav .logo {
+    display: flex;
+    background: var(--c1);
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  header .navBar nav .logo > img {
+    width: 140px;
+  }
+  header .navBar nav > ul {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  header .menu {
+    display: flex;
+  }
+  header .navBar .close {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 57px;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9;
+  }
+  header .navBar nav > ul > li > a, header .navBar nav > ul > li > .icon {
+    color: var(--c5);
+  }
+  header .navBar nav > ul > li {
+    flex-wrap: wrap;
+  }
+  header .navBar nav > ul > li .dropDown {
+    position: static;
+    width: 100%;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    background: transparent;
+    border: none;
+    padding: 10px 20px 0;
+  }
+  header .navBar nav > ul > li:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+    margin-right: 0;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+}
+@media (min-width: 491px) and (max-width: 550px) {
+  header .navBar nav {
+    width: 430px;
+  }
+}
+@media (max-width: 400px) {
+  header .logo > img {
+    width: 120px;
+  }
+  header .number {
+    margin: 0 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  header .number .icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+  }
+  header .number .icon::before {
+    width: 18px;
+    height: 18px;
+  }
+  header .menu {
+    font-size: 20px;
+  }
+}
+footer {
+  background: var(--c1);
+  padding: 32px 0;
+}
+footer .logo {
+  margin-bottom: 20px;
+  display: block;
+}
+footer .head {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--c2);
+}
+footer .contact {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+footer .contact .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--c2);
+  font-size: 20px;
+  line-height: 1.2;
+}
+footer .contact a {
+  color: inherit;
+  font-weight: 500;
+}
+footer .contact.lt {
+  padding-bottom: 5px;
+}
+footer .follow {
+  display: flex;
+}
+footer .follow > a {
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+}
+footer .follow > a:not(:last-child) {
+  margin-right: 20px;
+}
+footer .fwp {
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .sites {
+  display: flex;
+  margin-bottom: 15px;
+}
+footer .sites > a {
+  width: 48px;
+  height: 32px;
+  flex-shrink: 0;
+  background: #fff;
+  color: var(--c6);
+  font-weight: 600;
+  font-size: 20px;
+}
+footer .links {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+}
+footer .links > ul {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+footer .links > ul:nth-child(odd) {
+  padding-right: 12px;
+}
+footer .links > ul:nth-child(even) {
+  padding-left: 12px;
+}
+footer .links > ul > li {
+  list-style: none;
+}
+footer .links > ul > li:not(:last-child) {
+  margin-bottom: 16px;
+}
+footer .links > ul > li > a {
+  color: #fff;
+  font-weight: 500;
+}
+footer .logos {
+  width: auto;
+  max-height: 27px;
+}
+footer ~ .copyright {
+  padding: 26px 0;
+  color: var(--c6);
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  footer .follow, footer .sites {
+    margin-bottom: 30px;
+  }
+  footer .contact.lt {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  footer .contact {
+    padding-left: 26px;
+  }
+  footer .contact .icon {
+    font-size: 18px;
+  }
+  footer .links > ul > li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 575px) {
+  footer .logos {
+    margin-bottom: 30px;
+  }
+}
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontello.eot?60365972");
+  src: url("../fonts/fontello.eot?60365972#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?60365972") format("woff"), url("../fonts/fontello.ttf?60365972") format("truetype"), url("../fonts/fontello.svg?60365972#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fwp {
+  display: flex;
+}
+.fwp .fw {
+  width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+main > * {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --bs-body-font-size:14px;
+  }
+}

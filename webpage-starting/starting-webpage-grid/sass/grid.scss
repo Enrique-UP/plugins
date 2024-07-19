@@ -3,8 +3,9 @@
 body{font-size: 16px;line-height: 1.7;}
 img{max-width: 100%;}
 
-.fwp{display: flex;flex-wrap: wrap;}
-.fw{width: 100%;}
+:has(> .fw){display: flex;flex-wrap: wrap;
+    .fw{width: 100%;}
+}
 
 $gap:15px;
 $mGap:10px;
@@ -27,7 +28,10 @@ $col-12:$col-3 * 4;
 .container-fluid{width:100%;}
 .container, .container-fluid{display: flex;flex-direction:column;padding-left:$gap;padding-right:$gap;}
 .row{display:flex;flex-wrap:wrap;margin-left:-$gap;margin-right:-$gap;
-    [class*="col-"]{padding-left:$gap;padding-right:$gap;margin-bottom: 30px;}
+    [class*="col-"]{padding-left:$gap;padding-right:$gap;
+        &:not(:has([class*="col-"])){margin-bottom: 30px;}
+        // &:has([class*="col-"]){margin-bottom: 0;}
+    }
 }
 .col-1{width:$col-1;}
 .col-2{width:$col-2;}

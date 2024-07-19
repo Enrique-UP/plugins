@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+  *{padding: 0;margin: 0;box-sizing: border-box;}
+.grid {display: grid;gap: 10px;background-color: #2196F3;padding: 10px;
+  grid-template-rows: auto 300px; /* for 2 rows */
+  /* grid-template-rows: 100px 300px auto; */ /* for 3 rows */
+  grid-template-columns: auto auto auto;
+
+  /* grid: 80px 120px / auto auto auto; */
+}
+.grid > * {background: rgba(255, 255, 255, 0.8);text-align: center;padding: 20px;}
+
+.item1 {grid-column: 1 / span 3;grid-row: 1;}
+.item2 {grid-column: 1 / span 1;grid-row: 2;}
+.item3 {grid-column: 1 / span 1;grid-row: 3;}
+.item4 {grid-column: 2 / span 1;grid-row: 2;}
+.item5 {grid-column: 2 / span 1;grid-row: 3;}
+.item6 {grid-column: 3;grid-row: 2 / span 2;}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>  
+  <div class="item5">5</div>
+  <div class="item6">6</div>
+</div>
+</body>
+</html>
