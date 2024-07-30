@@ -37,3 +37,14 @@ html
                     +post({img:"./assets/images/post3.jpg"})
                     .col-12.center 
                         a(href="javascript:;") View All Blogs
+
+                ul
+                    - for (var i = 1; i <= 10; ++i)
+                        li= i 
+                            |  Lorem
+
+                - var arr=["one", "two", "three"];
+                - var s = "string";
+                section= s
+                    - for (var i = 0; i < 3; i++)
+                        div= arr[i]

@@ -1,8 +1,19 @@
+@import "./variables.scss";
 @import "./grid.scss";
+
+
+
 body{font-family: Arial, Helvetica, sans-serif;}
-main {@extend .fw;overflow: hidden;display:flex;flex-direction:column;
-    > *{@extend .fw;}
-    .slider {
-        background: #ccc;
-    }
-  }
+
+:has(> .img:only-child){display:flex;}
+
+main {width:100%;overflow: hidden;display:flex;flex-direction:column;
+    > *{width:100%;}
+    > .bg{background: var(--c2);}
+}
+.slider {background: var(--c1);}
+
+
+
+
+@import "./res.scss";

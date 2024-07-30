@@ -2,17 +2,73 @@
 <html>
 <head>
 <style>
-    *{padding:0;margin:0;box-sizing: border-box;}
-    div {background-color: red;width: 100px;aspect-ratio: 3/2;}
-    /*
-        where 3 is width and 2 is height
-        3/2 = 1.5 is width
-        1 is height 
-        aspect-ratio:1; // same width and same height   
-    */
+*{padding:0;margin:0;box-sizing:border-box;}
+#container {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  border: solid black 1px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+  
+#container > div {
+  display:flex;
+  aspect-ratio: 2 / 1;
+  /* Half height of width */
+  
+  /* aspect-ratio: 0.5; */
+  /* or */
+  /* aspect-ratio: 1/2; */
+  /* Twice height of width */
+
+  /* aspect-ratio: 1 / 1; */
+  /* or */
+  /* aspect-ratio: 1; */
+  /* square */
+
+  /* aspect-ratio: 2; */
+  /* 1/2 height of width */
+
+  /* aspect-ratio: 3; */
+  /* 1/3 height of width */
+
+  /* aspect-ratio: 4; */
+  /* 1/4 height of width */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+aside{background-color: red;width: 120px;aspect-ratio: 3/2;}
+/*
+    where 3 is width and 2 is height
+    3/2 = 1.5 is width
+    1 is height 
+    aspect-ratio:1; // same width and same height   
+*/
 </style>
 </head>
 <body>
-<div>Hello</div>
+
+<h3>CSS aspect-ratio property.</h3>
+<p>Resize browser window to see how the layout behaves.</p>
+<p>Div elements with images inside are organized in responsive grid layout to make it look good on all devices. CSS aspect-ratio property adjusts height automatically to maintain correct ratio between width and height of div element. Correct ratio between width and height of the image is also maintained with the object-fit property set to cover.</p>
+
+<div id="container">
+  <div><img src="../../sliders/owl-carousel/images/1.jpg" alt="alley" width="460" height="345"></div>
+  <div><img src="../../sliders/owl-carousel/images/2.jpg" alt="flowers by the street" width="460" height="345"></div>
+  <div><img src="../../sliders/owl-carousel/images/3.jpg" alt="mountains" width="600" height="400"></div>
+  <div><img src="../../sliders/owl-carousel/images/1.jpg" alt="Cinque Terre" width="600" height="400"></div>
+</div>
+
+<p><a href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_aspect-ratio&preval=2" target="_blank">https://www.w3schools.com/cssref/playdemo.php?filename=playcss_aspect-ratio&preval=2</a></p>
+<p>&nbsp;<br>&nbsp;</p>
+<aside>Lorem</aside>
 </body>
 </html>

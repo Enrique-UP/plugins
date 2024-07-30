@@ -20,9 +20,9 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 7. Steper like akountobooks.com
 
 8. Custom image slider with all functionality
-9. Display none and block transition not work
-10. Parameters function
-11. Text slider with array
+9. Text slider with array
+10. Display none and block transition not work
+11. Parameters function
 12. Popup on mobile full width and height show with content & work on close button
 13. Infinite scroll
 14. Scroll change body and other scroll box
