@@ -13,3 +13,22 @@ img{mix-blend-mode: color-dodge;} // white
 
 &star;
 &starf;
+===================================================================================================================================
+use overflow:clip;
+use contain: paint; except overflow:hidden; with position:sticky;
+contain: none | size | layout | paint | strict | content | inline-size | style;
+
+/* Multiple keywords */
+contain: size paint;
+contain: size layout paint;
+contain: inline-size layout;
+
+/* Global values */
+contain: inherit;
+contain: initial;
+contain: revert;
+contain: revert-layer;
+contain: unset;
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/contain
+===================================================================================================================================
