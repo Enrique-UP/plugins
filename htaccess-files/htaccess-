@@ -19,7 +19,7 @@ RewriteEngine On
 
 RewriteRule ^(contact-us+)$ contact.php
 RewriteRule ^(about-us+)$ about.php
-RewriteRule ^(Coming-Soon+)$ Coming-Soon.php
+RewriteRule ^(coming-soon+)$ coming-soon.php
 
 
 # ------------------------------------------------------------------------------

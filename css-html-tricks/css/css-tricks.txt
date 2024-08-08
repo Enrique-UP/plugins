@@ -32,3 +32,5 @@ contain: unset;
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/contain
 ===================================================================================================================================
+&:not(:has([class*="col-"])){margin-bottom: 50px;}
+&:has([class*="col-"]){margin-bottom: 0;}
