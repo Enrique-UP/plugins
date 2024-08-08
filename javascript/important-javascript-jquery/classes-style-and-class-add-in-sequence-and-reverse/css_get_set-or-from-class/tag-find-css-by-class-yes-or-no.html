@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [class*="box"] {
+            padding: 20px 30px;
+            background: #eee;
+        }
+
+        /* main .box:nth-child(odd) {background: #eee;} */
+
+        main .box-1 {
+            background: #aaa;
+        }
+
+        main .bg {
+            background: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box-1">Box 1</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box-1">Box 2</div>
+        <div class="box-1">Box 3</div>
+		<div class="box-1">Box 4</div>
+        <div class="box">Box</div>
+    </main>
+
+    <script>
+        document.querySelectorAll("[class*='box']").forEach(function(e) {
+            var styles = window.getComputedStyle(e);
+
+            var hasBackgroundColor = styles.backgroundColor !== "rgba(0, 0, 0, 0)";
+            var hasBackgroundImage = styles.backgroundImage !== "none";
+
+            if (hasBackgroundColor || hasBackgroundImage) {
+                e.innerHTML = "Background";
+                if (e.nextElementSibling) {
+                    e.nextElementSibling.classList.add("bg");
+                }
+            } else {
+                e.innerHTML = "No background";
+            }
+        });
+    </script>
+</body>
+
+</html>

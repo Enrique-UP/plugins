@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <p><a href="index.html">Index.html</a></p>
+    <p><a href="index.html">Index.html</a></p>
+    <p><a href="index.html">Index.html</a></p>
+    <p><a href="index.html">Index.html</a></p>
+    <p><a href="index.html">Index.html</a></p>
+
+    <script>
+        //check by this url
+        // file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/window-location-url/utm-source-of-link/google-utm-source-change-a_href-acc_to-page_url.html?&utm_source=23rd-Feb
+
+        // /?&utm_source=23rd-Feb-Campaign
+        window.addEventListener("load", function(){
+            var url =  window.location.href;
+            var utm = "?&utm_source=";
+            //console.log("url = " + url);
+
+            document.querySelectorAll("a").forEach(function(a){
+                if(window.location.href.indexOf(utm + "23rd-Feb") > -1){   
+                    a.href = "tel:+91-000-000-2323";
+                    a.text = "+91-000-000-2323";
+                }
+                if(window.location.href.indexOf(utm + "3rd-Feb") > -1){
+                    a.href = "tel:+1-000-000-3333";
+                    a.text = "+1-000-000-3333";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

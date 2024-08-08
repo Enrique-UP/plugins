@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+    body{font-family:arial;font-size:14px;}
+    
+    .accordionArea{width:100%;float:left;}
+    .accordionArea .accordionTabs{width:100%;float:left;}
+    .accordionArea .accordionBody{width:100%;float:left;}
+    
+    .accordionArea .accordionTabs a{width:auto;float:left;padding:10px 15px;font-size:16px;background: #ddd;cursor: pointer;}
+    .accordionArea .accordionTabs a.active_tab{background: red;color:#fff;}
+    .accordionArea .accordionBody > *{display: none;}
+    .accordionArea .accordionBody > *.active{display: block;}
+</style>
+</head>
+<body>
+<div class="accordionArea">
+    <div class="accordionTabs">
+        <a data-target="#one" class="active_tab">One</a>
+        <a data-target="#two">Two</a>
+        <a data-target="#three">Three</a>
+    </div><!--accordionTabs-->
+    <div class="accordionBody">
+        <div id="one" class="accordionBody_show active">
+            OneLorem
+        </div><!--accordionBody_show-->
+        <div id="two" class="accordionBody_show">
+            TwoLorem
+        </div><!--accordionBody_show-->
+        <div id="three" class="accordionBody_show">
+            ThreeLorem
+        </div><!--accordionBody_show-->
+    </div><!--accordionBody-->
+</div><!--accordionArea-->
+
+    
+
+<script src="../jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+    $(".accordionArea .accordionTabs > a").on("click", function(){
+      $(this).addClass("active_tab");
+      $(this).siblings("a").removeClass("active_tab");
+
+      $($(this).attr("data-target")).slideDown().addClass("active");
+      $($(this).attr("data-target")).siblings().slideUp().removeClass("active");
+    });
+</script>
+</body>
+</html>

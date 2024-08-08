@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{padding: 0;margin: 0;box-sizing: border-box;} 
+body {background-color:#E7E9EB;}
+
+.left{direction: ltr;}
+.right{direction: rtl;}
+
+aside{margin-top: 50px;}
+
+p{padding:10px;background-color:#FFFFFF;height:200px;}
+
+p.test1{writing-mode: horizontal-tb;}
+p.test2 {writing-mode: vertical-rl;}
+p.test3 {writing-mode: vertical-lr;}
+
+.text1{writing-mode: vertical-lr;text-orientation: mixed;}
+.text2{writing-mode: vertical-lr;text-orientation: upright;letter-spacing: -7px;}
+/* .text3{writing-mode: vertical-lr;text-orientation: sideways;}
+.text4{writing-mode: vertical-lr;text-orientation: sideways-right;} */
+</style>
+</head>
+<body>
+
+<h1>direction: ltr|rtl|initial|inherit;</h1>
+<p class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, hic.</p>
+<p class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, hic.</p>
+
+<h1>The writing-mode Property<br> writing-mode: horizontal-tb|vertical-rl|vertical-lr;</h1>
+
+<aside><b>writing-mode: horizontal-tb;</b></aside>
+<p class="test1">Some text with default writing-mode.</p>
+
+<aside><b>writing-mode: horizontal-rl;</b></aside>
+<p class="test2">Some text with default writing-mode.</p>
+
+<aside><b>writing-mode: horizontal-lr;</b></aside>
+<p class="test3">Some text with default writing-mode.</p>
+
+<aside>&nbsp;</aside>
+<h1>Text-orientation Property<br>
+    text-orientation: mixed | upright | sideways | sideways-right;
+</h1>
+<p class="text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, expedita!</p>
+<p class="text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, expedita!</p>
+<!-- <p class="text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, expedita!</p>
+<p class="text4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, expedita!</p> -->
+</body>
+</html>

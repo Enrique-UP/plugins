@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <body>
+    <div id='divElement'>Hello World!</div>
+    <script type="text/javascript">
+        function geeksInner(){
+            return 'Hello User!';
+        }
+        function geeksOuter(){
+            document.querySelector("#divElement").innerHTML = geeksInner();
+        }
+        // geeksOuter(geeksInner);
+        geeksOuter();
+    </script>
+  </body>
+</html>

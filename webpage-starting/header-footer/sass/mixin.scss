@@ -1,0 +1,17 @@
+:root{
+  --c1:#111827;
+  --c2:#9CA3AF;
+  --c3:#e7002a;
+  --c4:#44AC21;
+  --c5:#92989F;
+  --c6:#E4E8EC;
+
+ --back:#ECF7E9;
+//  --border:#eceeeb;
+}
+
+.fc{display: flex;flex-direction: column;}
+.fwp{display: flex;flex-wrap:wrap;
+    .fw{width:100%;}
+}
+.trans{transition: 0.3s cubic-bezier(0,0,1,1);-webkit-transition: 0.3s cubic-bezier(0,0,1,1);-moz-transition: 0.3s cubic-bezier(0,0,1,1);}

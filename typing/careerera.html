@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width'>
+<title>jquery.typer.js | The typewriter effect</title>
+<style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+    ul.typing{width:100%;float:left;padding:50px;margin:0;}
+    ul.typing > li{width:auto;float:left;list-style: none;margin-right:2px;}
+    ul.typing > li:last-child{margin-right: 0;}
+    ul.typing > li > span{border:1px solid #000;display: inline-block;width: 20px;text-align: center;margin-right: 2px;background: #000;color:#fff;text-transform: uppercase;}
+    ul.typing > li > span:last-child{margin-right: 0;}
+</style>
+</head>
+<body>
+<ul class="typing">
+    <li>Careerera</li>
+    <li id="typer"></li>
+</ul>
+<script src="../jquery-2.2.4.min.js"></script>
+<script src='jquery.typer.js'></script>
+<script>
+    var win = $(window),
+    foo = $('#typer');
+    foo.typer(['<span>I</span><span>n</span><span>s</span><span>t</span><span>i</span><span>t</span><span>u</span><span>t</span><span>e</span>', '<span>N</span><span>o</span><span>i</span><span>d</span><span>a</span>', '<span>D</span><span>e</span><span>l</span><span>h</span><span>i</span>']);
+</script>
+</body>
+</html>

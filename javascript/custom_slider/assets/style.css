@@ -1,0 +1,10 @@
+*{padding:0;margin:0;box-sizing: border-box;}
+
+.slider{width:100%;float:left;overflow: hidden;}
+.slider > ul{width:100%;float:left;display: flex;flex-wrap: nowrap;}
+.slider > ul > li{width:100%;float:left;list-style: none;text-align: center;}
+.slider > ul > li > img{width:100%;float:left;}
+
+.control_prev, .control_next{width:30px;height:30px;background:red;position:absolute;bottom:0;}
+.control_prev{left:0;}
+.control_next{right:0;}

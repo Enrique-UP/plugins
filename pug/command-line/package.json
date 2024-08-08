@@ -1,0 +1,21 @@
+{
+  "name": "right-format",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch sass/style.scss:css/style.css --no-source-map --style compressed",
+    "pugtohtml": "pug --watch -o ./ pug/ --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*
+	TODO: fix responsive view on small devices
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: monospace;
+	font-size: 2rem;
+	background: rgb(247, 237, 206);
+	background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+}
+
+.prev,
+.next {
+	position: fixed;
+	top: 0;
+	width: 15%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	z-index: 999;
+	color: rgba(255,255,255,.5);
+	font-size: 8rem;
+	font-family: monospace;
+	transition: all .2s;
+}
+
+.prev:hover,
+.next:hover {
+	color: rgba(255,255,255,.8);
+}
+
+.prev {left: -25%;}
+.next {right: -25%;}
+
+.active .prev {left: 0;}
+.active .next {right: 0;}
+
+.container {
+	margin: 10vh auto;
+	max-width: 80%;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-auto-rows: 250px;
+	grid-auto-flow: dense;
+}
+
+div {
+	text-align: center;
+	padding: 1rem 0;
+	color: white;
+	font-size: 3rem;
+	text-transform: uppercase;
+	background: rgba(0,0,0,.2);
+	overflow: hidden;
+	padding: 0;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+}
+
+div img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	object-position: center;
+	transition: all .5s;
+}
+
+div.show::before {
+	content: '';
+	display: block;
+	position: fixed;
+	z-index: 555;
+	width: 100vw;
+	height: 100vh;
+	top: 0; left: 0;
+	background: rgba(0,0,0,.6);
+}
+
+div.show img {
+	position: fixed;
+	top: 0; left: 0;
+	margin: 30px;
+	align-self: center;
+	object-fit: contain;
+	z-index: 666;
+	width: calc(100% - 60px);
+	height: calc(100% - 60px);
+	filter: drop-shadow(0 3px 15px black);
+	cursor: url(close-button.png), grab; /* custom cursor to signal close on click */
+}
+
+div:not(.show):hover img {
+	cursor: pointer;
+	transform: scale(1.3);
+}
+
+
+.horizontal {
+	grid-column: span 2;
+}
+
+.vertical {
+	grid-row: span 2;
+}
+
+.big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.active div:not(.show) img {
+	filter: blur(3px);
+}
+</style>
+</head>
+<body>
+
+<!--
+	@author: Maciej Cieślik
+  TODO: caption in zoom.
+-->
+<body>
+  <a href="#" class="prev">&lt;</a>
+	<a href="#" class="next">&gt;</a>
+	<main class="container">
+		<div><img src="https://picsum.photos/id/21/800" alt=""></div>
+		<div class="vertical"><img src="https://picsum.photos/id/22/800/1000" alt=""></div>
+		<div class="horizontal"><img src="https://picsum.photos/id/23/1400/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/24/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/25/800" alt=""></div>
+		<div class="big"><img src="https://picsum.photos/id/26/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/27/800" alt=""></div>
+		<div class="vertical"><img src="https://picsum.photos/id/28/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/29/800" alt=""></div>
+		<div class="horizontal"><img src="https://picsum.photos/id/10/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/11/800" alt=""></div>
+		<div class="big"><img src="https://picsum.photos/id/12/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/13/800" alt=""></div>
+		<div class="horizontal"><img src="https://picsum.photos/id/14/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/15/800" alt=""></div>
+		<div class="big"><img src="https://picsum.photos/id/16/800" alt=""></div>
+		<div><img src="https://picsum.photos/id/17/800" alt=""></div>
+		<div class="vertical"><img src="https://picsum.photos/id/18/800" alt=""></div>
+	</main>
+
+
+<script>
+// TODO: touch events
+
+const divs = document.querySelectorAll('div');
+const body = document.body;
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+checkPrev = () => document.querySelector('div:first-child').classList.contains('show') ? prev.style.display = 'none' : prev.style.display = 'flex';
+
+checkNext = () => document.querySelector('div:last-child').classList.contains('show') ? next.style.display = 'none' : next.style.display = 'flex';
+			
+Array.prototype.slice.call(divs).forEach(function (el) {
+			el.addEventListener('click', function () {
+				this.classList.toggle('show');
+				body.classList.toggle('active');
+				checkNext();
+				checkPrev();
+			});
+});
+
+prev.addEventListener('click', function() {
+			const show = document.querySelector('.show');
+			const event = document.createEvent('HTMLEvents');
+			event.initEvent('click', true, false);
+
+			show.previousElementSibling.dispatchEvent(event);
+			show.classList.remove('show');
+			body.classList.toggle('active');
+			checkNext();
+});
+
+next.addEventListener('click', function() {
+			const show = document.querySelector('.show');
+			const event = document.createEvent('HTMLEvents');
+			event.initEvent('click', true, false);
+
+			show.nextElementSibling.dispatchEvent(event);
+			show.classList.remove('show');
+			body.classList.toggle('active');
+			checkPrev();
+});
+</script>
+</body>
+</html>
+
+

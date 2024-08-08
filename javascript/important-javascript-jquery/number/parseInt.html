@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Number Methods</h1>
+<h2>The Number.parseInt() Method</h2>
+<p>Parse a string and returns the first integer:</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+Number.parseInt("10") + "<br>" +
+Number.parseInt("10.00") + "<br>" +
+Number.parseInt("10.33") + "<br>" +
+Number.parseInt("34 45 66") + "<br>" +
+Number.parseInt("   60   ") + "<br>" +
+Number.parseInt("40 years") + "<br>" +
+Number.parseInt("He was 40") + "<br>" +
+Number.parseInt("10", 10)+ "<br>" +
+Number.parseInt("010")+ "<br>" +
+Number.parseInt("10", 8)+ "<br>" +
+Number.parseInt("0x10")+ "<br>" +
+Number.parseInt("10", 16);
+</script>
+
+</body>
+</html>

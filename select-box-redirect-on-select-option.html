@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+*{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+    body{text-align: center;padding-top: 50px;}
+    select{width:200px;padding:10px;}
+</style>
+</head>
+<body>
+<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+  <option value="">Select...</option>
+  <option value="https://google.com">Google</option>
+  <option value="https://yahoo.com">Yahoo</option>
+  <option value="javascript:;">Null</option>  
+</select>
+</body>
+</html>

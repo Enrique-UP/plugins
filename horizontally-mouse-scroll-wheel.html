@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Horizontal Scroll Mousewheel In jQuery | jQuery Plugins | jQuery Post</title>
+	<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+</head>
+<style type="text/css">
+	#box {
+    overflow-y: visible;
+    overflow-x: auto;
+    white-space: nowrap;
+    vertical-align: text-top;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    border-spacing: 5px;
+}
+.item {
+    display: table-cell;
+    min-width: 240px;
+    width: 240px;
+    font-size: 140px;
+    border: 2px solid #d1d1d1;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    white-space: normal;
+    line-height: 1.6;
+    vertical-align: top;
+    text-align: center;
+    color: #fff;
+}
+#box .item:nth-child(even) {
+	background-color: #9C27B0;
+}
+#box .item:nth-child(odd) {
+	background-color: #FF5722;
+}
+
+</style>
+<body>
+<div id="box">
+    <div class="item">1</div>
+   <div class="item">2</div>
+   <div class="item">3</div>
+   <div class="item">4</div>
+   <div class="item">5</div>
+   <div class="item">6</div>
+   <div class="item">7</div>
+   <div class="item">8</div>
+   <div class="item">9</div>
+    <div class="item">7</div>
+   <div class="item">8</div>
+   <div class="item">9</div>
+ </div>
+
+<script type="text/javascript">
+	jQuery(function ($) {
+    $.fn.hScroll = function (amount) {
+        amount = amount || 120;
+        $(this).bind("DOMMouseScroll mousewheel", function (event) {
+            var oEvent = event.originalEvent, 
+                direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+                position = $(this).scrollLeft();
+            position += direction > 0 ? -amount : amount;
+            $(this).scrollLeft(position);
+            event.preventDefault();
+        })
+    };
+});
+
+$(document).ready(function() {
+    $('#box').hScroll(60); // You can pass (optionally) scrolling amount
+});
+</script>
+</body>
+
+
+</html>

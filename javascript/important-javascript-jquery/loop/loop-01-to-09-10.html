@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <!-- <style type="text/css">
+        ul{counter-reset: number;}
+        ul > li::before{counter-increment: number;content:counter(number) " ";}
+    </style> -->
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia, repudiandae autem officia, repellendus voluptatibus dolor nostrum necessitatibus at labore ducimus iure reiciendis fugit doloremque dolorem eos amet veritatis quasi reprehenderit ex, dolorum illo. Tempora officia facere rem, sapiente repellendus delectus officiis perferendis dolor iusto tempore dicta fuga enim modi nisi incidunt soluta nobis repudiandae? Praesentium porro laborum, recusandae suscipit, temporibus perspiciatis quaerat incidunt nulla repudiandae rem repellat voluptas quasi voluptatem beatae aperiam dolore corrupti dolores labore quam quo doloribus debitis laboriosam exercitationem! Laudantium qui fugit enim laborum numquam asperiores error accusamus tempora quod iste. Quam nobis eligendi similique praesentium delectus rerum commodi accusamus molestiae, pariatur quod necessitatibus deserunt mollitia perspiciatis alias magnam voluptatibus, distinctio sequi quidem atque corrupti provident magni laborum ea? Pariatur, corporis ipsam enim exercitationem obcaecati distinctio voluptate qui suscipit perferendis esse deleniti nihil explicabo praesentium laborum repudiandae quos architecto facilis quasi beatae veritatis molestiae id consectetur!</p>
+    <!-- <ul>
+        <li>Lorem</li>
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem</li>
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem</li>
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem</li>
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem</li>
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum dolor</li>
+    </ul> -->
+    <script>
+        var ul = document.createElement("ul");
+        document.querySelector("body").insertBefore(ul, document.querySelector("body").children[0]);
+        
+        for(var i = 0; i < 15; i++){
+            document.querySelector("ul").insertAdjacentElement("beforeend", document.createElement("li"));
+            var li = document.querySelectorAll("ul > li");
+            if(i < 9){
+                li[i].innerHTML = `0${i + 1} ` + li[i].innerHTML;
+            }else{
+                li[i].innerHTML = `${i + 1} ` + li[i].innerHTML;
+            }
+        }
+
+
+        // const li = document.querySelectorAll("ul > li");
+        // for(var i = 0; i < li.length; i++){
+        //     if(i < 9){
+        //         li[i].innerHTML = `0${i + 1} ` + li[i].innerHTML;
+        //     }else{
+        //         li[i].innerHTML = `${i + 1} ` + li[i].innerHTML;
+        //     }
+        // }
+    </script>
+</body>
+</html>

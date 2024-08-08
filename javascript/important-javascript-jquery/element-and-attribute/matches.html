@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul id="birds">
+  <li>Orange</li>
+  <li class="bird">Parrot</li>
+  <li>Apple</li>
+  <li class="bird">Eagle</li>
+</ul>
+<ul id="birds1">
+  <li>Orange</li>
+  <li class="bird">Parrot</li>
+  <li>Apple</li>
+  <li class="bird">Eagle</li>
+</ul>
+
+<p class="demo container">Hello</p>
+<p class="demo wrapper">Hello</p>
+<p class="demo">Hello</p>
+<div class="demo">
+  <p class="container">Demo</p>
+</div>
+
+<script>
+const birds = document.querySelectorAll("#birds > li");
+for (const bird of birds) {
+  if (bird.matches(".bird")) {
+    bird.style.background = "#ddd";
+    bird.innerHTML = `The <b>${bird.textContent}</b> is bird.`;
+  }
+}
+
+document.querySelectorAll("ul#birds1 > li").forEach(function(e){
+  if(e.matches(".bird")){
+    e.style.background = "#eee";
+    e.innerHTML = `The <b>${e.textContent}</b> is bird.`;
+  }
+});
+</script>
+<script>
+  document.querySelectorAll(".demo").forEach(function(e){
+    if(e.matches(".container, .wrapper")){
+      e.innerHTML = "This element matches either the \".container\" CSS selector or the \".wrapper\" selector.";
+    }else{
+      e.innerHTML = "This element does not match any of the selectors.";
+    }
+  });
+</script>
+</body>
+</html>
