@@ -1,2 +1,0 @@
-body{font-family:Arial, Helvetica, sans-serif}*{padding:0;margin:0;-webkit-box-sizing:border-box;box-sizing:border-box}main{width:100%;float:left}main>*{width:100%;float:left}main header{height:100px;background:#ccc}@media (max-width: 1199px){main header{background:#ddd}}main [class^="col-"]{background:#aaa;height:200px}main footer{height:100px;background:#ccc}@media (max-width: 1199px){main footer{background:#ddd}}
-/*# sourceMappingURL=style.min.css.map */
