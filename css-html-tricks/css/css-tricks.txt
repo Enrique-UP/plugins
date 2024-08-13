@@ -14,23 +14,11 @@ img{mix-blend-mode: color-dodge;} // white
 &star;
 &starf;
 ===================================================================================================================================
-use overflow:clip;
-use contain: paint; except overflow:hidden; with position:sticky;
-contain: none | size | layout | paint | strict | content | inline-size | style;
-
-/* Multiple keywords */
-contain: size paint;
-contain: size layout paint;
-contain: inline-size layout;
-
-/* Global values */
-contain: inherit;
-contain: initial;
-contain: revert;
-contain: revert-layer;
-contain: unset;
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/contain
+position sticky is not worked if main element has overflow:hidden;
+use on main tag overflow:clip except overflow:hidden
+with position sticky
 ===================================================================================================================================
 &:not(:has([class*="col-"])){margin-bottom: 50px;}
 &:has([class*="col-"]){margin-bottom: 0;}
+
+.box:not(:empty){color:red;font-size: 12px;line-height: 1.2;margin-top: 8px;width:100%;}
