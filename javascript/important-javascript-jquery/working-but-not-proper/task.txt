@@ -33,3 +33,7 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 		:root{--space:14px;}
 	}
 	After that automatically change all column etc space correct.
+17. Same page linking (http://demo.com#airlines) after refreshing page if find #airlines in url then go on airlines section.
+	<a href="index.html#airlines">Airlines</a>
+	here header is fix get header height + top.
+	create this by js function with help of scrollTop and offsetTop.
