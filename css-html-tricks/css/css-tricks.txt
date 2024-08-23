@@ -13,6 +13,8 @@ img{mix-blend-mode: color-dodge;} // white
 
 &star;
 &starf;
+
+&rdquo; &rsquo; &ldquo;
 ===================================================================================================================================
 position sticky is not worked if main element has overflow:hidden;
 use on main tag overflow:clip except overflow:hidden

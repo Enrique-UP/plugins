@@ -1,0 +1,11 @@
+body{font-family: Arial, Helvetica, sans-serif;}
+a{text-decoration: none;}
+main{width:100%;display: flex;flex-direction: column;overflow: clip;}
+main header, main footer{width:100%;display: flex;flex-direction: column;justify-content: center;background: #333;color:#fff;}
+main header{min-height: 70px;position: sticky;top:0;}
+main header .container{display: flex;align-items: center;flex-direction: row;justify-content: center;}
+main header a{color:#fff;}
+main header a:not(:last-child){margin-right: 16px;}
+main footer{min-height: 300px;}
+main section:nth-child(odd){background:#eee;}
+main section .container p:first-child{color:red;}
