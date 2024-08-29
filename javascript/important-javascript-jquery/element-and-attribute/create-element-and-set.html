@@ -29,6 +29,18 @@
                 <li>insertAdjacentElement</li>
             </ul>
        </section>
+       <br>
+       <section class="before">
+            <p>Lorem</p>
+            <div>Before</div>
+            <p>Lorem</p>
+       </section>
+       <br>
+       <section class="after">
+        <p>Lorem</p>
+        <div>After</div>
+        <p>Lorem</p>
+   </section>
     </main>
 
 
@@ -86,6 +98,20 @@
         document.querySelector(".outerText > u").outerText = "...";
 
 
+
+        let container = document.createElement("div");
+        let p = document.createElement("p");
+        p.innerText = "Before add here...";
+        container.appendChild(p);
+        let span = document.createElement("span");
+        span.innerText = "Before add here...";
+        p.before(span);
+        document.querySelector(".before > div").innerHTML = container.outerHTML;
+
+        p.after(span);
+        document.querySelector(".after > div").innerHTML = container.outerHTML;
+
+
         //createTextNode
         //textContent
         //outerText
@@ -97,6 +123,8 @@
         // outerHTML
         // append
         // appendChild
+        // before
+        // after
         // insertBefore
         // insertAdjacentHTML
         // insertAdjacentElement

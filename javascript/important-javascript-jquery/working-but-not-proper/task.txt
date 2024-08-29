@@ -33,3 +33,7 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 		:root{--space:14px;}
 	}
 	After that automatically change all column etc space correct.
+17. D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\create-element-and-set.html
+	// before
+    // after
+	example
