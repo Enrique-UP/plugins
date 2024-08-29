@@ -63,8 +63,8 @@ img{max-width: 100%;}
     
     .container{width:100%;}
     .container, .container-fluid{padding-inline: $secH * 0.5;}
-    .row{margin-inline:-$secH*0.25;
-        [class*="col-"]{padding-inline: $secH*0.25;}
+    .row{margin-inline:-$secH*0.375;
+        [class*="col-"]{padding-inline: $secH*0.375;}
     }
 }
 @media (min-width:576px) and (max-width:767px){
