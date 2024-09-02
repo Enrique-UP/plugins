@@ -58,6 +58,8 @@
     element.removeChild(child);
 
 
+	document.querySelector('main.one p.para').before(document.createElement('section'));
+	document.querySelector('main.one p.para').after(document.createElement('section'));
     h2.insertAdjacentHTML("afterend", html);
     h2.insertAdjacentElement("afterend", span);
     element.insertBefore(para, child);
