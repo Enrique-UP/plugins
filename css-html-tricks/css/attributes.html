@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;line-height: 1;}
+        section{width: 100%;display: flex;flex-direction: column;align-items: flex-start;padding: 30px;}
+        section > a:not(:last-child){margin-bottom: 16px;}
+        p{font-size: 20px;font-weight: bold;margin-bottom: 16px;line-height: 1.3;}
+
+        a{color:#000;text-decoration: none;white-space: nowrap;}
+        a:not([href]){color:#000;font-weight: bold;}
+        a[href="#"]{color: #fff;}
+
+        a[target]{background-color: red;}
+        a[target="_blank"]{background-color: green;}
+
+        a[title~="flower"]{background: red;}
+
+        a[class|="top"] {background: red;}
+
+        a[class^="bottom"] {background: green;}
+
+        a[class$="test"] {background: blue;}
+
+        a[class*="be"] {background: red;}
+    </style>
+</head>
+<body>
+    <h2>["value"] ~ , | ^ $ , *</h2>
+    <section>
+        <a>Not Link</a>
+        <a href="">Link</a>
+        <a href="#" target="">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <a href="#" target="_blank">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <p>
+            The [attribute~="value"] selector is used to select elements with an attribute value containing a specified word.
+            <br>
+            The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+        </p>
+        <a href="#" title="klematis flower">Link</a>
+        <a href="" title="flow">Link</a>
+        <a href="#" title="flower">Link</a>
+        <a href="" title="tree">Link</a>
+        <a href="" title="tree _flower_">Link</a>
+        <a href="#" title="flower klematis">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <p>
+            The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+            <br>
+            Note: The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text".
+        </p>
+        <a href="#" class="top-header">Link</a>
+        <a href="#" class="top-text">Link</a>
+        <a class="topcontent">Link</a>
+        <a class="contenttopcontent">Link</a>
+        <a class="ds-text-top">Link</a>
+        <a class="ds-top-text">Link</a>
+        <a class="contenttop">Link</a>
+        <a class="content-top">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <p>
+            The [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
+            <br>
+            Note: The value does not have to be a whole word!
+        </p>
+        <a href="#" class="bottom-header">Link</a>
+        <a href="#" class="bottom-text">Link</a>
+        <a class="bottomcontent">Link</a>
+        <a class="contentbottom">Link</a>
+        <a class="content-bottom">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <p>
+            The [attribute$="value"] selector is used to select elements whose attribute value ends with a specified value.
+            <br>
+            Note: The value does not have to be a whole word!  
+        </p>
+        <a href="#" class="first_test">Link</a>
+        <a class="test_">Link</a>
+        <a class="test_">Link</a>
+        <a class="-test-">Link</a>
+        <a href="#" class="my-test">Link</a>
+        <a href="#" class="mytest">Link</a>
+
+        <div style="height: 30px;"></div>
+
+        <p>
+            The [attribute*="value"] selector is used to select elements whose attribute value contains a specified value.
+            <br>
+            Note: The value does not have to be a whole word!  
+        </p>
+        <a href="#" class="first_best">Link</a>
+        <a class="best_">Link</a>
+        <a class="best_">Link</a>
+        <a class="-best-">Link</a>
+        <a href="#" class="my-best">Link</a>
+        <a href="#" class="mybest">Link</a>
+    </section>
+</body>
+</html>
