@@ -20,7 +20,7 @@
         .content.c1 .head:not(:first-of-type) {color:red;}
 
         .content.c2 :not(.bar ~ .bar).bar {color: orange;}  /* first child selector */
-        .content.c2 .bar ~ .bar:last-of-type {color: red;}
+        .content.c2 .bar ~ .bar:last-of-type {color: red;} /* last child selector */
 
         /*  good example for content */        
         .content.c3 .head:not(.head ~ .head){margin-top: 0;color:red;}
@@ -43,6 +43,7 @@
         .content.c7 li:first-of-type{color: red;}
         .content.c7 li:not(:first-of-type, :last-of-type){color: grey;}
         .content.c7 li:last-of-type{color: blue;}
+        /* section :not([class]){color: green;} */
 
         /* next siblings */
         .content.c8 li ~ li{color:orange;} /* not first child selector or only sibling selector */

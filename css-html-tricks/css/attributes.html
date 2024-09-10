@@ -13,20 +13,26 @@
 
         a{color:#000;text-decoration: none;white-space: nowrap;}
         a:not([href]){color:#000;font-weight: bold;}
+        /* section :not([class]){color: green;} */
         a[href="#"]{color: #fff;}
 
         a[target]{background-color: red;}
+        a[href="https://www.demo.com"] {background-color: #4a7d90;}
         a[target="_blank"]{background-color: green;}
 
-        a[title~="flower"]{background: red;}
+        a[title~="flower"]{background-color: red;}
 
-        a[class|="top"] {background: red;}
+        a[class|="top"] {background-color: red;}
 
-        a[class^="bottom"] {background: green;}
+        a[class^="bottom"] {background-color: green;}
+        /* a[href^="http"] {}
+        a[href^="http"]::after {} */
 
-        a[class$="test"] {background: blue;}
+        a[class$="test"] {background-color: blue;}
+        /* a[href$=".pdf"] {}
+        a[href$=".pdf"]::after {} */
 
-        a[class*="be"] {background: red;}
+        a[class*="be"] {background-color: red;}
     </style>
 </head>
 <body>
@@ -36,11 +42,12 @@
         <a href="">Link</a>
         <a href="#" target="">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <a href="#" target="_blank">Link</a>
+        <a href="https://www.demo.com">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <p>
             The [attribute~="value"] selector is used to select elements with an attribute value containing a specified word.
@@ -54,7 +61,7 @@
         <a href="" title="tree _flower_">Link</a>
         <a href="#" title="flower klematis">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <p>
             The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
@@ -70,7 +77,7 @@
         <a class="contenttop">Link</a>
         <a class="content-top">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <p>
             The [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
@@ -83,7 +90,7 @@
         <a class="contentbottom">Link</a>
         <a class="content-bottom">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <p>
             The [attribute$="value"] selector is used to select elements whose attribute value ends with a specified value.
@@ -97,7 +104,7 @@
         <a href="#" class="my-test">Link</a>
         <a href="#" class="mytest">Link</a>
 
-        <div style="height: 30px;"></div>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
         <p>
             The [attribute*="value"] selector is used to select elements whose attribute value contains a specified value.
