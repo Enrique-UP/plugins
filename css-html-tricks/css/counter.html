@@ -13,14 +13,10 @@
   content: "Section " counter(my-sec-counter) ".- ";
 }
 
-
-
-
 .two {counter-reset: section;}
 .two h1 {counter-reset: subsection;}
 .two h1::before {counter-increment: section;content: "Section " counter(section) ". ";}
 .two h2::before {counter-increment: subsection;content: counter(section) "." counter(subsection) " ";}
-
 
 .three ol {counter-reset: section1;list-style-type: none;}
 .three ol li::before {counter-increment: section1;content: counters(section1,".") " ";}
@@ -32,6 +28,11 @@
   <h2>HTML Tutorial</h2>
   <h2>CSS Tutorial</h2>
   <h2>JavaScript Tutorial</h2>
+  <div>
+    <p>Inner</p>
+    <h2>Inner</h2>
+    <h2>Inner</h2>
+  </div>
   <h2>Bootstrap Tutorial</h2>
   <h2>SQL Tutorial</h2>
   <h2>PHP Tutorial</h2>

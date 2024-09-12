@@ -1,0 +1,16 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./heading.scss";
+@import "./buttons.scss";
+@import "./grid.scss";
+
+body{font-family: Arial, Helvetica, sans-serif;}
+
+a{text-decoration: none;@extend .trans;}
+
+main{width:100%;overflow: hidden;display:flex;flex-direction:column;
+    > *{width:100%;}
+    > .bg{background: var(--g2);}
+}
+
+@import "./res.scss";
