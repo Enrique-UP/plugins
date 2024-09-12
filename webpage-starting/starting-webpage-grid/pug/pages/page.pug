@@ -9,10 +9,7 @@ html
     link(rel="stylesheet" href="./css/owl.carousel.min.css" type="text/css")
   body
     main
-      header
-        .container
-          | Header
-        // container
+      include ../include/header
       section.section.bg
         .container
           h4 npm install pug -g
@@ -23,10 +20,7 @@ html
             br
             br
             | pug -w ./pug/pages -o ./ -P
-      footer
-        .container
-          | Footer
-        // container
+      include ../include/footer
     script(src="js/jquery.min.js")
     script(src="js/owl.carousel.min.js")
     script(src="js/wow.min.js")
