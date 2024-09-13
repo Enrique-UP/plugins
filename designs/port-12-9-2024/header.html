@@ -10,8 +10,60 @@
   <body>
     <main>
       <header> 
-        <div class="container">Header<i class="icon">&#xe001;</i></div>
+        <div class="top"> 
+          <div class="container">
+            <div class="fw"> <a href="#"> <i class="icon">&#xe002;</i><b>Email ID:</b><span>demo@gmail.com</span></a><a href="#"> <i class="icon">&#xe001;</i><b>Phone No:</b><span>+1-000-000-0000</span></a></div>
+          </div>
+        </div>
+        <div class="middle"> 
+          <div class="container"> 
+            <div class="fw"> 
+              <div class="logoArea"> <a href="index.html"><img src="./images/logo.png" alt=""></a></div>
+              <div class="searchBarArea">
+                <div class="searchBar"> <a class="close icon" href="#">&#xe039;</a>
+                  <input type="text" placeholder="Search here..."><a class="link icon" href="#">&#xe030;</a>
+                  <div class="dropDown"><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a></div>
+                </div>
+              </div>
+              <ul class="follow"> 
+                <li>Follow Us</li>
+                <li> <span> <a class="icon" href="#" target="_blank">&#xe021;</a><a class="icon" href="#" target="_blank">&#xe022;</a><a class="icon" href="#" target="_blank">&#xe023;</a></span><span> <a class="icon" href="#" target="_blank">&#xe024;</a><a class="icon fwt" href="#" target="_blank">&#xe025;</a><a class="icon" href="#" target="_blank">&#xe026;</a></span></li>
+              </ul>
+              <div class="contact"> <a class="icon" href="#">&#xe030;</a><a class="icon" href="#">&#xe002;</a><a class="icon" href="#">&#xe001;</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom"> 
+          <div class="container">
+            <div class="fw">
+              <div class="menuArea"> <span class="txt">Menu </span><span class="icon" href="javascript:;">&#xe003;</span></div>
+              <div class="navigationBar">
+                <nav> 
+                  <ul> 
+                    <li> <a class="active" href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a></li>
+                    <li> <a href="#"><i class="icon">&#xe015;</i><b>About Us</b></a></li>
+                    <li> <a href="#"><i class="icon">&#xe008;</i><b>Image Gallery</b></a></li>
+                    <li> <a href="#"><i class="icon">&#xe007;</i><b>Services </b></a></li>
+                    <li class="menu"> <a class="icon" href="javascript:;">&#xe003;</a>
+                      <div class="subMenu"> <a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a></div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
+      <section style="background:#333;min-height:2000px;"></section>
+      <script>
+        function addRemove(){
+            if (window.scrollY >= 40) document.querySelector("header").classList.add("active");
+            else document.querySelector("header").classList.remove("active");
+        }
+        window.addEventListener("load", addRemove);
+        window.addEventListener("scroll", addRemove);
+        window.addEventListener("resize", addRemove);
+      </script>
     </main>
   </body>
 </html>

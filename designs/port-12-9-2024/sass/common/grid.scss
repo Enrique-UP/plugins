@@ -16,7 +16,7 @@ $col-12:100%;
 
 *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;font:inherit;}
 
-body{font-size: 16px;line-height: 1.7;}
+body{font-size: 16px;line-height: 1.6;}
 
 :has(> .img){display:flex;}
 img{max-width: 100%;}
@@ -51,9 +51,9 @@ img{max-width: 100%;}
 
 @media (max-width:575px){
     body{font-size: 14px;}
-    .section{padding-block:$secV*2;}
-    .sectionT{padding-top:$secV*2;}
-    .sectionB{padding-bottom:$secV*2;}
+    .section{padding-block:$secV*2.5;}
+    .sectionT{padding-top:$secV*2.5;}
+    .sectionB{padding-bottom:$secV*2.5;}
     
     .btns a{padding:12px 16px;}
     
@@ -69,9 +69,9 @@ img{max-width: 100%;}
 }
 @media (min-width:576px) and (max-width:767px){
     body{font-size: 15px;}
-    .section{padding-block:$secV*2.5;}
-    .sectionT{padding-top:$secV*2.5;}
-    .sectionB{padding-bottom:$secV*2.5;}
+    .section{padding-block:$secV*2.75;}
+    .sectionT{padding-top:$secV*2.75;}
+    .sectionB{padding-bottom:$secV*2.75;}
     
     .container{width:576px;}
     .container, .container-fluid{padding-inline: $secH * 0.75;}
