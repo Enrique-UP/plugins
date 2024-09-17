@@ -10,16 +10,14 @@
     <main>
       <header> 
         <div class="top"> 
-          <div class="container">
-            <div class="fw"> <a href="#"> <i class="icon">&#xe002;</i><b>Email ID:</b><span>demo@gmail.com</span></a><a href="#"> <i class="icon">&#xe001;</i><b>Phone No:</b><span>+1-000-000-0000</span></a></div>
-          </div>
+          <div class="container"><a href="#"> <i class="icon">&#xe002;</i><b>Email ID:</b><span>demo@gmail.com</span></a><a href="#"> <i class="icon">&#xe001;</i><b>Phone No:</b><span>+1-000-000-0000</span></a></div>
         </div>
         <div class="middle"> 
           <div class="container"> 
             <div class="fw"> 
               <div class="logoArea"> <a href="index.html"><img src="./images/logo.png" alt=""></a></div>
               <div class="searchBarArea">
-                <div class="searchBar"> <a class="close icon" href="#">&#xe039;</a>
+                <div class="searchBar"> <span class="close icon" onClick="searchBarClose()">&#xe039;</span>
                   <input type="text" placeholder="Search here..."><a class="link icon" href="#">&#xe030;</a>
                   <div class="dropDown"><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum dolor sit amet</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem</a><a href="#">Lorem ipsum dolor sit</a></div>
                 </div>
@@ -28,41 +26,30 @@
                 <li>Follow Us</li>
                 <li> <span> <a class="icon" href="#" target="_blank">&#xe021;</a><a class="icon" href="#" target="_blank">&#xe022;</a><a class="icon" href="#" target="_blank">&#xe023;</a></span><span> <a class="icon" href="#" target="_blank">&#xe024;</a><a class="icon fwt" href="#" target="_blank">&#xe025;</a><a class="icon" href="#" target="_blank">&#xe026;</a></span></li>
               </ul>
-              <div class="contact"> <a class="icon" href="#">&#xe030;</a><a class="icon" href="#">&#xe002;</a><a class="icon" href="#">&#xe001;</a></div>
+              <div class="contact"> <a class="icon" onClick="searchBarOpen()">&#xe030;</a><a class="icon" href="#">&#xe002;</a><a class="icon" href="#">&#xe001;</a></div>
             </div>
           </div>
         </div>
         <div class="bottom"> 
           <div class="container">
             <div class="fw">
-              <div class="menuArea"> <span class="txt">Menu </span><span class="icon" href="javascript:;">&#xe003;</span></div>
-              <div class="navigationBar">
-                <nav> 
-                  <ul> 
-                    <li> <a class="active" href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a></li>
-                    <li> <a href="#"><i class="icon">&#xe015;</i><b>About Us</b></a></li>
-                    <li> <a href="#"><i class="icon">&#xe008;</i><b>Image Gallery</b></a></li>
-                    <li> <a href="#"><i class="icon">&#xe007;</i><b>Services </b></a></li>
-                    <li class="menu"> <a class="icon" href="javascript:;">&#xe003;</a>
-                      <div class="subMenu"> <a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a></div>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+              <div class="menuArea"> <span class="txt">Menu </span><span class="icon" onClick="navOpen()">&#xe003;</span></div>
+              <nav> 
+                <ul> 
+                  <li class="logo"> <a href="index.html"><img src="./images/logoMob.png" alt=""></a></li>
+                  <li> <a class="active" href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a></li>
+                  <li> <a href="#"><i class="icon">&#xe015;</i><b>About Us</b></a></li>
+                  <li> <a href="#"><i class="icon">&#xe008;</i><b>Image Gallery</b></a></li>
+                  <li> <a href="#"><i class="icon">&#xe007;</i><b>Services </b></a></li>
+                  <li class="menu"> <a class="icon" href="javascript:;">&#xe003;</a>
+                    <div class="subMenu"><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Contact Us</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Contact Us</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Contact Us</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Home</b></a><a href="index.html"><i class="icon">&#xe042;</i><b>Contact Us</b></a></div>
+                  </li>
+                </ul><span class="close icon" onClick="navClose()">&#xe039;</span>
+              </nav>
             </div>
           </div>
         </div>
       </header>
-      <section style="background:#333;min-height:2000px;"></section>
-      <script>
-        function addRemove(){
-            if (window.scrollY >= 40) document.querySelector("header").classList.add("active");
-            else document.querySelector("header").classList.remove("active");
-        }
-        window.addEventListener("load", addRemove);
-        window.addEventListener("scroll", addRemove);
-        window.addEventListener("resize", addRemove);
-      </script>
       <footer class="section"> 
         <div class="container">
           <div class="logoArea"> <a href="index.html"><img src="./images/logoWhite.png" alt=""></a></div>
@@ -102,16 +89,7 @@
           <p class="fw">Copyright &copy; <span>2024</span>. With all rights reserved.</p>
         </div>
       </div>
-      <script>
-        (function(){
-            document.querySelector(".copyright span").innerText = new Date().getFullYear();
-        })();
-      </script>
     </main>
-    <script type="text/javascript">
-      (function(){
-        //- console.log("Lorem");
-      });
-    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>

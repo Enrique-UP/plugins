@@ -36,5 +36,10 @@ let authenticated = true;
 authenticated ? renderApp() : renderLogin();
 
 </script>
+<!-- <script>
+  (function(e, i) {
+        e.forEach(f => window.addEventListener(f, i));
+    })(["load", "scroll", "resize"], () => document.querySelector("header").classList[window.scrollY >= 40 ? 'add' : 'remove']("active"));
+</script> -->
 </body>
 </html>

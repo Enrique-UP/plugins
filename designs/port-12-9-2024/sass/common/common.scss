@@ -10,8 +10,8 @@ a{text-decoration: none;@extend .trans;}
 
 b, strong{font-weight: bold;}
 
-main{width:100%;overflow: hidden;display:flex;flex-direction:column;
-    > *{width:100%;}
+main{width:100%;overflow: hidden;@extend .fc;
+    > *{width:100%;@extend .fc;}
     > .bg{background: var(--g2);}
 }
 
