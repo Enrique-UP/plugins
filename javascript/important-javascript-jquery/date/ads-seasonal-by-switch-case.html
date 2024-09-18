@@ -8,14 +8,11 @@
     <style type="text/css">
         *{padding:0;margin:0;box-sizing: border-box;}
         body{font-family: Arial, Helvetica, sans-serif;}
-        .template{display: flex;width:100%;flex-direction: column;}
+        .ads{display: flex;width:100%;flex-direction: column;}
     </style>
 </head>
 <body>
-    <div class="template">
-        <p class="head"></p>
-        <p class="text"></p>
-    </div><!--template-->
+    <div class="ads"></div><!--ads-->
 
     <script>
         window.addEventListener("load", function(){
@@ -28,32 +25,40 @@
                     head = "This Winter & New Year Offer";
                     text = "January";
                 break;
+
                 case 1: case 2:
                     head = "This Spring Offer";
                     text = "February March";
                 break;
+
                 case 3: case 4:
                     head = "This Summer Offer";
-                    text = "Apr May";
+                    text = "April May";
                 break;
+
                 case 5: case 6: case 7: case 8:
                     head = "This Monsoon Offer";
-                    text = "June July Aug September";
+                    text = "June July August September";
                 break;
+
                 case 9: case 10:
                     head = "This Autumn Offer";
-                    text = "Oct Nov";
+                    text = "October November";
                 break;
+
                 case 11:
                     head = "This Winter & Christmas Offer";
                     text = "December";
                 break;
+
                 default:
                     head = "Seasonal Deals";
                     text = "50% Off on this season";
             }
-            document.querySelector(".template .head").innerHTML = head;
-            document.querySelector(".template .text").innerHTML = text;
+            document.querySelector(".ads").innerHTML += `
+                <p class="head">${head}</p>
+                <p class="text">${text}</p>
+            `;
         });
     </script>
 </body>

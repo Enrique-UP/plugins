@@ -8,12 +8,22 @@
 <body>
     <a id="btn">Click here</a>
     <script>
-        let btn = document.getElementById('btn');
-        function onClick(event){
-            btn.removeEventListener('click', onClick);
-            alert("Event fired once, no more click will be handled");
-        }
-        btn.addEventListener('click', onClick);
+        // let btn = document.getElementById('btn');
+        // function onClick(){
+        //     btn.removeEventListener('click', onClick);
+        //     alert("Event fired once, no more click will be handled");
+        // }
+        // btn.addEventListener('click', onClick);
+
+
+        // or
+
+
+        const handleClick = function(e) {
+            e.target.removeEventListener('click', handleClick);
+            alert("Event fired once, no more clicks will be handled");
+        };
+        document.getElementById('btn').addEventListener('click', handleClick);
     </script>
 </body>
 </html>
