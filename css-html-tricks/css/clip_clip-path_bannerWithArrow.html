@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../webpage-starting/starting-webpage-grid/css/grid.min.css">
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        .bannerArrow{position: relative;background: var(--g1);}
+        .bannerArrow .container{padding-block: 150px;}
+        .bannerArrow [class*="col-"]{display: flex;flex-direction: column;}
+        .bannerArrow::after{position: absolute;top:0;right:0;content:"";width:50%;height: 100%;background: url(../../sliders/owl-carousel/images/1.jpg) no-repeat center center / cover;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+        }
+        .bannerArrow .head{line-height: 1.2;font-weight: bold;font-size: 40px;margin-bottom: 20px;}
+        .bannerArrow .breadcrumbs{justify-content: flex-start;margin-bottom: 20px;}
+        .bannerArrow .expert{font-size: 24px;margin-bottom: 8px;color:var(--g5);}
+        .bannerArrow .btns-1{justify-content: flex-start;}
+
+
+
+/* clip: auto;
+clip: rect(0px,25px,25px,0px);
+clip: rect(0px,50px,50px,0px);
+clip: rect(10px,50px,50px,10px);
+clip: rect(10px,100px,50px,10px);
+clip: rect(10px,100px,100px,10px);
+clip: rect(0px,100px,100px,0px); */
+/* clip: auto|shape|initial|inherit; */
+/* clip: clip-source|basic-shape|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none|initial|inherit; */
+
+/* clip-path: circle(40%);
+clip-path: circle(20%);
+clip-path: ellipse(25% 40% at 50% 50%);
+clip-path: ellipse(25% 25% at 50% 50%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+clip-path: inset(5% 20% 15% 10%); */
+    </style>
+</head>
+<body>
+    <section class="bannerArrow">
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="head">Lorem ipsum dolor sit amet lorem ipsum dolor sit amet</h1>
+                    <p class="expert">Flight Queries? Call an Expert</p>
+                    <p class="btns-1">
+                        <a href="#" target="_blank">Call Us</a>
+                    </p>
+                </div>
+            </div>
+		</div>
+	</section>
+</body>
+</html>
