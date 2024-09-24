@@ -1,11 +1,11 @@
-.fw{
-    width: 100%;
-    float: left;
-  }
-main {@extend .fw;overflow: hidden;
-    > *{@extend .fw;}
+.fw{width: 100%;}
+.fc{display:flex;flex-direction:column;}
+
+main {@extend .fw;min-height:100vh;overflow: hidden;@extend .fc;
+    > *{@extend .fw;display: flex;}
     .slider {
         background: #ccc;
     }
+    footer{margin-top:auto;}
   }
   
