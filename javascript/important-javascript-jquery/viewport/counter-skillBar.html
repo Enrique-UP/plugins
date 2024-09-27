@@ -6,96 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Document</title>
     <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
+        :root{
+            --c1:#d43227;
+            --c2:#f1ac17;
+            --c3:#e67f23;
+            --c4:#3498db;
+            --c5:#5a68a5;            
+            --c6:#2c3d50;
+            --c7:#525252;
+            --back:#ccc;
+            --bg:#eee;
+            --width:0;
         }
+        * {padding: 0;margin: 0;box-sizing: border-box;}
+        body {padding: 0 50px;font-family: Arial, Helvetica, sans-serif;}
 
-        body {
-            padding: 0 50px;
+        section:not(:last-child){margin-bottom: 10px;}
+        .counter{width: 100%;display: flex;margin-bottom: 10px;justify-content: space-between;background: var(--back);font-size: 16px;line-height: 1.3;font-weight: normal;}
+        .counter > b{font-weight: inherit;min-width: 120px;}
+        .counter > i{font-style: normal;min-width: 70px;text-align: right;}
+        .counter > b, .counter > i{padding: 8px 12px;background-color:rgba(0,0,0,0.25);background-image:var(--back);color:#fff;}
+        .counter > span{width: 100%;background: var(--bg);position: relative;}
+        .counter > span::before{width: var(--width);height: 100%;position: absolute;top:0;left:0;content:"";background: var(--back);transition: 3.75s linear;}
+        
+        .counter > span::before{
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+            animation: back 2s linear infinite;
         }
-
-        .num {
-            width: 100%;
-            display: flex;
-            position: relative;
-        }
-
-        .num:not(:last-child) {
-            margin-bottom: 10px;
-        }
-
-        .num>span {
-            width: 100%;
-            height: 50px;
-            background: #eee;
-        }
-
-        .num>span>b {
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: lightblue;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            transition: 0.3s linear;
-        }
-
-        .num>i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            right: 0;
-            font-style: normal;
-            height: 100%;
-            background: skyblue;
-            display: flex;
-            align-items: center;
-            width: 50px;
-            text-align: center;
-            justify-content: center;
-            color: white;
+        @keyframes back {
+            from {background-position: 0 0;}
+            to {background-position: 40px 0;}
         }
     </style>
 </head>
 <body>
-    <section style="width:100%;height:1000px;background: #ccc;display: flex;"></section>
-    <h3 data-value="10" class="num">
-        <span><b></b></span>
-        <i>0</i>
-    </h3>
-    <h3 data-value="20" class="num">
-        <span><b></b></span>
-        <i>0</i>
-    </h3>
-    <h3 data-value="30" class="num">
-        <span><b></b></span>
-        <i>0</i>
-    </h3>
-    <h3 data-value="40" class="num">
-        <span><b></b></span>
-        <i>0</i>
-    </h3>
-    <h3 data-value="50" class="num">
-        <span><b></b></span>
-        <i>0</i>
-    </h3>
-    <section style="width:100%;height:1000px;background: #ccc;display: flex;"></section>
+    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+    <h3 class="counter" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+
+    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+    <h3 class="counter" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+
+    <!-- <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+    <h3 class="counter" data-value="80"><i>0</i></h3>
+    <h3 class="counter" data-value="75"><i>0</i></h3>
+    <h3 class="counter" data-value="60"><i>0</i></h3>
+    <h3 class="counter" data-value="65"><i>0</i></h3>
+    <h3 class="counter" data-value="75"><i>0</i></h3>
+    <h3 class="counter" data-value="60"><i>0</i></h3>
+    <h3 class="counter" data-value="65"><i>0</i></h3> -->
     <!-- <script>
         function animation() {
             var scroll = document.documentElement.scrollTop;
-            var box = document.querySelectorAll(".num");
+            var box = document.querySelectorAll(".counter");
             var topAll = 0;
             for (var i = 0; i < box.length; i++) {
                 if(scroll >= box[i].offsetTop + box[i].offsetHeight){
                     for (var i = 0; i < box.length; i++) {
                         (function (i) {
-                            var numData = box[i].getAttribute("data-value");
+                            var counterData = box[i].getAttribute("data-value");
                             let setInFunc = setInterval(updated, 10);
                             let a = 0;
                             function updated() {
@@ -103,7 +85,7 @@
                                 box[i].querySelector("i").innerHTML = plus;
                                 box[i].querySelector("b").innerHTML = plus;
                                 box[i].querySelector("b").style.width = plus + "%";
-                                if (a == numData) {
+                                if (a == counterData) {
                                     clearInterval(setInFunc);
                                 }
                             }
@@ -118,32 +100,32 @@
     </script> -->
     <script>
         function isInViewport(element) {
-            const buffer = 100;
+            const buffer = 50;
             const rect = element.getBoundingClientRect();
             return rect.top < window.innerHeight - buffer && rect.bottom >= buffer;
         }
 
         function animateNumber(box) {
             const speed = 40;
-            const numData = box.getAttribute("data-value");
+            const counterData = box.getAttribute("data-value");
             let current = 0;
-            const bTag = box.querySelector("b");
+            const spanTag = box.querySelector("span");
             const iTag = box.querySelector("i");
 
             const interval = setInterval(() => {
                 current++;
-                bTag.innerHTML = current;
-                bTag.style.width = current + "%";
-                iTag.innerHTML = current;
-
-                if (current >= numData) {
+                iTag.innerHTML = current + "%";
+                // spanTag.innerHTML = current + "%";
+                // spanTag.style = "--width:" + current + "%";
+                spanTag.style = "--width:" + counterData + "%";
+                if (current >= counterData) {
                     clearInterval(interval);
                 }
             }, speed);
         }
 
         function animation() {
-            const boxes = document.querySelectorAll(".num");
+            const boxes = document.querySelectorAll(".counter");
             boxes.forEach(box => {
                 if (isInViewport(box) && !box.hasAttribute("data-animated")) {
                     animateNumber(box);
@@ -152,9 +134,23 @@
             });
         }
 
-        window.addEventListener("load", animation);
-        window.addEventListener("scroll", animation);
-        window.addEventListener("resize", animation);
+        (function(e, i) {
+            e.forEach(a => window.addEventListener(a, i));
+        })(["load", "scroll", "resize"], animation);
+    </script>
+    <script>
+        document.querySelectorAll("body").forEach(function(a){
+          var listItems = a.querySelectorAll(".counter");
+          const totalClasses = 7;
+          var i = 1;
+          for (let li of listItems) {
+            if (i > totalClasses){
+              i = 1;
+            }
+            li.style.setProperty("--back", `var(--c${i})`);
+            i++;
+          }
+        });
     </script>
 </body>
 </html>
