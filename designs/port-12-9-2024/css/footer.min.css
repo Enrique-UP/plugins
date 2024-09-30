@@ -1,18 +1,1 @@
-/* Error: The target selector was not found.
- * Use "@extend .fc !optional" to avoid this error.
- *   ,
- * 6 |     .text{@extend .fc;background: var(--g2);color: var(--bg1);border-left: 4px solid var(--c3);padding:16px;text-align:justify;
- *   |           ^^^^^^^^^^^
- *   '
- *   sass\footer.scss 6:11  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: The target selector was not found.\aUse "@extend .fc !optional" to avoid this error.\a   \2577 \a 6 \2502      .text{@extend .fc;background: var(--g2);color: var(--bg1);border-left: 4px solid var(--c3);padding:16px;text-align:justify;\d\a   \2502            ^^^^^^^^^^^\a   \2575 \a   sass\\footer.scss 6:11  root stylesheet';
-}
+/*# sourceMappingURL=footer.min.css.map */
