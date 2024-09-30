@@ -22,14 +22,14 @@
         body {padding: 0 50px;font-family: Arial, Helvetica, sans-serif;}
 
         section:not(:last-child){margin-bottom: 10px;}
-        .counter{width: 100%;display: flex;margin-bottom: 10px;justify-content: space-between;background: var(--back);font-size: 16px;line-height: 1.3;font-weight: normal;}
-        .counter > b{font-weight: inherit;min-width: 120px;}
-        .counter > i{font-style: normal;min-width: 70px;text-align: right;}
-        .counter > b, .counter > i{padding: 8px 12px;background-color:rgba(0,0,0,0.25);background-image:var(--back);color:#fff;}
-        .counter > span{width: 100%;background: var(--bg);position: relative;}
-        .counter > span::before{width: var(--width);height: 100%;position: absolute;top:0;left:0;content:"";background: var(--back);transition: 3.75s linear;}
+        .skillNum{width: 100%;display: flex;margin-bottom: 10px;justify-content: space-between;background: var(--back);font-size: 16px;line-height: 1.3;font-weight: normal;}
+        .skillNum > b{font-weight: inherit;min-width: 120px;}
+        .skillNum > i{font-style: normal;min-width: 70px;text-align: right;}
+        .skillNum > b, .skillNum > i{padding: 8px 12px;background-color:rgba(0,0,0,0.25);background-image:var(--back);color:#fff;}
+        .skillNum > span{width: 100%;background: var(--bg);position: relative;}
+        .skillNum > span::before{width: var(--width);height: 100%;position: absolute;top:0;left:0;content:"";background: var(--back);transition: 3.75s linear;}
         
-        .counter > span::before{
+        .skillNum > span::before{
             background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
             background-size: 40px 40px;
             animation: back 2s linear infinite;
@@ -38,36 +38,39 @@
             from {background-position: 0 0;}
             to {background-position: 40px 0;}
         }
+
+        .num{display: flex;flex-direction: column;text-align: center;margin-bottom: 32px;background:var(--back);padding:12px;color:#fff;}
+        .num i{font-style: normal;}
     </style>
 </head>
 <body>
     <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
-    <h3 class="counter" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
 
     <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
-    <h3 class="counter" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
-    <h3 class="counter" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
-    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+    <h3 class="counter skillNum" data-value="80"><b>HTML</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="75"><b>CSS</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="60"><b>JavaScript</b><span></span><i>0</i></h3>
+    <h3 class="counter skillNum" data-value="65"><b>JQuery</b><span></span><i>0</i></h3>
 
-    <!-- <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
-    <h3 class="counter" data-value="80"><i>0</i></h3>
-    <h3 class="counter" data-value="75"><i>0</i></h3>
-    <h3 class="counter" data-value="60"><i>0</i></h3>
-    <h3 class="counter" data-value="65"><i>0</i></h3>
-    <h3 class="counter" data-value="75"><i>0</i></h3>
-    <h3 class="counter" data-value="60"><i>0</i></h3>
-    <h3 class="counter" data-value="65"><i>0</i></h3> -->
+    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
+    <h3 class="counter num" data-value="80"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="75"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="60"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="65"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="75"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="60"><i>0</i><b>Happy Clients</b></h3>
+    <h3 class="counter num" data-value="65"><i>0</i><b>Happy Clients</b></h3>
+    <section style="width:100%;height:1000px;background:#ccc;display:flex;"></section>
     <!-- <script>
         function animation() {
             var scroll = document.documentElement.scrollTop;
@@ -115,9 +118,11 @@
             const interval = setInterval(() => {
                 current++;
                 iTag.innerHTML = current + "%";
-                // spanTag.innerHTML = current + "%";
-                // spanTag.style = "--width:" + current + "%";
-                spanTag.style = "--width:" + counterData + "%";
+                if(box.contains(spanTag)){
+                    // spanTag.innerHTML = current + "%";
+                    // spanTag.style = "--width:" + current + "%";
+                    spanTag.style = "--width:" + counterData + "%";
+                }
                 if (current >= counterData) {
                     clearInterval(interval);
                 }
@@ -140,7 +145,7 @@
     </script>
     <script>
         document.querySelectorAll("body").forEach(function(a){
-          var listItems = a.querySelectorAll(".counter");
+          var listItems = a.querySelectorAll(".skillNum, .num");
           const totalClasses = 7;
           var i = 1;
           for (let li of listItems) {
