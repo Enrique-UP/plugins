@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .popup{display: none;}
+    </style>
+</head>
+<body>
+    <div class="one1">One</div>
+    <div class="popup" id="one">One one one<br><span onclick="closePopup('one')">Close</span></div>
+    <br><br>
+    <div class="two1">Two</div>
+    <div class="popup" id="two">Two two two<br><span onclick="closePopup('two')">Close</span></div>
+
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block";
+        }
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+        }
+
+        document.querySelector(".one1").addEventListener("click", function (event) {
+            event.preventDefault();
+            openPopup("one");
+        });
+
+        document.querySelector(".two1").addEventListener("click", function (event) {
+            event.preventDefault();
+            openPopup("two");
+        });
+    </script>
+</body>
+</html>

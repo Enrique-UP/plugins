@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        body{padding: 50px;}
+        .sections{width: 100%;display: grid;grid-template-columns: repeat(6, 1fr);align-items: flex-start;}
+
+        section{margin-bottom: 50px;display: flex;gap: 10px;align-items: center;background: #eee;justify-content: center;padding: 10px;flex-wrap: wrap;flex-direction: column;}
+        section:not(:last-child){margin-bottom: 30px;}
+        section p{font-weight: bold;width: 100%;text-align: center;}
+        section .circle{border-radius: 100%;background: black;}
+        section > *:not(p, ul){width:20px;height: 20px;background: brown;}
+
+        section.one .box:has(+ .circle) {width: 40px;height: 40px;}
+        section.two .box:has(+ * + .circle) {width: 40px;height: 40px;}
+        section.three .box:has(+ .box + .circle) {width: 40px;height: 40px;}
+        section.four .box:has(+ * + * + .circle) {width: 40px;height: 40px;}
+        section.five .box:has(~ .circle) {width: 40px;height: 40px;}
+        section.six .box:has(~ * + .circle) {width: 40px;height: 40px;}
+
+        aside:has(> p) {color: green;border: 2px solid green;}
+        /*this is working on aside*/
+        aside:has(> p) > p{color: red;border: 2px solid red;}
+        /*this is working on inner p*/
+
+        hgroup:has(+p) {color: gray;border: 2px dotted red;}
+        /* If p contains after hgroup then the css will be on hgroup. hgroup is fully depend on its adjacent element p. */
+
+        section.seven ul > li:has(~ .active){color:red;}
+        /* Is li tag has li.active then css will be apply on before active tag. */
+        section.seven ul > li:has(+ li:last-child){color:green;}
+        /* Is li tag has last-child then css will be apply on second last child. */
+        section.seven ul > li.active:has(+ li){color:blue;}
+        /* Is li tag has after li.active tag then css will be apply on li.active. */
+        section.seven ul > span:has(+ i){color:violet;}
+        /* Is i tag has after span tag then css will be apply on span. */
+        
+        hr{margin-block: 30px;}
+        ul.one, ul.two{display: flex;text-align: center;}
+        ul.one > li, ul.two > li{list-style: none;}
+        ul.one > li:not(:last-child), ul.two > li:not(:last-child){margin-right: 15px;}
+
+        ul.one > li.active{color: #000;}
+        ul.one > li:not(.active){color: grey;}
+
+        ul.two:has(> li.active) > li.active{color: grey;}
+        ul.two:has(> li.active) > li:not(.active){color: red;}        
+    </style>
+</head>
+<body>
+    <h1>The :has() selector is used to select a parent element or previous sibling element, and apply a style to it.</h1>
+    <div class="sections">
+        <section class="one">
+            <p>.box:has(+ .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+        <section class="two">
+            <p>.box:has(+ * + .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+        <section class="three">
+            <p>.box:has(+ .box + .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+        <section class="four">
+            <p>.box:has(+ * + * + .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+        <section class="five">
+            <p>.box:has(~ .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+        <section class="six">
+            <p>.box:has(~ * + .circle)</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="box"></div>
+        </section>
+    </div>
+    
+    <aside><p>P</p></aside>
+    <aside><span>Span</span></aside>
+
+    <br><br><br>
+
+    <div>
+        <hgroup>hgroup:has(+p)</hgroup>
+        <p>hgroup:has(+p)</p>
+    </div>
+
+    <br><br><br>
+
+    <section class="seven">
+        <ul>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li class="active">Active</li>
+            <!-- <span>Span</span> -->
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <span>Span</span>
+            <i>I</i>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ul>
+    </section>
+
+
+    <br><br><br>
+    <ul class="one">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Ameet</li>
+    </ul>
+    <hr>
+    <ul class="one">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Dolor</li>
+        <li>Sit</li>
+        <li>Ameet</li>
+    </ul>
+    <hr>
+    <ul class="two">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Ameet</li>
+    </ul>
+    <hr>
+    <ul class="two">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="active">Dolor</li>
+        <li>Sit</li>
+        <li>Ameet</li>
+    </ul>
+</body>
+</html>

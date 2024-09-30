@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <main>
+       <section class="createElement"></section>
+       <br>
+       <section class="insertAdjacentText"><u>Add text here</u></section>
+       <br>
+       <section class="outerText">Lorem ipsum dolor <u>Add text here</u> lorem ipsum dolor</section>
+       <br>
+       <section class="insertBefore">
+            <ul>
+                <li>Lorem</li>
+                <li>Lorem</li>
+                <li>Lorem</li>
+                <li>Lorem</li>
+                <li>Lorem</li>
+            </ul>
+       </section>
+       <br>
+       <section class="insertAdjacentElement">
+            <ul class="iae">
+                <li>insertAdjacentElement</li>
+                <li>insertAdjacentElement</li>
+            </ul>
+       </section>
+       <br>
+       <section class="before">
+            <p>Lorem</p>
+            <div>Before</div>
+            <p>Lorem</p>
+       </section>
+       <br>
+       <section class="after">
+        <p>Lorem</p>
+        <div>After</div>
+        <p>Lorem</p>
+   </section>
+    </main>
+
+
+
+
+    
+    <script>
+        var element = document.createElement("div");
+        element.textContent = "Created New Element";
+        document.querySelector(".createElement").append(element);
+        // document.querySelector(".createElement").appendChild(element);
+
+
+
+        var li = document.createElement("li");
+        var texts = "Added new li here";
+        li.innerText = texts;
+
+        var li1 = document.createElement("li");
+        li1.innerText = texts;
+
+        document.querySelector("main .insertBefore ul").insertBefore(li, document.querySelector("main .insertBefore ul").children[0]);
+        document.querySelector("main .insertBefore ul").appendChild(li1);
+
+
+
+        var li2 = document.createElement("li");
+        li2.innerText = texts;
+
+        var li3 = document.createElement("li");
+        li3.innerText = texts;
+
+        document.querySelector("main .insertAdjacentElement ul.iae").insertAdjacentElement("afterbegin", li2); // this is for tags
+        document.querySelector("main .insertAdjacentElement ul.iae").insertAdjacentElement("beforeend", li3); // this is for tags
+        document.querySelector("main .insertAdjacentElement ul.iae").insertAdjacentHTML("beforebegin", `<ul>
+                <li>Added new li here</li>
+                <li>Added new li here</li>
+            </ul>`); //this is for html
+        document.querySelector("main .insertAdjacentElement ul.iae").insertAdjacentHTML("afterend", `<ul>
+                <li>Added new li here</li>
+                <li>Added new li here</li>
+            </ul>`); //this is for html
+
+
+        document.querySelector(".insertAdjacentText").insertAdjacentText("afterbegin", "AddInStart ");
+        document.querySelector(".insertAdjacentText").insertAdjacentText("beforeend", " AddInEnd");
+
+
+
+        document.querySelector("body").innerHTML = `<a class="call" href="javascript:;">Sidebar Call</a> ${document.querySelector("body").innerHTML}`;
+        document.querySelector("body").innerHTML += `<a class="call" href="javascript:;">Sidebar Call</a>`;
+
+
+
+        document.querySelector(".outerText > u").outerText = "...";
+
+
+
+        let container = document.createElement("div");
+        let p = document.createElement("p");
+        p.innerText = "Before add here...";
+        container.appendChild(p);
+        let span = document.createElement("span");
+        span.innerText = "Before add here...";
+        p.before(span);
+        document.querySelector(".before > div").innerHTML = container.outerHTML;
+
+        p.after(span);
+        document.querySelector(".after > div").innerHTML = container.outerHTML;
+
+
+        //createTextNode
+        //textContent
+        //outerText
+        //innerText
+        //text // this property is work on selectbox
+
+        
+        // innerHTML
+        // outerHTML
+        // append
+        // appendChild
+        // before
+        // after
+        // insertBefore
+        // insertAdjacentHTML
+        // insertAdjacentElement
+            // afterbegin:-	After the beginning of the element (first child)
+            // afterend:-	After the element
+            // beforebegin:-	Before the element
+            // beforeend:-	Before the end of the element (last child)
+            // syntax = element.insertAdjacentHTML(position, html);		
+
+            // afterbegin
+            // afterend
+            // beforebegin
+            // beforeend
+    </script>
+</body>
+</html>

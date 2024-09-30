@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+  <style type="text/css">
+      h1{text-align: center;margin:50px 0 0;padding:0;display: block;}
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+
+<h1>Vertical slider</h1>
+  <section class="vertical-center slider">
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+  </section>
+    <h1>Horizontal slider</h1>
+<section class="horizontal-center slider">
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+  </section>
+    <h1>Multiple Item slider</h1>
+<section class="multiple-items slider">
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+  </section>
+    <h1>Variable Item slider</h1>
+<section class="variable-width slider">
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/450x100.png">
+    </div>
+    <div>
+      <img src="images/350x100.png">
+    </div>
+    <div>
+      <img src="images/250x100.png">
+    </div>
+    <div>
+      <img src="images/150x100.png">
+    </div>
+    <div>
+      <img src="images/50x100.png">
+    </div>
+  </section>
+    <h1>Fade Item slider</h1>
+<section class="fade slider">
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/550x100.png">
+    </div>
+    <div>
+      <img src="images/550x100.png">
+    </div>
+  </section>
+
+  
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <script src="js/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        autoplay:true,
+          adaptiveHeight: true,
+      });
+        $(".horizontal-center").slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            autoplay:true,
+            });
+        
+        $('.multiple-items').slick({
+            centerMode: false,
+            centerPadding: '0',
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay:true,
+            responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                arrows: true,
+                centerPadding: '0',
+                slidesToShow: 2,
+                dots:true,
+                centerMode:false,
+              }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                arrows: true,
+                centerPadding: '0',
+                slidesToShow: 1,
+                dots:true,
+                centerMode:false,
+              }
+            }
+          ]
+        });
+        $('.variable-width').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerPadding: '0',
+            centerMode: true,
+            variableWidth: true,
+            autoplay:true,
+        });
+        $('.fade').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+            autoplay:true,
+        });
+    });
+</script>
+
+</body>
+</html>

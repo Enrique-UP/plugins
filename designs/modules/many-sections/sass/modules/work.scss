@@ -1,0 +1,53 @@
+.work{
+    .workArea{display: flex;flex-direction: column;
+        .image{display: flex;flex-direction: column;height:350px;overflow: hidden;border:1px solid var(--border);border-bottom: none;position:relative;background:var(--grey1);
+            .date, .detail, .category, .details{position: absolute;}
+            .date{top:30px;left:0;background: var(--back3);}
+            .detail{top:30px;right:0;background: var(--head);cursor: pointer;}
+            .date, .detail{padding-top: 7px;padding-bottom: 7px;}
+            .date, .detail, .category{padding-left:10px;padding-right:10px;color:white;line-height: 1;@extend .trans;}
+            .category{bottom:0;left:0;right:0;margin:auto;background: var(--back2);width:min-content;padding-top: 6px;padding-bottom: 6px;white-space: nowrap;}
+            .details{top:100%;left:0;background: var(--grey1);width:100%;height:100%;display: flex;flex-direction:column;@extend .trans;
+                .icon{position:absolute;top:0;right:0;cursor: pointer;width: 17px;height: 50px;background: var(--back1);justify-content: center;display: flex;align-items: center;color: white;}
+                .head{padding:0 15px;font-weight: 900;font-size:20px;display: flex;flex-shrink: 0;border-bottom:1px solid var(--border1);color:var(--border);line-height: 1;height:51px;align-items: center;background: var(--back10);}
+                .about{width:100%;display:flex;text-align:justify;overflow-y: auto;height: 100%;padding:10px 15px;flex-direction:column;
+                    i{height:10px;}
+                }
+                .default{
+                    &::before{content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magni corrupti quibusdam modi saepe! Excepturi ipsum temporibus sequi, repellat culpa eligendi adipisci minima, ducimus rerum omnis esse labore magni dolores non error veniam aliquam animi suscipit reiciendis repellendus dolorum accusantium alias deserunt quasi! Cumque temporibus impedit exercitationem perferendis numquam nostrum, quas et placeat maxime doloremque. Nam culpa, debitis magnam cum, vel magni nemo recusandae quia quidem necessitatibus nisi ratione voluptatibus eum tempore, repudiandae officiis similique explicabo. Hic, beatae reprehenderit.";}
+                }
+                .default1{
+                    &::before{content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magni corrupti quibusdam modi saepe! Excepturi ipsum temporibus sequi, repellat culpa eligendi adipisci minima, ducimus rerum omnis esse labore magni dolores non error veniam aliquam animi suscipit reiciendis repellendus dolorum accusantium alias deserunt quasi!";}
+                }
+            }
+        }
+        .more{background:var(--back10);display:flex;justify-content:space-between;color:white;align-items:center;overflow: hidden;
+            height: 50px;
+            .icon{width: 50px;height: 100%;display: flex;align-items: center;justify-content: center;background: var(--back2);color: white;cursor: pointer;flex-shrink: 0;@extend .trans;
+                &.stop{display: none;}
+            }
+            .name{font-weight: 700;width: 100%;text-align: center;padding: 0 10px;word-break: break-all;line-height: 1;color:var(--border);}
+        }
+        &.active{
+            .image{
+                .details{top:0;}
+                .date{left:-100px;}
+                .detail{right:-100px;}
+                .category{bottom:-100px;}
+            }
+        }
+        &.active1{
+            .image{
+                .date{left:-100px;}
+                .detail{right:-100px;}
+                .category{bottom:-50px;}
+            }
+            .more{
+                .icon{
+                    &.view{display: none;}
+                    &.stop{display: flex;background:var(--back1);}
+                }
+            }
+        }
+    }
+}

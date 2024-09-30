@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <style type="text/css">
+		*{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+		body{font-family: Arial;font-size:14px;}
+		main{display: flex;flex-direction: column;margin:0 auto;max-width:767px;}
+		.orderNow{width:100%;text-decoration: none;background:#eee;text-align: center;font-size:32px;padding:8px 0;position:fixed;bottom:0;left:0;}
+		.orderNow.active{display: none;}
+	</style>
+</head>
+<body>
+    <main style="height:5000px;"></main>
+    <a href="javascript:;" class="orderNow">Order Now</a>
+
+    <script type="text/javascript">
+        function order(){
+            var mainHeight = document.querySelector("main").offsetHeight;
+            console.log("mainHeight = " + mainHeight);
+
+            var order = document.querySelector(".orderNow");
+            var orderTop = order.offsetTop;
+            console.log("orderTop = " + orderTop);
+
+            var scroll = window.scrollY;
+            console.log("scroll = " + scroll);
+
+            var windowHeight = window.innerHeight;
+            console.log("windowHeight = " + windowHeight);
+
+            var top = mainHeight - windowHeight;
+            console.log("top = " + top);
+
+            if(scroll >= top){
+                order.classList.add("active");
+            }else{
+                order.classList.remove("active");
+            }
+        }
+        window.addEventListener("load", order);
+        window.addEventListener("scroll", order);
+        window.addEventListener("resize", order);
+    </script>
+</body>
+</html>

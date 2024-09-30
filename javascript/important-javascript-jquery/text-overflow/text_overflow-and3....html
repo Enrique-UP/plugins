@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add Read More Link</title>
+<style type="text/css">
+	.active{color:red;}
+</style>
+</head>
+<body>
+	
+	<div class="paras">
+		<p class="para">
+			<span>11111 ultrices maximus. Vivamus imperdiet quam ac lobortis 11111. Nam dapibus ullamcorper magna 11111 aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur 11111 vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut 11111 arcu massa non diam. Etiam scelerisque nisi magna. 11111 facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit 11111.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+		<p class="para">
+			<span>22222 euismod nec nulla ultrices maximus. 22222 imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna 22222 aliquam. Vivamus hendrerit molestie neque. Ut 22222 diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, 22222 tristique enim sagittis vitae. Integer eu dignissim lectus, 22222 efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut 22222 arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed 22222 nunc lectus, in maximus dolor ornare sit 22222.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+		<p class="para">
+			<span>33333 maximus. imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna 33333 aliquam. Vivamus hendrerit molestie neque. Ut 33333 diam a purus ultrices facilisis. Suspendisse 33333 tempor dolor, sed tristique enim sagittis vitae. 33333 eu dignissim lectus, commodo efficitur metus. Morbi quis 33333 finibus, interdum sem quis, imperdiet tellus. 33333 blandit vel magna nec elementum. Vivamus tempor, urna 33333 euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam 33333 nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit 33333.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+		<p class="para">
+			<span>44444 ultrices maximus. Vivamus imperdiet quam ac lobortis 44444. Nam dapibus ullamcorper magna 44444 aliquam. Vivamus hendrerit molestie neque. Ut interdum diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, sed tristique enim sagittis vitae. Integer eu dignissim lectus, commodo efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur 44444 vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut 44444 arcu massa non diam. Etiam scelerisque nisi magna. 44444 facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit 44444.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+		<p class="para">
+			<span>55555 euismod nec nulla ultrices maximus. 55555 imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna 55555 aliquam. Vivamus hendrerit molestie neque. Ut 55555 diam a purus ultrices facilisis. Suspendisse molestie tempor dolor, 55555 tristique enim sagittis vitae. Integer eu dignissim lectus, 55555 efficitur metus. Morbi quis justo finibus, interdum sem quis, imperdiet tellus. Curabitur blandit vel magna nec elementum. Vivamus tempor, urna pharetra euismod euismod, elit elit tincidunt sem, ut 55555 arcu massa non diam. Etiam scelerisque nisi magna. Nulla facilisi. Sed 55555 nunc lectus, in maximus dolor ornare sit 55555.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+		<p class="para">
+			<span>66666 maximus. imperdiet quam ac lobortis cursus. Nam dapibus ullamcorper magna 66666 aliquam. Vivamus hendrerit molestie neque. Ut 66666 diam a purus ultrices facilisis. Suspendisse 66666 tempor dolor, sed tristique enim sagittis vitae. 66666 eu dignissim lectus, commodo efficitur metus. Morbi quis 66666 finibus, interdum sem quis, imperdiet tellus. 66666 blandit vel magna nec elementum. Vivamus tempor, urna 66666 euismod euismod, elit elit tincidunt sem, ut consectetur arcu massa non diam. Etiam 66666 nisi magna. Nulla facilisi. Sed pharetra nunc lectus, in maximus dolor ornare sit 66666.</span>
+			<a href="javascript:;">read more</a>
+		</p>
+	</div><!--paras-->
+
+	
+<script>
+	(function(){
+		var p = document.querySelectorAll(".para");
+		var span = document.querySelectorAll(".para > span");
+		var a = document.querySelectorAll(".para > a");
+
+		// create duplicate div for the text copy & created array of li
+		var div = document.createElement("div");
+		div.classList = "content";
+		document.querySelector(".paras").appendChild(div);
+		var uList = document.createElement("ul");
+		document.querySelector(".paras .content").appendChild(uList);
+		document.querySelector(".paras .content").style.display = "none";
+
+		var orgText = [];
+		var dupText = [];
+		var textActive = [];
+		for(var i = 0; i < a.length; i++){
+			(function(i){
+				var originalText = a[i].previousElementSibling.innerText;
+				//console.log(originalText);
+				orgText.push(originalText);
+
+				a[i].previousElementSibling.innerText = originalText.slice(0, 100);
+				var slicingText = a[i].previousElementSibling.innerText;
+				//console.log("slicingText = " + slicingText);
+				dupText.push(slicingText);
+
+				a[i].addEventListener("click", function(){
+					// ============================================================================== //
+					var text = "<li>" + this.previousElementSibling.innerText + "</li>";
+					var ul = document.querySelector(".paras .content > ul");
+					ul.innerHTML += text;
+					var liLength = ul.children.length;
+					//console.log("length = " + liLength);
+					if(liLength >= 2){
+						var decLength = liLength - 2;
+						var htmls = ul.children[decLength].innerHTML;
+						//console.log("htmls = " + htmls);
+					}
+					// ============================================================================== //
+					if(this.classList.contains("active")){
+						this.innerText = "read more";
+						this.classList.remove("active");
+						this.previousElementSibling.innerText = dupText[i];
+					}else{
+						var active = document.querySelectorAll(".para > a.active");
+						for(var j = 0; j < active.length; j++){
+							active[j].innerText = "read more";
+							active[j].classList.remove("active");
+							active[j].previousElementSibling.innerText = htmls;
+						}
+						this.innerText = "read less";
+						this.classList.add("active");
+						this.previousElementSibling.innerText = orgText[i];
+					}
+				});
+			})(i);
+		}
+	})();
+</script>
+</body>
+</html>

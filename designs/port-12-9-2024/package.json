@@ -1,0 +1,13 @@
+{
+  "name": "starting-webpage-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": " sass --watch sass/common/common.scss:css/common.min.css sass/header.scss:css/header.min.css sass/footer.scss:css/footer.min.css sass/pages/index.scss:css/index.min.css --style compressed "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

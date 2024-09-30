@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+
+        /* .linkBtn{background: #333;color: white;display: flex;width:100px;padding:10px 0;justify-content: center;cursor: pointer;} */
+
+        .linkBtnPopup{width:100%;height:100%;padding:30px 15px;overflow-y: auto;background: rgba(0,0,0,0.6);position: fixed;left:0;top:0;z-index: 9999999;opacity: 0;visibility: hidden;transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;}
+        .linkBtnPopup .popuMid{display: table;width:100%;height:100%;}
+        .linkBtnPopup .popuMid .popuMidArea{display: table-cell;vertical-align: middle;width:100%;}
+        /* .linkBtnPopup .popuMid .popuMidArea .box{width:100%;max-width:400px;height:1000px;background:white;margin: auto;border:10px solid brown;border-left:none;border-right:none;position: relative;padding:30px;transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);transition-duration: 0.3s;-webkit-transition-duration: 0.3s;-moz-transition-duration: 0.3s;transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);-webkit-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);-moz-transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);} */
+		.linkBtnPopup .popuMid .popuMidArea .box{width:100%;max-width:400px;height:1000px;background:white;margin: auto;border:10px solid brown;border-left:none;border-right:none;position: relative;padding:30px;transform: translateY(-100%);-webkit-transform: translateY(-100%);-moz-transform: translateY(-100%);transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;visibility: hidden;opacity: 0;}
+        .linkBtnPopup .popuMid .popuMidArea .box > .close{position: absolute;top:0;right:0;font-style: normal;cursor: pointer;width:30px;height:30px;display: flex;justify-content: center;align-items: center;background: red;color:white;}
+        
+        body.active{overflow: hidden;}
+        body.active .linkBtnPopup{opacity: 1;visibility: visible;}
+        /* body.active .linkBtnPopup .popuMid .popuMidArea .box.active{transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);} */
+		body.active .linkBtnPopup .popuMid .popuMidArea .box.active{transform: translateY(0);-webkit-transform: translateY(0);-moz-transform: translateY(0);opacity: 1;visibility: visible;}
+    </style>
+</head>
+<body>
+    <!-- <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a><br>
+    <a class="linkBtn">Show Popup</a> -->
+
+    <div class="linkBtnPopup">
+        <div class="popuMid">
+            <div class="popuMidArea">
+                <div class="box">
+                    <i class="close">&#10006;</i>
+                    Write tags & content here...
+                </div><!--box-->
+            </div><!--popuMidArea-->
+        </div><!--popuMid-->
+    </div><!--linkBtnPopup-->
+    <!-- <script>
+        (function(){
+            //========================================
+            //for only onload showing hide the a tags and const link and uncomment below code of window.
+            window.setTimeout(showBox, 0);
+            //========================================
+
+            const link = document.querySelectorAll(".linkBtn");
+            const body = document.querySelector("body");
+            const popup = document.querySelector(".linkBtnPopup");
+            const box = document.querySelector(".linkBtnPopup .popuMid .popuMidArea .box");
+            const close = document.querySelector(".linkBtnPopup .popuMid .popuMidArea .box > .close");
+            
+            link.forEach((e) => e.addEventListener("click", showBox));
+            close.addEventListener("click", closeBox);
+
+            document.addEventListener("click", closeBox);
+            
+            link.forEach((e) => e.addEventListener("click", outsideClick));
+            box.addEventListener("click", outsideClick);            
+
+            function showBox(){
+                body.classList.add("active");
+                setTimeout(() => box.classList.add("active"), 400);
+                popup.scrollTop = 0;
+            }
+            function closeBox(){
+                box.classList.remove("active");
+                setTimeout(() => body.classList.remove("active"), 400);
+                popup.scrollTop = 0;
+            }
+            function outsideClick(e){
+                e.stopPropagation();
+            }
+        })();
+    </script> -->
+
+
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(function(){
+                window.setTimeout(showBox, 400);
+
+                const body = $("body");
+                const box = $(".linkBtnPopup .popuMid .popuMidArea .box");
+                const close = $(".linkBtnPopup .popuMid .popuMidArea .box > .close");
+                const btns = $(".linkBtn");
+                const popup = $(".linkBtnPopup");
+
+                btns.click(showBox);
+                
+                function showBox(){
+                    body.addClass("active");
+                    window.setTimeout(function(){box.addClass("active")}, 400);
+                    popup.scrollTop(0);
+                }
+
+                close.click(closeBox);
+                function closeBox(){
+                    box.removeClass("active");
+                    window.setTimeout(function(){body.removeClass("active")}, 400);
+                    popup.scrollTop(0);
+                }
+
+                box.click(function(e) {e.stopPropagation()});
+                popup.click(closeBox);
+            });
+        });
+    </script>
+</body>
+</html>

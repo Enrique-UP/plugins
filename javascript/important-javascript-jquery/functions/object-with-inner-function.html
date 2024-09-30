@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <pre>
+        // Create an object:
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+            firstName1: function () {
+                return this.firstName;
+            },
+            lastName1: function () {
+                return this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = person.firstName1() + "<br><br>";
+        document.getElementById("demo").innerHTML += person.lastName1() + "<br><br>";
+        document.getElementById("demo").innerHTML += person.fullName();
+
+
+        // Create an object:
+        const person1 = {
+            fullName : function() {
+                document.write("Write on ducument.");
+            }
+        };
+        person1.fullName();
+
+
+        // Create an object:
+        const person2 = {
+            firstName: "Shane",
+            lastName: "Marsh",
+            id: 5566,
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo1").innerHTML = person2.fullName();
+    </pre>
+
+    <script>
+        // Create an object:
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+            firstName1: function () {
+                return this.firstName;
+            },
+            lastName1: function () {
+                return this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = person.firstName1() + "<br><br>";
+        document.getElementById("demo").innerHTML += person.lastName1() + "<br><br>";
+        document.getElementById("demo").innerHTML += person.fullName();
+
+
+        // Create an object:
+        const person1 = {
+            fullName : function() {
+                document.write("Write on ducument.");
+            }
+        };
+        person1.fullName();
+
+
+        // Create an object:
+        const person2 = {
+            firstName: "Shane",
+            lastName: "Marsh",
+            id: 5566,
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo1").innerHTML = person2.fullName();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css">
+       .MyClass {
+        width:400px;height:400px;background: red;
+        overflow: hidden;
+        transition: transform 0.3s ease-out;
+        transform: scaleY(1);
+        transform-origin: top;}
+        .active {
+            transform: scaleY(0);
+        }
+    </style>
+    <div class="MyClass"></div>
+
+    <script>
+        document.querySelector(".MyClass").addEventListener("click", function(){
+            this.classList.add("active");
+        });
+    </script>
+</body>
+</html>

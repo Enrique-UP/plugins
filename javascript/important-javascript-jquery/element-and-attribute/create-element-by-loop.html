@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        for(let i = 0; i < 10; i++) {
+          const img = document.createElement("img");
+          img.src = "https://picsum.photos/200/301?id=" + i;
+          if(i === 0) {
+            img.style.borderRadius = "50%";
+          }
+          img.classList.add("img-margin");
+          document.body.appendChild(img);
+        }
+    </script>
+</body>
+</html>

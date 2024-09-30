@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.</h1>
+    <h1>In the Pure function the return value is just dependent on the input arguments.</h1>
+<pre>
+function calculateGST( productPrice ) {
+    return productPrice * 2;
+}
+console.log(calculateGST(15))
+
+function operationAdd(a, b){ // A pure function adding two integers passed in it.
+    return a+b;
+}
+
+function operationDivide(a, b){  // Pure function to divide two integers passed in it.
+    return a/b;
+}
+
+function operationMulti(a, b){    // Pure function to multiple two integers passed in it.
+    return a*b;
+}
+console.log(        // Calling all the pure functions
+    operationAdd(2,5),
+    operationMulti(3,2),
+    operationDivide(20,5)
+);
+</pre>
+    <script>
+        function calculateGST( productPrice ) {
+            return productPrice * 2;
+        }
+        console.log(calculateGST(15))
+
+        function operationAdd(a, b){ // A pure function adding two integers passed in it.
+            return a+b;
+        }
+
+        function operationDivide(a, b){  // Pure function to divide two integers passed in it.
+            return a/b;
+        }
+
+        function operationMulti(a, b){    // Pure function to multiple two integers passed in it.
+            return a*b;
+        }
+        console.log(        // Calling all the pure functions
+            operationAdd(2,5),
+            operationMulti(3,2),
+            operationDivide(20,5)
+        );
+    </script>
+</body>
+</html>

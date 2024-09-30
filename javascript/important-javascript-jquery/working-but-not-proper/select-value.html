@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="selectBox">
+        <select>
+            <option data-code="America">AAA</option>
+            <option data-code="Bangladesh">BBB</option>
+            <option data-code="Czech Republic">CCC</option>
+        </select>
+    </div><!--selectBox-->
+
+
+
+    
+
+    <script>
+        document.querySelectorAll(".selectBox").forEach(function(e){
+            e.querySelectorAll("option").forEach(function(f){
+                var texts = f.innerHTML;
+                f.setAttribute("data-text", texts);
+            });
+
+            e.querySelector("select").addEventListener("change", function(g) {
+                console.clear();
+
+                var val = this.options[this.selectedIndex].getAttribute("data-code");
+                console.log("value = " + val);
+
+                var text = this.value || this.options[this.selectedIndex].value;
+                console.log("text = " + text);
+                this.options[this.selectedIndex].text = val;
+
+                // e.querySelector("select").querySelectorAll("option").forEach(function(f){
+                //     var txt = f.getAttribute("data-text");
+                //     f.innerHTML = txt;
+                // });
+            });
+        });
+
+        
+        document.querySelector(".selectBox select").addEventListener("change", function(e) {
+            console.clear();
+
+            var val = this.options[this.selectedIndex].getAttribute("data-code");
+            console.log("value = " + val);
+
+            // console.log("this.options = " + this.options);
+            // console.log("this.selectedIndex = " + this.selectedIndex);
+            // console.log("e.target.value/this.value = " + e.target.value + "/" + this.value);
+            // console.log("this.options[this.selectedIndex].value = " + this.options[this.selectedIndex].value);
+            // console.log("this.options[this.selectedIndex].text = " + this.options[this.selectedIndex].text);
+            // console.log('this.options[this.selectedIndex].getAttribute("data-code") = ' + this.options[this.selectedIndex].getAttribute("data-code"));
+
+            var text = this.value || this.options[this.selectedIndex].value;
+            console.log("text = " + text);
+            this.options[this.selectedIndex].text = val;
+        });
+    </script>
+</body>
+</html>

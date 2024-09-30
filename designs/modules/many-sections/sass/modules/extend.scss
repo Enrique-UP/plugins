@@ -1,0 +1,3 @@
+.trans{transition:0.3s linear;-webkit-transition:0.3s linear;-moz-transition:0.3s linear;transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);-webkit-transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);-moz-transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);}
+.transl{transition:0.3s linear;-webkit-transition:0.3s linear;-moz-transition:0.3s linear;}
+@mixin trans{transition:0.3s linear;-webkit-transition:0.3s linear;-moz-transition:0.3s linear;transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);-webkit-transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);-moz-transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);}

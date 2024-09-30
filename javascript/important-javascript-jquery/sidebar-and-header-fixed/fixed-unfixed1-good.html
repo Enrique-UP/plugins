@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding: 0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;}
+        body > *{width:100%;position: relative;}
+        .one{height:1000px;background:#eee;}
+        .two{height:1000px;position:relative;}
+        .two p{height:500px;background:#333;width:100%;z-index: 9;left:0;}
+        .three{height:4000px;background:#aaa;}
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two">
+        <p></p>
+    </div>
+    <div class="three"></div>
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script>
+        $(window).on("load scroll resize", function(){
+            var ww = $(window).width() || $(document).width();
+
+            // var bodyHeight = $("body").height();
+            // console.log("bodyHeight = " + bodyHeight);
+            
+            var scroll = $(window).scrollTop() || $(document).scrollTop();
+            console.log("scroll = " + scroll);
+
+            var top = $(".two").offset().top;
+            console.log("top = " + top);
+
+            var featureHeight = $(".two").height();
+            console.log("featureHeight = " + featureHeight);
+
+            var p = $(".two p").height();
+            console.log("p = " + p);
+
+            var bottom = top + featureHeight - p;
+            console.log("bottom = " + bottom);
+            
+            if(ww >= 992){
+                if(scroll >= top && scroll <= bottom){
+                    $(".two p").css({
+                        position: "fixed",
+                        top: "0"
+                    });
+                }
+                else if(scroll >= bottom){
+                    $(".two p").css({
+                        position: "absolute",
+                        top: featureHeight - p + "px"
+                    });
+                }
+                else{
+                    $(".two p").css({
+                        position: "static"
+                    });
+                }
+            }
+            if(ww <= 991){
+                $(".two p").removeAttr("style");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo"></div>
+<div>=====================</div>
+<p class="demo"></p>
+
+<p class="demo1"></p>
+
+<p></p>
+
+<script>
+    document.getElementById("demo").innerHTML = document.body.hasAttributes();
+    
+    document.querySelectorAll("p").forEach(function(e){
+        e.innerHTML = e.hasAttributes();
+    });
+</script>
+
+</body>
+</html>
