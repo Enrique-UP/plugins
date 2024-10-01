@@ -26,14 +26,9 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 12. Popup on mobile full width and height show with content & work on close button
 13. Infinite scroll
 14. Scroll change body and other scroll box
-15. Add span on all character, rotate and reverse column. (Scroll for more information)
-16. css grid system add 
+15. css grid system add 
 	:root{--space:16px;}
 	@media (max-width:575px){
 		:root{--space:14px;}
 	}
 	After that automatically change all column etc space correct.
-17. D:\office-work\assets\plugins\javascript\important-javascript-jquery\element-and-attribute\create-element-and-set.html
-	// before
-    // after
-	example
