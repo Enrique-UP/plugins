@@ -8,15 +8,23 @@
 </head>
 
 <body>
-    <script>
-        // JavaScript to illustrate filter() method
+    <pre>
         function isPositive(value) {
             return value > 0;
         }
-
         function func() {
             let filtered = [101, 98, 12, -1, 848].filter(isPositive);
             console.log("Positive elements in array: " + filtered);
+        }
+        func();
+    </pre>
+    <script>
+        function isPositive(value) {
+            return value > 0;
+        }
+        function func() {
+            let filtered = [101, 98, 12, -1, 848].filter(isPositive);
+            console.log(filtered);
         }
         func();
     </script>
