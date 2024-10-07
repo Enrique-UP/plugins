@@ -49,7 +49,40 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
     }
 }
 
-.about{}
+.about{
+    .shadow{position: relative;display:flex;
+        &.left{box-shadow: -30px -30px #ccc;margin:30px 0 0 30px;
+            > span{left: -30px;}
+            &::before{right:-8px;border-right:2px solid red;border-bottom:2px solid red;}
+        }
+        &.right{box-shadow: 30px -30px #ccc;margin: 30px 30px 0 0;
+            .aboutSlider{width:100%;
+                > img{width: 100%;}
+            }
+            &::before{left:-8px;border-left:2px solid red;border-bottom:2px solid red;}
+        }
+        &::before{position: absolute;bottom:-8px;content:"";width:40px;height: 40px;}
+        > span{position: absolute;top: 50%;transform: translateY(-50%);background: brown;color: #fff;padding: 8px 12px;z-index: 1;}
+    }
+    .owl-nav{display:flex;position: absolute;right:8px;bottom:8px;
+        button{background: var(--backTransWhite) !important;width: 36px;height: 36px;display: flex;justify-content: center;align-items: center;color:#fff !important;
+            &:not(:last-child){margin-right: 4px;}
+        }
+    }
+    .textSlider{display: flex;position: relative;width: 100%;height:100%;
+        .tSlider{position: absolute;top:50%;transform: translateY(-50%);background: #ccc;width:calc(100% + 50px);}
+        .txtArea{@extend .fc;padding:50px 80px 94px 80px;
+            > .icon{font-size: 60px;-webkit-text-stroke: 2px blue;-webkit-text-fill-color: transparent;text-stroke: 2px blue;text-fill-color: transparent;line-height: 1;}
+            .head{font-size: 24px;font-weight: bold;text-decoration: underline;text-transform: uppercase;}
+            p{
+                i{display: inline-flex;background: red;color: #fff;font-weight: 800;width: 20px;height: 20px;align-items: center;justify-content: center;cursor: pointer;font-style: normal;}
+            }
+        }
+        .owl-nav{
+            button{border:1px solid #999 !important;color:#999 !important;}
+        }
+    }
+}
 
 .interest{
     img{width: 100%;margin-top: 40px;}

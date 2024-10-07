@@ -5,6 +5,16 @@ $(document).ready(function(){
         loop:true,
         margin:0,
         nav:false,
+        dots:false,
+        items:1
+    });
+    $(".about .left .aboutSlider, .about .tSlider").owlCarousel({
+        autoplay:true,
+        loop:true,
+        margin:0,
+        nav:true,
+        navText: ["<i class='icon'> &#xa004;","<i class='icon'> &#xa005;"],
+        dots:false,
         items:1
     });
     $(".media .videoSlider").owlCarousel({
