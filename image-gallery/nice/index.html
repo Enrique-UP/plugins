@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./jquery.fancybox.min.css">
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .gallery{display: grid;grid-template-columns: repeat(4, 1fr);width: 100%;gap:12px;}
+        .gallery a{display: flex;}
+        .gallery a img{max-width: 100%;}
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <a href="../../sliders/owl-carousel/images/1.jpg"><img src="../../sliders/owl-carousel/images/1.jpg" alt="Chrysanthemum"></a>
+        <a href="../../sliders/owl-carousel/images/2.jpg"><img src="../../sliders/owl-carousel/images/2.jpg" alt="Desert mountains"></a>
+        <a href="../../sliders/owl-carousel/images/3.jpg"><img src="../../sliders/owl-carousel/images/3.jpg" alt="Hydrangeas"></a>
+        <a href="../../sliders/owl-carousel/images/1.jpg"><img src="../../sliders/owl-carousel/images/1.jpg" alt="Chrysanthemum"></a>
+        <a href="../../sliders/owl-carousel/images/2.jpg"><img src="../../sliders/owl-carousel/images/2.jpg" alt="Desert mountains"></a>
+        <a href="../../sliders/owl-carousel/images/3.jpg"><img src="../../sliders/owl-carousel/images/3.jpg" alt="Hydrangeas"></a>
+        <a href="../../sliders/owl-carousel/images/1.jpg"><img src="../../sliders/owl-carousel/images/1.jpg" alt="Chrysanthemum"></a>
+        <a href="../../sliders/owl-carousel/images/2.jpg"><img src="../../sliders/owl-carousel/images/2.jpg" alt="Desert mountains"></a>
+        <a href="../../sliders/owl-carousel/images/3.jpg"><img src="../../sliders/owl-carousel/images/3.jpg" alt="Hydrangeas"></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".gallery a").attr("data-fancybox","mygallery");
+            $(".gallery a").each(function(){
+                $(this).attr("data-caption", $(this).find("img").attr("alt"));
+                $(this).attr("title", $(this).find("img").attr("alt"));
+            });
+            $(".gallery a").fancybox();
+        });
+    </script>
+</body>
+</html>

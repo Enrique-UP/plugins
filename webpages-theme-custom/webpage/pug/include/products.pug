@@ -1,0 +1,22 @@
+mixin products()
+    .col-sm-6.col-lg-4
+        .prtArea 
+            .img 
+                img(src="./images/products/one.jpg", alt="")
+            .text 
+                .head Lorem, ipsum dolor sit ameet lorem
+                .txt Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa Illum ducimus officia esse veniam
+                span Read more 
+                    i.icon &#xa005;
+
+section.section.products
+    .container
+        hgroup 
+            .head Lorem ipsum dolor sit amet
+        .row 
+            +products()
+            +products()
+            +products()
+            +products()
+            +products()
+            +products()
