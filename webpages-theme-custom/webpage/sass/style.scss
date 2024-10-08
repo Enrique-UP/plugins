@@ -12,7 +12,7 @@ body{font-family: 'Times New Roman', Times, serif;
     }
 }
 
-hgroup{width: 100%;display: flex;justify-content: center;align-items:center;text-align: center;margin-bottom:40px;row-gap:12px;flex-direction:column;
+hgroup{width: 100%;display: flex;justify-content: center;align-items:center;text-align: center;margin-bottom:40px;row-gap:16px;flex-direction:column;
     h1, h2, h3, h4, h5, h6{font-size: 30px;font-weight: bold;line-height: 1.2;background: #ccc;padding:8px 16px;}
     p{font-size: 20px;}
     .head{text-align: center;position: relative;padding-bottom:12px;font-size:24px;font-weight:bold;line-height:1.2;
@@ -27,8 +27,8 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
     > *{width:100%;position: relative;}
     > .bg{background: var(--g2);}
 
-    > *:not(.about){display: none;}
-    > .slider{display: none !important;}
+    // > *:not(.teatise){display: none;}
+    // > .slider{display: none !important;}
 }
 
 .slider{background: #eee;
@@ -36,7 +36,6 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
         .txt{width: 60%;padding-inline:90px 30px;display: flex;align-items: center;}
         .txtArea{@extend .fc;background: #ccc;width: 500px;max-width: 100%;border-radius: 0 110px 110px 0;padding: 80px 36px;box-shadow: -30px 30px #ddd;margin-bottom:30px;}
         .head{font-weight: bold;font-size: 48px;}
-        p{}
         .img{display: flex;justify-content: center;width: 40%;
             img{width: 300px;}
         }
@@ -50,7 +49,22 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
 }
 
 .about{
+    .row{row-gap: 80px;}
+    .aboutText{@extend .fc;
+        .head{font-size: 24px;font-weight: bold;line-height: 1.2;margin-bottom: 8px;}
+        > p:not(.head){margin-bottom: 16px;}
+        .quotes{width: 300px;max-width: 100%;background: #eee;margin-bottom: 16px;line-height: 1.3;padding:16px;@extend .fc;
+            p{width: 200px;max-width: 100%;margin-inline: auto;position: relative;padding-left:30px;}
+            .icon{color:brown;font-size: 24px;position: absolute;top:-8px;left:0;}
+        }
+    }
+    .exp{width: 150px;aspect-ratio: 1;background: #ccc;@extend .fc;padding:24px;justify-content:center;margin-bottom:24px;position: relative;
+        &::before{width:24px;height: 24px;position: absolute;right:8px;bottom:8px;content:"";border-right:2px solid red;border-bottom:2px solid red;}
+        i{font-weight: bold;line-height: 1;margin-bottom: 8px;font-size:50px;}
+        span{line-height: 1.3;}
+    }
     .shadow{position: relative;display:flex;
+        &::before{position: absolute;bottom:-8px;content:"";width:40px;height: 40px;}
         &.left{box-shadow: -30px -30px #ccc;margin:30px 0 0 30px;
             > span{left: -30px;}
             &::before{right:-8px;border-right:2px solid red;border-bottom:2px solid red;}
@@ -61,7 +75,6 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
             }
             &::before{left:-8px;border-left:2px solid red;border-bottom:2px solid red;}
         }
-        &::before{position: absolute;bottom:-8px;content:"";width:40px;height: 40px;}
         > span{position: absolute;top: 50%;transform: translateY(-50%);background: brown;color: #fff;padding: 8px 12px;z-index: 1;}
     }
     .owl-nav{display:flex;position: absolute;right:8px;bottom:8px;
@@ -72,15 +85,38 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
     .textSlider{display: flex;position: relative;width: 100%;height:100%;
         .tSlider{position: absolute;top:50%;transform: translateY(-50%);background: #ccc;width:calc(100% + 50px);}
         .txtArea{@extend .fc;padding:50px 80px 94px 80px;
-            > .icon{font-size: 60px;-webkit-text-stroke: 2px blue;-webkit-text-fill-color: transparent;text-stroke: 2px blue;text-fill-color: transparent;line-height: 1;}
-            .head{font-size: 24px;font-weight: bold;text-decoration: underline;text-transform: uppercase;}
-            p{
+            > .icon{font-size: 60px;line-height: 1;margin-bottom: 8px;text-stroke: 2px blue;text-fill-color: transparent;-webkit-text-stroke: 2px blue;-webkit-text-fill-color: transparent;color:blue;}
+            .head{font-size: 22px;font-weight: bold;text-decoration: underline;text-transform: uppercase;margin-bottom: 4px;}
+            p{line-height: 1.5;
                 i{display: inline-flex;background: red;color: #fff;font-weight: 800;width: 20px;height: 20px;align-items: center;justify-content: center;cursor: pointer;font-style: normal;}
             }
         }
         .owl-nav{
             button{border:1px solid #999 !important;color:#999 !important;}
         }
+    }
+}
+
+.teatise{text-align: center;
+    .row{row-gap: 60px;}
+    .imgArea{position: relative;display:flex;width: 100%;
+        &::before{width:24px;height: 24px;position: absolute;content:"";border-bottom:2px solid red;bottom:-8px;}
+        &.left::before{left:-8px;border-left:2px solid red;}
+        &.right::before{right:-8px;border-right:2px solid red;}
+        > img{width: 100%;}
+    }
+    .head{font-weight: bold;font-size: 30px;margin-bottom: 16px;line-height: 1.2;}
+    p{margin-bottom: 16px;}
+    .imgs{border-top:1px solid #ccc;margin-top:32px;padding-top:32px;display:flex;max-width:550px;margin-inline:auto;
+        span{display: flex;align-items: center;flex-direction: column;width: 33.33%;padding-inline:16px;
+            &:not(:last-child){border-right:1px solid #ccc;}
+        }
+        img{width: 80px;margin-bottom: 16px;}
+        i{font-style: normal;line-height: 1.3;}
+    }
+    .imgBox{width: 100%;@extend .fc;background:#eee;padding:16px;
+        img{margin-bottom: 16px;}
+        a{color:#777;}
     }
 }
 

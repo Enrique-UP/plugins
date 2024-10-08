@@ -35,7 +35,7 @@
   -moz-transition: 0.3s cubic-bezier(0, 0, 1, 0.1);
 }
 
-.fc, .gallery .galleryArea, .products .prtArea .text, .about .textSlider .txtArea, .slider .fw .txtArea {
+.fc, .gallery .galleryArea, .products .prtArea .text, .teatise .imgBox, .about .textSlider .txtArea, .about .exp, .about .aboutText .quotes, .about .aboutText, .slider .fw .txtArea {
   display: flex;
   flex-direction: column;
 }
@@ -50,7 +50,6 @@
   justify-content: center;
 }
 .btns a {
-  border-radius: 4px;
   color: #fff;
   padding: 16px 32px;
   line-height: 1.1;
@@ -175,7 +174,7 @@ hgroup {
   align-items: center;
   text-align: center;
   margin-bottom: 40px;
-  row-gap: 12px;
+  row-gap: 16px;
   flex-direction: column;
 }
 hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
@@ -229,12 +228,6 @@ main > * {
 }
 main > .bg {
   background: var(--g2);
-}
-main > *:not(.about) {
-  display: none;
-}
-main > .slider {
-  display: none !important;
 }
 
 .slider {
@@ -299,9 +292,78 @@ main > .slider {
   margin-bottom: 4px;
 }
 
+.about .row {
+  row-gap: 80px;
+}
+.about .aboutText .head {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.about .aboutText > p:not(.head) {
+  margin-bottom: 16px;
+}
+.about .aboutText .quotes {
+  width: 300px;
+  max-width: 100%;
+  background: #eee;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  padding: 16px;
+}
+.about .aboutText .quotes p {
+  width: 200px;
+  max-width: 100%;
+  margin-inline: auto;
+  position: relative;
+  padding-left: 30px;
+}
+.about .aboutText .quotes .icon {
+  color: brown;
+  font-size: 24px;
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+.about .exp {
+  width: 150px;
+  aspect-ratio: 1;
+  background: #ccc;
+  padding: 24px;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+.about .exp::before {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  content: "";
+  border-right: 2px solid red;
+  border-bottom: 2px solid red;
+}
+.about .exp i {
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-size: 50px;
+}
+.about .exp span {
+  line-height: 1.3;
+}
 .about .shadow {
   position: relative;
   display: flex;
+}
+.about .shadow::before {
+  position: absolute;
+  bottom: -8px;
+  content: "";
+  width: 40px;
+  height: 40px;
 }
 .about .shadow.left {
   box-shadow: -30px -30px #ccc;
@@ -329,13 +391,6 @@ main > .slider {
   left: -8px;
   border-left: 2px solid red;
   border-bottom: 2px solid red;
-}
-.about .shadow::before {
-  position: absolute;
-  bottom: -8px;
-  content: "";
-  width: 40px;
-  height: 40px;
 }
 .about .shadow > span {
   position: absolute;
@@ -382,17 +437,23 @@ main > .slider {
 }
 .about .textSlider .txtArea > .icon {
   font-size: 60px;
-  -webkit-text-stroke: 2px blue;
-  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 8px;
   text-stroke: 2px blue;
   text-fill-color: transparent;
-  line-height: 1;
+  -webkit-text-stroke: 2px blue;
+  -webkit-text-fill-color: transparent;
+  color: blue;
 }
 .about .textSlider .txtArea .head {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-decoration: underline;
   text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.about .textSlider .txtArea p {
+  line-height: 1.5;
 }
 .about .textSlider .txtArea p i {
   display: inline-flex;
@@ -409,6 +470,83 @@ main > .slider {
 .about .textSlider .owl-nav button {
   border: 1px solid #999 !important;
   color: #999 !important;
+}
+
+.teatise {
+  text-align: center;
+}
+.teatise .row {
+  row-gap: 60px;
+}
+.teatise .imgArea {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.teatise .imgArea::before {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid red;
+  bottom: -8px;
+}
+.teatise .imgArea.left::before {
+  left: -8px;
+  border-left: 2px solid red;
+}
+.teatise .imgArea.right::before {
+  right: -8px;
+  border-right: 2px solid red;
+}
+.teatise .imgArea > img {
+  width: 100%;
+}
+.teatise .head {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.teatise p {
+  margin-bottom: 16px;
+}
+.teatise .imgs {
+  border-top: 1px solid #ccc;
+  margin-top: 32px;
+  padding-top: 32px;
+  display: flex;
+  max-width: 550px;
+  margin-inline: auto;
+}
+.teatise .imgs span {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33.33%;
+  padding-inline: 16px;
+}
+.teatise .imgs span:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+.teatise .imgs img {
+  width: 80px;
+  margin-bottom: 16px;
+}
+.teatise .imgs i {
+  font-style: normal;
+  line-height: 1.3;
+}
+.teatise .imgBox {
+  width: 100%;
+  background: #eee;
+  padding: 16px;
+}
+.teatise .imgBox img {
+  margin-bottom: 16px;
+}
+.teatise .imgBox a {
+  color: #777;
 }
 
 .interest img {
@@ -652,7 +790,6 @@ main > .slider {
   }
 }
 @media (max-width: 991px) {
-  /* ===== header ===== */
   header .menu {
     display: flex;
   }
@@ -695,14 +832,26 @@ main > .slider {
   header .navArea.active ~ .close {
     display: flex;
   }
-  /* ===== header ===== */
-  /* ======================================================================================================= */
-  /* ===== footer ===== */
-  /* ===== footer ===== */
-  /* ======================================================================================================= */
-  /* ======================================================================================================= */
-  /* ======================================================================================================= */
-  /* ======================================================================================================= */
+  .about .row {
+    row-gap: 0;
+  }
+  .about .textSlider .tSlider {
+    position: static;
+    transform: translateY(0);
+    width: 100%;
+  }
+  .about .aboutText, .about .textSlider {
+    margin-top: 32px;
+  }
+  .about .shadow.right {
+    margin-top: 78px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .teatise .imgArea {
+    max-width: 60%;
+    margin-left: 20%;
+  }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .slider .fw {
@@ -798,6 +947,21 @@ main > .slider {
   }
   .media .videoSlider .owl-nav {
     margin-top: 16px;
+  }
+  .about .textSlider .txtArea {
+    padding: 30px 16px 42px;
+  }
+  .about .textSlider .txtArea > .icon {
+    font-size: 50px;
+  }
+  .teatise .row {
+    row-gap: 32px;
+  }
+  .teatise .imgs img {
+    width: 60px;
+  }
+  .teatise .head {
+    font-size: 24px;
   }
 }
 

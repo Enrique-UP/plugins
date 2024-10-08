@@ -14,7 +14,6 @@
     body.overflowHide::before {left:-100% !important;}
 }
 @media (max-width:991px){
-    /* ===== header ===== */
     header .menu{display: flex;}
     header .navArea{position: fixed;top: 0;left: 100%;height: 100%;z-index: 99999;display: flex;background: #fff;width: 100%;padding:16px 10px;overflow-y: auto;}
     header nav{width: 100%;display: table;}
@@ -24,27 +23,16 @@
     header nav ul > li:not(:last-child){margin-right: 0;margin-bottom: 12px;}
     header .navArea.active{left:0;width: 280px;}
     header .navArea.active ~ .close{display: flex;}
-    /* ===== header ===== */
-
-    /* ======================================================================================================= */ 
-
-    /* ===== footer ===== */
-
-    /* ===== footer ===== */
-
-    /* ======================================================================================================= */ 
-
-
-    /* ======================================================================================================= */ 
-
-
-    /* ======================================================================================================= */ 
-
-
-    /* ======================================================================================================= */ 
+    
+    .about .row{row-gap: 0;}
+    .about .textSlider .tSlider{position: static;transform: translateY(0);width: 100%;}
+    .about .aboutText, .about .textSlider{margin-top: 32px;}
+    .about .shadow.right{margin-top: 78px;}
 
 }
-@media (min-width:768px) and (max-width:991px){}
+@media (min-width:768px) and (max-width:991px){
+    .teatise .imgArea{max-width: 60%;margin-left: 20%;}
+}
 
 @media (max-width:767px){}
 @media (min-width:576px) and (max-width:767px){
@@ -85,4 +73,11 @@
     .media hgroup ~ iframe{height: 280px;margin-bottom: 12px;}
     .media .videoSlider iframe {height: 180px;}
     .media .videoSlider .owl-nav{margin-top: 16px;}
+
+    .about .textSlider .txtArea {padding: 30px 16px 42px;}
+    .about .textSlider .txtArea > .icon {font-size: 50px;}
+
+    .teatise .row {row-gap: 32px;}
+    .teatise .imgs img{width: 60px;}
+    .teatise .head{font-size: 24px;}
 }

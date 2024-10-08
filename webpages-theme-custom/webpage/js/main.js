@@ -73,3 +73,97 @@ function lazyloadimage(){
     });
 }
 $(window).on("load scroll resize", lazyloadimage);
+
+
+(function(){
+    var $p = $(".about .txtArea p");
+    var $span = $(".about .txtArea p > span");
+    var $a = $(".about .txtArea p > i");
+
+    // create duplicate div for the text copy & created array of li
+    var $div = $("<div></div>").addClass("content");
+    $(".about").append($div);
+    var $uList = $("<ul></ul>");
+    $(".about .content").append($uList);
+    $(".about .content").hide();
+
+    var orgText = [];
+    var dupText = [];
+    var textActive = [];
+
+    $a.each(function(i){
+        var $this = $(this);
+        var $prevSibling = $this.prev();
+        var originalText = $prevSibling.text();
+        orgText.push(originalText);
+
+        $prevSibling.text(originalText.slice(0, 100));
+        var slicingText = $prevSibling.text();
+        dupText.push(slicingText);
+
+        $this.on("click", function(){
+            // ============================================================================== //
+            var text = "<li>" + $prevSibling.text() + "</li>";
+            var $ul = $(".about .content > ul");
+            $ul.append(text);
+
+            var liLength = $ul.children().length;
+            if (liLength >= 2) {
+                var decLength = liLength - 2;
+                var htmls = $ul.children().eq(decLength).html();
+            }
+            // ============================================================================== //
+            if ($this.hasClass("active")) {
+                $this.text("+").removeClass("active");
+                $prevSibling.text(dupText[i]);
+            } else {
+                var $active = $(".about .txtArea p > i.active");
+                $active.each(function(){
+                    $(this).text("+").removeClass("active");
+                    $(this).prev().text(htmls);
+                });
+
+                $this.text("-").addClass("active");
+                $prevSibling.text(orgText[i]);
+            }
+        });
+    });
+})();
+
+function isInViewport(element) {
+    const buffer = 50;
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight - buffer && rect.bottom >= buffer;
+}
+function animateNumber($box) {
+    const speed = 40;
+    const counterData = $box.data("value");
+    let current = 0;
+    const $spanTag = $box.find("span");
+    const $iTag = $box.find("i");
+
+    const interval = setInterval(() => {
+        current++;
+        $iTag.html(current + "+");
+        if ($box.has($spanTag).length) {
+            // $spanTag.html(current + "%");
+            // $spanTag.css("--width", current + "%");
+            $spanTag.css("--width", counterData + "%");
+        }
+        if (current >= counterData) {
+            clearInterval(interval);
+        }
+    }, speed);
+}
+(function(events, handler) {
+    events.forEach(event => $(window).on(event, handler));
+})(["load", "scroll", "resize"], function(){
+    const $boxes = $(".counter");
+    $boxes.each(function() {
+        const $box = $(this);
+        if (isInViewport($box[0]) && !$box.attr("data-animated")) {
+            animateNumber($box);
+            $box.attr("data-animated", "true");
+        }
+    });
+});
