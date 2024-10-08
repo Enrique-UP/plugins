@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .slider{display: flex;position: relative;width: 100%;max-width: 600px;margin-inline:auto;}
+        .slider .item{display: none;}
+        .slider .item > img{width: 100%;}
+        .slider .item.active{display: flex;}
+
+        .slider .arrows{display: flex;width: 100%;position: absolute;justify-content: space-between;top:50%;transform:translateY(-50%);}
+        .slider .arrows > i{background: rgba(0, 0, 0, 0.5);width: 40px;height: 40px;display: flex;color:#fff;line-height: 1;align-items: center;justify-content: center;font-weight: bold;font-style: normal;cursor: pointer;user-select: none;-webkit-user-select: none;-moz-user-select: none;}
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="item active">
+            <img src="../../../sliders/owl-carousel/images/1.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../../../sliders/owl-carousel/images/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../../../sliders/owl-carousel/images/3.jpg" alt="">
+        </div>
+    </div>
+    <br>
+    <div class="slider">
+        <div class="item">
+            <img src="../../../sliders/owl-carousel/images/1.jpg" alt="">
+        </div>
+        <div class="item active">
+            <img src="../../../sliders/owl-carousel/images/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../../../sliders/owl-carousel/images/3.jpg" alt="">
+        </div>
+    </div>
+
+    <!--
+        Dots
+        Number of Slides CurrentSlideNumber/TotalSlideNumber
+     -->
+    <script>
+        document.querySelectorAll(".slider").forEach(function(slider){
+            slider.innerHTML += `
+                <div class="arrows">
+                    <i class="prev">&larr;</i>
+                    <i class="next">&rarr;</i>
+                </div>
+            `;
+            slider.querySelectorAll(".arrows > i").forEach(function(arrow){
+                arrow.addEventListener("click", function(){
+                    var totalSlides = slider.querySelectorAll(".item").length;
+                    console.log("totalSlides = " + totalSlides);
+
+                    var index = [...slider.querySelectorAll(".item")].indexOf(slider.querySelector(".item.active"));
+                    console.log("index = " + index);
+                    slider.querySelectorAll(".item").forEach((e) => e.classList.remove("active"));
+                    
+                    if (arrow.classList.contains("next"))  index = (index + 1) % totalSlides;
+                    else index = (index - 1 + totalSlides) % totalSlides;
+                    slider.querySelectorAll(".item")[index].classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

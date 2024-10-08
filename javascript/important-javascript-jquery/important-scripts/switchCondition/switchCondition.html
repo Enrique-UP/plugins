@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<pre>
+    const score = 85;
+    var result;
+    switch (true) {
+        case (score >= 90):
+            result = "A";
+            break;
+        case (score >= 80):
+            result = "B"
+            break;
+        case (score >= 70):
+            result = "C";
+            break;
+        case (score >= 60):
+            result = "D";
+            break;
+        default:
+            result = "F";
+    }
+    document.querySelector("p#demo").innerHTML = result;
+</pre>
+    <p>================</p>
+    <p id="demo"></p>
+    <script>
+        const score = 85;
+        var result;
+        switch (true) {
+            case (score >= 90):
+                result = "A";
+                break;
+            case (score >= 80):
+                result = "B"
+                break;
+            case (score >= 70):
+                result = "C";
+                break;
+            case (score >= 60):
+                result = "D";
+                break;
+            default:
+                result = "F";
+        }
+        document.querySelector("p#demo").innerHTML = result;
+    </script>
+</body>
+</html>

@@ -10,10 +10,11 @@ See buttons/buttons1.html
 
 img{mix-blend-mode: color-dodge;} // white
 
-&star;
-&starf;
+Stars:- &star; &starf;
+Quotes:- &rdquo; &rsquo; &ldquo;
+Arrows:- &larr; &rarr;
 
-&rdquo; &rsquo; &ldquo;
+Arrows:- &#10094; &#10095;
 ===================================================================================================================================
 position sticky is not worked if main element has overflow:hidden;
 use on main tag overflow:clip except overflow:hidden
