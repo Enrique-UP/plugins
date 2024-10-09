@@ -18,11 +18,14 @@
 }
 
 :root {
-  --c1:#011f3d;
-  --c3:#00BB98;
-  --c4:#0c67c4;
-  --c5:#ffe701;
-  --c6:#ff0001;
+  --c1:#dfd6ad;
+  --c2:#caa74f;
+  --c3:#718290;
+  --c4:#a2bd85;
+  --c5:#74ab9e;
+  --c6:#346892;
+  --c7:#e0deb5;
+  --c8:#9c926f;
   --g1:#ccc;
   --g2:#eee;
   --backTrans:rgba(0,0,0,0.75);
@@ -56,13 +59,7 @@
   font-weight: bold;
 }
 .btns a.btn1 {
-  background: var(--c3);
-}
-.btns a.btn2 {
-  background: var(--c4);
-}
-.btns a.btn3 {
-  background: var(--c5);
+  background: var(--c8);
 }
 .btns a:active, .btns a:hover, .btns a:focus {
   background: var(--c6);
@@ -119,7 +116,21 @@ header nav ul > li:not(:last-child) {
   margin-right: 32px;
 }
 header nav ul > li > a {
-  color: #333;
+  color: inherit;
+}
+header nav ul > li > a.active, header nav ul > li > a:hover, header nav ul > li > a:active, header nav ul > li > a:focus {
+  color: var(--c2);
+}
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9999;
+  border-bottom: 1px solid #ccc;
+}
+header.fixed .logo {
+  width: 130px;
 }
 
 footer .contact {
@@ -148,7 +159,8 @@ footer .copy {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--c3);
 }
 body::before {
   width: 100%;
@@ -181,8 +193,9 @@ hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
   font-size: 30px;
   font-weight: bold;
   line-height: 1.2;
-  background: #ccc;
+  background: var(--c8);
   padding: 8px 16px;
+  color: #fff;
 }
 hgroup p {
   font-size: 20px;
@@ -227,11 +240,11 @@ main > * {
   position: relative;
 }
 main > .bg {
-  background: var(--g2);
+  background: #eee;
 }
 
 .slider {
-  background: #eee;
+  background: var(--c1);
 }
 .slider .fw {
   display: flex;
@@ -245,7 +258,7 @@ main > .bg {
   align-items: center;
 }
 .slider .fw .txtArea {
-  background: #ccc;
+  background: var(--c7);
   width: 500px;
   max-width: 100%;
   border-radius: 0 110px 110px 0;
@@ -256,6 +269,7 @@ main > .bg {
 .slider .fw .head {
   font-weight: bold;
   font-size: 48px;
+  color: var(--c2);
 }
 .slider .fw .img {
   display: flex;
@@ -320,7 +334,7 @@ main > .bg {
   padding-left: 30px;
 }
 .about .aboutText .quotes .icon {
-  color: brown;
+  color: var(--c2);
   font-size: 24px;
   position: absolute;
   top: -8px;
@@ -329,7 +343,7 @@ main > .bg {
 .about .exp {
   width: 150px;
   aspect-ratio: 1;
-  background: #ccc;
+  background: var(--c1);
   padding: 24px;
   justify-content: center;
   margin-bottom: 24px;
@@ -342,8 +356,8 @@ main > .bg {
   right: 8px;
   bottom: 8px;
   content: "";
-  border-right: 2px solid red;
-  border-bottom: 2px solid red;
+  border-right: 2px solid var(--c2);
+  border-bottom: 2px solid var(--c2);
 }
 .about .exp i {
   font-weight: bold;
@@ -366,7 +380,7 @@ main > .bg {
   height: 40px;
 }
 .about .shadow.left {
-  box-shadow: -30px -30px #ccc;
+  box-shadow: -30px -30px var(--c1);
   margin: 30px 0 0 30px;
 }
 .about .shadow.left > span {
@@ -374,11 +388,11 @@ main > .bg {
 }
 .about .shadow.left::before {
   right: -8px;
-  border-right: 2px solid red;
-  border-bottom: 2px solid red;
+  border-right: 2px solid var(--c2);
+  border-bottom: 2px solid var(--c2);
 }
 .about .shadow.right {
-  box-shadow: 30px -30px #ccc;
+  box-shadow: 30px -30px var(--c1);
   margin: 30px 30px 0 0;
 }
 .about .shadow.right .aboutSlider {
@@ -389,14 +403,14 @@ main > .bg {
 }
 .about .shadow.right::before {
   left: -8px;
-  border-left: 2px solid red;
-  border-bottom: 2px solid red;
+  border-left: 2px solid var(--c2);
+  border-bottom: 2px solid var(--c2);
 }
 .about .shadow > span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: brown;
+  background: var(--c8);
   color: #fff;
   padding: 8px 12px;
   z-index: 1;
@@ -439,11 +453,11 @@ main > .bg {
   font-size: 60px;
   line-height: 1;
   margin-bottom: 8px;
-  text-stroke: 2px blue;
+  text-stroke: 2px var(--c2);
   text-fill-color: transparent;
-  -webkit-text-stroke: 2px blue;
+  -webkit-text-stroke: 2px var(--c2);
   -webkit-text-fill-color: transparent;
-  color: blue;
+  color: var(--c2);
 }
 .about .textSlider .txtArea .head {
   font-size: 22px;
@@ -457,7 +471,7 @@ main > .bg {
 }
 .about .textSlider .txtArea p i {
   display: inline-flex;
-  background: red;
+  background: var(--c2);
   color: #fff;
   font-weight: 800;
   width: 20px;
@@ -488,16 +502,16 @@ main > .bg {
   height: 24px;
   position: absolute;
   content: "";
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid var(--c2);
   bottom: -8px;
 }
 .teatise .imgArea.left::before {
   left: -8px;
-  border-left: 2px solid red;
+  border-left: 2px solid var(--c2);
 }
 .teatise .imgArea.right::before {
   right: -8px;
-  border-right: 2px solid red;
+  border-right: 2px solid var(--c2);
 }
 .teatise .imgArea > img {
   width: 100%;
@@ -602,7 +616,7 @@ main > .bg {
   font-size: 14px;
   list-style: none;
   padding: 7px 15px;
-  background: #eee;
+  background: #aaa;
   margin: 0 4px 4px;
   border-radius: 4px;
 }
@@ -610,7 +624,8 @@ main > .bg {
   display: none;
 }
 .gallery .labels label.active {
-  background: #ccc;
+  background: var(--c2);
+  color: #fff;
 }
 .gallery .imageGallery {
   display: grid;
@@ -829,8 +844,15 @@ main > .bg {
     left: 0;
     width: 280px;
   }
+  header .navArea.active ~ .menu {
+    display: none;
+  }
   header .navArea.active ~ .close {
     display: flex;
+  }
+  header.fixed:has(.active) {
+    background: none;
+    border-bottom: none;
   }
   .about .row {
     row-gap: 0;

@@ -35,7 +35,7 @@ $(document).ready(function () {
     $("div.main.all_inner_page div.header_bottom div.logo_nav_area a.logo_area > img").attr("src", "images/logo-white.png");
 });
 $(document).ready(function () {
-    $(window).scroll(function () {
+    $(window).on("load scroll resize", function(){
         var scroll = $(window).scrollTop();
         if (scroll >= 100) {
             $("div.header_bottom").addClass("active");

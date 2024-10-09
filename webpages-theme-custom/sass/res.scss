@@ -22,7 +22,9 @@
     header nav ul > li > a{font-size: 20px;}
     header nav ul > li:not(:last-child){margin-right: 0;margin-bottom: 12px;}
     header .navArea.active{left:0;width: 280px;}
+    header .navArea.active ~ .menu{display: none;}
     header .navArea.active ~ .close{display: flex;}
+    header.fixed:has(.active){background: none;border-bottom: none;}
     
     .about .row{row-gap: 0;}
     .about .textSlider .tSlider{position: static;transform: translateY(0);width: 100%;}

@@ -32,3 +32,5 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 		:root{--space:14px;}
 	}
 	After that automatically change all column etc space correct.
+16. Work on this folder D:\office-work\assets\plugins\javascript\important-javascript-jquery\same-page-linking-by-js-go-location
+	if section offsetTop == 100 then active its link of header

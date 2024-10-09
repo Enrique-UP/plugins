@@ -1,5 +1,18 @@
 $(document).ready(function(){
     new WOW().init();
+
+    $(window).on("load scroll resize", function(){
+        var scroll = $(window).scrollTop();
+        if (scroll >= 100) $("header").addClass("fixed");
+        else $("header").removeClass("fixed");
+    });
+    $("header nav ul > li > a").click(function(){
+        $("header nav ul > li > a").removeClass("active");
+        $(this).addClass("active");
+        var top = $($(this).attr("href")).offset().top;
+        $("html, body").animate({ scrollTop: top - 100 }, "fast");
+    });
+
     $(".slider").owlCarousel({
         autoplay:true,
         loop:true,
@@ -51,7 +64,7 @@ $(document).ready(function(){
     
 });
 
-function lazyloadimage(){
+$(window).on("load scroll resize", function(){
     var window_height = $(window).height();
     var scroll = $(window).scrollTop();
     var window_bottom = window_height + scroll;
@@ -71,8 +84,7 @@ function lazyloadimage(){
             $(this).removeAttr("data-style");
         }
     });
-}
-$(window).on("load scroll resize", lazyloadimage);
+});
 
 
 (function(){
