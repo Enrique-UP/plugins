@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Review Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 auto; /* Prevent shrinking */
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #007aff; /* Slide background color */
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 10px; /* Space between slides */
+            height: 100px; /* Adjust height as needed */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                min-width: calc(50% - 10px); /* For 2 slides on tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                min-width: 100%; /* For 1 slide on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide">Review 1</div>
+        <div class="slide">Review 2</div>
+        <div class="slide">Review 3</div>
+        <div class="slide">Review 4</div>
+        <div class="slide">Review 5</div>
+        <div class="slide">Review 6</div>
+        <div class="slide">Review 7</div>
+        <div class="slide">Review 8</div>
+        <div class="slide">Review 9</div>
+        <div class="slide">Review 10</div>
+    </div>
+    <button class="prev" id="prev">❮</button>
+    <button class="next" id="next">❯</button>
+</div>
+
+<script>
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function calculateSlidesToShow() {
+        if (window.innerWidth > 768) {
+            return 3; // Show 3 slides on desktop
+        } else if (window.innerWidth > 480) {
+            return 2; // Show 2 slides on tablet
+        } else {
+            return 1; // Show 1 slide on mobile
+        }
+    }
+
+    function updateSlider() {
+        const slidesToShow = calculateSlidesToShow();
+        const slideWidth = 100 / slidesToShow; // Calculate width based on slides to show
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+    }
+
+    function nextSlide() {
+        const slidesToShow = calculateSlidesToShow();
+        currentIndex = (currentIndex + 1) % (totalSlides - slidesToShow + 1);
+        updateSlider();
+    }
+
+    function prevSlide() {
+        const slidesToShow = calculateSlidesToShow();
+        currentIndex = (currentIndex - 1 + (totalSlides - slidesToShow + 1)) % (totalSlides - slidesToShow + 1);
+        updateSlider();
+    }
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    window.addEventListener('resize', updateSlider);
+
+    // Initial slider setup
+    updateSlider();
+</script>
+
+</body>
+</html>
