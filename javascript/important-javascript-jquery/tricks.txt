@@ -208,7 +208,16 @@ document.querySelectorAll("main .fw").forEach((e) => e.parentElement.classList.a
 set margin-bottom of col parent col
 document.querySelectorAll(".row [class*=col-] [class*=col-]").forEach((e) => e.parentElement.closest("[class*=col-]").style.marginBottom = 0);
 =================================================================================================================================================
+if(index == totalSlides) index = 0;
+else index = index + 1;
 
+or
+
+currentIndex = (currentIndex === totalSlides) ? 0 : currentIndex + 1;
+
+or
+
+currentIndex = (currentIndex + 1) % items.length;
 =================================================================================================================================================
 
 =================================================================================================================================================
