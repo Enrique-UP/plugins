@@ -58,32 +58,31 @@ $(document).ready(function(){
             $("header .navArea").removeClass("active");
         });
     });
-
     $("footer .copy > span").text(new Date().getFullYear());
 
     
 });
 
-$(window).on("load scroll resize", function(){
-    var window_height = $(window).height();
-    var scroll = $(window).scrollTop();
-    var window_bottom = window_height + scroll;
-    
-    $("img[data-src], [data-style]").each(function(){
-        var animate_height = $(this).height();
-        var animate_top = $(this).offset().top;
-        var animate_bottom = animate_height + animate_top;
-    
-        if(animate_top <= window_bottom && animate_bottom >= scroll){
-            var srcValue = $(this).attr("data-src");
-            $(this).attr("src", srcValue);
-            $(this).removeAttr("data-src");
-
-            var styleValue = $(this).attr("data-style");
-            $(this).attr("style", styleValue);
-            $(this).removeAttr("data-style");
-        }
-    });
+$(document).ready(function() {
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    function lazyLoadImages() {
+        $('img[data-src]').each(function() {
+            if (isElementInViewport(this)) {
+                var dataSrc = $(this).attr('data-src');
+                if (dataSrc) $(this).attr('src', dataSrc).removeAttr('data-src');
+            }
+        });
+    }
+    $(window).on('scroll resize', lazyLoadImages);
+    lazyLoadImages();
 });
 
 

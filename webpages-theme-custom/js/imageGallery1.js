@@ -7,6 +7,13 @@ function slidesShow(){
 
     $(".gallery .slidesShow > i.prev").show();
     $(".gallery .slidesShow > i.next").show();
+
+    $(this).closest(".imageGallery").find("img").each(function(){
+        if ($(this).attr("data-src")) {
+            $(this).attr("src", $(this).attr("data-src"));
+            $(this).removeAttr("data-src");
+        }
+    });
 };
 
 $(".gallery .slidesShow > i.prev").on("click", prev);
