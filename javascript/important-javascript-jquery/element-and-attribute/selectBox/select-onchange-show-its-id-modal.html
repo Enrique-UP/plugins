@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.6;padding:50px;}
+        select, button{padding:8px 16px;}
+
+        .modal{display: none;}
+        .modal.active{display: block;}
+    </style>
+</head>
+<body>
+    <select>
+        <option selected>Select</option>
+        <option data-id="#one">One</option>
+        <option data-id="#two">Two</option>
+        <option data-id="#three">Three</option>
+        <option data-id="#four">Four</option>
+    </select>
+
+    <br><br>
+
+    <select>
+        <option selected>Select</option>
+        <option data-id="#five">Five</option>
+        <option data-id="#six">Six</option>
+        <option data-id="#seven">Seven</option>
+        <option data-id="#eight">Eight</option>
+    </select>
+
+    <br><br>
+
+    <div class="modal" id="one">One</div>
+    <div class="modal" id="two">Two</div>
+    <div class="modal" id="three">Three</div>
+    <div class="modal" id="four">Four</div>
+    <div class="modal" id="five">Five</div>
+    <div class="modal" id="six">Six</div>
+    <div class="modal" id="seven">Seven</div>
+    <div class="modal" id="eight">Eight</div>
+
+    <br><br>
+    <button>Pop Up</button>
+
+    <!-- <script>
+        document.querySelectorAll("select").forEach(function(select) {
+            select.addEventListener("change", function() {
+                document.querySelectorAll(".modal").forEach((modal) => modal.classList.remove("active"));
+                var targetId = select.options[select.selectedIndex].getAttribute("data-id");
+                if (targetId) document.querySelector(targetId).classList.add("active");
+            });
+        });
+    </script> -->
+    <script>
+        document.querySelectorAll("select").forEach(function(select) {
+            select.addEventListener("change", function() {
+                document.querySelectorAll(".modal").forEach((modal) => modal.classList.remove("active"));
+                var targetId = select.options[select.selectedIndex].getAttribute("data-id");
+                if (targetId) document.querySelector("button").dataset.id = targetId;
+            });
+        });
+        document.querySelector("button").addEventListener("click", function(){
+            var targetId = this.getAttribute("data-id");
+            if (targetId) document.querySelector(targetId).classList.add("active");
+        });
+    </script>
+</body>
+</html>
