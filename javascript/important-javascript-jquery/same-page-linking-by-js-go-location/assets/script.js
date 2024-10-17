@@ -9,7 +9,7 @@ document.querySelectorAll("a").forEach((e) => {
 
         e.addEventListener("click", function(t){
             if(document.contains(document.querySelector("#" + valueAfterHash))){
-                t.preventDefault();
+                // t.preventDefault();
                 scrollUp(e);
             }
         });
@@ -25,5 +25,12 @@ function scrollUp(e){
     document.querySelectorAll(e.getAttribute("data-link")).forEach((f) => top = f.offsetTop);
     var headerHeight = document.querySelector("header").offsetHeight;
     // console.log("top = " + top);
-    window.scrollTo(0, top - headerHeight);
+    
+    setTimeout(function() {
+        window.scrollTo({
+            top: top - headerHeight,
+            behavior: 'smooth'
+        });
+    }, 10);
+    
 }
