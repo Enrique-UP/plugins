@@ -57,10 +57,11 @@
         //     onresize: addRemove
         // });
 
-
+        /* ======================================================================== important ======================================================================== */ 
         (function(events, index) {
             events.forEach(event => window.addEventListener(event, index));
         })(["load", "scroll", "resize"], addRemove);
+        /* ======================================================================== important ======================================================================== */ 
 
         // (function(e, i) {
         //     e.forEach(f => window.addEventListener(f, i));

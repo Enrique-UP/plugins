@@ -6,6 +6,7 @@ main header{min-height: 70px;position: sticky;top:0;}
 main header .container{display: flex;align-items: center;flex-direction: row;justify-content: center;}
 main header a{color:#fff;}
 main header a:not(:last-child){margin-right: 16px;}
+main header a.active{color:cyan;}
 
 .banner{background: #aaa;color:#fff;height: 400px;}
 
