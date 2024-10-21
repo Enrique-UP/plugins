@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select class="selectBox">
+        <option data-code="Select" selected>Select</option>
+        <option data-code="America">+1</option>
+        <option data-code="Bangladesh">+2</option>
+        <option data-code="Czech Republic">+3</option>
+    </select>
+    <input type="text" placeholder="+1 000 000 0000" />
+    <br><br><br>
+    <select class="selectBox">
+        <option data-code="Select" selected>Select</option>
+        <option data-code="America">+1</option>
+        <option data-code="Bangladesh">+2</option>
+        <option data-code="Czech Republic">+3</option>
+    </select>
+    <input type="text" placeholder="+1 000 000 0000" />
+    <br><br><br>
+    <select class="selectBox">
+        <option data-code="Select" selected>Select</option>
+        <option data-code="America">+1</option>
+        <option data-code="Bangladesh">+2</option>
+        <option data-code="Czech Republic">+3</option>
+    </select>
+    <input type="text" placeholder="+1 000 000 0000" />
+
+
+
+    
+
+    <script>
+        document.querySelectorAll(".selectBox").forEach(function(e){
+            e.querySelectorAll("option").forEach((f) => f.setAttribute("data-html", f.innerHTML));
+            
+            // e.nextElementSibling.value = "";
+            // e.querySelector("option[selected]").setAttribute("data-code", e.nextElementSibling.placeholder);
+
+            e.addEventListener("change", function(g) {
+                console.clear();
+
+                e.querySelectorAll("option").forEach((f) => f.innerHTML = f.getAttribute("data-html"));
+                
+                var val = e.options[e.selectedIndex].getAttribute("data-code");
+                console.log("value = " + val);
+
+                console.log("e.selectedIndex = " + e.selectedIndex);
+                console.log("e.target.value/e.value = " /*+ e.target.value*/ + "/" + e.value);
+
+                var text = e.value || e.options[e.selectedIndex].value;
+                console.log("text = " + text);
+                e.options[e.selectedIndex].text = val;
+
+                // const nextInput = e.nextElementSibling;
+                // nextInput.value = "sfda";
+                // if (nextInput && nextInput.tagName === "INPUT") {
+                //     nextInput.value = val;
+                // }
+            });
+        });
+    </script>
+</body>
+</html>
