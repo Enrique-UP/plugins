@@ -22,7 +22,7 @@
         $(document).ready(function () {
             var srcIframe = $("iframe").attr("src");
             $(".btn").on("click", function () {
-                $("iframe").attr("src", srcIframe + "?autoplay=1"); // "&autoplay=1"
+                $("iframe").attr("src", srcIframe + "?autoplay=1"); // "&autoplay=1" // ?autoplay=1&mute=1
             });
             $(".stop").on("click", function () {
                 $("iframe").attr("src", srcIframe);
