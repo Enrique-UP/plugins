@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Span Wrapper</title>
+</head>
+<body>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ad.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor, sit amet consectetur adipisicing.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet consectetur.</div>
+
+    <hr>
+
+    <section>Lorem</section>
+    <section>Lorem ipsum</section>
+    <section>Lorem ipsum dolor</section>
+    <section>Lorem ipsum dolor sit</section>
+    <section>Lorem ipsum dolor sit amet</section>    
+
+    <script>
+        document.querySelectorAll("div").forEach(function(e){
+            let words = e.innerHTML.split(" ");
+            let spannedWords = words.map(word => `<span>${word}</span>`);
+            let result = spannedWords.join(" ");
+            e.innerHTML = result;
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('section').forEach(function(e) {
+                var characters = e.textContent.split('');
+                var wrappedText = characters.map(function(char) {
+                    return '<span>' + char + '</span>';
+                }).join('');
+                e.innerHTML = wrappedText;
+            });
+        });
+    </script>
+</body>
+</html>

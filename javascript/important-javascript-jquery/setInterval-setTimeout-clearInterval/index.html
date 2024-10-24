@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var counter = 3;
+        var newYearCountdown = setInterval(function () {
+            document.querySelector("#demo").innerHTML = counter + "<br>";
+            counter--;
+            if (counter === -1) {
+                document.querySelector("#demo").innerHTML = "HAPPY NEW YEAR!!";
+                clearInterval(newYearCountdown);
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

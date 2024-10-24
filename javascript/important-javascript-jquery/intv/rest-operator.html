@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<pre>
+var a = "Hello" + 1 + 2 + 3; // for calculation other numbers this is the work of rest operator.
+
+const numbers = ["Hello", 1, 2, 3, 4, 5];
+const [one, two, ...rest] = numbers;
+
+document.write(`a= ${a} <br />`);
+document.write(`${one} <br />`);
+document.write(`${two} <br />`);
+document.write(`${rest} <br />`);
+
+let sum = 0;
+for(let i in rest){
+    sum += rest[i];
+}
+document.write(`<b>Total:- ${sum}</b><br />`);
+
+
+
+
+</pre>
+<script>
+var a = "Hello" + 1 + 2 + 3; // for calculation other numbers this is the work of rest operator.
+
+const numbers = ["Hello", 1, 2, 3, 4, 5];
+const [one, two, ...rest] = numbers;
+
+document.write(`a= ${a} <br />`);
+document.write(`${one} <br />`);
+document.write(`${two} <br />`);
+document.write(`${rest} <br />`);
+
+let sum = 0;
+for(let i in rest){
+    sum += rest[i];
+}
+document.write(`<b>Total:- ${sum}</b><br />`);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+
+    <pre>
+        // function info(){
+        //     return 9999;
+        // }
+
+        // function info(){
+        //     return "Hello!";
+        // }
+
+        // function info(){  
+        //     var a = 100;
+        //     return a;  
+        // }
+
+        function info(){
+            return `
+                <p>
+                    <b>Element</b>
+                    <i>Here...</i>
+                </p>
+            `
+        };
+
+        // function elements(){
+        //     demo.innerHTML = info();
+        // }
+        // elements(info);
+
+        demo.innerHTML = info();
+
+        
+        
+
+        function inner(e) {
+            return 'hello ' + e;
+        }
+        function outer(a, b) {
+            document.write(b(a));
+        }
+        outer('Geeks!', inner); // hello Geeks!
+    </pre>
+    <script>
+        // function info(){
+        //     return 9999;
+        // }
+
+        // function info(){
+        //     return "Hello!";
+        // }
+
+        // function info(){  
+        //     var a = 100;
+        //     return a;  
+        // }
+
+        function info(){
+            return `
+                <p>
+                    <b>Element</b>
+                    <i>Here...</i>
+                </p>
+            `
+        };
+
+        // function elements(){
+        //     demo.innerHTML = info();
+        // }
+        // elements(info);
+
+        demo.innerHTML = info();
+    </script>
+    <script>
+        function inner(e) {
+            return 'hello ' + e;
+        }
+        function outer(a, b) {
+            document.write(b(a));
+        }
+        outer('Geeks!', inner); // hello Geeks!
+    </script>
+</body>
+</html>

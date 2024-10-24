@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+
+       
+      
+
+        <title>jquery.typer.js | The typewriter effect</title>
+    </head>
+
+    <body>
+        <div id="typer">foo</div>
+
+        <script src="../jquery-2.2.4.min.js"></script>
+        <script src='jquery.typer.js'></script>
+        <script>
+            var win = $(window),
+                foo = $('#typer');
+
+            foo.typer(['Anyone is <b>awesome</b>!', 'Foo is <span>not</span> equal to bar.', 1337]);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        :root{
+            --c1:red;
+        }
+        *{padding:0;margin:0;box-sizing: border-box;}
+        ol{padding-left:30px;}
+
+        .calc {display:flex;width: calc(100% - 200px);border: 1px solid black;background-color: yellow;padding: 5px;}
+        .max{background-color: yellow;height: 100px;width: max(50%, 300px);display:flex;}
+        .min{background-color: yellow;height: 100px;width: min(50%, 300px);}
+        .var{color: var(--c1);}
+        .attr::after{content:attr(data-text);}
+    </style>
+</head>
+<body>
+    <h1>Math Functions</h1>
+    <ol>
+        <li>var() Inserts the value of a custom property</li>
+        <li>attr()	Returns the value of an attribute of the selected element</li>
+        <li>calc()	Allows you to perform calculations to determine CSS property values</li>
+        <li>min()	Uses the smallest value, from a comma-separated list of values, as the property value</li>
+        <li>max()	Uses the largest value, from a comma-separated list of values, as the property value</li>
+        <li>conic-gradient()	Creates a conic gradient</li>
+        <li>counter()	Returns the current value of the named counter</li>
+        <li>cubic-bezier()	Defines a Cubic Bezier curve</li>
+        <li>hsl()	Defines colors using the Hue-Saturation-Lightness model (HSL)</li>
+        <li>hsla()	Defines colors using the Hue-Saturation-Lightness-Alpha model (HSLA)</li>
+        <li>linear-gradient()	Creates a linear gradient</li>
+        <li>radial-gradient()	Creates a radial gradient</li>
+        <li>repeating-conic-gradient()	Repeats a conic gradient</li>
+        <li>repeating-linear-gradient()	Repeats a linear gradient</li>
+        <li>repeating-radial-gradient()	Repeats a radial gradient</li>
+        <li>rgb()	Defines colors using the Red-Green-Blue model (RGB)</li>
+        <li>rgba()	Defines colors using the Red-Green-Blue-Alpha model (RGBA)</li>
+    </ol><br><br>
+    <div class="var">color:var(--c1);</div>
+    <br>
+    <div class="attr" data-text="content:attr(data-text)"></div>
+    <br>
+    <div class="calc">calc(100% - 200px);</div>
+    <br />
+    <div class="min">width: min(50%, 300px);</div>
+    <br>
+    <div class="max">width: max(50%, 300px);</div>
+</body>
+</html>

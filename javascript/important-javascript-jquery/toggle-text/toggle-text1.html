@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<p><button>Click Me</button></p>
+<p><button>Click Me</button></p>
+<p><button>Click Me</button></p>
+
+
+<script>
+var w = window || document;
+w.addEventListener("load", function(){
+	var button = document.querySelectorAll("button");
+    for(var i = 0; i < button.length; i++){
+        button[i].addEventListener("click", function(){
+          if (this.innerHTML === "Click Me") {
+            this.innerHTML = "Clicked";
+          } else {
+            this.innerHTML = "Click Me";
+          }
+      });
+    }
+});
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+Learn 
+Call, apply & Bind in JavaScript - Front End Interview 🔥 Episode 4 - In 20 Minutes
+https://www.youtube.com/watch?v=SaWTn1ZNTpo
+Async/Await, Promises, Callbacks - Async JavaScript Crash Course ( in One Video in Hindi )
+https://www.youtube.com/watch?v=bWaucYA1YRI
+
+
+
+
+01. Array methods learn from w3schools.com
+02. String learn
+		I.   String methods
+		II.  String search methods
+		III. String template literals
+03. Number Methods
+04. Math Methods
+
+05. onscroll => viewport video => play/otherwise pause
+06. Video play on click after scroll unviewport area then pause
+07. Steper like akountobooks.com
+
+08. Custom image slider with all functionality (width slider not fade)
+    8.1. Custom image slider with all functionality (testimonial slider)
+09. Text slider with array
+10. Display none and block transition not work
+11. Parameters function
+12. Popup on mobile full width and height show with content & work on close button
+13. Infinite scroll
+14. Scroll change body and other scroll box
+15. css grid system add
+	:root{--space:16px;}
+	@media (max-width:575px){
+		:root{--space:14px;}
+	}
+	After that automatically change all column etc space correct.
+16. Work on this folder D:\office-work\assets\plugins\javascript\important-javascript-jquery\same-page-linking-by-js-go-location
+	If section offsetTop == 100 then active its link of header

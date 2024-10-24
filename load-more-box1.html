@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        div { display:none; }
+    </style>
+</head>
+<body>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <div>Content</div>
+    <a href="#" id="load">Load More</a>
+
+
+    <script src="./jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("div").slice(0, 10).show();
+            $("#load").click(function(e){
+                e.preventDefault();
+                $("div:hidden").slice(0, 10).show();
+                if($("div:hidden").length == 0){
+                    alert("No more divs");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

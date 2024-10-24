@@ -1,0 +1,26 @@
+If the transition is woking only mouseIn and not working proper on mouseOut then apply transition on both element and its hover;
+p a::before{transition:all 0.3s linear;transition-delay: 0s;}
+p a:hover::before{width:100%;transition-delay: 0.3s;}
+See buttons/buttons1.html
+===================================================================================================================================
+<span class="phone">&#128222;</span>
+.phone{filter: brightness(0) invert(0);color: black;}
+.phone{filter: brightness(0) invert(1);color:#fff;}
+.phone{filter: brightness(0) invert(100%);} // white
+
+img{mix-blend-mode: color-dodge;} // white
+
+Stars:- &star; &starf;
+Quotes:- &rdquo; &rsquo; &ldquo;
+Arrows:- &larr; &rarr;
+
+Arrows:- &#10094; &#10095;
+===================================================================================================================================
+position sticky is not worked if main element has overflow:hidden;
+use on main tag overflow:clip except overflow:hidden
+with position sticky
+===================================================================================================================================
+[class*="col-"]:not(:has([class*="col-"])){margin-bottom: 50px;}
+[class*="col-"]:has([class*="col-"]){margin-bottom: 0;}
+
+.box:not(:empty){color:red;font-size: 12px;line-height: 1.2;margin-top: 8px;width:100%;}

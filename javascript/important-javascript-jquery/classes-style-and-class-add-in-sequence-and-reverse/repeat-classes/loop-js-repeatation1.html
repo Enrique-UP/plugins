@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <ol class="cls-1" style="list-style: none;">
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+    </ol>
+    <br><br>
+    <ol class="cls-2" style="list-style: none;">
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+    </ol>
+    <br><br>
+    <ol class="cls-3" style="list-style: none;">
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+    </ol>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+    <!-- <script>
+        var listItems = $("li");
+        var i = 1;
+        for (let li of listItems) {
+            if(i == 4){
+                i = 1;
+            }
+            $(li).html(i + " " + $(li).html());
+            i++;
+        }
+    </script> -->
+    <script>
+        (function(){
+            var ul = document.querySelectorAll(".cls-1, .cls-2, .cls-3");
+            for(var a = 0; a < ul.length; a++){
+                var listItems = ul[a].querySelectorAll("li");
+                var i = 1;
+                for (let li of listItems) {
+                    if(i == 4){
+                        i = 1;
+                    }
+                    li.innerHTML = "c-" + i + " " + li.innerHTML;
+                    i++;
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

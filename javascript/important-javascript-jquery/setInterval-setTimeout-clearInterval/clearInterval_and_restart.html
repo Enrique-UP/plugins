@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<button onclick="myStop()">Stop the time</button>
+
+<script>
+  let myInterval = setInterval(myTimer, 1000);
+  function myTimer() {
+    const date = new Date();
+    document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+  }
+  function myStop() {
+    clearInterval(myInterval);
+    setTimeout(function() {
+      myInterval = setInterval(myTimer, 1000);
+    }, 5000); // stop for 5 seconds
+  }
+</script>
+</body>
+</html>

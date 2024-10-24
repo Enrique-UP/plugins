@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:30px;}
+        h1{font-size: 24px;}
+        hr{margin-block:100px;}
+    </style>
+</head>
+<body>
+    <!--
+    <div style="pointer-events: none;">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" width="560" height="315" frameborder="0"></iframe>
+    </div>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+    <button id="pause">PAUSE</button>
+    
+    <hr>
+    -->
+
+    <h1>?controls=0</h1>
+    <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"></iframe>
+
+    <hr>
+
+    <h1>
+        Autoplay + Muted
+        <br>
+        For Google Chrome
+        <br>
+        <b>chrome://settings/content/sound</b> => Default behaviour => Sites can play sound (select this option)
+        <br>
+        <br>
+        For Firefox
+        <br>
+        <b>about:preferences#privacy</b> => Default for all websites: Allow Audio and Video
+        <br>
+        mute=0 (mute)
+        <br>
+        mute=1 (unmute)
+    </h1>
+    <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
+
+    <hr>
+
+    <h1>
+        Loop
+        <br>
+        Add loop=1 to let your video loop forever.
+        <br>
+        Value 0 (default): The video will play only once.
+        <br>
+        Value 1: The video will loop (forever).
+    </h1>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1"></iframe>
+</body>
+</html>

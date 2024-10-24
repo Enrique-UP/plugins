@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/animation.min.css" type="text/css" />
+</head>
+<boby>
+    <main>
+        <ul>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li>No Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+            <li class="animate">Animation</li>
+        </ul>
+    </main>
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        function viewport(){
+            var window_height = $(window).height();
+            var scroll = $(window).scrollTop();
+            var window_bottom = window_height + scroll;
+            
+            $(".animate").each(function(){
+                var animate_height = $(this).height();
+                var animate_top = $(this).offset().top;
+                var animate_bottom = animate_height + animate_top;
+            
+                if(animate_top <= window_bottom && animate_bottom >= scroll){
+                    $(this).addClass("active");
+                }
+                // animation for one time or repeat
+                else{
+                    $(this).removeClass("active");
+                }
+                // animation for one time or repeat
+            });
+        }
+        $(window).on("load scroll resize", viewport);
+    </script>
+</boby>
+</html>

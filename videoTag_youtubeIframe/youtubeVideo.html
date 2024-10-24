@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:30px;}
+        h1{font-size: 24px;}
+        hr{margin-block:100px;}
+    </style>
+</head>
+<body>
+    <iframe data-src="https://www.youtube.com/embed/tgbNymZ7vqY" width="560" height="315" frameborder="0"></iframe>
+    <br>
+    <br>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+    <button id="pause">PAUSE</button>
+   
+    <br><br>
+    <h1>For autoplay with sound there is no sound work on chrome it is work on firefox.</h1>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("iframe").forEach(function(e){
+                var dataSrc = e.getAttribute("data-src");
+                e.removeAttribute("data-src");
+
+                const isChrome = /chrome/.test(navigator.userAgent.toLowerCase()) && !/edg|edge|opr|brave/.test(navigator.userAgent.toLowerCase());
+                if(isChrome) e.setAttribute("src", `${dataSrc}?autoplay=1&mute=1`);
+                else e.setAttribute("src", `${dataSrc}?autoplay=1&mute=0`);
+            });
+        });
+
+        // play.addEventListener("click", function(){
+
+        // });
+        // stop.addEventListener("click", function(){
+            
+        // });
+        // pause.addEventListener("click", function(){
+            
+        // });
+    </script>
+    
+</body>
+</html>

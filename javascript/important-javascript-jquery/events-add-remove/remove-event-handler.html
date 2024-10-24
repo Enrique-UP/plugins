@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        jQuery off() method
+    </title>
+  
+    <script src="../../../jquery-2.2.4.min.js">
+    </script>
+      
+    <!-- Script to remove event handler -->
+    <script>
+        $(document).ready(function() {
+            $("h3").on("click", function() {
+                $(this).css("background-color", "green");
+            });
+              
+            $("button").click(function() {
+                $("h3").off("click");
+            });
+        });
+    </script>
+</head>
+  
+<body>
+        <h3>GeeksforGeeks</h3> 
+          
+        <button>
+            Click to remove event handler
+        </button>
+</body>
+  
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<pre>
+    const vehicleCode = "M";
+    var result;
+    switch (vehicleCode) {
+        case "C":
+            result = "Vehicle Type: Car";
+            break;
+        case "M":
+            result = "Vehicle Type: Motorcycle";
+            break;
+        case "B":
+            result = "Vehicle Type: Bicycle";
+            break;
+        case "T":
+            result = "Vehicle Type: Truck";
+            break;
+        case "V":
+            result = "Vehicle Type: Van";
+            break;
+        default:
+            result = "Invalid vehicle code.";
+    }
+    document.querySelector("p#demo").innerHTML = result;
+</pre>
+    <p>================</p>
+    <p id="demo"></p>
+    <script>
+        const vehicleCode = "M";
+        var result;
+        switch (vehicleCode) {
+            case "C":
+                result = "Vehicle Type: Car";
+                break;
+            case "M":
+                result = "Vehicle Type: Motorcycle";
+                break;
+            case "B":
+                result = "Vehicle Type: Bicycle";
+                break;
+            case "T":
+                result = "Vehicle Type: Truck";
+                break;
+            case "V":
+                result = "Vehicle Type: Van";
+                break;
+            default:
+                result = "Invalid vehicle code.";
+        }
+        document.querySelector("p#demo").innerHTML = result;
+    </script>
+</body>
+</html>

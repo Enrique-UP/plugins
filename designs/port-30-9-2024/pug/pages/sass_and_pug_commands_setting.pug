@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title Pug Commands
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel="stylesheet" href="./css/common.min.css" type="text/css")
+  body
+    main
+      section.section
+        .container
+          h2 sass --watch sass/common/common.scss:css/common.min.css 
+            | sass/header.scss:css/header.min.css 
+            | sass/footer.scss:css/footer.min.css 
+            | sass/pages/index.scss:css/index.min.css 
+            | --style compressed
+
+          
+          
+          
+          
+          p &nbsp;
+          p &nbsp;
+
+
+
+          
+
+          h2
+            | npm install pug -g
+            br
+            | OR 
+            br
+            | npm install pug-cli -g
+            br
+            br
+            | pug -w ./pug/pages -o ./ -P

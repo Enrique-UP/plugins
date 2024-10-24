@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">'Lorem ipsum "dolor" sit amit'.</div>
+<br />
+<div id="change">'Lorem ipsum "dolor" sit amit'.</div>
+<script>
+    var str = document.getElementById("demo").innerHTML; 
+    var replace = str.replaceAll("\"", "'");
+    document.getElementById("change").innerHTML = replace; 
+</script>  
+</body>
+</html>
+

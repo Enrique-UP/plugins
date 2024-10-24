@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+
+<body>
+    <a></a>
+    <a></a>
+
+    <div></div>
+    <div></div>
+    
+    <script>
+        const great = (a, b) => {
+            if (a > b) {
+                return ("a is greater");
+            } else {
+                return ("b is greater");
+            }
+        }
+
+        document.write(great(8, 5));
+    </script>
+    <script>
+        document.querySelectorAll("a").forEach(e => {
+            e.text = "Link";
+            e.setAttribute("href", "democlass.html");
+        }
+        );
+
+        document.querySelectorAll("div").forEach(e => e.innerText = "Link");
+
+        // for single line
+        //e => e.innerText = "Link"
+
+        //for multiple line
+        // .forEach((f, index) => {
+        //     f.classList.add(`c-${index + 1}`);
+        //     li += `${f.outerHTML}`;
+        // });
+
+        //Or
+
+        //for multiple line
+        // function(e){
+        //     return e !== active
+        // }
+    </script>
+</body>
+
+</html>

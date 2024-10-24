@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+	<style type="text/css">
+		*{padding:0;margin: 0;box-sizing: border-box;}
+		:root{
+			--color:#333;
+			--c1:red;
+			--c2:green;
+			--c3:blue;
+			--c4:brown;
+			--c5:yellow;			
+			--c6:silver;
+			--c7:orange;
+			--c8:purple;
+			--c9:lightgreen;
+			--c10:lightblue;
+		}
+		body{padding:30px;}
+		[class*="li-"]{padding:5px;}
+		ul > li{color:var(--color);}
+	</style>
+</head>
+<body>
+    <ul class="paras"></ul><!--paras-->
+
+	<script>
+        (function(){
+			//=================================================================================================
+			let para = "";
+			const paraData = [
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+                {text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."},
+				{text : "Lorem ipsum dolor sit amit."}
+			];
+			for(var i = 0; i < paraData.length; i++){
+				para += `<li>${i} :- ${paraData[i].text}</li>`;
+			}
+			document.querySelector(".paras").innerHTML += para;
+			//=================================================================================================
+			const classsData = [
+				{color : "var(--c1)"},
+				{color : "var(--c2)"},
+				{color : "var(--c3)"},
+				{color: "var(--c4)"},
+				{color: "var(--c5)"},
+				{color: "var(--c6)"},
+				{color: "var(--c7)"},
+				{color: "var(--c8)"},
+				{color: "var(--c9)"},
+                {color: "var(--c10)" }
+			];
+			var li = document.querySelectorAll(".paras li");
+            for (var j = 0; j < paraData.length; ){
+				for (var k = 0; k < classsData.length; k++){                 
+					li[j].style.setProperty("--color", classsData[k].color);
+					j++;                   
+                    if (j == li.length || k == classsData.length - 1) {						
+						break;
+					}
+				} 
+			}
+		})();		
+    </script>
+</body>
+</html>

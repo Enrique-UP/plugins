@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:50px 50px 40px;font-family: Arial, Helvetica, sans-serif;font-size:14px;line-height: 1.5;}
+        .demo{background: #eee;padding:10px 15px;margin-bottom: 10px;cursor: pointer;}
+        .demo.active{background:#ddd;}
+    </style>
+</head>
+<body>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+    <p class="demo">Demo</p>
+
+    <!-- <script>
+        var demo = document.querySelectorAll(".demo");
+        var totaldemo = demo.length;
+        console.log("totaldemo = " + totaldemo);
+
+        for (var i = 0; i < totaldemo; i++){
+            demo[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+            });
+        }
+    </script> -->
+    <script>
+        var demo = document.querySelectorAll(".demo");
+        demo.forEach(function(e){
+            e.addEventListener("click", function() {
+                this.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>

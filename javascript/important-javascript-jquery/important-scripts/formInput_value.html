@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        form{display: flex;flex-wrap: wrap;}
+        input[type="number"]::-webkit-outer-spin-button, input[number]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+        input[type="number"]{-moz-appearance: textfield;}
+        .error{font-size: 12px;color:red;width:100%;margin-top:2px;display: none;}
+        .error.active{display: block;}
+    </style>
+</head>
+<body>
+    <form>
+        <input type="number" placeholder="Zip Code" />
+        <button type="button" disabled>Done</button>
+        <div class="error">Please enter the 5 digits valid number.</div>
+    </form>
+
+    <script>
+        document.querySelector("form input").addEventListener("keyup", function(){
+            if(this.value >= 10000 && this.value <= 99999){
+                document.querySelector(".error").classList.remove("active");
+                document.querySelector("form button").removeAttribute("disabled");
+                document.querySelector("form button").setAttribute("onclick", `window.open('https://www.google.com/')`);
+            }else{
+                document.querySelector(".error").classList.add("active");
+                document.querySelector("form button").setAttribute("disabled", "disabled");
+                document.querySelector("form button").removeAttribute("onclick");
+            }
+        });
+    </script>
+</body>
+</html>

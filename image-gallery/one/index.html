@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lightgallery.css">
+    <style type="text/css">
+        * {padding: 0;margin: 0;box-sizing: border-box;}
+        .lightgallery{width: 100%;display: grid;grid-template-columns: repeat(4, 1fr);gap: 12px;}
+        .lightgallery > li{list-style: none;}
+        .lightgallery a{display: flex;}
+        .lightgallery img{max-width: 100%;}
+    </style>
+</head>
+<body>
+    <ul id="lightgallery" class="lightgallery">
+        <li data-src="../../sliders/owl-carousel/images/1.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/1.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/2.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/2.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/3.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/1.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/1.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/2.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/2.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/3.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/1.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/1.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/2.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/2.jpg">
+        </li>
+        <li data-src="../../sliders/owl-carousel/images/3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter">
+            <img class="img-responsive" src="../../sliders/owl-carousel/images/3.jpg">
+        </li>
+    </ul>
+
+    <script src="../../jquery-2.2.4.min.js"></script>
+    <!-- <script src="./jquery.mousewheel.min.js"></script> -->
+    <script src="./lightgallery-all.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#lightgallery").lightGallery({
+                pager: true
+            });
+        });
+    </script>
+</body>
+</html>
