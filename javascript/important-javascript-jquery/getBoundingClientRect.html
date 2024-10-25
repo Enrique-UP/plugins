@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <body>
   <h1>The Element Object</h1>
   <h2>The getBoundingClientRect() Method</h2>
@@ -11,16 +10,12 @@
     <div style="width:1000px; height:1000px;"></div>
   </div>
   <p id="demo"></p>
-
   <script>
     function myFunction() {
       const element = document.getElementById("myDiv");
       const rect = element.getBoundingClientRect();
-
       document.getElementById("demo").innerHTML = "Left: " + rect.left.toFixed() + ", Top: " + rect.top.toFixed() + ", Width: " + rect.width + ", Height: " + rect.height;
     }
   </script>
-
 </body>
-
 </html>
