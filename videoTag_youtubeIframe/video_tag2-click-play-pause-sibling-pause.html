@@ -57,6 +57,7 @@
             }
         });
     });
+    
     document.querySelector("button").addEventListener("click", function(){
         document.querySelectorAll("video").forEach(function(f){
             const totalTime = f.duration;
@@ -65,6 +66,12 @@
             console.log(`Total Video Time: ${minutes} minutes ${seconds} seconds`);
             f.pause();
             f.currentTime = 0;
+
+            // const totalTime1 = e.duration;
+            // console.log(Math.floor(totalTime1)); // total seconds
+            // setTimeout(function(){
+            //     alert("Video End");
+            // }, 1000 * totalTime1);
         });
     });
 </script>
@@ -81,5 +88,15 @@
         }
     });
 </script> -->
+<!-- 
+<script>
+    e.duration;
+    e.muted = false;
+    e.volume = 1.0;
+    e.play();
+    e.pause();
+    e.currentTime = 0;
+</script>
+-->
 </body>
 </html>

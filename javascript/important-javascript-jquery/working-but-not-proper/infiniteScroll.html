@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.6;}
+        section{width: 100%;display: flex;background: #eee;height: 1500px;}
+        .content{width:500px;display: flex;flex-direction: column;max-width: 100%;margin-inline:auto;padding-inline:10px;}
+        .content .nameCaty{width:100%;background: #ccc;padding:16px;text-align: center;}
+        .content .nameCaty:not(:last-child){margin-bottom: 16px;}
+        .content .counter{font-size:24px;}
+        .content .name{font-weight: bold;}
+        .content .caty{color:brown;}
+    </style>
+</head>
+<body>
+    <!-- <section></section> -->
+    <div class="content"></div>
+    <section></section>
+    <script>
+        (function(){
+            const data = [
+                {name:"Rose", category:"Plant"},
+                {name:"Tomato", category:"Vegetable"},
+                {name:"Apple", category:"Fruit"},
+                {name:"Dog", category:"animal"},
+                {name:"Tulip", category:"plant"},
+                {name:"Bottle Gourd", category:"vegetable"},
+                {name:"Banana", category:"fruit"},
+                {name:"Cat", category:"Animal"},
+                {name:"Sunflower", category:"Plant"},
+                {name:"Potato", category:"Vegetable"},
+                {name:"Orange", category:"Fruit"},
+                {name:"Elephant", category:"Animal"},
+                {name:"Lily", category:"plant"},
+                {name:"Pea", category:"Vegetable"},
+                {name:"Grapes", category:"fruit"},
+                {name:"Tiger", category:"animal"},
+                {name:"Daisy", category:"plant"},
+                {name:"Green Chili", category:"vegetable"},
+                {name:"Pineapple", category:"Fruit"},
+                {name:"Rabbit", category:"Animal"},
+                {name:"Orchid", category:"Plant"},
+                {name:"Cucumber", category:"Vegetable"},
+                {name:"Mango", category:"Fruit"},
+                {name:"Fox", category:"Animal"},
+                {name:"Lavender", category:"plant"},
+                {name:"Zucchini", category:"vegetable"},
+                {name:"Strawberry", category:"fruit"},
+                {name:"Lion", category:"animal"},
+                {name:"Jasmine", category:"Plant"},
+                {name:"Carrot", category:"Vegetable"},
+                {name:"Peach", category:"fruit"},
+                {name:"Bear", category:"Animal"},
+                {name:"Hibiscus", category:"plant"},
+                {name:"Radish", category:"vegetable"},
+                {name:"Blueberry", category:"fruit"},
+                {name:"Horse", category:"animal"},
+                {name:"Daffodil", category:"plant"},
+                {name:"Squash", category:"vegetable"},
+                {name:"Cherry", category:"Fruit"},
+                {name:"Wolf", category:"Animal"}
+            ];
+            // console.log(data);
+            data.forEach((e) => e.category = e.category.charAt(0).toUpperCase() + e.category.slice(1));
+            // data.sort((a, b) => a.category.localeCompare(b.category));
+            console.log(data);
+
+            if(data.length > 10){
+                data.forEach(function(e, i){
+                    document.querySelector(".content").innerHTML += `
+                        <div class="nameCaty">
+                            <div class="counter">${i+1}</div>
+                            <div class="name">${e.name}</div>
+                            <div class="caty">${e.category}</div>
+                        </div>
+                    `;
+                });
+            }else{
+                alert();
+            }
+        })();
+    </script>
+</body>
+</html>
