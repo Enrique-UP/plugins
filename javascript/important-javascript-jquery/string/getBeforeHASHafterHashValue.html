@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>index.html#section</p>
+    <script>
+        const fullURL = document.querySelector("p").innerHTML.trim();
+        const urlBeforeHash = fullURL.split('#')[0];
+        const urlAfterHash = fullURL.split('#')[1];
+        
+        console.log("URL before hash:", urlBeforeHash); // index.html
+        console.log("URL after hash:", urlAfterHash); // section
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@ document.querySelectorAll("main header a").forEach((e) => {
         const valueAfterHash = href.substring(href.indexOf("#") + 1);
         // console.log(valueAfterHash);
         
-        e.classList = valueAfterHash;
+        // e.classList = valueAfterHash;
         e.setAttribute("data-link", "#" + valueAfterHash);
 
         e.addEventListener("click", function(t){
@@ -47,6 +47,33 @@ function scrollUp(e){
         });
     });
 });
+
+(function(events, handler) {
+    events.forEach(event => window.addEventListener(event, handler));
+})(["load", "scroll", "resize"], function() {
+    const headerHeight = document.querySelector("header").offsetHeight;
+    
+    document.querySelectorAll("main > section").forEach((section) => {
+        const sectionId = section.getAttribute("id");
+        const sectionLink = document.querySelector(`header a[data-link="#${sectionId}"]`);
+
+        if (sectionId && sectionLink) {
+            const sectionTop = section.offsetTop - headerHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                document.querySelectorAll("header a").forEach(link => link.classList.remove("active"));
+                sectionLink.classList.add("active");
+            }else{
+                sectionLink.classList.remove("active");
+                // fullURL.split('#')[0];
+            }
+        }
+    });
+});
+var lk = window.location.hash;
+console.log("wlh = " + lk.split("#")[0]);
+
 
 
 // (function(events, index) {
