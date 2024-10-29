@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-size: 14px;line-height: 1.6;font-family: Arial, Helvetica, sans-serif;}
+        ul{width: 100%;max-width: 600px;margin-inline: auto;padding:0;display: flex;flex-direction: column;counter-reset: counter;}
+        ul > li{list-style: none;background: #ccc;padding:16px 36px;text-align: center;position: relative;visibility: hidden;}
+        ul > li::before {counter-increment: counter;content: counter(counter) " ";font-weight: bold;color:#fff;position: absolute;top:0;left:0;background: #333;width:30px;aspect-ratio: 1;line-height: 30px;}
+        ul > li.active{background: #eee;visibility: visible;}
+        ul > li:not(:last-child){margin-bottom: 16px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <script>
+        window.onload = window.onscroll = window.onresize = function() {
+            document.querySelectorAll("ul > li").forEach(function(e) {
+                const rect = e.getBoundingClientRect();
+                // if (rect.top >= 0 - rect.height && rect.bottom - rect.height <= window.innerHeight) e.classList.add("active");
+                // if (rect.top >= 0 - rect.height && window.innerHeight >= rect.bottom - rect.height) e.classList.add("active");
+                if (rect.top >= 0 && window.innerHeight >= rect.bottom) e.classList.add("active");
+                // else e.classList.remove("active");
+                e.innerHTML = `
+                    Top: ${rect.top.toFixed()}px,<br>
+                    Right: ${rect.right.toFixed()}px,<br>
+                    Bottom: ${rect.bottom.toFixed()}px,<br>
+                    Left: ${rect.left.toFixed()}px,<br>
+                    X: ${rect.x.toFixed()}px,<br>
+                    Y: ${rect.y.toFixed()}px,<br>
+                    Width: ${rect.width.toFixed()}px,<br>
+                    Height: ${rect.height.toFixed()}px
+                `;
+            });
+        };
+    </script>
+</body>
+</html>
