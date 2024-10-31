@@ -1,6 +1,20 @@
 @import "./common.scss";
 
+%btn {
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.btn1 {
+    @extend %btn;
+    background-color: #3498db;
+}  
+.btn2 {
+    @extend %btn;
+    background-color: #2ecc71;
+}
 main{width:100%;
     > *{width:100%;}
     p{background:$black;color:$white;}
 }
+
