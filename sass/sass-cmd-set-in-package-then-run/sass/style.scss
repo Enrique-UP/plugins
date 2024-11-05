@@ -1,5 +1,5 @@
 @import "./common.scss";
-
+.fw {width: 100%;}
 %btn {
     color: white;
     padding: 10px 20px;
@@ -13,8 +13,9 @@
     @extend %btn;
     background-color: #2ecc71;
 }
-main{width:100%;
-    > *{width:100%;}
-    p{background:$black;color:$white;}
+main {
+	@extend .fw;
+    > *{width: 100%;}
+    p {background: $black;color: $white;}
 }
 

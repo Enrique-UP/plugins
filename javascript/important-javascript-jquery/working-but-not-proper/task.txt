@@ -27,9 +27,16 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 12. Popup on mobile full width and height show with content & work on close button
 13. Scroll change body and other scroll box
 14. css grid system add
-	:root{--space:16px;}
-	@media (max-width:575px){
-		:root{--space:14px;}
+	:root{
+		--font-size: 16px;
+		--space: 24px;
+	}
+	body{font-size: calc(var(--font-size) * 3);}
+	@media (max-width: 575px){
+		:root{
+			font-size: 12px;
+			--space: 14px;
+		}
 	}
 	After that automatically change all column etc space correct.
 15. Work on this folder D:\office-work\assets\plugins\javascript\important-javascript-jquery\same-page-linking-by-js-go-location
