@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        ul{padding: 0;margin: 0;display: flex;justify-content: center;flex-direction: column;}
+        ul > li{list-style: none;position: relative;}
+        ul > li:not(:last-child){margin-bottom: 100px;}
+        div{position: absolute;left:0;top:100%;background: #fff;z-index: 9;box-shadow: 0 0 5px #000;width: 120px;display: none;}
+        div.active{display: block;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a data-href="#home">Home</a>
+        </li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li>
+            <a data-href="#about">About Us</a>
+            <div>Dropdown about</div>
+        </li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+        <li><a href="javascript:;">Link</a></li>
+    </ul>
+    <div id="home">Dropdown home</div>
+    <div id="about">Dropdown about</div>
+    <!-- <script>
+        $('DOM_NODE').hover(mouseEnter, mouseLeave);
+        function mouseEnter() {};
+        function mouseLeave() {};
+    </script> -->
+    <script>
+        document.querySelectorAll("ul > li > a").forEach((link) => {
+            link.addEventListener("mouseenter", mouseEnter);
+            link.addEventListener("mouseleave", mouseLeave);
+        });
+        function mouseEnter(event) {
+            const targetId = event.target.getAttribute("data-href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const rect = event.target.getBoundingClientRect();
+                targetElement.style.left = `${rect.left}px`;
+                targetElement.style.top = `${rect.bottom}px`;
+                
+                targetElement.classList.add("active");
+            }
+        }
+        function mouseLeave(event) {
+            document.querySelectorAll("div.active").forEach((element) => {
+                element.classList.remove("active");
+                element.removeAttribute("style");
+            });
+        }
+    </script>
+</body>
+</html>
