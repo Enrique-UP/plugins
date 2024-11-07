@@ -16,6 +16,8 @@ Arrows:- &larr; &rarr;
 
 Arrows:- &#10094; &#10095;
 ===================================================================================================================================
+mb-sm-0 mb-2
+===================================================================================================================================
 position sticky is not worked if main element has overflow:hidden;
 use on main tag overflow:clip except overflow:hidden
 with position sticky
