@@ -13,8 +13,58 @@ https://www.geeksforgeeks.org/how-to-install-git-in-vs-code/
 go to vs code settings bottom left => then search (Git: Enabled)
 =====================
 
-=====================
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=====================
+https://www.youtube.com/watch?v=icyOhrMNrOk
+
+clone, change, upload changes
+----------------------------
+open git software gui window=>
+source location => https://github.com/demo/demo.git
+target directory => D:/folderName
+=> click on clone button
+
+maximize window
+go to repostory tab => Git Bash => then the black windos shows
+go to repostory tab => Explore Working Copy => then the black windos shows
+go to repostory tab => Explore Working Copy => right click => open vs code
+
+to to opened git software gui window=> 
+click on stage (left sidebar)
+click on amend last commit (bottom)
+after that
+click on new commit (bottom)
+type commit message NewChange
+click on => signoff
+click on => commit
+
+go to black type 
+$ git log
+=====================
+create new branch
+-----------------
+Branch tab => Create
+opens new window of branch => Name: MasterNew
+check Checkout after Creation
+click on create button.
+
+go to black window type
+$ git branch
 =====================
 
 =====================
