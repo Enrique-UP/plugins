@@ -3,15 +3,62 @@ or
 Go to top search bar and paste given words => Reload Window
 
 =====================
-
 open the terminal
 git --version
-
 =====================
 https://www.geeksforgeeks.org/how-to-install-git-in-vs-code/
-
 go to vs code settings bottom left => then search (Git: Enabled)
 =====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================
+https://www.youtube.com/watch?v=ukJEPyKubzA
+Github desktop
+-------------
+download software => install software => open its window => signin => continue => uncheck yes => finish.
+click on clone repository box => opens window go to github.com tab => select anyone repository => choose button click => select location => clone.
+
+more folder clone on this folder
+go to github folder => clone or download click => open in desktop => choose same path => select folder => clone.
+
+open window after change in code.
+=> commit to master button click
+=> go to repository => push => go to github.com folder
+
+=> change on github.com folder file
+=>after change type in commit change below of the screen=> commit changes.
+
+=> repository tab => pull =>yes
+this github new changes file has pull on live to local now.
+
+
+=> to to github.com folder clone or download button click => open with desktop => to to github.com => settings => type repository name => delete this repository after scrolling shows.
+====================================================================
+
+
+
+
 
 
 
