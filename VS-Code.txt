@@ -2,7 +2,19 @@ Cmd+Shift+P => Reload Window
 or
 Go to top search bar and paste given words => Reload Window
 
+=====================
+
+open the terminal
+git --version
+
+=====================
+https://www.geeksforgeeks.org/how-to-install-git-in-vs-code/
+
+go to vs code settings bottom left => then search (Git: Enabled)
+=====================
 
 =====================
 
+=====================
 
+=====================
