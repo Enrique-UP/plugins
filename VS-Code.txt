@@ -66,5 +66,18 @@ click on create button.
 go to black window type
 $ git branch
 =====================
+push branch
+-----------------
+Branch tab => Create
+opens new window of branch => Name: MasterNew
+uncheck Checkout after Creation
+click on create button.
 
+remote tab => push => select the branch name => select remote (origin)=> push=> close
+check the git website folder
+=====================
+delete branch
+-----------------
+remote tab => delete branch=> select branch name opened window=> check always (do not perform merge checks) => delete => yes => close.
+check the git website folder
 =====================
