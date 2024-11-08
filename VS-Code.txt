@@ -1,0 +1,8 @@
+Cmd+Shift+P => Reload Window
+or
+Go to top search bar and paste given words => Reload Window
+
+
+=====================
+
+
