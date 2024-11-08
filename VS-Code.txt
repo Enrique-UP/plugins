@@ -29,12 +29,12 @@ go to vs code settings bottom left => then search (Git: Enabled)
 
 
 
-=====================
+======================================================================================
 https://www.youtube.com/watch?v=icyOhrMNrOk
 
 clone, change, upload changes
 ----------------------------
-open git software gui window=>
+open git software gui window=> clone existing repository
 source location => https://github.com/demo/demo.git
 target directory => D:/folderName
 => click on clone button
