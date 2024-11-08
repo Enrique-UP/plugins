@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MouseLeave</h1>
+    <!-- <script>
+        const h1 = document.querySelector("h1");
+        h1.addEventListener("mouseenter", mouseEnter);
+        h1.addEventListener("mouseleave", mouseLeave);
+        function mouseEnter() {
+            h1.innerHTML = "MouseEnter";
+        }
+        function mouseLeave() {
+            h1.innerHTML = "MouseLeave";
+        }
+    </script> -->
+    <script>
+        const h1 = document.querySelector("h1");
+
+        let mouseEnter = () => h1.innerHTML = "MouseEnter";
+        let mouseLeave = () => h1.innerHTML = "MouseLeave";
+
+        h1.addEventListener("mouseenter", mouseEnter);
+        h1.addEventListener("mouseleave", mouseLeave);
+    </script>
+
+    <!-- <script src="../../../jquery-2.2.4.min.js"></script>
+    <script>
+        $('h1').hover(mouseEnter, mouseLeave);
+        function mouseEnter() {
+            $('h1').html("MouseEnter");
+        }
+        function mouseLeave() {
+            $('h1').html("MouseLeave");
+        }
+    </script> -->
+    <!-- <script>
+        $(document).ready(function() {
+            $("h1").on({
+                mouseenter: function() {
+                    $(this).html("MouseEnter");
+                },
+                mouseleave: function() {
+                    $(this).html("MouseLeave");
+                }
+            });
+        });
+    </script> -->
+</body>
+</html>

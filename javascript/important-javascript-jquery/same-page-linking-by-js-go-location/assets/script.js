@@ -56,9 +56,3 @@ function scrollUp(e){
         });
     }
 });
-
-
-
-
-
-
