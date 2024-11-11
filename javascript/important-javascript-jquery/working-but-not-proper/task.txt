@@ -8,21 +8,20 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 
 
 01. Array methods learn from w3schools.com
-02. String learn
+02. String methods
 		I.   String methods
 		II.  String search methods
 		III. String template literals
 03. Number Methods
 04. Math Methods
+05. Parameters function
 
-05. onscroll => viewport video => play/otherwise pause
-06. Video play on click after scroll unviewport area then pause
-07. Steper like akountobooks.com
-
-08. Custom image slider with all functionality (width slider not fade)
+06. Steper like akountobooks.com
+07. Custom image slider with all functionality (width slider not fade)
     8.1. Custom image slider with all functionality (testimonial slider)
-09. Text slider with array
+08. Text slider with array
+
+09. Video play on click after scroll unviewport area then pause
 10. Display none and block transition not work
-11. Parameters function
 12. Popup on mobile full width and height show with content & work on close button
-13. Scroll change body and other scroll box
+13. onscroll => viewport video => play/otherwise pause

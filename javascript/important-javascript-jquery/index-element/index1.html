@@ -9,6 +9,10 @@
     <p>Lorem</p>
     <p>Lorem</p>
 
+    <br><br><br>
+    
+    <h4>Ipsum</h4>
+    <h4>Ipsum</h4>
     <h4>Ipsum</h4>
     <h4>Ipsum</h4>
     <h4>Ipsum</h4>
@@ -23,8 +27,9 @@
             a++;
         });
         
-        document.querySelectorAll("h4").forEach(function(e, index){
-            e.innerText = arr[index] + " - " + e.innerText;
+        document.querySelectorAll("h4").forEach(function(e, index) {
+            if (arr.length > index) e.innerText = arr[index] + " - " + e.innerText;
+            else e.innerText = (index - arr.length + 1) + " - " + e.innerText;
         });
     </script>
 </body>
