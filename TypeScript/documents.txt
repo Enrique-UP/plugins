@@ -30,3 +30,14 @@ tsconfig.json setting => go to tsfonfig.json file => add below code after "},"
     "ts/"
 ]
 ===========================================
+and change setting
+"rootDir": "./pp/ts/script",
+"outDir": "./js", 
+"include": [
+    "./pp/ts/script"
+]
+check this folder and output
+D:\office-work\assets\plugins\working-but-not-proper\webpageStarting-pug-saas-typeScript\tsconfig.json
+
+for compiling only single folder to output js folder
+===========================================
