@@ -7,6 +7,21 @@ document.querySelectorAll(".container .row [class*=col-] [class*=col-]").forEach
     e.parentElement.closest("[class*=col-]").style.marginBottom = 0;
 });
 
+
+
+$(window).on("resize scroll", headerFixed);
+$(window).on("load", headerFixed());
+$(window).on("load resize scroll", headerFixed);
+function headerFixed(){
+    if ($(window).scrollTop() >= 25) {
+        $("header").addClass("active");
+    } else {
+        $("header").removeClass("active");
+    }
+}
+
+
+
 $(document).ready(function () {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();

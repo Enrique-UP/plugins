@@ -2,7 +2,11 @@ doctype html
 html
   head
     title Webpage
-    include ../include/head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel="stylesheet" href="./assets/css/style.min.css" type="text/css")
+    link(rel="stylesheet" href="./assets/css/animation.min.css" type="text/css")
+    link(rel="stylesheet" href="./assets/css/owl.carousel.min.css" type="text/css")
   body
     main
       include ../include/header
@@ -70,8 +74,7 @@ html
     script(src="./assets/js/jquery.min.js")
     script(src="./assets/js/owl.carousel.min.js")
     script(src="./assets/js/wow.min.js")
-    script(type="text/javascript" src="./assets/js/main.js")
-    script(type="text/javascript" src="./assets/js/script.js")
+    script(src="./assets/js/main.js" type="text/javascript")
     script(type="text/javascript").
       (function(){
         console.log("Lorem");

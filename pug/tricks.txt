@@ -1,0 +1,44 @@
+mixin hArea(e, ulList)
+    .hArea 
+        img(src=e.img, alt="").image
+        .text
+            .hd Lorem ipsum dolor sit amet
+            if ulList
+                ul
+                    - for (var i = 0; i < ulList.length; i++)
+                    li= ulList[i]
+            if e.text
+                p=e.text
++hArea({img: "./assets/images/logo.png"}, ["one", "two", "three"])
++hArea({img: "./assets/images/logo.png", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"}, ["one", "two"])
++hArea({img: "./assets/images/logo.png", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"})
+
+=====================================================================================================================================================
+
+p !{"<i class='icon'>&#copy;</i>"} This is for icon.
+
+mixin partner(e)
+    .col-sm-6.col-md-4
+    .ptArea 
+        i.icon!= e.icon
+        h6.hd= e.hd
+        p= e.text
++partner({icon:"&#xa010;", hd:"Lorem ipsum dolor", text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"})
+
+=====================================================================================================================================================
+
+mixin data(e)
+    div(class=`tabDetail ${e.tab}`)
+        div.headSelect
+            div 
+                div.day
+                    span Day
+                    span= e.date
+                div.arrival Arrival
+            div.btn
+                a(href="javascript:;" class="link") + Add Comment
+        div.back1 Upon arrival in Male, you will be transferred to your resort by Speedboat transfer. Enjoy the rest of the afternoon at leisure to enjoy the hotels facilities.
+
++data({tab:"tab-1", date:"1"})
++data({tab:"tab-2", date:"2"})
++data({tab:"tab-3", date:"3"})

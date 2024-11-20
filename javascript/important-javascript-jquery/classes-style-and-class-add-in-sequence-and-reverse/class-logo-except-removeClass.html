@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one" class="parent logo child"></div>
+    <br>
+    <div id="two" class="parent logo child"></div>
+    <br>
+    <div id="three" class="parent logo child"></div>
+    <br>
+    <div id="four" class="parent child"></div>
+    <br>
+    <div id="five" class="parent logos child"></div>
+
+    <script>
+        document.querySelectorAll("[id]").forEach((e) => {
+            e.innerHTML = e.id
+            if (e) {
+                const retainClass = "logo";
+                e.className = e.classList.contains(retainClass) ? retainClass : e.classList;
+            }
+        });
+    </script>
+</body>
+</html>

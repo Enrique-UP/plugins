@@ -15,6 +15,7 @@ mixin service(e)
         ul
             - for (var i = 0; i < arr.length; i++)
                 li= arr[i]
+        p=e.text
 
 
 
@@ -60,6 +61,7 @@ html
 
         +service({head:"Lorem1"}, arr=["one", "two", "three"])
         +service({head:"Lorem2"}, arr=["four", "five"])
+        +service({head:"Lorem3", text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"})
         hr
 
 

@@ -1,4 +1,4 @@
-hgroup{width: 100%;@extend .fc;margin-bottom:40px;row-gap:8px;
+hgroup{width: 100%;@extend %fc;margin-bottom:40px;row-gap:8px;
     &.center{text-align: center;}
     h1, h2, h3, h4, h5, h6{font-size: 48px;font-weight: bold;line-height: 1.2;}
     p{font-size:24px;line-height: 1.3;}
