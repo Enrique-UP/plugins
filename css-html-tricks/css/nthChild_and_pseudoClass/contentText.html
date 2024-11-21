@@ -56,6 +56,8 @@
         /* section:has(:not(h1, h2, h3, h4, h5, h6)){font-size: 16px;} */
         /* :has works like if condition (or It works when the condition has true) where :has(:not()) works like else condition*/
         .content.c10 li.head:has(+ li) {color: red;}
+
+        .contentArea h1:not(:first-child), .contentArea h2:not(:first-child), .contentArea h3:not(:first-child), .contentArea h4:not(:first-child), .contentArea h5:not(:first-child), .contentArea h6:not(:first-child) {margin-top: 32px;}
     </style>
 </head>
 <body>
@@ -306,5 +308,39 @@
             <li>Lorem</li>
         </ul>
     </div>
+
+
+
+
+    <hr>
+    <h1>Main Content area perfect</h1>
+    <div class="contentArea content">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit beatae repudiandae.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dignissimos earum, iusto nisi neque, exercitationem quos et porro molestias quaerat obcaecati facere distinctio expedita. Dicta a sapiente nam nulla saepe deserunt, alias, similique eaque facilis numquam, deleniti nihil doloremque dolor ducimus iusto vitae consectetur <a href="#">quod officiis repudiandae</a> perspiciatis doloribus! Pariatur voluptas id numquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dignissimos earum, iusto nisi neque, exercitationem quos et porro molestias quaerat obcaecati facere distinctio expedita. Dicta a sapiente nam nulla saepe deserunt, alias, similique eaque <b>sapiente nam nulla saepe </b>facilis numquam, deleniti nihil doloremque dolor ducimus iusto vitae consectetur perspiciatis doloribus! Pariatur voluptas id numquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dignissimos earum, iusto nisi neque, exercitationem quos et porro molestias quaerat obcaecati facere distinctio expedita. Dicta a sapiente nam nulla <a href="#">quod officiis repudiandae</a> saepe deserunt, alias, similique eaque facilis numquam, deleniti nihil doloremque dolor ducimus iusto vitae consectetur perspiciatis doloribus! Pariatur voluptas id numquam.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit beatae repudiandae.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dignissimos earum, iusto nisi neque, exercitationem quos et porro molestias quaerat obcaecati facere distinctio expedita. Dicta a sapiente nam nulla saepe deserunt, alias, similique eaque facilis numquam, deleniti nihil doloremque dolor ducimus iusto vitae consectetur perspiciatis doloribus! Pariatur voluptas id numquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dignissimos earum, iusto nisi neque, exercitationem quos et porro molestias quaerat obcaecati facere distinctio expedita. Dicta a <b>sapiente nam nulla saepe </b>deserunt, alias, similique eaque facilis numquam, deleniti nihil doloremque dolor ducimus iusto vitae consectetur perspiciatis doloribus! Pariatur voluptas id numquam.</p>
+        <ul> 
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum nesciunt voluptatum, iure ex aliquid blanditiis voluptatibus fuga excepturi, sit eligendi porro. Nihil necessitatibus dolores saepe nemo, architecto voluptatum <b>sapiente nam nulla saepe </b>excepturi alias ex quod vitae voluptates quaerat pariatur ipsum animi fugiat, impedit, amet laborum dolore labore magnam quasi reiciendis quibusdam! Temporibus.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum nesciunt voluptatum, iure ex aliquid blanditiis voluptatibus fuga excepturi, sit eligendi porro. Nihil necessitatibus dolores saepe nemo, architecto voluptatum excepturi alias ex quod vitae voluptates quaerat pariatur ipsum animi fugiat, impedit, amet laborum dolore labore <a href="#">quod officiis repudiandae </a>magnam quasi reiciendis quibusdam! Temporibus.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+        </ul>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit beatae repudiandae.</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis vitae doloribus placeat voluptatem quae eius dicta enim voluptatibus magni nisi sequi reprehenderit saepe, adipisci ipsa cum sunt error quod officiis repudiandae, tempora minus possimus inventore expedita. Modi, amet similique eveniet animi nobis blanditiis. Soluta, laborum alias odit modi quae culpa.</p>
+        <ol> 
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum nesciunt voluptatum, iure ex aliquid blanditiis voluptatibus fuga excepturi, sit eligendi porro. Nihil necessitatibus dolores saepe nemo, architecto voluptatum excepturi alias ex quod vitae voluptates quaerat pariatur ipsum animi fugiat, impedit, amet laborum <a href="#">quod officiis repudiandae</a> dolore labore magnam quasi reiciendis quibusdam! Temporibus.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum nesciunt voluptatum, iure ex aliquid blanditiis voluptatibus fuga excepturi, sit eligendi porro. Nihil necessitatibus dolores saepe nemo, architecto voluptatum excepturi alias ex quod vitae voluptates quaerat pariatur ipsum animi fugiat, impedit, amet laborum dolore labore magnam quasi reiciendis quibusdam! Temporibus.</li>
+          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate in minus facere amet natus nam soluta, ab officia reiciendis dicta.</li>
+        </ol>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis vitae doloribus placeat voluptatem quae eius dicta enim voluptatibus magni nisi sequi reprehenderit saepe, adipisci ipsa cum sunt error <a href="#">quod officiis repudiandae</a>, tempora minus possimus inventore expedita. Modi, amet similique eveniet animi nobis blanditiis. Soluta, laborum alias odit modi quae culpa.</p>
+      </div>
 </body>
 </html>
