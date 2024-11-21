@@ -1,0 +1,55 @@
+:root {
+  --font-size: 16px;
+  --space: 24px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+h1 {
+  font-size: calc(var(--font-size) * 3);
+  margin-bottom: var(--space);
+}
+
+@media (max-width: 575px) {
+  :root {
+    --font-size: 12px;
+    --space: 14px;
+  }
+}
+.fw, main {
+  width: 100%;
+}
+
+.btn2, .btn1 {
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: #3498db;
+}
+
+.btn2 {
+  background-color: #2ecc71;
+}
+
+main > * {
+  width: 100%;
+}
+main p {
+  background: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

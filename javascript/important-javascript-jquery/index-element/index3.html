@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style>
+        div{display: flex;flex-direction: column;list-style: none;padding:0;margin:0 auto;max-width: 300px;}
+        div > button:not(:last-child){margin-bottom: 4px;}
+        button{padding:8px 16px;}
+    </style>
+</head>
+<body>
+    <div id="buttonsContainer1"></div>
+    <br><br><br>
+    <div id="buttonsContainer2">
+        <button></button>
+        <button></button>
+        <button></button>
+    </div>
+    <br><br><br>
+    <div id="buttonsContainer3"></div>
+    
+
+    <script>
+        const num = [1, 2, 3, 4, 5];
+        num.forEach((i) => {
+            var button = document.createElement("button");
+            button.innerText = i;
+            buttonsContainer1.appendChild(button);
+            button.addEventListener("click", () => alert(i));
+        });
+    </script>
+    <script>
+        const num1 = Array.from(document.getElementById('buttonsContainer2').children);
+        num1.forEach((e, i) => {
+            var button = num1[i];
+            i = i + 1;
+            button.innerText = i;
+            buttonsContainer2.appendChild(button);
+            button.addEventListener("click", () => alert(i));
+        });
+    </script>
+    <script>
+        for (var i = 0; i < 3; i++) {
+            var button = document.createElement("button");
+            button.innerText = i + 1;
+            (function(index){
+                button.addEventListener("click", () => alert(index));
+            })(i + 1);
+            buttonsContainer3.appendChild(button);
+        }
+    </script>
+</body>
+</html>

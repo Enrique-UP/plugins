@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<pre>
+const loop = (times, callback) => {
+    for (let i = 0; i < times; i++) {
+        callback(i);
+    }
+};
+
+// Loop 5 times and log the current iteration to the console
+loop(5, i => {
+    document.write(`Iteration is #${i}<br>`);
+});
+</pre>
+
+<script>
+    const loop = (times, callback) => {
+        for (let i = 0; i < times; i++) {
+            callback(i);
+        }
+    };
+
+    // Loop 5 times and log the current iteration to the console
+    loop(5, i => {
+        document.write(`Iteration is #${i}<br>`);
+    });
+</script>
+
+</body>
+</html>

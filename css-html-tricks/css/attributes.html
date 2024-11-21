@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;line-height: 1;}
+        section{width: 100%;display: flex;flex-direction: column;align-items: flex-start;padding: 30px;}
+        section > a:not(:last-child){margin-bottom: 16px;}
+        p{font-size: 20px;font-weight: bold;margin-bottom: 16px;line-height: 1.3;}
+
+        a{color:#000;text-decoration: none;white-space: nowrap;}
+        a:not([href]){color:#000;font-weight: bold;}
+        /* section :not([class]){color: green;} */
+        a[href="#"]{color: #fff;}
+
+        a[target]{background-color: red;}
+        a[href="https://www.demo.com"] {background-color: #4a7d90;}
+        a[target="_blank"]{background-color: green;}
+
+        a[title~="flower"]{background-color: red;}
+
+        a[class|="top"] {background-color: red;}
+
+        a[class^="bottom"] {background-color: green;}
+        /* a[href^="http"] {}
+        a[href^="http"]::after {} */
+
+        a[class$="test"] {background-color: blue;}
+        /* a[href$=".pdf"] {}
+        a[href$=".pdf"]::after {} */
+
+        a[class*="be"] {background-color: red;}
+    </style>
+</head>
+<body>
+    <h2>["value"] , ~ , | , ^ , $ , *</h2>
+    <section>
+        <a>Not Link</a>
+        <a href="">Link</a>
+        <a href="#" target="">Link</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <a href="#" target="_blank">Link</a>
+        <a href="https://www.demo.com">Link</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <p>
+            The [attribute~="value"] selector is used to select elements with an attribute value containing a specified word.
+            <br>
+            The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+        </p>
+        <a href="#" title="klematis flower">klematis flower</a>
+        <a href="" title="flow">flow</a>
+        <a href="#" title="flower">flower</a>
+        <a href="" title="tree">tree</a>
+        <a href="" title="tree _flower_">tree _flower_</a>
+        <a href="" title="tree -flower-">tree -flower-</a>
+        <a href="#" title="flower klematis">flower klematis</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <p>
+            The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+            <br>
+            Note: The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text".
+        </p>
+        <a href="#" class="top-header">top-header</a>
+        <a href="#" class="top-text">top-text</a>
+        <a class="topcontent">topcontent</a>
+        <a class="contenttopcontent">contenttopcontent</a>
+        <a class="ds-text-top">ds-text-top</a>
+        <a class="ds-top-text">ds-top-text</a>
+        <a class="contenttop">contenttop</a>
+        <a class="content-top">content-top</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <p>
+            The [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
+            <br>
+            Note: The value does not have to be a whole word!
+        </p>
+        <a href="#" class="bottom-header">bottom-header</a>
+        <a href="#" class="bottom-text">bottom-text</a>
+        <a class="bottomcontent">bottomcontent</a>
+        <a class="contentbottom">contentbottom</a>
+        <a class="content-bottom">content-bottom</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <p>
+            The [attribute$="value"] selector is used to select elements whose attribute value ends with a specified value.
+            <br>
+            Note: The value does not have to be a whole word!  
+        </p>
+        <a href="#" class="first_test">first_test</a>
+        <a class="test_">test_</a>
+        <a class="test_">test_</a>
+        <a class="-test-">-test-</a>
+        <a href="#" class="my-test">my-test</a>
+        <a href="#" class="mytest">mytest</a>
+
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
+
+        <p>
+            The [attribute*="value"] selector is used to select elements whose attribute value contains a specified value.
+            <br>
+            Note: The value does not have to be a whole word!  
+        </p>
+        <a href="#" class="first_best">first_best</a>
+        <a class="best_">best_</a>
+        <a class="best_">best_</a>
+        <a class="-best-">-best-</a>
+        <a href="#" class="my-best">my-best</a>
+        <a href="#" class="mybest">mybest</a>
+    </section>
+    <section>
+        <style>
+            .four[style^="color"]{background: blue;}
+            .one[style$="block;"]{background: red;}
+            .two[style*="none"]{background: blue !important;}
+            /* .three[title~="flower"]{background: blue;} */
+            .three[style~="flex;"]{background: blue;}
+            .five[style|="display"]{background: blue;}
+            .o1[class~="cls"]{background: blue;}
+        </style>
+        <div class="four" style="color:#fff;display: flex;">Good Example here</div>
+        <div class="one" style="color:#fff;display: block;">Good Example here</div>
+        <div class="two" style="background: none;">Good Example here</div>
+        <!-- <div class="three" title="one: flower">Good Example here</div> -->
+        <div class="three" style="display: flex;">Good Example here</div>
+        <div class="five" style="display: flex">Good Example here</div>
+
+        <div class="o1 cls o2" style="display: flex">Good Example here</div>
+    </section>
+</body>
+</html>

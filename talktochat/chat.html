@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+<button>Click</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $('button').click(function(){
+        //alert('data');
+        Tawk_API.toggle();
+        //Some code
+    });
+    
+    var Tawk_API = Tawk_API || {};
+    Tawk_API.customStyle = {
+        visibility : {
+            desktop : {
+                position : 'br',
+                xOffset : '500px',
+                yOffset : '300px'
+            },
+            mobile : {
+                position : 'br',
+                xOffset : 0,
+                yOffset : 0
+            },
+            bubble : {
+                rotate : '0deg',
+                xOffset : 0,
+                yOffset : 0
+            }
+        }
+    };
+</script> 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/62b2eeb17b967b117995eba5/1g65f8pn0';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+
+
+        // by this code the chat window load maximize always
+        window.Tawk_API = window.Tawk_API || {};
+        window.Tawk_API.onBeforeLoad = function(){
+            window.Tawk_API.maximize();
+        };
+        // by this code the chat window load maximize always
+    })();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

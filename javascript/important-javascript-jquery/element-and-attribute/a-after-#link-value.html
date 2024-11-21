@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html">Home</a><br>
+    <a href="about.html">About Us</a><br>
+    <a href="index.html#airlines">Airlines</a><br>
+    <a href="index.html#flights">Flights</a><br>
+    <a href="contact.html">Contact Us</a><br><br>
+    
+    <a href="index.html">Home</a><br>
+    <a href="about.html">About Us</a><br>
+    <a href="index.html#airlines">Airlines</a><br>
+    <a href="index.html#flights">Flights</a><br>
+    <a href="contact.html">Contact Us</a><br><br>
+
+    <a href="index.html">Home</a><br>
+    <a href="about.html">About Us</a><br>
+    <a href="index.html#airlines">Airlines</a><br>
+    <a href="index.html#flights">Flights</a><br>
+    <a href="contact.html">Contact Us</a><br><br>
+    
+    <script>
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");    
+            if (href.includes("#")) {
+                const valueAfterHash = href.split("#")[1];
+                console.log(valueAfterHash);
+                link.classList = valueAfterHash;
+            }
+        });
+        
+        // document.querySelectorAll("a").forEach(link => {
+        //     const href = link.href;
+        //     if (href.includes("#")) {
+        //         const valueAfterHash = href.substring(href.indexOf("#") + 1);
+        //         console.log(valueAfterHash);
+        //         link.classList = valueAfterHash;
+        //     }
+        // });
+    </script>
+</body>
+</html>

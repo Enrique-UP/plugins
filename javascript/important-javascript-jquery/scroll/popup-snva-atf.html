@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../webpage-starting/starting-webpage-grid/assets/css/grid.min.css" />
+    <style type="text/css">
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.5;}
+        main{width:100%;display:flex;flex-direction: column;}
+        main > *{width:100%;text-align: center;}
+        main header{background: #ccc;height: 80px;}
+        main section{height: 2000px;}
+        main section > a{width:auto;float:left;clear:both;background:brown;color:white;padding:10px 15px;cursor: pointer;}
+        main section > a:not(:last-child){margin-bottom:10px;}
+        main footer{background:#bbb;height:200px;}
+
+        .popup{position: fixed;top:0;left:0;width:100%;height: 100%;background: rgba(0,0,0,0.75);display: none;justify-content: center;align-items: center;padding:15px;z-index: 999999;}
+        .popup.active{display: flex;}
+        .popup .middle{background: white;width:600px;max-width: 100%;position: relative;padding:50px 50px 50px 30px;}
+        .popup .close{position: absolute;top:0;right:0;background: red;color:white;width:40px;height:40px;display: flex;align-items: center;justify-content: center;font-weight: 700;cursor: pointer;font-size: 18px;}
+
+        .timer{position: fixed;left:0;bottom:0;background: orange;color:white;z-index: 9999999;padding:10px;}
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer"></div>
+    <main>
+        <header>Header</header>
+        <section>
+            <a class="linkBtn">Show Popup</a><br>
+            <a class="linkBtn">Show Popup</a><br>
+            <a class="linkBtn">Show Popup</a><br>
+            <a class="linkBtn">Show Popup</a>
+        </section>
+        <footer>Footer</footer>
+    </main>
+
+    <div class="popup">
+        <div class="middle">
+            <p>Pop Up</p>
+            <span class="close">X</span>
+        </div>
+    </div>
+    
+
+    <script>
+        (function(){
+            let a;
+
+            function show(time){
+                a = setTimeout(() => {
+                    document.querySelector(".popup").classList.add("active");
+                    console.log("Show");
+                }, time);
+            }
+            show(0);
+
+
+
+            document.querySelectorAll(".linkBtn").forEach((e) => {
+                e.addEventListener("click", function(){
+                    clearInterval(a);
+                    show(0);
+                });
+            });
+
+
+
+            document.querySelector(".popup .close").addEventListener("click", function(){
+                console.clear();
+                this.closest(".popup").classList.remove("active");
+                show(5000);
+            });
+
+
+            
+
+
+
+            function scroll(){
+                console.clear();
+                var documentHeight = document.documentElement.offsetHeight;
+                console.log(`documentHeight = ${documentHeight}`);
+
+                var widthHeight = window.innerHeight;
+                console.log(`widthHeight = ${widthHeight}`);
+
+                var scroll = document.documentElement.scrollTop;
+                console.log(`scroll = ${scroll}`);
+
+                var footer = document.querySelector("main footer");
+                var footerTop = footer.offsetTop;
+                console.log("footerTop = " + footerTop);
+
+                var top = footerTop - footer.offsetHeight;
+                console.log("top = " + top);
+
+                if(documentHeight == scroll + widthHeight){
+                    footer.classList.add("active");
+                }
+                if(footer.classList.contains("active") && scroll == 0){
+                    clearInterval(a);
+                    footer.classList.remove("active");
+                    show(0);
+                }
+            }
+            window.addEventListener("load", scroll);
+            window.addEventListener("scroll", scroll);
+        })();
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const myInterval = setInterval(function(){
+            const date = new Date();
+            timer.innerHTML = date.getSeconds();
+        }, 1000);
+
+        function myStopFunction() {
+            clearInterval(myInterval);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        .marquee {
+            overflow: hidden;
+            padding-top: 24px;
+            display: flex;
+            }
+            .marquee > ul {
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            justify-content: start;
+            animation: marquee var(--t) linear infinite;
+            -webkit-animation: marquee var(--t) linear infinite;
+            -moz-animation: marquee var(--t) linear infinite;
+            margin-left: 50%;
+            }
+            .marquee > ul:hover {
+            animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            }
+            .marquee > ul > li {
+            width: auto;
+            list-style: none;
+            font-size: 18px;
+            font-weight: 600;
+            flex-shrink: 0;
+            }
+            .marquee > ul > li:not(:last-child) {
+            padding-right: 32px;
+            }
+            .marquee > ul > li:nth-child(odd) {
+            color: var(--green1);
+            }
+            .marquee > ul > li:nth-child(even) {
+            color: var(--red);
+            }
+            @keyframes marquee {
+            to {
+                margin-left: var(--x);
+            }
+            }
+            @-webkit-keyframes marquee {
+            to {
+                margin-left: var(--x);
+            }
+            }
+            @-moz-keyframes marquee {
+            to {
+                margin-left: var(--x);
+            }
+            }
+    </style>
+</head>
+<body>
+    <section class="marquee">
+        <ul> 
+          <li>Start</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>8 +0, 02 +0,07% AG 6,19 +0,08 +1,31%</li>
+          <li>End</li>
+        </ul>
+    </section>
+    <script src="../../../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        function marquee(){
+            var w = $(".marquee > ul").width();
+            console.log(w);
+            $(".marquee > ul").get(0).style.setProperty("--x", -w + 30 + "px");
+            $(".marquee > ul").get(0).style.setProperty("--t", w/100 + "s");
+        }
+        $(window).on("load resize", marquee);
+    </script>
+</body>
+</html>

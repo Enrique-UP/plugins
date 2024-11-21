@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        img{width:200px;float:left;clear:both;}
+        img:not(:last-of-type){margin-bottom: 30px;}
+    </style>
+</head>
+<body>
+    <h1>If image src is incorrect then other image will be set in src.</h1>
+    <img src="../../../sliders/owl-carousel/images/1.jpg" onerror="this.src = '../../../images/logo.png'" />
+    <img src="../../../sliders/owl-carousel/images/2.jpg" onerror="this.onerror = null; this.src = '../../../images/logo.png'" />
+    <img src="../../../sliders/owl-carousel/images/3.jpg" onerror="this.onerror = null; this.src = '../../../images/logo.png'" />
+    <img src="../../../sliders/owl-carousel/images/4.jpg" />
+    <img src="../../../sliders/owl-carousel/images/5.jpg" />
+    <img src="../../../sliders/owl-carousel/images/6.jpg" />
+
+    <script>
+        document.querySelectorAll("img").forEach((e) => e.addEventListener("error", () => e.src = "../../../images/logo.png"));
+    </script>
+</body>
+</html>

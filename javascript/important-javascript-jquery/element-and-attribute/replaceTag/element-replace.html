@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <p>1- p tag into section tag</p>
+    <script>
+        var demo = document.querySelector("p");
+        var a = `<section class="add">${demo.innerHTML}</section>`;
+        demo.outerHTML = a;
+    </script>
+    <p>=================================================================</p>
+    <div>2- div tag into span tag</div>
+    <script>
+        const div = document.querySelector("div");
+        const span = document.createElement("span");
+        span.classList = "span";
+        span.innerHTML = div.innerHTML;
+        div.parentNode.replaceChild(span, div);
+    </script>
+    <p>=================================================================</p>
+    <aside>3- aside tag into p tag</aside>
+    <script>
+        const div1 = document.querySelector("aside");
+        const span1 = document.createElement("p");
+        span1.innerHTML = div1.innerHTML;
+        div1.replaceWith(span1);
+    </script>
+    <p>=================================================================</p>
+    <p>4- <b>Select and its option into ul and li</b></p>
+    <select>
+        <option checked value="1">Lorem</option>
+        <option value="2">Ipsum</option>
+        <option value="3">Dolor</option>
+        <option value="4">Sit</option>
+        <option value="5">Ameet</option>
+    </select>
+    <script>
+        var select = document.querySelector("select");
+        var ul = document.createElement("ul");
+        ul.innerHTML = select.innerHTML;
+        select.replaceWith(ul);
+
+        ul.querySelectorAll("option").forEach((e) => {
+            const li = document.createElement("li");
+            li.innerHTML = e.innerHTML;
+            for(const x of e.attributes) li.setAttribute(x.name, x.value);
+            e.replaceWith(li);
+
+            li.setAttribute("data-value", e.getAttribute("value"));
+            li.removeAttribute("value");
+            li.removeAttribute("checked");
+        });
+
+        // var arr = Array.from(document.querySelectorAll("ul > option"), e => e.outerHTML);
+        // console.log(arr);
+        // var a = Array.from(arr, e => e.replaceAll("option value", "li data-value"));
+        // console.log(a);
+        // var tags = "";
+        // a.forEach((e) => tags += e);
+        // document.querySelector("ul").innerHTML = tags;
+    </script>
+    <p>=================================================================</p>
+    <p>5- <b>dl, dt and dd into ul and li</b></p>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+    <script>
+        document.querySelectorAll("dl").forEach(function(e){
+            e.querySelectorAll("dt, dd").forEach(function(f){
+                const li = document.createElement("li");
+                li.innerHTML = f.innerHTML;
+                f.replaceWith(li);
+            });
+
+            const ul = document.createElement("ul");
+            ul.innerHTML = e.innerHTML;
+            e.replaceWith(ul);
+        });
+    </script>
+</body>
+</html>

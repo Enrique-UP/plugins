@@ -1,0 +1,130 @@
+Cmd+Shift+P => Reload Window
+or
+Go to top search bar and paste given words => Reload Window
+
+=====================
+open the terminal
+git --version
+=====================
+https://www.geeksforgeeks.org/how-to-install-git-in-vs-code/
+go to vs code settings bottom left => then search (Git: Enabled)
+=====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================
+https://www.youtube.com/watch?v=ukJEPyKubzA
+Github desktop
+-------------
+download software => install software => open its window => signin => continue => uncheck yes => finish.
+click on clone repository box => opens window go to github.com tab => select anyone repository => choose button click => select location => clone.
+
+more folder clone on this folder
+go to github folder => clone or download click => open in desktop => choose same path => select folder => clone.
+
+open window after change in code.
+=> commit to master button click
+=> go to repository => push => go to github.com folder
+
+=> change on github.com folder file
+=>after change type in commit change below of the screen=> commit changes.
+
+=> repository tab => pull =>yes
+this github new changes file has pull on live to local now.
+
+
+=> to to github.com folder clone or download button click => open with desktop => to to github.com => settings => type repository name => delete this repository after scrolling shows.
+====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================================================================
+https://www.youtube.com/watch?v=icyOhrMNrOk
+
+clone, change, upload changes
+----------------------------
+open git software gui window=> clone existing repository
+source location => https://github.com/demo/demo.git
+target directory => D:/folderName
+=> click on clone button
+
+maximize window
+go to repostory tab => Git Bash => then the black windos shows
+go to repostory tab => Explore Working Copy => then the black windos shows
+go to repostory tab => Explore Working Copy => right click => open vs code
+
+to to opened git software gui window=> 
+click on stage (left sidebar)
+click on amend last commit (bottom)
+after that
+click on new commit (bottom)
+type commit message NewChange
+click on => signoff
+click on => commit
+
+go to black type 
+$ git log
+=====================
+create new branch
+-----------------
+Branch tab => Create
+opens new window of branch => Name: MasterNew
+check Checkout after Creation
+click on create button.
+
+go to black window type
+$ git branch
+=====================
+push branch
+-----------------
+Branch tab => Create
+opens new window of branch => Name: MasterNew
+uncheck Checkout after Creation
+click on create button.
+
+remote tab => push => select the branch name => select remote (origin)=> push=> close
+check the git website folder
+=====================
+delete branch
+-----------------
+remote tab => delete branch=> select branch name opened window=> check always (do not perform merge checks) => delete => yes => close.
+check the git website folder
+=====================

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../webpage-starting/starting-webpage-grid/assets/css/grid.min.css" type="text/css" />
+    <style type="text/css">
+        body{font-family: Arial, Helvetica, sans-serif;}
+        span{width:100%;display: flex;background: #eee;padding:15px;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <section class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span>Box</span></div><!--cols-->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function cols(){
+            document.querySelectorAll(".section1 .container .row [class*='col-']").forEach((e) => {
+                var child = e.parentElement.children.length;
+                var w = window.innerWidth;
+                if(child === 1){
+                    e.classList = "col-12";
+                }
+                if(child === 2){
+                    if(w >= 576){
+                        e.classList = "col-sm-6";
+                    }
+                    if(w <= 575){
+                        e.classList = "col-12";
+                    }
+                }
+                if(child === 3){
+                    if(w >= 992){
+                        e.classList = "col-lg-4";
+                    }
+                    if(w >= 768 && w <= 991){
+                        e.classList = "col-md-6";
+                    }
+                    if(w >= 576 && w <= 767){
+                        e.classList = "col-sm-6";
+                    }
+                    if(w <= 575){
+                        e.classList = "col-12";
+                    }
+                }
+                if(child >= 4){
+                    if(w >= 1200){
+                        e.classList = "col-xl-3";
+                    }
+                    if(w >= 992 && w <= 1199){
+                        e.classList = "col-lg-4";
+                    }
+                    if(w >= 576 && w <= 991){
+                        e.classList = "col-sm-6";
+                    }
+                    if(w <= 575){
+                        e.classList = "col-12";
+                    }
+                }
+            });
+        }
+        window.addEventListener("load", cols());
+        window.addEventListener("resize", cols);
+    </script>
+    <script>
+        window.addEventListener("load", function(){
+            document.querySelectorAll(".section2 .container .row [class*='col-']").forEach((e) => {
+                e.classList.add("col-sm-6", "col-lg-4", "col-xl-3");
+            });
+        });
+    </script>
+</body>
+</html>

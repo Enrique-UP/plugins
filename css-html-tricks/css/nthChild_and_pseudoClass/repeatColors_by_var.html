@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../webpage-starting/starting-webpage-grid/assets/css/grid.min.css">
+    <style type="text/css">
+        :root{
+            --black:black;
+
+            --red:red;
+            --blue:blue;
+            --green:green;
+        }
+
+        ul{width:100%;display:flex;flex-direction: column;padding: 0;}
+        ul > li{list-style: none;background: var(--black);color:#fff;}
+        ul > li > span{background:#fff;padding-inline:5px;display: inline-block;color:var(--black);}
+        
+        ul.rptCls > li:nth-child(3n + 1){--black:var(--red);}
+        ul.rptCls > li:nth-child(3n + 2){--black:var(--blue);}
+        ul.rptCls > li:nth-child(3n + 3){--black:var(--green);}
+
+        /* If totoal changing colors are 3 then here is using 3n. */
+        /* If totoal changing colors are 4 then here is using 4n. */
+
+        /* .container {counter-reset: number;}
+        .container data {counter-increment: number;}
+        .container data::before {content: "col " counter(number) ".- ";} */
+        .container [class*="col-"]{background: var(--black);}
+        .container [class*="col-"]:nth-child(3n + 1){--black:var(--red);}
+        .container [class*="col-"]:nth-child(3n + 2){--black:var(--blue);}
+        .container [class*="col-"]:nth-child(3n + 3){--black:var(--green);}
+    </style>
+</head>
+<body>
+    <ul class="rptCls">
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+    </ul>
+    <ul>
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+    </ul>
+    <ul class="rptCls">
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+    </ul>
+    <ul class="rptCls">
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+        <li>2 <span>Lorem</span></li>
+        <li>3 <span>Lorem</span></li>        
+        <li>1 <span>Lorem</span></li>
+    </ul>
+
+    <p>&nbsp;</p>
+    <div class="container">
+        <h2>Now working proper</h2>
+        <div class="row">
+            <div class="col-4">
+                <data value="">Lorem</data>
+            </div>
+            <div class="col-4">
+                <data value="">Lorem</data>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-6">
+                        <data value="">Lorem</data>
+                    </div>
+                    <div class="col-6">
+                        <data value="">Lorem</data>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-4">
+                        <data value="">Lorem</data>
+                    </div>
+                    <div class="col-4">
+                        <data value="">Lorem</data>
+                    </div>
+                    <div class="col-4">
+                        <data value="">Lorem</data>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

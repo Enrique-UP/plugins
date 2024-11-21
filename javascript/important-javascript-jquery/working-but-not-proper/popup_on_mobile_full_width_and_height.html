@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;}
+        main{min-height: 200vh;width:100%;display: flex;flex-direction:column;align-items: flex-start;}
+        main a{background:#eee;padding:8px 16px;border:4px solid #ccc;}
+        main a:not(:last-child){margin-bottom: 8px;}
+        
+
+        a[data-popupBtn]{cursor: pointer;}
+        .popUp{width:100%;height:100vh;position:fixed;top:0;left:0;bottom:0;right:0;margin:auto;z-index:999;background:rgba(0, 0, 0, 0.75);display: table;padding:32px 12px;transition:0.5s linear;line-height: 1.6;text-align: center;}
+        .popUp .radiusArea{width: 100%;max-width: 575px;background: #fff;margin-inline:auto;display: table-cell;overflow: hidden;border-radius: 4px;vertical-align: middle;}
+        .popUp .popUpArea{width: 100%;overflow-y: auto;display: flex;}
+        .popUp .popUpArea .mainPa{display: flex;width: 100%;flex-direction: column;}
+        .popUp .popUpArea .mainPa .popUpBody{width: 100%;padding:24px 12px 12px;display: flex;flex-direction: column;}
+
+        .popUp .close{width: 36px;height: 36px;display: flex;justify-content: center;align-items: center;flex-shrink: 0;position: sticky;top: 12px;right:12px;font-style: normal;background: red;color: #fff;font-weight: bold;cursor: pointer;align-self: flex-end;border-radius: 100%;line-height: 1;}
+        .popUp .head{font-size: 36px;line-height: 1.2;margin-bottom: 16px;}
+        .popUp .text{font-size: 20px;color:#666;margin-bottom: 24px;}
+        .popUp .btns{display: flex;justify-content: center;}
+        .popUp .btns > a{background: brown;border-radius: 4px;color:#fff;text-decoration: none;line-height: 1;padding: 15px 20px;font-size: 24px;}
+
+        body:has(.popUp){overflow:hidden;}
+        /* body:has(.popUp.active){overflow:hidden;}
+        .popUp.active{height:100%;opacity:1;visibility:visible;overflow-y: auto;} */
+        /* .popUp .popUpArea.active{opacity: 1;visibility: visible;} */
+    </style>
+</head>
+<body>
+    <main>
+        <a data-popupBtn="#popup1">Popup 1</a>
+        <a data-popupBtn="#popup1">Popup 1</a>
+
+        <a data-popupBtn="#popup2">Popup 2</a>
+        <a data-popupBtn="#popup2">Popup 2</a>
+    </main>
+   <div class="popUp" id="popup1">
+        <div class="radiusArea">
+            <div class="popUpArea">
+                <div class="mainPa">
+                    <i class="close">&#x2716;</i>
+                    <div class="popUpBody">
+                        <h1 class="head">Lorem ipsum dolor sit amet consectetur adipisicing elit mollitia accusamus</h1>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit ea quod harum dolor ipsa eaque vel esse ipsa laudantium corporis explicabo.</p>
+                        <div class="btns">
+                            <a href="tel:+10000000000">+1 000 000 0000</a>
+                        </div>
+                    </div><!--popUpBody-->
+                </div>
+           </div>
+        </div>
+   </div><!--popUp-->
+   <!-- <div class="popUp" id="popup2">
+        <div class="popUpArea">PopupArea 2</div>
+    </div> -->
+    <!--popUp-->
+
+   <!-- <script>
+        function popUp(){
+            const popupBtn = "data-popupBtn";
+            document.querySelectorAll(`[${popupBtn}]`).forEach(function(e){
+                e.addEventListener("click", function(){
+                    document.body.classList.add("active");
+                    window.setTimeout(() => {
+                        const dataSection = document.querySelector(e.getAttribute(`${popupBtn}`));
+                        dataSection.classList.add("active");
+                    }, 100);
+                });
+            });
+            document.querySelectorAll(".popUp").forEach(function(e){
+                e.querySelector(".popUpArea").insertAdjacentHTML("beforeend", `<i class="close">&#x2716;</i>`);
+                e.querySelector(".close").addEventListener("click", function(){
+                    e.classList.remove("active");
+                    document.body.classList.remove("active");
+                });
+            });
+        }popUp();
+   </script> -->
+</body>
+</html>

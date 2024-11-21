@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>contains(), includes(), .length > 0, by simple if condition</h1>
+<hr>
+<div id="myDIV">myDIV</div>
+<hr>
+<div class="demo">
+    <!-- <p>Demo</p> -->
+    <span>Demo</span>
+</div>
+<p>Demo</p>
+<p>Demo</p>
+<hr>
+<div id="yourDivId">
+    <p></p>
+</div>
+<hr>
+<div id="yourDivId1"></div>
+<hr>
+
+
+
+
+<p id="ifCondition">by if condition</p>
+<script>
+    document.write("<br>");
+    var ifCondition = document.getElementById("ifCondition");
+    if (ifCondition) alert("True");
+    else alert("False");
+    document.write("<br>");
+</script>
+
+
+<script>
+    let answer = document.contains(document.getElementById("myDIV"));
+    if(answer){
+        document.write("answer = " + answer);
+        document.write("<br>");
+    }
+
+    let answer2 = document.getElementById("myDIV");
+    if (answer2.contains(answer2.querySelector("p"))) {
+        answer2.querySelector("p").innerHTML = "The div contains a paragraph element.";
+    } else {
+        answer2.innerHTML = "The div does not contain a paragraph element.";
+    }
+</script>
+
+
+
+<script>
+    let answer1 = document.contains(document.querySelector(".demo > p"));
+    if(answer1){
+        document.querySelector(".demo").innerHTML = answer1;
+    }else{
+        document.querySelector(".demo").innerHTML = answer1;
+    }
+</script>
+
+
+
+<script>
+    let div = document.getElementById("yourDivId");
+    if (div.innerHTML.includes("<p>")) {
+        div.querySelector("p").innerHTML = "The div contains a paragraph element.";
+    } else {
+        div.innerHTML = "The div does not contain a paragraph element.";
+    }
+</script>
+
+
+
+<script>
+    let yourDivId1 = document.getElementById("yourDivId1");
+    if (yourDivId1.getElementsByTagName("p").length > 0) {
+        yourDivId1.querySelector("p").innerHTML = "The div contains a paragraph element.";
+    } else {
+        yourDivId1.innerHTML = "The div does not contain a paragraph element.";
+    }
+</script>
+</body>
+</html>

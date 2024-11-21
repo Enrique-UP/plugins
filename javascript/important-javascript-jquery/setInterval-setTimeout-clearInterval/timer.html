@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">0</div>    
+
+    <script>
+        (function(){
+            const timer = setInterval(() => {
+                var a = parseInt(demo.innerHTML);
+                demo.innerHTML = a + 1;
+                if(a === 3){
+                    clearInterval(timer);
+                }
+            }, 1000);
+            demo.addEventListener("click", function(){
+                clearInterval(timer)
+            });
+        })();
+    </script>
+</body>
+</html>

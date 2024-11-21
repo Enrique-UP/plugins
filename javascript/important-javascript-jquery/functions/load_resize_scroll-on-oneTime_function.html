@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>Header Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe porro recusandae iure tempore ut libero, labore consequatur autem hic asperiores?z</header>
+        <section style="height: 2000px;width: 100%;background: #333;"></section>
+    </main>
+    <!-- <script>
+        function addRemove(){
+            if (window.scrollY >= 40) document.querySelector("header").classList.add("active");
+            else document.querySelector("header").classList.remove("active");
+        }
+        window.addEventListener("load", addRemove);
+        window.addEventListener("scroll", addRemove);
+        window.addEventListener("resize", addRemove);
+    </script> -->
+    <!-- <script>
+        // function addRemove() {
+        //     document.querySelector("header").classList[window.scrollY >= 40 ? 'add' : 'remove']("active");
+        // }
+        // window.onload = window.onscroll = window.onresize = addRemove;
+
+        // function addRemove() {
+        //     document.querySelector("header").classList[window.scrollY >= 40 ? 'add' : 'remove']("active");
+        // }
+        window.onload = window.onscroll = window.onresize = () => document.querySelector("header").classList[window.scrollY >= 40 ? 'add' : 'remove']("active");
+    </script> -->
+    <!-- <script>
+        function addRemove() {
+            document.querySelector("header").classList.toggle("active", window.scrollY >= 40);
+        }
+        ["load", "scroll", "resize"].forEach(e => window.addEventListener(e, addRemove));
+    </script> -->
+    <script>
+        function addRemove() {
+            document.querySelector("header").classList.toggle("active", window.scrollY >= 40);
+        }
+
+        // window.onload = window.onscroll = window.onresize = addRemove;
+        // ['load', 'scroll', 'resize'].forEach(e => window.addEventListener(e, addRemove));
+        // ['onload', 'onscroll', 'onresize'].forEach(e => window[e] = addRemove);
+        
+
+        // window.addEventListener('load', addRemove);
+        // window.addEventListener('scroll', addRemove);
+        // window.addEventListener('resize', addRemove);
+
+
+        // Object.assign(window, {
+        //     onload: addRemove,
+        //     onscroll: addRemove,
+        //     onresize: addRemove
+        // });
+
+        /* ======================================================================== important ======================================================================== */ 
+        (function(events, index) {
+            events.forEach(event => window.addEventListener(event, index));
+        })(["load", "scroll", "resize"], addRemove);
+        /* ======================================================================== important ======================================================================== */ 
+
+        // (function(e, i) {
+        //     e.forEach(f => window.addEventListener(f, i));
+        // })(['load', 'scroll', 'resize'], function(){
+        //     if (window.scrollY >= 40) document.querySelector("header").classList.add("active");
+        //     else document.querySelector("header").classList.remove("active");
+        // });
+
+
+        // const addEventListeners = (events, handler) => {
+        //     events.forEach(event => window.addEventListener(event, handler));
+        // };
+        // addEventListeners(['load', 'scroll', 'resize'], addRemove);
+
+
+        // const addEvents = (target, events, handler) => {
+        //     events.forEach(event => target.addEventListener(event, handler));
+        // };
+        // addEvents(window, ['load', 'scroll', 'resize'], addRemove);
+    </script>
+</body>
+</html>

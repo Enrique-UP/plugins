@@ -1,0 +1,43 @@
+=========video-1
+download node js from https://nodejs.org/en/download => windows Installer
+go to folder then press ctrl + l => node -v
+
+npm install typescript -g
+go to folder then press ctrl + l => tsc -v
+
+=========video-2
+for compiling only single file and again compiling
+go to terminal => tsc demo.ts
+// for showing result in terminal
+go to terminal => node demo.js
+
+=========video-3
+for auto compile
+go to terminal => tsc demo.ts -w
+
+=========video-4
+go to terminal => tsc.cmd demo.ts -w
+
+
+===========================================
+npm install typescript -g
+tsc.cmd --init
+now created tsconfig.json file
+tsc.cmd --w
+
+tsconfig.json setting => go to tsfonfig.json file => add below code after "},"
+"include": [
+    "ts/"
+]
+===========================================
+and change setting
+"rootDir": "./pp/ts/script",
+"outDir": "./js", 
+"include": [
+    "./pp/ts/script"
+]
+check this folder and output
+D:\office-work\assets\plugins\working-but-not-proper\webpageStarting-pug-saas-typeScript\tsconfig.json
+
+for compiling only single folder to output js folder
+===========================================

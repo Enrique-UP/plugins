@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li class="active">Four</li>        
+    </ul>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li class="active">Five</li>
+    </ul>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li class="active">Four</li>
+        <li class="active">Five</li>
+    </ul>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li class="active">Four</li>
+        <li class="active">Five</li>
+        <li class="active">Six</li>
+    </ul>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+    </ul>
+    <script>
+        document.querySelectorAll("ul").forEach((e) => {
+            var siblings = [];
+            e.querySelectorAll("li").forEach((f) => {
+                if(!f.classList.contains("active")){
+                    siblings.push(f.outerHTML);
+                }
+            });
+            console.log(siblings);
+            var a = "";
+            siblings.forEach((e, i, arr) => {
+                a += arr[i];
+            });
+            e.innerHTML = a;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){
+            const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
+            const isChrome = /chrome/.test(navigator.userAgent.toLowerCase()) && !/edg|edge|opr|brave/.test(navigator.userAgent.toLowerCase());
+            const isEdge = navigator.userAgent.toLowerCase().includes("edg");
+            const isSafari = navigator.userAgent.toLowerCase().includes("safari") && !navigator.userAgent.toLowerCase().includes("chrome");
+            const isOpera = navigator.userAgent.toLowerCase().includes("opera") || navigator.userAgent.toLowerCase().includes("opr");
+            
+            if (isFirefox) document.write("Your browser is Firefox");
+            else if(isChrome) document.write("This is Google Chrome.");
+            else if(isEdge) document.write("This is Edge.");
+            else document.write("Your browser is other browser.");
+        })();
+    </script>
+</body>
+</html>

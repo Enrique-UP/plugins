@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<div>
+  <p>I am a paragraph</p>
+  <p>I am a paragraph</p>
+  <p>I am a paragraph</p>
+</div>
+
+<script>
+const childs = document.querySelector("div").children;
+for (let i = 0; i < childs.length; i++) {
+    childs[i].style.backgroundColor = "red";
+}
+</script>
+
+</body>
+</html>

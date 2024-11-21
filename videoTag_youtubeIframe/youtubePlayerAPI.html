@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>YouTube Video API</title>
+    <style type="text/css">
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        body {padding: 30px;}
+        h1 {font-size: 24px;}
+        hr {margin-block: 100px;}
+    </style>
+</head>
+<body>
+    <div class="videoArea">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?enablejsapi=1" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <br>
+        <button class="playBtn">Play</button>
+        <button class="stopBtn">Stop</button>
+        <button class="pauseBtn">Pause</button>
+    </div><!--videoArea-->
+
+    <br><br>
+
+    <div class="videoArea">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?enablejsapi=1" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <br>
+        <button class="playBtn">Play</button>
+        <button class="stopBtn">Stop</button>
+        <button class="pauseBtn">Pause</button>
+    </div><!--videoArea-->
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        function onYouTubeIframeAPIReady() {
+            document.querySelectorAll('.videoArea iframe').forEach((iframe) => {
+                var player = new YT.Player(iframe, {
+                    events: {
+                        'onReady': function(event) {
+                            addPlayerControls(event.target);
+                        }
+                    }
+                });
+            });
+        }
+        function addPlayerControls(player) {
+            var videoArea = player.getIframe().closest('.videoArea');
+            var playBtn = videoArea.querySelector('.playBtn');
+            playBtn.addEventListener('click', function() {
+                player.playVideo();
+            });
+            var pauseBtn = videoArea.querySelector('.pauseBtn');
+            pauseBtn.addEventListener('click', function() {
+                player.pauseVideo();
+            });
+            var stopBtn = videoArea.querySelector('.stopBtn');
+            stopBtn.addEventListener('click', function() {
+                player.stopVideo();
+            });
+        }
+    </script>
+</body>
+</html>

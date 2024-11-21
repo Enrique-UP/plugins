@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+<pre>
+    const age = 25;
+    switch (true) {
+        case (age >= 0 && age <= 12):
+            result = "You are a child.";
+            break;
+        case (age >= 13 && age <= 19):
+            result = "You are a teenager.";
+            break;
+        case (age >= 20 && age <= 64):
+            result = "You are an adult.";
+            break;
+        case (age >= 65):
+            result = "You are a senior citizen.";
+            break;
+        default:
+            result = "Invalid age.";
+    }
+    document.querySelector("p#demo").innerHTML = result;
+</pre>
+    <p>================</p>
+    <p id="demo"></p>
+    <script>
+        const age = 25;
+        switch (true) {
+            case (age >= 0 && age <= 12):
+                result = "You are a child.";
+                break;
+            case (age >= 13 && age <= 19):
+                result = "You are a teenager.";
+                break;
+            case (age >= 20 && age <= 64):
+                result = "You are an adult.";
+                break;
+            case (age >= 65):
+                result = "You are a senior citizen.";
+                break;
+            default:
+                result = "Invalid age.";
+        }
+        document.querySelector("p#demo").innerHTML = result;
+    </script>
+</body>
+</html>

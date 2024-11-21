@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        div{width:100%;padding-top:50px;padding-bottom: 50px;}
+        
+        .one a[target] {background: green;}
+        
+        .two a[target="_blank"] {background-color: red;}/* or */
+        .two input[type="text"] {background-color: yellowgreen;}
+
+        .three img[title~="flower"] {border: 5px solid orange;}
+
+        .four [class|="top"] {background: yellow;}
+        .five [class^="top"]{background:cyan;}
+
+        .six [class$="test"] {background: blue;}
+        .seven [class*="test"] {background: brown;}
+    </style>
+</head>
+<body>
+    <pre>
+        <b>All CSS Attribute Selectors</b>
+        <b>Selector 	        Example 	        Example description</b>
+        [attribute] 	        [target] 	        Selects all elements with a target attribute
+        [attribute=value] 	[target="_blank"] 	Selects all elements with target="_blank"
+        [attribute~=value] 	[title~="flower"] 	Selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
+        [attribute|=value] 	[lang|="en"] 	        Selects all elements with a lang attribute value starting with "en"
+        [attribute^=value] 	a[href^="https"] 	Selects all <a> elements with a href attribute value starting with "https"
+        [attribute$=value] 	a[href$=".pdf"] 	Selects all <a> elements with a href attribute value ending with ".pdf"
+        [attribute*=value] 	a[href*="w3schools"] 	Selects all <a> elements with a href attribute value containing the substring "w3schools"
+    </pre>
+    <div class="one">
+        <p><a href="https://www.w3schools.com">w3schools.com</a></p>
+        <p><a href="http://www.disney.com" target="_blank">disney.com</a></p>
+        <p><a href="http://www.wikipedia.org" target="_top">wikipedia.org</a></p>
+        <p><a href="https://www.w3schools.com">w3schools.com</a></p>
+    </div><!--one-->
+    <hr />
+    <div class="two">
+        <p><a href="https://www.w3schools.com">w3schools.com</a></p>
+        <p><a href="http://www.disney.com" target="_blank">disney.com</a></p>
+        <p><a href="http://www.wikipedia.org" target="_top">wikipedia.org</a></p>
+        <input type="text" />
+        <input type="button" value="Button" />
+    </div><!--two-->
+    <hr />
+    <div class="three">
+        <img src="../../banner1.jpg" title="klematis flower" width="150" height="113">
+        <img src="../../banner1.jpg" title="flower" width="224" height="162">
+        <img src="../../banner1.jpg" title="tree" width="200" height="358">
+    </div><!--three-->
+    <hr />
+    <div class="four">
+        <h1 class="top-header">Welcome</h1>
+        <p class="top-text">Hello world!</p>
+        <p class="topcontent">Are you learning CSS?</p>
+    </div><!--four-->
+    <hr />
+    <div class="five">
+        <h1 class="top-header">Welcome</h1>
+        <p class="top-text">Hello world!</p>
+        <p class="topcontent">Are you learning CSS?</p>
+    </div><!--five-->
+    <hr />
+    <div class="six">
+        <p class="first_stest">The first div element.</p>
+        <p class="second">The second div element.</p>
+        <p class="my-test">The third div element.</p>
+        <p class="mytests">This is some text in a paragraph.</p>
+    </div><!--six-->
+    <hr />
+    <div class="seven">
+        <p class="first_stest">The first div element.</p>
+        <p class="second">The second div element.</p>
+        <p class="my-test">The third div element.</p>
+        <p class="mytests">This is some text in a paragraph.</p>
+    </div><!--seven-->
+</body>
+</html>

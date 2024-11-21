@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" type="text/css" /> -->
+    <style type="text/css">
+        /* We can use below css also by adding external stylesheet. */
+        :root{
+            --one:brown;
+            --two:#ccc;
+            --three:orange;
+        }
+
+        *{padding:0;margin:0;box-sizing: border-box;}
+        main{width:100%;display: flex;flex-direction: column;}
+        main > *{width:100%;}
+        main header{height:100px;background: var(--one);}
+        main section{height:750px;background: var(--two);}
+        main footer{height:300px;background: var(--three);}
+        .dark{position: fixed;z-index: 999;top:0;right:0;background: red;color:#fff;padding:10px 20px;text-decoration: none;}
+    </style>
+</head>
+<body>
+    <main>
+        <header>Header</header>
+        <section>Section</section>
+        <footer>Footer</footer>
+    </main>
+    <a href="javascript:;" class="dark">Dark</a>
+    <script>
+        // document.querySelector(".dark").addEventListener("click", function(){
+        //     document.querySelector("head").innerHTML += `
+        //         <style type="text/css">
+        //             :root{
+        //                 --one:cyan;
+        //                 --two:#333;
+        //                 --three:green;
+        //             }
+        //         </style>
+        //     `;
+        // });
+
+        (function(){
+            const span = document.querySelectorAll(".field > span");
+            var text = "";
+            var link = "text.html?child-";
+            //var data=[];
+            span.forEach(function(e){
+                e.addEventListener("click", function(){
+                    text = e.innerText;
+                    window.localStorage.setItem("number", text);
+                    document.querySelector("a").href = link + window.localStorage.getItem("number");
+                    document.querySelector("a").style.display = "flex";
+                });
+            });
+            if(window.localStorage.getItem("number")){
+                document.querySelector("a").href = link + window.localStorage.getItem("number");
+            }else{
+                document.querySelector("a").style = "display:none";
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        function greet(name) {
+            console.log("Hello, " + name + "!");
+        }
+        setTimeout(greet, 2000, "Alice");
+        // setTimeout(greet("Alice"), 2000); // This is not working.
+    </pre>
+    <script>
+        function greet(name) {
+            console.log("Hello, " + name + "!");
+        }
+        setTimeout(greet, 2000, "Alice");
+        // setTimeout(greet("Alice"), 2000); // This is not working.
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+1. video/youtube video should be autoplay with sound/volume on all browsers.

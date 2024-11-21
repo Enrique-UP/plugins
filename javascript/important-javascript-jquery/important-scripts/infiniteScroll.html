@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Infinite Scroll</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.6;}
+        section{width: 100%;display: flex;background: #eee;height: 1500px;}
+        .content{width:500px;display: flex;flex-direction: column;max-width: 100%;margin-inline:auto;padding-inline:10px;}
+        .content .nameCaty{width:100%;background: #ccc;padding:16px;text-align: center;}
+        .content .nameCaty:not(:last-child){margin-bottom: 16px;}
+        .content .counter{font-size:24px;}
+        .content .name{font-weight: bold;}
+        .content .caty{color:brown;}
+        .loading {text-align: center; margin: 20px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <section></section>
+    <div class="content"></div>
+    <section></section>
+    <script>
+        (function(){
+            const data = [
+                {name:"Rose", category:"Plant"},
+                {name:"Tomato", category:"Vegetable"},
+                {name:"Apple", category:"Fruit"},
+                {name:"Dog", category:"Animal"},
+                {name:"Tulip", category:"Plant"},
+                {name:"Bottle Gourd", category:"Vegetable"},
+                {name:"Banana", category:"Fruit"},
+                {name:"Cat", category:"Animal"},
+                {name:"Sunflower", category:"Plant"},
+                {name:"Potato", category:"Vegetable"},
+                {name:"Orange", category:"Fruit"},
+                {name:"Elephant", category:"Animal"},
+                {name:"Lily", category:"Plant"},
+                {name:"Pea", category:"Vegetable"},
+                {name:"Grapes", category:"Fruit"},
+                {name:"Tiger", category:"Animal"},
+                {name:"Daisy", category:"Plant"},
+                {name:"Green Chili", category:"Vegetable"},
+                {name:"Pineapple", category:"Fruit"},
+                {name:"Rabbit", category:"Animal"},
+                {name:"Orchid", category:"Plant"},
+                {name:"Cucumber", category:"Vegetable"},
+                {name:"Mango", category:"Fruit"},
+                {name:"Fox", category:"Animal"},
+                {name:"Lavender", category:"Plant"},
+                {name:"Zucchini", category:"Vegetable"},
+                {name:"Strawberry", category:"Fruit"},
+                {name:"Lion", category:"Animal"},
+                {name:"Jasmine", category:"Plant"},
+                {name:"Carrot", category:"Vegetable"},
+                {name:"Peach", category:"Fruit"},
+                {name:"Bear", category:"Animal"},
+                {name:"Hibiscus", category:"Plant"},
+                {name:"Radish", category:"Vegetable"},
+                {name:"Blueberry", category:"Fruit"},
+                {name:"Horse", category:"Animal"},
+                {name:"Daffodil", category:"Plant"},
+                {name:"Squash", category:"Vegetable"},
+                {name:"Cherry", category:"Fruit"},
+                {name:"Wolf", category:"Animal"}
+            ];
+            data.forEach((e) => e.category = e.category.charAt(0).toUpperCase() + e.category.slice(1));
+
+            const content = document.querySelector(".content");
+            
+            let currentIndex = 0;
+            const limit = 10;
+            content.insertAdjacentHTML("afterend", '<div class="loading" id="loading">Loading more items...</div>');
+            const loadingDiv = document.getElementById("loading");
+
+            function loadItems() {
+                for (let i = 0; i < limit && currentIndex < data.length; i++, currentIndex++) {
+                    content.innerHTML += `
+                        <div class="nameCaty">
+                            <div class="counter">${currentIndex + 1}</div>
+                            <div class="name">${data[currentIndex].name}</div>
+                            <div class="caty">${data[currentIndex].category}</div>
+                        </div>
+                    `;
+                }
+                if (currentIndex >= data.length) {
+                    observer.disconnect();
+                    loadingDiv.remove();
+                }
+            }
+            let observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) loadItems();
+            }, {
+                root: null, // Use the viewport as the root
+                rootMargin: '-100px 0px', // Trigger when loadingDiv is within 100px of the top of the viewport
+                threshold: 0 // Trigger as soon as it enters the specified margin
+            });
+
+            loadItems();
+            observer.observe(loadingDiv);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:100px;background: black;}
+        
+        
+        .blinkBtn{width:40px;height:40px;display: flex;border-radius: 100%;position: relative;}
+        .blinkBtn::before{position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);content: "";width:inherit;height:inherit;background: white;border-radius: inherit;animation: back 2s linear infinite;-webkit-animation: back 2s linear infinite;-moz-animation: back 2s linear infinite;}
+        .blinkBtn > i{position: relative;font-style: normal;background:lightcoral;width:inherit;height: inherit;display:flex;color:white;align-items: center;justify-content: center;border-radius: inherit;line-height: 1;font-size: 16px;}
+        @keyframes back{
+            0%  {outline: 0px solid rgba(225,225,225,0.10);}
+            20% {outline: 4px solid rgba(225,225,225,0.80);}
+            40% {outline: 8px solid rgba(225,225,225,0.60);}
+            60% {outline: 12px solid rgba(225,225,225,0.40);}
+            80% {outline: 16px solid rgba(225,225,225,0.20);}
+            100%{outline: 20px solid rgba(225,225,225,0.10);}
+        }
+        @-webkit-keyframes back{
+            0%  {outline: 0px solid rgba(225,225,225,0.10);}
+            20% {outline: 4px solid rgba(225,225,225,0.80);}
+            40% {outline: 8px solid rgba(225,225,225,0.60);}
+            60% {outline: 12px solid rgba(225,225,225,0.40);}
+            80% {outline: 16px solid rgba(225,225,225,0.20);}
+            100%{outline: 20px solid rgba(225,225,225,0.10);}
+        }
+        @-moz-keyframes back{
+            0%  {outline: 0px solid rgba(225,225,225,0.10);}
+            20% {outline: 4px solid rgba(225,225,225,0.80);}
+            40% {outline: 8px solid rgba(225,225,225,0.60);}
+            60% {outline: 12px solid rgba(225,225,225,0.40);}
+            80% {outline: 16px solid rgba(225,225,225,0.20);}
+            100%{outline: 20px solid rgba(225,225,225,0.10);}
+        }
+    </style>
+</head>
+<body>
+    <span class="blinkBtn"><i>&#9742;</i></span>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{display: flex;gap:10px;flex-wrap: wrap;}
+        h1{width: 100%;font-size: 16px;}
+        div{background: orange;height: 60px;}
+        .one{width:60px;}
+        .two{flex-basis: 60px;}
+        .three{aspect-ratio: 1;}
+        .four{inline-size: 60px;/* block-size: 10px; */}
+    </style>
+</head>
+<body>
+    <h1>
+        width:
+        var(--box-width)<br>
+        inherit<br>
+        unset<br>
+        auto<br>
+        200px<br>
+        10em<br>
+        10rem<br>
+        50%<br>
+        calc(100% - 50px);<br>
+        50vw<br>
+        50vmin<br>
+        fit-content<br>
+        min-content;<br>
+        max-content;<br>
+        clamp(200px, 50%, 500px);
+        <br><br>
+        width: fit-content(300px);<br>
+        max-width: 500px;<br>
+        max-width: none|length|initial|inherit;<br>
+        min-width: 200px;<br>
+        min-width: length|initial|inherit;<br>
+        grid-template-columns: 1fr 2fr;<br>
+        contain: size;<br>
+        flex: 1 1 auto;
+    </h1><br>
+    <h1>height:
+        auto;<br>
+        min-height: 50px;<br>
+        min-height: length|initial|inherit;<br>
+        max-height: 50px;<br>
+        max-height: none|length|initial|inherit;
+        <br><br>
+        min-block-size: 200px;<br>
+        max-block-size: 60px;<br><br>
+        min-inline-size: 200px;<br>
+        max-inline-size: 60px;
+    </h1>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <div class="six"></div>
+</body>
+</html>

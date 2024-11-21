@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <button id="btn" onclick="fun()" style="background: blue;color:#fff;">Start Animation Click here</button>
+    <button id="btn" onclick="stop()">Stop</button>
+    <script>
+        let t;
+ 
+        function color() {
+            if (document.getElementById('btn').style.background == 'blue') {
+                document.getElementById('btn').style.background = 'green';
+            } else {
+                document.getElementById('btn').style.background = 'blue';
+            } 
+        }
+ 
+        function fun() {
+            t = setInterval(color, 1000); 
+        }
+ 
+        function stop() {
+            clearInterval(t);
+        }
+    </script>
+</body>
+ 
+</html>

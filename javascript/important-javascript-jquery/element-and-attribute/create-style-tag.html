@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div>Test Text</div>
+    <div>Test Text</div>
+    <div>Test Text</div>
+    <div>Test Text</div>
+    <div>Test Text</div>
+
+    <script>
+        var style = document.createElement('style');
+        var cls = "text";
+        style.type = 'text/css';
+        style.innerHTML = `.${cls} {color:#f00;font-weight:bold;}`;
+        document.querySelector('head').appendChild(style);
+        document.querySelectorAll('div').forEach((e) => e.className = cls);
+    </script>
+</body>
+</html>

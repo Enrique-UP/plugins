@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .slides{width:100%;display: flex;flex-direction: column;}
+        .slides .slide{width: 100%;width:100%;opacity: 0;visibility: hidden;height: 0;transition: 1s linear;display: flex;background: red;}
+        .slides .slide.active{opacity: 1;visibility: visible;height: auto;}
+        .slides .slide > span{color:#fff;padding: 20px 10px;text-align: center;width: 100%;}
+    </style>
+</head>
+
+<body>
+    <div class="slides">
+        <div class="slide"><span>1</span></div>
+        <div class="slide"><span>2</span></div>
+        <div class="slide"><span>3</span></div>
+        <div class="slide"><span>4</span></div>
+    </div>
+    <button>Button</button>
+
+
+    <script>
+        document.querySelector("button").addEventListener("click", function(){
+            this.remove();
+            
+            let slideIndex = 0;
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("slide");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                }
+                slideIndex++;
+                
+                if (slideIndex > slides.length) {
+                    slideIndex = slides.length
+                }
+
+                slides[slideIndex - 1].classList.add("active");
+
+                setTimeout(showSlides, 3000);
+            }
+            showSlides();
+        });
+    </script>
+
+</body>
+
+</html>

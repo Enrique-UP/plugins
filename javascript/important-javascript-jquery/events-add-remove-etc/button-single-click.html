@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <button>Button</button>
+    <script>
+        document.querySelector('button').addEventListener('click', function(){
+            this.disabled = true;
+            document.body.innerHTML += "<br><br><br>" + "It will not work after clicked.";
+        });
+    </script>
+</body>
+</html>

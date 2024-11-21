@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    #demo2::after {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      content:"|";font-weight: bold;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    span{color:red;font-weight: bold;}
+  </style>
+<body>
+<button onclick="typeWriter()">Click me</button>
+<p id="demo"></p>
+<button onclick="typeWriter1()">Click me</button>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+var i = 0;
+var txt = 'Lorem ipsum dummy text blabla lorem ipsum dolor.';
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    //document.getElementById("demo").innerHTML += txt[i]; // both are working
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+</script>
+
+<script>
+  var j = 0;
+  var speed = 150;
+
+  function typeWriter1() {
+    if (j < 10) {
+      document.getElementById("demo1").innerHTML += "<p>" + j + "</p>";
+      j++;
+      setTimeout(typeWriter1, speed);
+    }
+  }
+</script>
+<!-- <script>
+  var textArray = ['Lorem <span>ipsum</span> dolor sit ameet', 'Dummy <span>text</span>'];
+  var i = 0;
+  var textIndex = 0;
+  var speed = 50;
+  
+  function typeWriter() {
+    let currentText = textArray[textIndex];
+    document.getElementById("demo2").innerHTML = currentText.substring(0, i + 1);    
+    if (i < currentText.length) {
+      i++;
+      setTimeout(typeWriter, speed);
+    } else {
+      setTimeout(eraseText, 1000); 
+    }
+  }
+  
+  function eraseText() {
+    let currentText = textArray[textIndex];    
+    if (i >= 0) {
+      document.getElementById("demo2").innerHTML = currentText.substring(0, i);
+      i--;
+      setTimeout(eraseText, speed);
+    } else {
+      textIndex = (textIndex + 1) % textArray.length;
+      setTimeout(typeWriter, 500);
+    }
+  }
+  typeWriter();
+</script> -->
+<script>
+  var textArray = ['Lorem <span>ipsum</span> dolor sit ameet', 'Dummy <span>text</span> here'];
+  var i = 0, textIndex = 0, speed = 50, isErasing = false;  
+  function typeEffect() {
+    let currentText = textArray[textIndex];
+    document.getElementById("demo2").innerHTML = currentText.substring(0, i);    
+    if (!isErasing) {
+      if (i < currentText.length) {
+        i++;
+        setTimeout(typeEffect, speed);
+      } else {
+        isErasing = true;
+        setTimeout(typeEffect, 1000);
+      }
+    } else {
+      if (i > 0) {
+        i--;
+        setTimeout(typeEffect, speed);
+      } else {
+        isErasing = false;
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(typeEffect, 500);
+      }
+    }
+  }  
+  typeEffect();
+</script>
+
+</body>
+</html>

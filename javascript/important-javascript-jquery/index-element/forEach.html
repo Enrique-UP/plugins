@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div class="demo1">Lorem a</div>
+  <div class="demo1">Lorem b</div>
+  <div class="demo1">Lorem c</div>
+  <div class="demo1">Lorem d</div>
+
+  <br><br><br>
+
+  <div id="demo2"></div>
+
+  <br><br><br>
+
+  <div id="demo3"></div>
+
+  <script>
+    let text = "";
+    const fruits = ["apple", "orange", "cherry"];
+    fruits.forEach(myFunction);
+    document.getElementById("demo2").innerHTML = text;
+    function myFunction(item, index) {
+      var index = index + 1;
+      text += "<span>" + index + ": " + item + "</span><br>";
+    }
+  </script>
+  <script>
+    let text1 = "";
+    document.querySelectorAll(".demo1").forEach(myFunction1);
+    document.getElementById("demo3").innerHTML = text1;
+    function myFunction1(item1, index1) {
+      var index1 = index1 + 1;
+      text1 += index1 + ": " + item1.innerHTML + "<br>";
+    }
+  </script>
+</body>
+</html>

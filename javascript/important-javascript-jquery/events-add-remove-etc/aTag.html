@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <a onclick='openInNewTab1("https://www.youtube.com/");'>Link</a>
+    <script>
+        function openInNewTab1(href) {
+            Object.assign(document.createElement('a'), {
+                target: '_blank',
+                href: href,
+            }).click();
+        }
+    </script>
+
+
+    <br><br><br><br><br>
+
+
+    <a class="link" onclick='openInNewTab("https://google.com");'>Link</a>
+    <script>
+        document.querySelector('.link').addEventListener('click', function(event) {
+            event.preventDefault();
+            openInNewTab(event.currentTarget.href);
+        });
+        function openInNewTab(href) {
+            Object.assign(document.createElement('a'), {
+                target: '_blank',
+                href: href
+            }).click();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cursor Lazy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+      *{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;cursor: none;}
+      body{/*background: url(img.png) no-repeat center center / cover;min-height: 100vh;*/font-family: Arial, Helvetica, sans-serif;}
+      .banner{width:100%;float:left;height:100vh;}
+      .cursor{width:7px;height:7px;border-radius: 50%;-webkit-border-radius: 50%;position:absolute;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);top:0;left:0;background-color:#fff;}
+      .cursor.active{background-color: transparent;}
+      .cursor.active::after{content:"+";color:#fff;font-weight: bold;font-size:18px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);}
+
+      .cursor-lazy{width:70px;height:70px;border-radius: 50%;-webkit-border-radius: 50%;border:2px solid #fff;position:absolute;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);top:0;left:0;transition:0.1s ease-out;-webkit-transition:0.1s ease-out;-moz-transition:0.1s ease-out;}
+
+      ul{position: absolute;top:0;right:0;padding:15px;}
+      ul > a{margin:0 15px;width:auto;float:left;}
+  </style>
+</head>
+<body>
+    <img src="./images/banner.jpg" class="banner">
+<div class="cursor"></div><!--cursor-->
+<div class="cursor-lazy"></div><!--cursor-lazy-->
+
+<ul id="nav">
+    <a href="one.html">Lorem 1</a>
+    <a href="two.html">Lorem 2</a>
+    <a href="three.html">Lorem 3</a>
+    <a href="four.html">Lorem 4</a>
+    <a href="five.html">Lorem 5</a>
+</ul>
+
+<script>
+    "use strict";
+    (function(){
+        var cursor = document.querySelector(".cursor");
+        var cursorLazy = document.querySelector(".cursor-lazy");
+        var links = document.querySelectorAll("a");
+        console.log(links);
+
+        var editCursor = function editCursor(event){
+            cursor.style.left = event.clientX + "px";
+            cursor.style.top = event.clientY + "px";
+            cursorLazy.style.left = event.clientX + "px";
+            cursorLazy.style.top = event.clientY + "px";
+        }
+        window.addEventListener("mousemove", editCursor);
+
+        for(let i=0; i<links.length; i++)
+        {
+            links[i].addEventListener("mouseover", function(){
+                cursor.classList.add("active");
+            });
+            links[i].addEventListener("mouseout", function(){
+                cursor.classList.remove("active");
+            });
+        }
+    })();
+</script>
+</body>
+</html>

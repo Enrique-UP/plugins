@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="num" data-number="2500">0</div>
+
+    <script>
+        (function(){
+            var num = document.querySelector(".num");
+            i = 0;
+            var speed = 10;
+            var dataNumber = num.getAttribute("data-number");
+            function add() {
+                i += 1;
+                num.innerHTML = i.toString().replace(/\B(?=(\d{3})+(?!\d))/, ",");
+            }
+            foo = setInterval(add, speed);
+            setTimeout(close, dataNumber * speed);
+            function close() {
+                clearInterval(foo);
+                num.innerHTML = dataNumber;
+            }
+        })();
+    </script>
+</body>
+</html>

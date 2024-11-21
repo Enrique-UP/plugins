@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        const func1 = function () {
+            document.write("function 1");
+        };
+        const object = {
+            func2: function () {},
+        };
+        document.write(func1.name);
+        document.write(object.func2.name);
+
+        function doSomething() {}
+        document.write(doSomething.name);
+    </pre>
+    <script>
+        const func1 = function () {
+          document.write("function 1");
+        };
+        const object = {
+            func2: function () {},
+        };
+        document.write(func1.name);
+        document.write("<br>");
+        document.write(object.func2.name);
+        document.write("<br>");
+
+
+        function doSomething() {}
+        document.write(doSomething.name);
+        document.write("<br>");
+
+
+        // -- someModule.js --
+        //export default function () {}
+        // -- main.js --
+        //import someModule from "./someModule.js";
+        //someModule.name; // "default"
+
+
+        document.write("<br>");
+        new Function().name; // "anonymous"
+        document.write(new Function().name);
+
+
+        document.write("<br>");
+        const someFunction = function someFunctionName() {};
+        document.write(someFunction.name); // "someFunctionName"
+        document.write("<br>");
+
+
+        (function () {}).name; // ""
+        (() => {}).name; // ""
+
+
+        function getFoo() {
+            return () => {};
+        }
+        document.write(getFoo().name); // ""
+
+
+        const f = function () {};
+        const object1 = {
+            someMethod: function () {
+                // return "demoValue";
+                document.write("demoValue");
+            },
+        };
+        document.write(f.name); // "f"
+        document.write("<br>");
+        document.write(object1.someMethod.name); // "someMethod"
+        document.write("<br>");
+        // document.write(object1.someMethod());
+        object1.someMethod();        
+    </script>
+</body>
+</html>

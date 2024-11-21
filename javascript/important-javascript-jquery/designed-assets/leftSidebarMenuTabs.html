@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style>
+        * { padding: 0; margin: 0; box-sizing: border-box; }
+        main{width:100%;display: flex;position: relative;
+            /* min-height: 150vh; */
+        }
+        ul {padding: 0;margin: 0;display: flex;flex-direction: column;position: fixed;top:0;left:0;border-right:1px solid #ccc;overflow-y: auto;width: 4rem;background: #fff;height: 100%;
+        scrollbar-width: thin;scrollbar-color: #999 #ccc;}
+        ul::-webkit-scrollbar{width: 12px;}
+        ul::-webkit-scrollbar-track{background: #ccc;}
+        ul::-webkit-scrollbar-thumb{background-color: #999;}
+        ul::-webkit-scrollbar-thumb:hover{background: #555;}
+        
+        ul > li {list-style: none;position: relative;display: flex;}
+        ul > li:not(:last-child) {margin-bottom: 100px;}
+        .menuBar {position: absolute; left: 0; background: #fff; z-index: 9; box-shadow: 0 0 5px #000; width: 150px; display: none;height: 100px;}
+        .menuBar.active {display: block;}
+    </style>
+</head>
+<body>
+    <main>
+        <ul>
+            <li><a data-href="#home">Home</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a data-href="#about">About Us</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a data-href="#blog">Blog</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a data-href="#gallery">Gallery</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a data-href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="menuBar" id="home">Dropdown Home</div>
+        <div class="menuBar" id="about">Dropdown About</div>
+        <div class="menuBar" id="blog">Dropdown Blog</div>
+        <div class="menuBar" id="gallery">Dropdown Gallery</div>
+        <div class="menuBar" id="contact">Dropdown Contact</div>
+    </main>
+    <!-- <script>
+        (function(events, callback) {
+            events.forEach(event => window.addEventListener(event, callback));
+        })(["load", "resize", "scroll"], function() {
+            console.clear();
+            function updateMenuBarPositions() {
+                document.querySelectorAll("ul > li > a[data-href]").forEach(function(e) {
+                    e.parentElement.classList.add("dataLink");
+                    let targetMenuBar = document.querySelector(e.getAttribute("data-href"));
+                    if (targetMenuBar) {
+                        let linkPosition = e.getBoundingClientRect().bottom + window.scrollY;
+                        targetMenuBar.style.top = `${linkPosition}px`;
+                    }
+                    e.addEventListener("mouseenter", function() {
+                        document.querySelectorAll(".menuBar").forEach((f) => f.classList.remove("active"));
+                        let targetMenuBar = document.querySelector(e.getAttribute("data-href"));
+                        if (targetMenuBar) {
+                            targetMenuBar.classList.add("active");
+                        }
+                    });
+                });
+            }
+            updateMenuBarPositions();        
+            document.querySelector("ul").addEventListener("scroll", updateMenuBarPositions);
+            window.addEventListener("resize", updateMenuBarPositions);
+        });        
+        document.addEventListener("click", function() {
+            document.querySelectorAll(".menuBar").forEach((f) => f.classList.remove("active"));
+        });
+    </script> -->
+    <script>
+        (function(events, callback) {
+            events.forEach(event => window.addEventListener(event, callback));
+        })(["load", "resize", "scroll"], function() {
+            console.clear();
+            function updateMenuBarPositions() {
+                document.querySelectorAll("ul > li > a[data-href]").forEach(function(e) {
+                    e.parentElement.classList.add("dataLink");
+                    let targetMenuBar = document.querySelector(e.getAttribute("data-href"));
+                    if (targetMenuBar) {
+                        let linkPosition = e.getBoundingClientRect().bottom + window.scrollY;
+                        let menuHeight = targetMenuBar.offsetHeight;
+                        let windowHeight = window.innerHeight;
+
+                        if (linkPosition + menuHeight > windowHeight + window.scrollY) targetMenuBar.style.top = `${linkPosition - menuHeight - e.getBoundingClientRect().height}px`;
+                        else targetMenuBar.style.top = `${linkPosition}px`;
+                    }
+                    if(!e) menuBarRemoveClass();
+                    e.addEventListener("mouseenter", function() {
+                        menuBarRemoveClass();
+                        if (targetMenuBar) targetMenuBar.classList.add("active");
+                    });
+                });
+                document.querySelectorAll("ul > li > a[href]").forEach(function(e) {
+                    e.addEventListener("mouseenter", menuBarRemoveClass);
+                });
+            }
+            updateMenuBarPositions();
+            document.querySelector("ul").addEventListener("scroll", updateMenuBarPositions);
+            window.addEventListener("resize", updateMenuBarPositions);
+        });
+        document.addEventListener("click", menuBarRemoveClass);
+        function menuBarRemoveClass(){
+            document.querySelectorAll(".menuBar").forEach((e) => e.classList.remove("active"));
+        }
+    </script>
+</body>
+</html>
