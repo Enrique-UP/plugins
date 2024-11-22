@@ -1,0 +1,29 @@
+https://www.pixelcut.ai/home
+https://www.pixelcut.ai/uncrop
+https://www.pixelcut.ai/t/uncrop
+https://www.pixelcut.ai/projects/3278aac2-f93a-47df-9eb6-2929736e644a/editor/
+
+==========================================================================================================
+for photo restoration
+https://picsart.com/ai-image-enhancer/photo-restoration/
+after that opens another page after upload the image
+then click on Remove (PRO)
+
+
+https://picsart.com/create/editor?category=myFolders&image=https%3A%2F%2Fdcdn.picsart.com%2Fdev%2F3962e18f-e102-4181-a5c6-07ffe277612c.png
+==========================================================================================================
+for any object remove
+https://pincel.app/tools/inpaint?_gl=1*2082w*_ga*MTUwNzU4NTY3My4xNzMyMjU2ODU1*_ga_2MPNMKX6NL*MTczMjI1Njg1NS4xLjAuMTczMjI1Njg1NS4wLjAuMA..
+
+==========================================================================================================
+
+============Image Extend feature is find in photoshop.===========================
+Open any image by ctrl + o
+Select Image
+Increase image size by alt + ctrl + c or alt + ctrl + i =  type in width 400 => ok
+selct transparent area of both side or one side by rectangular marquee tool
+go to select menu => modify => Expand => 1px => ok
+go to edit menu => fill => content-aware select => ok
+after some time the image will be similar fill by automatically.
+
+==========================================================================================================
