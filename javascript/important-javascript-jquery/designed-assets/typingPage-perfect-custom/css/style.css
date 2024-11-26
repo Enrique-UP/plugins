@@ -1,0 +1,226 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.chatBox section .fw {
+  transition: 0.3s linear;
+}
+
+.chatBox .fullWidth {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatBox section.typing, .chatBox section .fw p {
+  border-radius: 8px;
+  line-height: 1.5;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding: 15px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main > * {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 991px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.banner {
+  padding: 30px 0 20px;
+}
+.banner .head {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 30px;
+  color: #585858;
+}
+.banner p {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.blink {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.blink > span {
+  padding-left: 8px;
+  background: rgba(52, 211, 153, 0.1098039216);
+  color: #a05050;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.blink > img {
+  width: 18px;
+  margin-right: 4px;
+}
+
+.chatBox {
+  padding-block: 50px 20px;
+}
+.chatBox .container {
+  max-width: 575px;
+}
+.chatBox .fullWidth {
+  width: 100%;
+}
+.chatBox .status {
+  padding-bottom: 30px;
+}
+.chatBox section {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.chatBox section.active {
+  display: flex;
+}
+.chatBox section .fw {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  position: relative;
+  font-size: 18px;
+}
+.chatBox section .fw.show {
+  margin-bottom: 30px;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+.chatBox section .fw:not(.btns, .typing .fw)::before {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+  align-self: flex-start;
+  flex-shrink: 0;
+  content: "";
+  background: url(../images/callCenter.png) no-repeat center center/40px;
+}
+.chatBox section .fw p > a {
+  background: #03477a;
+  color: #fff;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  display: flex;
+}
+.chatBox section .fw p > a:not(:last-child) {
+  margin-right: 4px;
+}
+.chatBox section .fw.btns {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.chatBox section .fw.btns:has(a[onclick]) {
+  justify-content: flex-end;
+}
+.chatBox section .fw.btns a {
+  user-select: none;
+  cursor: pointer;
+  background: green;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 4px;
+}
+.chatBox section .fw.btns a.red {
+  background: red;
+}
+.chatBox section .fw.btns.cursorNone::after {
+  width: 40px;
+  height: 40px;
+  margin-left: 4px;
+  border-radius: 100%;
+  flex-shrink: 0;
+  content: "";
+  background: #ccc url(../images/user.png) no-repeat center center/20px;
+  align-self: flex-end;
+}
+.chatBox section .fw.btns.cursorNone > a {
+  pointer-events: none;
+  background: rgba(46, 235, 45, 0.2);
+  color: #333;
+}
+.chatBox section.typing {
+  width: 150px;
+}
+.chatBox section.typing.active {
+  margin-bottom: 30px;
+}
+.chatBox section.typing .fw {
+  margin-block: 12px;
+}
+.chatBox section.typing .fw > span {
+  width: 8px;
+  height: 8px;
+  background: #777;
+  border-radius: 100%;
+  animation: typing 0.8s infinite;
+}
+.chatBox section.typing .fw > span:not(:last-child) {
+  margin-right: 6px;
+}
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 575px) {
+  .chatBox section .fw {
+    font-size: 14px;
+  }
+  .chatBox section .fw.show {
+    margin-bottom: 16px;
+  }
+  .chatBox section.typing .fw {
+    margin-block: 8px !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

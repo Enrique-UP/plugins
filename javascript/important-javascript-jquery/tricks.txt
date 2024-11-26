@@ -222,5 +222,6 @@ currentIndex = (currentIndex + 1) % items.length;
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/same-page-linking-by-js-go-location/sectionViewActiveItsLink.html
 document.querySelector(`header a[data-link="${e.id}"]`).classList.add("active");
 =================================================================================================================================================
-
+if (slides[s1]) slides[s1].classList.add("show");
+// slides[s1]?.classList.add("show");
 =================================================================================================================================================
