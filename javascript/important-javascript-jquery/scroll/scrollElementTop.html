@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .condiv {
+            height: 2500px;
+            width: 100%;
+            overflow: auto;
+            background: #82c93a;
+            float: left;
+        }
+
+        #ele {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the button to scroll to the element.</p>
+
+    <button onclick="scrolldiv()">Scroll</button>
+    <div class="condiv"></div>
+    <div id="ele">GeeksforGeeks</div>
+    <div class="condiv"></div>
+    <script>
+        function scrolldiv() {
+            const element = document.getElementById("ele");
+            if (element) {
+                // element.scrollIntoView({ behavior: "smooth" });
+                element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+            }
+        }
+    </script>
+    <!-- <script>
+        function scrolldiv() {
+            const element = document.getElementById("ele");
+            if(element){
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.scrollY || window.pageYOffset;
+                window.scrollTo({ top: rect.top + scrollTop, behavior: "smooth" });
+            }
+        }
+    </script> -->
+</body>
+</html>

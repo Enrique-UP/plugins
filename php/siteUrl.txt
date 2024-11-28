@@ -4,6 +4,7 @@
 
 <?php
     $siteUrl = "http://localhost/geteinserve-forms";
+    $numberTel = "+910000000000";
     $number = "+91-000-000-0000";
     $email = "info@demo.com";
 ?>

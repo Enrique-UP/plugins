@@ -19,12 +19,12 @@ function btns(){
 }
 
 const time = 700;
-sections("sec1");
 function sections(section) {
     typing();
     btns();
     let i = 0;
-    document.querySelector(`.chatBox section#${section}`).classList.add("active");
+    const element = document.querySelector(`.chatBox section#${section}`);
+    element.classList.add("active");
     function sec() {
         let slides = document.querySelectorAll(`.chatBox section#${section} .fw`);
         if (slides[i]) {
@@ -34,8 +34,13 @@ function sections(section) {
         if (slides.length > ++i) setTimeout(sec, time);
         else{
             removeTyping();
-            // setTimeout(() => window.scrollTo({top:`#${section}.offsetTop`, behavior:"smooth"}), time);
-            console.log(`#${section}`);
+            setTimeout(function(){
+                if(element){
+                    const rect = element.getBoundingClientRect();
+                    const scrollTop = window.scrollY || window.pageYOffset;
+                    window.scrollTo({ top: rect.top + scrollTop, behavior: "smooth" });
+                }
+            }, time);
         }
     }setTimeout(sec, time);
-}
+}sections("sec1");

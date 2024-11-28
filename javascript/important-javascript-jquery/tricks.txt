@@ -3,7 +3,10 @@
 https://softauthor.com/category/javascript/
 https://softauthor.com/javascript-for-loop-click-event-issues-solutions/
 =================================================================================================================================================
-
+-------------------Property-------------------
+obj.offsetTop;
+obj.offsetParent;
+----------------------------------------------
 
 
 
