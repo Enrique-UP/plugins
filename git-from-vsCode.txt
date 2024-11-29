@@ -42,3 +42,102 @@ How do we clone git to local.
 4. click on clone repository.
 5. go to middle top header & paste url and select.
 6. choose folder then done.
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================================
+git by gitdesktop and gitbash
+
+Follow all the steps.
+
+Step 1: initialize git
+	$ git init
+
+Step 2: Check files are exist or not.
+	$git ls
+
+Step 3 : Add the file
+	$git add filename
+
+Step 4: Add comment to show
+	$git commit -m "your comment"
+
+Step 5: Link to your repository
+	$git remote add origin  "copy repository link  and paste here"
+
+Step 6: Push on Git
+	$ git push -u origin master
+==========================================================================================
+Step-by-Step Solution
+1. Check the Status in GitHub Desktop
+	Open GitHub Desktop and ensure the repository is selected.
+	Look at the "Changes" tab:
+	If you see the untracked files listed, it means they are detected but not staged.
+2. Stage the Files in GitHub Desktop
+	If the files appear under "Changes", make sure their checkboxes are selected.
+	If they are unchecked, they will not be staged for commit. Check them manually.
+3. Commit the Changes
+	Once the files are staged, write a commit message in the Summary section at the bottom left of GitHub Desktop.
+	Click "Commit to <branch>" to commit the changes.
+==========================================================================================
+b. Manually Add Files Using Git CLI
+	If GitHub Desktop doesn’t stage the files, use the command line:
+
+Open the terminal and navigate to your repository:
+bash
+	cd path/to/your/repository
+
+Add the untracked files:
+bash
+	git add .
+	This stages all untracked files. If you want to add specific files, replace . with the file name, e.g., git add file.txt.
+
+Verify the staged files:
+bash
+	git status
+	Ensure the files are listed as staged for commit.
+
+Commit the changes:
+bash
+	git commit -m "Add untracked files"
+
+Push the changes to the remote repository:
+bash
+	git push
+==========================================================================================
+git status
+git add .
+git commit -m "Describe what you're committing"
+==========================================================================================
+Using GitHub Desktop:
+Open the Repository in GitHub Desktop:
+Launch GitHub Desktop and open your repository.
+
+View Changes:
+Navigate to the Changes tab on the left sidebar. You should see the untracked files listed there.
+
+Add Files to Tracking:
+Check the boxes next to the files you want to track. This stages them for a commit.
+
+Commit Changes:
+Write a commit message in the text box at the bottom.
+Click Commit to [branch name] to save the changes locally.
+Push to Remote (Optional):
+
+If you want to upload these changes to the remote repository, click Push Origin in the top-right corner.
+==========================================================================================
+Using the Command Line:
+Check Status: Run:
+
+git status
+git add .
+git commit -m "Your commit message"
+git push
