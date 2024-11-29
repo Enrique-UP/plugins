@@ -44,7 +44,8 @@ How do we clone git to local.
 6. choose folder then done.
 
 
-
+For delete repository from live github.com
+Go inside the folder which you want to delete => settings => scroll down => Delete this repository => 
 
 
 
