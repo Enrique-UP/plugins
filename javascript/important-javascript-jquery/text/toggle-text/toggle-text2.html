@@ -4,8 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-
 <p><button>Click Me</button></p>
 <p><button>Click Me</button></p>
 <p><button>Click Me</button></p>
@@ -15,17 +13,16 @@
 var w = window || document;
 w.addEventListener("load", function(){
 	document.querySelectorAll("button").forEach(function(e){
+    var t = e.innerHTML;
     e.addEventListener("click", function(){
-      if(e.innerHTML === "Click Me"){
+      if(e.innerHTML === t){
         e.innerHTML = "Clicked";
       }else{
-        e.innerHTML = "Click Me";
+        e.innerHTML = t;
       }
     });
   });
 });
-
-
 </script>
 
 </body>

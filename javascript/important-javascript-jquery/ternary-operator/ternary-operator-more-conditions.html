@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    const score = 80
+    const scoreRating = score > 70 ? "Excellent" : "Do better"
+    console.log(scoreRating);
+    // Excellent
+</script>
+<script>console.log("==============================");</script>
+<script>
+    function printPoor() {
+        console.log("Poor result")
+        return "poor"
+    }
+    function printSuccess() {
+        console.log("Nice result")
+        return "success"
+    }
+    const pass = false;
+    const result = pass ? printSuccess() : printPoor();
+    console.log(result);
+    //Poor result
+    // poor
+</script>
+<script>console.log("==============================");</script>
+<script>
+    const score1 = 60;
+    const scoreRating1 =
+        score1 > 70
+            ? "Excellent"
+            : score1 > 50
+            ? "Average"
+            : "Do better"
+    console.log(scoreRating1);
+    // "Average"
+</script>
+<script>console.log("==============================");</script>
+<script>
+    const score2 = 45
+    const scoreRating2 =
+    score2 > 70
+        ? "Excellent"
+        : score2 > 50
+        ? "Average"
+        : score2 > 40
+        ? "Fair"
+        : "Do better"
+    console.log(scoreRating2);
+    // "Fair"
+</script>
+</body>
+</html>

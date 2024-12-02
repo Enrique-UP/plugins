@@ -228,3 +228,4 @@ document.querySelector(`header a[data-link="${e.id}"]`).classList.add("active");
 if (slides[s1]) slides[s1].classList.add("show");
 // slides[s1]?.classList.add("show");
 =================================================================================================================================================
+if else condition can be remove by ternary
