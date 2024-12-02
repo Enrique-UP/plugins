@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        main{width: 100%;display: flex;flex-direction: column;padding:30px;max-width: 600px;margin-inline:auto;line-height: 1.6;}
+        main p:not(:last-child){margin-bottom: 32px;}
+    </style>
+</head>
+<body>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus facere accusamus at sit provident sunt aperiam reiciendis doloremque alias? Ipsa quas illum dicta consequatur asperiores, dignissimos voluptatem aut suscipit iste quos ab excepturi optio minus dolore sequi provident cumque quasi similique quia ut eveniet quae officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus facere accusamus at sit provident sunt aperiam reiciendis doloremque alias? Ipsa quas illum dicta consequatur asperiores.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus facere accusamus at sit provident sunt aperiam reiciendis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus facere accusamus at sit provident sunt aperiam reiciendis doloremque alias cumque quasi similique.</p>
+    </main>
+    <script>
+        document.querySelectorAll("p").forEach(function(e) {
+            let lineHeight = window.getComputedStyle(e).lineHeight;
+            console.log("lineHeight = " + lineHeight);
+
+            lineHeight = parseFloat(lineHeight);
+            console.log("Now lineHeight = " + lineHeight);
+
+            const height = e.offsetHeight;
+            const lines = Math.round(height / lineHeight);
+            e.innerHTML += ` <u>(${lines} lines)</u>`;
+            console.log(`Height:${height}px, Line Height:${lineHeight}px, Lines:${lines}`);
+        });
+    </script>    
+</body>
+</html>

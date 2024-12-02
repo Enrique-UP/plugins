@@ -26,7 +26,7 @@ file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/cla
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/table_responsive-js-dynamic.html
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/table-responsive-dynamic/duplicate-table-dynamically-show-mobile-js.html
 
-file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/text-overflow/text_overflow-and3....html
+file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/text/text-overflow/text_overflow-and3....html
 
 good example for set inner function value to outside
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/object/whyChooseUs-dropdown_by_offsetTop.html

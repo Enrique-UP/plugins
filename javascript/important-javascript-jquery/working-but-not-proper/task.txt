@@ -1,4 +1,4 @@
-Learn 
+Learn
 Call, apply & Bind in JavaScript - Front End Interview 🔥 Episode 4 - In 20 Minutes
 https://www.youtube.com/watch?v=SaWTn1ZNTpo
 Async/Await, Promises, Callbacks - Async JavaScript Crash Course ( in One Video in Hindi )
