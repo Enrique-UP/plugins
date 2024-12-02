@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        section.one{min-height: 150vh;background: #ddd;position: relative;border-bottom: 2px solid #000;}
+        section.one aside{position: absolute;top:50%;transform:translateY(-50%);background: #aaa;width: 100%;height: 200px;z-index: 9;}
+        section.one aside div{position: absolute;width: 100%;background: brown;color:#fff;height: 70%;top:15%;left:0;z-index: -9;}
+
+        section.two{position: fixed;top:0;left:0;width: 100%;height: 100%;font-family: Arial, Helvetica, sans-serif;font-size: 24px;}
+        section.two nav {width: 70%;height: 100%;background: #ccc;position: relative;z-index: 9;}
+        section.two div {position: fixed;top: 0;bottom: 0;right: 0;width: 40%;height: 90%;background: #eee;margin: auto;z-index: -1;text-align: right;}
+    </style>
+</head>
+<body>
+    <section class="one">
+        <aside>working here.
+            <div>Here the z-index is working only on aside, It will not work on child of aside. If remove the z-index from the aside then aside child z-index will not be work.</div>
+        </aside>
+    </section>
+    <section class="two">
+        <nav>z-index:9; working here.</nav>
+        <div>z-index:-1; working here.</div>
+    </section>
+</body>
+</html>
