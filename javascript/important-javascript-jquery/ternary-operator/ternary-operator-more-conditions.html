@@ -1,6 +1,75 @@
 <!DOCTYPE html>
 <html>
 <body>
+<pre>
+    condition ? exprIfTrue : exprIfFalse
+    if (condition) {
+        exprIfTrue
+    } else {
+        exprIfFalse
+    }
+
+
+
+
+    function generateGreeting(signedIn) {
+        return signedIn ? "Hello, Rory" : "Hello, Customer"
+    }    
+    generateGreeting(true)
+    // Returns "Hello, Rory"    
+    generateGreeting(false)
+    // Returns "Hello, Customer"
+
+
+
+
+    function generateGreeting(signedIn) {
+        return signedIn === 1 ? "Hello, Rory" : "Hello, Customer"
+    }    
+    generateGreeting(1)
+    // Returns "Hello, Rory"
+
+
+
+
+    function generateGreeting(signedIn, paidMember) {
+        return (signedIn && paidMember) ? "Hello, Rory" : "Hello, Customer"
+    }    
+    generateGreeting(true, true)
+    // Returns "Hello, Rory"    
+    generateGreeting(true, false)
+    // Returns "Hello, Customer"
+
+
+
+
+    function classifyAge(age) {
+        return age < 0 ? "Invalid Age" :
+            age < 13 ? "Child" :
+            age < 18 ? "Teenager" :
+            age < 65 ? "Adult" :
+            "Senior";
+    }
+    classifyAge(30)
+    // Returns “Adult”
+
+
+
+
+    function classifyAge(age) {
+        if (age < 0) {
+          return "Invalid Age";
+        } else if (age < 13) {
+          return "Child";
+        } else if (age < 18) {
+          return "Teenager";
+        } else if (age < 65) {
+          return "Adult";
+        } else {
+          return "Senior";
+        }
+    }
+</pre>
 <script>
     const score = 80
     const scoreRating = score > 70 ? "Excellent" : "Do better"
