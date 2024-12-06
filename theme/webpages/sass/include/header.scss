@@ -1,0 +1,24 @@
+header{@extend .fc;
+    .headerTop{padding-block:10px;
+        .container{display: flex;align-items: center;flex-direction: row;justify-content: space-between;}
+    }
+    .headerBottom{border-block:1px solid var(--g1);padding-block:16px;}
+    .logo{display: flex;width: 180px;}
+    .email{color:var(--c3);font-size: 18px;line-height: 1.1;}
+    .menu{display: none;font-size: 30px;cursor: pointer;}
+    .navArea{display: flex;@extend .trans;width: 100%;}
+    .close{display: none;position: fixed;top:0;right:0;cursor: pointer;font-size: 24px;width: 40px;height: 40px;line-height: 1;justify-content: center;align-items: center;z-index: 9999;background:red;color:#fff;}
+    nav{display: flex;
+        ul{display: flex;
+            > li{display: flex;list-style: none;
+                &:not(:last-child){margin-right: 32px;}
+                > a{color:inherit;line-height: 1.1;
+                    &.active, &:hover, &:active, &:focus{color:var(--c2);}
+                }
+            }
+        }
+    }
+    &.fixed{position: fixed;top:0;left:0;background: #fff;z-index: 9999;
+        .logo{width: 130px;}
+    }
+}

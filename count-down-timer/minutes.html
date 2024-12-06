@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown With Timezone Example</title>
+</head>
+<body>
+  <div id="clock"></div>
+  <script>
+    const s = 3;
+    function countdown(element, minutes, seconds) {
+        var time = minutes*60 + seconds;
+        var interval = setInterval(function() {
+            var el = document.getElementById(element);
+            if (time <= 0) {
+                el.innerHTML = "00:00";
+                // setTimeout(function() {
+                //     countdown('clock', 0, s);
+                // }, 2000);
+                // clearInterval(interval);
+                return;
+            }
+            var minutes = Math.floor( time / 60 );
+            if (minutes < 10) minutes = "0" + minutes;
+            var seconds = time % 60;
+            if (seconds < 10) seconds = "0" + seconds; 
+            el.innerHTML = minutes + ':' + seconds;
+            time--;
+        }, 1000);
+    }
+    countdown('clock', 0, s);
+    // document.querySelectorAll(".btns > a").forEach(function(e){
+    //   e.addEventListener("click", () => countdown('clock', 0, s));
+    // });
+  </script>
+</body>
+</html>

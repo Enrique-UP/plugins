@@ -28,9 +28,10 @@ img{max-width: 100%;}
 
 .container, .container-fluid{display: flex;flex-direction:column;
     :last-child:not(.row, [class*="col-"]){margin-bottom:0 !important;}
-    .row{display:flex;flex-wrap:wrap;row-gap:32px;
-        &.nrg{row-gap: unset;}
-        & ~ .row{margin-top: 32px;}
+    .row{display:flex;flex-wrap:wrap;
+        > *{
+            // row-gap:50px;
+        }
     }
 }
 
@@ -55,10 +56,6 @@ img{max-width: 100%;}
     .sectionB{padding-bottom:$secV*2;}
     
     .btns a{padding:12px 16px;}
-    
-    hgroup{margin-bottom: 24px;row-gap: 4px;}
-    hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6{font-size: 36px;}
-    hgroup p{font-size: 18px;}
     
     .container{width:100%;}
     .container, .container-fluid{padding-inline: $secH * 0.5;}
@@ -98,12 +95,10 @@ img{max-width: 100%;}
         [class*="col-"]{padding-inline: $secH * 0.75;}
     }
 }
-@media (min-width:768px) and (max-width:1399px){
+@media (min-width:768px){
     .section{padding-block:$secV*3.5;}
     .sectionT{padding-top:$secV*3.5;}
     .sectionB{padding-bottom:$secV*3.5;}
-}
-@media (min-width:768px){
     .container, .container-fluid{padding-inline: $secH;}
     .col-md-1{width:$col-1;}
     .col-md-2{width:$col-2;}
@@ -156,10 +151,6 @@ img{max-width: 100%;}
     .col-xl-12{width:$col-12;}
 }
 @media (min-width:1400px){
-    .section{padding-block:$secV*5;}
-    .sectionT{padding-top:$secV*5;}
-    .sectionB{padding-bottom:$secV*5;}
-
     .container{width:1400px;}
     .col-xxl-1{width:$col-1;}
     .col-xxl-2{width:$col-2;}
