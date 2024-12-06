@@ -11,6 +11,9 @@
         ul > li:has(> ul){list-style: none;}
         ul > li{list-style: disc;}
         ul > li:not(:last-child){margin-bottom: 10px;}
+
+        ol:not(li > ol){color:red;}
+        ol li > ol{color:grey;}
     </style>
 </head>
 <body>
@@ -31,5 +34,22 @@
         </li>
         <li>Lorem</li>
     </ul>
+    <ol>
+        <li>Lorem</li>
+        <li>
+            <ol>
+                <li>Lorem</li>
+                <li>Lorem</li>
+                <li>
+                    <ol>
+                        <li>Lorem</li>
+                        <li>Lorem</li>
+                        <li>Lorem</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Lorem</li>
+    </ol>
 </body>
 </html>

@@ -7,9 +7,78 @@ html
     link(rel="stylesheet" href="./assets/css/style.min.css" type="text/css")
     link(rel="stylesheet" href="./assets/css/animation.min.css" type="text/css")
     link(rel="stylesheet" href="./assets/css/owl.carousel.min.css" type="text/css")
+    style(type="text/css").
+      [class*="box"]{display:flex;width:100%;padding:8px;text-align:center;color:#fff;}
+      .box1{background:brown;}
+      .box2{background:green;}
   body
     main
       include ../include/header
+      hr
+      section.section 
+        .container
+          .row
+            .col-12 
+              .row
+                .col-12
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+            .col-12
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+                  div.box1 Cols
+            .col-6
+              div.box1 Cols
+          .row
+            .col-12
+              .row 
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+            .col-12
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+              .row 
+                .container-fluid
+                  div.box2 ContainerFluid
+                .container-fluid
+                  div.box2 ContainerFluid
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-12
+                  div.box1 Cols
+          .row 
+            .col-12
+              .row 
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-12
+                  div.box1 Cols
+        .container
+          div.box2 Container
+        .container 
+          .row 
+            .col-12
+              div.box1 Cols
+      hr
       section.section.bg
         .container
           p 
@@ -71,11 +140,4 @@ html
           i.icon &#xa016;
           i.icon &#xa017;
       include ../include/footer
-    script(src="./assets/js/jquery.min.js")
-    script(src="./assets/js/owl.carousel.min.js")
-    script(src="./assets/js/wow.min.js")
-    script(src="./assets/js/main.js" type="text/javascript")
-    script(type="text/javascript").
-      (function(){
-        console.log("Lorem");
-      });
+    include ../include/scripts
