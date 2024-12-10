@@ -15,7 +15,50 @@ html
     main
       include ../include/header
       hr
-      section.section 
+      section.section
+        .container
+          p 
+            b PUG
+          h4 npm install pug -g
+            br
+            | OR 
+            br
+            | npm install pug-cli -g
+            br
+            | pug -w ./assets/compile/pug/pages -o ./ -P
+            br
+            br
+            hr
+            br
+          p 
+            b SAAS
+            br
+            | npm run build-css
+            br
+            br
+            hr
+            br
+          p
+            br
+            b Type Script
+            br
+            | npm install typescript -g
+            br
+            | Setting in tsconfig.json
+            br
+            | "rootDir": "./assets/compile/ts/script",
+            br
+            | "outDir": "./assets/compile/js",
+          p "include": [
+            br
+            | "./assets/compile/ts/script"
+            br
+            | ]
+            br
+            | tsc.cmd --init
+            br
+            | tsc.cmd --w
+      section.section.bg 
         .container
           .row
             .col-12 
@@ -78,48 +121,6 @@ html
           .row 
             .col-12
               div.box1 Cols
-      hr
-      section.section.bg
-        .container
-          p 
-            b PUG
-          h4 npm install pug -g
-            br
-            | OR 
-            br
-            | npm install pug-cli -g
-            br
-            | pug -w ./assets/compile/pug/pages -o ./ -P
-            br
-            br
-            hr
-            br
-          p 
-            b SAAS
-            br
-            | npm run build-css
-            br
-            br
-            hr
-            br
-          p
-            br
-            b Type Script
-            br
-            | npm install typescript -g
-            br
-            | Setting in tsconfig.json
-            br
-            | "rootDir": "./assets/compile/ts/script",
-            br
-            | "outDir": "./assets/compile/js",
-          p "include": [
-            br
-            | "./assets/compile/ts/script"
-            br
-            | ]
-            br
-            | tsc.cmd --init
       section.section 
         .container
           i.icon &#xa001;
@@ -139,5 +140,6 @@ html
           i.icon &#xa015;
           i.icon &#xa016;
           i.icon &#xa017;
+      hr
       include ../include/footer
     include ../include/scripts
