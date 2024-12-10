@@ -1,5 +1,10 @@
 @import "../css/grid.min.css";
 @font-face {
+  font-family: "Bookman Old Style V2";
+  src: url("../fonts/font/bm.eot");
+  src: url("../fonts/font/bm.eot?#iefix") format("embedded-opentype"), url("../fonts/font/bm.woff2") format("woff2"), url("../fonts/font/bm.woff") format("woff"), url("../fonts/font/bm.ttf") format("truetype"), url("../fonts/font/bm.svg#Bookman Old Style V2") format("svg");
+}
+@font-face {
   font-family: "fontello";
   src: url("../fonts/fontello.eot?54731107");
   src: url("../fonts/fontello.eot?54731107#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?54731107") format("woff"), url("../fonts/fontello.ttf?54731107") format("truetype"), url("../fonts/fontello.svg?54731107#fontello") format("svg");
@@ -63,6 +68,27 @@
 }
 .btns a:active, .btns a:hover, .btns a:focus {
   background: var(--c6);
+}
+
+.btns1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btns1.center {
+  justify-content: center;
+}
+.btns1 > a {
+  background: var(--g1);
+  border-radius: 50px;
+  padding: 8px 24px;
+  color: #000;
+}
+.btns1 > a i {
+  font-style: normal;
+  line-height: 1;
+  font-size: 24px;
+  vertical-align: bottom;
 }
 
 header .headerTop {
@@ -192,8 +218,8 @@ footer .copyright {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
   color: var(--c3);
+  font-family: "Bookman Old Style V2";
 }
 body::before {
   width: 100%;
@@ -852,10 +878,13 @@ main.home .imageContent .content {
   width: 100%;
   margin-bottom: 32px;
   text-align: center;
+  max-width: 400px;
+}
+.imageContent figure.image.center {
+  margin-inline: auto;
 }
 .imageContent figure.image.border > img {
-  border-top: 12px solid var(--g1);
-  border-left: 12px solid var(--g1);
+  border: 12px solid var(--g1);
 }
 .imageContent figure.image > img {
   width: 100%;

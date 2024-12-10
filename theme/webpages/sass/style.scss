@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Bookman Old Style V2";
+    src: url("../fonts/font/bm.eot");
+    src: url("../fonts/font/bm.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/font/bm.woff2")format("woff2"),
+    url("../fonts/font/bm.woff")format("woff"),
+    url("../fonts/font/bm.ttf")format("truetype"),
+    url("../fonts/font/bm.svg#Bookman Old Style V2")format("svg");
+}
+
 @import "../css/grid.min.css";
 @import "./common/fonts.scss";
 @import "./common/variables.scss";
@@ -5,7 +15,7 @@
 @import "./include/header.scss";
 @import "./include/footer.scss";
 
-body{font-family: 'Times New Roman', Times, serif;color:var(--c3);
+body{color:var(--c3);font-family: "Bookman Old Style V2";
     &::before{width:100%;height:100%;position: fixed;top:0;left:-100%;content:"";background: var(--backTrans);z-index: 9999;@extend .trans;@extend .trans;}
     &.overflowHide{overflow: hidden;
         &::before{left:0;}
@@ -196,9 +206,10 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
     .slidesShow .total_current{width: 100%;text-align: center;color:#fff;}
 }
 .imageContent{
-    figure.image{width: 100%;@extend .fc;margin-bottom:32px;text-align: center;
+    figure.image{width: 100%;@extend .fc;margin-bottom:32px;text-align: center;max-width:400px;
+        &.center{margin-inline:auto;}
         &.border{
-            > img{border-top:12px solid var(--g1);border-left:12px solid var(--g1);}
+            > img{border:12px solid var(--g1);}
         }
         > img{width: 100%;}
         figcaption{font-size: 30px;margin-top:24px;display: flex;justify-content: center;line-height: 1.2;margin-bottom: 12px;}

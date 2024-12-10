@@ -7,3 +7,9 @@
         &:active, &:hover, &:focus{background: var(--c6);}
     }
 }
+.btns1{display: flex;flex-wrap: wrap;gap:8px;
+    &.center{justify-content: center;}
+    > a{background: var(--g1);border-radius: 50px;padding: 8px 24px;color:#000;
+        i{font-style: normal;line-height: 1;font-size: 24px;vertical-align: bottom;}
+    }
+}
