@@ -13,4 +13,4 @@
 <img src="<?php echo $siteUrl; ?>/images/logo.png" />
 
 
-<?php include "header.php";?>
+<?php include "header.php"; ?>
