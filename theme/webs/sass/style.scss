@@ -45,7 +45,7 @@ main {width:100%;overflow: hidden;display:flex;flex-direction:column;
 }
 
 .slider{background: var(--c1);
-    .fw{display: flex;padding-top:50px;background:url(../images/slider/sliderBack.png) no-repeat left bottom;
+    .fw{display: flex;padding-top:50px;
         .txt{width: 60%;padding-inline:90px 30px;display: flex;align-items: center;}
         .txtArea{@extend .fc;background: var(--c7);width: 500px;max-width: 100%;border-radius: 0 110px 110px 0;padding: 80px 36px;box-shadow: -30px 30px #ddd;margin-bottom:30px;}
         .head{font-weight: bold;font-size: 48px;color: var(--c2);}

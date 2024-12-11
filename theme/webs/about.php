@@ -12,7 +12,7 @@
           <div class="row"> 
             <div class="col-md-6">
               <div class="content"> 
-                <figure class="image border"><img src="./images/slider/slide1.jpg" alt=""></figure>
+                <figure class="image border"><img src="./images/slide1.jpg" alt=""></figure>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit cum ducimus laboriosam esse dolore laudantium eos, eveniet veniam culpa placeat obcaecati non tempore ipsam aspernatur id ex. Labore cum fuga eos unde exercitationem molestias vero libero beatae nostrum modi sequi, tenetur et sit amet! Aperiam assumenda quibusdam quidem dolore fugiat.</p>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, dolorum. Explicabo sapiente expedita, deleniti iusto cum in officia similique totam magni nihil eaque aspernatur iure molestias porro ratione modi neque.</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem debitis, cumque aperiam tenetur dolores odit.</p>

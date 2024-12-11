@@ -45,7 +45,7 @@
         <div class="container">
           <div class="row"> 
             <div class="col-md-6">
-              <figure class="image"><img src="./images/products/one.jpg" alt=""></figure>
+              <figure class="image"><img src="./images/interest.jpg" alt=""></figure>
             </div>
             <div class="col-md-6">
               <div class="content">

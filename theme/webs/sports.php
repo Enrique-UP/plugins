@@ -12,11 +12,11 @@
           <div class="row"> 
             <div class="col-md-6">
               <div class="content"> 
-                <figure class="image"><img src="./images/slider/slide1.jpg" alt=""></figure>
-                <figure class="image"><img src="./images/slider/slide1.jpg" alt="">
+                <figure class="image"><img src="./images/slide1.jpg" alt=""></figure>
+                <figure class="image"><img src="./images/slide1.jpg" alt="">
                   <figcaption>Lorem ipsummm</figcaption>
                 </figure>
-                <figure class="image"><img src="./images/slider/slide1.jpg" alt=""></figure>
+                <figure class="image"><img src="./images/slide1.jpg" alt=""></figure>
               </div>
             </div>
             <div class="col-md-6">

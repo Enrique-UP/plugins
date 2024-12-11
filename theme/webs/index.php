@@ -13,7 +13,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <figure class="image border center"><img src="./images/slider/slide1.jpg" alt="">
+            <figure class="image border center"><img src="./images/slide1.jpg" alt="">
               <figcaption>
                 <img src="./images/sign.png" alt="">
               </figcaption>

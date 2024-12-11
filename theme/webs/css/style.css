@@ -325,7 +325,6 @@ main.home .imageContent .content {
 .slider .fw {
   display: flex;
   padding-top: 50px;
-  background: url(../images/slider/sliderBack.png) no-repeat left bottom;
 }
 .slider .fw .txt {
   width: 60%;
