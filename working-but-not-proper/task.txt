@@ -1,1 +1,3 @@
 1. video/youtube video should be autoplay with sound/volume on all browsers.
+2. --light-white: #ffffff2b;
+   --light-black: #0000001F;

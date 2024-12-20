@@ -76,16 +76,16 @@ img{max-width: 100%;}
     }
 }
 @media (max-width:767px){
-    .section{padding-block:$secV*2.5;}
-    .sectionT{padding-top:$secV*2.5;}
-    .sectionB{padding-bottom:$secV*2.5;}
+    .section{padding-block:$secV*3;}
+    .sectionT{padding-top:$secV*3;}
+    .sectionB{padding-bottom:$secV*3;}
     [class*="section"]{
         &:has(.container ~ .container, .container ~ .container-fluid, .container-fluid ~ .container, .container-fluid ~ .container-fluid){row-gap:$secV*1.75;}
         .container, .container-fluid{
-            &:has(> .row ~ .row){row-gap:$secV*1.25;}
+            &:has(> .row ~ .row){row-gap:$secV*2.5;}
             .row{
-                &:has(> [class*="col-"] ~ [class*="col-"]){row-gap:$secV*0.75;}
-                &:has(> .container-fluid ~ .container-fluid){row-gap: $secV*1.75;}
+                &:has(> [class*="col-"] ~ [class*="col-"]){row-gap:$secV*2;}
+                &:has(> .container-fluid ~ .container-fluid){row-gap: $secV*3;}
             }
         }
     }
@@ -111,22 +111,20 @@ img{max-width: 100%;}
         [class*="col-"]{padding-inline: $secH * 0.75;}
     }
 }
-@media (min-width:768px) and (max-width:1399px){
-    .section{padding-block:$secV*3.5;}
-    .sectionT{padding-top:$secV*3.5;}
-    .sectionB{padding-bottom:$secV*3.5;}
+@media (min-width:768px){
+    .section{padding-block:$secV*5;}
+    .sectionT{padding-top:$secV*5;}
+    .sectionB{padding-bottom:$secV*5;}
     [class*="section"]{
-        &:has(.container ~ .container, .container ~ .container-fluid, .container-fluid ~ .container, .container-fluid ~ .container-fluid){row-gap:$secV*2.5;}
+        &:has(.container ~ .container, .container ~ .container-fluid, .container-fluid ~ .container, .container-fluid ~ .container-fluid){row-gap:$secV*3.5;}
         .container, .container-fluid{
-            &:has(> .row ~ .row){row-gap:$secV*2;}
+            &:has(> .row ~ .row){row-gap:$secV*2.5;}
             .row{
-                &:has(> [class*="col-"] ~ [class*="col-"]){row-gap:$secV*1.5;}
-                &:has(> .container-fluid ~ .container-fluid){row-gap: $secV*2.5;}
+                &:has(> [class*="col-"] ~ [class*="col-"]){row-gap:$secV*2;}
+                &:has(> .container-fluid ~ .container-fluid){row-gap: $secV*3.5;}
             }
         }
     }
-}
-@media (min-width:768px){
     .container:not(.container-fluid), .container-fluid:not(.container-fluid){padding-inline: $secH;}
     .col-md-1{width:$col-1;}
     .col-md-2{width:$col-2;}
@@ -180,20 +178,6 @@ img{max-width: 100%;}
     .col-xl-12{width:$col-12;}
 }
 @media (min-width:1400px){
-    .section{padding-block:$secV*5;}
-    .sectionT{padding-top:$secV*5;}
-    .sectionB{padding-bottom:$secV*5;}
-    [class*="section"]{
-        &:has(.container ~ .container, .container ~ .container-fluid, .container-fluid ~ .container, .container-fluid ~ .container-fluid){row-gap:$secV*3.5;}
-        .container, .container-fluid{
-            &:has(> .row ~ .row){row-gap:$secV*2.5;}
-            .row{
-                &:has(> [class*="col-"] ~ [class*="col-"]){row-gap:$secV*2;}
-                &:has(> .container-fluid ~ .container-fluid){row-gap: $secV*3.5;}
-            }
-        }
-    }
-
     .container{width:1400px;}
     .col-xxl-1{width:$col-1;}
     .col-xxl-2{width:$col-2;}
