@@ -1,4 +1,4 @@
-header{padding-block: 12px;@extend %trans;
+header{padding-block: 12px;@extend %trans;border-bottom:1px solid var(--border);background: #fff;
     .fw{display: grid;grid-template-columns: 15% 70% 15%;}    
     .logo{display: flex;max-width: 220px;flex-shrink: 0;}    
     .navbar{width: 100%;@extend %center;@extend %transl;@extend %transd;
@@ -48,7 +48,7 @@ header{padding-block: 12px;@extend %trans;
             .icon{background: var(--c1);}
         }
     }
-    &.active{position: fixed;top:0;left:0;background: #fff;padding-block: 8px;z-index: 99999;border-bottom:1px solid var(--border);
+    &.active{position: fixed;top:0;left:0;padding-block: 8px;z-index: 99999;
         .logo{max-width: 170px;}
     }
 }
