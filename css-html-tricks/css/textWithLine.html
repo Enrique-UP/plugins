@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<style>
+*{padding:0;margin:0;box-sizing:border-box;}
+.divider {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.divider:not(:last-child){margin-bottom:36px;}
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: red;
+}
+</style>
+</head>
+<body>
+  <div class="divider">Lorem Ipsum</div>
+  <div class="divider">OR</div>
+  <div class="divider">AND</div>
+</body>
+</html>
+

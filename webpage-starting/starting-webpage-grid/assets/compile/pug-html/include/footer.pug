@@ -1,3 +1,40 @@
 footer
     .container
-        .copy Copyright &copy; with all rights reserved.
+        .row 
+            .col-sm-6.col-md-12.col-lg-3
+                a.logo(href="/")
+                    img(src="./assets/images/logo.png", alt="")
+                p.text Lorem ipsum dolor sit amet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet consectetur adipisicing elit libero minima fugit explicabo possimus hic animi culpa dolorum.
+            .col-sm-6.col-md-4.col-lg-3
+                p.hd Quick Links
+                ul.links 
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor sit amet consectetur adipisicing elit
+            .col-sm-6.col-md-4.col-lg-3
+                p.hd Useful Links
+                ul.links 
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor
+                    li 
+                        a(href="#") Lorem ipsum dolor sit amet consectetur adipisicing elit
+            .col-sm-6.col-md-4.col-lg-3
+                p.hd Get in Touch
+                ul.contacts 
+                    li(data-icon!="&#xa001;")
+                        a(href!=`tel:${numberTel}` target="_blank") #{number}
+                    li(data-icon!="&#xa003;")
+                        a(href!=`mailto:${email}` target="_blank") #{email}
+                    li(data-icon!="&#xa004;")
+                        a(href!="https://www.google.com/maps" target="_blank") #{address}
+            .col-md-12
+                p.copy Copyright &copy; all rights reserved.

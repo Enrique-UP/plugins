@@ -1,14 +1,20 @@
 :root{
     --c1:#011f3d;
-    --c2:#ff0001;
-    --c3:#ffe701;
-    --c4:#00BB98;
-    --c5:#0c67c4;        
+    --c2:#0c67c4;
+    // --c3:#ff0001;
+    // --c4:#ffe701;
+    // --c5:#00BB98;        
 
-    --g1:#ccc;
-    --g2:#eee;
-    --g3:mintcream;
+    --border:#ccc;
+    --g1:#eee;
+    --g2:mintcream;
 }
 
 %trans{transition: 0.3s cubic-bezier(0,0,1,0.1);-webkit-transition: 0.3s cubic-bezier(0,0,1,0.1);-moz-transition: 0.3s cubic-bezier(0,0,1,0.1);}
+%transl{transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;}
+%transd{transition-delay:0.3s;-webkit-transition-delay:0.3s;-moz-transition-delay:0.3s;}
+
+
 %fc{display: flex;flex-direction: column;}
+%center{display: flex;justify-content: center;align-items: center;}
+%userSelect{user-select: none;-webkit-user-select: none;-moz-user-select: none;}

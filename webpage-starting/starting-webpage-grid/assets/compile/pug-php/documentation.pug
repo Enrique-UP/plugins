@@ -8,39 +8,47 @@ html
   body
     main
       <?php include "./include/header.php"; ?>
-      p 
-        b npm install -g pug-cli
-        br
-        | pug ./assets/compile/pug-php/ --out ./ --extension php --watch
-        br
-        | For minify
-        br
-        | pug ./assets/compile/pug-php/ --out ./ --extension php --watch --pretty
-        br
-        | For unminify
-      br
-      p 
-        b npm run build-css
-      br
-      p 
-        b Type Script
-        br
-        | npm install typescript -g
-        br
-        | tsc.cmd --init
-        br
-        | Setting in tsconfig.json
-        br
-        | "rootDir": "./assets/compile/ts/script",
-        br
-        | "outDir": "./assets/compile/js",
-        br
-        | "include": [
-        br
-        | "./assets/compile/ts/script"
-        br
-        | ]
-        br
-        | tsc.cmd --w
+      section.section.bg
+        .container
+          p 
+            b npm install -g pug-cli
+            br
+            | pug ./assets/compile/pug-php/ --out ./ --extension php --watch
+            br
+            | For minify
+            br
+            | pug ./assets/compile/pug-php/ --out ./ --extension php --watch --pretty
+            br
+            | For unminify
+            br
+            br
+          hr
+          p 
+            br
+            b npm run build-css
+            br
+            br
+          hr
+          p 
+            br
+            b Type Script
+            br
+            | npm install typescript -g
+            br
+            | tsc.cmd --init
+            br
+            | Setting in tsconfig.json
+            br
+            | "rootDir": "./assets/compile/ts/script",
+            br
+            | "outDir": "./assets/compile/js",
+            br
+            | "include": [
+            br
+            | "./assets/compile/ts/script"
+            br
+            | ]
+            br
+            | tsc.cmd --w
       <?php include "./include/footer.php"; ?>
     <?php include "./include/scripts.php"; ?>

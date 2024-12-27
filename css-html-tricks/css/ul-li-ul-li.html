@@ -12,8 +12,8 @@
         ul > li{list-style: disc;}
         ul > li:not(:last-child){margin-bottom: 10px;}
 
-        ol:not(li > ol){color:red;}
-        ol li > ol{color:grey;}
+        ol:not(ol ol) {color: red;}
+        ol ol {color: grey;}
     </style>
 </head>
 <body>

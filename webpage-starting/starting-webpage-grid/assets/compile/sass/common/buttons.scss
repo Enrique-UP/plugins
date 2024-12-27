@@ -1,9 +1,9 @@
 .btns{display: flex;flex-wrap:wrap;gap:4px 4px;margin-bottom:32px;
     &.center{justify-content: center;}
-    a{border-radius: 4px;color:#fff;padding:16px 32px;line-height:1.1;font-weight:bold;
-        &.btn1{background: var(--c4);}
-        &.btn2{background: var(--c5);}
-        &.btn3{background: var(--c3);}
+    a{padding:16px 32px;border-radius: 4px;line-height:1.1;font-weight:bold;color:#fff;background: var(--c1);
+        // &.btn1{}
+        // &.btn2{}
+        // &.btn3{}
         &:active, &:hover, &:focus{background: var(--c2);}
     }
 }

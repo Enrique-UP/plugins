@@ -1,3 +1,88 @@
-header{
-    .logo{display: flex;max-width: 200px;}
+header{padding-block: 12px;@extend %trans;
+    .fw{display: grid;grid-template-columns: 15% 70% 15%;}    
+    .logo{display: flex;max-width: 220px;flex-shrink: 0;}    
+    .navbar{width: 100%;@extend %center;@extend %transl;@extend %transd;
+        .logoMob{display: none;max-width: 180px;flex-shrink: 0;}
+    }
+    navbar{@extend %fc;padding-inline: 16px;width: 100%;align-items: center;}
+    menu{display: flex;
+        li{list-style: none;display:flex;}
+        &:not(menu menu){flex-wrap: wrap;
+            > li{
+                &:not(:last-child){margin-right: 32px;}
+                > a{padding-block: 8px;font-size: 16px;}
+                &:hover{
+                    > a{color:var(--c2);}
+                    > menu{transform:scaleY(1);-webkit-transform:scaleY(1);-moz-transform:scaleY(1);}
+                }
+            }
+        }
+        > li:has(> menu){
+            > a{display: flex;
+                &::after{font-family: fontello;content:"\a019";margin-left: 4px;}
+            }
+        }
+        > li{position: relative;
+            > a{color:#000;line-height: 1.5;}
+            > menu{position: absolute;top:100%;left:0;width: 220px;flex-direction: column;background: var(--g1);padding:16px;@extend %trans;border:1px solid var(--border);transform:scaleY(0);-webkit-transform:scaleY(0);-moz-transform:scaleY(0);transform-origin: top;-webkit-transform-origin: top;-moz-transform-origin: top;box-shadow:0 0 3px var(--g1);
+                > li{@extend %trans;
+                    &:not(:last-child){padding-bottom:8px;margin-bottom: 8px;border-bottom: 1px solid var(--border);}
+                    > a{position: relative;padding-left:16px;font-size: 14px;
+                        &::before{font-family: fontello;content:"\a021";position: absolute;top:0;left:0;color:#000;}
+                        &:hover, &:active, &:focus{color:var(--c2);}
+                    }
+                }
+            }
+        }
+    }
+    .close{position: fixed;top: 0;right: -36px;background: red;width: 36px;height: 36px;@extend %center;color:#fff;cursor: pointer;@extend %userSelect;@extend %transl;@extend %transd;font-size: 20px;}
+
+    .callMenu{display: flex;align-items: center;justify-content:flex-end;
+        > *:not(:first-child){margin-left: 16px;}
+        .menu{display: none;cursor: pointer;font-size: 30px;}
+    }
+    .callBtn{display: flex;color: #fff;background: var(--c1);border-radius: 8px;overflow: hidden;
+        .icon{width: 44px;background: var(--c2);@extend %center;font-size: 20px;@extend %trans;flex-shrink: 0;}
+        span{padding: 10px 12px;font-weight: bold;}
+        &:hover, &:active, &:focus{background: var(--c2);
+            .icon{background: var(--c1);}
+        }
+    }
+    &.active{position: fixed;top:0;left:0;background: #fff;padding-block: 8px;z-index: 99999;border-bottom:1px solid var(--border);
+        .logo{max-width: 170px;}
+    }
+}
+
+@media (min-width:1200px) and (max-width:1399px){
+    header menu:not(menu menu) > li > a{font-size: 14px;}
+    header menu:not(menu menu)>li:not(:last-child) {margin-right: 16px;}
+}
+@media (max-width:1199px){
+    header .navbar{position: fixed;top:0;left:-100%;height: 100%;background: #fff;z-index: 99999;align-items: flex-start;max-width: 284px;}
+    header .fw {display: flex;justify-content: space-between;align-items: center;}
+    header .navbar .logoMob{display: flex;margin-block: 12px;}
+    header .callMenu .menu{display: flex;}
+    header navbar{padding: 0 8px;align-items: flex-start;height: 100vh;}
+    header menu:not(menu menu){flex-direction: column;border-top:1px solid var(--border);padding-block: 16px;flex-wrap: nowrap;overflow-y: auto;}
+    header menu:not(menu menu)>li:not(:last-child) {margin-right: 0;margin-bottom: 16px;}
+    header menu>li{flex-direction: column;}
+    header menu:not(menu menu)>li>a{padding-block: 0;font-size: 18px;}
+    header menu>li>menu{position: static;width: 100%;transform: scaleY(1);-webkit-transform: scaleY(1);-moz-transform: scaleY(1);background: transparent;border:none;box-shadow: none;}
+    header menu > li > menu{padding: 0 0 0 16px;margin-top: 8px;}
+    header menu > li > menu > li:not(:last-child){margin-bottom: 0;border-bottom: none;}
+
+    body.back{
+        header{padding-block: 0;
+            .logo, .callMenu{height: 0;visibility: hidden;opacity: 0;}
+        }
+        .scrollTop{transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);}
+    }
+    header .navbar.active{left:0;
+        .close{right:0;}
+    }
+}
+@media (max-width:575px){
+    header .logo{max-width: 170px;}
+    header.active .logo {max-width: 140px;}
+    header .callBtn span{display: none;}
 }
