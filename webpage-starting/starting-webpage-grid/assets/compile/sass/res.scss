@@ -15,8 +15,13 @@
 @media (min-width:768px) and (max-width:991px){}
 
 
-@media (max-width:767px){}
+@media (max-width:767px){
+.unlist, .list {margin-bottom: 12px;}
+}
 @media (min-width:576px) and (max-width:767px){}
 
 
-@media (max-width:575px){}
+@media (max-width:575px){
+	hgroup {margin-bottom: 24px;}
+	.list>li::before, .unlist>li::before{top:1px;}
+}

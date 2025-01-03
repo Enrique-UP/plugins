@@ -12,6 +12,7 @@ body{font-family: Arial, Helvetica, sans-serif;}
 
 a{@extend %trans;text-decoration: none;}
 b, strong{font-weight: bold;}
+img{@extend %userSelect;}
 
 body{
     &::before{width: 100%;height: 100%;position: fixed;top:0;left:100%;background: rgba(0,0,0,0.7);z-index: 9999;content:"";@extend %trans;}
@@ -24,6 +25,18 @@ main {width:100%;overflow: hidden;@extend %fc;min-height:100vh;
     > *{width:100%;}
     > .bg{background: var(--g1);}
     > .bg1{background: var(--g2);}    
+}
+.unlist, .list{@extend %fc;margin-bottom:24px;
+    > li{list-style: none;position: relative;padding-left:28px;
+        &::before{width: 20px;height: 20px;border-radius: 100%;background: var(--c1);position: absolute;top:3px;left:0;color:#fff;font-size: 12px;@extend %center;font-weight: bold;}
+        &:not(:last-child){margin-bottom: 12px;}
+        b, strong{font-weight: bold;}
+        > a{color:inherit;}
+    }
+}
+.unlist > li::before{font-family: fontello;content:"\a021";}
+.list{counter-reset:number;
+    > li::before{counter-increment:number;content:counter(number);}
 }
 
 .scrollTop{position: fixed;right:8px;bottom:8px;z-index: 999;background: var(--c2);color:#fff;@extend %trans;cursor: pointer;border-radius:4px;width: 36px;height: 36px;@extend %center;@extend %trans;@extend %userSelect;transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);

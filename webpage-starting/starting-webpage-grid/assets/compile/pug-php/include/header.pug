@@ -1,18 +1,18 @@
 header
     .container
         .fw
-            .logoArea
-                a.logo(href="/")
+            .logoArea.animated.bounceInLeft
+                a.logo(href!="<?php echo $siteUrl; ?>")
                     img(src="./assets/images/logo.png", alt="")
             .navbar
-                navbar
+                navbar.animated.bounceInDown
                     a.logoMob(href="/")
                         img(src="./assets/images/logo.png", alt="")
                     menu
                         li
-                            a(href="/") Home
+                            a(href!="<?php echo $siteUrl; ?>") Home
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                             menu
                                 li
                                     a(href="#") Lorem ipsum dolor sit ameet lorem ipsum dolor
@@ -25,7 +25,7 @@ header
                                 li
                                     a(href="#") Lorem ipsum dolor sit
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                             menu
                                 li
                                     a(href="#") Lorem ipsum dolor sit ameet lorem ipsum dolor
@@ -38,7 +38,7 @@ header
                                 li
                                     a(href="#") Lorem ipsum dolor sit
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                             menu
                                 li
                                     a(href="#") Lorem ipsum dolor sit ameet lorem ipsum dolor
@@ -51,13 +51,13 @@ header
                                 li
                                     a(href="#") Lorem ipsum dolor sit
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                         li
-                            a(href="#") Lorem ipsum
+                            a(href="javascript:;") Lorem ipsum
                 i.icon.close &#xa011;
-            .callMenu 
+            .callMenu.animated.bounceInRight 
                 a.callBtn(href!="tel:<?php echo $numberTel; ?>" target="_blank")
                     i.icon &#xa001;
                     span <?php echo $number; ?>

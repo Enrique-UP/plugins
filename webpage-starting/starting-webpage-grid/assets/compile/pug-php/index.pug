@@ -9,9 +9,23 @@ html
     main
       <?php include "./include/header.php"; ?>
       section.section.bg(style="min-height:200vh;")
-        .container Index Page
-      h1 This is a Heading
-      p 
-        a(href!="tel:<?php echo $numberTel; ?>" target="_blank") <?php echo $number; ?>
+        .container
+          hgroup.textCenter 
+            h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
+          hgroup.center 
+            h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
+          h2 This is a Heading
+          p 
+            a(href!="tel:<?php echo $numberTel; ?>" target="_blank") <?php echo $number; ?>
+          ul.unlist
+            li Lorem ipsum dolor
+            li Lorem ipsum dolor
+            li Lorem ipsum dolor
+          ol.list
+            li Lorem ipsum dolor
+            li Lorem ipsum dolor
+            li Lorem ipsum dolor
       <?php include "./include/footer.php"; ?>
     <?php include "./include/scripts.php"; ?>
