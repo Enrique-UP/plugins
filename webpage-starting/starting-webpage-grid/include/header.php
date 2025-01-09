@@ -34,13 +34,13 @@
                 <li><a href="#">Lorem ipsum dolor sit</a></li>
               </menu>
             </li>
-            <li><a href="javascript:;">Lorem ipsum</a></li>
-            <li><a href="javascript:;">Lorem ipsum</a></li>
-            <li><a href="javascript:;">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
           </menu>
         </navbar><i class="icon close">&#xa011;</i>
       </div>
-      <div class="callMenu animated bounceInRight"> <a class="callBtn" href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa001;</i><span><?php echo $number; ?></span></a><i class="icon menu">&#xa005;</i></div>
+      <div class="callMenu animated bounceInRight"> <a class="callBtn" href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa041;</i><span><?php echo $number; ?></span></a><i class="icon menu">&#xa005;</i></div>
     </div>
   </div>
 </header>

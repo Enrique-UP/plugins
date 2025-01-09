@@ -23,7 +23,8 @@ body{color:var(--font1);
 
 main {width:100%;overflow: hidden;@extend %fc;min-height:100vh;
     > *{width:100%;}
-    > .bg {background: linear-gradient(to bottom, var(--g1), #fff 56px);}
+    > .bgT{background: linear-gradient(to bottom, var(--g1), #fff 56px);}
+    > .bgB{background: linear-gradient(to top, var(--g1), #fff 56px);}
     > .bg1{background: var(--g1);}
     > .bg2{background: var(--g2);}
     > .bg3{background: #000;

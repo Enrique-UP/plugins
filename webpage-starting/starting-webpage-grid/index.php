@@ -19,6 +19,16 @@
           </hgroup>
           <h2>This is a Heading</h2>
           <p> <a href="tel:<?php echo $numberTel; ?>" target="_blank"><?php echo $number; ?></a></p>
+          <ul class="unlist">
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+          </ul>
+          <ol class="list">
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+          </ol>
         </div>
       </section><?php include "./include/footer.php"; ?>
     </main><?php include "./include/scripts.php"; ?>

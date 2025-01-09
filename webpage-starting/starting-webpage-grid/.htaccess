@@ -17,6 +17,11 @@ RewriteEngine On
 
 # Example rewrite rule for 'about'
 RewriteRule ^doc$ documentation.php [L]
+RewriteRule ^about$ about.php [L]
+RewriteRule ^privacy$ privacy.php [L]
+RewriteRule ^refund$ refund.php [L]
+RewriteRule ^terms$ terms.php [L]
+RewriteRule ^inner$ inner.php [L]
 
 # ----------------------------------------------------------------------
 # Compression
