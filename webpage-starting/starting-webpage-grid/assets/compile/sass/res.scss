@@ -1,27 +1,51 @@
 @media (min-width:1400px){}
 
 
+
+
 @media (max-width:1399px){}
 @media (min-width:1200px) and (max-width:1399px){
     header .fw {grid-template-columns: 20% 60% 20%;}
 }
 
 
+
+
 @media (max-width:1199px){}
 @media (min-width:992px) and (max-width:1199px){}
 
 
+
+
 @media (max-width:991px){}
 @media (min-width:768px) and (max-width:991px){}
+@media (min-width:576px) and (max-width:991px){
+    hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {font-size: 36px;}
+    hgroup p{font-size: 20px;}
+}
+
+
+
 
 
 @media (max-width:767px){
-.unlist, .list {margin-bottom: 12px;}
+    hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6{text-align: center;}
+    hgroup p{text-align: center;}
+    .btns{justify-content: center;}
+    .unlist, .list {margin-bottom: 12px;}
 }
 @media (min-width:576px) and (max-width:767px){}
 
 
+
+
 @media (max-width:575px){
-	hgroup {margin-bottom: 24px;}
-	.list>li::before, .unlist>li::before{top:1px;}
+    hgroup {margin-bottom: 24px;}
+    hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {font-size: 32px;}
+    hgroup p{font-size: 18px;}
+    
+    .list>li::before, .unlist>li::before{top:1px;}
+
+    .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {font-size: 20px;}
+    .content h1:not(:first-child), .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child), .content h5:not(:first-child), .content h6:not(:first-child) {margin-top: 8px;}
 }

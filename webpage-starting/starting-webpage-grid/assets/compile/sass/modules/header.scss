@@ -37,11 +37,11 @@ header{padding-block: 12px;@extend %trans;border-bottom:1px solid var(--border);
     }
     .close{position: fixed;top: 0;right: -36px;background: red;width: 36px;height: 36px;@extend %center;color:#fff;cursor: pointer;@extend %userSelect;@extend %transl;@extend %transd;font-size: 20px;}
 
-    .callMenu{display: flex;align-items: center;justify-content:flex-end;
+    .callMenu{display: flex;align-items: center;justify-content:flex-end;@extend %userSelect;
         > *:not(:first-child){margin-left: 16px;}
         .menu{display: none;cursor: pointer;font-size: 30px;}
     }
-    .callBtn{display: flex;color: #fff;background: var(--c1);border-radius: 8px;overflow: hidden;
+    .callBtn{display: flex;align-items: center;color: #fff;background: var(--c1);border-radius: 8px;overflow: hidden;
         .icon{width: 44px;background: var(--c2);@extend %center;font-size: 20px;@extend %trans;flex-shrink: 0;}
         span{padding: 10px 12px;font-weight: bold;}
         &:hover, &:active, &:focus{background: var(--c2);

@@ -18,7 +18,7 @@ $col-12:100%;
 
 body{font-size: 16px;line-height: 1.7;}
 
-:has(> .img){display:flex;}
+:has(> .img){display:flex;align-items: flex-start;}
 img{max-width: 100%;}
 :has(> .fw){display: flex;flex-wrap: wrap;}
 .fw{width: 100%;}
