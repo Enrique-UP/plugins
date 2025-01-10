@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>AkountoBooks || Pricing</title>
+    <title>Pricing</title>
     <link rel="stylesheet" href="./style.min.css?130" />
 </head>
 <body>
@@ -74,20 +74,24 @@
                     a.querySelector(".price").innerHTML = `$199<i>/mo <span>25% off Lifetime</span></i>`;
                     a.querySelector(".plan > i").innerHTML = `250`;
                 }
-                if(url.indexOf(utm + "2") > -1){
+                else if(url.indexOf(utm + "2") > -1){
                     a.querySelector(".price").innerHTML = `$349<i>/mo <span>25% off Lifetime</span></i>`;
                     a.querySelector(".plan > i").innerHTML = `440`;
                 }
-                if(url.indexOf(utm + "3") > -1){
+                else if(url.indexOf(utm + "3") > -1){
                     a.querySelector(".price").innerHTML = `$499<i>/mo <span>25% off Lifetime</span></i>`;
                     a.querySelector(".plan > i").innerHTML = `570`;
                 }
-                if(url.indexOf(utm + "4") > -1){
+                else if(url.indexOf(utm + "4") > -1){
                     a.querySelector(".b2").classList.add("utm4");
                     a.querySelector(".b2").innerHTML = `You qualify for a discounted custom quote. Click on <b>"Call me back now"</b> to get the quote.`;
                     a.querySelector(".price").remove();
                     a.querySelector(".plan").remove();
                     //a.querySelector(".plan > i").innerHTML = `1250`;
+                }
+                else{
+                    a.querySelector(".price").innerHTML = `$00<i>/mo <span>00% off Lifetime</span></i>`;
+                    a.querySelector(".plan > i").innerHTML = `000`;
                 }
             });
         })();
