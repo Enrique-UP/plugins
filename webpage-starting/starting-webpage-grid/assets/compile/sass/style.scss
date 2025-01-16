@@ -22,12 +22,12 @@ body{color:var(--font1);
 }
 
 main {width:100%;overflow: hidden;@extend %fc;min-height:100vh;
-    > *{width:100%;}
-    > .bgT{background: linear-gradient(to bottom, var(--g1), #fff 56px);}
-    > .bgB{background: linear-gradient(to top, var(--g1), #fff 56px);}
-    > .bg1{background: var(--g1);}
-    > .bg2{background: var(--g2);}
-    > .bg3{background: #000;
+    > *{width:100%;@extend %fc;}
+    > .bg-gt{background-image: linear-gradient(to bottom, var(--g1), #fff 56px);}
+    > .bg-gb{background-image: linear-gradient(to top, var(--g1), #fff 56px);}
+    > .bg-1{background-color: var(--g1);}
+    > .bg-2{background-color: var(--g2);}
+    > .bg-d{background-color: var(--c1);
         hgroup{
             h1, h2, h3, h4, h5, h6, p{color:#fff;}
         }

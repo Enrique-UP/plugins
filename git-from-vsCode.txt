@@ -118,6 +118,11 @@ git status
 git add .
 git commit -m "Describe what you're committing"
 ==========================================================================================
+find system problem of username and email
+git config --global user.name "noman.na"
+git config --global user.email "noman.na@akounto.com"
+==========================================================================================
+
 Using GitHub Desktop:
 Open the Repository in GitHub Desktop:
 Launch GitHub Desktop and open your repository.

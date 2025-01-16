@@ -19,10 +19,10 @@ p !{"<i class='icon'>&#copy;</i>"} This is for icon.
 
 mixin partner(e)
     .col-sm-6.col-md-4
-    .ptArea 
-        i.icon!= e.icon
-        h6.hd= e.hd
-        p= e.text
+	    .ptArea
+	        i.icon!= e.icon
+	        h6.hd= e.hd
+	        p= e.text
 +partner({icon:"&#xa010;", hd:"Lorem ipsum dolor", text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"})
 
 =====================================================================================================================================================
@@ -30,7 +30,7 @@ mixin partner(e)
 mixin data(e)
     div(class=`tabDetail ${e.tab}`)
         div.headSelect
-            div 
+            div
                 div.day
                     span Day
                     span= e.date
