@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        :root{
+            --c1:#022447;
+            --c2:#33c7c5;
+            --c3:#ffe701;
+            --c4:#0c67c4;
+            --c5:#4e667f;
+        }
+        *{padding:0;margin:0;box-sizing:border-box;}
+        ul{display:flex;height:100vh;align-items:flex-start;}
+        ul > li{width:20%;list-style:none;}
+        ul > li > span{background:red;color:#fff;}
+        ul > li:first-child{background:var(--c1);height:67vh;}
+        ul > li:nth-child(2){background:var(--c2);height:50vh;}
+        ul > li:nth-child(3){background:var(--c3);height:33vh;}
+        ul > li:nth-child(4){background:var(--c4);height:75vh;}
+        ul > li:last-child{background:var(--c5);height:100vh;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        document.querySelectorAll("ul > li").forEach(function(e){
+            // e.innerHTML = "<span>" + e.offsetHeight + "</span>";
+            console.log(e.offsetHeight);
+        });
+    </script>
+</body>
+</html>

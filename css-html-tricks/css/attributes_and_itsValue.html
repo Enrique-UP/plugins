@@ -120,23 +120,125 @@
         <a href="#" class="mybest">mybest</a>
     </section>
     <section>
+        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
         <style>
             .four[style^="color"]{background: blue;}
             .one[style$="block;"]{background: red;}
             .two[style*="none"]{background: blue !important;}
-            /* .three[title~="flower"]{background: blue;} */
-            .three[style~="flex;"]{background: blue;}
+            .three[title~="flower"]{background: orange;}
+            .three[style~="flex;"]{background: brown;}
             .five[style|="display"]{background: blue;}
             .o1[class~="cls"]{background: blue;}
         </style>
+        <h1>Must check</h1>
+        <p></p>
         <div class="four" style="color:#fff;display: flex;">Good Example here</div>
         <div class="one" style="color:#fff;display: block;">Good Example here</div>
         <div class="two" style="background: none;">Good Example here</div>
-        <!-- <div class="three" title="one: flower">Good Example here</div> -->
+        <div class="three" title="one: flower">Good Example here</div>
         <div class="three" style="display: flex;">Good Example here</div>
         <div class="five" style="display: flex">Good Example here</div>
 
-        <div class="o1 cls o2" style="display: flex">Good Example here</div>
+        <div class="o1 cls o2" style="display: flex">Good Example here------------</div>
+    </section>
+    <section>
+        <style>
+            [class*="list-"]{width: 100%;display: flex;flex-wrap: wrap;background:#ccc;margin-bottom:12px;padding: 10px 10px 0;}
+            [class*="list-"] > li{list-style-position: inside;margin-bottom:10px;}
+            [class*="list-"][class*="1"] > li{width: 100%;}
+            [class*="list-"][class*="2"] > li{width: 50%;}
+            /*
+                or 
+                .list-2 {background-color: red;}
+            */
+            /* .list-[class*="2"]{background: red;} not works above is correct  it's means class="list- 2"*/
+            [class*="list-"][class*="3"] > li{width: 33.33%;}
+            [class*="list-"][class*="4"] > li{width: 25%;}
+            [class*="list-"][class*="5"] > li{width: 20%;}
+            [class*="list-"][class*="6"] > li{width: 16.66%;}
+
+            @media (min-width:992px) and (max-width:1199px){
+                [class*="list-"][class*="4"] > li,
+                [class*="list-"][class*="5"] > li,
+                [class*="list-"][class*="6"] > li{width: 33.33%;}
+            }
+            @media (min-width:576px) and (max-width:991px){
+                [class*="list-"][class*="3"] > li,
+                [class*="list-"][class*="4"] > li,
+                [class*="list-"][class*="5"] > li,
+                [class*="list-"][class*="6"] > li{width: 50%;}
+            }
+            @media (max-width:575px){
+                [class*="list-"][class*="2"] > li,
+                [class*="list-"][class*="3"] > li,
+                [class*="list-"][class*="4"] > li,
+                [class*="list-"][class*="5"] > li,
+                [class*="list-"][class*="6"] > li{width: 100%;}
+            }
+        </style>
+        <ol class="list-1">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
+        <ol class="list-2">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
+        <ol class="list-3">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
+        <ol class="list-4">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
+        <ol class="list-5">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
+        <ol class="list-6">
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
+        </ol>
     </section>
 </body>
 </html>
