@@ -13,6 +13,7 @@
         .content3::after{content: '     'attr(data-more)'';white-space: pre;}
         .content4::after{content:" Ipsum";}
         .content5::after{content:" " "Ipsum";}
+        .content6[data-class*="nan" i]::before {content: "👋";background:red;}
     </style>
 </head>
 <body>
@@ -24,5 +25,7 @@
     <p class="content4">Lorem</p>
     <p class="content5">Lorem</p>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, dicta.</p>
+    <br>
+    <p class="content6" data-name="Nan">[data-class*="nan" i]</p>
 </body>
 </html>

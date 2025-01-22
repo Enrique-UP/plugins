@@ -6,143 +6,259 @@
     <title>Document</title>
     <style type="text/css">
         *{padding: 0;margin: 0;box-sizing: border-box;}
-        body{font-family: Arial, Helvetica, sans-serif;line-height: 1;}
-        section{width: 100%;display: flex;flex-direction: column;align-items: flex-start;padding: 30px;}
-        section > a:not(:last-child){margin-bottom: 16px;}
-        p{font-size: 20px;font-weight: bold;margin-bottom: 16px;line-height: 1.3;}
-
-        a{color:#000;text-decoration: none;white-space: nowrap;}
-        a:not([href]){color:#000;font-weight: bold;}
-        /* section :not([class]){color: green;} */
-        a[href="#"]{color: #fff;}
-
-        a[target]{background-color: red;}
-        a[href="https://www.demo.com"] {background-color: #4a7d90;}
-        a[target="_blank"]{background-color: green;}
-
-        a[title~="flower"]{background-color: red;}
-
-        a[class|="top"] {background-color: red;}
-
-        a[class^="bottom"] {background-color: green;}
-        /* a[href^="http"] {}
-        a[href^="http"]::after {} */
-
-        a[class$="test"] {background-color: blue;}
-        /* a[href$=".pdf"] {}
-        a[href$=".pdf"]::after {} */
-
-        a[class*="be"] {background-color: red;}
+        body{font-family: Arial, Helvetica, sans-serif;line-height: 1.5;padding:32px;}
+        section{width: 100%;display: flex;flex-direction: column;align-items: flex-start;}
+        section:not(:last-of-type){padding-bottom: 32px;margin-bottom: 32px;border-bottom:2px solid #000;}
+        p{font-weight: bold;font-size: 24px;text-align: center;width: 100%;}
+        a{text-decoration: none;}
+        section > a:not(:last-child){margin-bottom: 8px;}
     </style>
 </head>
 <body>
-    <h2>["value"] , ~ , | , ^ , $ , *</h2>
-    <section>
-        <a>Not Link</a>
-        <a href="">Link</a>
-        <a href="#" target="">Link</a>
+    <section class="zero">
+        <style type="text/css">
+            .zero ol, .zero ul{width: 100%;display: flex;flex-direction: column;padding-left:18px;}
+            .zero ol > li:not(:last-child), .zero ul > li:not(:last-child){margin-bottom: 8px;}
+            .zero ol > li > span, .zero ul > li > span{color:red;}
+            .zero .list{width: 100%;font-weight: bold;}
+        </style>
+        <p>CSS Attribute Selectors</p>
+        <ol class="list">
+            <li>[attribute] <span>OR (for example)</span> a[href]{}</li>
+            <li>attribute["value"] <span>OR (for example)</span> a[href="#"]{}</li>
+            <li>~</li>
+            <li>|</li>
+            <li>^</li>
+            <li>$</li>
+            <li>*</li>
+            <li>:not([attribute])</li>
+            <li>:not([type="text"])</li>
+        </ol>
+    </section>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
-        <a href="#" target="_blank">Link</a>
-        <a href="https://www.demo.com">Link</a>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
+
+    <section class="one">
+        <style type="text/css">
+            .one a:not([href]){font-weight: bold;}
+            .one a[class]{background:green;color:#fff;}
+            .one a[href="#"]{background:red;color:#fff;}
+            .one a[href="https://www.demo.com"]{background:rebeccapurple;color:#fff;}
+        </style>
+        <a>Lorem</a>
+        <a class="link">Lorem</a>
+        <a href="#">Lorem</a>
+        <a href="https://www.demo.com">Lorem</a>
+    </section>
+
+
+
+
+
+
+    <section class="two">
+        <style type="text/css">
+            .two a[class~="demo"]{background: red;color:#fff;}
+        </style>
         <p>
             The [attribute~="value"] selector is used to select elements with an attribute value containing a specified word.
             <br>
-            The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+            The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "demo":
         </p>
-        <a href="#" title="klematis flower">klematis flower</a>
-        <a href="" title="flow">flow</a>
-        <a href="#" title="flower">flower</a>
-        <a href="" title="tree">tree</a>
-        <a href="" title="tree _flower_">tree _flower_</a>
-        <a href="" title="tree -flower-">tree -flower-</a>
-        <a href="#" title="flower klematis">flower klematis</a>
+        <p>Trick:========If specific demo class contains in anywhere in class. Then apply its css.========</p>
+        <a href="#" class="demo"></a>
+        <a href="#" class="demo cls"></a>
+        <a href="#" class="cls demo"></a>
+        <a href="#" class="cls demo cls1"></a>
+        <a href="#" class="demo_"></a>
+        <a href="#" class="demo-"></a>
+        <a href="#" class="_demo"></a>
+        <a href="#" class="-demo"></a>
+        <a href="#" class="_demo_"></a>
+        <a href="#" class="-demo-"></a>
+        <a href="#" class="democls"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="demo-cls"></a>
+        <a href="#" class="demo-cls mns"></a>
+        <a href="#" class="cls-demo"></a>
+    </section>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
+
+
+
+
+    <section class="three">
+        <style type="text/css">
+            .three a[class|="demo"]{background: rebeccapurple;color:#fff;}
+        </style>
         <p>
             The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
             <br>
-            Note: The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text".
+            Note: The value has to be a whole word, either alone, like class="demo", or followed by a hyphen( - ), like class="demo". 
         </p>
-        <a href="#" class="top-header">top-header</a>
-        <a href="#" class="top-text">top-text</a>
-        <a class="topcontent">topcontent</a>
-        <a class="contenttopcontent">contenttopcontent</a>
-        <a class="ds-text-top">ds-text-top</a>
-        <a class="ds-top-text">ds-top-text</a>
-        <a class="contenttop">contenttop</a>
-        <a class="content-top">content-top</a>
+        <p>Trick:========If "demo"/"demo-cls mvs" class contains in starting in class. Then apply its css.========</p>
+        <a href="#" class="demo"></a>
+        <a href="#" class="demo cls"></a>
+        <a href="#" class="cls demo"></a>
+        <a href="#" class="cls demo cls1"></a>
+        <a href="#" class="demo_"></a>
+        <a href="#" class="demo-"></a>
+        <a href="#" class="_demo"></a>
+        <a href="#" class="-demo"></a>
+        <a href="#" class="_demo_"></a>
+        <a href="#" class="-demo-"></a>
+        <a href="#" class="democls"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="demo-cls"></a>
+        <a href="#" class="demo-cls mns"></a>
+        <a href="#" class="cls-demo"></a>
+    </section>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
+
+
+
+
+    <section class="four">
+        <style type="text/css">
+            .four a[class^="demo"]{background: green;color:#fff;}
+        </style>
         <p>
             The [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
             <br>
-            Note: The value does not have to be a whole word!
+            The following example selects all elements with a class attribute value that starts with "demo":
         </p>
-        <a href="#" class="bottom-header">bottom-header</a>
-        <a href="#" class="bottom-text">bottom-text</a>
-        <a class="bottomcontent">bottomcontent</a>
-        <a class="contentbottom">contentbottom</a>
-        <a class="content-bottom">content-bottom</a>
+        <p>Trick:========If (demo/demo-/demo_/demo cls) class contains in starting in class. Then apply its css.========</p>
+        <a href="#" class="demo"></a>
+        <a href="#" class="demo cls"></a>
+        <a href="#" class="cls demo"></a>
+        <a href="#" class="cls demo cls1"></a>
+        <a href="#" class="demo_"></a>
+        <a href="#" class="demo-"></a>
+        <a href="#" class="_demo"></a>
+        <a href="#" class="-demo"></a>
+        <a href="#" class="_demo_"></a>
+        <a href="#" class="-demo-"></a>
+        <a href="#" class="democls"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="demo-cls"></a>
+        <a href="#" class="demo-cls mns"></a>
+        <a href="#" class="cls-demo"></a>
+    </section>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
+
+
+
+
+    <section class="five">
+        <style type="text/css">
+            .five a[class$="demo"]{background: red;color:#fff;}
+            a[href$=".pdf"], a[href$=".jpg"] {background: blue;color:#fff;content:"";}
+            /* a[href$=".jpg"]::after {background: blue;color:#fff;content:"";} */
+        </style>
         <p>
             The [attribute$="value"] selector is used to select elements whose attribute value ends with a specified value.
             <br>
-            Note: The value does not have to be a whole word!  
+            Note: The value does not have to be a whole word! 
         </p>
-        <a href="#" class="first_test">first_test</a>
-        <a class="test_">test_</a>
-        <a class="test_">test_</a>
-        <a class="-test-">-test-</a>
-        <a href="#" class="my-test">my-test</a>
-        <a href="#" class="mytest">mytest</a>
+        <p>Trick:========If specific (demo/-demo/_demo/cls-demo) class contains in ending in class. Then apply its css.========</p>
+        <a href="#" class="demo"></a>
+        <a href="#" class="demo cls"></a>
+        <a href="#" class="cls demo"></a>
+        <a href="#" class="cls demo cls1"></a>
+        <a href="#" class="demo_"></a>
+        <a href="#" class="demo-"></a>
+        <a href="#" class="_demo"></a>
+        <a href="#" class="-demo"></a>
+        <a href="#" class="_demo_"></a>
+        <a href="#" class="-demo-"></a>
+        <a href="#" class="democls"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="demo-cls"></a>
+        <a href="#" class="demo-cls mns"></a>
+        <a href="#" class="cls-demo"></a>
+        <a href="one.jpg">.jpg</a>
+        <a href="one.pdf">.pdf</a>
+    </section>
 
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
 
+
+
+
+
+    <section class="six">
+        <style type="text/css">
+            .six a[class*="-"]{background: rebeccapurple;color:#fff;}
+        </style>
         <p>
             The [attribute*="value"] selector is used to select elements whose attribute value contains a specified value.
             <br>
-            Note: The value does not have to be a whole word!  
+            Note: The value does not have to be a whole word! 
         </p>
-        <a href="#" class="first_best">first_best</a>
-        <a class="best_">best_</a>
-        <a class="best_">best_</a>
-        <a class="-best-">-best-</a>
-        <a href="#" class="my-best">my-best</a>
-        <a href="#" class="mybest">mybest</a>
+        <p>Trick:========If selected any (-) value of class contains in anywhere in class. Then apply its css.========</p>
+        <a href="#" class="demo"></a>
+        <a href="#" class="demo cls"></a>
+        <a href="#" class="cls demo"></a>
+        <a href="#" class="cls demo cls1"></a>
+        <a href="#" class="demo_"></a>
+        <a href="#" class="demo-"></a>
+        <a href="#" class="_demo"></a>
+        <a href="#" class="-demo"></a>
+        <a href="#" class="_demo_"></a>
+        <a href="#" class="-demo-"></a>
+        <a href="#" class="democls"></a>
+        <a href="#" class="clsdemo"></a>
+        <a href="#" class="demo-cls"></a>
+        <a href="#" class="demo-cls mns"></a>
+        <a href="#" class="cls-demo"></a>
     </section>
-    <section>
-        <div style="width:100%;height: 2px;background:#000;display:flex;margin-block:16px 32px;"></div>
-        <style>
-            .four[style^="color"]{background: blue;}
-            .one[style$="block;"]{background: red;}
-            .two[style*="none"]{background: blue !important;}
-            .three[title~="flower"]{background: orange;}
-            .three[style~="flex;"]{background: brown;}
-            .five[style|="display"]{background: blue;}
-            .o1[class~="cls"]{background: blue;}
-        </style>
-        <h1>Must check</h1>
-        <p></p>
-        <div class="four" style="color:#fff;display: flex;">Good Example here</div>
-        <div class="one" style="color:#fff;display: block;">Good Example here</div>
-        <div class="two" style="background: none;">Good Example here</div>
-        <div class="three" title="one: flower">Good Example here</div>
-        <div class="three" style="display: flex;">Good Example here</div>
-        <div class="five" style="display: flex">Good Example here</div>
 
-        <div class="o1 cls o2" style="display: flex">Good Example here------------</div>
-    </section>
+
+
+
+
+
     <section>
-        <style>
+        <style type="text/css">
+            .four1[style^="color"]{background: blue;color: #fff;}
+            .one1[style$="block;"]{background: red;color: #fff;}
+            .two1[style*="none"]{background: blue !important;color: #fff;}
+            .three1[title~="flower"]{background: orange;color: #fff;}
+            .three1[style~="flex;"]{background: brown;color: #fff;}
+            .five1[class|="cls"]{background: blue;color: #fff;}
+            .o1[class~="cls"]{background: blue;color: #fff;}
+            /* or */
+            /* .o1.cls{background: blue;color: #fff;} */
+            
+            [class*="box-"]{color:#fff;font-weight: bold;}
+            [class*="box-"][class*="1"]{background:purple;}
+            [class*="box-"][class*="2"]{background: blueviolet;}
+        </style>
+        <p>Must check below examples</p>
+        <div class="four1" style="color:#fff;display: flex;">Good Example here</div>
+        <div class="one1" style="color:#fff;display: block;">Good Example here</div>
+        <div class="two1" style="background: none;">Good Example here</div>
+        <div class="three1" title="one: flower">Good Example here</div>
+        <div class="three1" style="display: flex;">Good Example here</div>
+        <div class="cls five1">Good Example here</div>
+        <div class="cls- five1">Good Example here</div>
+        <div class="o1 cls o2">o1 cls o2 Good Example here------------</div>
+        <div class="cls box-1 mvs">Box 1</div>
+        <div class="box-2">Box 2</div>
+    </section>
+    
+    
+    
+    
+    
+    
+    <section>
+        <style type="text/css">
             [class*="list-"]{width: 100%;display: flex;flex-wrap: wrap;background:#ccc;margin-bottom:12px;padding: 10px 10px 0;}
             [class*="list-"] > li{list-style-position: inside;margin-bottom:10px;}
             [class*="list-"][class*="1"] > li{width: 100%;}
@@ -240,5 +356,17 @@
             <li>Lorem</li>
         </ol>
     </section>
+
+
+
+
+
+    <script>
+        document.querySelectorAll("section:not(.one)").forEach(function(e){
+            e.querySelectorAll("a[class]").forEach(function(f){
+                f.innerHTML = f.classList;
+            });
+        });
+    </script>
 </body>
 </html>
