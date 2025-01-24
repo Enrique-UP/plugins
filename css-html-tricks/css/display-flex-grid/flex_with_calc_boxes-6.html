@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;}
+    .container{max-width: 1400px;margin-inline: auto;display:flex;flex-direction: column;padding-inline: 16px;}
+
+    [class*="boxes"]{display: flex;flex-wrap: wrap;gap: 32px;justify-content: center;}
+    [class*="boxes"]:not(:last-child){border-bottom:48px solid #000;}
+    [class*="boxes"] .box {padding: 12px;}
+
+    [class*="boxes-"][class*="1"] .box{background-color: lightcoral;}
+    [class*="boxes-"][class*="2"] .box{background-color: lightseagreen;}
+    [class*="boxes-"][class*="3"] .box{background-color: lightsalmon;}
+    [class*="boxes-"][class*="4"] .box{background-color: lightgreen;}
+    [class*="boxes-"][class*="5"] .box{background-color: lightskyblue;}
+    [class*="boxes-"][class*="6"] .box{background-color: lightslategray;}
+    
+    [class*="boxes-"][class*="1"] .box{flex: 0 1 100%;}
+    [class*="boxes-"][class*="2"] .box{flex: 0 1 calc(50% - 16px);}
+    [class*="boxes-"][class*="3"] .box{flex: 0 1 calc(33.33% - 21.3px);}
+    [class*="boxes-"][class*="4"] .box{flex: 0 1 calc(25% - 24.1px);}
+    [class*="boxes-"][class*="5"] .box{flex: 0 1 calc(20% - 25.6px);}
+    [class*="boxes-"][class*="6"] .box{flex: 0 1 calc(16.66% - 26.6px);}
+
+    @media (min-width:992px) and (max-width:1199px){
+      .container{width: 992px;}
+      [class*="boxes-"][class*="5"] .box,
+      [class*="boxes-"][class*="6"] .box{flex:0 1 calc(25% - 24px);}
+    }
+    @media (min-width:768px) and (max-width:991px){
+      .container{width: 768px;}
+      [class*="boxes-"][class*="4"] .box,
+      [class*="boxes-"][class*="5"] .box,
+      [class*="boxes-"][class*="6"] .box{flex:0 1 calc(33.33% - 21.3px);}
+    }
+    @media (min-width:576px) and (max-width:767px){
+      .container{width: 576px;}
+      [class*="boxes"]{gap:24px;}
+      [class*="boxes-"][class*="2"] .box,
+      [class*="boxes-"][class*="3"] .box,
+      [class*="boxes-"][class*="4"] .box,
+      [class*="boxes-"][class*="5"] .box,
+      [class*="boxes-"][class*="6"] .box{flex:0 1 calc(50% - 12px);}
+    }
+    @media (max-width:575px){
+      .container{width: 100%;padding-inline: 8px;}
+      [class*="boxes"]{gap:16px;}
+      [class*="boxes-"][class*="2"] .box,
+      [class*="boxes-"][class*="3"] .box,
+      [class*="boxes-"][class*="4"] .box,
+      [class*="boxes-"][class*="5"] .box,
+      [class*="boxes-"][class*="6"] .box{flex:0 1 100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="boxes-1">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+      <div class="box">Box 17</div>
+      <div class="box">Box 18</div>
+    </div>
+    <div class="boxes-2">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+      <div class="box">Box 17</div>
+      <div class="box">Box 18</div>
+    </div>
+    <div class="boxes-3">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+      <div class="box">Box 17</div>
+      <div class="box">Box 18</div>
+    </div>
+    <div class="boxes-4">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+      <div class="box">Box 17</div>
+      <div class="box">Box 18</div>
+    </div>
+    <div class="boxes-5">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+      <div class="box">Box 17</div>
+      <div class="box">Box 18</div>
+    </div>
+    <div class="boxes-6">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+      <div class="box">Box 10</div>
+      <div class="box">Box 11</div>
+      <div class="box">Box 12</div>
+      <div class="box">Box 13</div>
+      <div class="box">Box 14</div>
+      <div class="box">Box 15</div>
+      <div class="box">Box 16</div>
+    </div>
+  </div>
+</body>
+</html>
