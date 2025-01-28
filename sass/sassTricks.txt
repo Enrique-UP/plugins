@@ -1,0 +1,23 @@
+[class*="logos-"]{
+    // &[class*="1"]{.logosArea{width: 100%;}}
+    // &[class*="2"]{.logosArea{width: 50%;}}
+    // &[class*="3"]{.logosArea{width: 33.33%;}}
+    // &[class*="4"]{.logosArea{width: 25%;}}
+    // &[class*="5"]{.logosArea{width: 20%;}}
+    // &[class*="6"]{.logosArea{width: 16.66%;}}
+
+    @for $num from 1 through 6 {
+        &[class*="#{$num}"] {
+            .logosArea {width: #{100% / $num};}
+        }
+    }
+}
+
+
+[class*="logos-"][class*="1"] .logosArea {width: 100%;}
+[class*="logos-"][class*="2"] .logosArea {width: 50%;}
+[class*="logos-"][class*="3"] .logosArea {width: 33.3333%;}
+[class*="logos-"][class*="4"] .logosArea {width: 25%;}
+[class*="logos-"][class*="5"] .logosArea {width: 20%;}
+[class*="logos-"][class*="6"] .logosArea {width: 16.6667%;}
+===========================================================
