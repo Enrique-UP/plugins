@@ -25,6 +25,14 @@ div.c {
   text-overflow: "----"; 
   border: 1px solid #000000;
 }
+div.d{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width:250px;
+}
 </style>
 </head>
 <body>
@@ -44,6 +52,9 @@ div.c {
 
 <p><strong>Note:</strong> The text-overflow: "<em>string</em>" only works in 
 Firefox.</p>
+
+<h2>Second line ...</h2>
+<div class="d">Hello world lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet!</div>
 
 </body>
 </html>

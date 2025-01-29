@@ -22,8 +22,8 @@ Open any image by ctrl + o
 Select Image
 Increase image size by alt + ctrl + c or alt + ctrl + i =  type in width 400 => ok
 selct transparent area of both side or one side by rectangular marquee tool
-go to select menu => modify => Expand => 1px => ok
-go to edit menu => fill => content-aware select => ok
+go to => (Select) menu => modify => Expand => 1px => ok
+go to => (Edit) menu => fill => content-aware select => ok
 after some time the image will be similar fill by automatically.
 
 ==========================================================================================================
