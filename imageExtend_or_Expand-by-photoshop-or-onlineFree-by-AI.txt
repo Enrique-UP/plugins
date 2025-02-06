@@ -1,7 +1,6 @@
-https://www.pixelcut.ai/home
+https://www.pixelcut.ai/home (Magic Eraser)
 https://www.pixelcut.ai/uncrop
 https://www.pixelcut.ai/t/uncrop
-https://www.pixelcut.ai/projects/3278aac2-f93a-47df-9eb6-2929736e644a/editor/
 
 ==========================================================================================================
 for photo restoration
@@ -18,12 +17,11 @@ https://pincel.app/tools/inpaint?_gl=1*2082w*_ga*MTUwNzU4NTY3My4xNzMyMjU2ODU1*_g
 ==========================================================================================================
 
 ============Image Extend feature is find in photoshop.===========================
-Open any image by ctrl + o
-Select Image
+Open any image by ctrl + o => Select Image
 Increase image size by alt + ctrl + c or alt + ctrl + i =  type in width 400 => ok
-selct transparent area of both side or one side by rectangular marquee tool
-go to => (Select) menu => modify => Expand => 1px => ok
-go to => (Edit) menu => fill => content-aware select => ok
-after some time the image will be similar fill by automatically.
+Selct transparent area of both side or one side by rectangular marquee tool
+Go to => (Select) menu => modify => Expand => 1px => ok
+Go to => (Edit) menu => fill => content-aware select => ok
+After some time the image will be similar fill by automatically.
 
 ==========================================================================================================
