@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre>
+    document.getElementById("demo1").innerHTML = (function(a, b){
+        return a * b;
+    })(4, 6);
+
+    (function(a, b){
+        return document.getElementById("demo2").innerHTML = a * b;
+    })(4, 5);
+</pre>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+    document.getElementById("demo1").innerHTML = (function(a, b){
+        return a * b;
+    })(5, 10);
+
+    (function(a, b){
+        return document.getElementById("demo2").innerHTML = a + b;
+    })(4, 8);
+</script>
+</body>
+</html>

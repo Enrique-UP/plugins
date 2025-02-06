@@ -1,10 +1,11 @@
-Google search console => generate code then copy in our website.
-Google analytic tool
+Google search console => Generate code then copy in our website.
+Google Analytic Tool
+Google web master
 
 ==========================================================================
 Core web vitals : Failed (LCP, FID, INP, CLS(moving elements), FCP, TTFB)
 https://www.youtube.com/watch?v=SIdzhrynNbM&list=PLx9THvOL50-W3dkybv7tRUik0j33nFgct&index=1
-1. 
+1.
 	i). 	Hosting upgrade,
 			Enable caching,
 			CDN use,
@@ -17,7 +18,7 @@ https://www.youtube.com/watch?v=SIdzhrynNbM&list=PLx9THvOL50-W3dkybv7tRUik0j33nF
 			@font-face{font-family:"Open Sans Regular";font-size:14px;font-display:swap;}
 	iii). 	Image format in webp
 			Regions not optimised, wrong format & not correct size.
-			set width or height of image by its tag attribute.
+			set width or height of image by its tag attribute & in css class type max-width:100%;height:auto;.
 
 2. Small DOM Tree & Keep js before closing body tag.
 	Use defer attribute in script tag.
@@ -27,12 +28,12 @@ https://www.youtube.com/watch?v=SIdzhrynNbM&list=PLx9THvOL50-W3dkybv7tRUik0j33nF
 	<script defer src="./js/jquery.min.js"></script>
 
 3. Google lighthouse developer tool inspect element.
-4. press ctrl+f12=>performance=> after that showing web vitals.
+4. Press ctrl+f12 => Performance => After that showing web vitals.
 
 Images:- Webp format & no over size (Keep image small).
 Minify:- HTML, CSS & JS.
 Use:- defer in script tag & keep script tab before ending body tag.
-Animation:- No animation.
+Animation:- No animation (CLS moving elements).
 Fonts:- No use special fonts (use cdn).
 ===================================================================================================
 
