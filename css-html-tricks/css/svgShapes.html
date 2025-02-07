@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style type="text/css">
+    *{padding:0;margin:0;box-sizing: border-box;}
+
+    .box{width:300px;height:300px;position:relative;background:brown;overflow: hidden;}
+    .box:not(:last-child){margin-bottom: 50px;}
+    .box::before{content:attr(data-name);background: rgba(0,0,0,0.5);width:100%;left:0;right:0;bottom:-100%;position: absolute;text-align: center;color:#fff;padding:12px 8px;transition:0.5s linear;}
+    .box > svg{position:absolute;transition:0.5s linear;width:33.33%;height:33.33%;}
+    .box > svg:first-child{top:0;left:0;}
+    .box > svg:nth-child(2){top:0;right:0;}
+    .box > svg:nth-child(3){bottom:0;right:0;}
+    .box > svg:last-child{bottom:0;left:0;}
+    .box > svg > path{fill:rgba(0,0,0,0.5);}
+
+    .box:hover::before{bottom:0;transition-delay: 0.3s;}
+    .box:hover > svg:first-child{top:-33.33%;left:-33.33%;}
+    .box:hover > svg:nth-child(2){top:-33.33%;right:-33.33%;}
+    .box:hover > svg:nth-child(3){bottom:-33.33%;right:-33.33%;}
+    .box:hover > svg:last-child{bottom:-33.33%;left:-33.33%;}
+</style>
+</head>
+<body>
+<div class="box" data-name="Name here...">
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0C83 0 70 13 70 30V35C70 52 57 65 40 65H30C13 65 0 78 0 100V0H100Z" fill="blue"></path>
+    </svg> 
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C17 0 30 13 30 30V35C30 52 43 65 60 65H70C87 65 100 78 100 100V0H0Z" fill="blue"></path>
+    </svg>
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 100C17 100 30 87 30 70V60C30 43 43 30 60 30H70C87 30 100 17 100 0V100H0Z" fill="blue"></path>
+    </svg>
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M100 100C83 100 70 87 70 70V60C70 43 57 30 40 30H30C13 30 0 17 0 0V100H100Z" fill="blue"></path>
+    </svg>
+</div><!--box-->
+<div class="box" data-name="Name here...">
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0C100 17 87 30 70 30H60C43 30 30 43 30 60V70C30 87 17 100 0 100V0H100Z" fill="blue"></path>
+    </svg>    
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C0 17 13 30 30 30H40C57 30 70 43 70 60V70C70 87 83 100 100 100V0H0Z" fill="blue"></path>
+    </svg>        
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0C83 0 70 13 70 30V40C70 57 57 70 40 70H30C13 70 0 83 0 100H100V0Z" fill="blue"></path>
+    </svg>
+    <svg width="50%" height="50%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C17 0 30 13 30 30V40C30 57 43 70 60 70H70C87 70 100 83 100 100H0V0Z" fill="blue"></path>
+    </svg>
+</div><!--box-->
+</body>
+</html>
