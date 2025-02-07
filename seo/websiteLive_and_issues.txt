@@ -31,6 +31,8 @@ https://www.youtube.com/watch?v=SIdzhrynNbM&list=PLx9THvOL50-W3dkybv7tRUik0j33nF
 4. Press ctrl+f12 => Performance => After that showing web vitals.
 
 Images:- Webp format & no over size (Keep image small).
+		<img src="./images/demo.webp" width="500" height="300">
+		img{max-width:100%;height:auto;}
 Minify:- HTML, CSS & JS.
 Use:- defer in script tag & keep script tab before ending body tag.
 Animation:- No animation (CLS moving elements).

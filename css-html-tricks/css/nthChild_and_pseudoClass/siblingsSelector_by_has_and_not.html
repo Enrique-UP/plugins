@@ -61,6 +61,7 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before circle element selects</p>
         </section>
         <section class="two">
             <p>.box:has(+ * + .circle)</p>
@@ -69,6 +70,7 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before circle second element selects</p>
         </section>
         <section class="three">
             <p>.box:has(+ .box + .circle)</p>
@@ -77,6 +79,7 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before circle second element selects</p>
         </section>
         <section class="four">
             <p>.box:has(+ * + * + .circle)</p>
@@ -85,6 +88,7 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before circle third element selects</p>
         </section>
         <section class="five">
             <p>.box:has(~ .circle)</p>
@@ -93,6 +97,7 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before circle all elements select</p>
         </section>
         <section class="six">
             <p>.box:has(~ * + .circle)</p>
@@ -101,17 +106,18 @@
             <div class="box"></div>
             <div class="circle"></div>
             <div class="box"></div>
+            <p>Before one element of circle elements select</p>
         </section>
     </div>
     
-    <aside><p>P</p></aside>
+    <aside><p>aside:has(> p) > p{} If aside contains P tag selector then apply css on P tag.</p></aside>
     <aside><span>Span</span></aside>
 
     <br><br><br>
 
     <div>
-        <hgroup>hgroup:has(+p)</hgroup>
-        <p>hgroup:has(+p)</p>
+        <hgroup>hgroup:has(+p) if after hgroup tag when p tag finds then css will be apply on hgroup tag.</hgroup>
+        <p>P tag</p>
     </div>
 
     <br><br><br>
@@ -159,6 +165,7 @@
         <li>Ameet</li>
     </ul>
     <hr>
+    <p><b>Sibling selector</b></p>
     <ul class="two">
         <li>Lorem</li>
         <li>Ipsum</li>
