@@ -1,6 +1,6 @@
-https://www.pixelcut.ai/home (Magic Eraser)
-https://www.pixelcut.ai/uncrop
-https://www.pixelcut.ai/t/uncrop
+https://www.pixelcut.ai/home
+https://www.pixelcut.ai/cleanup-pictures (Magic Eraser)
+https://www.pixelcut.ai/t/uncrop (Image Extend/Expand)
 
 ==========================================================================================================
 for photo restoration

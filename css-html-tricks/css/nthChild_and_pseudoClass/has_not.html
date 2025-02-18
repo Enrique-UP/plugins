@@ -14,6 +14,8 @@
 
         section header:has(~ .banner) {background: green;}
         section header:not(:has(~ .banner)) {background: red;}
+
+        section h2:has(i:hover) + p {background-color: yellow;}
     </style>
 </head>
 <body>
@@ -24,6 +26,11 @@
     <section>
         <header>Header</header>
         <div class="banner">Banner</div>
+    </section>
+
+    <section>
+        <h2>Heading (<i>Span hover me</i>)</h2>
+        <p>A paragraph</p>
     </section>
 </body>
 </html>

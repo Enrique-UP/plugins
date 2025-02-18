@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*{padding:0;margin:0;box-sizing: border-box;}
+.rangeSlider {width: 100%;position:relative;display:flex;padding-block:12px;background: #eee;flex-direction: column;}
+.rangeSlider .range {-webkit-appearance: none;width: 100%;height: 10px;background: #d3d3d3;outline: none;opacity: 0.7;-webkit-transition: .2s;transition: opacity .2s;}
+.rangeSlider .range:hover {opacity: 1;}
+.rangeSlider .range::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 50px;height: 25px;background: #04AA6D;cursor: pointer;border-radius:6px;}
+.rangeSlider .range::-moz-range-thumb {width: 50px;height: 25px;background: #04AA6D;cursor: pointer;border-radius:6px;}
+.rangeSlider .output1{width:50px;position:absolute;top:50%;left:0;transform: translateY(-50%);text-align: center;pointer-events: none;}
+.rangeSlider + .output2{width:100%;text-align: center;background: #04AA6D;color:#fff;padding-block: 8px;}
+</style>
+</head>
+<body>
+
+<div class="rangeSlider">
+  <input type="range" min="200" max="20000" step="50" class="range" id="range">
+  <p class="output1" id="output1"></p>
+</div>
+<p class="output2" id="output2"></p>
+
+<script>
+    (function(){
+        const val = 200;
+        const num = 200;
+        range.value = val;
+        output1.innerHTML = val;
+        output2.innerHTML = output1.innerHTML;
+
+        range.oninput = function() {
+            output1.innerHTML = this.value;
+            updatedVal();
+        }
+
+        function updatedVal() {
+            // output1.style.left = `calc((${range.value/num}% - ${range.value/(num)}px))`;
+            output1.style.left = `calc((${range.value/num}% - ${(num/range.value)}px))`;
+            // output2.innerHTML = output1.innerHTML;
+            if(output1.innerText <= 1000) output2.innerHTML = output1.innerText * 2.5;
+            else if(output1.innerText <= 4950) output2.innerHTML = output1.innerText * 5;
+            else output2.innerHTML = output1.innerText * 5.5;
+        }updatedVal();
+    })();
+</script>
+
+</body>
+</html>
