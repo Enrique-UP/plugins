@@ -9,7 +9,7 @@
 .rangeSlider .range:hover {opacity: 1;}
 .rangeSlider .range::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 50px;height: 25px;background: #04AA6D;cursor: pointer;border-radius:6px;}
 .rangeSlider .range::-moz-range-thumb {width: 50px;height: 25px;background: #04AA6D;cursor: pointer;border-radius:6px;}
-.rangeSlider .output1{width:50px;position:absolute;top:50%;left:0;transform: translateY(-50%);text-align: center;pointer-events: none;}
+.rangeSlider .output1{width:50px;position:absolute;top:9px;left:0;transform: translateY(-50%);text-align: center;pointer-events: none;}
 .rangeSlider + .output2{width:100%;text-align: center;background: #04AA6D;color:#fff;padding-block: 8px;}
 </style>
 </head>
@@ -35,8 +35,10 @@
         }
 
         function updatedVal() {
-            // output1.style.left = `calc((${range.value/num}% - ${range.value/(num)}px))`;
-            output1.style.left = `calc((${range.value/num}% - ${(num/range.value)}px))`;
+            let percent = (range.value - range.min) / (range.max - range.min) * 100;
+            output1.style.left = `${percent}%`;
+            output1.style.transform = `translateX(-${percent}%)`;
+
             // output2.innerHTML = output1.innerHTML;
             if(output1.innerText <= 1000) output2.innerHTML = output1.innerText * 2.5;
             else if(output1.innerText <= 4950) output2.innerHTML = output1.innerText * 5;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="demo1">
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+</div>
+<hr>
+<div class="demo2">
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+</div>
+<hr>
+<div class="demo3">
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+    <p>Lorem <i>Ipsum</i></p>
+    <i>Dolor</i>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let demo = document.querySelector(".demo1");
+        if (demo) {
+            let directChildIs = demo.querySelectorAll(":scope > i");
+            directChildIs.forEach(i => i.style.backgroundColor = "yellow");
+        }
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let demo = document.querySelector(".demo2");
+        if (demo) {
+            // const directChildIs = Array.from(demo.children).filter(e => e.tagName === "I");
+            // let directChildIs = Array.from(demo.children).filter(el => el.tagName.toLowerCase() === "i");
+            let directChildIs = Array.from(demo.children).filter(e => e.matches("i"));
+            directChildIs.forEach(i => i.style.backgroundColor = "yellow");
+        }
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let demo = document.querySelector(".demo3");
+        if (demo) {
+            let directChildIs = [...demo.children].filter(el => el.matches("i"));
+            directChildIs.forEach(i => i.style.backgroundColor = "yellow");
+        }
+    });
+</script>
+</body>
+</html>

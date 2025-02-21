@@ -3,6 +3,9 @@
 <head>
     <style type="text/css">
         div{width:100%;padding-top:50px;padding-bottom: 50px;}
+
+        [class*="part-"][class*="2"]{display: grid;gap: 8px;grid-template-columns: 1fr 1fr;}
+        [class*="part-"] .item{border: 1px solid red;}
         
         .one a[target] {background: green;}
         
@@ -26,10 +29,16 @@
         [attribute=value] 	[target="_blank"] 	Selects all elements with target="_blank"
         [attribute~=value] 	[title~="flower"] 	Selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
         [attribute|=value] 	[lang|="en"] 	        Selects all elements with a lang attribute value starting with "en"
-        [attribute^=value] 	a[href^="https"] 	Selects all <a> elements with a href attribute value starting with "https"
-        [attribute$=value] 	a[href$=".pdf"] 	Selects all <a> elements with a href attribute value ending with ".pdf"
-        [attribute*=value] 	a[href*="w3schools"] 	Selects all <a> elements with a href attribute value containing the substring "w3schools"
+        [attribute^=value] 	a[href^="https"] 	Selects all <a>elements with a href attribute value starting with "https"</a>
+        [attribute$=value] 	a[href$=".pdf"] 	Selects all <a>elements with a href attribute value ending with ".pdf"</a>
+        [attribute*=value] 	a[href*="w3schools"] 	Selects all <a>elements with a href attribute value containing the substring "w3schools"</a>
     </pre>
+    <div class="part-2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
     <div class="one">
         <p><a href="https://www.w3schools.com">w3schools.com</a></p>
         <p><a href="http://www.disney.com" target="_blank">disney.com</a></p>
@@ -46,9 +55,9 @@
     </div><!--two-->
     <hr />
     <div class="three">
-        <img src="../../banner1.jpg" title="klematis flower" width="150" height="113">
-        <img src="../../banner1.jpg" title="flower" width="224" height="162">
-        <img src="../../banner1.jpg" title="tree" width="200" height="358">
+        <img src="../../../banner1.jpg" title="klematis flower" width="150" height="113">
+        <img src="../../../banner1.jpg" title="flower" width="224" height="162">
+        <img src="../../../banner1.jpg" title="tree" width="200" height="358">
     </div><!--three-->
     <hr />
     <div class="four">

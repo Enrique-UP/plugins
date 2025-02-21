@@ -8,10 +8,10 @@
 <p id="demo"></p>
 
 <script>
-const collection = document.body.children;
+const element = document.body.children;
 let text = "";
-for (let i = 0; i < collection.length; i++) {
-  text += collection[i].tagName + "<br>";
+for (let i = 0; i < element.length; i++) {
+  text += element[i].tagName + "<br>";
 }
 document.getElementById("demo").innerHTML = text;
 </script>
