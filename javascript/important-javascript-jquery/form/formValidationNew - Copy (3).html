@@ -12,6 +12,7 @@
         .form .textInput .form-control, .form .btn{height: 38px;padding-inline: 8px;}
         .form .textInput .error {color: red; font-size: 12px;}
         .form .success {color: green; font-size: 14px; display: none; margin-top: 16px;text-align: center;}
+        .btn.valid-submit {background-color: green; color: white; border: none; cursor: pointer;}
     </style>
 </head>
 <body>
@@ -59,31 +60,51 @@
             <span class="error"></span>
         </div>
         
-        <button type="button" onclick="validate()" class="btn">Submit</button>
+        <button type="button" id="submitBtn" onclick="submitForm()" class="btn">Submit</button>
 
         <span class="success">Your form has been successfully submitted.</span>
     </form>
       
     <script>
-        function validate() {
-            let valid = true;
-            valid &= validateName('firstName');
-            valid &= validateName('lastName');
-            valid &= validateDOB();
-            valid &= validateCountry();
-            valid &= validateEmail();
-            valid &= validateMobile();
-            
+        document.addEventListener("DOMContentLoaded", function () {
+            const formFields = document.querySelectorAll(".form-control");
+            formFields.forEach(field => {
+                field.addEventListener("input", validateForm);
+                field.addEventListener("change", validateForm);
+            });
+
+            populateFormFromLocalStorage();
+            validateForm(); // Ensure button state is updated on page load
+        });
+
+        function validateForm() {
+            let valid = validateName('firstName') &&
+                        validateName('lastName') &&
+                        validateDOB() &&
+                        validateCountry() &&
+                        validateEmail() &&
+                        validateMobile();
+
+            const submitBtn = document.getElementById("submitBtn");
+
             if (valid) {
-                document.querySelector(".success").style.display = "block";
-                // saveToLocalStorage();
+                saveToLocalStorage(); // Store only if valid
+                submitBtn.classList.add("valid-submit");
+            } else {
+                submitBtn.classList.remove("valid-submit");
             }
         }
-    
+
+        function submitForm() {
+            if (document.getElementById("submitBtn").classList.contains("valid-submit")) {
+                document.querySelector(".success").style.display = "block";
+            }
+        }
+
         function showError(fieldId, message) {
             document.getElementById(fieldId).nextElementSibling.textContent = message;
         }
-    
+
         function validateName(fieldId) {
             const nameInput = document.getElementById(fieldId);
             const namePattern = /^[A-Za-z]{2,}$/;
@@ -97,7 +118,7 @@
             showError(fieldId, "");
             return true;
         }
-    
+
         function validateDOB() {
             const dobInput = document.getElementById("dob");
             const dob = new Date(dobInput.value);
@@ -109,7 +130,7 @@
             showError("dob", "");
             return true;
         }
-    
+
         function validateCountry() {
             const countryInput = document.getElementById("country");
             if (!countryInput.value) {
@@ -119,7 +140,7 @@
             showError("country", "");
             return true;
         }
-    
+
         function validateEmail() {
             const emailInput = document.getElementById("email");
             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
@@ -130,7 +151,7 @@
             showError("email", "");
             return true;
         }
-    
+
         function validateMobile() {
             const mobileInput = document.getElementById("mobile");
             const mobilePattern = /^[0-9]{10,15}$/;
@@ -141,7 +162,7 @@
             showError("mobile", "");
             return true;
         }
-    
+
         function saveToLocalStorage() {
             const formData = {
                 firstName: document.getElementById("firstName").value,
@@ -151,12 +172,10 @@
                 email: document.getElementById("email").value,
                 mobile: document.getElementById("mobile").value,
             };
-    
+
             localStorage.setItem("formData", JSON.stringify(formData));
-            console.log("Form data saved to localStorage:", formData);
         }
-    
-        // Function to populate form fields from localStorage if data exists
+
         function populateFormFromLocalStorage() {
             const savedData = localStorage.getItem("formData");
             if (savedData) {
@@ -169,9 +188,6 @@
                 document.getElementById("mobile").value = formData.mobile || "";
             }
         }
-    
-        // Call function to populate fields on page load
-        window.onload = populateFormFromLocalStorage;
     </script>
 </body>
 </html>

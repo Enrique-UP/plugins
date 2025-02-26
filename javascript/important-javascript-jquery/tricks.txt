@@ -230,5 +230,5 @@ if (slides[s1]) slides[s1].classList.add("show");
 =================================================================================================================================================
 if else condition can be remove by ternary
 =================================================================================================================================================
-If after refresh js is not working then use haschange event.
+If after refresh js is not working then use hashchange event.
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/window-location-url/linkActiveByRefreshByGet_url_id.html

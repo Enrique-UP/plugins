@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style type="text/css">
+        form.formArea .item{display: flex;}
+    </style>
+</head>
+<body>
+    <form class="formArea">
+        <div class="item">
+            <h1 class="head">Fill the first details</h1>
+            <div class="part">
+                <div class="inputText">
+                    <label>First Name<i>*</i></label>
+                    <input type="text" class="field" placeholder="First Name" data-input="firstName">
+                    <span class="error">This field is required.</span>
+                </div><!--inputText-->
+                <div class="inputText">
+                    <label>Last Name<i>*</i></label>
+                    <input type="text" class="field" placeholder="Last Name" data-input="lastName">
+                    <span class="error">This field is required.</span>
+                </div><!--inputText-->
+            </div><!--part-->
+            <div class="inputText">
+                <label>Date of Birth<i>*</i></label>
+                <input type="date" class="field" data-input="input">
+                <span class="error">This field is required.</span>
+            </div><!--inputText-->
+            <div class="inputText">
+                <label>Email<i>*</i></label>
+                <input type="email" class="field" placeholder="Email" data-input="email">
+                <span class="error">This field is required.</span>
+            </div><!--inputText-->
+            <div class="inputText">
+                <label>Phone Number<i>*</i></label>
+                <input type="text" class="field" placeholder="Phone Number" data-input="number">
+                <span class="error">This field is required.</span>
+            </div><!--inputText-->
+            <div class="inputText">
+                <label>Country<i>*</i></label>
+                <select class="field" data-input="select">
+                    <option value="">Select Option</option>
+                    <option value="India">India</option>
+                    <option value="US">US</option>
+                </select>
+                <span class="error">This field is required.</span>
+            </div><!--inputText-->
+            <div class="btns">
+                <a class="btn2">Continue</a>
+            </div><!--btns-->
+        </div><!--item-->
+    </form>
+    <script src="./validate.js"></script>
+</body>
+</html>
