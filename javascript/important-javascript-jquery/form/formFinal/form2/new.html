@@ -14,28 +14,28 @@
                 <div class="inputText">
                     <label>First Name<i>*</i></label>
                     <input type="text" class="field" placeholder="First Name" data-input="firstName">
-                    <span class="error">This field is required.</span>
+                    <span>This field is required.</span>
                 </div><!--inputText-->
                 <div class="inputText">
                     <label>Last Name<i>*</i></label>
                     <input type="text" class="field" placeholder="Last Name" data-input="lastName">
-                    <span class="error">This field is required.</span>
+                    <span>This field is required.</span>
                 </div><!--inputText-->
             </div><!--part-->
             <div class="inputText">
                 <label>Date of Birth<i>*</i></label>
                 <input type="date" class="field" data-input="dob">
-                <span class="error">This field is required.</span>
+                <span>This field is required.</span>
             </div><!--inputText-->
             <div class="inputText">
                 <label>Email<i>*</i></label>
                 <input type="email" class="field" placeholder="Email" data-input="email">
-                <span class="error">This field is required.</span>
+                <span>This field is required.</span>
             </div><!--inputText-->
             <div class="inputText">
                 <label>Phone Number<i>*</i></label>
                 <input type="text" class="field" placeholder="Phone Number" data-input="number">
-                <span class="error">This field is required.</span>
+                <span>This field is required.</span>
             </div><!--inputText-->
             <div class="part">
                 <div class="inputText">
@@ -45,7 +45,7 @@
                         <option value="India">India</option>
                         <option value="US">US</option>
                     </select>
-                    <span class="error">This field is required.</span>
+                    <span>This field is required.</span>
                 </div><!--inputText-->
                 <div class="inputText">
                     <label>State<i>*</i></label>
@@ -54,7 +54,7 @@
                         <option value="UP">UP</option>
                         <option value="MP">MP</option>
                     </select>
-                    <span class="error">This field is required.</span>
+                    <span>This field is required.</span>
                 </div><!--inputText-->
             </div><!--part-->
             <div class="btns">
@@ -70,7 +70,7 @@
             <div class="inputText">
                 <label>What's your age?<i>*</i></label>
                 <input type="text" class="field" placeholder="Age" data-input="age">
-                <span class="error">This field is required.</span>
+                <span>This field is required.</span>
             </div><!--inputText-->
             <div class="btns">
                 <a class="btn1">Back</a>
@@ -83,6 +83,11 @@
 
         <div class="item">
             <h1 class="head">Fill the third details</h1>
+            <div class="inputText">
+                <label>Address<i>*</i></label>
+                <input type="text" class="field" placeholder="Address" data-input="address">
+                <span>This field is required.</span>
+            </div><!--inputText-->
             <div class="btns">
                 <a class="btn1">Back</a>
                 <a class="btn2">Submit</a>
@@ -142,22 +147,40 @@
         }
 
         function loadFormDataLocalStorage() {
-            const storedData = JSON.parse(localStorage.getItem("formData")) || {};
-            let isValid = true;
+    const storedData = JSON.parse(localStorage.getItem("formData")) || {};
 
-            document.querySelectorAll(".formArea .item .field").forEach((field) => {
-                let fieldKey = getFieldKey(field.getAttribute("data-input"));
+    document.querySelectorAll(".formArea .item").forEach((item) => {
+        let isValid = true; // Track validity per section
 
-                if (storedData[fieldKey]) {
-                    field.value = storedData[fieldKey];
+        item.querySelectorAll(".field").forEach((field) => {
+            let fieldKey = getFieldKey(field.getAttribute("data-input"));
+
+            if (storedData[fieldKey]) {
+                field.value = storedData[fieldKey];
+                let pattern = getValidationPattern(field.getAttribute("data-input"));
+
+                if (!pattern || pattern.test(storedData[fieldKey])) {
                     field.closest(".inputText").classList.remove("error");
                 } else {
+                    field.closest(".inputText").classList.add("error");
                     isValid = false;
                 }
-            });
+            } else {
+                isValid = false;
+            }
+        });
 
-            updateButtonState(isValid);
-        }
+        updateButtonState(item, isValid);
+    });
+}
+
+function updateButtonState(item, isValid) {
+    let button = item.querySelector(".btns .btn2:not([href])");
+    if (button) {
+        button.classList.toggle("go", isValid);
+    }
+}
+
 
         function getValidationPattern(type) {
             const patterns = {
@@ -187,12 +210,6 @@
                 address: "Address",
             };
             return fieldMapping[dataInput] || dataInput;
-        }
-
-        function updateButtonState(isValid) {
-            document.querySelectorAll(".formArea .item .btns .btn2:not([href])").forEach((submitButton) => {
-                submitButton.classList.toggle("go", isValid);
-            });
         }
      </script>
 </body>

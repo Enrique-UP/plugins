@@ -1,102 +1,92 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".formArea .item.show").forEach((itemShow) => {
-        loadFormDataLocalStorage(itemShow); // Load stored data on refresh
+    loadFormDataLocalStorage(); // Load stored data on refresh
 
-        itemShow.querySelectorAll(".field").forEach((field) => {
+    document.querySelectorAll(".formArea .item").forEach((item) => {
+        item.querySelectorAll(".field").forEach((field) => {
             ["blur", "keyup", "change"].forEach((event) =>
-                field.addEventListener(event, () => validateForm(itemShow))
+                field.addEventListener(event, saveAllFormData)
             );
         });
 
-        itemShow.querySelector(".btns .btn2:not([href])").addEventListener("click", () => validateForm(itemShow));
+        item.querySelectorAll(".btns .btn2:not([href])").forEach((btn) => {
+            btn.addEventListener("click", saveAllFormData);
+        });
     });
 });
 
-function validateForm(e) {
+function saveAllFormData() {
     let isValid = true;
-    let formData = {}; // Store valid data
+    let formData = {}; 
 
-    e.querySelectorAll(".field").forEach((field) => {
-        let pattern;
-        let fieldKey = getFieldKey(field.getAttribute("data-input")); // Map field names
+    document.querySelectorAll(".formArea .field").forEach((field) => {
+        let fieldKey = getFieldKey(field.getAttribute("data-input"));
+        let pattern = getValidationPattern(field.getAttribute("data-input"));
+        let value = field.value.trim();
 
-        switch (field.getAttribute("data-input")) {
-            case "firstName":
-                pattern = /^[A-Za-z]{2,}$/;
-                break;
-            case "lastName":
-                pattern = /^[A-Za-z]{2,}$/;
-                break;
-            case "email":
-                pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
-                break;
-            case "number":
-                pattern = /^[0-9]{10,15}$/;
-                break;
-            case "dob":
-                pattern = /^\d{4}-\d{2}-\d{2}$/;
-                break;
-            case "input":
-            case "select":
-                pattern = /.+/;
-                break;
-            default:
-                pattern = null;
-        }
-
-        if (!field.value.trim() || (pattern && !pattern.test(field.value.trim()))) {
+        if (!value || (pattern && !pattern.test(value))) {
             field.closest(".inputText").classList.add("error");
             isValid = false;
         } else {
             field.closest(".inputText").classList.remove("error");
-            formData[fieldKey] = field.value.trim(); // Store with custom key format
+            formData[fieldKey] = value;
         }
     });
 
-    const submitButton = e.querySelector(".btns .btn2:not([href])");
-    if (isValid) {
-        submitButton.classList.add("go");
-        localStorage.setItem("formData", JSON.stringify(formData)); // Save to local storage
-    } else {
-        submitButton.classList.remove("go");
-    }
+    localStorage.setItem("formData", JSON.stringify(formData)); 
+
+    updateButtonState(isValid);
 }
 
-// Load stored data and validate on page refresh
-function loadFormDataLocalStorage(e) {
-    const storedData = JSON.parse(localStorage.getItem("formData"));
-    if (!storedData) return;
-
+function loadFormDataLocalStorage() {
+    const storedData = JSON.parse(localStorage.getItem("formData")) || {};
     let isValid = true;
-    e.querySelectorAll(".field").forEach((field) => {
-        let fieldType = field.getAttribute("data-input");
-        let fieldKey = getFieldKey(fieldType); // Get mapped key
+
+    document.querySelectorAll(".formArea .item .field").forEach((field) => {
+        let fieldKey = getFieldKey(field.getAttribute("data-input"));
 
         if (storedData[fieldKey]) {
-            field.value = storedData[fieldKey]; // Set stored value
-            field.closest(".inputText").classList.remove("error"); // Remove errors
+            field.value = storedData[fieldKey];
+            field.closest(".inputText").classList.remove("error");
         } else {
             isValid = false;
         }
     });
 
-    const submitButton = e.querySelector(".btns .btn2:not([href])");
-    if (isValid) {
-        submitButton.classList.add("go"); // Enable button if valid
-    } else {
-        submitButton.classList.remove("go");
-    }
+    updateButtonState(isValid);
 }
 
-// Map field names to required keys
+function getValidationPattern(type) {
+    const patterns = {
+        firstName: /^[A-Za-z]{2,}$/,
+        lastName: /^[A-Za-z]{2,}$/,
+        email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/,
+        number: /^[0-9]{10,15}$/,
+        dob: /^\d{4}-\d{2}-\d{2}$/,
+        selectCountry: /.+/,
+        state: /.+/,
+        age: /^\d{1,3}$/,
+        address: /^[A-Za-z0-9\s,'-./#]{5,}$/
+    };
+    return patterns[type] || null;
+}
+
 function getFieldKey(dataInput) {
     const fieldMapping = {
         firstName: "First Name",
         lastName: "Last Name",
         email: "Email id",
         number: "Phone Number",
-        input: "Date Of Birth",
-        select: "Country",
+        dob: "Date Of Birth",
+        selectCountry: "Country",
+        state: "State",
+        age: "Age",
+        address: "Address",
     };
-    return fieldMapping[dataInput] || dataInput; // Default to the same name if not mapped
+    return fieldMapping[dataInput] || dataInput;
+}
+
+function updateButtonState(isValid) {
+    document.querySelectorAll(".formArea .item .btns .btn2:not([href])").forEach((submitButton) => {
+        submitButton.classList.toggle("go", isValid);
+    });
 }

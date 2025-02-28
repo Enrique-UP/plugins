@@ -10,6 +10,7 @@ form.formArea .head{text-align: center;font-size: 20px;border-bottom: 2px solid 
 form.formArea .part{display: grid;grid-template-columns: 1fr 1fr;column-gap: 16px;}
 
 form.formArea .inputText{display: flex;flex-direction: column;}
+form.formArea .inputText > *{width:100%;}
 form.formArea .inputText label{margin-bottom: 4px;font-weight: bold;}
 form.formArea .inputText label > i{font-style: normal;color:red;}
 form.formArea .field{padding-inline: 8px;outline: none;height: 36px;border: 1px solid #ccc;background: #fff;}

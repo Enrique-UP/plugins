@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        form{width: 100%;max-width: 300px;background: #ccc;padding: 24px;margin-inline: auto;display: flex;flex-direction: column;}
+        form .formField{width: 100%;display: flex;flex-direction: column;}
+        form .formField:not(:last-child){margin-bottom: 16px;}
+        form .formField label{margin-bottom: 4px;}
+        form .formField .field{padding-inline: 8px;height: 36px;outline: none;border:1px solid #000;}
+        form .formField span{font-size: 14px;color:red;display: none;margin-top: 4px;}
+        form .formField.error .field{border-color:red;}
+        form .formField.error span{display: flex;}
+        form .formField button{height: 36px;background: #eee;border:none;outline: none;}
+        form .formField button.go{background: green;color:#fff;}
+    </style>
+</head>
+<body>
+    <form action="#" id="myForm">
+        <div class="formField">
+            <label>Name<i>*</i></label>
+            <input type="text" class="field" placeholder="Name" data-input="name">
+            <span></span>
+        </div><!--formField-->
+        <div class="formField">
+            <label>Number<i>*</i></label>
+            <input type="text" class="field" placeholder="Number" data-input="number">
+            <span></span>
+        </div><!--formField-->
+        <div class="formField">
+            <button type="submit">Submit</button>
+        </div><!--formField-->
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("myForm");
+            const fields = form.querySelectorAll(".field");
+            const submitButton = form.querySelector("button");
+
+            // Attach validation event listeners
+            fields.forEach(field => {
+                ["blur", "keyup", "change"].forEach(event => field.addEventListener(event, validateForm));
+            });
+
+            // Form submit event
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                validateForm();
+                if (submitButton.classList.contains("go")) {
+                    alert("Form submitted successfully!");
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+
+                fields.forEach(field => {
+                    let fieldValid = true;
+                    let dataInput = field.getAttribute("data-input");
+                    let value = field.value.trim();
+                    let formField = field.closest(".formField");
+                    let errorSpan = formField.querySelector("span");
+
+                    if (dataInput === "name") {
+                        const namePattern = /^[A-Za-z]{2,}$/; // Only letters, at least 2 characters
+                        const containsNumbers = /[0-9]/.test(value); // Check if name contains numbers
+
+                        if (!value) {
+                            fieldValid = false;
+                            errorSpan.textContent = "Name is required.";
+                        } else if (containsNumbers) {
+                            fieldValid = false;
+                            errorSpan.textContent = "Name cannot contain numbers.";
+                        } else if (!namePattern.test(value)) {
+                            fieldValid = false;
+                            errorSpan.textContent = "Please enter a valid name (at least 2 letters).";
+                        }
+                    } else if (dataInput === "number") {
+                        const numberPattern = /^[0-9]{3,15}$/;
+                        if (!value) {
+                            fieldValid = false;
+                            errorSpan.textContent = "Number is required.";
+                        } else if (!numberPattern.test(value)) {
+                            fieldValid = false;
+                            errorSpan.textContent = "Please enter a valid number (10-15 digits).";
+                        }
+                    }
+
+                    if (!fieldValid) {
+                        field.closest(".formField").classList.add("error");
+                        errorSpan.style.display = "block";
+                        isValid = false;
+                    } else {
+                        field.closest(".formField").classList.remove("error");
+                        errorSpan.style.display = "none";
+                    }
+                });
+
+                if (isValid) {
+                    submitButton.classList.add("go");
+                } else {
+                    submitButton.classList.remove("go");
+                }
+            }
+        });
+    </script>    
+</body>
+</html>
