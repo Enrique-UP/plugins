@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body {padding: 30px;}
+
+        .inputFile {position: relative;width: 100%;background: rgba(0, 181, 18, 1);border-radius: 3px;text-align: center;height: 36px;color:#fff;}
+        .inputFile input[type="file"]{display: none;}
+        .inputFile label {display: flex;position: absolute;top: 0;left: 0;width: 100%;height: 100%;cursor: pointer;justify-content: center;align-items: center;line-height: 1.2;padding-inline: 12px;}
+        .inputFile label > span{display: flex;}
+        .inputFile label > span > img{width: 20px;margin-right: 8px;}
+        .inputFile label > i {font-style: normal;display: none;}
+        
+        .inputFile.active{background: rgba(0, 181, 18, 0.20);border:1px solid rgba(0, 181, 18, 1);color:#000;}
+        .inputFile.active label{justify-content: space-between;}
+        .inputFile.active label > i{display: flex;}
+
+        .filename {border:1px solid #000;}
+    </style>
+</head>
+<body>
+    <form>
+        <div class="inputFile">
+            <label>
+                 <input type="file">
+                 <span><img src="https://static-00.iconduck.com/assets.00/upload-icon-256x256-j17hfyil.png"> File</span>
+                 <i>X</i>
+            </label>
+            <!-- <input type="text" class="filename" disabled> -->
+       </div>
+    </form>
+    <!-- <script src="../../../jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready( function() {
+            $(".inputFile").each(function(){
+                $(this).find("input[type=file]").val("");
+                $(this).find("input[type=file]").change(function(){
+                    $(this).closest(".inputFile").addClass("active");
+                    var filename = $(this).val().split("\\").pop();
+                    $(this).siblings("span").html(`<img src="https://img.icons8.com/ios11/200/opened-folder.png"> ${filename}`);
+                });
+
+                $(this).find("label > i").click(function(event){
+                    event.preventDefault();
+                    $(this).closest(".inputFile").removeClass("active");
+                    // $(this).closest(".inputFile").find(".filename").val("");
+                    $(this).siblings("input[type=file]").val("");
+                    $(this).siblings("span").html(`<img src="https://static-00.iconduck.com/assets.00/upload-icon-256x256-j17hfyil.png"> File`);
+                });
+
+            });
+        });
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".inputFile").forEach(function (inputFile) {
+                let fileInput = inputFile.querySelector("input[type=file]");
+                let label = inputFile.querySelector("label > i");
+                let span = inputFile.querySelector("span");
+
+                // Clear file input on page load
+                fileInput.value = "";
+
+                fileInput.addEventListener("change", function () {
+                    inputFile.classList.add("active");
+                    let filename = fileInput.value.split("\\").pop();
+                    span.innerHTML = `<img src="https://img.icons8.com/ios11/200/opened-folder.png"> ${filename}`;
+                });
+
+                label.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    inputFile.classList.remove("active");
+                    fileInput.value = "";
+                    span.innerHTML = `<img src="https://static-00.iconduck.com/assets.00/upload-icon-256x256-j17hfyil.png"> File`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

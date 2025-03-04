@@ -25,11 +25,12 @@
             <input type="text" class="field" placeholder="Name" data-input="name">
             <span></span>
         </div><!--formField-->
-        <div class="formField">
+        <!-- <div class="formField">
             <label>Number<i>*</i></label>
             <input type="text" class="field" placeholder="Number" data-input="number">
             <span></span>
-        </div><!--formField-->
+        </div> -->
+        <!--formField-->
         <div class="formField">
             <button type="submit">Submit</button>
         </div><!--formField-->
@@ -41,17 +42,13 @@
             const submitButton = form.querySelector("button");
 
             // Attach validation event listeners
-            fields.forEach(field => {
-                ["blur", "keyup", "change"].forEach(event => field.addEventListener(event, validateForm));
-            });
+            fields.forEach(field => ["blur", "keyup", "change"].forEach(event => field.addEventListener(event, validateForm)));
 
             // Form submit event
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
                 validateForm();
-                if (submitButton.classList.contains("go")) {
-                    alert("Form submitted successfully!");
-                }
+                if (submitButton.classList.contains("go")) alert("Form submitted successfully!");
             });
 
             function validateForm() {
@@ -62,11 +59,11 @@
                     let dataInput = field.getAttribute("data-input");
                     let value = field.value.trim();
                     let formField = field.closest(".formField");
-                    let errorSpan = formField.querySelector("span");
+                    let errorSpan = field.querySelector("span");
 
                     if (dataInput === "name") {
-                        const namePattern = /^[A-Za-z]{2,}$/; // Only letters, at least 2 characters
-                        const containsNumbers = /[0-9]/.test(value); // Check if name contains numbers
+                        const namePattern = /^[A-Za-z]{2,}$/;
+                        const containsNumbers = /[0-9]/.test(value);
 
                         if (!value) {
                             fieldValid = false;
@@ -90,20 +87,14 @@
                     }
 
                     if (!fieldValid) {
-                        field.closest(".formField").classList.add("error");
-                        errorSpan.style.display = "block";
+                        formField.classList.add("error");
                         isValid = false;
-                    } else {
-                        field.closest(".formField").classList.remove("error");
-                        errorSpan.style.display = "none";
                     }
+                    else formField.classList.remove("error");
                 });
 
-                if (isValid) {
-                    submitButton.classList.add("go");
-                } else {
-                    submitButton.classList.remove("go");
-                }
+                if (isValid) submitButton.classList.add("go");
+                else submitButton.classList.remove("go");
             }
         });
     </script>    

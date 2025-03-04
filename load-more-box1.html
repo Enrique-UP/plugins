@@ -16,6 +16,7 @@
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
+
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
@@ -26,6 +27,7 @@
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
+
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
@@ -36,6 +38,7 @@
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
+
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
@@ -46,6 +49,7 @@
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
+    
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
@@ -54,18 +58,25 @@
     <div>Content</div>
     <div>Content</div>
     <div>Content</div>
-    <a href="#" id="load">Load More</a>
+    <br>
+    <a href="" id="load">Load More</a>
 
 
     <script src="./jquery-2.2.4.min.js"></script>
     <script type="text/javascript">
         $(function(){
+            $("div").each(function(index, element) {
+                $(element).html(index + 1 + " - " + $(element).html());
+            });
+            
             $("div").slice(0, 10).show();
+
             $("#load").click(function(e){
                 e.preventDefault();
                 $("div:hidden").slice(0, 10).show();
                 if($("div:hidden").length == 0){
-                    alert("No more divs");
+                    // alert("No more divs");
+                    $(this).hide();
                 }
             });
         });
