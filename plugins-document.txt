@@ -18,3 +18,7 @@ For the best user experience use Google Chrome
 4)- Masonry
 	isotope masonry
 	https://isotope.metafizzy.co/layout-modes/masonry.html
+
+
+5)- For audio cutter online
+	https://mp3cut.net/

@@ -7,10 +7,16 @@
 </head>
 <body>
     <picture>
-        <source media="(min-width:1200px)" srcset="../../../sliders/owl-carousel/images/1.jpg">
-        <source media="(min-width:768px)" srcset="../../../sliders/owl-carousel/images/2.jpg">
-        <source media="(max-width:575px)" srcset="../../../banner1.jpg">
-        <img src="../../../sliders/owl-carousel/images/3.jpg" alt="" style="width:auto;">
-      </picture>
+        <source media="(min-width:1400px)" srcset="../../../sliders/owl-carousel/images/1.jpg">
+        <source media="(min-width:768px) and (max-width:991px)" srcset="../../../sliders/owl-carousel/images/2.jpg">
+        <source media="(max-width:575px)" srcset="../../../sliders/owl-carousel/images/3.jpg">
+        <img src="../../../banner1.jpg" alt="Banner" style="width:auto;max-width:100%;">
+    </picture>
+    <br>
+     <p>media="(min-width:1400px)" => <b>1.jpg</b></p>
+     <p>media="(min-width:992px) and (max-width:1399px)" => <b>banner1.jpg</b></p>
+     <p>media="(min-width:768px) and (max-width:1199px)" => <b>2.jpg</b></p>
+     <p>media="(min-width:576px) and (max-width:767px)" => <b>banner1.jpg</b></p>
+     <p>media="(max-width:575px)" => <b>3.jpg</b></p>
 </body>
 </html>
