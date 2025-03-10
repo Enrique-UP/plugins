@@ -19,7 +19,7 @@ Mridul Srivastava tutorial
 11. initialize repository =>
 12. type message on top left sidebar (new changes) =>
 13. then click on check icon =>
-14. click on popup to yes =>
+14. click on popup to yes / add remove =>
 15. click on three dots on top left =>
 16. click on pull, push =>
 17. push to =>

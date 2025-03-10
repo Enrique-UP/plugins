@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- By only CSS -->
+    <!-- <style>input, textarea {unicode-bidi:bidi-override; direction: RTL;}</style> -->
+
+    <style>input, textarea {text-align: right;}</style>
+</head>
+<body>
+    <h1>cursor right to left go</h1>
+    <form action="#">
+        <input type="text" placeholder="اكتب هنا">
+        <br><br>
+        <textarea placeholder="اكتب هنا"></textarea>
+        <br><br>
+        <button>Submit</button>
+    </form>
+    <script>
+        document.querySelectorAll("input, textarea").forEach(function(e){
+            e.addEventListener("input", function(){
+                if(e.setSelectionRange) e.setSelectionRange(0,0);
+            });
+        });
+    </script>
+</body>
+</html>

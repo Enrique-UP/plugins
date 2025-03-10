@@ -21,4 +21,8 @@ For the best user experience use Google Chrome
 
 
 5)- For audio cutter online
+	https://clideo.com/cut-audio
 	https://mp3cut.net/
+
+6)- filedatech software for modified, accessed, created changes date.
+	(https://www.nirsoft.net/utils/filedatech.html) download from the given link.
