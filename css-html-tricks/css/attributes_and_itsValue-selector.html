@@ -31,7 +31,7 @@
             <li>^</li>
             <li>$</li>
             <li>*</li>
-            <li>:not([attribute])</li>
+            <li>:not([attribute]) or like :not([href]) / :not([class])</li>
             <li>:not([type="text"])</li>
         </ol>
     </section>
@@ -47,10 +47,10 @@
             .one a[href="#"]{background:red;color:#fff;}
             .one a[href="https://www.demo.com"]{background:rebeccapurple;color:#fff;}
         </style>
-        <a>Lorem</a>
-        <a class="link">Lorem</a>
-        <a href="#">Lorem</a>
-        <a href="https://www.demo.com">Lorem</a>
+        <a>This tag has not contain href. So css is working here.</a>
+        <a class="link">Select by class attribute only</a>
+        <a href="#">Select by href attribute value</a>
+        <a href="https://www.demo.com">Select by href attribute value</a>
     </section>
 
 
@@ -158,7 +158,8 @@
     <section class="five">
         <style type="text/css">
             .five a[class$="demo"]{background: red;color:#fff;}
-            a[href$=".pdf"], a[href$=".jpg"] {background: blue;color:#fff;content:"";}
+            a[href$=".pdf"],
+            a[href$=".jpg"] {background: blue;color:#fff;}
             /* a[href$=".jpg"]::after {background: blue;color:#fff;content:"";} */
         </style>
         <p>
@@ -228,8 +229,14 @@
             .four1[style^="color"]{background: blue;color: #fff;}
             .one1[style$="block;"]{background: red;color: #fff;}
             .two1[style*="none"]{background: blue !important;color: #fff;}
+            .two2[style*="none"]{background: blue !important;color: #fff;}
+            .two2[class*="l1"]{background: lightcoral;color: #fff;}
+            .two2 [class*="l2"]{background: lightseagreen;color: #fff;}
             .three1[title~="flower"]{background: orange;color: #fff;}
             .three1[style~="flex;"]{background: brown;color: #fff;}
+            [class~="three2"]{background: lightseagreen;color:#fff;}
+            /* or */
+            /* .three2{background:lightseagreen;color:#fff;} */
             .five1[class|="cls"]{background: blue;color: #fff;}
             .o1[class~="cls"]{background: blue;color: #fff;}
             /* or */
@@ -240,13 +247,16 @@
             [class*="box-"][class*="2"]{background: blueviolet;}
         </style>
         <p>Must check below examples</p>
-        <div class="four1" style="color:#fff;display: flex;">Good Example here</div>
-        <div class="one1" style="color:#fff;display: block;">Good Example here</div>
-        <div class="two1" style="background: none;">Good Example here</div>
-        <div class="three1" title="one: flower">Good Example here</div>
-        <div class="three1" style="display: flex;">Good Example here</div>
-        <div class="cls five1">Good Example here</div>
-        <div class="cls- five1">Good Example here</div>
+        <div class="four1" style="color:#fff;display: flex;">Good Example here 1</div>
+        <div class="one1" style="color:#fff;display: block;">Good Example here 2</div>
+        <div class="two1" style="background: none;">Good Example here 3</div>
+        <div class="two2 l1">Good Example here 4</div>
+        <div class="two2 l2"><span class="l2">Good Example here 5</span></div>
+        <div class="three1" title="one: flower">Good Example here 6</div>
+        <div class="three1" style="display: flex;">Good Example here 7</div>
+        <div class="three2">Good Example here 8</div>
+        <div class="cls five1">Good Example here 9</div>
+        <div class="cls- five1">Good Example here 10</div>
         <div class="o1 cls o2">o1 cls o2 Good Example here------------</div>
         <div class="cls box-1 mvs">Box 1</div>
         <div class="box-2">Box 2</div>
@@ -261,37 +271,36 @@
         <style type="text/css">
             [class*="list-"]{width: 100%;display: flex;flex-wrap: wrap;background:#ccc;margin-bottom:12px;padding: 10px 10px 0;}
             [class*="list-"] > li{list-style-position: inside;margin-bottom:10px;}
-            [class*="list-"][class*="1"] > li{width: 100%;}
-            [class*="list-"][class*="2"] > li{width: 50%;}
-            /*
-                or 
-                .list-2 {background-color: red;}
-            */
-            /* .list-[class*="2"]{background: red;} not works above is correct  it's means class="list- 2"*/
-            [class*="list-"][class*="3"] > li{width: 33.33%;}
-            [class*="list-"][class*="4"] > li{width: 25%;}
-            [class*="list-"][class*="5"] > li{width: 20%;}
-            [class*="list-"][class*="6"] > li{width: 16.66%;}
+            /* [class*="list-"][class*="1"] > li{width: 100%;} */
+            /* This is not good because this will be work on 1, 10, 11, 21, 31 ... etc. */
+            /* .list-[class*="1"]{background: red;} not works above is correct  it's means class="list- 1"*/
+            .list-1 > li{width: 100%;}
+            .list-2 > li{width: 50%;}
+            .list-3 > li{width: 33.33%;}
+            .list-4 > li{width: 25%;}
+            .list-5 > li{width: 20%;}
+            .list-6 > li{width: 16.66%;}
 
             @media (min-width:992px) and (max-width:1199px){
-                [class*="list-"][class*="4"] > li,
-                [class*="list-"][class*="5"] > li,
-                [class*="list-"][class*="6"] > li{width: 33.33%;}
+                .list-4 > li,
+                .list-5 > li,
+                .list-6 > li{width: 33.33%;}
             }
             @media (min-width:576px) and (max-width:991px){
-                [class*="list-"][class*="3"] > li,
-                [class*="list-"][class*="4"] > li,
-                [class*="list-"][class*="5"] > li,
-                [class*="list-"][class*="6"] > li{width: 50%;}
+                .list-3 > li,
+                .list-4 > li,
+                .list-5 > li,
+                .list-6 > li{width: 50%;}
             }
             @media (max-width:575px){
-                [class*="list-"][class*="2"] > li,
-                [class*="list-"][class*="3"] > li,
-                [class*="list-"][class*="4"] > li,
-                [class*="list-"][class*="5"] > li,
-                [class*="list-"][class*="6"] > li{width: 100%;}
+                .list-2 > li,
+                .list-3 > li,
+                .list-4 > li,
+                .list-5 > li,
+                .list-6 > li{width: 100%;}
             }
         </style>
+        <p>Must check below examples</p>
         <ol class="list-1">
             <li>Lorem</li>
             <li>Lorem</li>
@@ -356,6 +365,7 @@
             <li>Lorem</li>
         </ol>
     </section>
+    
 
 
 
@@ -363,9 +373,7 @@
 
     <script>
         document.querySelectorAll("section:not(.one)").forEach(function(e){
-            e.querySelectorAll("a[class]").forEach(function(f){
-                f.innerHTML = f.classList;
-            });
+            e.querySelectorAll("a[class]").forEach((f) => f.innerHTML = f.classList);
         });
     </script>
 </body>
