@@ -2,26 +2,62 @@
 <html>
 <head>
 <style> 
-div.ex1 {
-  pointer-events: none;
-}
+  .ex1 {pointer-events: none;}
+  .ex2 {pointer-events: auto;}
+  .ex3 {cursor: pointer;}
 
-div.ex2 {
-  pointer-events: auto;
-}
+  .ex4 {cursor: pointer;}
+  .ex4:active {pointer-events: none;}
 </style>
 </head>
 <body>
-
 <h1>The pointer-events Property</h1>
-
 <p>Move over the links below to see if the react on pointer events.</p>
 
-<h2>pointer-events: none:</h2>
-<div class="ex1">Go to <a href="https://www.w3schools.com/html">HTML Tutorial</a></div>
 
 <h2>pointer-events: auto (default):</h2>
-<div class="ex2">Go to <a href="https://www.w3schools.com/css">CSS Tutorial</a></div>
+<div class="ex2"><a href="https://www.w3schools.com/css">CSS Tutorial</a></div>
 
+<p>&nbsp;</p><p>&nbsp;</p>
+
+<h2>pointer-events: none:</h2>
+<div class="ex1"><a href="https://www.w3schools.com/html">HTML Tutorial</a></div>
+
+<p>&nbsp;</p><p>&nbsp;</p>
+
+<h2>By JS and Cursor pointer</h2>
+<a class="ex3" href="https://www.google.com/" target="_blank">Google</a>
+<script>
+  document.querySelectorAll(".ex3").forEach(function(e){
+    e.addEventListener("click", function(event){
+      event.preventDefault();
+      // alert("JS is working!");
+    });
+  });
+</script>
+
+<p>&nbsp;</p><p>&nbsp;</p>
+<h2>By CSS only</h2>
+<a class="ex4" href="https://www.google.com/" target="_blank">Google</a>
+
+
+<p>&nbsp;</p><p>&nbsp;</p>
+<h2>
+  Example js is not working by pointer-events: none on parent element but working on its child element.<br>
+  By clicking on inner box then hide.
+</h2>
+<div class="one" style="width:300px;height: 300px;border:1px solid red;display: flex;justify-content: center;align-items: center;pointer-events: none;">
+  <div class="oneChild" style="width:100px;height: 100px;background: green;
+  pointer-events: auto;
+  "></div>
+</div>
+<script>
+  document.querySelector(".one").addEventListener("click", function(){
+    this.style.display = "none";
+  });
+  document.querySelector(".one .oneChild").addEventListener("click", function(){
+    this.closest(".one").style.display = "none";
+  });
+</script>
 </body>
 </html>

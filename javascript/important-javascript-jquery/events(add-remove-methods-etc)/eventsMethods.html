@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <ol>
+            <li>getModifierState()</li>
+            <li>preventDefault()</li>
+            <li>stopImmidiatePropagation() (Browser support problem)</li>
+            <li>stopPropagation()</li>
+        </ol>
+    </h1>
+
+
+    <p>&nbsp;</p>
+
+
+    <ol>
+        <li>
+            <p><b>getModifierState()</b></p>
+            <ol>
+                <li>"Alt"</li>
+                <li>"AltGraph"</li>
+                <li>"CapsLock"</li>
+                <li>"Control"</li>
+                <li>"Meta"</li>
+                <li>"NumLocK"</li>
+                <li>"ScrollLock"</li>
+                <li>"Shift"</li>
+            </ol>
+            <p id="demo1"><b>Pressing the shift key:</b> </p>
+            <p><input type="text" size="40" onmousedown="myFunction(event)"></p>
+            <script>
+                function myFunction(event) {
+                    let x = event.getModifierState("Shift");
+                    document.getElementById("demo1").innerHTML += x;
+                }
+            </script>
+        </li>
+        
+        
+        <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+        <li>
+            <p><b>preventDefault()</b></p>
+            <p><a id="demo2" href="https://w3schools.com/">Go to W3Schools.com</a></p>
+            <p>The preventDefault() method will prevent the link above from following the URL.</p>
+            <script>
+                document.getElementById("demo2").addEventListener("click", (event) => event.preventDefault());
+            </script>
+        </li>
+        
+        
+        <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+        
+
+        <li>
+            <p><b>stopPropagation()</b></p>
+            <div class="stop">
+                <p>Click here</p>
+                <p class="para">Click also here</p>
+            </div>
+            <script>
+                document.querySelector(".stop").addEventListener("click", function(){
+                    this.style.background = "#eee";
+                });
+                document.querySelector(".stop .para").addEventListener("click", function(event){
+                    event.stopPropagation();
+                    // this.closest(".stop").style.background = "#ccc";
+                });
+            </script>
+            <p>&nbsp;</p>
+            <p><b>By using pointer-events: none; the js event does not work.</b></p>
+            <div class="stop1" style="pointer-events: none;">
+                <p>Click here</p>
+                <p class="para1">Click also here</p>
+            </div>
+            <script>
+                document.querySelector(".stop1").addEventListener("click", function(){
+                    this.style.background = "#eee";
+                });
+            </script>
+        </li>
+    </ol>
+</body>
+</html>
