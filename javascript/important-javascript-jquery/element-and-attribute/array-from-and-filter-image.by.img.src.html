@@ -8,14 +8,17 @@
 <body>
     <img src="http://www.demo.com/images1.jpg" />
     <img src="./images1.jpg" />
-    <img src="http://www.demo.com/images2.jpg" />
+    <img src="https://www.demo.com/images2.jpg" />
     <img src="./images2.jpg" />
     <img src="http://www.demo.com/images3.jpg" />
     <img src="./images3.jpg" />
     <script>
         const sources = Array.from(document.querySelectorAll("img"), (image) => image.src);
         console.log(sources);
-        const insecureSources = sources.filter((link) => link.startsWith("http://"));
+        // const insecureSources = sources.filter((link) => link.startsWith("http://") || link.startsWith("https://"));
+        // const insecureSources = sources.filter(link => ["http://", "https://"].some(prefix => link.startsWith(prefix)));
+        const insecureSources = sources.filter((link) => link.startsWith("http"));
+        // const insecureSources = sources.filter(link => link.includes("://"));
         console.log(insecureSources);
     </script>
 </body>

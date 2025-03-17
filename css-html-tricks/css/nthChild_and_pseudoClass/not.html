@@ -8,6 +8,10 @@
         ul > span{color:blue;}
         ul > li:not(span){color:red;}
         section :not([class]){color: green;}
+        p.two.active{color:brown;}
+        p.two:not(.active){color:red;}
+        /* :not(){color:cyan;} */
+        section.one :not(p):not(.para) {font-weight: bold;}
     </style>
 </head>
 <body>
@@ -25,6 +29,17 @@
         <p>Lorem</p>
         <p>Lorem</p>
         <p class="one">Lorem</p>
+    </section>
+    <p class="two">Lorem</p>
+    <p class="two lorem">Lorem</p>
+    <p class="two active">Lorem</p>
+    <section class="one">
+        <p class="para">Lorem</p>
+        <p>Lorem</p>
+        <p>Lorem</p>
+        <p class="para">Lorem</p>
+        <span>Lorem</span><br>
+        <span>Lorem</span>
     </section>
 </body>
 </html>
