@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{padding:0;margin:0;box-sizing: border-box;}
+
+    body{overflow: hidden;}
+    
+    .container{width: 100%;max-width:600px;margin-inline:auto;}
+    iframe {width: 100%;height: auto;display: flex;border:none;}
+  </style>
+</head>
+<body>
+<div class="container">
+    <iframe src="https://9cents.com/" width="400" height="200"></iframe>
+    <br><br>
+</div>
+<!-- <iframe src="https://9cents.com/" width="1905" height="919"></iframe> -->
+
+<script>
+    document.querySelectorAll("iframe").forEach(function(e, i){
+        const w = e.getAttribute("width");
+        const h = e.getAttribute("height");
+        const a = w / h;
+        console.log(a);
+        e.setAttribute("style", `aspect-ratio:${a}`);
+    });
+</script>
+</body>
+</html>
