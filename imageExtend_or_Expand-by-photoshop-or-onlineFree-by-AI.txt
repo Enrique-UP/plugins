@@ -1,12 +1,15 @@
 https://www.pixelcut.ai/home
-https://www.pixelcut.ai/cleanup-pictures (Magic Eraser)
-https://www.pixelcut.ai/t/uncrop (Image Extend/Expand)
+https://www.pixelcut.ai/cleanup-pictures
+(Magic Eraser)
+https://www.pixelcut.ai/t/uncrop
+(Image Extend/Expand)
 
 ==========================================================================================================
-for photo restoration
+For photo restoration (It means for old image convert in good quality)
 https://picsart.com/ai-image-enhancer/photo-restoration/
-after that opens another page after upload the image
-then click on Remove (PRO)
+=> after that opens another page after upload the image => then click on Remove (PRO)
+
+For more tools go to create menu => photo editor
 
 
 https://picsart.com/create/editor?category=myFolders&image=https%3A%2F%2Fdcdn.picsart.com%2Fdev%2F3962e18f-e102-4181-a5c6-07ffe277612c.png
