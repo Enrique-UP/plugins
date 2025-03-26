@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .act{color:red;}
+        .unact{color:green;}
+    </style>
+</head>
+<body>
+    <ul class="demo">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li class="unact one">UnActive</li>
+        <li>Sit</li>
+        <li class="two act">Active</li>
+        <li>Neque</li>
+        <li class="three unact">UnActive</li>
+        <li>Qui</li>
+        <li class="act four">Active</li>
+        <li>Consectetur</li>
+    </ul>
+    
+    <!-- <script>
+        document.querySelectorAll("ul > li").forEach((e) => {
+          e.addEventListener("click", function () {
+            e.closest("ul").querySelectorAll("li").forEach((liTags) => {
+                liTags.removeAttribute("class");
+
+                if (liTags !== e) liTags.classList.add("unact"); // This is targeting to siblings of clicked li.
+                // else e.classList.add("act"); // This is targeting to clicked li.
+            });
+            e.classList.add("act");
+          });
+        });
+    </script> -->
+    <script>
+        document.querySelectorAll("ul > li").forEach((e) => {
+          e.addEventListener("click", function () {
+            e.closest("ul").querySelectorAll("li").forEach((liTags) => {
+                liTags.classList.remove("act", "unact");
+
+                if (liTags !== e) liTags.classList.add("unact"); // This is targeting to siblings of clicked li.
+                else e.classList.add("act"); // This is targeting to clicked li.
+            });
+          });
+        });
+    </script>
+</body>
+
+</html>

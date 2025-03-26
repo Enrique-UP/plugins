@@ -1,0 +1,6 @@
+Below is the rotate photo into straight tutorial:-
+
+Open unStraight image in photoshop =>
+press ctrl j =>
+go to File (menu) => Automate => Crop and Straighten Photos.
+The croped and straighten photo will be show on next tab of photoshop.

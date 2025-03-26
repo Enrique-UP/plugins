@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 
 09. Video play on click after scroll unviewport area then pause
 10. Display none and block transition not work
-12. Popup on mobile full width and height show with content & work on close button
+12. Popup on mobile full width and height show with content & work on close button (liquid popup)
 13. onscroll => viewport video => play/otherwise pause
 14. z-index problem parent is 9 and children is 99.
 15. Form with validation, onkeyup/onblur validate input after that on submit validate and submit.

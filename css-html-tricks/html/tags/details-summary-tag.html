@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style type="text/css">
+      *{padding:0;margin:0;box-sizing: border-box;}
+      body{padding:50px;font-family: verdana;font-size: 14px;line-height: 1.5;}
+      h1{text-align: center;margin-bottom: 24px;}
+      section{width: 100%;max-width: 600px;margin-inline: auto;display: flex;flex-direction: column;}
+      section > details{width: 100%;display: flex;flex-direction: column;background: #eee;}
+      section > details:not(:last-child){border-bottom: 2px solid #fff;}
+      section > details > summary{width: 100%;position: relative;background: #a2c0c6;list-style: none;padding: 12px 58px 12px 12px;font-weight: bold;cursor: pointer;}
+      section > details > summary::-webkit-details-marker {display: none;}
+      section > details > summary::after{width: 45px;height: 100%;position: absolute;top:0;right:0;background: #466970;content:"⬇";display: flex;justify-content: center;align-items: center;color:#fff;font-size: 20px;font-weight: normal;}
+      section > details[open] > summary::after{content:"⬆";}
+      section > details > summary ~ *{padding-inline: 12px;padding-top: 12px;}
+      section > details > summary ~ *:last-child{padding-bottom: 12px;}
+    </style>
+  </head>
 <body>
-
-<h1>The summary element</h1>
-
-<details>
-  <summary>Epcot Center</summary>
-  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+<h1>Accordion by summary element</h1>
+<details open>
+  <summary>Epcot Center 1</summary>
+  <p>1 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
 </details>
 <details>
-  <summary>Epcot Center</summary>
-  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+  <summary>Epcot Center 2</summary>
+  <p>2 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
 </details>
 <details>
-  <summary>Epcot Center</summary>
-  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+  <summary>Epcot Center 3</summary>
+  <p>3 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
 </details>
-<details>
-  <summary>Epcot Center</summary>
-  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-</details>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<section>
+  <details open>
+    <summary>Epcot Center 1</summary>
+    <p>1 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
+    <p>1 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
+  </details>
+  <details>
+    <summary>Epcot Center 2</summary>
+    <p>2 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
+  </details>
+  <details>
+    <summary>Epcot Center 3</summary>
+    <p>3 Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events.</p>
+  </details>
+</section>
+<!-- <script>
+  document.querySelectorAll("section").forEach(function(section) {
+    section.querySelectorAll("details").forEach(function(details) {
+      details.addEventListener("toggle", function() {
+        if (details.open) {
+          section.querySelectorAll("details").forEach(function(otherDetails) {
+            if (otherDetails !== details && otherDetails.open) otherDetails.removeAttribute("open");
+          });
+        }
+      });
+    });
+  });
+</script> -->
+<!-- toggle event only work on details tag not work on summary tag -->
+<script>
+  document.querySelectorAll("section details").forEach((detailsTag) => {
+    detailsTag.addEventListener("click", function () {
+      detailsTag.closest("section").querySelectorAll("details").forEach((otherDetailsTag) => {
+        if (otherDetailsTag !== detailsTag) otherDetailsTag.removeAttribute("open");
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
