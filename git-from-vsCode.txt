@@ -32,6 +32,8 @@ Mridul Srivastava tutorial
 24. go to top header and click =>
 25. click on already copied link =>
 Done.
+26. check github url then this ui changed automatically after that.
+27. paste files in local folder after that upload.
 
 
 
