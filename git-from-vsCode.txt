@@ -149,3 +149,13 @@ git status
 git add .
 git commit -m "Your commit message"
 git push
+
+
+
+
+
+==============================================================
+download specific folder from the git.com/repository
+https://downgit.github.io/#/home
+copy folder and paste in the above url's input
+==============================================================

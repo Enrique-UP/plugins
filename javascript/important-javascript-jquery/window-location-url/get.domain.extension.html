@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getDomainExtension(url) {
+            try {
+                const urlObject = new URL(url);
+                const hostname = urlObject.hostname;
+                const parts = hostname.split('.');
+                if (parts.length > 1) {
+                return '.' + parts.slice(-1).join('.');
+                }
+                return '';
+            } catch (error) {
+                return '';
+            }
+        }
+
+        const url1 = 'https://www.example.com';
+        const url2 = 'http://subdomain.example.co.uk';
+        const url3 = 'example.in';
+        const url4 = 'invalid-url';
+
+        console.log(getDomainExtension(url1));
+        console.log(getDomainExtension(url2));
+        console.log(getDomainExtension(url3));
+        console.log(getDomainExtension(url4));
+    </script>
+</body>
+</html>
