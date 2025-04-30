@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation</title>
+  <style type="text/css">
+    body{min-height: 150vh;}
+    .glysArea{margin-top: 50vh;}
+    .dropdown{flex-direction: column;display: none;}
+    .glysArea.active .dropdown { display: flex; }
+    .dropdown > a { padding: 5px; text-decoration: none; color: black; }
+    .dropdown > a.active { background: #eee; }
+    section{width: 100%;display: none;}
+    section.active{display: flex;}
+  </style>
+</head>
+<body>
+  <div class="glysArea active">
+    <div class="dropdown">
+      <a href="#lorem">Lorem</a>
+      <a href="#ipsum">Ipsum</a>
+      <a href="#dolor">Dolor</a>
+      <a href="#sit">Sit</a>
+      <a href="#sit1" style="display: none;">Sit1</a>
+      <a href="#sit2" style="display: none;">Sit2</a>
+      <a href="#sit3" style="display: none;">Sit3</a>
+      <a href="#ameet">Ameet</a>
+    </div>
+  </div>
+
+  <section id="lorem">Lorem</section>
+  <section id="ipsum">Ipsum</section>
+  <section id="dolor">Dolor</section>
+  <section id="sit">Sit</section>
+  <section id="ameet">Ameet</section>
+
+  
+  <script>
+    (function(){
+      const glysArea = document.querySelector(".glysArea");
+      const dropdown = glysArea.querySelector(".dropdown");
+      const allItems = dropdown.querySelectorAll("a");
+      const sections = document.querySelectorAll("section");
+      let currentIndex = -1; // No selection initially
+    
+      function getVisibleItems() {
+        return Array.from(allItems).filter((el) => el.offsetParent !== null);
+      }
+    
+      document.addEventListener("keydown", function(e) {
+        if (!glysArea.classList.contains("active")) return;
+    
+        const visibleItems = getVisibleItems();
+    
+        if (visibleItems.length === 0) return;
+    
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          currentIndex++;
+          if (currentIndex >= visibleItems.length) {
+            currentIndex = 0;
+          }
+          updateActiveItem(visibleItems);
+        } 
+        else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = visibleItems.length - 1;
+          }
+          updateActiveItem(visibleItems);
+        } 
+        else if (e.key === "Enter") {
+          e.preventDefault();
+          if (currentIndex !== -1) {
+            const selectedId = visibleItems[currentIndex].getAttribute("href").substring(1);
+            sections.forEach(section => {
+              section.classList.toggle("active", section.id === selectedId);
+            });
+            allItems.forEach(item => item.classList.remove("active"));
+            currentIndex = -1;
+            dropdown.classList.remove("active");
+          }
+        }
+      });
+    
+      function updateActiveItem(visibleItems) {
+        allItems.forEach(item => item.classList.remove("active"));
+        if (currentIndex >= 0 && visibleItems[currentIndex]) {
+          visibleItems[currentIndex].classList.add("active");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

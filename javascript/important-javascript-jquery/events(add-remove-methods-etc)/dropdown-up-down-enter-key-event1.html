@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation</title>
+  <style type="text/css">
+    .dropdown { display: none; }
+    .dropdown.active { display: flex; flex-direction: column; }
+    .dropdown > a { padding: 5px; text-decoration: none; color: black; }
+    .dropdown > a.active { background: #eee; }
+    section{width: 100%;display: none;}
+    section.active{display: flex;}
+  </style>
+</head>
+<body>
+  <a href="javascript:;" id="openDropdown">Click here...</a>
+  <br>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="#lorem" target="_blank">Lorem</a>
+    <a href="#ipsum" target="_blank">Ipsum</a>
+    <a href="#dolor" target="_blank">Dolor</a>
+    <a href="#sit" target="_blank">Sit</a>
+    <a href="#ameet" target="_blank">Ameet</a>
+  </div>
+
+  <section id="lorem">Lorem</section>
+  <section id="ipsum">Ipsum</section>
+  <section id="dolor">Dolor</section>
+  <section id="sit">Sit</section>
+  <section id="ameet">Ameet</section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        const $link = $("#openDropdown");
+        const $dropdown = $("#dropdownMenu");
+        const $items = $dropdown.find("a");
+        const $sections = $("section");
+        let currentIndex = -1; // No selection initially
+    
+        $link.on("click", function() {
+            $dropdown.addClass("active");
+            $link.focus();
+        });
+    
+        $(document).on("keydown", function(e) {
+            if (!$dropdown.hasClass("active")) return;
+    
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                currentIndex++;
+                if (currentIndex >= $items.length) {
+                    currentIndex = 0; // Wrap to first
+                }
+                updateActiveItem();
+            } 
+            else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = $items.length - 1; // Wrap to last
+                }
+                updateActiveItem();
+            } 
+            else if (e.key === "Enter") {
+                e.preventDefault();
+                if (currentIndex !== -1) {
+                    const selectedId = $items.eq(currentIndex).attr("href").substring(1); // remove '#'
+    
+                    // Show only the matched section
+                    $sections.each(function() {
+                        if ($(this).attr("id") === selectedId) {
+                            $(this).addClass("active");
+                        } else {
+                            $(this).removeClass("active");
+                        }
+                    });
+    
+                    // Remove active class from all <a> links
+                    $items.removeClass("active");
+    
+                    // Reset currentIndex
+                    currentIndex = -1;
+    
+                    // Close dropdown
+                    $dropdown.removeClass("active");
+                }
+            }
+        });
+    
+        function updateActiveItem() {
+            $items.removeClass("active");
+            if (currentIndex >= 0) {
+                $items.eq(currentIndex).addClass("active");
+            }
+        }
+    });
+    </script>
+    
+  <!-- <script>
+    const link = document.getElementById("openDropdown");
+    const dropdown = document.getElementById("dropdownMenu");
+    const items = dropdown.querySelectorAll("a");
+    const sections = document.querySelectorAll("section");
+    let currentIndex = -1; // No selection initially
+  
+    link.addEventListener("click", function() {
+      dropdown.classList.add("active");
+      link.focus();
+    });
+  
+    document.addEventListener("keydown", function(e) {
+      if (!dropdown.classList.contains("active")) return;
+  
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        currentIndex++;
+        if (currentIndex >= items.length) {
+          currentIndex = 0; // Wrap to first
+        }
+        updateActiveItem();
+      } 
+      else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = items.length - 1; // Wrap to last
+        }
+        updateActiveItem();
+      } 
+      else if (e.key === "Enter") {
+        e.preventDefault();
+        if (currentIndex !== -1) {
+            const selectedId = items[currentIndex].getAttribute("href").substring(1); // remove '#'
+
+            // Show only the matched section
+            sections.forEach(section => {
+            if (section.id === selectedId) {
+                section.classList.add("active");
+            } else {
+                section.classList.remove("active");
+            }
+            });
+
+            // Remove active class from all <a> links
+            items.forEach(item => item.classList.remove("active"));
+
+            // Optionally, reset currentIndex
+            currentIndex = -1;
+
+            // Close dropdown
+            dropdown.classList.remove("active");
+        }
+      }
+    });
+  
+    function updateActiveItem() {
+      items.forEach(item => item.classList.remove("active"));
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.add("active");
+      }
+    }
+  </script> -->
+  
+</body>
+</html>

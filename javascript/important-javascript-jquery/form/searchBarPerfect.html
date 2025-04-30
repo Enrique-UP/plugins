@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SearchBar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../../webpage-starting/starting-webpage-bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+<style>
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{line-height: 1.2;font-weight: bold;}
+.h1{font-size:40px;}
+.h2{font-size:36px;}
+.h3{font-size:32px;}
+.h4{font-size:22px;}
+.h5{font-size:22px;}
+.h6{font-size:20px;}
+
+
+.glySec{width: 100%;display: flex;flex-direction: column;padding-block:80px;}
+.glySec .glySearch{width: 100%;display: flex;flex-direction: column;margin-bottom: 64px;}
+.glySec .hd{margin-bottom: 16px;}
+.glySec .hd1{font-weight: 700;color:#000;font-size: 24px;margin-bottom: 16px;line-height: 1.3;}
+.glySec .hd1 ~ .hd1{margin-top: 24px;}
+.glySec .glySearch .glysArea{width: 100%;display: flex;flex-direction: column;position: relative;}
+.glySec .glySearch .glysArea > img{position: absolute;top:16px;right:24px;cursor: pointer;display: none;}
+.glySec .glySearch .glysArea .dropDown{position: absolute;top:100%;left:0;width: 100%;border:1px solid #DFE2E6;border-radius: 8px;padding:0;margin:0;display: none;flex-direction: column;z-index: 9;background: #fff;overflow: hidden;padding-block: 8px;box-shadow: 0px 0px 6px #ddd;max-height: 250px;overflow-y: auto;scrollbar-width: thin;scrollbar-color: green #f1f1f1;}
+.glySec .glySearch .glysArea .dropDown::-webkit-scrollbar {width: 12px;}
+.glySec .glySearch .glysArea .dropDown::-webkit-scrollbar-track {background: #f1f1f1;}
+.glySec .glySearch .glysArea .dropDown::-webkit-scrollbar-thumb {background-color: #888;border-radius: 6px;}
+.glySec .glySearch .glysArea .dropDown > a{padding:8px 24px;color:#000;text-decoration: none;text-decoration: none;outline:none !important;font-size: 20px;}
+.glySec .glySearch .glysArea .dropDown > a.active, .glySec .glySearch .glysArea .dropDown > a:hover, .glySec .glySearch .glysArea .dropDown > a:active, .glySec .glySearch .glysArea .dropDown > a:focus{background: #F6F9F8;}
+.glySec .glySearch input[type="text"]{height: 60px;border-radius: 8px;padding-inline:64px 24px;border: 1px solid #00B512;outline: none !important;background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z'/%3E%3C/svg%3E") no-repeat 24px center / 24px;font-size: 20px;}
+.glySec .glySearch input[type="text"]::-webkit-input-placeholder {color: #000;opacity: 1;}
+.glySec .glySearch input[type="text"]::-moz-placeholder {color: #000;opacity: 1;}
+.glySec .glySearch input[type="text"]:-ms-input-placeholder {color: #000;opacity: 1;}
+.glySec .glySearch input[type="text"]:-moz-placeholder {color: #000;opacity: 1;}
+.glySec .glySearch .glysArea.active > img, .glySec .glySearch .glysArea.active .dropDown{display: flex;}
+
+.glySec .accAreas{width: 100%;display:flex;flex-direction: column;}
+.glySec .accAreas > .hd1{padding-inline: 32px;text-transform: uppercase;}
+.glySec .accAreas .accArea{width: 100%;display: flex;flex-direction: column;box-shadow: 0px 0px 6px #ddd;border:1px solid #DFE2E6;border-radius: 16px;padding:16px 32px 0;}
+.glySec .accAreas .accArea:not(:last-child){margin-bottom: 24px;}
+.glySec .accAreas .accArea > .hd1{background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") no-repeat right center / 32px;cursor: pointer;padding-right: 24px;user-select: none;-webkit-user-select: none;-ms-user-select: none;}
+.glySec .accAreas .accArea .text{width: 100%;display: none;flex-direction: column;}
+.glySec .accAreas .accArea .text > *{color:#000;font-size: 20px;}
+.glySec .accAreas .accArea .text ul > li{list-style: disc;}
+.glySec .accAreas .accArea .text ol > li{list-style: decimal;}
+.glySec .accAreas .accArea .text ul, .glySec .accAreas .accArea .text ol{width: 100%;display: flex;flex-direction: column;}
+.glySec .accAreas .accArea .text ul ul, .glySec .accAreas .accArea .text ul ol, .glySec .accAreas .accArea .text ol ol, .glySec .accAreas .accArea .text ol ul{margin-top: 8px;}
+.glySec .accAreas .accArea .text li:not(:last-child){margin-bottom: 8px;}
+.glySec .accAreas .accArea.active{background:#F6F9F8;}
+.glySec .accAreas .accArea.active > .hd1{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='green'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7'/%3E%3C/svg%3E");}
+.glySec .accAreas .accArea.active .text{display: flex;}
+
+@media only screen and (max-width:767px){
+    .glySec .glySearch{margin-bottom: 40px;}
+    .glySec .glySearch input[type="text"]{height: 44px;padding-inline: 50px 16px;background-position: 16px center;background-size: 18px;font-size: 16px;}
+    .glySec .glySearch .glysArea > img {top:15px;right:16px;}
+    .glySec .hd{font-size: 28px;}
+    .glySec .hd1{font-size: 20px;}
+    .glySec .hd1 ~ .hd1 {margin-top: 16px;}
+    .glySec .accAreas .accArea{padding: 16px 16px 0;}
+    .glySec .accAreas > .hd1{padding-inline: 16px;}
+    .glySec .accAreas .accArea > .hd1{background-size: 15px;}
+    .glySec .accAreas .accArea .text > *{font-size: 16px;}
+    .glySec .accAreas .accArea:not(:last-child){margin-bottom: 16px;}
+}
+</style>
+<body>
+<section class="glySec">
+    <div class="container">
+        <div class="glySearch">
+            <h2 class="hd">Search the Glossary:</h2>
+            <div class="glysArea">
+                <input type="text" placeholder="Type your search here">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3E%3C/svg%3E" width="30" height="30" alt="">
+                <div class="dropDown"></div><!--dropDown-->
+            </div><!--glysArea-->
+        </div><!--glySearch-->
+        <div class="accAreas">
+            <div class="accArea">
+                <p class="hd1">Aurora Signal</p>
+                <div class="text">
+                    <p>An aurora signal is a hypothetical alert mechanism in a space-travel economy indicating cosmic event proximity that could affect interplanetary trades and resource flow.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Beacon Trigger</p>
+                <div class="text">
+                    <p>Used in autonomous drone networks, a beacon trigger initiates synchronized flight paths based on localized frequency patterns.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Cobalt Drift</p>
+                <div class="text">
+                    <p>Cobalt drift refers to the slow geological movement of cobalt-rich mineral veins, often monitored in resource excavation missions.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Dynamo Flow</p>
+                <div class="text">
+                    <p>This term describes the movement of electrothermal energy within microgrid circuits, primarily used in wearable tech interfaces.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Echo Plane</p>
+                <div class="text">
+                    <p>An echo plane is a virtual mapping layer used in sound-based navigation systems to chart acoustically reactive terrain.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Flux Bubble</p>
+                <div class="text">
+                    <p>In speculative science, a flux bubble is an unstable energy field that may cause signal distortions in quantum computing modules.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Grain Pulse</p>
+                <div class="text">
+                    <p>A term from agricultural robotics, grain pulse refers to rhythmic harvesting sequences optimized for crop density.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Halo Drift</p>
+                <div class="text">
+                    <p>This refers to the movement of light-sensitive nano-drones in solar calibration fields.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Ion Lock</p>
+                <div class="text">
+                    <p>Ion lock is a security protocol that stabilizes charged particles in atomic-scale vaults for high-density data storage.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Junction Wake</p>
+                <div class="text">
+                    <p>Junction wake is the residual energy detected when a data cluster transitions between nodes in a distributed mesh network.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Keystone Surge</p>
+                <div class="text">
+                    <p>A spike in core system efficiency observed during alignment of core digital infrastructure components in smart cities.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Lumen Thread</p>
+                <div class="text">
+                    <p>A fiber-optic conduit used in wearable light gear to simulate bioluminescence for communication in low-light environments.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Matrix Path</p>
+                <div class="text">
+                    <p>Matrix path denotes a sequence of data transformations across multi-layered neural networks during adaptive learning phases.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Nebula Gate</p>
+                <div class="text">
+                    <p>A hypothetical construct used in sci-fi scenarios to model large-scale teleportation systems using nebula mass compression.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Orbit Sync</p>
+                <div class="text">
+                    <p>Orbit sync is a timekeeping method used by satellite clusters to maintain alignment and communication accuracy.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Pulse Anchor</p>
+                <div class="text">
+                    <p>A pulse anchor stabilizes wearable haptic devices by syncing vibrations with the user’s heartbeat for immersive feedback.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Quantum Leaf</p>
+                <div class="text">
+                    <p>A synthetic, photosensitive surface used in bioengineered environments to convert light into trace elements or energy.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Rhythm Core</p>
+                <div class="text">
+                    <p>Rhythm core is the central processor in wearable music devices that adapts tempo based on user movement patterns.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Signal Veil</p>
+                <div class="text">
+                    <p>A signal veil is an encrypted overlay that cloaks network activity from external intrusion or data scraping tools.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Thread Loop</p>
+                <div class="text">
+                    <p>A term in modular fashion design, referring to the seamless integration of adaptive thread patterns for dynamic clothing behavior.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Umbra Scope</p>
+                <div class="text">
+                    <p>A device used in shadow-mapping applications for AR glasses, enabling depth accuracy in dim-light projections.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Vector Bloom</p>
+                <div class="text">
+                    <p>Vector bloom is a rendering technique that creates soft-glow effects in holographic user interfaces.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Wave Latch</p>
+                <div class="text">
+                    <p>Used in oceanic data farms, a wave latch is a mechanical sensor that triggers data capture when tidal energy is optimal.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Xeno Mesh</p>
+                <div class="text">
+                    <p>Xeno mesh refers to a fictional material used in sci-fi that blends alien biological matter with conductive polymers for hybrid interfaces.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Yield Loop</p>
+                <div class="text">
+                    <p>Yield loop is an AI farming routine that adjusts crop care cycles based on continuous data from soil sensors and weather stations.</p>
+                </div>
+            </div>
+        
+            <div class="accArea">
+                <p class="hd1">Zen Frame</p>
+                <div class="text">
+                    <p>Zen frame is a meditative feedback enclosure using real-time brainwave monitoring to adjust visual and acoustic stimuli.</p>
+                </div>
+            </div>
+        </div><!--accAreas-->
+    </div><!--container-->
+</section><!--glySec-->
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const glySecs = document.querySelectorAll(".glySec");
+
+        glySecs.forEach(glySec => {
+            const input = glySec.querySelector(".glySearch input");
+            const dropDown = glySec.querySelector(".glySearch .dropDown");
+            const headings = glySec.querySelectorAll(".accAreas .accArea > .hd1");
+            const accAreas = glySec.querySelectorAll(".accAreas .accArea");
+            const glysArea = glySec.querySelector(".glySearch .glysArea");
+            const img = glySec.querySelector(".glySearch .glysArea > img");
+
+            // Clear input
+            input.value = "";
+
+            // Assign IDs and build dropdown
+            let linksHTML = "";
+            headings.forEach((hd, index) => {
+                const id = `head${index + 1}`;
+                hd.id = id;
+                linksHTML += `<a href="#${id}">${hd.innerHTML}</a>`;
+            });
+            dropDown.innerHTML = linksHTML;
+
+            const links = Array.from(dropDown.querySelectorAll("a"));
+            let currentIndex = -1;
+
+            // Input search logic
+            input.addEventListener("keyup", function (e) {
+                const value = input.value.toLowerCase();
+                
+                links.forEach(link => {
+                    const match = link.textContent.toLowerCase().includes(value);
+                    link.style.display = match ? "" : "none";
+                    link.classList.remove("active");
+                });
+
+                const visibleLinks = links.filter(link => link.style.display !== "none");
+
+                if (value.length > 0 && visibleLinks.length > 0) {
+                    glysArea.classList.add("active");
+                    dropDown.scrollTop = 0;
+                } else {
+                    glysArea.classList.remove("active");
+                    currentIndex = -1;
+                }
+
+                if (glysArea.classList.contains("active")) {
+                    if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        currentIndex = (currentIndex + 1) % visibleLinks.length;
+                    } else if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        currentIndex = (currentIndex - 1 + visibleLinks.length) % visibleLinks.length;
+                    } else if (e.key === "Enter" && visibleLinks[currentIndex]) {
+                        e.preventDefault();
+                        visibleLinks[currentIndex].click();
+                        currentIndex = -1;
+                    }
+
+                    visibleLinks.forEach(link => link.classList.remove("active"));
+                    if (visibleLinks[currentIndex]) {
+                        visibleLinks[currentIndex].classList.add("active");
+                        visibleLinks[currentIndex].scrollIntoView({ block: "nearest" });
+                    }
+                }
+            });
+
+            // Dropdown link click handler
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    accAreas.forEach(acc => acc.classList.remove("active"));
+                    target.closest(".accArea").classList.add("active");
+                    window.scrollTo({ top: target.offsetTop - 110, behavior: "smooth" });
+                    glysArea.classList.remove("active");
+                    input.value = "";
+                });
+            });
+
+            // Image click to clear
+            if (img) {
+                img.addEventListener("click", function () {
+                    glysArea.classList.remove("active");
+                    input.value = "";
+                });
+            }
+
+            // Accordion toggle
+            headings.forEach(hd => {
+                hd.addEventListener("click", function () {
+                    const accArea = this.closest(".accArea");
+                    accAreas.forEach(acc => {
+                        if (acc !== accArea) acc.classList.remove("active");
+                    });
+                    accArea.classList.toggle("active");
+                });
+            });
+        });
+
+        // Click outside to close all
+        document.addEventListener("click", function () {
+            document.querySelectorAll(".glySec .glySearch .glysArea").forEach(area => {
+                area.classList.remove("active");
+                const input = area.querySelector("input");
+                if (input) input.value = "";
+            });
+        }, true);
+    });
+</script>
+<!-- <script src="../../../jquery-2.2.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".glySec").each(function () {
+            const $glySec = $(this);
+            const $input = $glySec.find(".glySearch input");
+            const $dropDown = $glySec.find(".glySearch .dropDown");
+            const $headings = $glySec.find(".accAreas .accArea > .hd1");
+            const $accAreas = $glySec.find(".accAreas .accArea");
+            const $glysArea = $glySec.find(".glySearch .glysArea");
+            const $img = $glySec.find(".glySearch .glysArea > img");
+
+            // Clear input
+            $input.val("");
+
+            // Assign IDs and build dropdown
+            let linksHTML = "";
+            $headings.each(function (index) {
+                const id = `head${index + 1}`;
+                $(this).attr("id", id);
+                linksHTML += `<a href="#${id}">${$(this).html()}</a>`;
+            });
+            $dropDown.html(linksHTML);
+
+            const $links = $dropDown.find("a");
+            let currentIndex = -1;
+
+            // Input search logic
+            $input.on("keyup", function (e) {
+                const value = $input.val().toLowerCase();
+                const $visibleLinks = [];
+
+                $links.each(function () {
+                    const $link = $(this);
+                    const match = $link.text().toLowerCase().includes(value);
+                    $link.toggle(match).removeClass("active");
+                    if (match) $visibleLinks.push($link);
+                });
+
+                if (value.length > 0 && $visibleLinks.length > 0) {
+                    $glysArea.addClass("active");
+                    $dropDown.scrollTop(0);
+                } else {
+                    $glysArea.removeClass("active");
+                    currentIndex = -1;
+                }
+
+                if ($glysArea.hasClass("active")) {
+                    if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        currentIndex = (currentIndex + 1) % $visibleLinks.length;
+                    } else if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        currentIndex = (currentIndex - 1 + $visibleLinks.length) % $visibleLinks.length;
+                    } else if (e.key === "Enter" && $visibleLinks[currentIndex]) {
+                        e.preventDefault();
+                        $visibleLinks[currentIndex].click();
+                        currentIndex = -1;
+                    }
+
+                    $visibleLinks.forEach($link => $link.removeClass("active"));
+                    if ($visibleLinks[currentIndex]) {
+                        $visibleLinks[currentIndex].addClass("active")[0].scrollIntoView({ block: "nearest" });
+                    }
+                }
+            });
+
+            // Dropdown link click handler
+            $links.on("click", function (e) {
+                e.preventDefault();
+                const $target = $($(this).attr("href"));
+                $accAreas.removeClass("active");
+                $target.closest(".accArea").addClass("active");
+                $("html, body").animate({ scrollTop: $target.offset().top - 110 }, 500);
+                $glysArea.removeClass("active");
+                $input.val("");
+            });
+
+            // Image click to clear
+            $img.on("click", function () {
+                $glysArea.removeClass("active");
+                $input.val("");
+            });
+
+            // Accordion toggle
+            $headings.on("click", function () {
+                const $accArea = $(this).closest(".accArea");
+                $accAreas.not($accArea).removeClass("active");
+                $accArea.toggleClass("active");
+            });
+        });
+
+        // Click outside to close all
+        $(document).on("click", function () {
+            $(".glySec .glySearch .glysArea").removeClass("active");
+            $(".glySec .glySearch input").val("");
+        });
+    });
+</script> -->
+</body>
+</html>
