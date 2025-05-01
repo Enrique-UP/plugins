@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section id="mySection">
+  <h1>Example 1</h1>
+  <h2>Redirect using click()</h2>
+  <a id="myLink" href="https://www.example.com" target="_blank">Go to Example.com</a>
+
+  <!-- <script>
+  // By using setTimeout it will be redirect only one click on document.
+  // By using setInterval it will be redirect many time click on document.
+  setTimeout(() => {
+    document.getElementById("myLink").click();
+    // It means when we click on document then this click will be work on myLink id. myLink id link will be redirect after 2 seconds.
+  }, 2000); // redirect after 2 seconds
+  </script> -->
+  <script>
+    document.getElementById('mySection').onclick = function() {
+      setTimeout(function() {
+        document.getElementById('myLink').click();
+      }, 2000);
+    };
+  </script>
+</section>
+<hr>
+<section>
+  <h2>Simulate Checkbox Click</h2>
+  <p>
+    <input type="checkbox" id="hiddenCheck" onchange="checkStatus()">
+    Checkbox is now : <span></span>
+  </p>
+  <br>
+  <button onclick="toggleCheck()">Toggle Checkbox</button>
+  <p>If we click on checkbox or button, then on both click this will be work.</p>
+  <script>
+      hiddenCheck.checked = false;
+      
+      function toggleCheck() {
+          hiddenCheck.click();
+      }
+      function checkStatus() {
+          document.querySelector("p > span").innerHTML = "-" + (hiddenCheck.checked ? "Checked" : "UnChecked");
+      }
+  </script>
+</section>
+</body>
+</html>
