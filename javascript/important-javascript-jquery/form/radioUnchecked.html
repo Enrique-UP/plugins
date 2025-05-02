@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No Toggle Radio</title>
+</head>
+<body>
+  <form>
+
+    <div class="radioSec">
+      <h2>Do you agree?</h2>
+      <label>
+        <input type="radio" value="yes"> Yes
+      </label><br>
+      <label>
+        <input type="radio" value="no"> No
+      </label>
+    </div>
+    <hr>
+    <div class="radioSec">
+      <h2>Do you agree?</h2>
+      <label>
+        <input type="radio" value="yes"> Yes
+      </label><br>
+      <label>
+        <input type="radio" value="no"> No
+      </label>
+    </div>
+
+  </form>
+
+  <script>
+    (function(){
+      const radioSec = document.querySelectorAll(".radioSec");
+      radioSec.forEach(function(rs, i){
+        rs.querySelectorAll("input[type='radio']").forEach(function(input){
+          input.name = "name" + i;
+          input.checked = false; // Initially uncheck all radios
+          input.dataset.checked = "false"; // Initialize custom flag
+
+          input.addEventListener("click", function(){
+            if(input.dataset.checked === "true"){
+              // If already selected, uncheck and reset the flag
+              input.checked = false;
+              input.dataset.checked = "false";
+            }else{
+              // First, reset all radios' flags
+              input.closest(".radioSec").querySelectorAll("input[type='radio']").forEach(r => r.dataset.checked = "false");
+              // Then, check the clicked radio and set the flag
+              input.dataset.checked = "true";
+            }
+          });
+        });
+      });
+    })();
+  </script>
+  
+</body>
+</html>
