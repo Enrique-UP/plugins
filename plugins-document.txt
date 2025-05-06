@@ -24,8 +24,8 @@ For the best user experience use Google Chrome
 	https://clideo.com/cut-audio
 	https://mp3cut.net/
 
-6)- filedatech software for modified, accessed, created changes date.
+6)- Filedatech software for modified, accessed, created changes date.
 	(https://www.nirsoft.net/utils/filedatech.html) download from the given link.
 
-7)- facebook video downloading
+7)- Facebook video downloading
 	https://fdown.net/
