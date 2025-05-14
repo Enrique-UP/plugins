@@ -4,7 +4,7 @@ Mridul Srivastava tutorial
 
 
 
-
+How to create new repository on git after that uploads file from the local system to live on git.
 01. Open folder in vs code =>
 02. Signin on github account =>
 03. Go to top right corner (or click on profile) on github =>
@@ -35,7 +35,7 @@ Done.
 26. check github url then this ui changed automatically after that.
 27. paste files in local folder after that upload.
 
-
+==========================================================================================
 
 How do we clone git to local.
 1. open vs code.
@@ -50,7 +50,8 @@ For delete repository from live github.com
 Go inside the folder which you want to delete => settings => scroll down => Delete this repository => 
 
 
-
+For rename
+Go inside the folder which you want to rename => settings => General => Repository name (type desired name) => Rename.
 
 
 
