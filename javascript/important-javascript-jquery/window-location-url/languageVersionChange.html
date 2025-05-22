@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anchor Tags Example</title>
+</head>
+<body>
+  <ul id="nav">
+    <li><a href="#one">One</a></li>
+    <li><a href="#two">Two</a></li>
+    <li><a href="#three">Three</a></li>
+  </ul>
+
+  <a class="link" href="en">English</a><br>
+  <a class="link" href="ar">Arabic</a><br>
+  <a class="link" href="ng">Nigerian</a><br>
+  <a class="link" href="uk">UK</a>
+
+  <script>
+    function updateLinksWithHash() {
+      const hash = window.location.hash;
+      document.querySelectorAll('.link').forEach(link => {
+        let base = link.getAttribute('href').split('#')[0];
+        link.setAttribute('href', hash ? base + hash : base);
+      });
+    }
+    updateLinksWithHash();
+    window.addEventListener('hashchange', updateLinksWithHash);
+  </script>
+</body>
+</html>

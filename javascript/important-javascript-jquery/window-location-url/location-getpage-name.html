@@ -8,18 +8,19 @@
 </head>
 <body>
     <pre>
-        window.location.host        www.example.com:8082
-        window.location.hostname    www.example.com
-        window.location.port        8082
-        window.location.protocol    http:
-        window.location.pathname    index.php
-        window.location.href        http://www.example.com:8082/index.php#tab2
-        window.location.hash        #tab2
-        window.location.search      ?foo=789
-        window.location.origin      https://example.com
+        window.location.host                www.example.com:8082
+        window.location.hostname            www.example.com
+        window.location.port                8082
+        window.location.protocol            http:
+        window.location.pathname            index.php
+        window.location.href                http://www.example.com:8082/index.php#tab2
+        window.location.split('#')[0]       http://www.example.com:8082/index.php
+        window.location.hash                #tab2
+        window.location.search              ?foo=789
+        window.location.origin              https://example.com
 
         =======================================================================
-        document.domain             www.example.com
+        document.domain                     www.example.com
         let dmn = "www.example.com";
         console.log("Replace www = " + dmn.replace("www.", "")); // example.com
     </pre>
@@ -56,6 +57,10 @@
         //let dmn = "example.com";
         let dmn = "www.example.com";
         console.log("Replace www = " + dmn.replace("www.", ""));
+    </script>
+    <script>
+        const a = "abc.com/about#one"
+        console.log(a.split('#')[0]);
     </script>
 </body>
 </html>
