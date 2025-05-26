@@ -1,5 +1,6 @@
 https://www.pixelcut.ai/home
 https://www.pixelcut.ai/cleanup-pictures
+https://www.photoroom.com/tools/remove-object-from-photo
 (Magic Eraser)
 https://www.pixelcut.ai/t/uncrop
 (Image Extend/Expand)
@@ -27,4 +28,21 @@ Go to => (Select) menu => modify => Expand => 1px => ok
 Go to => (Edit) menu => fill => content-aware select => ok
 After some time the image will be similar fill by automatically.
 
+==========================================================================================================
+For changing man or object
+https://www.phot.ai/user-activity?tool=object-replacer
+
+Face Swap
+https://aifaceswap.io/ai-face-and-body-generator/#app-playground
+
+https://www.aiease.ai/app/swap-face
+https://remaker.ai/face-swap-free/
+https://pixlr.com/face-swap/
+https://www.pica-ai.com/face-swap/
+https://www.fotor.com/apps/swapper/
+https://faceswapper.ai/swapper
+https://mangoanimate.com/ai/face-swap
+
+Background Remove
+https://remaker.ai/features/remove-background/
 ==========================================================================================================
