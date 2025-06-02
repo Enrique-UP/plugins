@@ -4,6 +4,7 @@ https://www.photoroom.com/tools/remove-object-from-photo
 (Magic Eraser)
 https://www.pixelcut.ai/t/uncrop
 (Image Extend/Expand)
+https://www.pixelcut.ai/ai-image-editor?tool=generativeFill
 
 ==========================================================================================================
 For photo restoration (It means for old image convert in good quality)
@@ -33,6 +34,10 @@ For changing man or object
 https://www.phot.ai/user-activity?tool=object-replacer
 
 Face Swap
+https://www.miocreate.com/face-swap.html 
+in good quality but 1 in one day
+
+https://aifaceswap.io/
 https://aifaceswap.io/ai-face-and-body-generator/#app-playground
 
 https://www.aiease.ai/app/swap-face
