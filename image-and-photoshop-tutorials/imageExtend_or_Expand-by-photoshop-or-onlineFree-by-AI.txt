@@ -51,3 +51,5 @@ https://mangoanimate.com/ai/face-swap
 Background Remove
 https://remaker.ai/features/remove-background/
 ==========================================================================================================
+Image liqufy
+https://pixlr.com/express/?tool=liquify
