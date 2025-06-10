@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.box {
+  border: 2px solid green;
+  background-color: beige;
+  font-family: monospace;
+  font-size: 20px;
+  
+  & > a {
+    color: green;
+    
+    &:hover {
+      color: white;
+      background-color: red;
+    }
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>Demo of the nesting (&) Selector</h1>
+
+<div class="box">
+This text contains a <a href="#">link</a>. Hover over the link to see the effect.
+</div>
+
+</body>
+</html>
