@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Swiper demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="./style.css" type="text/css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+	<main class="upcomingWebinars">
+		<div class="swiper-container gallery-thumbs">
+			<div class="swiper-wrapper dates"></div>
+			<div class="swiper-button-next swiper-button-white"></div>
+			<div class="swiper-button-prev swiper-button-white"></div>
+		</div>
+		<div class="swiper-container gallery-big">
+			<div class="swiper-wrapper details"></div>
+		</div>
+	</main>
+	<script src="./data.js"></script>
+    <script src="./script.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script>
+		var galleryThumbs = new Swiper('.gallery-thumbs', {
+			spaceBetween: 10,
+			slidesPerView: 1,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			breakpoints: {
+				361: {
+					slidesPerView: 3,
+				},
+				576: {
+					slidesPerView: 4,
+				},
+				768: {
+					slidesPerView: 5,
+				},
+				992: {
+					slidesPerView: 6,
+				},
+				1200: {
+					spaceBetween: 48,
+					slidesPerView: 6,
+				}
+			}
+		});
+		var galleryTop = new Swiper('.gallery-big', {
+			autoHeight: true,
+			spaceBetween: 10,
+			effect: "fade",
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			},
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
+		});
+	</script>
+	<script>
+		document.querySelector('.gallery-big .details').style.height = "";
+	</script>
+</body>
+</html>

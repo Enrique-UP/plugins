@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="replace">
+    <p>replace para tag</p>
+  </div>
+
+  <script>
+    const element = document.querySelector('.replace');
+    if (document.body.contains(element)) {
+      element.outerHTML = `
+        <div class="new">
+          <h1>replace new tag by js outerhtml</h1>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

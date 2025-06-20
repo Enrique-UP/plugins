@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <style>
+    ul {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      list-style: none;
+      font-family: sans-serif;
+      font-size: 20px;
+    }
+    li {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    span {
+      display: block;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+<h1>Write the future date</h1>
+<ul data-date="20 June 2050, 20 Hours:30 Minutes:30 Seconds">
+  <li><b>00</b><span>DAYS</span></li>
+  <li><b>00</b><span>HRS</span></li>
+  <li><b>00</b><span>MINS</span></li>
+  <li><b>00</b><span>SECS</span></li>
+</ul>
+
+<ul data-date="19 June 2055, 11 Hours:30 Minutes:30 Seconds">
+  <li><b>00</b><span>DAYS</span></li>
+  <li><b>00</b><span>HRS</span></li>
+  <li><b>00</b><span>MINS</span></li>
+  <li><b>00</b><span>SECS</span></li>
+</ul>
+
+<!-- <script>
+  function startCountdown(ul) {
+    const bTags = ul.querySelectorAll('li b');
+    const dateStr = ul.getAttribute('data-date');
+
+    // Parse the custom date format: "18 June 2025, 13 Hours:30 Minutes:30 Seconds"
+    const dateMatch = dateStr.match(/(\d{1,2}) (\w+) (\d{4}), (\d{1,2}) Hours:(\d{1,2}) Minutes:(\d{1,2}) Seconds/);
+    if (!dateMatch) return;
+
+    const [ , day, monthName, year, hours, minutes, seconds ] = dateMatch;
+    const targetDate = new Date(`${day} ${monthName} ${year} ${hours}:${minutes}:${seconds}`);
+
+    function update() {
+      const now = new Date();
+      let diff = Math.floor((targetDate - now) / 1000);
+
+      if (diff < 0) diff = 0;
+
+      const days = Math.floor(diff / 86400);
+      diff %= 86400;
+
+      const hrs = Math.floor(diff / 3600);
+      diff %= 3600;
+
+      const mins = Math.floor(diff / 60);
+      const secs = diff % 60;
+
+      bTags[0].textContent = String(days).padStart(2, '0');
+      bTags[1].textContent = String(hrs).padStart(2, '0');
+      bTags[2].textContent = String(mins).padStart(2, '0');
+      bTags[3].textContent = String(secs).padStart(2, '0');
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  document.querySelectorAll('ul[data-date]').forEach(startCountdown);
+</script> -->
+
+
+<!-- Include jQuery CDN in your HTML head or before the script -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  function startCountdown($ul) {
+    const $bTags = $ul.find('li b');
+    const dateStr = $ul.data('date');
+
+    // Parse the custom date format
+    const dateMatch = dateStr.match(/(\d{1,2}) (\w+) (\d{4}), (\d{1,2}) Hours:(\d{1,2}) Minutes:(\d{1,2}) Seconds/);
+    if (!dateMatch) return;
+
+    const [ , day, monthName, year, hours, minutes, seconds ] = dateMatch;
+    const targetDate = new Date(`${day} ${monthName} ${year} ${hours}:${minutes}:${seconds}`);
+
+    function update() {
+      const now = new Date();
+      let diff = Math.floor((targetDate - now) / 1000);
+
+      if (diff < 0) diff = 0;
+
+      const days = Math.floor(diff / 86400);
+      diff %= 86400;
+
+      const hrs = Math.floor(diff / 3600);
+      diff %= 3600;
+
+      const mins = Math.floor(diff / 60);
+      const secs = diff % 60;
+
+      $bTags.eq(0).text(String(days).padStart(2, '0'));
+      $bTags.eq(1).text(String(hrs).padStart(2, '0'));
+      $bTags.eq(2).text(String(mins).padStart(2, '0'));
+      $bTags.eq(3).text(String(secs).padStart(2, '0'));
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  $(document).ready(function () {
+    $('ul[data-date]').each(function () {
+      startCountdown($(this));
+    });
+  });
+</script>
+</body>
+</html>
