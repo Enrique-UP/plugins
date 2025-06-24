@@ -8,7 +8,7 @@ body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.6;
 .upcomingWebinars .swiper-button-next::after{font-size: 14px;font-weight: bold;}
 .upcomingWebinars .swiper-slide :empty:not(img){display: none;}
 /* .upcomingWebinars .dates{display: flex;flex-wrap: wrap;justify-content: center;gap:16px;margin-bottom: 16px;} */
-.upcomingWebinars .uwTab{width:100%;display: flex;flex-direction: column;background: #F6F9F8;border: 1px solid #DFE2E6;border-radius: 16px;padding:12px;text-align: center;align-items: center;color: #000;line-height: 1;}
+.upcomingWebinars .uwTab{width:100%;display: flex;flex-direction: column;background: #F6F9F8;border: 1px solid #DFE2E6;border-radius: 16px;padding:12px;text-align: center;align-items: center;color: #000;line-height: 1;cursor: pointer;}
 .upcomingWebinars .uwTab > *:not(:last-child){margin-bottom: 8px;}
 .upcomingWebinars .uwTab .day{background: rgba(15, 79, 83, 0.15);padding:6px 12px;text-transform: uppercase;border-radius: 16px;}
 .upcomingWebinars .uwTab .date{font-size: 24px;}
@@ -32,6 +32,7 @@ body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.6;
 .upcomingWebinars .uwDetails > *:not(:last-child){margin-right: 40px;}
 .upcomingWebinars .uwDetails ~ .uwDetails{margin-top: 32px;}
 .upcomingWebinars .uwDetails .image{display: flex;align-items: flex-start;border-radius: 8px;overflow: hidden;flex-shrink: 0;}
+.upcomingWebinars .uwDetails .image > img{object-fit: cover;}
 .upcomingWebinars .uwDetails .text{width: 100%;display: flex;flex-direction: column;}
 .upcomingWebinars .uwDetails .text :last-child{margin-bottom: 0 !important;}
 .upcomingWebinars .uwDetails .text .tags{display: flex;align-items: flex-start;gap:8px;line-height: 1;margin-bottom: 8px;text-align: center;flex-wrap: wrap;}

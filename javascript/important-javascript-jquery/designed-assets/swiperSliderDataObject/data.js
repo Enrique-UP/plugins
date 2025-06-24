@@ -1,12 +1,12 @@
-const imgLink = "file:///C:/Users/noman.na/Downloads/";
+const imgLink = "../../../../images/2.jpg";
 const datesWithDetails = [
   {
-    date: "Friday, Jun 25 2025",
+    date: "Friday, Jun 23 2025",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
-        time: "14:22:30 | AEDTs",
+        time: "15:18:20 | AEDTs",
         hd: "Portfolio lorem",
         shd: "Portfolio lorem1",
         analyst: [
@@ -16,9 +16,9 @@ const datesWithDetails = [
         ]
       },
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
-        time: "00:00:0 | AEDTs",
+        time: "15:18:29 | AEDTs",
         hd: "Portfolio lorem",
         shd: "Portfolio lorem1",
         analyst: [
@@ -33,7 +33,7 @@ const datesWithDetails = [
     date: "Saturday, Jun 14 2026",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -49,7 +49,7 @@ const datesWithDetails = [
     date: "Saturday, Jan 14 2025",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -65,7 +65,7 @@ const datesWithDetails = [
     date: "Thursday, Jun 12 2026",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "English",
         time: "19:30 | AEDTaa",
         hd: "Portfolio de Inversion en Trading",
@@ -73,12 +73,16 @@ const datesWithDetails = [
         analyst: [{ type: 'text', value: "Laura Solorzano, Market Analysis dolor" }],
       },
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "SPANISH",
         time: "21:40 | AEDTdd",
         hd: "Portfolio ipsum",
         shd: "Portfolio lorem4",
         analyst: [
+          { type: 'p', items: ["<b>Laura Solorzano</b>", "Market Analysis lorem"] },
+          { type: 'ul', items: ["Laura Solorzano", "Market Analysis lorem"] },
+          { type: 'p', items: ["Laura Solorzano", "Market Analysis lorem"] },
+          { type: 'ol', items: ["Laura Solorzano", "Market Analysis lorem"] },
           { type: 'p', items: ["Laura Solorzano", "Market Analysis lorem"] },
           { type: 'ul', items: ["Laura Solorzano", "Market Analysis lorem"] },
           { type: 'ol', items: ["Laura Solorzano", "Market Analysis lorem"] },
@@ -86,7 +90,7 @@ const datesWithDetails = [
         ]
       },
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -101,7 +105,7 @@ const datesWithDetails = [
     date: "Friday, July 13 2025",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "English",
         time: "19:30 | AEDTaa",
         hd: "Portfolio de Inversion en Trading",
@@ -109,7 +113,7 @@ const datesWithDetails = [
         analyst: [{ type: 'text', value: "Laura Solorzano, Market Analysis dolor" }],
       },
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "SPANISH",
         time: "21:40 | AEDTdd",
         hd: "Portfolio ipsums",
@@ -126,7 +130,7 @@ const datesWithDetails = [
     date: "Saturday, Aug 14 2025",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -142,7 +146,7 @@ const datesWithDetails = [
     date: "Saturday, Aug 16 2075",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -158,7 +162,7 @@ const datesWithDetails = [
     date: "Saturday, Aug 24 2084",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -174,7 +178,7 @@ const datesWithDetails = [
     date: "Saturday, Aug 30 2025",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -190,7 +194,7 @@ const datesWithDetails = [
     date: "Saturday, Aug 24 2026",
     details: [
       {
-        img: `${imgLink}uw.png`,
+        img: `${imgLink}`,
         language: "French",
         time: "18:50 | AEDTs",
         hd: "Portfolio lorem",
@@ -203,19 +207,3 @@ const datesWithDetails = [
     ]
   }
 ];
-
-datesWithDetails.forEach(e => {
-  e.details.sort((a, b) => {
-    const parseTime = (timeStr) => {
-      const [time] = timeStr.split('|').map(s => s.trim());
-      const [hours, minutes] = time.split(':').map(Number);
-      return new Date(0, 0, 0, hours, minutes);
-    };
-    return parseTime(a.time) - parseTime(b.time);
-  });
-});
-
-datesWithDetails.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-
-
