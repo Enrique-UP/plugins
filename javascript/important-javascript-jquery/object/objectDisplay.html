@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Event List</title>
+<style>
+  *{padding:0;margin:0;box-sizing: border-box;}
+  body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    padding: 20px;
+  }
+  .item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+  }
+  .item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 16px;
+    object-fit: cover;
+  }
+  .item .info {
+    display: flex;
+    flex-direction: column;
+  }
+  .date {
+    color: #888;
+    font-size: 0.9em;
+  }
+  .title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<ul id="year"></ul>
+<div id="container"></div>
+
+<script>
+  const data = [
+    { date: "01-01-2025", title: "Start", img: "" },
+    { date: "05-01-2025", title: "Project Kickoff Meeting", img: "" },
+    { date: "10-01-2025", title: "Team Building Activity", img: "" },
+    { date: "15-01-2025", title: "Design Review", img: "" },
+    { date: "20-01-2025", title: "Product Launch", img: "" },
+    { date: "25-01-2025", title: "Client Feedback Session", img: "" },
+    { date: "01-02-2025", title: "Development Sprint Begins", img: "" },
+    { date: "07-02-2025", title: "Code Review", img: "" },
+    { date: "14-02-2025", title: "Valentine's Day Celebration", img: "" },
+    { date: "18-02-2025", title: "Marketing Campaign", img: "" },
+    { date: "22-02-2025", title: "Testing Phase", img: "" },
+    { date: "28-02-2025", title: "Product Beta Release", img: "" },
+    { date: "01-03-2025", title: "User Feedback Analysis", img: "" },
+    { date: "07-03-2025", title: "Performance Optimization", img: "" },
+    { date: "15-03-2025", title: "Final Product Release", img: "" },
+    { date: "01-01-1992", title: "End", img: "" }
+  ];
+
+  // reverse the order
+  data.reverse().forEach((item, index) => {
+    const year = document.getElementById('year');
+    if(year){
+      const [dd, mm, yy] = item.date.split("-");
+      document.getElementById('year').innerHTML += `
+        <li style="display:none;">${yy}</li>
+        <li>${item.date.split('-')[2]}</li>
+      `;
+    }
+    
+    const container = document.getElementById('container');
+    if(container){
+      container.innerHTML += `
+        <div class="item">
+          <img data-src="./images/${item.img}.webp" loading="lazy" width="" height="">
+          <div class="info">
+              <div class="date">${item.date}</div>
+              <div class="title">${item.title}</div>
+          </div>
+        </div>
+      `;
+    }
+  });
+
+  // IntersectionObserver for lazy-loading images
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        img.removeAttribute('data-src');
+        observer.unobserve(img);
+      }
+    });
+  });
+  lazyImages.forEach(img => imageObserver.observe(img));
+</script>
+
+</body>
+</html>
