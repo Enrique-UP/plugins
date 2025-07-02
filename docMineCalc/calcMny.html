@@ -9,7 +9,7 @@
         table{border:1px solid #000;width: 100%;max-width: 800px;margin-inline:auto;border-collapse: collapse;}
         table:not(:last-child){margin-bottom: 50px;}
         table caption, table th, table td{border:1px solid #000;vertical-align: top;padding:5px;}
-        table caption {display: table-caption;caption-side: top;text-align: center;border-top: none;font-weight: bold;color:#fff;background: gray;font-size: 16px;}
+        table caption {display: table-caption;caption-side: bottom;text-align: center;border-top: none;font-weight: bold;color:#fff;background: gray;font-size: 16px;}
         table thead td, table tfoot td{font-weight: bold;color:#fff;background: lightslategray;width: 25%;font-size: 16px;}
         table ol, table ul{padding-left: 16px;}
         table tbody td:nth-child(3){word-break: break-all;}
@@ -26,15 +26,47 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>Aug-2024</td><td>Fthr Bk</td><td></td><td>563000</td></tr>
-            <tr><td>Jan-2025</td><td>Asm Bk</td><td></td><td>800000</td></tr>
-            <tr><td>May-2025</td><td>Fthr+Mne Csh</td><td>300000+1000000</td><td>400000</td></tr>
-            <tr><td>Jun-2025</td><td>Fthr+Mne Csh</td><td></td><td>35000</td></tr>
-            <tr><td>Jun-2025</td><td>Fthr+Mne Csh</td><td></td><td>25000</td></tr>
-            <tr><td>Jun-2025</td><td>Mne Csh</td><td></td><td>2000</td></tr>
+            <tr><td>Aug-2024</td><td>Fthr Bk</td><td></td><td>563,000</td></tr>
+            <tr><td>Jan-2025</td><td>Asm Bk</td><td></td><td>800,000</td></tr>
         </tbody>
-        <tfoot><tr><td colspan="3">Total</td><td></td></tr></tfoot>
+        <tfoot><tr><td colspan="3">Total Bk</td><td></td></tr></tfoot>
     </table>
+
+
+
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Date</td>
+                <td>Where</td>
+                <td>How</td>
+                <td>Amount</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>May-2025</td><td>Fthr+Mne Csh</td><td>300000 + 100000</td><td>400000</td></tr>
+            <tr><td>Jun-2025</td><td>Fthr+Mne Csh</td><td>35000 + 2000</td><td>37000</td></tr>
+            <tr><td>Jun-2025</td><td>Fthr+Mne Csh</td><td></td><td>25,000</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="3">Total Csh</td><td></td></tr></tfoot>
+    </table>
+
+
+
+
+
+
+    <table class="total">
+        <tfoot><tr><td colspan="3" style="width:75%;">Total of Above Both</td><td></td></tr></tfoot>
+    </table>
+
+
+
+
+
 
     <table class="table">
         <thead>
@@ -42,14 +74,18 @@
         </thead>
         <tbody>
             <tr><td>Jun-2025</td><td>Mne Csh</td><td></td><td>12000</td></tr>
-            <tr><td>Jun-2025</td><td>IC Bk</td><td>42000+68000</td><td>110000</td></tr>
-            <tr><td>Jun-2025</td><td>Distiribute</td><td>35000, 2000</td><td></td></tr>
+            <tr><td>Jun-2025</td><td>IC Bk</td><td></td><td>111000</td></tr>
         </tbody>
-        <tfoot><tr><td colspan="3">Total</td><td></td></tr></tfoot>
+        <tfoot><tr><td colspan="3">Total Mne</td><td></td></tr></tfoot>
     </table>
 
+
+
+
+    
+
     <table class="totalTable">
-        <caption>16-June-2025</caption>
+        <caption>Updated Date Here...</caption>
         <tfoot><tr><td colspan="3" style="width:75%;">Grand Total</td><td></td></tr></tfoot>
     </table>
 
@@ -61,42 +97,87 @@
 
 
 
-
-
+    
 
     <script>
         let grandTotal = 0;
+        let firstTwoTotal = 0;
 
-        document.querySelectorAll(".table").forEach(table => {
-            let total = 0;
-            table.querySelectorAll("tbody td:nth-child(4)").forEach(td => {
-                const value = parseFloat(td.textContent.trim());
-                if (!isNaN(value)) total += value;
+        function parseAmountString(str) {
+            if (!str) return 0;
+            return str
+                .split('+')
+                .map(part => parseInt(part.replace(/,/g, '').trim()))
+                .filter(n => !isNaN(n))
+                .reduce((sum, val) => sum + val, 0);
+        }
+
+        function formatHowText(text) {
+            return text
+                .split('+')
+                .map(part => {
+                    let num = parseInt(part.replace(/,/g, '').trim());
+                    return !isNaN(num) ? num.toLocaleString("en-IN") : part.trim();
+                })
+                .join(' + ');
+        }
+
+        const tables = document.querySelectorAll(".table");
+
+        tables.forEach((table, index) => {
+            let tableTotal = 0;
+
+            table.querySelectorAll("tbody tr").forEach(row => {
+                const howTd = row.children[2];
+                const amountTd = row.children[3];
+
+                if (howTd.textContent.trim()) {
+                    howTd.textContent = formatHowText(howTd.textContent);
+                }
+
+                let amountText = amountTd.textContent.trim();
+                let amount = parseInt(amountText.replace(/,/g, ''));
+
+                if (!amountText || isNaN(amount)) {
+                    amount = parseAmountString(howTd.textContent);
+                    amountTd.textContent = amount.toLocaleString("en-IN");
+                } else {
+                    amountTd.textContent = amount.toLocaleString("en-IN");
+                }
+
+                tableTotal += amount;
             });
 
             const totalCell = table.querySelector("tfoot td:last-child");
             if (totalCell) {
-                totalCell.textContent = total.toLocaleString();
-                grandTotal += total;
+                totalCell.textContent = tableTotal.toLocaleString("en-IN");
+                grandTotal += tableTotal;
+                if (index < 2) {
+                    firstTwoTotal += tableTotal;
+                }
             }
         });
 
-        // Set the grand total in totalTable
-        const grandTotalCell = document.querySelector(".totalTable tfoot tr td:last-child");
+        // Set total of first two tables
+        const totalOfFirstTwo = document.querySelector(".total tfoot td:last-child");
+        if (totalOfFirstTwo) {
+            totalOfFirstTwo.textContent = firstTwoTotal.toLocaleString("en-IN");
+        }
+
+        // Set grand total
+        const grandTotalCell = document.querySelector(".totalTable tfoot td:last-child");
         if (grandTotalCell) {
-            grandTotalCell.textContent = grandTotal.toLocaleString();
+            grandTotalCell.textContent = grandTotal.toLocaleString("en-IN");
         }
     </script>
+
     <script>
-        // document.querySelector("caption").textContent =  document.lastModified;
-                
         const modifiedDate = new Date(document.lastModified);
         const day = String(modifiedDate.getDate()).padStart(2, '0');
-        const month = String(modifiedDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+        const month = String(modifiedDate.getMonth() + 1).padStart(2, '0');
         const year = modifiedDate.getFullYear();
         const formattedDate = `${day}-${month}-${year}`;
         document.querySelector("caption").textContent = formattedDate;
     </script>
-
 </body>
 </html>
