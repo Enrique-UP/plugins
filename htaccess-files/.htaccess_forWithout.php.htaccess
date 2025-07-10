@@ -1,0 +1,9 @@
+# Turn on the URL rewriting engine
+RewriteEngine On
+
+# Make sure the request is not for an actual file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL to .php file if it exists
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]

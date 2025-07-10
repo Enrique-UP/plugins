@@ -1,17 +1,41 @@
-mixin hArea(e, ulList)
-    .hArea 
-        img(src=e.img, alt="").image
+mixin hArea(e, list)
+    .hArea
+        img(src=e.img, alt="")
         .text
-            .hd Lorem ipsum dolor sit amet
-            if ulList
-                ul
-                    - for (var i = 0; i < ulList.length; i++)
-                    li= ulList[i]
-            if e.text
-                p=e.text
-+hArea({img: "./assets/images/logo.png"}, ["one", "two", "three"])
-+hArea({img: "./assets/images/logo.png", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"}, ["one", "two"])
-+hArea({img: "./assets/images/logo.png", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, facere!"})
+        .hd Heading here...
+        if list && list.length
+            ul
+            - for (var i = 0; i < list.length; i++)
+                li= list[i]
+        if e.text
+            p= e.text
+
++hArea({ img: "./assets/images/logo.png" }, ["one", "two", "three"])
++hArea({ img: "./assets/images/logo.png", text: "Some description text." }, ["first", "second"])
++hArea({ img: "./assets/images/logo.png", text: "Only image and text without list." })
+
+=====================================================================================================================================================
+
+mixin data2(e, stars)
+    .item
+        .review 
+            img(src=`./assets/images/testi${e.img2}.webp`, width="56", height="56", alt="")
+            p.name= e.name2
+            p.city= e.place2
+            if stars && stars.length
+                p.stars
+                    - for (var i = 0; i < stars.length; i++)
+                        span.icon &#x2605;
+            p.txt= e.txt2
+- const nameList2 = ["One", "Two", "Three", "Four"]
+- const placeList2 = ["1,1", "22", "33", "44"]
+- const txtList2 = ["Text1.", "Text2", "Text3", "Text4"]
+- const starRatings = [5, 3, 4, 3]
+- const starArrayList = starRatings.map(count => Array(count).fill("&#x2605;"))
+section.section
+    - for (let i2 = 0; i2 < 4; i2++)
+        +data2({img2: i2 + 1, name2: nameList2[i2], place2: placeList2[i2], txt2: txtList2[i2]}, starArrayList[i2])
+
 
 =====================================================================================================================================================
 
@@ -42,6 +66,27 @@ mixin data(e)
 +data({tab:"tab-1", date:"1"})
 +data({tab:"tab-2", date:"2"})
 +data({tab:"tab-3", date:"3"})
+
+=====================================================================================================================================================
+
+mixin data(e)
+    .col-3
+        a.options(href="")
+            img(src=`./assets/images/option${e.img}.webp` width=e.width height="56" alt="")
+            p.hd= e.hd
+            p.txt= e.txt
+    section.section.bg-gt
+        .container
+            .row 
+                .col-12
+                    hgroup.center
+                    h2 Top Insurance & Finance Options
+                    p Get Quotes Quickly. Just a click away!
+            .row
+                - const hdList = ["Life Insurance", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem"]
+                - const txtList = ["Lorem", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem", "Lorem"]
+                - for (let i = 0; i < 8; i++)
+                    +data({img: i + 1, width: "57", hd: hdList[i], txt: txtList[i]})
 
 =====================================================================================================================================================
 

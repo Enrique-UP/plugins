@@ -33,6 +33,10 @@ img{max-width: 100%;}
     .row{display:flex;flex-wrap:wrap;}
 }
 
+.vCenter{display: flex;align-items: center;}
+.hCenter{display: flex;justify-content: center;}
+.vhCenter{display: flex;align-items: center;justify-content: center;}
+
 [class*="col-"]{width: 100%;
     &.mAuto{margin-inline: auto;}
 }

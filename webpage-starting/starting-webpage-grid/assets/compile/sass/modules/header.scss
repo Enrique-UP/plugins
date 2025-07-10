@@ -57,6 +57,13 @@ header{padding-block: 12px;@extend %trans;border-bottom:1px solid var(--border);
     header menu:not(menu menu) > li > a{font-size: 14px;}
     header menu:not(menu menu)>li:not(:last-child) {margin-right: 16px;}
 }
+@media (min-width:1200px){
+    body{
+     &.back:has(header .navbar.active){overflow-y: auto;
+        &::before{left: 100%;}
+     }
+}
+}
 @media (max-width:1199px){
     header .navbar{position: fixed;top:0;left:-100%;height: 100%;background: #fff;z-index: 99999;align-items: flex-start;max-width: 284px;}
     header .fw {display: flex;justify-content: space-between;align-items: center;}

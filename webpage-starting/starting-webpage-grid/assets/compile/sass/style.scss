@@ -10,7 +10,7 @@
 html {scroll-behavior: smooth;}
 body{font-family: Arial, Helvetica, sans-serif;}
 
-a{@extend %trans;text-decoration: none;}
+a, button{@extend %trans;text-decoration: none;}
 b, strong{font-weight: bold;}
 img{@extend %userSelect;}
 

@@ -49,7 +49,36 @@ body{font-size: calc(var(--font-size) * 3);}
 }
 After that automatically change all column etc space correct.
 ===================================================================================================================================
+Both siblings selector by this previous and next
+<style type="text/css">
+    .box {width: 100%;display: flex;margin-bottom: 20px;}
+    .box > *{height: 30px;}
+    .box > span {background: red;}
+    .box > b {background: brown;}
 
+    .box > span:has(~ b) {width: 75%;}
+    .box > span~b {width: 25%;}
+    
+    /* .box:has(> span) > b{width: 100%;} */
+    .box:not(:has(> span)) > b {width: 100%;}
+    .box:not(:has(> b)) > span {width: 100%;}
+</style>
+
+<!-- Case 1: span followed by b -->
+<div class="box">
+    <span>Span + B</span>
+    <b>B element</b>
+</div>
+
+<!-- Case 2: only span -->
+<div class="box">
+    <span>Only Span</span>
+</div>
+
+<!-- Case 3: only b -->
+<div class="box">
+    <b>Only B</b>
+</div>
 ===================================================================================================================================
 
 ===================================================================================================================================
