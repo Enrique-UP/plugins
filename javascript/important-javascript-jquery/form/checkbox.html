@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkbox All / None / Default</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .controls {
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .active {
+      background-color: #28a745 !important;
+    }
+
+    .checkboxes label {
+      display: block;
+      margin: 6px 0;
+    }
+
+    .checkboxes input {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Checkbox Controls</h2>
+  <!-- Section 1 -->
+  <div data-selects="checkbox">
+    <div class="controls">
+      <button data-id="all" class="active">All</button>
+      <button data-id="none">None</button>
+      <button data-id="default">Default</button>
+    </div>
+    <div class="checkboxes">
+      <label><input type="checkbox" class="item" data-default="true">1 (Default)</label>
+      <label><input type="checkbox" class="item">2</label>
+      <label><input type="checkbox" class="item" data-default="true">3 (Default)</label>
+      <label><input type="checkbox" class="item">4</label>
+      <label><input type="checkbox" class="item" data-default="true">5 (Default)</label>
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <!-- Section 2 -->
+  <div data-selects="checkbox">
+    <div class="controls">
+      <button data-id="all">All</button>
+      <button data-id="none" class="active">None</button>
+      <button data-id="default">Default</button>
+    </div>
+    <div class="checkboxes">
+      <label><input type="checkbox" class="item" data-default="true">1 (Default)</label>
+      <label><input type="checkbox" class="item">2</label>
+      <label><input type="checkbox" class="item" data-default="true">3 (Default)</label>
+      <label><input type="checkbox" class="item">4</label>
+      <label><input type="checkbox" class="item" data-default="true">5 (Default)</label>
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <!-- Section 3 -->
+  <div data-selects="checkbox">
+    <div class="controls">
+      <button data-id="all">All</button>
+      <button data-id="none">None</button>
+      <button data-id="default" class="active">Default</button>
+    </div>
+    <div class="checkboxes">
+      <label><input type="checkbox" class="item" data-default="true">1 (Default)</label>
+      <label><input type="checkbox" class="item">2</label>
+      <label><input type="checkbox" class="item" data-default="true">3 (Default)</label>
+      <label><input type="checkbox" class="item">4</label>
+      <label><input type="checkbox" class="item" data-default="true">5 (Default)</label>
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <!-- Section 3 -->
+  <div data-selects="checkbox">
+    <div class="controls">
+      <button data-id="all" class="active">All</button>
+      <button data-id="none">None</button>
+    </div>
+    <div class="checkboxes">
+      <label><input type="checkbox" class="item" data-default="true">1 (Default)</label>
+      <label><input type="checkbox" class="item">2</label>
+      <label><input type="checkbox" class="item" data-default="true">3 (Default)</label>
+      <label><input type="checkbox" class="item">4</label>
+      <label><input type="checkbox" class="item" data-default="true">5 (Default)</label>
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('[data-selects="checkbox"]').forEach(section => {
+        const buttons = section.querySelectorAll(".controls button");
+        const checkboxes = section.querySelectorAll(".checkboxes .item");
+
+        function setAll() {
+          checkboxes.forEach(cb => cb.checked = true);
+        }
+
+        function setNone() {
+          checkboxes.forEach(cb => cb.checked = false);
+        }
+
+        function setDefault() {
+          checkboxes.forEach(cb => {
+            cb.checked = cb.dataset.default === "true";
+          });
+        }
+
+        function applyAction(id) {
+          if (id === "all") setAll();
+          else if (id === "none") setNone();
+          else if (id === "default") setDefault();
+        }
+
+        const activeButton = section.querySelector(".controls button.active");
+        if (activeButton) {
+          applyAction(activeButton.dataset.id);
+        }
+
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            buttons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            applyAction(button.dataset.id);
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- <script src="../../../jquery-2.2.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('[data-selects="checkbox"]').each(function () {
+        const $section = $(this);
+        const $buttons = $section.find('.controls button');
+        const $checkboxes = $section.find('.checkboxes .item');
+
+        function applyAction(id) {
+          if (id === "all") {
+            $checkboxes.prop('checked', true);
+          } else if (id === "none") {
+            $checkboxes.prop('checked', false);
+          } else if (id === "default") {
+            $checkboxes.each(function () {
+              const $cb = $(this);
+              $cb.prop('checked', $cb.data('default') === true);
+            });
+          }
+        }
+
+        // Apply initial active button action
+        const $activeButton = $buttons.filter('.active');
+        if ($activeButton.length) {
+          applyAction($activeButton.data('id'));
+        }
+
+        // Click event for buttons
+        $buttons.on('click', function () {
+          const $btn = $(this);
+          $buttons.removeClass('active');
+          $btn.addClass('active');
+          applyAction($btn.data('id'));
+        });
+      });
+    });
+  </script> -->
+</body>
+</html>

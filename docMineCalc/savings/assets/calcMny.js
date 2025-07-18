@@ -67,3 +67,19 @@ const grandTotalCell = document.querySelector(".totalTable tfoot td:last-child")
 if (grandTotalCell) {
     grandTotalCell.textContent = grandTotal.toLocaleString("en-IN");
 }
+
+
+
+
+
+
+function parseNumber(text) {
+    return parseFloat(text.replace(/,/g, '').trim()) || 0;
+}
+const elT12 = document.getElementById('t12');
+if (elT12) {
+    const t1 = parseNumber(document.getElementById('t1')?.textContent || '');
+    const t2 = parseNumber(document.getElementById('t2')?.textContent || '');
+    const total = t1 + t2;
+    elT12.textContent = total.toLocaleString();
+}

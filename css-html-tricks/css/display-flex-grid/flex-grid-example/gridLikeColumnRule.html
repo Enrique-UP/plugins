@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4-Row Grid Layout</title>
+  <style>
+    div {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      grid-auto-flow: column;
+      gap: 16px;
+      padding: 16px;
+      background-color: #f0f0f0;
+    }
+    div span {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>Item 1</span>
+    <span>Item 2</span>
+    <span>Item 3</span>
+    <span>Item 4</span>
+    <span>Item 5</span>
+    <span>Item 6</span>
+    <span>Item 7</span>
+    <span>Item 8</span>
+    <span>Item 9</span>
+  </div>
+</body>
+</html>

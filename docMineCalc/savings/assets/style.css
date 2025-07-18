@@ -16,3 +16,6 @@ table tbody ~ tfoot td{background: #0F172A ;}
 
 table ol, table ul{padding-left: 16px;}
 table tbody td:nth-child(3){word-break: break-all;}
+
+.btns{display: flex;justify-content: center;text-align: center;}
+.btns > a{text-decoration: none;background:brown;color:#fff;padding: 12px 24px;font-weight: bold;border-radius: 4px;}
