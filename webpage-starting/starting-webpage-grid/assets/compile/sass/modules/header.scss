@@ -1,5 +1,5 @@
 header{padding-block: 12px;@extend %trans;border-bottom:1px solid var(--border);background: #fff;
-    .fw{display: grid;grid-template-columns: 15% 70% 15%;}    
+    .fw{display: grid;grid-template-columns: 15% 70% 15%;align-items: center;}    
     .logo{display: flex;max-width: 220px;flex-shrink: 0;}    
     .navbar{width: 100%;@extend %center;@extend %transl;@extend %transd;
         .logoMob{display: none;max-width: 180px;flex-shrink: 0;}
@@ -70,7 +70,7 @@ header{padding-block: 12px;@extend %trans;border-bottom:1px solid var(--border);
     header .navbar .logoMob{display: flex;margin-block: 12px;}
     header .callMenu .menu{display: flex;}
     header navbar{padding: 0 8px;align-items: flex-start;height: 100vh;}
-    header menu:not(menu menu){flex-direction: column;border-top:1px solid var(--border);padding-block: 16px;flex-wrap: nowrap;overflow-y: auto;}
+    header menu:not(menu menu){flex-direction: column;border-top:1px solid var(--border);padding-block: 16px;flex-wrap: nowrap;overflow-y: auto;width: 100%;}
     header menu:not(menu menu)>li:not(:last-child) {margin-right: 0;margin-bottom: 16px;}
     header menu>li{flex-direction: column;}
     header menu:not(menu menu)>li>a{padding-block: 0;font-size: 18px;}

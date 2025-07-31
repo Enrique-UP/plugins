@@ -25,6 +25,7 @@ main {width:100%;overflow: hidden;@extend %fc;min-height:100vh;
     > *{width:100%;@extend %fc;}
     > .bg-gt{background-image: linear-gradient(to bottom, var(--g1), #fff 56px);}
     > .bg-gb{background-image: linear-gradient(to top, var(--g1), #fff 56px);}
+    > .bg-gtb{background: linear-gradient(to bottom, var(--g1), #fff 56px) top no-repeat, linear-gradient(to top, var(--g1), #fff 56px) bottom no-repeat;background-size: 100% 56px;}
     > .bg-1{background-color: var(--g1);}
     > .bg-2{background-color: var(--g2);}
     > .bg-d{background-color: var(--c1);
@@ -38,7 +39,6 @@ main {width:100%;overflow: hidden;@extend %fc;min-height:100vh;
         &::before{width: 20px;height: 20px;border-radius: 100%;background: var(--c1);position: absolute;top:3px;left:0;color:#fff;font-size: 12px;@extend %center;font-weight: bold;}
         &:not(:last-child){margin-bottom: 12px;}
         b, strong{font-weight: bold;}
-        > a{color:inherit;}
     }
 }
 .unlist > li::before{font-family: fontello;content:"\a021";}

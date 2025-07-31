@@ -30,7 +30,7 @@ img{max-width: 100%;}
 
 .container, .container-fluid{display: flex;flex-direction:column;
     :last-child:not(.row, [class*="col-"]){margin-bottom:0 !important;}
-    .row{display:flex;flex-wrap:wrap;}
+    .row{display:flex;flex-wrap:wrap;justify-content: center;}
 }
 
 .vCenter{display: flex;align-items: center;}
