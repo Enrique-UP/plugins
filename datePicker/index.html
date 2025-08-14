@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    <link rel="stylesheet" href="./flatpickr.min.css">
+    <style type="text/css">
+        @media (max-width: 767px) {
+            .flatpickr-calendar {
+                transform: scale(0.8);
+                transform-origin: top left;
+                width: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="dateInput1" placeholder="Select date">
+<br><br><br>
+<input type="text" id="dateInput2" placeholder="Select date">
+
+<script src="./flatpickr.js"></script>
+<script>
+    flatpickr("#dateInput1", {
+        inline: false,
+        dateFormat: "d-m-Y"
+    });
+    flatpickr("#dateInput2", {
+        inline: true,
+        dateFormat: "d-m-Y"
+    });
+</script>
+
+</body>
+</html>

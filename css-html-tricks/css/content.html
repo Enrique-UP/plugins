@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{font-size: 14px;font-family: Arial, Helvetica, sans-serif;line-height: 1.5;}
+
+        /* Spacing */
+        .section{padding-block: 80px;}
+        .sectionT{padding-top: 80px;}
+        .sectionB{padding-bottom: 80px;}
+        [class*="section"]{row-gap: 50px;position: relative;}
+        [class*="section"] .container{row-gap: 40px;}
+        [class*="section"] .container .row{row-gap: 30px;}
+        /* Spacing */
+        
+        /* Backgrounds */
+        .bg1{background-color: #eee;}
+        .bg2{background-color: mintcream;}
+        
+        .bgCt{}
+        .bgCb{}
+        
+        .bgGt{background-image: linear-gradient(to bottom, #eee, #fff 56px);}
+        .btGb{background-image: linear-gradient(to top, #eee, #fff 56px);}
+        .bgGtb{background: linear-gradient(to bottom, #eee, #fff 56px) top no-repeat, linear-gradient(to top, #eee, #fff 56px) bottom no-repeat;background-size: 100% 56px;}
+        
+        .bgD{background-color: #011f3d;
+            hgroup{
+                h1, h2, h3, h4, h5, h6, p{color:#fff;}
+            }
+        }
+        /* Backgrounds */
+
+        .content :last-child{margin-bottom: 0 !important;}
+        .content {display: flex;flex-direction: column;width: 100%;}
+        .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {font-size: 24px;font-weight: bold;line-height: 1.2;margin-bottom: 12px;}
+        .content ul, .content ol {display: flex;flex-direction: column;margin-bottom: 24px;padding: 0;}
+        .content h1:not(:first-child), .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child), .content h5:not(:first-child), .content h6:not(:first-child){margin-top: 18px;}
+        .content p, .content ul, .content ol {margin-bottom: 12px;}
+        .content i, .content em {font-style: italic;}
+        .content u {text-decoration: underline;}
+        .content b, .content strong {font-weight: bold;}
+        .content a {display: inline;color: green;}
+        .content a:hover, .content a:active, .content a:focus {text-decoration: none;}
+        .content ul > li, .content ol > li {list-style: none;position: relative;padding-left: 28px;}
+        .content ul > li:not(:last-child), .content ol > li:not(:last-child) {margin-bottom: 12px;}
+        .content ul > li::before, .content ol > li::before{width: 20px;height: 20px;border-radius: 100%;background: green;position: absolute;top: 3px;left: 0;color: #fff;font-size: 12px;display: flex;align-items: center;justify-content: center;font-weight: bold;}
+        .content ul > li::before{content: "✔";}
+        .content ol > li::before {content: "";}
+        .content ol {counter-reset: number;}
+        .content ol > li::before {counter-increment: number;content: counter(number);}
+
+
+        .bannerMob{width: 100%;display: none;flex-direction: column;text-align: center;background:rgb(246, 246, 246);padding-bottom:32px;}
+        .bannerMob .head{background: green;color: #fff;line-height: 1.2;padding-block: 10px;font-size: 16px;}
+        .bannerMob .cnt{width: 100%;display: flex;flex-direction: column;}
+        .bannerMob > img{margin-bottom: 32px;}
+        .bannerMob .cnt .hd{margin-bottom: 12px;line-height: 1.3;font-size: 20px;}
+        .bannerMob .cnt .shd{font-weight: bold;margin-bottom: 24px;font-size: 24px;line-height: 1.3;}
+        .bannerMob .cnt .btns{display: flex;justify-content: center;}
+        .bannerMob .cnt .btns> a{background: green;color: #fff;padding: 12px 16px;text-decoration: none;border-radius: 4px;font-weight: bold;font-size: 18px;}
+
+
+        .fixNum{width: 100%;display: none;justify-content: center;text-align: center;align-items: center;background: green;position: sticky;left: 0;bottom: 0;color:#fff;z-index: 9999;padding: 12px 16px;font-size: 18px;font-weight: bold;text-decoration: none;}
+        .fixNum > i{margin-right: 4px;}
+        .fixNum:hover, .fixNum:active, .fixNum:focus{color: #fff;}
+
+        @media (max-width:767px){
+            .list>li::before, .unlist>li::before{top:1px;}
+            .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {font-size: 20px;}
+            .content h1:not(:first-child), .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child), .content h5:not(:first-child), .content h6:not(:first-child) {margin-top: 8px;}
+
+            .bannerMob, .fixNum{display: flex;}
+        }
+    </style>
+</head>
+<body>
+    <section class="bannerMob">
+        <div class="head">
+            <div class="container">Need Help? We're Just a Click Away!</div>
+        </div>
+        <img src="../../sliders/owl-carousel/images/1.jpg" alt="">
+        <div class="cnt">
+            <div class="container">
+                <p class="hd">Reservations, Changes & Cancellations</p>
+                <p class="shd">24/7 Support To Keep You Moving</p>
+                <div class="btns">
+                    <a href="tel:+10000000000" target="_blank"><i class="fa-solid fa-phone"></i> Call Us (000) 000-0000</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="content">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <ul> 
+            <li>Lorem ipsum dolor sit amet, consectetur <a href="#">facere eius atque sequi aliquam</a> adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <ol> 
+            <li><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+            <li><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+            <li><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+        </ol>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit <a href="#">facere eius atque sequi aliquam</a> optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque <a href="#">facere eius atque sequi aliquam</a> sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.</p>
+        <ol> 
+            <li><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+            <li><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit libero ullam <a href="#">facere eius atque sequi aliquam</a> quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.</li>
+        </ol>
+    </div><!--content-->
+    <a href="tel:+1000000000" target="_blank" class="fixNum">
+        <i class="fa fa-phone"></i> Call Us (000) 000-0000
+    </a>    
+</body>
+</html>

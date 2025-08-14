@@ -5,13 +5,13 @@ const data = [
     how: '',
     increment: "74000 + 2000 + 3000",
     targetSpend: '10,000 + 10,000',
-    actualSpend: '4000 + 3000 + 3000 + 4000 + 1000 + 2000 + 10000'
+    actualSpend: '4000 + 3000 + 3000 + 4000 + 1000 + 2000 + 10000 + 2000 + 2000 + 5000'
   },
   {
     date: '10-Aug-2025',
     how: '',
-    increment: "",
-    targetSpend: '',
+    increment: "76000",
+    targetSpend: '10,000 + 10,000',
     actualSpend: ''
   },
 ];
