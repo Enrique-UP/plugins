@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>Swiper demo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="./style.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<style>
+        section.upcomingWebinars{display: flex !important;}
+    </style>
 </head>
+
 <body>
-	<main class="upcomingWebinars">
+	<section class="upcomingWebinars">
 		<div class="swiper-container gallery-thumbs">
 			<div class="swiper-wrapper dates"></div>
 			<div class="swiper-button-next swiper-button-white"></div>
@@ -17,9 +22,9 @@
 		<div class="swiper-container gallery-big">
 			<div class="swiper-wrapper details"></div>
 		</div>
-	</main>
+	</section>
 	<script src="./data.js"></script>
-    <script src="./script.js"></script>
+	<script src="./script.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script>
 		var galleryThumbs = new Swiper('.gallery-thumbs', {
@@ -69,6 +74,9 @@
 		if (detailsEl) {
 			detailsEl.style.height = "";
 		}
+
+		document.querySelectorAll("section.upcomingWebinars ~ section.upcomingWebinars").forEach(e => e.remove());
 	</script>
 </body>
+
 </html>

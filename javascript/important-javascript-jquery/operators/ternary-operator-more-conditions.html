@@ -126,5 +126,22 @@
     console.log(scoreRating2);
     // "Fair"
 </script>
+<script>console.log("==============================");</script>
+<script>
+    var a, b;
+    a = 5, b = 10;
+    if (a > b) console.log("A is greater than B.");
+    else console.log("A is lesser than B.");
+
+    document.write(`<p style="color:red;">"A" is ${a > b ? "greater" : "lesser"} than "B".</p>`);
+
+    document.write(`
+        <div style="border:1px solid red;">
+            ${a > b 
+            ? '<p style="color:red;">"A" is greater than "B".</p>' 
+            : ''}
+        </div>
+    `);
+</script>
 </body>
 </html>
