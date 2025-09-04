@@ -1,9 +1,9 @@
-hgroup{width: 100%;@extend %fc;margin-bottom:40px;row-gap:12px;
+hgroup{width: 100%;@extend %fc;margin-bottom:32px;row-gap:12px;
     &.center{text-align: center;max-width: 800px;margin-inline: auto;}
-    &.textCenter{text-align: center;}
+    &.tc{text-align: center;}
     h1, h2, h3, h4, h5, h6{font-size: 40px;font-weight: bold;line-height: 1.2;color:var(--c1);}
     p{font-size:20px;line-height: 1.5;color:var(--c2);}
-    .btns{margin-top: 14px;}
+    .btns{margin-top: 12px;}
     &.white{
         h1, h2, h3, h4, h5, h6, p{color:#fff;}
     }

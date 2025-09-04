@@ -7,7 +7,7 @@
   </head>
   <body>
     <main><?php include "./include/header.php"; ?>
-      <section class="section bg-d">
+      <section class="section bd">
         <div class="container">
           <hgroup class="center"> 
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h1>
@@ -17,7 +17,7 @@
       </section>
       <section class="section">
         <div class="container">
-          <hgroup class="textCenter"> 
+          <hgroup class="tc"> 
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
           </hgroup>
@@ -38,7 +38,24 @@
           </ol>
         </div>
       </section>
-      <section class="section bg-1">
+      <section class="section b1">
+        <div class="container">
+          <hgroup class="center"> 
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
+            <div class="btns center"> <a href="tel:<?php echo $numberTel; ?>" target="_blank">Call Us</a></div>
+          </hgroup>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <hgroup class="center"> 
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
+          </hgroup>
+        </div>
+      </section>
+      <section class="section b2">
         <div class="container">
           <hgroup class="center"> 
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
@@ -54,7 +71,7 @@
           </hgroup>
         </div>
       </section>
-      <section class="section bg-2">
+      <section class="section bd">
         <div class="container">
           <hgroup class="center"> 
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
@@ -70,7 +87,7 @@
           </hgroup>
         </div>
       </section>
-      <section class="section bg-d">
+      <section class="section bgt">
         <div class="container">
           <hgroup class="center"> 
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
@@ -78,7 +95,7 @@
           </hgroup>
         </div>
       </section>
-      <section class="section">
+      <section class="section b1">
         <div class="container">
           <hgroup class="center"> 
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
@@ -86,23 +103,7 @@
           </hgroup>
         </div>
       </section>
-      <section class="section bg-gt">
-        <div class="container">
-          <hgroup class="center"> 
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
-          </hgroup>
-        </div>
-      </section>
-      <section class="section bg-1">
-        <div class="container">
-          <hgroup class="center"> 
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
-          </hgroup>
-        </div>
-      </section>
-      <section class="section bg-gb">
+      <section class="section bgb">
         <div class="container">
           <hgroup class="center"> 
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>

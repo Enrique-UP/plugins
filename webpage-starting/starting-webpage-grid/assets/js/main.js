@@ -23,7 +23,7 @@ $(function () {
 
     const copyRight = $("footer .copy");
     if (copyRight) {
-        const currentContent = copyRight.html();
+        const currentContent = copyRight.html() || "";
         const updatedContent = currentContent.replace("©", "© " + new Date().getFullYear());
         copyRight.html(updatedContent);
     }

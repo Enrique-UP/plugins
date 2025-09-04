@@ -9,7 +9,7 @@
     <main><?php include "./include/header.php"; ?>
       <section class="section">
         <div class="container">
-          <hgroup class="textCenter">
+          <hgroup class="tc">
             <h1 class="wow bounceInDown">About Us</h1>
           </hgroup>
           <div class="content">
