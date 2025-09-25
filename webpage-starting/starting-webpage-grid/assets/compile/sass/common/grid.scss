@@ -29,8 +29,9 @@ img{max-width: 100%;}
 .container-fluid{width:100%;}
 
 .container, .container-fluid{display: flex;flex-direction:column;
+    &.center{justify-content: center;}
     :last-child:not(.row, [class*="col-"]){margin-bottom:0 !important;}
-    .row{display:flex;flex-wrap:wrap;justify-content: center;}
+    .row{display:flex;flex-wrap:wrap;}
 }
 
 .vCenter{display: flex;align-items: center;}

@@ -29,12 +29,12 @@
 
 
 @media (max-width:767px){
-    hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6{text-align: center;}
-    hgroup p{text-align: center;}
+    hgroup{text-align: center;}
     hgroup .btns{margin-top: 0;}
     .btns{justify-content: center;}
     .btns a, .btns button {padding: 12px 16px;}
     .unlist, .list {margin-bottom: 12px;}
+    body.back .fixNum{display: none;}
     .fixNum{display: flex;}
 }
 @media (min-width:576px) and (max-width:767px){}

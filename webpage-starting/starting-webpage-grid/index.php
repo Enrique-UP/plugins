@@ -7,7 +7,7 @@
   </head>
   <body>
     <main><?php include "./include/header.php"; ?>
-      <section class="section bd">
+      <section class="section banner">
         <div class="container">
           <hgroup class="center"> 
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h1>
@@ -25,7 +25,7 @@
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam</p>
           </hgroup>
-          <p> <a href="tel:<?php echo $numberTel; ?>" target="_blank"><?php echo $number; ?></a></p><br>
+          <p> <a href="tel:<?php echo $numberTel; ?>" target="_blank"><?php echo $number; ?></a></p>
           <ul class="unlist">
             <li>Lorem ipsum dolor</li>
             <li>Lorem ipsum dolor</li>

@@ -7,6 +7,28 @@
   </head>
   <body>
     <main><?php include "./include/header.php"; ?>
+      <section class="section banner">
+        <div class="container">
+          <div class="row"> 
+            <div class="col-lg-6 col-xl-5">
+              <hgroup> 
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam.</p>
+                <div class="btns"> <a href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa041; </i><span><?php echo $number; ?></span></a></div>
+              </hgroup>
+            </div>
+            <div class="col-lg-6 col-xl-7 imgEnd"><img src="./assets/images/banner1.webp" alt="" width="600"></div>
+          </div>
+        </div>
+      </section>
+      <section class="breadcrumbs"> 
+        <div class="container"> 
+          <ul> 
+            <li> <a href="<?php echo $siteUrl; ?>">Home</a></li>
+            <li>Terms And Conditions</li>
+          </ul>
+        </div>
+      </section>
       <section class="section">
         <div class="container">
           <hgroup class="tc">

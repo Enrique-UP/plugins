@@ -7,7 +7,7 @@
 
     .box{width:300px;height:300px;position:relative;background:brown;overflow: hidden;}
     .box:not(:last-child){margin-bottom: 50px;}
-    .box::before{content:attr(data-name);background: rgba(0,0,0,0.5);width:100%;left:0;right:0;bottom:-100%;position: absolute;text-align: center;color:#fff;padding:12px 8px;transition:0.5s linear;}
+    .box::before{content:attr(data-name);background: rgba(0,0,0,0.5);left:0;right:0;bottom:-100%;position: absolute;text-align: center;color:#fff;padding:12px 8px;transition:0.5s linear;}
     .box > svg{position:absolute;transition:0.5s linear;width:33.33%;height:33.33%;}
     .box > svg:first-child{top:0;left:0;}
     .box > svg:nth-child(2){top:0;right:0;}

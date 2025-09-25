@@ -1,48 +1,55 @@
 footer
-    .container
-        .row 
-            .col-sm-6.col-md-12.col-lg-3.wow.bounceInDown
-                a.logo(href!="<?php echo $siteUrl; ?>")
-                    img(src="./assets/images/logo.png", alt="")
-                p.text Lorem ipsum dolor sit amet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet consectetur adipisicing elit libero minima fugit explicabo possimus hic animi culpa dolorum.
-            .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
-                p.hd Quick Links
-                ul.links 
-                    li 
-                        a(href="about") About
-                    li 
-                        a(href="#") How It Works
-                    li 
-                        a(href!="tel:<?php echo $numberTel; ?>" target="_blank") Contact Us
-                    li 
-                        a(href="privacy") Privacy Policy
-                    li 
-                        a(href="refund") Refund Policy
-                    li 
-                        a(href="terms") Terms And Conditions
-            .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
-                p.hd Useful Links
-                ul.links 
-                    li 
-                        a(href="#") Bookkeeping Pricing Structure
-                    li 
-                        a(href="#") Bookkeeping
-                    li 
-                        a(href="#") Accounting
-                    li 
-                        a(href="#") Financial Reporting
-                    li 
-                        a(href="#") Taxation Services
-                    li 
-                        a(href="#") QuickBooks Data Conversion Services
-            .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
-                p.hd Get in Touch
-                ul.contacts
-                    li(data-icon!="&#xa001;")
-                        a(href!="tel:<?php echo $numberTel; ?>" target="_blank") <?php echo $number; ?>
-                    li(data-icon!="&#xa003;")
-                        a(href!="mailto:<?php echo $email; ?>" target="_blank") <?php echo $email; ?>
-                    li(data-icon!="&#xa004;")
-                        a(href!="https://www.google.com/maps" target="_blank") <?php echo $address; ?>
-            .col-md-12
-                p.copy Copyright &copy; all rights reserved.
+    .top
+        .container
+            .row 
+                .col-sm-6.col-md-12.col-lg-3.wow.bounceInDown
+                    a.logo(href!="<?php echo $siteUrl; ?>")
+                        img(src="./assets/images/logo.png", alt="")
+                    p Lorem ipsum dolor sit amet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet lorem ipsum dolor sit ameet consectetur adipisicing elit libero minima fugit explicabo possimus hic animi culpa dolorum.
+                .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
+                    p.hd Quick Links
+                    ul.links 
+                        li 
+                            a(href="about") About Us
+                        li 
+                            a(href="#") How It Works
+                        li 
+                            a(href!="tel:<?php echo $numberTel; ?>" target="_blank") Contact Us
+                        li 
+                            a(href="privacy") Privacy Policy
+                        li 
+                            a(href="refund") Refund Policy
+                        li 
+                            a(href="terms") Terms And Conditions
+                        li 
+                            a(href="lay") Layout
+                .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
+                    p.hd Useful Links
+                    ul.links 
+                        li 
+                            a(href="#") Bookkeeping Pricing Structure
+                        li 
+                            a(href="#") Bookkeeping
+                        li 
+                            a(href="#") Accounting
+                        li 
+                            a(href="#") Financial Reporting
+                        li 
+                            a(href="#") Taxation Services
+                        li 
+                            a(href="#") QuickBooks Data Conversion Services
+                .col-sm-6.col-md-4.col-lg-3.wow.bounceInDown
+                    p.hd Get in Touch
+                    ul.contacts
+                        li(data-icon!="&#xa001;")
+                            a(href!="tel:<?php echo $numberTel; ?>" target="_blank") <?php echo $number; ?>
+                        li(data-icon!="&#xa003;")
+                            a(href!="mailto:<?php echo $email; ?>" target="_blank") <?php echo $email; ?>
+                        li(data-icon!="&#xa004;")
+                            a(href!="https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank") <?php echo $address; ?>
+    .bottom
+        .container
+            p.copy Copyright &copy; with all rights reserved.
+a(href!="tel:<?php echo $numberTel; ?>" target="_blank").fixNum
+    i.icon &#xa001;
+    | Call Us <?php echo $number; ?>

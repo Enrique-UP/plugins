@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Webpage</title>
+    <meta name="description" content="">
+    <meta name="keywords" content=""><?php include "./include/head.php"; ?>
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" type="text/css">
+  </head>
+  <body>
+    <main><?php include "./include/header.php"; ?>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-1">
+              <div class="fw">Lorem Fw</div>
+            </div>
+            <!-- cols-->
+            <div class="col-xxl-11">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-xxl-6">
+                  <div class="row">
+                    <div class="col-xxl-6">Lorem</div>
+                    <!-- cols-->
+                    <div class="col-xxl-6">Lorem</div>
+                    <!-- cols-->
+                  </div>
+                  <!-- row-->
+                </div>
+                <!-- cols-->
+                <div class="col-xxl-6">
+                  <div class="row">
+                    <div class="col-xxl-6">Lorem</div>
+                    <!-- cols-->
+                    <div class="col-xxl-6">Lorem</div>
+                    <!-- cols-->
+                  </div>
+                  <!-- row-->
+                </div>
+                <!-- cols-->
+              </div>
+              <!-- row-->
+            </div>
+            <!-- cols-->
+            <div class="col-xxl-6">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-6">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-2">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-10">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-3">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-9">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-4">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-8">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-5">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-7">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-6">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-6">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-7">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-5">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-8">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-4">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-1">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-9">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-3">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-10">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-2">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-xxl-11">Lorem</div>
+            <!-- cols-->
+            <div class="col-xxl-1">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+          <div class="row">
+            <div class="col-12">Lorem</div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- container-->
+      </section>
+      <section class="slider owl-carousel owl-theme bg">
+        <div class="item">1</div>
+        <!-- item-->
+        <div class="item">2</div>
+        <!-- item-->
+        <div class="item">3</div>
+        <!-- item-->
+      </section>
+      <section class="section">
+        <div class="container">
+          <hgroup>
+            <h1>Norway</h1>
+            <p>The land with the midnight sunss.</p>
+          </hgroup>
+          <hgroup class="center">
+            <h2>Norway</h2>
+            <p>The land with the midnight sun1.</p>
+          </hgroup>
+          <div>
+            <p>Div &gt; P</p>
+            <p>Div &gt; P</p>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">Lorem</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <h1>Layout 1</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+            </div>
+            <!-- cols-->
+            <div class="col-12 col-sm-6"><img class="img" src="./assets/images/logo.png" alt=""></div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- container-->
+      </section>
+      <section class="section bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Layout 2</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+            </div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- container-->
+      </section>
+      <section class="section mbc">
+        <div class="container">
+          <hgroup class="center">
+            <h2>Section</h2>
+            <p>The land with the midnight sun.</p>
+          </hgroup>
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h1>Seciton Layout</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+                </div>
+                <!-- cols-->
+                <div class="col-sm-6">
+                  <h1>Seciton Layout</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+                </div>
+                <!-- cols-->
+                <div class="col-6">
+                  <h1>Seciton Layout</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+                </div>
+                <!-- cols-->
+                <div class="col-6">
+                  <h1>Seciton Layout</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque aperiam dolor quo distinctio ratione vitae. Eum consectetur nobis perferendis.</p>
+                </div>
+                <!-- cols-->
+              </div>
+              <!-- row-->
+            </div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- container-->
+      </section>
+      <section class="section bg">
+        <div class="container">
+          <hgroup class="center">
+            <h2>Buttons</h2>
+            <p>The land with the midnight sun.</p>
+          </hgroup>
+          <div class="btns center"><a class="btn1" href="#">Button 1</a><a class="btn2" href="#">Button 2</a><a class="btn3" href="#">Button 3</a></div>
+          <div class="btns"><a class="btn1" href="#">Button 1</a><a class="btn2" href="#">Button 2</a><a class="btn3" href="#">Button 3</a></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <h1 class="wow bounce">bounce</h1>
+              <h1 class="wow flash">flash</h1>
+              <h1 class="wow pulse">pulse</h1>
+              <h1 class="wow rubberBand">rubberBand</h1>
+              <h1 class="wow shake">shake</h1>
+              <h1 class="wow headShake">headShake</h1>
+              <h1 class="wow swing">swing</h1>
+              <h1 class="wow tada">tada</h1>
+              <h1 class="wow wobble">wobble</h1>
+              <h1 class="wow jello">jello</h1>
+              <h1 class="wow bounceIn">bounceIn</h1>
+              <h1 class="wow bounceInDown">bounceInDown</h1>
+              <h1 class="wow bounceInLeft">bounceInLeft</h1>
+              <h1 class="wow bounceInRight">bounceInRight</h1>
+              <h1 class="wow bounceInUp">bounceInUp</h1>
+              <h1 class="wow bounceOut">bounceOut</h1>
+              <h1 class="wow bounceOutDown">bounceOutDown</h1>
+              <h1 class="wow bounceOutLeft">bounceOutLeft</h1>
+              <h1 class="wow bounceOutRight">bounceOutRight</h1>
+              <h1 class="wow bounceOutUp">bounceOutUp</h1>
+              <h1 class="wow fadeIn">fadeIn</h1>
+              <h1 class="wow fadeInDown">fadeInDown</h1>
+              <h1 class="wow fadeInDownBig">fadeInDownBig</h1>
+              <h1 class="wow fadeInLeft">fadeInLeft</h1>
+              <h1 class="wow fadeInLeftBig">fadeInLeftBig</h1>
+              <h1 class="wow fadeInRight">fadeInRight</h1>
+              <h1 class="wow fadeInRightBig">fadeInRightBig</h1>
+              <h1 class="wow fadeInUp">fadeInUp</h1>
+              <h1 class="wow fadeInUpBig">fadeInUpBig</h1>
+              <h1 class="wow fadeOut">fadeOut</h1>
+              <h1 class="wow fadeOutDown">fadeOutDown</h1>
+              <h1 class="wow fadeOutDownBig">fadeOutDownBig</h1>
+              <h1 class="wow fadeOutLeft">fadeOutLeft</h1>
+              <h1 class="wow fadeOutLeftBig">fadeOutLeftBig</h1>
+              <h1 class="wow fadeOutRight">fadeOutRight</h1>
+              <h1 class="wow fadeOutRightBig">fadeOutRightBig</h1>
+              <h1 class="wow fadeOutUp">fadeOutUp</h1>
+              <h1 class="wow fadeOutUpBig">fadeOutUpBig</h1>
+              <h1 class="wow flipInX">flipInX</h1>
+              <h1 class="wow flipInY">flipInY</h1>
+              <h1 class="wow flipOutX">flipOutX</h1>
+              <h1 class="wow flipOutY">flipOutY</h1>
+              <h1 class="wow lightSpeedIn">lightSpeedIn</h1>
+              <h1 class="wow lightSpeedOut">lightSpeedOut</h1>
+              <h1 class="wow rotateIn">rotateIn</h1>
+              <h1 class="wow rotateInDownLeft">rotateInDownLeft</h1>
+              <h1 class="wow rotateInDownRight">rotateInDownRight</h1>
+              <h1 class="wow rotateInUpLeft">rotateInUpLeft</h1>
+              <h1 class="wow rotateInUpRight">rotateInUpRight</h1>
+              <h1 class="wow rotateOut">rotateOut</h1>
+              <h1 class="wow rotateOutDownLeft">rotateOutDownLeft</h1>
+              <h1 class="wow rotateOutDownRight">rotateOutDownRight</h1>
+              <h1 class="wow rotateOutUpLeft">rotateOutUpLeft</h1>
+              <h1 class="wow rotateOutUpRight">rotateOutUpRight</h1>
+              <h1 class="wow hinge">hinge</h1>
+              <h1 class="wow jackInTheBox">jackInTheBox</h1>
+              <h1 class="wow rollIn">rollIn</h1>
+              <h1 class="wow rollOut">rollOut</h1>
+              <h1 class="wow zoomIn">zoomIn</h1>
+              <h1 class="wow zoomInDown">zoomInDown</h1>
+              <h1 class="wow zoomInLeft">zoomInLeft</h1>
+              <h1 class="wow zoomInRight">zoomInRight</h1>
+              <h1 class="wow zoomInUp">zoomInUp</h1>
+              <h1 class="wow zoomOut">zoomOut</h1>
+              <h1 class="wow zoomOutDown">zoomOutDown</h1>
+              <h1 class="wow zoomOutLeft">zoomOutLeft</h1>
+              <h1 class="wow zoomOutRight">zoomOutRight</h1>
+              <h1 class="wow zoomOutUp">zoomOutUp</h1>
+              <h1 class="wow slideInDown">slideInDown</h1>
+              <h1 class="wow slideInLeft">slideInLeft</h1>
+              <h1 class="wow slideInRight">slideInRight</h1>
+              <h1 class="wow slideInUp">slideInUp</h1>
+              <h1 class="wow slideOutDown">slideOutDown</h1>
+              <h1 class="wow slideOutLeft">slideOutLeft</h1>
+              <h1 class="wow slideOutRight">slideOutRight</h1>
+              <h1 class="wow slideOutUp">slideOutUp</h1>
+              <h1 class="wow heartBeat">heartBeat</h1>
+            </div>
+            <!-- cols-->
+          </div>
+          <!-- row-->
+        </div>
+        <!-- container-->
+      </section><?php include "./include/footer.php"; ?>
+    </main><?php include "./include/scripts.php"; ?>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script>
+      $(".slider").owlCarousel({
+          autoplay:true,
+          loop:true,
+          margin:10,
+          nav:true,
+          responsive:{
+              0:{
+                  items:2
+              },
+              768:{
+                  items:1
+              },
+              992:{
+                  items:2
+              }
+          }
+      });
+    </script>
+  </body>
+</html>

@@ -5,6 +5,10 @@ html
     meta(name="description", content="")
     meta(name="keywords", content="")
     <?php include "./include/head.php"; ?>
+    style(type="text/css").
+      [class*="box"]{display:flex;width:100%;padding:8px;text-align:center;color:#fff;}
+      .box1{background:brown;}
+      .box2{background:green;}
   body
     main
       <?php include "./include/header.php"; ?>
@@ -50,5 +54,88 @@ html
             | ]
             br
             | tsc.cmd --w
+      section.section
+        .container
+          .row
+            .col-12 
+              .row
+                .col-12
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+            .col-12
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+                  div.box1 Cols
+            .col-6
+              div.box1 Cols
+          .row
+            .col-12
+              .row 
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+            .col-12
+              div.box1 Cols
+            .col-6
+              div.box1 Cols
+            .col-6
+              .row 
+                .container-fluid
+                  div.box2 ContainerFluid
+                .container-fluid
+                  div.box2 ContainerFluid
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-12
+                  div.box1 Cols
+          .row 
+            .col-12
+              .row 
+                .col-6
+                  div.box1 Cols
+                .col-6
+                  div.box1 Cols
+                .col-12
+                  div.box1 Cols
+        .container
+          div.box2 Container
+        .container 
+          .row 
+            .col-12
+              div.box1 Cols
+      section.section.bg1 
+        .container
+          i.icon &#xa001;
+          i.icon &#xa002;
+          i.icon &#xa003;
+          i.icon &#xa004;
+          i.icon &#xa005;
+          i.icon &#xa006;
+          i.icon &#xa007;
+          i.icon &#xa008;
+          i.icon &#xa009;
+          i.icon &#xa010;
+          i.icon &#xa011;
+          i.icon &#xa012;
+          i.icon &#xa013;
+          i.icon &#xa014;
+          i.icon &#xa015;
+          i.icon &#xa016;
+          i.icon &#xa017;
+      hr
       <?php include "./include/footer.php"; ?>
     <?php include "./include/scripts.php"; ?>

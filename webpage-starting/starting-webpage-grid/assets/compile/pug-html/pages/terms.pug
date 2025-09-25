@@ -8,9 +8,28 @@ html
   body
     main
       include ../include/header
+      section.section.banner
+        .container
+          .row 
+            .col-lg-6.col-xl-5
+              hgroup 
+                h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam.
+                .btns 
+                  a(href!=`tel:${numberTel}` target="_blank") 
+                    i.icon &#xa041; 
+                    span #{number}
+            .col-lg-6.col-xl-7.imgEnd
+              img(src="./assets/images/banner1.webp", alt="", width="600")
+      section.breadcrumbs 
+        .container 
+          ul 
+            li 
+              a(href="<?php echo $siteUrl; ?>") Home
+            li Terms And Conditions
       section.section
         .container
-          hgroup.textCenter
+          hgroup.tc
             h1.wow.bounceInDown Terms And Conditions
           .content
             h2 Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt
@@ -18,35 +37,35 @@ html
             h3 Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt
             p Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.
             ul 
-                li Lorem ipsum dolor sit amet, consectetur 
-                    a(href="#") facere eius atque sequi aliquam
-                    |  adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li Lorem ipsum dolor sit amet, consectetur 
+                a(href="#") facere eius atque sequi aliquam
+                |  adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li Lorem ipsum dolor sit amet, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
             p Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.
             h3 Lorem ipsum dolor sit amet consectetur adipisicing elit excepturi eum quas quisquam exercitationem ex hic magni ut repellat accusamus deserunt
             p Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.
             ol 
-                li
-                    b Lorem ipsum dolor sit amet
-                    |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li
-                    b Lorem ipsum dolor sit amet
-                    |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li
-                    b Lorem ipsum dolor sit amet
-                    |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li
-                    b Lorem ipsum dolor sit amet
-                    |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
-                li
-                    b Lorem ipsum dolor sit amet
-                    |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li
+                b Lorem ipsum dolor sit amet
+                |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li
+                b Lorem ipsum dolor sit amet
+                |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li
+                b Lorem ipsum dolor sit amet
+                |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li
+                b Lorem ipsum dolor sit amet
+                |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
+              li
+                b Lorem ipsum dolor sit amet
+                |, consectetur adipisicing elit libero ullam porro quos et fugiat molestias velit ipsum voluptatem eos quae facere praesentium aliquam odit iste blanditiis dolores mollitia maiores sint iure reiciendis cupiditate necessitatibus ab dolore totam quod iste quo itaque voluptatibus earum doloremque accusantium excepturi quaerat quibusdam eligendi praesentium.
             p Lorem ipsum dolor sit amet consectetur adipisicing elit 
-                a(href="#") facere eius atque sequi aliquam
-                |  optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.
+              a(href="#") facere eius atque sequi aliquam
+              |  optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.
             p Lorem ipsum dolor sit amet consectetur adipisicing elit facere eius atque 
                 a(href="#") facere eius atque sequi aliquam
                 |  sequi aliquam optio totam doloribus modi praesentium temporibus deserunt illo facilis quia nesciunt veritatis unde voluptate minima itaque rem.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Flatpickr CSS -->
+<link rel="stylesheet" href="./flatpickr.min.css">
+
+<!-- Inputs -->
+<input type="text" id="dateInput1" placeholder="اختر التاريخ الأول">
+<input type="text" id="dateInput2" placeholder="اختر التاريخ الثاني">
+
+<!-- Calendar containers for inline display -->
+<div style="display: flex;column-gap: 8px;">
+    <div id="calendar1"></div>
+    <div id="calendar2"></div>
+</div>
+
+
+
+<script src="./flatpickr.js"></script>
+<script src="./ar.js"></script>
+<script>
+    flatpickr("#calendar1", {
+        inline: true,
+        dateFormat: "d-m-Y",
+        defaultDate: "today",
+        //locale: "ar",
+        onChange: function(selectedDates, dateStr) {
+            document.getElementById('dateInput1').value = dateStr;
+        }
+    });
+
+    flatpickr("#calendar2", {
+        inline: true,
+        dateFormat: "d-m-Y",
+        defaultDate: "today",
+        locale: "ar",
+        onChange: function(selectedDates, dateStr) {
+            document.getElementById('dateInput2').value = dateStr;
+        }
+    });
+</script>
+
+</body>
+</html>
