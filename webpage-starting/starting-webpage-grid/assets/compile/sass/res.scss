@@ -27,8 +27,25 @@
 
 
 
-
+@media (min-width:768px){
+    main{
+        .blt, .blb, .bltb{
+            &::before, &::after{height: 80px;}
+        }
+        > .blt{margin-top: 80px;}
+        > .blb{margin-bottom: 80px;}
+        > .bltb{margin-block: 80px;}
+    }
+}
 @media (max-width:767px){
+    main{
+        .blt, .blb, .bltb{
+            &::before, &::after{height: 56px;}
+        }
+        > .blt{margin-top: 56px;}
+        > .blb{margin-bottom: 56px;}
+        > .bltb{margin-block: 56px;}
+    }
     hgroup{text-align: center;}
     hgroup .btns{margin-top: 0;}
     .btns{justify-content: center;}

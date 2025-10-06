@@ -11,12 +11,16 @@
             const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
             const isChrome = /chrome/.test(navigator.userAgent.toLowerCase()) && !/edg|edge|opr|brave/.test(navigator.userAgent.toLowerCase());
             const isEdge = navigator.userAgent.toLowerCase().includes("edg");
-            const isSafari = navigator.userAgent.toLowerCase().includes("safari") && !navigator.userAgent.toLowerCase().includes("chrome");
+            const ua = navigator.userAgent.toLowerCase();
+            const isSafari = (ua.includes("safari") && !ua.includes("chrome") && !ua.includes("crios") && !ua.includes("fxios"));
+            //const isSafari = navigator.userAgent.toLowerCase().includes("safari") && !navigator.userAgent.toLowerCase().includes("chrome");
             const isOpera = navigator.userAgent.toLowerCase().includes("opera") || navigator.userAgent.toLowerCase().includes("opr");
             
             if (isFirefox) document.write("Your browser is Firefox");
             else if(isChrome) document.write("This is Google Chrome.");
             else if(isEdge) document.write("This is Edge.");
+            else if(isSafari) document.write("This is Safari.");
+            else if(isOpera) document.write("This is Opera.");
             else document.write("Your browser is other browser.");
         })();
     </script>

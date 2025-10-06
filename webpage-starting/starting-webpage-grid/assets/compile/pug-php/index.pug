@@ -10,10 +10,23 @@ html
       <?php include "./include/header.php"; ?>
       section.section.banner
         .container
+          .row 
+            .col-lg-6.col-xl-5
+              hgroup 
+                h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam.
+                .btns 
+                  a(href!="tel:<?php echo $numberTel; ?>" target="_blank")
+                    i.icon &#xa041; 
+                    span <?php echo $number; ?>
+            .col-lg-6.col-xl-7
+              img(src="./assets/images/banner.jpg", alt="", width="100%").img
+      section.section.blt
+        .container
           hgroup.center 
             h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
             p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
-      section.section
+      section.section.blb
         .container
           hgroup.tc 
             h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
@@ -53,11 +66,18 @@ html
           hgroup.center 
             h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
             p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
+      section.section.bltb
+        .container
+          hgroup.center 
+            h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
       section.section.bd
         .container
           hgroup.center 
             h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
             p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
+            .btns 
+              a(href="#") Contact Us
       section.section
         .container
           hgroup.center 
