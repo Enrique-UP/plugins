@@ -4,7 +4,7 @@
     <div class="fw">
       <div class="logoArea animated bounceInLeft"><a class="logo" href="<?php echo $siteUrl; ?>"><img src="./assets/images/logo.png" alt=""/></a></div>
       <div class="navbar">
-        <navbar class="animated bounceInDown"><a class="logoMob" href="/"><img src="./assets/images/logo.png" alt=""/></a>
+        <navbar class="animated bounceInDown"><a class="logoMob" href="<?php echo $siteUrl; ?>"><img src="./assets/images/logo.png" alt=""/></a>
           <menu>
             <li><a href="<?php echo $siteUrl; ?>">Home</a></li>
             <li><a href="javascript:;">Lorem ipsum</a>

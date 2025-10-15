@@ -80,7 +80,12 @@ Both siblings selector by this previous and next
     <b>Only B</b>
 </div>
 ===================================================================================================================================
+When z-index does not work.
+header{position:sticky;z-index:999;}
+header nav{position:fixed;z-index:99999;} /// here z-index will not work.
 
+header.active{position:relative;z-index:auto;}
+header.active nav{} // after that z-index will work here.
 ===================================================================================================================================
 
 ===================================================================================================================================

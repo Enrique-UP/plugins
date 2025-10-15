@@ -17,7 +17,7 @@
                 <div class="btns"> <a href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa041; </i><span><?php echo $number; ?></span></a></div>
               </hgroup>
             </div>
-            <div class="col-lg-6 col-xl-7"><img class="img" src="./assets/images/banner.jpg" alt="" width="100%"></div>
+            <div class="col-lg-6 col-xl-7"><img class="img" src="./assets/images/logo.png" alt="" width="100%"></div>
           </div>
         </div>
       </section>

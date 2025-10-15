@@ -1,16 +1,19 @@
 :root{
+    --f1:#000000;
+    --f2:#777777;
+
     --c1:#011f3d;
     --c2:#0c67c4;
     // --c3:#ff0001;
     // --c4:#ffe701;
     // --c5:#00BB98;
     
-    --font1:#333333;      
-
-    --border:#ccc;
     --g1:#eee;
     --g2:mintcream;
+
+    --b1:#ccc;
 }
+
 
 %trans{transition: 0.3s cubic-bezier(0,0,1,0.1);-webkit-transition: 0.3s cubic-bezier(0,0,1,0.1);-moz-transition: 0.3s cubic-bezier(0,0,1,0.1);}
 %transl{transition: 0.3s linear;-webkit-transition: 0.3s linear;-moz-transition: 0.3s linear;}
