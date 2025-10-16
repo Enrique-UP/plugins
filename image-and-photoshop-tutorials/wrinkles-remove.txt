@@ -1,0 +1,4 @@
+Select => Spot healing brush tool
+Go to top of the screen => Mode => Screen
+Go to top of the screen => Type => Content-Aware
+After that drag on wrinkle line.
