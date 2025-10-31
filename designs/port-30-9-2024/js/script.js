@@ -30,7 +30,7 @@
 
 /* ====================================================== footer ====================================================== */
 // (function(){
-//   document.querySelector(".copyright span").innerText = new Date().getFullYear();
+//   document.querySelector(".copyright span").innerText = new Date().getUTCFullYear();
 // })();
 /* ====================================================== footer ====================================================== */
 

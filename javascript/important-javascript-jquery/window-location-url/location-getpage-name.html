@@ -25,21 +25,21 @@
         console.log("Replace www = " + dmn.replace("www.", "")); // example.com
     </pre>
     <script>
-        console.log(window.location.host + "host");
-        console.log(window.location.hostname + "hostname");
-        console.log(window.location.port + "port");
-        console.log(window.location.protocol + "protocol");
-        console.log(window.location.pathname + "pathname");
-        console.log(window.location.href + "href");
-        console.log(window.location.hash + "hash");
-        console.log(window.location.search + "search");
-        console.log(window.location.origin + "origin");
+        console.log("host :- " + window.location.host + "host");
+        console.log("hostname :- " + window.location.hostname + "hostname");
+        console.log("port :- " + window.location.port + "port");
+        console.log("protocol :- " + window.location.protocol + "protocol");
+        console.log("pathname :- " + window.location.pathname + "pathname");
+        console.log("href :- " + window.location.href + "href");
+        console.log("hash :- " + window.location.hash + "hash");
+        console.log("search :- " + window.location.search + "search");
+        console.log("origin :- " + window.location.origin + "origin");
 
         var path = window.location.pathname;
         var page = path.split("/").pop();
-        console.log(page);
+        console.log("page :- " + page);
 
-        console.log(document.domain + " document.domain");
+        console.log("document.domain :- " + document.domain);
     </script>
 
     <script>

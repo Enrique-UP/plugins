@@ -87,7 +87,12 @@ header nav{position:fixed;z-index:99999;} /// here z-index will not work.
 header.active{position:relative;z-index:auto;}
 header.active nav{} // after that z-index will work here.
 ===================================================================================================================================
-
+min-height vh is not work on ios/apple.
+.box {
+  min-height: 100vh;              /* Default */
+  min-height: -webkit-fill-available; /* iOS fallback */
+  min-height: 100dvh;             /* Modern dynamic viewport */
+}
 ===================================================================================================================================
 
 ===================================================================================================================================

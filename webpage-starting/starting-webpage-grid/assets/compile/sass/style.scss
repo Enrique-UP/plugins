@@ -21,7 +21,7 @@ body{color:var(--f1);
     }
 }
 
-main {width:100%;overflow:clip;@extend %fc;min-height:100vh;
+main {width:100%;overflow:clip;@extend %fc;min-height: 100vh;min-height: -webkit-fill-available;min-height: 100dvh;
     > *{width:100%;@extend %fc;}
     > hr{height: 1px;border: none;background: var(--b1);}
     > .banner{background: url(../images/logo.png) no-repeat center center / cover;position: relative;

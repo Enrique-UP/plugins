@@ -93,7 +93,7 @@ Step-by-Step Solution
 	Click "Commit to <branch>" to commit the changes.
 ==========================================================================================
 b. Manually Add Files Using Git CLI
-	If GitHub Desktop doesn’t stage the files, use the command line:
+	If GitHub Desktop doesnâ€™t stage the files, use the command line:
 
 Open the terminal and navigate to your repository:
 bash
