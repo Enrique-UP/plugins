@@ -35,3 +35,6 @@ For the best user experience use Google Chrome
 
 9)- https://www.programiz.com/
 	https://www.programiz.com/javascript/online-compiler/
+	
+10)- https://klickpin.com/download
+	 Pinterest video downloader

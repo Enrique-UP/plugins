@@ -160,3 +160,18 @@ download specific folder from the git.com/repository
 https://downgit.github.io/#/home
 copy folder and paste in the above url's input
 ==============================================================
+
+
+
+
+
+==============================================================
+How do we live website on git for hosting and domain.
+
+Login on git.com => create New Repository (or folder of anyname like portfolio) it should be public
+=> upload code on this folder from local to git. => index.html (must be present)
+
+Go to Settings (of your repo) => Scroll to Pages => Under Source, select: Branch: main ,  Folder: /root => Click Save
+after some time the url will be show here after 15 seconds.
+Now website has lived.
+==============================================================

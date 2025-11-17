@@ -1,4 +1,4 @@
-.btns{display: flex;flex-wrap:wrap;gap:4px 4px;margin-bottom:32px;
+.btns{display: flex;flex-wrap:wrap;align-items: flex-start;gap:4px 4px;margin-bottom:32px;
     &.center, &.tc{justify-content: center;}
     a, button{padding:16px 24px;border-radius: 4px;line-height:1.1;font-weight:bold;color:#fff;background: var(--c1);@extend %userSelect;text-align:center;border:none;outline:none;cursor: pointer;
         // &.btn1{}
