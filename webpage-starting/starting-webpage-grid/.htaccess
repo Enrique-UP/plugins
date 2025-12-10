@@ -12,17 +12,17 @@ IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
     Deny from all
 </Limit>
 
-# Enable mod_rewrite
+# Enable URL rewriting
 RewriteEngine On
 
-# Example rewrite rule for 'about'
-RewriteRule ^doc$ documentation.php [L]
-RewriteRule ^about$ about.php [L]
-RewriteRule ^privacy$ privacy.php [L]
-RewriteRule ^refund$ refund.php [L]
-RewriteRule ^terms$ terms.php [L]
-RewriteRule ^inner$ inner.php [L]
-RewriteRule ^contact$ contact.php [L]
+# Redirect URLs without .php extension to the corresponding .php file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L]
+
+# Optionally, redirect requests for .php files to URLs without .php extension
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php [NC]
+RewriteRule ^ /%1 [R=301,L]
 
 # ----------------------------------------------------------------------
 # Compression

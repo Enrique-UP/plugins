@@ -11,8 +11,12 @@
 
 
 
-@media (max-width:1199px){}
-@media (min-width:992px) and (max-width:1199px){}
+@media (max-width:1199px){
+    body.back .fixNum{display: none;}
+}
+@media (min-width:992px) and (max-width:1199px){
+    .form .field textarea {height:147px;min-height: 147px;}
+}
 
 
 
@@ -51,8 +55,10 @@
     .btns{justify-content: center;}
     .btns a, .btns button {padding: 12px 16px;}
     .unlist, .list {margin-bottom: 12px;}
-    body.back .fixNum{display: none;}
-    .fixNum{display: flex;}
+
+    .contactPage .contactBox{gap:16px;}
+
+    .fixNum{font-size: 14px;}
 }
 @media (min-width:576px) and (max-width:767px){}
 
@@ -63,11 +69,26 @@
     hgroup {margin-bottom: 24px;}
     hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {font-size: 32px;}
     hgroup p{font-size: 18px;}
-
-    .btns a{padding:12px 16px;}
     
     .list>li::before, .unlist>li::before{top:2px;}
 
     .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {font-size: 20px;}
     .content h1:not(:first-child), .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child), .content h5:not(:first-child), .content h6:not(:first-child) {margin-top: 8px;}
+
+    .faqs{padding: 24px 16px;}
+    .faqs .faqsArea:not(:first-child){padding-top: 16px;}
+    .faqs .faqsArea:not(:last-child){padding-bottom: 16px;}
+
+    .contactPage .form{padding:24px 16px;}
+    .contactPage .contactBox > li > a{padding: 16px;column-gap: 12px;}
+
+    .note{font-size: 18px;}
+
+    main > .bd hgroup ul > li > a, main > .bd hgroup ol > li > a{font-size: 16px;}
+}
+@media (max-width:460px){
+    .contactPage .contactBox > li > a{column-gap: 12px;}
+    .contactPage .contactBox > li .icon{width: 60px;height: 60px;}
+    .contactPage .contactBox > li b{font-size: 18px;}
+    .contactPage .contactBox > li span{font-size: 14px;}
 }

@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title Contact Us
+    meta(name="description", content="")
+    meta(name="keywords", content="")
+    <?php include "./include/head.php"; ?>
+  body
+    main
+      <?php include "./include/header.php"; ?>
+      section.section.banner
+        .container
+          .row 
+            .col-lg-6.col-xl-5
+              hgroup 
+                h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam.
+                .btns 
+                  a(href!="tel:<?php echo $numberTel; ?>" target="_blank")
+                    i.icon &#xa041; 
+                    span <?php echo $number; ?>
+            .col-lg-6.col-xl-7.imgEnd
+              img(src="./assets/images/banner1.webp", alt="", width="600")
+      section.breadcrumbs 
+        .container 
+          ul 
+            li 
+              a(href!="<?php echo $siteUrl; ?>") Home
+            li Contact Us
+      section.section.contactPage
+        .container
+            .row
+                .col-12
+                    hgroup.center
+                        h2 Contact Us
+                        p Get in touch &mdash; we respond quickly.
+                .col-lg-7
+                    form.form(action='#')
+                        .field
+                            label(for='name') Full Name*
+                            input#name.inputText(type='text' placeholder='Enter your full name' required='')
+                        // field
+                        .field
+                            label(for='email') Email Address*
+                            input#email.inputText(type='email' placeholder='Enter your email address' required='')
+                        // field
+                        .field
+                            label(for='message') Message*
+                            textarea#message.inputText(rows='4' placeholder='Write your message here...' required='')
+                        // field
+                        .btns
+                            button
+                                span Submit
+                                i.icon  &#xA021;
+                        // btns
+                .col-lg-5
+                    ul.contactBox
+                        li
+                            a(href='tel:+910000000000' target='_blank')
+                                i.icon &#xA001;
+                                span
+                                    b Phone Number
+                                    | (000) 000 0000
+                        li
+                            a(href='mailto:support@demo.com' target='_blank')
+                                i.icon &#xA003;
+                                span
+                                    b Email Address
+                                    | support@demo.com
+                        li
+                            a(href='https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D' target='_blank')
+                                i.icon &#xA039;
+                                span
+                                    b Address
+                                    | 25-Street Town lorem ipsum dolor, New York.
+      <?php include "./include/footer.php"; ?>
+    <?php include "./include/scripts.php"; ?>
