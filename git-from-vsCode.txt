@@ -174,4 +174,10 @@ Login on git.com => create New Repository (or folder of anyname like portfolio) 
 Go to Settings (of your repo) => Scroll to Pages => Under Source, select: Branch: main ,  Folder: /root => Click Save
 after some time the url will be show here after 15 seconds.
 Now website has lived.
+
+==============================================================
+if get trouble to clone reposity live to local
+then in command line type below line
+
+git clone https://github.com/Enrique-UP/web.git
 ==============================================================

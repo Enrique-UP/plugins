@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="#" data-more="Read more" data-less="Read less">Read more</a>
+    <br><br>
+    <a href="#" data-more="Read more" data-less="Read less">Read more</a>
+    <br><br>
+    <a href="#" data-more="Read more" data-less="Read less">Read more</a>
+
+    <script>
+        document.querySelectorAll("a").forEach(function(a){
+            a.addEventListener("click", function(e){
+                e.preventDefault();
+
+                let more = this.dataset.more;
+                let less = this.dataset.less;
+
+                if (more && less) this.textContent = (this.textContent.trim() === more) ? less : more;
+            });
+        });
+    </script>
+
+</body>
+</html>

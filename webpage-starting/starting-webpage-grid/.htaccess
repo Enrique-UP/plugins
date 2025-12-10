@@ -22,6 +22,7 @@ RewriteRule ^privacy$ privacy.php [L]
 RewriteRule ^refund$ refund.php [L]
 RewriteRule ^terms$ terms.php [L]
 RewriteRule ^inner$ inner.php [L]
+RewriteRule ^contact$ contact.php [L]
 
 # ----------------------------------------------------------------------
 # Compression
