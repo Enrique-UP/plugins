@@ -1,0 +1,10 @@
+.popup =====>>>>> show after 5sec =====>>>>> .popup.active
+
+=====>>>>> onclick X close Popup//////////onclick outside popup close popup =====>>>>> remove class active and add againShow class for showing after 20sec =====>>>>> .popup.againShow
+
+=====>>>>> if popup contains classList againShow then show popup on every 20sec
+.popup.againShow =====>>>>> .popup.active =====>>>>> .popup.againShow
+
+=====>>>>> go to footer (add class halfScroll) and return on header (add class fullScroll) =====>>>>> add class active and remove againShow class from the popup =====>>>>> instant show popup .popup.active
+
+use only timeOut function(){}

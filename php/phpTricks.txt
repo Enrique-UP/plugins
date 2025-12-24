@@ -1,3 +1,10 @@
+If get problem like this structure of folder
+
+index.php
+include/head.php = then use siteURL for the links.
+cruise/one.php
+cruise/two.php
+=======================================================================================
 script.php
 =======================================================================================
 <?php $siteURL = "https://example.com"; ?>
@@ -15,4 +22,19 @@ console.log(imgLink);
 
 output:-
 https://example.com/images/uw.webp
+=======================================================================================
+testimonial.php
+
+<section class="section <?php echo $sectionClass ?? ''; ?>">
+    <!-- testimonial content -->
+</section>
+
+Save this file with the name of testimonial.php
+---------------------------------------------------
+<?php include "./partials/testimonial.php"; ?>
+---------------------------------------------------
+<?php
+    $sectionClass = "back";
+    include "./partials/testimonial.php";
+?>
 =======================================================================================
