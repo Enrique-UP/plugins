@@ -1,6 +1,6 @@
 .btns{display: flex;flex-wrap:wrap;align-items: flex-start;gap:4px 4px;margin-bottom:32px;
     &.center, &.tc{justify-content: center;}
-    a, button{padding:16px 24px;border-radius: 4px;line-height:1.1;font-weight:bold;color:#fff;background: var(--c1);@extend %userSelect;text-align:center;border:none;outline:none;cursor: pointer;display: flex;column-gap: 4px;
+    a, button{padding:14px 16px;border-radius: 4px;line-height:1.1;font-weight:bold;color:#fff;background: var(--c1);@extend %userSelect;text-align:center;border:none;outline:none;cursor: pointer;display: flex;column-gap: 4px;
         // &.btn1{}
         // &.btn2{}
         // &.btn3{}

@@ -35,7 +35,7 @@ img{max-width: 100%;}
 .container, .container-fluid{display: flex;flex-direction:column;
     &.center{justify-content: center;}
     :last-child:not(.row, [class*="col-"]){margin-bottom:0 !important;}
-    .row{display:flex;flex-wrap:wrap;}
+    .row{display:flex;flex-wrap:wrap;justify-content: center;}
 }
 
 .vCenter{display: flex;align-items: center;}
@@ -67,9 +67,9 @@ img{max-width: 100%;}
     
     .container{width:100%;}
     .container:not(.container-fluid), .container-fluid:not(.container-fluid){padding-inline: $secH * 0.5;}
-    .container .container-fluid, .container-fluid .container-fluid{padding-inline: $secH*0.375;}
-    .row{margin-inline:-$secH*0.375;
-        [class*="col-"]{padding-inline: $secH*0.375;}
+    .container .container-fluid, .container-fluid .container-fluid{padding-inline: $secH*0.5;}
+    .row{margin-inline:-$secH*0.5;
+        [class*="col-"]{padding-inline: $secH*0.5;}
     }
 }
 @media (min-width:576px) and (max-width:767px){

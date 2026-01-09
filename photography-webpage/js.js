@@ -1,13 +1,13 @@
-jQuery(document).ready(function(){
+$(document).ready(function(){
 	
-	jQuery('.photo-thumbnails .thumbnail').click(function() {
+	$('.photo-thumbnails .thumbnail').click(function() {
 		// Setting class "current" to the thumbnail that was clicked.
-		jQuery('.photo-thumbnails .thumbnail').removeClass('current');
-		jQuery(this).addClass('current');
+		$('.photo-thumbnails .thumbnail').removeClass('current');
+		$(this).addClass('current');
 		// Getting "src" attribute of the image that was clicked.
-		var path = jQuery(this).find('img').attr('src');
+		var path = $(this).find('img').attr('src');
 		// Setting "src" attribute of the big image.
-		jQuery('#big-photo img').attr('src', path);
+		$('#big-photo img').attr('src', path);
 	});
 		  
 });  
@@ -16,9 +16,7 @@ window.onresize=function(){
 	if(window.innerWidth<1000){
 		$(".nav ul.navigation-bar").hide();
 		  $(".navigation-bar-button").show();
-		}
-		else
-		{
+		}else{
 		  $(".navigation-bar-button").hide();
 		  $(".nav ul.navigation-bar").show();
 		}

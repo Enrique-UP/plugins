@@ -63,8 +63,8 @@
             </div>
             <div class="col-lg-5">
               <ul class="contactBox">
-                <li><a href="&lt;?php echo $numberTel; ?&gt;" target="_blank"><i class="icon">&#xA001;</i><span><b>Phone Number</b><?php echo $number; ?></span></a></li>
-                <li><a href="mailto:&lt;?php echo $email; ?&gt;" target="_blank"><i class="icon">&#xA003;</i><span><b>Email Address</b><?php echo $email; ?></span></a></li>
+                <li><a href="<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xA001;</i><span><b>Phone Number</b><?php echo $number; ?></span></a></li>
+                <li><a href="mailto:<?php echo $email; ?>" target="_blank"><i class="icon">&#xA003;</i><span><b>Email Address</b><?php echo $email; ?></span></a></li>
                 <li><a href="https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&amp;g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="icon">&#xA039;</i><span><b>Address</b><?php echo $address; ?></span></a></li>
               </ul>
             </div>

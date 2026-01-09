@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style1.css" type="text/css" />
+</head>
+<body>
+    <main>
+        <section class="banner1">
+            <img class="img" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/bg1.jpg" alt="">
+            <img class="c1" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/c1.png" alt="">
+            <img class="c2" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/c2.png" alt="">
+        </section>
+        <section class="banner1">
+            <img class="img" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/bg1.jpg" alt="">
+            <img class="c1" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/c3.png" alt="">
+            <img class="c2" src="https://raw.githubusercontent.com/Enrique-UP/templates/refs/heads/main/cloudBannerAndCar/c4.png" alt="">
+        </section>
+    </main>
+    <script>
+        (function () {
+            const banner1s = document.querySelectorAll('.banner1');
+
+            banner1s.forEach(banner1 => {
+                const rain = document.createElement('div');
+                rain.className = 'rain';
+
+                // random drops between 10 and 20
+                const dropCount = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+
+                for (let i = 0; i < dropCount; i++) {
+                    const drop = document.createElement('div');
+                    drop.className = 'drop';
+
+                    const stem = document.createElement('div');
+                    stem.className = 'stem';
+
+                    // random delay between 0.5s and 0.9s
+                    const delay = (Math.random() * (0.9 - 0.5) + 0.5).toFixed(2);
+                    stem.style.animationDelay = `${delay}s`;
+
+                    drop.appendChild(stem);
+                    rain.appendChild(drop);
+                }
+
+                banner1.appendChild(rain);
+            });
+        })();
+    </script>
+</body>
+</html>

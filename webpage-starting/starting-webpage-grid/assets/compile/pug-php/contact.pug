@@ -55,23 +55,23 @@ html
                         // btns
                 .col-lg-5
                     ul.contactBox
-                        li
-                            a(href='tel:+910000000000' target='_blank')
-                                i.icon &#xA001;
-                                span
-                                    b Phone Number
-                                    | (000) 000 0000
-                        li
-                            a(href='mailto:support@demo.com' target='_blank')
-                                i.icon &#xA003;
-                                span
-                                    b Email Address
-                                    | support@demo.com
-                        li
-                            a(href='https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D' target='_blank')
-                                i.icon &#xA039;
-                                span
-                                    b Address
-                                    | 25-Street Town lorem ipsum dolor, New York.
+                      li
+                        a(href='tel:<?php echo $numberTel; ?>' target='_blank')
+                          i.icon &#xA001;
+                          span
+                            b Phone Number
+                            | <?php echo $number; ?>
+                      li
+                        a(href='mailto:<?php echo $email; ?>' target='_blank')
+                          i.icon &#xA003;
+                          span
+                            b Email Address
+                            | <?php echo $email; ?>
+                      li
+                        a(href='https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D' target='_blank')
+                          i.icon &#xA039;
+                          span
+                            b Address
+                            | <?php echo $address; ?>
       <?php include "./include/footer.php"; ?>
     <?php include "./include/scripts.php"; ?>

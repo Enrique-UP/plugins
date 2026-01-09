@@ -8,7 +8,7 @@
 .header-top-border{border:2px solid #4c9d8c;}
 .header-top-logo{font-size:100px; color:#666;}
 .header-text{padding-top:4.5%;}
-.header-text p{padding:0; margin:0; color:#666;}
+.header-text p{padding:0; margin:0; color:#666;float: right;width: 100%;text-align: right;}
 .header-text p span{color:#4c9d8c;}
 .navi{background:#40403e; height:50px;}
 ul.navigation-bar{list-style:none;}

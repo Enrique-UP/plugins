@@ -8,6 +8,9 @@ sass --watch src/file1.scss:dist/file1.css src/file2.scss:dist/file2.css
 
 Command for multiple files compile in one time
 sass --watch sass/home.scss:css/home.css sass/about.scss:css/about.css --no-source-map
+
+Command for unminify css
+sass --watch sass/home.scss:css/home.css sass/about.scss:css/about.css --no-source-map expanded
 ===========================================================================
 npm install -g sass
 

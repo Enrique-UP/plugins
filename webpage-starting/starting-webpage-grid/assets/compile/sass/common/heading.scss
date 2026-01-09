@@ -3,10 +3,12 @@ hgroup{width: 100%;@extend %fc;margin-bottom:32px;row-gap:12px;
     &.center{max-width: 800px;margin-inline: auto;text-align: center;
         .btns{justify-content: center;}
     }
+    > span{font-weight: bold;color:var(--c2);}
     h1, h2, h3, h4, h5, h6{font-size: 40px;font-weight: bold;line-height: 1.2;color:var(--f1);}
     p{font-size:20px;line-height: 1.5;color:var(--f2);}
     .btns{margin-top: 12px;}
     &.white{
         h1, h2, h3, h4, h5, h6, p{color:#fff;}
     }
+    .unlist, .list{margin-bottom: 0;text-align: left;}
 }
