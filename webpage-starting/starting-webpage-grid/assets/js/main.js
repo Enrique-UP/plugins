@@ -15,7 +15,17 @@ $(function () {
     });
 });
 
-
+$(function(){
+    $('.form').find('input, textarea, select').each(function () {
+        if ($(this).is(':checkbox') || $(this).is(':radio')) {
+            $(this).prop('checked', false);
+        } else if ($(this).is('select')) {
+            this.selectedIndex = 0;
+        } else {
+            $(this).val('');
+        }
+    });
+});
 
 
 $(function () {

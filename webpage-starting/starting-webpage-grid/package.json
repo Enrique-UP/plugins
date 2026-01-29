@@ -1,11 +1,11 @@
 {
-  "name": "starting-webpage-grid",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "sass --watch assets/compile/sass/style.scss:assets/css/style.min.css assets/compile/sass/common/grid.scss:assets/css/grid.min.css --style compressed"
+    "build-css": "sass --watch --source-map assets/compile/sass/style.scss:assets/css/style.css assets/compile/sass/common/grid.scss:assets/css/grid.min.css --style expanded"
   },
   "keywords": [],
   "author": "",

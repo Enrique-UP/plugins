@@ -32,9 +32,11 @@ testimonial.php
 Save this file with the name of testimonial.php
 ---------------------------------------------------
 <?php include "./partials/testimonial.php"; ?>
+if get back class then use above code
 ---------------------------------------------------
 <?php
     $sectionClass = "back";
     include "./partials/testimonial.php";
 ?>
+if not get back class then use above code
 =======================================================================================

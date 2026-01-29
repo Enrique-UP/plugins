@@ -35,18 +35,18 @@ html
                         h2 Contact Us
                         p Get in touch &mdash; we respond quickly.
                 .col-lg-7
-                    form.form(action='#')
+                    form.form(action="#")
                         .field
-                            label(for='name') Full Name*
-                            input#name.inputText(type='text' placeholder='Enter your full name' required='')
+                            label(for="name") Full Name*
+                            input#name.inputText(type="text" placeholder="Enter your full name" required="")
                         // field
                         .field
-                            label(for='email') Email Address*
-                            input#email.inputText(type='email' placeholder='Enter your email address' required='')
+                            label(for="email") Email Address*
+                            input#email.inputText(type="email" placeholder="Enter your email address" required="")
                         // field
                         .field
-                            label(for='message') Message*
-                            textarea#message.inputText(rows='4' placeholder='Write your message here...' required='')
+                            label(for="message") Message*
+                            textarea#message.inputText(rows="4" placeholder="Write your message here..." required="")
                         // field
                         .btns
                             button
@@ -55,23 +55,23 @@ html
                         // btns
                 .col-lg-5
                     ul.contactBox
-                      li
-                        a(href='tel:<?php echo $numberTel; ?>' target='_blank')
-                          i.icon &#xA001;
-                          span
-                            b Phone Number
-                            | <?php echo $number; ?>
-                      li
-                        a(href='mailto:<?php echo $email; ?>' target='_blank')
-                          i.icon &#xA003;
-                          span
-                            b Email Address
-                            | <?php echo $email; ?>
-                      li
-                        a(href='https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D' target='_blank')
-                          i.icon &#xA039;
-                          span
-                            b Address
-                            | <?php echo $address; ?>
+                        li
+                            a(href!="<?php echo $numberTel; ?>" target="_blank")
+                                i.icon &#xA001;
+                                span
+                                    b Phone Number
+                                    | <?php echo $number; ?>
+                        li
+                            a(href!="mailto:<?php echo $email; ?>" target="_blank")
+                                i.icon &#xA003;
+                                span
+                                    b Email Address
+                                    | <?php echo $email; ?>
+                        li
+                            a(href="https://www.google.com/maps/dir///@31.176664,-7.682147,3z?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank")
+                                i.icon &#xA039;
+                                span
+                                    b Address
+                                    | <?php echo $address; ?>
       <?php include "./include/footer.php"; ?>
     <?php include "./include/scripts.php"; ?>
