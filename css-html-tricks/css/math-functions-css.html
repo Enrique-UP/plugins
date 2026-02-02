@@ -14,6 +14,10 @@
         .calc {display:flex;width: calc(100% - 200px);border: 1px solid black;background-color: yellow;padding: 5px;}
         .max{background-color: yellow;height: 100px;width: max(50%, 300px);display:flex;}
         .min{background-color: yellow;height: 100px;width: min(50%, 300px);}
+        .clamp{
+            h2 {font-size: clamp(2rem, 2.5vw, 3.5rem);}
+            p {font-size: clamp(1rem, 2.5vw, 2.5rem);}
+        }
         .var{color: var(--c1);}
         .attr::after{content:attr(data-text);}
     </style>
@@ -48,5 +52,10 @@
     <div class="min">width: min(50%, 300px);</div>
     <br>
     <div class="max">width: max(50%, 300px);</div>
+    <div class="clamp">
+        <h2>The clamp() Function =>  clamp(min, preferred, max)</h2>
+        <p>Resize the window to see the effect!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac laoreet quam, id aliquet nisl. Etiam id eros ligula. Aenean euismod, enim sed mollis feugiat, magna massa cursus leo, ut maximus metus eros non ante. Praesent eget tincidunt mauris, ut euismod ipsum. In hac habitasse platea dictumst. In dapibus tortor magna, elementum elementum neque sagittis id. Integer vestibulum semper dui, quis finibus libero elementum nec.</p>
+    </div>
 </body>
 </html>
