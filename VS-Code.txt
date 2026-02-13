@@ -128,3 +128,56 @@ delete branch
 remote tab => delete branch=> select branch name opened window=> check always (do not perform merge checks) => delete => yes => close.
 check the git website folder
 =====================
+
+
+
+
+
+
+============================================================================================
+remove all history from the terminal from the vs code
+
+
+
+
+
+Open vs code => 
+press ctrl `  to open terminal for command => 
+type command => 
+
+notepad $PROFILE
+
+=> press enter => 
+after that notepad will open automatically => 
+
+Set-PSReadLineOption -HistorySaveStyle SaveNothing
+
+=> press enter => 
+this line paste in notepad and save with name =>
+
+Microsoft.PowerShell_profile.ps1
+
+=> and close the notepad => 
+=> type in terminal
+
+Remove-Item (Get-PSReadLineOption).HistorySavePath -ErrorAction Ignore
+
+=>
+and also this above live run in terminal =>
+close and open vs code =>
+press arrow up and down key then before history has remove.
+
+
+
+
+
+
+# Disable command history forever
+Set-PSReadLineOption -HistorySaveStyle SaveNothing
+
+# Remove Up Arrow history navigation
+Set-PSReadLineKeyHandler -Key UpArrow -Function Ignore
+Set-PSReadLineKeyHandler -Key DownArrow -Function Ignore
+===========================================================================================
+
+

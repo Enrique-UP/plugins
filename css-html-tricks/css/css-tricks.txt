@@ -108,10 +108,23 @@ p:not(.a, .b, .c) {color: red;}
 .sectionT.banner{padding-bottom:32px;}
 .section.banner{here will be use section defined css}
 ===================================================================================================================================
-.fa[class="fa"] {font-family: inherit;}
+section .fa[class="fa"] {font-family: inherit;}
+section i.fa[class="fa"] {font-family: inherit;}
+section i[class="fa"] {font-family: inherit;}
 
 <i class="fa fa-car"></i>
 <i class="fa">1</i>
+===================================================================================================================================
+<style>
+	hgroup p{color:#333;}
+	hgroup p[class]{font-weight:bold;}
+	hgroup p:not([class]){font-style:italic;}
+</style>
+<hgroup>
+	<p>This is a paragraph.</p>
+	<p class="para">This is another paragraph.</p>
+	<p>This is another paragraph.</p>
+</hgroup>
 ===================================================================================================================================
 .slider{position:relative;}
 .slider::before {position: absolute;top: 0;left: 0;width: 100%;height: 100%;content: "";background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.5) 26.48%, rgba(0, 0, 0, 0.5) 100%);}

@@ -1,0 +1,13 @@
+assests => compile => pug => include => head.pug
+assests => compile => pug => include => header.pug
+assests => compile => pug => include => scripts.pug
+
+assests => compile => pug => documentation.pug
+assests => compile => pug => index.pug
+
+assests => compile => sass
+assests => compile => typescript
+
+assests => css
+assests => images
+assests => js

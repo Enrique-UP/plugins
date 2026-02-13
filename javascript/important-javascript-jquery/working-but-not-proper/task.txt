@@ -32,3 +32,8 @@ https://www.youtube.com/watch?v=bWaucYA1YRI
 	(iii). Input validate
 	(iv). Select validate
 	(v). Store in local storage
+16. Form validation and submit by js.
+	input, select, textarea
+	name, email, phone number, dropdown like flight input.
+	with error red color message.
+17. Create search engine with search filter every thing like travel website and go to next page after searching.
