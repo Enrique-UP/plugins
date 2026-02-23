@@ -6,23 +6,34 @@
     <title>Document</title>
     <style type="text/css">
         ul > span{color:blue;}
-        ul > li:not(span){color:red;}
+        
+        /* ul > li:not(span){color:red;} */
+        /* invalid and we can't use combinators with :not we can use with :has */
+        ul li > :not(span){}
+        ul > li:not(:has(span)){color:red;}
+
         section :not([class]){color: green;}
+
         p.two.active{color:brown;}
         p.two:not(.active){color:red;}
-        /* :not(){color:cyan;} */
+        
         section.one :not(p):not(.para) {font-weight: bold;}
+
+        main p:not(article *) {border: 1px solid #000;}
     </style>
 </head>
 <body>
     <ul>
         <li>Lorem</li>
         <li>Lorem</li>
+        <li><b>Lorem</b> <br>
+            <span>Lorem</span><br>
+            <span>Lorem</span>
+        </li>
+        <p>ptag</p>
         <li>Lorem</li>
         <span>Lorem</span><br>
         <span>Lorem</span>
-        <p>ptag</p>
-        <li>Lorem</li>
     </ul>
     <section>
         <p class="one">Lorem</p>
@@ -41,5 +52,22 @@
         <span>Lorem</span><br>
         <span>Lorem</span>
     </section>
+
+    <hr>
+
+    <main>
+        <header>
+            <h1>Page Title</h1>
+            <p>This is a paragraph outside of an article.</p>
+        </header>
+        <header>
+            <h2>Article title</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat sit suscipit voluptatibus veritatis quos, deserunt omnis labore? Quaerat, laborum dolorum!</p>
+        </header>
+        <article>
+            <h2>Article title</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat sit suscipit voluptatibus veritatis quos, deserunt omnis labore? Quaerat, laborum dolorum!</p>
+        </article>
+    </main>
 </body>
 </html>

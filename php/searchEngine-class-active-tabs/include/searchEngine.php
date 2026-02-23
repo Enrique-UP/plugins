@@ -20,7 +20,7 @@
             <li class="<?php echo ($activeTab === 'car') ? 'active' : ''; ?>"><span data-href="#car">Rent a Car</span></li>
         </ul>
     </div>
-    <div class="right" id="flight">Flight</div>
+    <div class="right" id="flight">Flight <?php echo $logoImg ?? ''; ?></div>
     <div class="right" id="hotel">Hotel</div>
     <div class="right" id="flightHotel">Flight + Hotel</div>
     <div class="right" id="cruise">Cruise</div>

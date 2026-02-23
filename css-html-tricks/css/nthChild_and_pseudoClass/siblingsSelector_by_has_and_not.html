@@ -27,8 +27,9 @@
         aside:has(> p) > p{color: red;border: 2px solid red;}
         /*this is working on inner p*/
 
-        hgroup:has(+p) {color: gray;border: 2px dotted red;}
+        hgroup:has(+p) {color: gray;border: 2px solid red;}
         /* If p contains after hgroup then the css will be on hgroup. hgroup is fully depend on its adjacent element p. */
+        hgroup:has(+p) +p{color: gray;border: 2px solid blue;}
 
         section.seven ul > li:has(~ .active){color:red;}
         /* Is li tag has li.active then css will be apply on before active tag. */
@@ -52,7 +53,7 @@
     </style>
 </head>
 <body>
-    <h1>The :has() selector is used to select a parent element or previous sibling element, and apply a style to it.</h1>
+    <h1>:has() works like if else condition. <br>The :has() selector is used to select a parent element or previous sibling element, and apply a style to it.</h1>
     <div class="sections">
         <section class="one">
             <p>.box:has(+ .circle)</p>

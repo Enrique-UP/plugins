@@ -10,6 +10,7 @@
       <?php
         $pageNewClass = "flightBanner";
         $activeTab = "flight";
+        $logoImg = '<img class="carProvider" src="' . $siteUrl . 'assets/images/logos/dollar.png">';
         include "./include/searchEngine.php";
       ?>
     </main>
