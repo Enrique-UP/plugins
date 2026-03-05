@@ -129,5 +129,8 @@ section i[class="fa"] {font-family: inherit;}
 .slider{position:relative;}
 .slider::before {position: absolute;top: 0;left: 0;width: 100%;height: 100%;content: "";background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.5) 26.48%, rgba(0, 0, 0, 0.5) 100%);}
 ===================================================================================================================================
-
+[class*="links"]{width: 100%;} /* common */
+.links{display:flex;} /* only links */
+.links-2{display: grid;column-gap: 16px;grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));} /* only links-2 */
+[class*="links"]:not(.links-2){}
 ===================================================================================================================================

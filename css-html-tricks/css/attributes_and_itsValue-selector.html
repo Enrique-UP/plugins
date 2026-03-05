@@ -17,10 +17,11 @@
 <body>
     <section class="zero">
         <style type="text/css">
+            .zero{display: flex;flex-direction: column;width: 100%;row-gap: 32px;}
             .zero ol, .zero ul{width: 100%;display: flex;flex-direction: column;padding-left:18px;}
             .zero ol > li:not(:last-child), .zero ul > li:not(:last-child){margin-bottom: 8px;}
             .zero ol > li > span, .zero ul > li > span{color:red;}
-            .zero .list{width: 100%;font-weight: bold;}
+            .zero ul, .zero ol{width: 100%;font-weight: bold;}
         </style>
         <p>CSS Attribute Selectors</p>
         <ol class="list">
@@ -34,6 +35,13 @@
             <li>:not([attribute]) or like :not([href]) / :not([class])</li>
             <li>:not([type="text"])</li>
         </ol>
+        <ul>
+            <li>~ => Starts with any class matching word then apply/apply with space.</li>
+            <li>| => Starts with any class matching word then apply/apply with -.</li>
+            <li>^ => Starts with any class matching word then apply/apply with _ , - .</li>
+            <li>$ => Ends with any class matching word then apply.</li>
+            <li>* => Finds class matching word then apply any where.</li>
+        </ul>
     </section>
 
 
@@ -74,7 +82,9 @@
         <a href="#" class="cls demo cls1"></a>
         <a href="#" class="demo_"></a>
         <a href="#" class="demo-"></a>
+        <a href="#" class="cls demo-"></a>
         <a href="#" class="_demo"></a>
+        <a href="#" class="demo-"></a>
         <a href="#" class="-demo"></a>
         <a href="#" class="_demo_"></a>
         <a href="#" class="-demo-"></a>
@@ -106,8 +116,9 @@
         <a href="#" class="cls demo"></a>
         <a href="#" class="cls demo cls1"></a>
         <a href="#" class="demo_"></a>
-        <a href="#" class="demo-"></a>
+        <a href="#" class="cls demo-"></a>
         <a href="#" class="_demo"></a>
+        <a href="#" class="demo-"></a>
         <a href="#" class="-demo"></a>
         <a href="#" class="_demo_"></a>
         <a href="#" class="-demo-"></a>
@@ -139,7 +150,9 @@
         <a href="#" class="cls demo cls1"></a>
         <a href="#" class="demo_"></a>
         <a href="#" class="demo-"></a>
+        <a href="#" class="cls demo-"></a>
         <a href="#" class="_demo"></a>
+        <a href="#" class="demo-"></a>
         <a href="#" class="-demo"></a>
         <a href="#" class="_demo_"></a>
         <a href="#" class="-demo-"></a>
@@ -174,7 +187,9 @@
         <a href="#" class="cls demo cls1"></a>
         <a href="#" class="demo_"></a>
         <a href="#" class="demo-"></a>
+        <a href="#" class="cls demo-"></a>
         <a href="#" class="_demo"></a>
+        <a href="#" class="demo-"></a>
         <a href="#" class="-demo"></a>
         <a href="#" class="_demo_"></a>
         <a href="#" class="-demo-"></a>
@@ -208,7 +223,9 @@
         <a href="#" class="cls demo cls1"></a>
         <a href="#" class="demo_"></a>
         <a href="#" class="demo-"></a>
+        <a href="#" class="cls demo-"></a>
         <a href="#" class="_demo"></a>
+        <a href="#" class="demo-"></a>
         <a href="#" class="-demo"></a>
         <a href="#" class="_demo_"></a>
         <a href="#" class="-demo-"></a>

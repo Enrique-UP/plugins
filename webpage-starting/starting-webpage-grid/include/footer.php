@@ -1,4 +1,3 @@
-
 <footer>
   <div class="top">
     <div class="container">
@@ -45,4 +44,5 @@
       <p class="copy">Copyright &copy; with all rights reserved.</p>
     </div>
   </div>
-</footer><a class="fixNum" href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa001;</i>Call Us <?php echo $number; ?></a>
+</footer>
+<a class="fixNum" href="tel:<?php echo $numberTel; ?>" target="_blank"><i class="icon">&#xa001;</i>Call Us <?php echo $number; ?></a>

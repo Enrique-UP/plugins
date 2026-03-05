@@ -6,7 +6,8 @@
     <meta name="keywords" content=""><?php include "./include/head.php"; ?>
   </head>
   <body>
-    <main><?php include "./include/header.php"; ?>
+    <main>
+      <?php include "./include/header.php"; ?>
       <section class="section banner">
         <div class="container">
           <div class="row"> 

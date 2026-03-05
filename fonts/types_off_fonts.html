@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{padding:0;margin:0;box-sizing: border-box;}
+        body{padding:32px;}
+        section{width: 100%;display: flex;flex-direction: column;row-gap: 8px;}
+        section:not(:last-child){padding-bottom: 32px;margin-bottom: 32px;border-bottom: 1px solid grey;}
+        h1{line-height: 1.2;font-size: 36px;}
+        h2{line-height: 1.2;font-size: 30px;}
+        p{line-height: 1.7;font-size: 20px;font-weight: bold;}
+        section ul{width: 100%;display: flex;flex-direction: column;padding-left: 12px;row-gap: 12px;}
+        
+        section.serif{font-family: serif;
+            ul{
+                > li:nth-child(1){font-family: "Times New Roman", Times, serif;}
+                > li:nth-child(2){font-family: Georgia, serif;}
+                > li:nth-child(3){font-family: Garamond, serif;}
+            }
+        }
+        section.sans-serif{font-family: sans-serif;
+            ul{
+                > li:nth-child(1){font-family: Arial, Helvetica, sans-serif;}
+                > li:nth-child(2){font-family: Tahoma, Verdana, sans-serif;}
+                > li:nth-child(3){font-family: "Trebuchet MS", Helvetica, sans-serif;}
+                > li:nth-child(4){font-family: Geneva, Verdana, sans-serif;}
+            }
+        }
+        section.monospace{font-family: monospace;
+            ul > li{font-family: "Courier New", Courier, monospace;}
+        }
+        section.cursive{font-family: cursive;
+            ul > li{font-family: "Brush Script MT", cursive;}
+        }
+        section.fantasy{font-family: fantasy;
+            ul > li{font-family: Copperplate, Papyrus, fantasy;}
+        }
+    </style>
+</head>
+<body>
+    <section class="fonts">
+        <h1>Types of fonts</h1>
+        <p>We are using web safe fonts. These font families are not need to installation.</p>
+        <ul>
+            <li>Serif</li>
+            <li>Sans-serif</li>
+            <li>Monospace</li>
+            <li>Cursive</li>
+            <li>Fantasy</li>
+        </ul>
+    </section>
+    <section class="serif">
+        <h2>Serif</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+        </ul>
+    </section>
+    <section class="sans-serif">
+        <h2>Sans-serif</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+        </ul>
+    </section>
+    <section class="monospace">
+        <h2>Monospace</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+        </ul>
+    </section>
+    <section class="cursive">
+        <h2>Cursive</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+        </ul>
+    </section>
+    <section class="fantasy">
+        <h2>Fantasy</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo soluta magnam dolores quidem sed.</li>
+        </ul>
+    </section>
+</body>
+</html>

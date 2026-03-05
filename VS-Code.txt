@@ -167,7 +167,7 @@ and also this above live run in terminal =>
 close and open vs code =>
 press arrow up and down key then before history has remove.
 
-
+===========
 
 
 

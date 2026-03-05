@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .counter1{
+            ul {counter-reset: item;list-style: none;padding-left: 20px;}
+            ul > li {counter-increment: item;}
+            ul > li > data::before {content: counters(item, ".") " "; font-weight: bold;}
+        }
+    </style>
+    <section class="counter1">
+        <ul>
+            <li><data>Lorem</data></li>
+            <li><data>Lorem</data></li>
+            <li>
+                <ul>
+                    <li><data>Lorem</data></li>
+                    <li><data>Lorem</data></li>
+                    <li>
+                        <ul>
+                            <li><data>Lorem</data></li>
+                            <li><data>Lorem</data></li>
+                            <li><data>Lorem</data></li>
+                            <li>
+                                <ul>
+                                    <li><data>Lorem</data></li>
+                                    <li><data>Lorem</data></li>
+                                    <li><data>Lorem</data></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><data>Lorem</data></li>
+            <li><data>Lorem</data></li>
+        </ul>
+    </section>
+    <hr>
+    <style>
+        .counter2{counter-reset: myCounter;
+            data {counter-increment: myCounter;}
+            data::before {content: counter(myCounter) "- ";font-weight: bold;}
+        }
+    </style>
+    <section class="counter2">
+        <ul>
+            <li><data>Lorem</data></li>
+            <li><data>Lorem</data></li>
+            <li>
+                <ul>
+                    <li><data>Lorem</data></li>
+                    <li><data>Lorem</data></li>
+                    <li>
+                        <ul>
+                            <li><data>Lorem</data></li>
+                            <li><data>Lorem</data></li>
+                            <li><data>Lorem</data></li>
+                            <li>
+                                <ul>
+                                    <li><data>Lorem</data></li>
+                                    <li><data>Lorem</data></li>
+                                    <li><data>Lorem</data></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><data>Lorem</data></li>
+            <li><data>Lorem</data></li>
+        </ul>
+    </section>
+</body>
+</html>
