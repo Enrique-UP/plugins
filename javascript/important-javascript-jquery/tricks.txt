@@ -234,3 +234,9 @@ If after refresh js is not working then use hashchange event.
 file:///D:/office-work/assets/plugins/javascript/important-javascript-jquery/window-location-url/linkActiveByRefreshByGet_url_id.html
 window.addEventListener("hashchange", funcName);
 select.value = "";
+=================================================================================================================================================
+Alternate of setInterval
+setInterval(resizeImage, 3000);
+Or
+document.querySelectorAll(".partition img").forEach(img => img.addEventListener("load", resizeImage));
+by load is a so better.

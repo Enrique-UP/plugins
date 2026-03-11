@@ -16,9 +16,9 @@ html
                 h1 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
                 p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam.
                 .btns 
-                  a(href!="tel:<?php echo $numberTel; ?>" target="_blank")
-                    i.icon &#xa041; 
-                    span <?php echo $number; ?>
+                  a(href!=`tel:${numberTel}` target="_blank")
+                    i.icon &#xa041;
+                    span #{number}
             .col-lg-6.col-xl-7
               img(src="./assets/images/banner.jpg", alt="", width="100%").img
       section.section.blt
@@ -35,7 +35,7 @@ html
             h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
             p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
           p 
-            a(href!="tel:<?php echo $numberTel; ?>" target="_blank") <?php echo $number; ?>
+            a(href!=`tel:${numberTel}` target="_blank") #{number}
           ul.unlist
             li Lorem ipsum dolor
             li Lorem ipsum dolor
@@ -50,7 +50,7 @@ html
             h2 Lorem ipsum dolor sit amet consectetur adipisicing elit veritatis totam
             p Lorem ipsum dolor sit amet consectetur adipisicing elit et error dolores aliquid eos quas sint voluptatum atque odit eaque nulla tempora provident quod earum id ea eum vero soluta numquam
             .btns.center 
-              a(href!="tel:<?php echo $numberTel; ?>" target="_blank") Call Us
+              a(href!=`tel:${numberTel}` target="_blank") Call Us
       section.section
         .container
           hgroup.center 

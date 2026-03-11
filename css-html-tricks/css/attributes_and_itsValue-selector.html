@@ -36,11 +36,13 @@
             <li>:not([type="text"])</li>
         </ol>
         <ul>
-            <li>~ => Starts with any class matching word then apply/apply with space.</li>
-            <li>| => Starts with any class matching word then apply/apply with -.</li>
-            <li>^ => Starts with any class matching word then apply/apply with _ , - .</li>
-            <li>$ => Ends with any class matching word then apply.</li>
-            <li>* => Finds class matching word then apply any where.</li>
+            <li>[attribute] => Select elements with a specific attribute.</li>
+            <li>[attribute=value] => Select elements with a specific attribute with an exact value.</li>
+            <li>[attribute~=value] => Starts with any class matching word then apply/apply with space.</li>
+            <li>[attribute|=value] => Starts with any class matching word then apply/apply with -.</li>
+            <li>[attribute^=value] => Starts with any class matching word then apply/apply with _ , - .</li>
+            <li>[attribute$=value] => Ends with any class matching word then apply.</li>
+            <li>[attribute*=value] => Finds class matching word then apply any where.</li>
         </ul>
     </section>
 
