@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="output">
+<script>
+    const counters = {};
+    function getUniqueImage(folder = "") {
+        const key = folder || "default";
+        counters[key] = (counters[key] || 1);
+        return `./images/lifeStyle/${folder ? folder + "/" : "home"}${counters[key]++}.jpg`;
+    }
+
+    const LifeStyleData = [
+        {
+            place: "Lorem",
+            date: "00-Jan-2026",
+            category: "Sports",
+            images: Array.from({ length: 10 }, (_, i) => {
+                const num = i + 1;
+                return {
+                    img: getUniqueImage("beach"),
+                    type:
+                        num === 5 ? "Best" :
+                        num === 8 ? "Better" :
+                        num === 10 ? "Good" :
+                        undefined
+                };
+            })
+        },
+        {
+            place: "Lorem",
+            date: "00-Apr-2026",
+            category: "Bridge",
+            images: Array.from({ length: 1 }, (_, i) => {
+                const num = i + 1;
+                return {
+                    img: getUniqueImage("bridge"),
+                    type: num === 1 ? "Best" : undefined
+                };
+            })
+        },
+        {
+            place: "Ipsum",
+            date: "00-Feb-2026",
+            category: "Picnic",
+            images: Array.from({ length: 15 }, (_, i) => {
+                const num = i + 1;
+                return {
+                    img: getUniqueImage("building"),
+                    type:
+                        num === 5 ? "Best" :
+                        num === 12 ? "Better" :
+                        num === 15 ? "Good" :
+                        undefined
+                };
+            })
+        },
+        {
+            place: "Dolor",
+            date: "00-Mar-2026",
+            category: "Weekend",
+            images: Array.from({ length: 50 }, (_, i) => {
+                const num = i + 1;
+                return {
+                    img: getUniqueImage("forest"),
+                    type:
+                        num === 10 ? "Best" :
+                        num === 25 ? "Better" :
+                        num === 50 ? "Good" :
+                        undefined
+                };
+            })
+        },
+        {
+            place: "Lorem",
+            date: "00-Apr-2026",
+            category: "Mountain",
+            images: Array.from({ length: 5 }, (_, i) => {
+                const num = i + 1;
+                return {
+                    img: getUniqueImage(),
+                    type:
+                        num === 1 ? "Best" :
+                        num === 3 ? "Better" :
+                        num === 5 ? "Good" :
+                        undefined
+                };
+            })
+        }
+    ];
+
+    const container = document.getElementById("output");
+    LifeStyleData.forEach(item => {
+        const section = document.createElement("section");
+        section.innerHTML = `
+            <h2>${item.place}</h2>
+            <p><b>${item.date}</b> - <i>${item.category}</i></p>
+            ${item.images.map(img => `
+                <figure style="display:inline-block; margin:10px;">
+                    <img src="${img.img}" width="100"/>
+                    <figcaption>${img.type ? `<b>${img.type}</b>` : "-"}</figcaption>
+                </figure>
+            `).join("")}
+            <hr/>
+        `;
+        container.appendChild(section);
+    });
+</script>
+</body>
+</html>
