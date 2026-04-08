@@ -1,0 +1,53 @@
+:root {
+  --red:red;
+  --green:green;
+  --blue:blue;
+}
+
+.contact hgroup, .about hgroup, .home hgroup {
+  transition: 0.3s cubic-bezier(0, 0, 1, 0.1);
+  -webkit-transition: 0.3s cubic-bezier(0, 0, 1, 0.1);
+  -moz-transition: 0.3s cubic-bezier(0, 0, 1, 0.1);
+}
+
+.contact hgroup, .about hgroup, .home hgroup, main {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+}
+main section {
+  width: 100%;
+  padding-block: 80px;
+  padding-inline: 16px;
+}
+
+.home hgroup h1 {
+  color: var(--red);
+}
+
+.about hgroup h1 {
+  color: var(--green);
+}
+
+.contact hgroup h1 {
+  color: var(--blue);
+}

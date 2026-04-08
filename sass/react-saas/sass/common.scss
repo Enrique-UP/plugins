@@ -1,0 +1,11 @@
+@import "./common/colors.scss";
+@import "./placeholder.scss";
+
+*{padding:0;margin:0;box-sizing: border-box;font: inherit;}
+
+img{max-width: 100%;}
+h1, h2, h3, h4, h5, h6{font-size: 36px;font-weight: bold;}
+
+main{width: 100%;@extend %fc;
+    section{width:100%;padding-block: 80px;padding-inline: 16px;}
+}

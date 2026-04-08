@@ -1,0 +1,5 @@
+.about{
+    hgroup{@extend %fc;@extend %trans;
+        h1{color:var(--green);}
+    }
+}

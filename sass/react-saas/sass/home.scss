@@ -1,0 +1,5 @@
+.home{
+    hgroup{@extend %fc;@extend %trans;
+        h1{color:var(--red);}
+    }
+}

@@ -1,0 +1,11 @@
+%fc{display:flex;flex-direction:column;}
+
+Don't use @mixin fc; and @includ fc;
+Use %fc{}
+
+hgroup{@extend %fc;}
+p{@extend %fc;}
+----------------------------------------------------
+hgroup, p{display:flex;flex-direction:column;}
+Good for light css.
+
