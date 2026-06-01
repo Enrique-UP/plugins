@@ -1,1 +1,24 @@
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite
+
+npm create vite@latest my-app
+cd my-app
+npm install
+npm run dev
+npm run build/deploy
+npm run preview
+==================================================================================
+
+
+
+
+
+
+
+
+
+==================================================================================
+GIT 1000 files ek folder m nahi leta usske liye solution
+src/assets/images delete karo
+sab images public/images me move karo
+imports hatao
+only use /images/...
