@@ -12,9 +12,9 @@
     const entries = [
       {
         date: '10-Jun-2026',
-        deposit: '800,000 + 586,000 + 500,000 + 100,000 + 80,000 + 196,000 + 74,000',
+        deposit: '800,000 + 586,000 + 500,000 + 180,000 + 270,000',
         spend: '150,000',
-        target: '21,50,000'
+        target: '21,66,000'
       },
       {
         date: '10-Jul-2026',
@@ -56,7 +56,7 @@
 
     const data = entries.map(item => {
       const inHandTotal = totalOf(item.deposit);
-      const spendTotal = item.spend ? totalOf(item.spend) : 0;
+      const spendTotal = item.spend ? totalOf(item.spend) : '';
       const leftTotal = inHandTotal - spendTotal;
 
       return {
@@ -78,9 +78,11 @@
     table.mb{margin-bottom: 4px;}
     table:not(.mb){margin-bottom: 50px;}
     table thead td{white-space: nowrap;}
-    table caption, table th, table td{border:1px solid #000;padding:5px;}
+    table caption, table th, table td{border:1px solid #000;}
+	table caption, table thead td{padding:6px 4px;}
+	table tbody td{padding:4px;}
     table caption {display: table-caption;caption-side: bottom;text-align: center;border-top: none;font-weight: bold;color:#fff;font-size: 16px;}
-    table thead td, table tfoot td{font-weight: bold;color:#fff;width: 25%;font-size: 16px;}
+    table thead td, table tfoot td{font-weight: bold;color:#fff;font-size: 16px;}
 
     table thead td{background: #00695C;}
     table thead td:nth-child(1){width:8%;}
@@ -100,7 +102,7 @@
     .btns > a{text-decoration: none;background:brown;color:#fff;padding: 12px 24px;font-weight: bold;border-radius: 4px;}
     
     table caption:only-child { border-top: 1px solid #000; }
-    table tbody td:nth-child(1) {background-color: #fff9c4;}
+    table tbody td:nth-child(1) {background-color: #fff9c4;white-space:nowrap;}
     table tbody td:nth-child(2) {background-color: #e8f5e9;}
     table tbody td:nth-child(5) {background-color: #f3e5f5;}
     table tbody td:nth-child(3), table tbody td:nth-child(7) {background-color: #fde0e0;}
@@ -111,9 +113,18 @@
   <table class="table">
     <thead>
       <tr>
+        <td>Set Date</td>
+        <td>Only edit in 10 of every month</td>
+        <td>Always Edit</td>
+        <td>Edit on 10</td>
+        <td>Automatically Set</td>
+      </tr>
+    </thead>
+	<thead>
+      <tr>
         <td>Date</td>
         <td>How in Hand</td>
-        <td>How Spend</td>
+        <td>How Spend of total month</td>
         <td>Target Saving</td>
         <td>Total Left</td>
       </tr>
@@ -124,7 +135,6 @@
   <table class="totalTable">
     <caption>Updated Date Here...</caption>
   </table>
-
   
   <script>
     data.forEach(item => {
