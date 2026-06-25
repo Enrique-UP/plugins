@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Spread Operator
+            // Array Copying Without Spread
+                const arr1 = [1, 2, 3];
+                const arr2 = arr1;
+                arr2.push(4);
+                console.log(arr1); // [1, 2, 3, 4]
+                console.log("========================================");
+            // Both variables point to the same array.
+
+
+            // With Spread
+                const arr3 = [1, 2, 3];
+                const arr4 = [...arr3];
+                arr4.push(4);
+                console.log(arr3); // [1, 2, 3]
+                console.log(arr4); // [1, 2, 3, 4]
+                console.log("========================================");
+
+
+            // Merging Arrays
+                const frontend = ["HTML", "CSS"];
+                const backend = ["Node.js", "MongoDB"];
+                const fullStack = [...frontend, ...backend];
+                console.log(fullStack); // ["HTML", "CSS", "Node.js", "MongoDB"]
+                console.log("========================================");
+
+
+            // Adding Elements
+                const numbers = [2, 3, 4];
+                const newNumbers = [1, ...numbers, 5];
+                console.log(newNumbers); // [1, 2, 3, 4, 5]
+                console.log("========================================");
+            
+
+            // Object Copying
+                const user1 = {
+                    name: "Nomaan",
+                    age: 34
+                };
+                const copiedUser = { ...user1 };
+                console.log(copiedUser); // { name: "Nomaan", age: 34 }
+                console.log("========================================");
+            
+
+            // Merging Objects
+                const personal = {
+                    name: "Nomaan"
+                };
+                const professional = {
+                    role: "Developer"
+                };
+                const profile = {
+                    ...personal,
+                    ...professional
+                };
+                console.log(profile); // { name: "Nomaan", role: "Developer" }
+
+            
+            // Overriding Properties
+                const user = {
+                    name: "Nomaan",
+                    age: 34
+                };
+                const updatedUser = {
+                    ...user,
+                    age: 35
+                };
+                console.log(updatedUser); // { name: "Nomaan", age: 35 }
+                console.log("========================================");
+
+
+            // 2. Rest Operator
+                // Function Parameters
+                function sum(...numbers) {
+                    return numbers.reduce((total, num) => total + num, 0);
+                }
+                console.log(sum(10, 20));
+                console.log(sum(10, 20, 30));
+                console.log(sum(10, 20, 30, 40));
+                // 30
+                // 60
+                // 100
+                console.log("========================================");
+
+            
+            // Array Destructuring with Rest
+                const numbers1 = [10, 20, 30, 40, 50];
+                const [first1, second, ...remaining] = numbers1;
+                console.log(first1);
+                console.log(second);
+                console.log(remaining);
+                // 10
+                // 20
+                // [30, 40, 50]
+                console.log("========================================");
+
+
+            // Object Destructuring with Rest
+                const employee1 = {
+                    id: 101,
+                    name: "John",
+                    department: "IT",
+                    salary: 50000
+                };
+                const { name, ...details } = employee1;
+                console.log(name);
+                console.log(details);
+                // John
+                // { id: 101, department: "IT", salary: 50000 }
+                console.log("========================================");
+
+
+            // Interview Question 1
+                // Convert arguments to an array
+                function showUsers(...users) {
+                    console.log(users);
+                }
+                showUsers("John", "Mike", "David");
+                // ["John", "Mike", "David"]
+                console.log("========================================");
+
+
+            // Interview Question 2
+                // Clone and Update Object
+                const employee = {
+                    name: "John",
+                    salary: 50000
+                };
+                const updatedEmployee = {
+                    ...employee,
+                    salary: 60000
+                };
+                console.log(updatedEmployee);
+                // { name: "John", salary: 60000 }
+                console.log("========================================");
+
+
+            // Interview Question 3
+                // Spread + Rest Together
+                const numbers2 = [1, 2, 3, 4, 5];
+                const [first, ...rest] = numbers2;
+                const newNumbers1 = [first, ...rest, 6];
+                console.log(newNumbers1);
+                [1, 2, 3, 4, 5, 6]
+                console.log("========================================");
+
+
+            // Easy Rule to Remember
+                // Spread → Expand
+                const arr = [1, 2, 3];
+                console.log(...arr);
+                // 1 2 3
+                console.log("========================================");
+
+
+            // Rest → Collect
+                function demo(...args) {
+                    console.log(args);
+                }
+                demo(1, 2, 3);
+                // [1, 2, 3]
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Basic Example
+            // Without Default Parameters
+            function greet(name) {
+                name = name || "Guest";
+                console.log(`Hello, ${name}!`);
+            }
+            greet();
+            greet("Nomaan");
+            // Hello, Guest!
+            // Hello, Nomaan!
+
+
+
+            // With Default Parameters (ES6)
+            function greet(name = "Guest") {
+                console.log(`Hello, ${name}!`);
+            }
+            greet();
+            greet("Nomaan");
+            // Hello, Guest!
+            // Hello, Nomaan!
+
+        // 2. Multiple Default Parameters
+            function createUser(name = "Guest", age = 18) {
+                console.log(`${name} is ${age} years old`);
+            }
+            createUser();
+            createUser("Nomaan");
+            createUser("John", 30);
+            // Guest is 18 years old
+            // Nomaan is 18 years old
+            // John is 30 years old
+
+        // 3. Default Parameter with Numbers
+            function multiply(a, b = 1) {
+                return a * b;
+            }
+            console.log(multiply(5));
+            console.log(multiply(5, 2));
+            // 5
+            // 10
+
+        
+        // 4. Default Parameter with Arrays
+            function displayItems(items = []) {
+                console.log(items);
+            }
+            displayItems();
+            displayItems(["HTML", "CSS", "JavaScript"]);
+            // []
+            // ["HTML", "CSS", "JavaScript"]
+
+
+        // 5. Default Parameter with Objects
+            function createProfile(user = {}) {
+                console.log(user);
+            }
+            createProfile();
+            createProfile({
+                name: "Nomaan",
+                age: 34
+            });
+            // {}
+            // { name: "Nomaan", age: 34 }
+
+
+        // 6. Default Value Using Another Parameter
+            function calculatePrice(price, tax = price * 0.18) {
+                return price + tax;
+            }
+            console.log(calculatePrice(1000));
+            // 1180
+
+        // 7. Passing undefined
+            // Default values are used when the argument is undefined.
+            function greet(name = "Guest") {
+                console.log(name);
+            }
+            greet(undefined);
+            // Guest
+
+        // 8. Passing null
+            // null does not trigger the default value.
+            function greet(name = "Guest") {
+                console.log(name);
+            }
+            greet(null);
+            // null
+
+
+        // 9. Arrow Function Example
+            const add = (a = 0, b = 0) => a + b;
+            console.log(add());
+            console.log(add(10, 20));
+            // 0
+            // 30
+
+        // 10. Destructuring + Default Parameters
+            function displayUser({ name = "Guest", age = 18 } = {}) {
+                console.log(`${name} is ${age} years old`);
+            }
+            displayUser();
+            displayUser({ name: "Nomaan" });
+            displayUser({ name: "John", age: 30 });
+            // Guest is 18 years old
+            // Nomaan is 18 years old
+            // John is 30 years old
+
+
+        // Common Interview Questions
+            // Q1. When are default parameters used?
+            // Only when the argument is:
+            // undefined
+            // Example:
+                function test(x = 10) {
+                    console.log(x);
+                }
+                test();           // 10
+                test(undefined);  // 10
+                test(null);       // null
+                test(0);          // 0
+
+            // Q2. Default Parameter + Rest Parameter
+            function showUsers(role = "User", ...users) {
+                console.log(role);
+                console.log(users);
+            }
+            showUsers("Admin", "John", "Mike", "David");
+            // Admin
+            // ["John", "Mike", "David"]
+
+
+        // Quick Summary
+            // Basic
+            function greet(name = "Guest") {}
+
+            // Multiple
+            function createUser(name = "Guest", age = 18) {}
+
+            // Using another parameter
+            function calc(price, tax = price * 0.18) {}
+
+            // Array default
+            function show(items = []) {}
+
+            // Object default
+            function profile(user = {}) {}
+
+            // Destructuring default
+            function display({ name = "Guest" } = {}) {}
+    </script>
+
+</body>
+</html>

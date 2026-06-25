@@ -1,0 +1,13 @@
+<!-- Destructuring + Default Parameters -->
+
+function UserCard({ name = "Guest", email = "Not Provided" }) {
+    return (
+        <div>
+            <h2>{name}</h2>
+            <p>{email}</p>
+        </div>
+    );
+}
+<UserCard />
+<UserCard name="Nomaan" />
+======================================================

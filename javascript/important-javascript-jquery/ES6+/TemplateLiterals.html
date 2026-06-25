@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const name = "Alice";
+        const age = 25;
+        // Old Way (Concatenation)
+        const oldGreeting = "Hello, my name is " + name + " and I am " + age + " years old.";
+        // New Way (Template Literals)
+        const newGreeting = `Hello, my name is ${name} and I am ${age} years old.`;
+        document.write("<br><br>");
+        document.write(oldGreeting);
+        document.write("<br><br>");
+        document.write(newGreeting);
+        document.write("<br><br><br><br>");
+    </script>
+    <script>
+        const price = 100;
+        const tax = 0.05;
+        // Math inside the literal
+        // Ternary operators inside the literal
+        const isLoggedIn = true;
+        document.write("<br><br>");
+        document.write(`The user is ${isLoggedIn ? 'Online' : 'Offline'}`);
+        document.write("<br><br>");
+        document.write(`Total price: $${price * (1 + tax)}`);
+    </script>
+</body>
+</html>

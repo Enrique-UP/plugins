@@ -1,0 +1,16 @@
+let and const
+Arrow Functions (=>)
+Template Literals
+Destructuring Assignment
+Spread and Rest Operators (...)
+Default Parameters
+Classes
+Modules (import/export)
+Asynchronous JavaScript (Promises & Async/Await)
+Optional Chaining (?.)
+Nullish Coalescing (??)
+Array methods (map, filter, reduce, etc.)
+Classes class Animal { ... }
+Modules import { status } from './utils.js'
+Optional Chaining (ES11) user?.profile?.bio
+Nullish Coalescing (ES11) const speed = maxSpeed ?? 50;
