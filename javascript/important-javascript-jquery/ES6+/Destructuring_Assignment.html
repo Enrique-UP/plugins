@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <script>
+    <pre>
         // 1. Array Destructuring
             // Without Destructuring
             const colors = ["red", "green", "blue"];
@@ -16,7 +16,7 @@
             const second = colors[1];
             console.log(first);  // red
             console.log(second); // green
-            console.log("========================================");
+            
         
 
             // With Destructuring
@@ -24,7 +24,7 @@
             const [first1, second1] = colors1;
             console.log(first1);  // red
             console.log(second1); // green
-            console.log("========================================");
+            
 
 
         // 2. Skipping Values
@@ -32,21 +32,21 @@
             const [first2, , third2] = numbers;
             console.log(first2); // 10
             console.log(third2); // 30
-            console.log("========================================");
+            
 
         
         // 3. Default Values
             const [a, b = 100] = [10];
             console.log(a); // 10
             console.log(b); // 100
-            console.log("========================================");
+            
 
 
         // 4. Rest Operator
             const [first3, ...rest] = [1, 2, 3, 4, 5];
             console.log(first3); // 1
             console.log(rest);  // [2, 3, 4, 5]
-            console.log("========================================");
+            
 
 
         // 5. Swapping Variables
@@ -55,7 +55,7 @@
             [x, y] = [y, x];
             console.log(x); // 20
             console.log(y); // 10
-            console.log("========================================");
+            
 
 
         // 6. Object Destructuring
@@ -67,7 +67,7 @@
             const { name, age } = user;
             console.log(name); // Nomaan
             console.log(age);  // 34
-            console.log("========================================");
+            
 
 
         // 7. Renaming Variables
@@ -78,7 +78,7 @@
             const { name: userName, age: userAge } = user1;
             console.log(userName); // Nomaan
             console.log(userAge);  // 34
-        console.log("========================================");
+        
         
 
         // 8. Default Values in Objects
@@ -88,7 +88,7 @@
         const { name1, age1 = 25 } = user2;
         console.log(name1); // Nomaan
         console.log(age1);  // 25
-        console.log("========================================");
+        
 
 
         // 9. Nested Object Destructuring
@@ -104,7 +104,7 @@
         } = employee;
         console.log(city);  // Gurugram
         console.log(state); // Haryana
-        console.log("========================================");
+        
 
         
         // 10. Function Parameter Destructuring
@@ -115,8 +115,149 @@
             name: "Nomaan",
             age: 34
         };
-        displayUser(user3);
-        console.log("========================================");
+        displayUser(user3); // Nomaan is 34 years old
+        
+
+
+        // 11. React Example (Very Common in Interviews)
+         function UserCard({ name, email }) {
+             return (
+                 <!-- <div>
+                     <h2>{name}</h2>
+                     <p>{email}</p>
+                 </div> -->
+             );
+         }
+         <!-- <UserCard name="Enrique" email="demo@gmail.com" /> -->
+         function UserCard(props) {
+             return (
+                 <!-- <div>
+                 <h2>props.name</h2>
+                 <p>props.email</p>
+                 </div> -->
+             );
+         }
+         <!-- <UserCard name="Enrique" email="demo@gmail.com" /> -->
+        
+
+        
+        const employee1 = {
+            name3: "John",
+            department: "IT",
+            salary3: 50000
+        };
+        const { name3, salary3 } = employee1;
+        console.log(`${name3} earns ${salary3}`); // John earns 50000
+    </pre>
+    <script>
+        // 1. Array Destructuring
+            // Without Destructuring
+            const colors = ["red", "green", "blue"];
+            const first = colors[0];
+            const second = colors[1];
+            console.log(first);  // red
+            console.log(second); // green
+            
+        
+
+            // With Destructuring
+            const colors1 = ["red", "green", "blue"];
+            const [first1, second1] = colors1;
+            console.log(first1);  // red
+            console.log(second1); // green
+            
+
+
+        // 2. Skipping Values
+            const numbers = [10, 20, 30, 40];
+            const [first2, , third2] = numbers;
+            console.log(first2); // 10
+            console.log(third2); // 30
+            
+
+        
+        // 3. Default Values
+            const [a, b = 100] = [10];
+            console.log(a); // 10
+            console.log(b); // 100
+            
+
+
+        // 4. Rest Operator
+            const [first3, ...rest] = [1, 2, 3, 4, 5];
+            console.log(first3); // 1
+            console.log(rest);  // [2, 3, 4, 5]
+            
+
+
+        // 5. Swapping Variables
+            let x = 10;
+            let y = 20;
+            [x, y] = [y, x];
+            console.log(x); // 20
+            console.log(y); // 10
+            
+
+
+        // 6. Object Destructuring
+            const user = {
+                name: "Nomaan",
+                age: 34,
+                city: "Gurgaon"
+            };
+            const { name, age } = user;
+            console.log(name); // Nomaan
+            console.log(age);  // 34
+            
+
+
+        // 7. Renaming Variables
+            const user1 = {
+                name: "Nomaan",
+                age: 34
+            };
+            const { name: userName, age: userAge } = user1;
+            console.log(userName); // Nomaan
+            console.log(userAge);  // 34
+        
+        
+
+        // 8. Default Values in Objects
+        const user2 = {
+            name1: "Nomaan"
+        };
+        const { name1, age1 = 25 } = user2;
+        console.log(name1); // Nomaan
+        console.log(age1);  // 25
+        
+
+
+        // 9. Nested Object Destructuring
+        const employee = {
+            id: 101,
+            address: {
+                city: "Gurugram",
+                state: "Haryana"
+            }
+        };
+        const {
+            address: { city, state }
+        } = employee;
+        console.log(city);  // Gurugram
+        console.log(state); // Haryana
+        
+
+        
+        // 10. Function Parameter Destructuring
+        function displayUser({ name, age }) {
+            console.log(`${name} is ${age} years old`);
+        }
+        const user3 = {
+            name: "Nomaan",
+            age: 34
+        };
+        displayUser(user3); // Nomaan is 34 years old
+        
 
 
         // 11. React Example (Very Common in Interviews)
@@ -138,7 +279,7 @@
         //     );
         // }
         // <UserCard name="Enrique" email="demo@gmail.com" />
-        console.log("========================================");
+        
 
         
         const employee1 = {
@@ -147,7 +288,7 @@
             salary3: 50000
         };
         const { name3, salary3 } = employee1;
-        console.log(`${name3} earns ${salary3}`);
+        console.log(`${name3} earns ${salary3}`); // John earns 50000
     </script>
 </body>
 

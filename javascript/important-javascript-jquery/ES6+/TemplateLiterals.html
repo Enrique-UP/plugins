@@ -6,29 +6,47 @@
     <title>Document</title>
 </head>
 <body>
+    <pre>
+        const name = "Alice";
+        const age = 25;
+        // Old Way (Concatenation)
+        const oldGreeting = "Hello, my name is " + name + " and I am " + age + " years old.";
+        console.log(oldGreeting); // Hello, my name is Alice and I am 25 years old.
+        // New Way (Template Literals)
+        const newGreeting = `Hello, my name is ${name} and I am ${age} years old.`;
+        console.log(newGreeting); // Hello, my name is Alice and I am 25 years old.
+        
+    
+        
+        
+        const price = 100;
+        const tax = 0.05;
+        // Math inside the literal
+        // Ternary operators inside the literal
+        const isLoggedIn = true;        
+        console.log(`The user is ${isLoggedIn ? 'Online' : 'Offline'}`); // The user is Online        
+        console.log(`Total price: $${price * (1 + tax)}`); // Total price: $105
+    </pre>
     <script>
         const name = "Alice";
         const age = 25;
         // Old Way (Concatenation)
         const oldGreeting = "Hello, my name is " + name + " and I am " + age + " years old.";
+        console.log(oldGreeting); // Hello, my name is Alice and I am 25 years old.
         // New Way (Template Literals)
         const newGreeting = `Hello, my name is ${name} and I am ${age} years old.`;
-        document.write("<br><br>");
-        document.write(oldGreeting);
-        document.write("<br><br>");
-        document.write(newGreeting);
-        document.write("<br><br><br><br>");
-    </script>
-    <script>
+        console.log(newGreeting); // Hello, my name is Alice and I am 25 years old.
+        console.log("<br><br><br><br>");
+    
+        
+        
         const price = 100;
         const tax = 0.05;
         // Math inside the literal
         // Ternary operators inside the literal
-        const isLoggedIn = true;
-        document.write("<br><br>");
-        document.write(`The user is ${isLoggedIn ? 'Online' : 'Offline'}`);
-        document.write("<br><br>");
-        document.write(`Total price: $${price * (1 + tax)}`);
+        const isLoggedIn = true;        
+        console.log(`The user is ${isLoggedIn ? 'Online' : 'Offline'}`); // The user is Online        
+        console.log(`Total price: $${price * (1 + tax)}`); // Total price: $105
     </script>
 </body>
 </html>

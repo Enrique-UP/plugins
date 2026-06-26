@@ -134,3 +134,5 @@ section i[class="fa"] {font-family: inherit;}
 .links-2{display: grid;column-gap: 16px;grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));} /* only links-2 */
 [class*="links"]:not(.links-2){}
 ===================================================================================================================================
+display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));
+===================================================================================================================================

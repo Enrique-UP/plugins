@@ -1,0 +1,53 @@
+Event Delegation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="category-list">
+        <li id="laptops">Laptops</li>
+        <li id="mobiles">Mobiles</li>
+        <li id="cameras">Cameras</li>
+    </ul>
+    <pre>
+        <ul id="category-list">
+            <li id="laptops">Laptops</li>
+            <li id="mobiles">Mobiles</li>
+            <li id="cameras">Cameras</li>
+        </ul>
+        // JavaScript Code
+        const parentList = document.getElementById('category-list');
+
+        // सिर्फ पैरेंट (ul) पर एक सिंगल इवेंट लिसनर लगाया
+        parentList.addEventListener('click', (event) => {
+            
+            // event.target हमें वो सटीक एलिमेंट देता है जिसपर असली क्लिक हुआ है
+            console.log("असली क्लिक इसपर हुआ:", event.target.id);
+
+            // सुरक्षा के लिए चेक करें कि क्लिक li पर ही हुआ है या नहीं
+            if (event.target.tagName === 'LI') {
+                alert("आपने चुना: " + event.target.innerText);
+            }
+        });
+    </pre>
+    <script>
+        // JavaScript Code
+        const parentList = document.getElementById('category-list');
+
+        // सिर्फ पैरेंट (ul) पर एक सिंगल इवेंट लिसनर लगाया
+        parentList.addEventListener('click', (event) => {
+            
+            // event.target हमें वो सटीक एलिमेंट देता है जिसपर असली क्लिक हुआ है
+            console.log("असली क्लिक इसपर हुआ:", event.target.id);
+
+            // सुरक्षा के लिए चेक करें कि क्लिक li पर ही हुआ है या नहीं
+            if (event.target.tagName === 'LI') {
+                alert("आपने चुना: " + event.target.innerText);
+            }
+        });
+    </script>
+</body>
+</html>

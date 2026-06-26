@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            introduce() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+            }
+        }
+        const person1 = new Person("Nomaan", 34);
+        person1.introduce(); // Hi, I'm Nomaan and I'm 34 years old.
+
+
+
+        class Calculator {
+            add(a, b) {
+                return a + b;
+            }
+            subtract(a, b) {
+                return a - b;
+            }
+            multiply(a, b) {
+                return a * b;
+            }
+        }
+        const calc = new Calculator();
+        console.log(calc.add(10, 20)); // 30
+        console.log(calc.subtract(20, 5)); // 15 
+        console.log(calc.multiply(5, 6)); // 30
+
+
+
+
+
+        // Inheritance (extends)
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log(`${this.name} makes a sound.`);
+            }
+        }
+        class Dog extends Animal {
+            bark() {
+                console.log(`${this.name} barks.`);
+            }
+        }
+        const dog = new Dog("Tommy");
+        dog.speak(); // Tommy makes a sound.
+        dog.bark(); // Tommy barks.
+
+
+
+
+
+        // Using super()
+        class Employee {
+            constructor(name, salary) {
+                this.name = name;
+                this.salary = salary;
+            }
+            display() {
+                console.log(`${this.name} earns ₹${this.salary}`);
+            }
+        }
+        class Manager extends Employee {
+            constructor(name, salary, department) {
+                super(name, salary);
+                this.department = department;
+            }
+            info() {
+                console.log(`${this.name} manages ${this.department}`);
+            }
+        }
+        const manager = new Manager(
+            "John",
+            70000,
+            "IT"
+        );
+        manager.display(); // John earns ₹70000
+        manager.info(); // John manages IT
+
+
+
+
+
+
+
+        // Static Method
+        class MathUtils {
+            static square(num) {
+                return num * num;
+            }
+            static cube(num) {
+                return num * num * num;
+            }
+        }
+        console.log(MathUtils.square(5)); // 25
+        console.log(MathUtils.cube(3)); // 27
+
+
+
+
+
+
+
+
+        // Getters and Setters
+        class Student {
+            constructor(name) {
+                this._name = name;
+            }
+            get name() {
+                return this._name;
+            }
+            set name(newName) {
+                this._name = newName;
+            }
+        }
+        const student = new Student("Nomaan");
+        console.log(student.name); // Nomaan
+        student.name = "John";
+        console.log(student.name); // John
+    </pre>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            introduce() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+            }
+        }
+        const person1 = new Person("Nomaan", 34);
+        person1.introduce(); // Hi, I'm Nomaan and I'm 34 years old.
+
+
+
+        class Calculator {
+            add(a, b) {
+                return a + b;
+            }
+            subtract(a, b) {
+                return a - b;
+            }
+            multiply(a, b) {
+                return a * b;
+            }
+        }
+        const calc = new Calculator();
+        console.log(calc.add(10, 20)); // 30
+        console.log(calc.subtract(20, 5)); // 15 
+        console.log(calc.multiply(5, 6)); // 30
+
+
+
+
+
+        // Inheritance (extends)
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log(`${this.name} makes a sound.`);
+            }
+        }
+        class Dog extends Animal {
+            bark() {
+                console.log(`${this.name} barks.`);
+            }
+        }
+        const dog = new Dog("Tommy");
+        dog.speak(); // Tommy makes a sound.
+        dog.bark(); // Tommy barks.
+
+
+
+
+
+        // Using super()
+        class Employee {
+            constructor(name, salary) {
+                this.name = name;
+                this.salary = salary;
+            }
+            display() {
+                console.log(`${this.name} earns ₹${this.salary}`);
+            }
+        }
+        class Manager extends Employee {
+            constructor(name, salary, department) {
+                super(name, salary);
+                this.department = department;
+            }
+            info() {
+                console.log(`${this.name} manages ${this.department}`);
+            }
+        }
+        const manager = new Manager(
+            "John",
+            70000,
+            "IT"
+        );
+        manager.display(); // John earns ₹70000
+        manager.info(); // John manages IT
+
+
+
+
+
+
+
+        // Static Method
+        class MathUtils {
+            static square(num) {
+                return num * num;
+            }
+            static cube(num) {
+                return num * num * num;
+            }
+        }
+        console.log(MathUtils.square(5)); // 25
+        console.log(MathUtils.cube(3)); // 27
+
+
+
+
+
+
+
+
+        // Getters and Setters
+        class Student {
+            constructor(name) {
+                this._name = name;
+            }
+            get name() {
+                return this._name;
+            }
+            set name(newName) {
+                this._name = newName;
+            }
+        }
+        const student = new Student("Nomaan");
+        console.log(student.name); // Nomaan
+        student.name = "John";
+        console.log(student.name); // John
+    </script>
+</body>
+</html>

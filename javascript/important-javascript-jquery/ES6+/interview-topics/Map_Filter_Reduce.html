@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        const numbers = [1, 2, 3, 4];
+        const doubled = numbers.map((num) => {
+            return num * 2;
+        });
+        console.log(doubled); // Output: [2, 4, 6, 8]
+
+
+        const evenNumbers = numbers.filter((num) => {
+            return num % 2 === 0;
+        });
+        console.log(evenNumbers); // Output: [2, 4, 6]
+
+
+        // 0 यहाँ पर Accumulator (acc) की शुरुआती वैल्यू है
+        const totalSum = numbers.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0);
+        console.log(totalSum); // Output: 10 (1 + 2 + 3 + 4)
+
+
+
+        const cart = [
+            { product: "Laptop", price: 50000 },
+            { product: "Mouse", price: 1000 },
+            { product: "Keyboard", price: 2000 }
+        ];
+
+        // 1. सिर्फ प्रोडक्ट्स के नाम की लिस्ट चाहिए (map)
+        const productNames = cart.map(item => item.product);
+        console.log(productNames); // ['Laptop', 'Mouse', 'Keyboard']
+
+        // 2. सिर्फ वो सामान चाहिए जिनकी कीमत 1500 से ज़्यादा है (filter)
+        const expensiveItems = cart.filter(item => item.price > 1500);
+        console.log(expensiveItems); // [{product: "Laptop", price: 50000}, {product: "Keyboard", price: 2000}]
+
+        // 3. कुल मिलाकर कितना बिल हुआ? (reduce)
+        const totalBill = cart.reduce((total, item) => total + item.price, 0);
+        console.log(totalBill); // 53000
+    </pre>
+    <script>
+        const numbers = [1, 2, 3, 4];
+        const doubled = numbers.map((num) => {
+            return num * 2;
+        });
+        console.log(doubled); // Output: [2, 4, 6, 8]
+
+
+        const evenNumbers = numbers.filter((num) => {
+            return num % 2 === 0;
+        });
+        console.log(evenNumbers); // Output: [2, 4, 6]
+
+
+        // 0 यहाँ पर Accumulator (acc) की शुरुआती वैल्यू है
+        const totalSum = numbers.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0);
+        console.log(totalSum); // Output: 10 (1 + 2 + 3 + 4)
+
+
+
+        const cart = [
+            { product: "Laptop", price: 50000 },
+            { product: "Mouse", price: 1000 },
+            { product: "Keyboard", price: 2000 }
+        ];
+
+        // 1. सिर्फ प्रोडक्ट्स के नाम की लिस्ट चाहिए (map)
+        const productNames = cart.map(item => item.product);
+        console.log(productNames); // ['Laptop', 'Mouse', 'Keyboard']
+
+        // 2. सिर्फ वो सामान चाहिए जिनकी कीमत 1500 से ज़्यादा है (filter)
+        const expensiveItems = cart.filter(item => item.price > 1500);
+        console.log(expensiveItems); // [{product: "Laptop", price: 50000}, {product: "Keyboard", price: 2000}]
+
+        // 3. कुल मिलाकर कितना बिल हुआ? (reduce)
+        const totalBill = cart.reduce((total, item) => total + item.price, 0);
+        console.log(totalBill); // 53000
+    </script>
+</body>
+</html>
