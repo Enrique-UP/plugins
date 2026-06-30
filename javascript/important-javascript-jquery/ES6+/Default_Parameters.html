@@ -267,6 +267,20 @@
             // Nomaan is 18 years old
             // John is 30 years old
 
+            
+            function myFunction(x, y) {
+            if (y === undefined) {
+                y = 2;
+            }  
+            return x * y;
+            }
+            console.log(myFunction(4)); // 8
+
+            function myFunction1(x, y = 2) {
+                return x * y;
+            }
+            console.log(myFunction1(4)); // 8
+
 
         // Common Interview Questions
             // Q1. When are default parameters used?

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script type="module">
+        import details, { add, name, age } from './modules.js';
+        // How you use it now:
+        console.log(add(2, 6)); // 8
+        console.log(name);      // "Enrique"
+        console.log(age);       // 33
+        console.log(details()); // "Jesse is 40 years old."
+    </script>
+    <!-- <script type="module">
+        import details, * as math from "./modules.js";
+        // How you use it now:
+        console.log(math.add(2, 6)); // 8
+        console.log(math.name);      // "Enrique"
+        console.log(math.age);       // 33
+        console.log(details());      // "Jesse is 40 years old."
+    </script>     -->
+    <!-- <script type="module">
+        import { name, age, hello } from "./modules1.js";
+        console.log(name);     // Nomaan
+        console.log(age);      // 34
+        hello(); 
+    </script> -->
+</body>
+</html>

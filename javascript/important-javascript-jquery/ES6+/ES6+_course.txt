@@ -5,8 +5,12 @@ Destructuring Assignment
 Spread and Rest Operators (...)
 Default Parameters
 Classes
-Modules (import/export)
+Modules (import/export) (npx serve = http://localhost:3000 )
 Asynchronous JavaScript (Promises & Async/Await)
+    Callbacks (The Old Way)
+    Promises (ES6 / Modern)
+    Async / Await (The Modern Standard) = Pending, Fulfilled (.then()), Rejected (.catch())
+    fetch()
 Optional Chaining (?.)
 Nullish Coalescing (??)
 Array methods (map, filter, reduce, etc.)

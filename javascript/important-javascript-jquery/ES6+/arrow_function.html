@@ -88,7 +88,78 @@
         console.log(person1.greet());
         // this method will not be work here.
         // 'this' does NOT point to person1.
-        // 'this' points to the global 'window' object!        
+        // 'this' points to the global 'window' object!     
+        
+        
+
+        const users = [
+            {
+                id: 1,
+                name: "Nomaan",
+                age: 34
+            },
+            {
+                id: 2,
+                name: "Rahul",
+                age: 28
+            },
+            {
+                id: 3,
+                name: "Amit",
+                age: 31
+            }
+        ];
+        users.forEach(user => {
+            console.log(user.name); // Nomaan Rahul Amit
+        });
+        const user = users.find(user => user.id === 2);
+        console.log("User ID = ", user); // { id: 2, name: "Rahul" }
+        
+        users.sort((a, b) => a.age - b.age);
+        console.log("sort age = ", users);
+        // [ 
+        //     { id: 2, name: "Rahul", age: 28 }, { id: 3, name: "Amit", age: 31 }, { id: 1, name: "Nomaan", age: 34 }
+        // ]
+        
+    
+
+
+        const employees = [
+            { name: "Ali", salary: 25000 },
+            { name: "John", salary: 45000 },
+            { name: "Sara", salary: 60000 },
+            { name: "David", salary: 30000 }
+        ];
+        const highSalary = employees.filter(emp => emp.salary > 30000);
+        console.log(highSalary);
+        // [
+        //     { name: "John", salary: 45000 }
+        //     { name: "Sara", salary: 60000 }
+        // ]
+
+        const totalSalary = employees.reduce(
+            (total, employee) => total + employee.salary,
+            0
+        );
+        console.log(totalSalary); // 160000
+
+
+
+        const students = [
+            { name: "Ali", marks: 80 },
+            { name: "Rahul", marks: 25 },
+            { name: "Sara", marks: 70 }
+        ];
+        const hasFailed = students.some(student => student.marks < 33);
+        console.log(hasFailed); // true // returns true if at least one element matches.
+
+        const allPassed = students.every(student => student.marks >= 33);
+        console.log(allPassed); //  false // returns true only if all elements satisfy the condition.
+
+
+
+        
+        
     </script>
 </body>
 </html>

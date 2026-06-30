@@ -174,8 +174,17 @@ Login on git.com =>
 Goto DP button => Repositories => New =>
 create New Repository (or folder of anyname like portfolio) it should be public
 => upload code on this folder from local to git. => index.html (must be present)
+-----------------------
+Apne mobile ya computer browser mein apni repository kholein: https://github.com/enrique-up/pro.Jab page khulega, to aapko beech mein blue ya gray color mein "creating a new file" likha hua dikhega. Us par click karein.Naye page par file ka naam index.html dalein.Niche box mein thoda sa badlao karein (jaise sirf <h1>Hello World</h1> likh dein).Sabse niche jaakar Commit changes (ya Save) par click kar dein
+---------------
 
-Go to Settings (of your repo) => Scroll to Pages => Under Source, select: Branch: main ,  Folder: /root => Click Save
+Go to Settings (of your repo) => Scroll to Pages => 
+Now go to Build and deployment heading
+=>Source:Deploy from a branch
+
+=>Branch: main and root=> save
+
+Under Source, select: Branch: main ,  Folder: /root => Click Save
 after some time the url will be show here after 15 seconds.
 Now website has lived.
 
