@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The new Array() Method</h2>
+<ul>
+    <li>Saab</li>
+    <li>Volvo</li>
+    <li>BMW</li>
+    <li>Saab</li>
+    <li>Volvo</li>
+    <li>BMW</li>
+    <li>Saab</li>
+    <li>Volvo</li>
+    <li>BMW</li>
+</ul>
+<p id="demo"></p>
+<ol></ol>
+
+<script>
+    const carsArray = [];
+    
+    document.querySelectorAll("ul > li").forEach(function(e){
+        carsArray.push(e.innerHTML);
+    });
+
+    document.getElementById("demo").innerHTML = JSON.stringify(carsArray);
+
+    let unique = [...new Set(carsArray)];
+    console.log(unique);
+
+    unique.forEach(function(car) {
+        document.querySelector("ol").innerHTML += "<li>" + car + "</li>";
+    });
+</script>
+
+</body>
+</html>
