@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>"Promises are used to handle asynchronous operations like API calls, file reading, or database requests. They prevent callback hell and make asynchronous code easier to read and maintain. A Promise has three states: Pending, Fulfilled, and Rejected. We handle success using .then() and errors using .catch(). Most modern APIs, including fetch(), return Promises."</h1>
+  <pre>
+    const promise = new Promise(function(resolve,reject){
+        let success = true;
+        if(success){
+            resolve("Data Found");
+        }else{
+            reject("Server Error");
+        }
+    });
+    // promise.then(function(data){
+    //     console.log(data);
+    // })
+    // .catch(function(error){
+    //     console.log(error);
+    // });
+
+    // Output:- Data Found
+
+
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(users){
+        console.log(users);
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+    // Output Array(10) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+
+
+
+
+
+
+
+
+
+
+
+        
+    // promise
+    // .then(function() { 
+    //     document.write('Success, You are a GEEK'); 
+    // })
+    // .catch(function(){
+    //     document.write('Some error has occurred'); 
+    // });
+
+    //////////// Or
+
+    // promise.then(
+    //     function(){ 
+    //         document.write('Success, You are a GEEK'); 
+    //     },
+    //     function(){
+    //         document.write('Some error has occurred'); 
+    //     }
+    // );
+  </pre>
+
+<script>
+const promise = new Promise(function(resolve,reject){
+    let success = true;
+    if(success){
+        resolve("Data Found");
+    }else{
+        reject("Server Error");
+    }
+});
+// promise.then(function(data){
+//     console.log(data);
+// })
+// .catch(function(error){
+//     console.log(error);
+// });
+
+// Output:- Data Found
+
+
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(function(response){
+    return response.json();
+})
+.then(function(users){
+    console.log(users);
+})
+.catch(function(error){
+    console.log(error);
+});
+// Output Array(10) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+
+
+
+
+
+
+
+
+
+
+
+    
+// promise
+// .then(function() { 
+//     document.write('Success, You are a GEEK'); 
+// })
+// .catch(function(){
+//     document.write('Some error has occurred'); 
+// });
+
+//////////// Or
+
+// promise.then(
+//     function(){ 
+//         document.write('Success, You are a GEEK'); 
+//     },
+//     function(){
+//         document.write('Some error has occurred'); 
+//     }
+// );
+</script>
+
+</body>
+</html>

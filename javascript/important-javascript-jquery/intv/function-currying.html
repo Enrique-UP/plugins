@@ -10,16 +10,44 @@
     <h1>An American mathematician named Haskell Curry developed this technique, that’s why it is called currying.</h1>
     <h1>Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function. That is, when we turn a function call sum(1,2,3) into sum(1)(2)(3)</h1>
 <pre>
-function calculateVolume(length, breadth, height) {
-    return length * breadth * height;
-}
-console.log(calculateVolume(4, 5, 6));
+    function calculateVolume(length, breadth, height) {
+        return length * breadth * height;
+    }
+    console.log(calculateVolume(4, 5, 6)); // 120
+
+    
+    function curriedAdd(a) {
+        return function(b) {
+            return function(c) {
+                return a + b + c;
+            };
+        };
+    }
+    console.log(curriedAdd(2)(3)(5)); // Output: 10
+
+
+    const shortCurriedAdd = a => b => c => a + b + c;
+    console.log(shortCurriedAdd(2)(3)(5)); // Output: 10
 </pre>
     <script>
         function calculateVolume(length, breadth, height) {
             return length * breadth * height;
         }
-        console.log(calculateVolume(4, 5, 6));
+        console.log(calculateVolume(4, 5, 6)); // 120
+
+
+        function curriedAdd(a) {
+            return function(b) {
+                return function(c) {
+                    return a + b + c;
+                };
+            };
+        }
+        console.log(curriedAdd(2)(3)(5)); // Output: 10
+
+
+        const shortCurriedAdd = a => b => c => a + b + c;
+        console.log(shortCurriedAdd(2)(3)(5)); // Output: 10
     </script>
 </body>
 </html>

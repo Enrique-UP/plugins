@@ -4,7 +4,6 @@ Template Literals
 Destructuring Assignment
 Spread and Rest Operators (...)
 Default Parameters
-Classes
 Modules (import/export) (npx serve = http://localhost:3000 )
 Asynchronous JavaScript (Promises & Async/Await)
     Callbacks (The Old Way)
@@ -14,7 +13,26 @@ Asynchronous JavaScript (Promises & Async/Await)
 Optional Chaining (?.)
 Nullish Coalescing (??)
 Array methods (map, filter, reduce, etc.)
-Classes class Animal { ... }
-Modules import { status } from './utils.js'
-Optional Chaining (ES11) user?.profile?.bio
-Nullish Coalescing (ES11) const speed = maxSpeed ?? 50;
+Classes------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+in interview
+Variables
+Functions
+Scope
+Closures
+Hoisting
+this
+Objects
+ES6
+DOM
+Events
+fetch API
+Currying
+React basics

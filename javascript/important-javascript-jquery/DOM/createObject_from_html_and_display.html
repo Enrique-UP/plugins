@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-id="1">The Hobbit</li>
+        <li data-id="2">1984</li>
+    </ul>
+	<pre>
+		var ele = document.querySelectorAll("ul > li");
+		var o = Array.from(ele).map(function(e){
+			return{
+				id: e.getAttribute("data-id"),
+				txt: e.innerText
+			}
+		});
+		console.log(o);
+		
+		const li = [...document.querySelectorAll("ul > li")];
+		const m = li.map((e) => ({
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		}));
+		console.log(m);
+		
+		const n = li.map(function(e){
+			return{
+				id: e.getAttribute("data-id"),
+				txt: e.innerText
+			}
+		});
+		console.log(n);
+		
+		
+		const q = [];
+		document.querySelectorAll("ul > li").forEach(function(e) {
+			q.push({
+				id: e.getAttribute("data-id"),
+				txt: e.innerText
+			});
+		});
+		console.log(q);
+	</pre>
+   <script>
+    var ele = document.querySelectorAll("ul > li");
+	var o = Array.from(ele).map(function(e){
+		return{
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		}
+	});
+	console.log(o);
+	
+	const li = [...document.querySelectorAll("ul > li")];
+	const m = li.map((e) => ({
+		id: e.getAttribute("data-id"),
+		txt: e.innerText
+	}));
+	console.log(m);
+	
+	const n = li.map(function(e){
+		return{
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		}
+	});
+	console.log(n);
+	
+	
+	const q = [];
+	document.querySelectorAll("ul > li").forEach(function(e) {
+		q.push({
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		});
+	});
+	console.log(q);
+   </script>
+</body>
+</html>

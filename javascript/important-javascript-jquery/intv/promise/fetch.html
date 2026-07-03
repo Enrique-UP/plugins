@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Many Product Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Layout ko GRID mein badla taaki multiple cards arrange ho sakein */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Single Card Styling (Ab isme flex-direction: column hai taaki content alignment sahi rahe) */
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+            /* Sirf 2 lines dikhane ke liye truncate */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2575fc;
+            margin: 10px 0;
+        }
+        .card button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: auto;
+        }
+        .card button:hover {
+            background: #1a5cda;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="product-card-container" class="cards-container">Loading products...</div>
+
+    <script>
+        const container = document.getElementById('product-card-container');
+
+        fetch('https://fakestoreapi.com/products')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response sahi nahi tha');
+            }
+            return response.json(); 
+        })
+        .then(productsArray => {
+            console.log("Fulfill (Success):", productsArray); 
+            
+            // map() ka use karke array ke har ek product object ko HTML card mein convert kiya
+            container.innerHTML = productsArray.map(product => `
+                <div class="card">
+                    <div>
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <div class="price">$${product.price}</div>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+            `).join(''); // join('') se saare array elements ek single string mein badal jaate hain
+        })
+        .catch(error => {
+            console.error("Rejected (Error):", error); 
+            container.innerHTML = `<div style="color:red; font-weight:bold; text-align:center;">Error: ${error.message}</div>`;
+        });
+    </script>
+</body>
+</html>

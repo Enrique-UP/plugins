@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        const userSettings = {
+            speed: 0,
+            graphics: "",
+            showTutorial: false,
+            difficulty: null // User hasn't chosen, use default
+        };
+
+        // --- Using the OR operator (||) ---
+        const speedOr = userSettings.speed || 50; 
+        console.log("OR Speed:", speedOr); 
+        // ❌ Logs: 50
+
+        const graphicsOr = userSettings.graphics || "High"; 
+        console.log("OR Graphics:", graphicsOr); 
+        // ❌ Logs: "High"
+
+
+        // --- Using the Nullish Coalescing operator (??) ---
+        // FIXED: Removed '??' from the variable names
+        const speedNullish = userSettings.speed ?? 50; 
+        console.log("Nullish Speed:", speedNullish); 
+        //  Logs: 0 (Correct! 0 is not null or undefined)
+
+        const graphicsNullish = userSettings.graphics ?? "High"; 
+        console.log("Nullish Graphics:", graphicsNullish); 
+        //  Logs: "" (Correct! An empty string is not nullish)
+
+        const difficultyNullish = userSettings.difficulty ?? "Medium"; 
+        console.log("Nullish Difficulty:", difficultyNullish); 
+        //  Logs: "Medium" (Correct! The value was null, so it fell back to default)
+    </pre>
+    <script>
+        const userSettings = {
+            speed: 0,
+            graphics: "",
+            showTutorial: false,
+            difficulty: null // undefined, User hasn't chosen, use default
+        };
+
+        // --- Using the OR operator (||) ---
+        const speedOr = userSettings.speed || 50; 
+        console.log("OR Speed:", speedOr); 
+        // ❌ Logs: 50
+
+        const graphicsOr = userSettings.graphics || "High"; 
+        console.log("OR Graphics:", graphicsOr); 
+        // ❌ Logs: "High"
+
+
+        // --- Using the Nullish Coalescing operator (??) ---
+        // FIXED: Removed '??' from the variable names
+        const speedNullish = userSettings.speed ?? 50; 
+        console.log("Nullish Speed:", speedNullish); 
+        //  Logs: 0 (Correct! 0 is not null or undefined)
+
+        const graphicsNullish = userSettings.graphics ?? "High"; 
+        console.log("Nullish Graphics:", graphicsNullish); 
+        //  Logs: "" (Correct! An empty string is not nullish)
+
+        const difficultyNullish = userSettings.difficulty ?? "Medium"; 
+        console.log("Nullish Difficulty:", difficultyNullish); 
+        //  Logs: "Medium" (Correct! The value was null, so it fell back to default)
+    </script>
+</body>
+</html>

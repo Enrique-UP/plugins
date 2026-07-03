@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript scans the entire file during the compilation phase and moves all variable and function declarations to the top of their scope before executing the code. This behavior is known as Hoisting.</h1>
+    <h2>JS Engine, JavaScript code run karne se pehle poori file ko ek baar padh leta hai aur saari cheezon (variables/functions) ko dimag mein sabse upar rakh leta hai. Isi ko Hoisting kehte hain.</h2>
+    <pre>
+        console.log(x); // Output: undefined
+        var x = 10;
+
+        console.log(y); // ❌ Error: Cannot access 'y' before initialization
+        let y = 20;
+
+        sayHi(); // Output: "Hello!" (Yeh chal gaya!)
+        function sayHi() {
+            console.log("Hello!");
+        }
+    </pre>
+    <script>
+        console.log(x); // Output: undefined
+        var x = 10;
+
+        // console.log(y); // ❌ Error: Cannot access 'y' before initialization
+        // let y = 20;
+
+        sayHi(); // Output: "Hello!" (Yeh chal gaya!)
+        function sayHi() {
+            console.log("Hello!");
+        }
+    </script>
+</body>
+</html>

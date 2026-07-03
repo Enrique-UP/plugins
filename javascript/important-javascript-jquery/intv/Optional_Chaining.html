@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        const user = {
+            name: "Nomaan Arif",
+            skills: {
+                primary: "React.js"
+            }
+            // Note: Isme 'address' naam ka object nahi hai
+        };
+        // console.log(user.address.city); 
+        // Purana Tarika (Bina Optional Chaining)
+        // Agar aap bina check kiye user ke address ki city nikalne ki koshish karenge:
+        // 💥 CRASH! Error: Cannot read properties of undefined (reading 'city')
+        // Kyunki user.address khud 'undefined' hai, aur undefined ke andar 'city' nahi dhoonda ja sakta.
+        
+        // Lambi checking:
+        const city = (user && user.address) ? user.address.city : "No City";
+        console.log(city);
+
+        // Naya Tarika (With Optional Chaining ?.)
+        // Optional chaining se aap bina kisi if condition ke thame-thame safely code likh sakte hain:
+        const cities = user.address?.city; 
+        console.log(cities); // Output: undefined (Koi error nahi aayegi, code crash nahi hoga!)
+
+
+
+        const user1 = {
+            name: "Nomaan Arif",
+            skills: {
+                primary: "React.js"
+            },
+            // Yeh function exist karta hai
+            sayHello: function() {
+                return "Hello from Nomaan!";
+            }
+            // Note: Isme 'getProfile' naam ka function nahi hai
+        };
+
+        // --- ❌ PURANA TARIKA (Bina Optional Chaining) ---
+        // Agar hum 'getProfile' ko direct call karein jo exist hi nahi karta:
+        // console.log(user1.getProfile()); // 💥 CRASH! TypeError: user1.getProfile is not a function
+
+        // Bachne ke liye lambi checking:
+        if (user1.getProfile) {
+            user1.getProfile();
+        }
+
+
+        // --- ✅ NAYA TARIKA (With Optional Chaining ?.()) ---
+
+        // 1. Jo function nahi hai use call karna:
+        const profileData = user1.getProfile?.(); 
+        console.log(profileData); // Output: undefined (Koi crash nahi hua! 😎)
+
+        // 2. Jo function hai use call karna:
+        const greeting = user1.sayHello?.();
+        console.log(greeting); // Output: "Hello from Nomaan!"
+    </pre>
+    <script>
+        const user = {
+            name: "Nomaan Arif",
+            skills: {
+                primary: "React.js"
+            }
+            // Note: Isme 'address' naam ka object nahi hai
+        };
+        // console.log(user.address.city); 
+        // Purana Tarika (Bina Optional Chaining)
+        // Agar aap bina check kiye user ke address ki city nikalne ki koshish karenge:
+        // 💥 CRASH! Error: Cannot read properties of undefined (reading 'city')
+        // Kyunki user.address khud 'undefined' hai, aur undefined ke andar 'city' nahi dhoonda ja sakta.
+        
+        // Lambi checking:
+        const city = (user && user.address) ? user.address.city : "No City";
+        console.log(city);
+
+        // Naya Tarika (With Optional Chaining ?.)
+        // Optional chaining se aap bina kisi if condition ke thame-thame safely code likh sakte hain:
+        const cities = user.address?.city; 
+        console.log(cities); // Output: undefined (Koi error nahi aayegi, code crash nahi hoga!)
+
+
+
+        const user1 = {
+            name: "Nomaan Arif",
+            skills: {
+                primary: "React.js"
+            },
+            // Yeh function exist karta hai
+            sayHello: function() {
+                return "Hello from Nomaan!";
+            }
+            // Note: Isme 'getProfile' naam ka function nahi hai
+        };
+
+        // --- ❌ PURANA TARIKA (Bina Optional Chaining) ---
+        // Agar hum 'getProfile' ko direct call karein jo exist hi nahi karta:
+        // console.log(user1.getProfile()); // 💥 CRASH! TypeError: user1.getProfile is not a function
+
+        // Bachne ke liye lambi checking:
+        if (user1.getProfile) {
+            user1.getProfile();
+        }
+
+
+        // --- ✅ NAYA TARIKA (With Optional Chaining ?.()) ---
+
+        // 1. Jo function nahi hai use call karna:
+        const profileData = user1.getProfile?.(); 
+        console.log(profileData); // Output: undefined (Koi crash nahi hua! 😎)
+
+        // 2. Jo function hai use call karna:
+        const greeting = user1.sayHello?.();
+        console.log(greeting); // Output: "Hello from Nomaan!"
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The new Array() Method</h2>
+<ul>
+    <li data-id="lorem">Saab</li>
+    <li data-id="ipsum">Volvo</li>
+    <li data-id="dolor">BMW</li>
+    <li data-id="lorem">Saab</li>
+    <li data-id="ipsum">Volvo</li>
+    <li data-id="dolor">BMW</li>
+    <li data-id="lorem">Saab</li>
+    <li data-id="ipsum">Volvo</li>
+    <li data-id="dolor">BMW</li>
+</ul>
+<p id="demo"></p>
+<ol></ol>
+<p id="demo1"></p>
+
+
+<pre>
+    const carsArray = [];
+    
+    document.querySelectorAll("ul > li").forEach(function(e){
+        carsArray.push(e.innerHTML);
+    });
+
+    document.getElementById("demo").innerHTML = JSON.stringify(carsArray);
+
+    let unique = [...new Set(carsArray)];
+    console.log(unique);
+
+    unique.forEach(function(car) {
+        document.querySelector("ol").innerHTML += "<li>" + car + "</li>";
+    });
+
+
+    const q = [];
+	document.querySelectorAll("ul > li").forEach(function(e) {
+		q.push({
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		});
+	});
+    console.log(q);
+    // We use the 'id' as the Map key. It keeps the first occurrence.
+    const unique1 = [...new Map(q.map(item => [item.id, item])).values()];
+    console.log(unique1);	
+    // Array(3) [ {…}, {…}, {…} ]
+    // 0: Object { id: "lorem", txt: "Saab" }
+    // 1: Object { id: "ipsum", txt: "Volvo" }
+    // 2: Object { id: "dolor", txt: "BMW" }
+    // length: 3
+    unique1.forEach(function(e){
+        document.querySelector("#demo1").innerHTML += `${e.id} ${e.txt}<br><br>`;
+    });
+</pre>
+
+<script>
+    const carsArray = [];
+    
+    document.querySelectorAll("ul > li").forEach(function(e){
+        carsArray.push(e.innerHTML);
+    });
+
+    document.getElementById("demo").innerHTML = JSON.stringify(carsArray);
+
+    let unique = [...new Set(carsArray)];
+    console.log(unique);
+
+    unique.forEach(function(car) {
+        document.querySelector("ol").innerHTML += "<li>" + car + "</li>";
+    });
+
+
+    const q = [];
+	document.querySelectorAll("ul > li").forEach(function(e) {
+		q.push({
+			id: e.getAttribute("data-id"),
+			txt: e.innerText
+		});
+	});
+    console.log(q);
+    // We use the 'id' as the Map key. It keeps the first occurrence.
+    const unique1 = [...new Map(q.map(item => [item.id, item])).values()];
+    console.log(unique1);	
+    // Array(3) [ {…}, {…}, {…} ]
+    // 0: Object { id: "lorem", txt: "Saab" }
+    // 1: Object { id: "ipsum", txt: "Volvo" }
+    // 2: Object { id: "dolor", txt: "BMW" }
+    // length: 3
+    unique1.forEach(function(e){
+        document.querySelector("#demo1").innerHTML += `${e.id} ${e.txt}<br><br>`;
+    });
+</script>
+
+</body>
+</html>

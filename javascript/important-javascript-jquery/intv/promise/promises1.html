@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Promise API Cards</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body { font-family: sans-serif; background: #f4f6f9; padding: 20px; }
+        h1, h3 { text-align: center; }
+        .cards-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+        .card { background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
+        .card img { width: 100%; height: 150px; object-fit: contain; }
+        .price { font-size: 18px; font-weight: bold; color: #2575fc; margin: 10px 0; }
+        button { background: #2575fc; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; width: 100%; }
+
+</style>
+
+</head>
+<body>
+
+<h1>Users List</h1>
+
+<div id="cards" class="loading cards-container">
+Loading Data...
+</div>
+
+<script>
+
+// Promise banaya
+var promise = new Promise(function(resolve,reject){
+  fetch("https://fakestoreapi.com/products")
+  .then(function(response){
+    if(response.ok){
+      return response.json();
+    }else{
+      reject("API Error");
+    }
+  })
+  .then(function(data){
+    resolve(data);
+  })
+  .catch(function(){
+    reject("Network Error");
+  });
+});
+
+
+// Promise Handle
+promise.then(
+  function(data){
+    let output="";
+    data.forEach(function(post){
+      output += `
+        <div class="card">
+          <img src="${post.image}" alt="${post.title}">
+          <div style="font-weight:600; margin-top:10px;">${post.title.slice(0, 40)}...</div>
+          <div style="margin-top:10px;">${post.description.slice(0, 100)}...</div>
+          <div class="price">$${post.price}</div>
+          <button>Buy Now</button>
+        </div>
+      `;
+    });
+    document.getElementById("cards").classList.remove("loading");
+    document.getElementById("cards").innerHTML = output;
+  },
+  function(error){
+    document.getElementById("cards").innerHTML = `<div class="error">${error}</div>`;
+  }
+);
+</script>
+
+</body>
+</html>

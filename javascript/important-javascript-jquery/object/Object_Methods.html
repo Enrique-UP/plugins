@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        const car = { make: "Tesla", model: "Model 3", year: 2024 };
+        
+        console.log(Object.keys(car)); // ['make', 'model', 'year']
+        console.log(Object.values(car)); // ['Tesla', 'Model 3', 2024]
+        console.log(Object.entries(car)); // [ ['make', 'Tesla'], ['model', 'Model 3'], ['year', 2024] ]
+    </pre>
+    <script>
+        const car = { make: "Tesla", model: "Model 3", year: 2024 };
+
+        console.log(Object.keys(car)); // ['make', 'model', 'year']
+        console.log(Object.values(car)); // ['Tesla', 'Model 3', 2024]
+        console.log(Object.entries(car)); // [ ['make', 'Tesla'], ['model', 'Model 3'], ['year', 2024] ]
+
+        const specs = { battery: "Long Range", drive: "AWD" };
+        // Merges 'car' and 'specs' into a brand new empty object
+        const fullCarInfo = Object.assign({}, car, specs);
+        console.log(fullCarInfo);
+        const fullCarInfo1 = Object.assign(car, specs);
+        console.log(fullCarInfo1);
+    </script>
+</body>
+</html>
