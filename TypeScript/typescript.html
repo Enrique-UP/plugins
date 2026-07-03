@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        /**
+        * TYPESCRIPT EXAMPLES & CHEATSHEET
+        * * Yeh file saare basic se lekar advanced TypeScript concepts ko cover karti hai.
+        * * Run kaise karein:
+        * 1. TypeScript install karein: npm install -g typescript
+        * 2. JS m compile karein: tsc typescript_examples.ts
+        * 3. Node se run karein: node typescript_examples.js
+        * * Ya fir direct bina compile kiye run karne ke liye: npx ts-node typescript_examples.ts
+        */
+
+        // ==========================================
+        // 1. BASIC TYPE ANNOTATIONS
+        // ==========================================
+        console.log("--- 1. Basic Type Annotations ---");
+
+        // Primitives
+        let username: string = "Alice";
+        let age: number = 30;
+        let isDeveloper: boolean = true;
+
+        // Arrays
+        let languages: string[] = ["TypeScript", "JavaScript", "Python"];
+        let scores: Array<number> = [95, 88, 100]; // Alternative syntax
+
+        // Tuples (fixed length aur fixed type order)
+        let userSession: [number, string] = [1, "Admin"];
+
+        console.log(`User: ${username}, Age: ${age}, Developer: ${isDeveloper}`);
+        console.log(`Languages: ${languages.join(", ")}`);
+        console.log(`Session: ID=${userSession[0]}, Role=${userSession[1]}\n`);
+
+
+        // ==========================================
+        // 2. FUNCTIONS WITH TYPES
+        // ==========================================
+        console.log("--- 2. Functions with Types ---");
+
+        // Parameter aur return types ke sath function
+        function addNumbers(a: number, b: number): number {
+            return a + b;
+        }
+
+        // Arrow function jisme optional parameter (?) aur default value use ki gayi hai
+        const greetUser = (name: string, greeting: string = "Hello", userAge?: number): string => {
+            if (userAge) {
+                return `${greeting}, ${name}! You are ${userAge} years old.`;
+            }
+            return `${greeting}, ${name}!`;
+        };
+
+        console.log(`Addition: 5 + 10 = ${addNumbers(5, 10)}`);
+        console.log(greetUser("Bob")); 
+        console.log(greetUser("Charlie", "Welcome", 25)); 
+        console.log();
+
+
+        // ==========================================
+        // 3. INTERFACES VS. TYPE ALIASES
+        // ==========================================
+        console.log("--- 3. Interfaces & Type Aliases ---");
+
+        // Interfaces (Objects ka structure define aur extend karne ke liye best hai)
+        interface Client {
+            readonly id: number; // Isko create karne ke baad badla nahi ja sakta
+            name: string;
+            email: string;
+            phoneNumber?: string; // Optional property
+        }
+
+        const newClient: Client = {
+            id: 101,
+            name: "Sarah Jones",
+            email: "sarah@example.com"
+        };
+        // newClient.id = 102; // Error: Kyunki id read-only hai
+
+        // Type Aliases (Union, custom primitives ya flexible combinations ke liye best hai)
+        type ID = string | number; // Union type (kuch bhi ho sakta hai)
+        type Role = "admin" | "user" | "guest"; // Literal type (sirf yahi 3 values allow hain)
+
+        type UserAccount = {
+            id: ID;
+            username: string;
+            role: Role;
+        };
+
+        const user: UserAccount = {
+            id: "usr_8742",
+            username: "dev_dan",
+            role: "admin"
+        };
+
+        console.log(`Client: ${newClient.name} (${newClient.email})`);
+        console.log(`Account: ID=${user.id}, Username=${user.username}, Role=${user.role}\n`);
+
+
+        // ==========================================
+        // 4. CLASSES AND ACCESS MODIFIERS
+        // ==========================================
+        console.log("--- 4. Classes and Access Modifiers ---");
+
+        class Employee {
+            // Shorthand initialization: class variables constructor ke andar hi define ho gaye hain
+            constructor(
+                public name: string,
+                private salary: number,
+                protected department: string
+            ) {}
+
+            public getDetails(): string {
+                return `${this.name} works in ${this.department}.`;
+            }
+
+            // Private method: isko class ke bahar se access nahi kiya ja sakta
+            private calculateBonus(): number {
+                return this.salary * 0.1;
+            }
+        }
+
+        const emp = new Employee("Alex", 80000, "Engineering");
+        console.log(emp.getDetails()); 
+        // console.log(emp.salary); // Error: Kyunki 'salary' private property hai
+        console.log();
+
+
+        // ==========================================
+        // 5. GENERICS (REUSABLE CODE)
+        // ==========================================
+        console.log("--- 5. Generics ---");
+
+        // Ek generic function jo kisi bhi type ke item ko array me wrap kar deta hai
+        function wrapInArray<T>(item: T): T[] {
+            return [item];
+        }
+
+        const numberArray = wrapInArray<number>(42); 
+        const stringArray = wrapInArray<string>("Hello"); 
+
+        // Generic Interface
+        interface ApiResponse<DataType> {
+            data: DataType;
+            status: number;
+            error?: string;
+        }
+
+        interface UserPayload {
+            name: string;
+            age: number;
+        }
+
+        // Generic interface ka use
+        const response: ApiResponse<UserPayload> = {
+            data: { name: "Emma", age: 28 },
+            status: 200
+        };
+
+        console.log("Wrapped Number:", numberArray);
+        console.log("Wrapped String:", stringArray);
+        console.log(`API Response Status: ${response.status}, User: ${response.data.name}\n`);
+
+
+        // ==========================================
+        // 6. ENUMS
+        // ==========================================
+        console.log("--- 6. Enums ---");
+
+        enum StatusCodes {
+            Success = 200,
+            BadRequest = 400,
+            Unauthorized = 401,
+            NotFound = 404
+        }
+
+        function handleResponse(status: StatusCodes) {
+            if (status === StatusCodes.Success) {
+                console.log("Request succeeded (200)!");
+            } else if (status === StatusCodes.NotFound) {
+                console.log("Resource not found (404).");
+            }
+        }
+
+        handleResponse(StatusCodes.Success);
+
+
+
+
+
+        /**
+        * EXTRA TYPESCRIPT EXAMPLES & CHEATSHEET (UPDATED)
+        * * Is file me basic se lekar practical advanced production-level examples hain.
+        * * Run karne ke liye: npx ts-node file_name.ts
+        */
+
+        // ==========================================
+        // 1. ADVANCED TYPE UTILITIES (Partial, Pick, Omit)
+        // ==========================================
+        console.log("--- 1. Type Utilities ---");
+
+        interface Product {
+            id: string;
+            title: string;
+            price: number;
+            description: string;
+            category: string;
+        }
+
+        // Partial<T> - Saari properties ko optional (?) bana deta hai (useful for Updates)
+        type ProductUpdateInput = Partial<Product>; 
+
+        const updateProductData: ProductUpdateInput = {
+            price: 499 // Sirf price update karni hai, baaki fields dene ki zaroorat nahi
+        };
+
+        // Omit<T, K> - Kuch specific fields ko remove karke naya type banata hai
+        type NewProductInput = Omit<Product, 'id'>; // ID database khud generate karega
+
+        const previewProduct: NewProductInput = {
+            title: "Wireless Mouse",
+            price: 1200,
+            description: "Ergonomic 2.4GHz mouse",
+            category: "Electronics"
+        };
+
+        // Pick<T, K> - Sirf chuni hui fields ka naya type banata hai
+        type ProductSummary = Pick<Product, 'title' | 'price'>;
+
+        const checkoutItem: ProductSummary = {
+            title: "Wireless Mouse",
+            price: 1200
+        };
+
+        console.log("Product Summary:", checkoutItem);
+        console.log();
+
+
+        // ==========================================
+        // 2. TYPE GUARDS (Narrowing down types safely)
+        // ==========================================
+        console.log("--- 2. Type Guards ---");
+
+        function processPayment(amount: string | number) {
+            // typeof Type Guard
+            if (typeof amount === "string") {
+                // Yahan TS ko pata hai ki 'amount' string hai, isliye .trim() allow karega
+                console.log(`Processing string amount: ₹${amount.trim()}`);
+            } else {
+                // Yahan TS ko pata hai ki 'amount' number hai, isliye .toFixed() allow karega
+                console.log(`Processing number amount: ₹${amount.toFixed(2)}`);
+            }
+        }
+
+        processPayment("  500 ");
+        processPayment(1200.5);
+        console.log();
+
+
+        // ==========================================
+        // 3. INTERSECTION TYPES (&)
+        // ==========================================
+        console.log("--- 3. Intersection Types ---");
+
+        type Logger = {
+            log: (msg: string) => void;
+        };
+
+        type Database = {
+            save: (data: object) => void;
+        };
+
+        // Dono types ko milakar ek naya type banaya
+        type ServicePlugin = Logger & Database;
+
+        const myService: ServicePlugin = {
+            log: (msg) => console.log(`[Log]: ${msg}`),
+            save: (data) => console.log(`[DB]: Data saved successfully.`, data)
+        };
+
+        myService.log("Testing Intersection Type");
+        myService.save({ userId: 123 });
+        console.log();
+
+
+        // ==========================================
+        // 4. ASYNC/AWAIT & PROMISES WITH TYPES
+        // ==========================================
+        console.log("--- 4. Promises and Async/Await ---");
+
+        interface UserData {
+            id: number;
+            name: string;
+            username: string;
+        }
+
+        // Function jo Promise return karta hai jisme UserData generic defined hai
+        async function fetchUserById(id: number): Promise<UserData> {
+            // Real world me yahan fetch() request hogi
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({
+                        id: id,
+                        name: "Rahul Sharma",
+                        username: "rahul_dev"
+                    });
+                }, 500);
+            });
+        }
+
+        // Execute Karne ke liye async wrapper
+        async function main() {
+            try {
+                const user = await fetchUserById(42);
+                console.log(`Fetched User successfully! Name: ${user.name}`);
+            } catch (error) {
+                console.error("Error fetching user:", error);
+            }
+        }
+
+        main();
+    </pre>
+</body>
+</html>
