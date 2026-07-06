@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // --- 1. LENGTH PROPERTY ---
+        let name = "Rahul";
+        let message = "Hello Bro"; 
+        let empty = "";
+
+        console.log("--- 1. Length ---");
+        console.log(name.length);    // Output: 5
+        console.log(message.length); // Output: 9
+        console.log(empty.length);   // Output: 0
+
+
+        // --- 2. CASE METHODS ---
+        let text = "hello";
+        let mixed = "JaVaScRiPt";
+        let code = "HTML";
+
+        console.log("\n--- 2. Upper/Lower Case ---");
+        console.log(text.toUpperCase());  // Output: "HELLO"
+        console.log(mixed.toUpperCase()); // Output: "JAVASCRIPT"
+        console.log(code.toLowerCase());  // Output: "html"
+
+
+        // --- 3. INDEXOF METHOD ---
+        let sentence = "I love coding";
+        let framework = "React";
+        let tech = "Nodejs";
+
+        console.log("\n--- 3. IndexOf ---");
+        console.log(sentence.indexOf("love"));   // Output: 2
+        console.log(framework.indexOf("a"));     // Output: 2
+        console.log(tech.indexOf("Python"));     // Output: -1
+
+
+        // --- 4. SLICE METHOD ---
+        let phrase = "JavaScript is awesome";
+        let fruit = "ApplePie";
+        let full = "Frontend Developer";
+
+        console.log("\n--- 4. Slice ---");
+        console.log(phrase.slice(0, 10)); // Output: "JavaScript"
+        console.log(fruit.slice(5, 8));   // Output: "Pie"
+        console.log(full.slice(9));       // Output: "Developer"
+
+
+        // --- 5. REPLACE METHOD ---
+        let wish = "Good Morning";
+        let price = "$100";
+        let wrong = "I love holding";
+
+        console.log("\n--- 5. Replace ---");
+        console.log(wish.replace("Morning", "Night")); // Output: "Good Night"
+        console.log(price.replace("$", "Rs."));        // Output: "Rs.100"
+        console.log(wrong.replace("holding", "coding")); // Output: "I love coding"
+
+
+        // --- 6. TRIM METHOD ---
+        let username = "   rahul_99   ";
+        let spacedText = "   Hello";
+        let address = "  New Delhi  ";
+
+        console.log("\n--- 6. Trim ---");
+        console.log(username.trim());   // Output: "rahul_99"
+        console.log(spacedText.trim()); // Output: "Hello"
+        console.log(address.trim());    // Output: "New Delhi"
+
+
+        // --- 7. INCLUDES METHOD ---
+        let bio = "I am a web developer";
+        let game = "PUBG Mobile";
+        let hobby = "I like swimming";
+
+        console.log("\n--- 7. Includes ---");
+        console.log(bio.includes("web"));      // Output: true
+        console.log(game.includes("pubg"));    // Output: false (Case-sensitive)
+        console.log(hobby.includes("cooking")); // Output: false
+    </pre>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // ==========================================
+        // JAVASCRIPT MATH METHODS COMPLETE GUIDE
+        // ==========================================
+
+        console.log("--- 1. ROUNDING METHODS (Numbers ko round karne ke liye) ---");
+
+        // Math.round(x) -> Sabse paas waale integer mein badalta hai.
+        // Agar decimal .5 ya usse zyada hai toh upar, nahi toh neeche.
+        console.log(Math.round(4.7));  // Output: 5
+        console.log(Math.round(4.4));  // Output: 4
+        console.log(Math.round(-4.5)); // Output: -4
+
+        // Math.ceil(x) -> Ceil matlab chhat. Yeh hamesha upar waale integer pe round karega.
+        console.log(Math.ceil(4.1));   // Output: 5
+        console.log(Math.ceil(4.9));   // Output: 5
+        console.log(Math.ceil(-4.7));  // Output: -4
+
+        // Math.floor(x) -> Floor matlab farsh. Yeh hamesha neeche waale integer pe round karega.
+        console.log(Math.floor(4.9));  // Output: 4
+        console.log(Math.floor(4.1));  // Output: 4
+        console.log(Math.floor(-4.1)); // Output: -5
+
+        // Math.trunc(x) -> Yeh decimal ke baad ka sab kuch bina soche-samjhe kaat (truncate) deta hai.
+        console.log(Math.trunc(4.9));  // Output: 4
+        console.log(Math.trunc(4.1));  // Output: 4
+        console.log(Math.trunc(-4.9)); // Output: -4
+
+
+        console.log("\n--- 2. POWER, ROOT & ABSOLUTE VALUE METHODS ---");
+
+        // Math.pow(x, y) -> x ki power y (x^y) calculate karta hai.
+        console.log(Math.pow(2, 3));   // Output: 8  (2 * 2 * 2)
+        console.log(Math.pow(5, 2));   // Output: 25 (5 * 5)
+        console.log(Math.pow(9, 0.5)); // Output: 3  (Square root)
+
+        // Math.sqrt(x) -> Kisi bhi number ka Square Root (vargmool) nikaalta hai.
+        console.log(Math.sqrt(64));    // Output: 8
+        console.log(Math.sqrt(25));    // Output: 5
+        console.log(Math.sqrt(-9));    // Output: NaN (Negative number ka root nahi hota)
+
+        // Math.cbrt(x) -> Cube Root (ghanmool) nikaalta hai.
+        console.log(Math.cbrt(8));     // Output: 2  (2 * 2 * 2 = 8)
+        console.log(Math.cbrt(27));    // Output: 3  (3 * 3 * 3 = 27)
+        console.log(Math.cbrt(-125));  // Output: -5
+
+        // Math.abs(x) -> Absolute value deta hai. Negative number ko bhi positive bana deta hai.
+        console.log(Math.abs(-5));     // Output: 5
+        console.log(Math.abs(5));      // Output: 5
+        console.log(Math.abs(-0.25));  // Output: 0.25
+
+
+        console.log("\n--- 3. MAX, MIN & RANDOM METHODS ---");
+
+        // Math.min(...values) -> Diye gaye numbers mein se sabse chhota number dhoondta hai.
+        console.log(Math.min(5, 10, 2, 8));    // Output: 2
+        console.log(Math.min(-5, -10, 0));     // Output: -10
+        console.log(Math.min(...[4, 9, 1]));   // Output: 1 (Array ke saath spread operator)
+
+        // Math.max(...values) -> Diye gaye numbers mein se sabse bada number dhoondta hai.
+        console.log(Math.max(5, 10, 2, 8));    // Output: 10
+        console.log(Math.max(-5, -10, 0));     // Output: 0
+        console.log(Math.max(...[12, 55, 3]));  // Output: 55
+
+        // Math.random() -> 0 se 1 ke beech koi bhi random decimal number deta hai.
+        console.log(Math.random()); // Output: 0.3452... (Har baar alag aayega)
+        // Example: 0 se 9 ke beech integer chahiye toh:
+        console.log(Math.floor(Math.random() * 10)); // Output: Ek random number 0-9 tak
+        // Example: 1 se 6 tak (Dice/Pasa roll karne ke liye):
+        console.log(Math.floor(Math.random() * 6) + 1); // Output: Ek random number 1-6 tak
+
+
+        console.log("\n--- 4. ADVANCED METHODS (Trigonometry & Log) ---");
+
+        // Math.sin/cos/tan(x) -> Inme value hamesha Radians mein di jaati hai.
+        console.log(Math.sin(Math.PI / 2)); // Output: 1 (Sin 90 degree)
+        console.log(Math.cos(0));           // Output: 1 (Cos 0 degree)
+        console.log(Math.tan(Math.PI / 4)); // Output: 0.99999... (~1 hota hai, Tan 45 degree)
+
+        // Math.log(x) -> Natural Logarithm (base e) nikaalta hai.
+        console.log(Math.log(1));          // Output: 0
+        console.log(Math.log(Math.E));     // Output: 1
+        console.log(Math.log(10));         // Output: 2.3025...
+
+
+        console.log("\n--- 5. MATH PROPERTIES / CONSTANTS ---");
+
+        // Yeh methods nahi hain, balki built-in values (constants) hain.
+        console.log(Math.PI);    // Output: 3.141592653589793  (Pi ki value)
+        console.log(Math.E);     // Output: 2.718281828459045  (Euler's number)
+        console.log(Math.SQRT2); // Output: 1.414213562373095  (Square root of 2)
+    </pre>
+</body>
+</html>

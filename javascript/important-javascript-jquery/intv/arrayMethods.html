@@ -41,10 +41,11 @@
 
 
         // ==========================================
-        // 2. pop() - Last element ko remove karta hai
+        // 2. pop() - Last element ko remove karta hai or last ki value nikalta hai
         // ==========================================
         const collection = ['books', 'pens', 'colors'];
-        collection.pop(); 
+		console.log(collection.pop()); // colors
+        collection.pop();
         console.log(collection); // ['books', 'pens']
 
         const scores = [10, 20, 30];
@@ -58,7 +59,7 @@
 
 
         // ==========================================
-        // 3. shift() - First element ko remove karta hai
+        // 3. shift() - First element ko remove karta hai or first ki value nikalta hai
         // ==========================================
         const queue = ['First', 'Second', 'Third'];
         queue.shift(); 
@@ -107,49 +108,64 @@
 
 
         // ==========================================
-        // 6. splice() - Elements add/remove karta hai kisi bhi index se
-        // ==========================================
-        // Example 1: Remove 1 element at index 1
-        const days = ['Mon', 'Tue', 'Wed'];
-        days.splice(1, 1); 
-        console.log(days); // ['Mon', 'Wed']
+        // 6. splice() - Elements add/remove/replace karta hai kisi bhi index se
+        // ==========================================		
+		// array.splice(start, deleteCount, item1, item2, ...);
+		
+		let fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
+		let removed = fruits.splice(1, 2); // Start at index 1, remove 2 items
+		console.log(fruits);  // ['Apple', 'Date'] (Modified original array)
+		console.log(removed); // ['Banana', 'Cherry'] (Returned deleted items)
+		
+		let fish = ['Angel', 'Clown', 'Mandarin'];
+		fish.splice(2, 0, 'Drum', 'Sturgeon'); // Insert at index 2, delete 0
+		console.log(fish); // ['Angel', 'Clown', 'Drum', 'Sturgeon', 'Mandarin']
+		
+		let alphabet = ['a', 'b', 'x', 'y', 'e'];
+		alphabet.splice(2, 2, 'c', 'd'); // Start at index 2, remove 2 items, insert 'c' and 'd'
+		console.log(alphabet); // ['a', 'b', 'c', 'd', 'e']
+		
+		let tools = ['Hammer', 'Screwdriver', 'Wrench', 'Pliers', 'Lorem', 'Ipsum', 'Dolor'];
+		tools.splice(-2, 2); // Start 2 from the end, remove 2 items
+		console.log(tools); // [ 'Hammer', 'Screwdriver', 'Wrench', 'Pliers', 'Lorem' ]
+		
+		let Cart = ['Shirt', 'Shoes', 'Hat', 'Socks'];
+		let itemsRemoved = Cart.splice(1); // Deletes everything from index 1 onward
+		console.log(Cart);         // ['Shirt']
+		console.log(itemsRemoved); // ['Shoes', 'Hat', 'Socks']
+		
+		let team = ['Alex', 'Sam', 'Chris', 'Taylor'];
+		let indexToRemove = team.indexOf('Chris'); 
+		if (indexToRemove !== -1) {
+			team.splice(indexToRemove, 1); // Removes exactly 1 item at Chris's position
+		}
+		console.log(team); // ['Alex', 'Sam', 'Taylor']
+		
+		let primaryColors = ['Red', 'Blue'];
+		let extraColors = ['Yellow', 'Green'];
+		// Go to index 1, delete 0 items, and unpack extraColors there
+		primaryColors.splice(1, 0, ...extraColors); 
+		console.log(primaryColors); // ['Red', 'Yellow', 'Green', 'Blue']
+		
+		let playlist = ['Song A', 'Song B', 'Song C', 'Song D'];
+		// Remove 'Song C' (index 2) and grab it from the returned array
+		let movingSong = playlist.splice(2, 1)[0]; 
+		console.log(movingSong); // Song C
+		// Insert it at the very beginning (index 0)
+		playlist.splice(0, 0, movingSong);
+		console.log(playlist); // ['Song C', 'Song A', 'Song B', 'Song D']
 
-        // Example 2: Insert elements at index 1 without removing anything
-        const months = ['Jan', 'April'];
-        months.splice(1, 0, 'Feb', 'March'); 
-        console.log(months); // ['Jan', 'Feb', 'March', 'April']
 
-        // Example 3: Replace 1 element at index 2
-        const items = ['bag', 'pen', 'laptop'];
-        items.splice(2, 1, 'mouse'); 
-        console.log(items); // ['bag', 'pen', 'mouse']
 
-        // Example 4: Sirf Elements ko REMOVE (Delete) karna, Index 1 (Banana) se shuru karo aur 2 elements hatado (Banana aur Orange)
-        const fruits1 = ['Apple', 'Banana', 'Orange', 'Mango'];        
-        const removedFruits = fruits1.splice(1, 2); 
-        console.log(fruits1); // Output: ['Apple', 'Mango'] -> Original array chota ho gaya!
-        console.log(removedFruits); // Output: ['Banana', 'Orange'] -> Splice hamesha delete kiye huye elements return karta hai.
-
-        // Example 5: Bina kuch delete kiye naye elements INSERT karna
-        const languages = ['HTML', 'CSS', 'JavaScript'];
-        // Index 2 (JavaScript ke pehle) par jao, 0 elements delete karo, aur 'React', 'Vue' add karo
-        languages.splice(2, 0, 'React', 'Vue');
-        console.log(languages); // Output: ['HTML', 'CSS', 'React', 'Vue', 'JavaScript']
-
-        // Example 6: Elements ko REPLACE (Purane hatao, naye lao) karna
-        const vips = ['Amit', 'Rahul', 'John'];
-        // Index 2 (John) par jao, 1 element delete karo (John), aur uski jagah 'Raj' add kardo
-        vips.splice(2, 1, 'Raj');
-        console.log(vips); // Output: ['Amit', 'Rahul', 'Raj']
 
 
         // ==========================================
         // 7. slice() - Array ka ek tukda (portion) nikalta hai naya array banakar
         // ==========================================
         const fullList = ['a', 'b', 'c', 'd', 'e'];
-        console.log(fullList.slice(1, 4)); // ['b', 'c', 'd']
-        console.log(fullList.slice(2)); // ['c', 'd', 'e']
-        console.log(fullList.slice(-2)); // ['d', 'e']
+        console.log(fullList.slice(1, 4)); // ['b', 'c', 'd'];
+        console.log(fullList.slice(2)); // ['c', 'd', 'e'];
+        console.log(fullList.slice(-2)); // ['d', 'e'];
 
         // Start aur End dono index dena
         const pizza = ['Slice0', 'Slice1', 'Slice2', 'Slice3', 'Slice4'];
@@ -188,12 +204,30 @@
         // ==========================================
         // 9. lastIndexOf() - Last se element ka index dhoondhta hai
         // ==========================================
+		
+		const fruits = ["HTML", "Apple", "Orange", "Apple", "Mango", "Css"];
+		let index = fruits.lastIndexOf("Apple");
+		document.getElementById("demo").innerHTML = index; // 3
+		
         const values = [1, 2, 3, 2, 1];
         console.log(values.lastIndexOf(2)); // 3
 
         console.log(values.lastIndexOf(1)); // 4
 
         console.log(values.lastIndexOf(5)); // -1
+		
+		let sentence = "The quick brown fox jumps over the lazy dog. The fox is fast.";
+		let lastFox = sentence.lastIndexOf("fox");
+		console.log(lastFox); // 49 (Index of the second "fox")
+		
+		let filename = "project.backup.final.pdf";
+		let dotIndex = filename.lastIndexOf(".");
+		if (dotIndex !== -1) {
+			let extension = filename.slice(dotIndex + 1);
+			console.log(extension); // "pdf"
+		}
+
+
 
 
         // ==========================================
@@ -618,10 +652,11 @@
 
 
         // ==========================================
-        // 2. pop() - Last element ko remove karta hai
+        // 2. pop() - Last element ko remove karta hai or last ki value nikalta hai
         // ==========================================
         const collection = ['books', 'pens', 'colors'];
-        collection.pop(); 
+		console.log(collection.pop()); // colors
+        collection.pop();
         console.log(collection); // ['books', 'pens']
 
         const scores = [10, 20, 30];
@@ -635,7 +670,7 @@
 
 
         // ==========================================
-        // 3. shift() - First element ko remove karta hai
+        // 3. shift() - First element ko remove karta hai or first ki value nikalta hai
         // ==========================================
         const queue = ['First', 'Second', 'Third'];
         queue.shift(); 
@@ -684,49 +719,64 @@
 
 
         // ==========================================
-        // 6. splice() - Elements add/remove karta hai kisi bhi index se
-        // ==========================================
-        // Example 1: Remove 1 element at index 1
-        const days = ['Mon', 'Tue', 'Wed'];
-        days.splice(1, 1); 
-        console.log(days); // ['Mon', 'Wed']
+        // 6. splice() - Elements add/remove/replace karta hai kisi bhi index se
+        // ==========================================		
+		// array.splice(start, deleteCount, item1, item2, ...);
+		
+		let fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
+		let removed = fruits.splice(1, 2); // Start at index 1, remove 2 items
+		console.log(fruits);  // ['Apple', 'Date'] (Modified original array)
+		console.log(removed); // ['Banana', 'Cherry'] (Returned deleted items)
+		
+		let fish = ['Angel', 'Clown', 'Mandarin'];
+		fish.splice(2, 0, 'Drum', 'Sturgeon'); // Insert at index 2, delete 0
+		console.log(fish); // ['Angel', 'Clown', 'Drum', 'Sturgeon', 'Mandarin']
+		
+		let alphabet = ['a', 'b', 'x', 'y', 'e'];
+		alphabet.splice(2, 2, 'c', 'd'); // Start at index 2, remove 2 items, insert 'c' and 'd'
+		console.log(alphabet); // ['a', 'b', 'c', 'd', 'e']
+		
+		let tools = ['Hammer', 'Screwdriver', 'Wrench', 'Pliers', 'Lorem', 'Ipsum', 'Dolor'];
+		tools.splice(-2, 2); // Start 2 from the end, remove 2 items
+		console.log(tools); // [ 'Hammer', 'Screwdriver', 'Wrench', 'Pliers', 'Lorem' ]
+		
+		let Cart = ['Shirt', 'Shoes', 'Hat', 'Socks'];
+		let itemsRemoved = Cart.splice(1); // Deletes everything from index 1 onward
+		console.log(Cart);         // ['Shirt']
+		console.log(itemsRemoved); // ['Shoes', 'Hat', 'Socks']
+		
+		let team = ['Alex', 'Sam', 'Chris', 'Taylor'];
+		let indexToRemove = team.indexOf('Chris'); 
+		if (indexToRemove !== -1) {
+			team.splice(indexToRemove, 1); // Removes exactly 1 item at Chris's position
+		}
+		console.log(team); // ['Alex', 'Sam', 'Taylor']
+		
+		let primaryColors = ['Red', 'Blue'];
+		let extraColors = ['Yellow', 'Green'];
+		// Go to index 1, delete 0 items, and unpack extraColors there
+		primaryColors.splice(1, 0, ...extraColors); 
+		console.log(primaryColors); // ['Red', 'Yellow', 'Green', 'Blue']
+		
+		let playlist = ['Song A', 'Song B', 'Song C', 'Song D'];
+		// Remove 'Song C' (index 2) and grab it from the returned array
+		let movingSong = playlist.splice(2, 1)[0]; 
+		console.log(movingSong); // Song C
+		// Insert it at the very beginning (index 0)
+		playlist.splice(0, 0, movingSong);
+		console.log(playlist); // ['Song C', 'Song A', 'Song B', 'Song D']
 
-        // Example 2: Insert elements at index 1 without removing anything
-        const months = ['Jan', 'April'];
-        months.splice(1, 0, 'Feb', 'March'); 
-        console.log(months); // ['Jan', 'Feb', 'March', 'April']
 
-        // Example 3: Replace 1 element at index 2
-        const items = ['bag', 'pen', 'laptop'];
-        items.splice(2, 1, 'mouse'); 
-        console.log(items); // ['bag', 'pen', 'mouse']
 
-        // Example 4: Sirf Elements ko REMOVE (Delete) karna, Index 1 (Banana) se shuru karo aur 2 elements hatado (Banana aur Orange)
-        const fruits1 = ['Apple', 'Banana', 'Orange', 'Mango'];        
-        const removedFruits = fruits1.splice(1, 2); 
-        console.log(fruits1); // Output: ['Apple', 'Mango'] -> Original array chota ho gaya!
-        console.log(removedFruits); // Output: ['Banana', 'Orange'] -> Splice hamesha delete kiye huye elements return karta hai.
-
-        // Example 5: Bina kuch delete kiye naye elements INSERT karna
-        const languages = ['HTML', 'CSS', 'JavaScript'];
-        // Index 2 (JavaScript ke pehle) par jao, 0 elements delete karo, aur 'React', 'Vue' add karo
-        languages.splice(2, 0, 'React', 'Vue');
-        console.log(languages); // Output: ['HTML', 'CSS', 'React', 'Vue', 'JavaScript']
-
-        // Example 6: Elements ko REPLACE (Purane hatao, naye lao) karna
-        const vips = ['Amit', 'Rahul', 'John'];
-        // Index 2 (John) par jao, 1 element delete karo (John), aur uski jagah 'Raj' add kardo
-        vips.splice(2, 1, 'Raj');
-        console.log(vips); // Output: ['Amit', 'Rahul', 'Raj']
 
 
         // ==========================================
         // 7. slice() - Array ka ek tukda (portion) nikalta hai naya array banakar
         // ==========================================
         const fullList = ['a', 'b', 'c', 'd', 'e'];
-        console.log(fullList.slice(1, 4)); // ['b', 'c', 'd']
-        console.log(fullList.slice(2)); // ['c', 'd', 'e']
-        console.log(fullList.slice(-2)); // ['d', 'e']
+        console.log(fullList.slice(1, 4)); // ['b', 'c', 'd'];
+        console.log(fullList.slice(2)); // ['c', 'd', 'e'];
+        console.log(fullList.slice(-2)); // ['d', 'e'];
 
         // Start aur End dono index dena
         const pizza = ['Slice0', 'Slice1', 'Slice2', 'Slice3', 'Slice4'];
@@ -765,12 +815,30 @@
         // ==========================================
         // 9. lastIndexOf() - Last se element ka index dhoondhta hai
         // ==========================================
+		
+		const fruits = ["HTML", "Apple", "Orange", "Apple", "Mango", "Css"];
+		let index = fruits.lastIndexOf("Apple");
+		document.getElementById("demo").innerHTML = index; // 3
+		
         const values = [1, 2, 3, 2, 1];
         console.log(values.lastIndexOf(2)); // 3
 
         console.log(values.lastIndexOf(1)); // 4
 
         console.log(values.lastIndexOf(5)); // -1
+		
+		let sentence = "The quick brown fox jumps over the lazy dog. The fox is fast.";
+		let lastFox = sentence.lastIndexOf("fox");
+		console.log(lastFox); // 49 (Index of the second "fox")
+		
+		let filename = "project.backup.final.pdf";
+		let dotIndex = filename.lastIndexOf(".");
+		if (dotIndex !== -1) {
+			let extension = filename.slice(dotIndex + 1);
+			console.log(extension); // "pdf"
+		}
+
+
 
 
         // ==========================================

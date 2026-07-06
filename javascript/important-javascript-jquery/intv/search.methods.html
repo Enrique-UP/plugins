@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // ==========================================
+        // JAVASCRIPT SEARCH METHODS COMPLETE GUIDE
+        // ==========================================
+
+        console.log("--- 1. BASIC SEARCH METHODS (String & Array Dono Ke Liye) ---");
+
+        // 1. indexOf(searchElement, fromIndex) -> Yeh element ko shuruat se dhoondta hai aur uska PEHLA index (position) lautata hai. Na milne par -1 deta hai.
+        let fruits = ["Apple", "Banana", "Mango", "Banana"];
+        console.log(fruits.indexOf("Banana"));    // Output: 1 (Pehli baar Banana 1st index par mila)
+        console.log("Hello World".indexOf("l"));  // Output: 2 (String par bhi kaam karta hai)
+        console.log(fruits.indexOf("Grapes"));    // Output: -1 (Kyunki list mein nahi hai)
+
+        // 2. lastIndexOf(searchElement) -> Yeh element ko PEECHE se dhoondna shuru karta hai, par index hamesha aage se hi count hota hai.
+        let numbers = [1, 2, 3, 2, 4];
+        console.log(numbers.lastIndexOf(2));      // Output: 3 (Peeche se pehla '2' 3rd index par hai)
+        console.log("canal".lastIndexOf("a"));    // Output: 3
+        console.log(numbers.lastIndexOf(9));      // Output: -1
+
+        // 3. includes(searchElement) -> Yeh sirf yeh check karta hai ki element list/string mein hai ya nahi. True ya False return karta hai.
+        let techStack = ["HTML", "CSS", "JS"];
+        console.log(techStack.includes("JS"));     // Output: true
+        console.log("JavaScript".includes("Script")); // Output: true (String par)
+        console.log(techStack.includes("Python")); // Output: false
+
+
+        console.log("\n--- 2. ADVANCED ARRAY SEARCH METHODS (Callback Functions) ---");
+
+        // 4. find(callback) -> Ek condition ke hisab se array mein dhoondta hai aur jo PEHLA element condition match kare, uski VALUE deta hai.
+        let ages = [12, 17, 22, 19, 30];
+        // Example: Pehla adult (18+) dhoondna
+        console.log(ages.find(age => age >= 18)); // Output: 22 (22 pehla number hai jo 18+ hai)
+        // Example: Pehla negative number dhoondna
+        console.log([5, 12, -3, -8].find(x => x < 0)); // Output: -3
+        // Example: Agar kuch na mile toh undefined deta hai
+        console.log(ages.find(age => age > 50));  // Output: undefined
+
+        // 5. findIndex(callback) -> Yeh find() jaisa hi hai, bas yeh value ki jagah us matching element ka INDEX (position) lautata hai.
+        let products = ["Pen", "Notebook", "Laptop", "Mouse"];
+        // Example: 5 letters se bade word ka index dhoondna
+        console.log(products.findIndex(p => p.length > 5)); // Output: 1 ("Notebook" ka index 1 hai)
+        // Example: "Laptop" ka index dhoondna condition se
+        console.log(products.findIndex(p => p === "Laptop")); // Output: 2
+        // Example: Na milne par -1 deta hai
+        console.log(products.findIndex(p => p === "Camera")); // Output: -1
+
+        // 6. findLast(callback) -> Yeh array ke AAKHIR (end) se check karna shuru karta hai aur condition match hone par PEHLI VALUE deta hai.
+        let scores = [15, 45, 80, 35, 95, 20];
+        console.log(scores.findLast(s => s > 50));  // Output: 95 (Peeche se dhoondne par 95 pehla bada number mila)
+        console.log([1, 6, 9, 4].findLast(x => x % 2 === 0)); // Output: 4 (Peeche se pehla even number)
+        console.log(scores.findLast(s => s < 10));  // Output: undefined
+
+        // 7. findLastIndex(callback) -> Yeh findLast() jaisa hi hai, bas yeh peeche se dhoond kar uska sahi INDEX lautata hai.
+        let items = ["apple", "banana", "apple", "orange"];
+        console.log(items.findLastIndex(item => item === "apple")); // Output: 2 (Aakhiri apple 2nd index par hai)
+        console.log([10, 25, 40, 55].findLastIndex(n => n > 30));   // Output: 3 (55 ka index 3 hai)
+        console.log(items.findLastIndex(item => item === "kiwi"));  // Output: -1
+
+
+        console.log("\n--- 3. SPECIAL STRING SEARCH METHODS ---");
+
+        // 8. search(regex) -> Yeh string mein Regular Expression (Regex) ke hisab se dhoondta hai aur uska index deta hai.
+        let msg = "Welcome to JavaScript World!";
+        console.log(msg.search("Java"));       // Output: 11
+        // Example: Case-insensitive search (/i lagane se capital/small ka farq nahi padta)
+        console.log(msg.search(/javascript/i));// Output: 11
+        // Example: Na milne par -1
+        console.log(msg.search(/Python/));     // Output: -1
+
+        // 9. match(regex) -> Yeh string mein se matching patterns ko nikaal kar ek ARRAY bana deta hai.
+        let text = "The rain in SPAIN stays mainly in the plain";
+        // Example: 'ain' word dhoondna (g matlab global - saare dhoondna)
+        console.log(text.match(/ain/g)); // Output: ["ain", "ain", "ain"]
+        // Example: Bina 'g' ke yeh poori details ke sath pehla match deta hai
+        console.log("Hello 123".match(/\d+/)); // Output: ["123"] (Digits dhoondna)
+        // Example: Agar match na ho toh null deta hai
+        console.log(text.match(/xyz/));  // Output: null
+    </pre>
+</body>
+</html>

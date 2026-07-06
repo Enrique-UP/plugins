@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // ==========================================
+        // JAVASCRIPT STRING SEARCH METHODS
+        // ==========================================
+
+        console.log("--- STRING SEARCH METHODS DEMO ---");
+
+        // ==========================================
+        // 1. indexOf()
+        // ==========================================
+        // Kaam: String me kisi word ya character ka PEHLA index (position) return karta hai. 
+        // Agar word nahi milta, toh -1 deta hai.
+
+        const str1 = "Hello world, welcome to the world of JS!";
+
+        // Ex 1: Word milne par uska starting index dena
+        console.log(str1.indexOf("world")); // Output: 6 (Pehla 'world' index 6 se shuru ho raha hai)
+
+        // Ex 2: Word na milne par -1 dena
+        console.log(str1.indexOf("Python")); // Output: -1
+
+        // Ex 3: Search kis index se shuru karni hai batana (Optional second parameter)
+        console.log(str1.indexOf("world", 10)); // Output: 28 (Index 10 ke baad wala 'world' dhundega)
+
+
+        // ==========================================
+        // 2. lastIndexOf()
+        // ==========================================
+        // Kaam: Yeh bhi indexOf ki tarah hai, lekin yeh string ke AKHIRI se search karta hai 
+        // aur LAST matching index return karta hai.
+
+        const str2 = "Apple, Banana, Mango, Apple";
+
+        // Ex 1: Word ka akhiri index batana
+        console.log(str2.lastIndexOf("Apple")); // Output: 22 (Akhiri 'Apple' index 22 par hai)
+
+        // Ex 2: Word na milne par -1 dena
+        console.log(str2.lastIndexOf("Grapes")); // Output: -1
+
+        // Ex 3: End se pehle search limit set karna
+        console.log(str2.lastIndexOf("Apple", 20)); // Output: 0 (Index 20 ke pehle jo 'Apple' tha)
+
+
+        // ==========================================
+        // 3. search()
+        // ==========================================
+        // Kaam: Yeh bhi text ka index return karta hai, lekin iska bada fayda yeh hai ki 
+        // isme aap Regular Expressions (Regex) use kar sakte ho.
+
+        const str3 = "Learn JavaScript and Node.js";
+
+        // Ex 1: Normal text search (indexOf ki tarah hi kaam karega)
+        console.log(str3.search("JavaScript")); // Output: 6
+
+        // Ex 2: Case-insensitive search (Regex '/i' flag ke sath capital/small ka farak khatam)
+        console.log(str3.search(/javascript/i)); // Output: 6 (Small letter 'j' hone par bhi dhoondh liya)
+
+        // Ex 3: Text na milne par -1 dena
+        console.log(str3.search("Python")); // Output: -1
+
+
+        // ==========================================
+        // 4. match()
+        // ==========================================
+        // Kaam: Yeh match hone wale text ko ek ARRAY ke roop me return karta hai. 
+        // Agar kuch match nahi hota toh null deta hai.
+
+        const str4 = "The rain in Spain stays mainly in the plain";
+
+        // Ex 1: Single match return karna (bina regex ke)
+        console.log(str4.match("ain")[0]); // Output: "ain"
+
+        // Ex 2: Global match (Jitne baar 'ain' aaya sab nikalna Regex '/g' flag se)
+        console.log(str4.match(/ain/g)); // Output: ['ain', 'ain', 'ain', 'ain']
+
+        // Ex 3: Match na milne par null dena
+        console.log(str4.match("xyz")); // Output: null
+
+
+        // ==========================================
+        // 5. includes()
+        // ==========================================
+        // Kaam: Yeh check karta hai ki string me koi word hai ya nahi. 
+        // Yeh sirf true ya false return karta hai (Sabse zyada use hota hai checks ke liye).
+
+        const str5 = "Welcome to India";
+
+        // Ex 1: Word hone par true dena
+        console.log(str5.includes("India")); // Output: true
+
+        // Ex 2: Word na hone par false dena
+        console.log(str5.includes("USA")); // Output: false
+
+        // Ex 3: Case-sensitive check
+        console.log(str5.includes("india")); // Output: false (Kyunki 'I' capital hona chahiye)
+
+
+        // ==========================================
+        // 6. startsWith()
+        // ==========================================
+        // Kaam: Check karta hai ki string kisi specific word se SHURU ho rahi hai ya nahi (true/false).
+
+        const str6 = "https://google.com";
+
+        // Ex 1: Sahi starting word par true
+        console.log(str6.startsWith("https")); // Output: true
+
+        // Ex 2: Galat starting word par false
+        console.log(str6.startsWith("http:")); // Output: false (Kyunki 's' missing hai)
+
+        // Ex 3: Kisi specific index se check karna
+        console.log(str6.startsWith("google", 8)); // Output: true (Kyunki index 8 par 'google' shuru ho raha hai)
+
+
+        // ==========================================
+        // 7. endsWith()
+        // ==========================================
+        // Kaam: Check karta hai ki string kisi specific word se KHATAM ho rahi hai ya nahi (true/false).
+
+        const str7 = "my_photo.jpg";
+
+        // Ex 1: Sahi ending extension par true
+        console.log(str7.endsWith(".jpg")); // Output: true
+
+        // Ex 2: Galat ending par false
+        console.log(str7.endsWith(".png")); // Output: false
+
+        // Ex 3: String ki length limit set karke check karna
+        console.log(str7.endsWith("photo", 8)); // Output: true (Pehle 8 characters 'my_photo' par khatam hote hain)
+    </pre>
+</body>
+</html>

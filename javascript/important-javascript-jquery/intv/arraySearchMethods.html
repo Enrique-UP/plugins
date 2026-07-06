@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // ==========================================
+        // 1. ARRAY SEARCH METHODS
+        // ==========================================
+
+        console.log("--- 1. ARRAY SEARCH METHODS ---");
+
+        // --- A. indexOf() ---
+        // Kaam: Element ka pehla index return karta hai, nahi toh -1 deta hai.
+        const fruits = ["apple", "banana", "mango", "banana"];
+
+        // Ex 1: Element milne par index dena
+        console.log(fruits.indexOf("banana")); // Output: 1
+
+        // Ex 2: Element na milne par -1 dena
+        console.log(fruits.indexOf("grapes")); // Output: -1
+
+        // Ex 3: Search kis index se shuru karni hai batana
+        console.log(fruits.indexOf("banana", 2)); // Output: 3 (index 2 ke baad se dhoodna shuru kiya)
+
+
+        // --- B. find() ---
+        // Kaam: Pehla aisa element return karta hai jo condition pass kare, nahi toh undefined.
+        const ages = [4, 9, 16, 25, 29];
+        const users = [{ id: 1, name: "Rahul" }, { id: 2, name: "Amit" }];
+
+        // Ex 1: Pehla number jo 10 se bada ho
+        console.log(ages.find(age => age > 10)); // Output: 16
+
+        // Ex 2: Object array me se ID match karke poora object nikalna
+        console.log(users.find(u => u.id === 2)); // Output: { id: 2, name: 'Amit' }
+
+        // Ex 3: Condition match na hone par undefined
+        console.log(ages.find(age => age > 50)); // Output: undefined
+
+
+        // --- C. includes() ---
+        // Kaam: Check karta hai ki item array me hai ya nahi, true/false return karta hai.
+        const team = ["Kohli", "Dhoni", "Rohit"];
+
+        // Ex 1: Basic true check
+        console.log(team.includes("Dhoni")); // Output: true
+
+        // Ex 2: False check
+        console.log(team.includes("Rahul")); // Output: false
+
+        // Ex 3: Case-sensitive check
+        console.log(team.includes("dhoni")); // Output: false (kyunki 'D' capital hai real array me)
+
+
+        // ==========================================
+        // 2. STRING SEARCH METHODS
+        // ==========================================
+
+        console.log("\n--- 2. STRING SEARCH METHODS ---");
+
+        // --- A. search() ---
+        // Kaam: String me text ki starting position/index batata hai, nahi toh -1 deta hai.
+        const text = "Hello world, welcome to JS";
+
+        // Ex 1: Normal text search
+        console.log(text.search("welcome")); // Output: 13
+
+        // Ex 2: Case-insensitive search (Regular Expression use karke)
+        console.log(text.search(/javascript/i)); // Output: -1 (JavaScript word nahi hai text me)
+        console.log("Learn JS".search(/js/i)); // Output: 6 (i flag se capital/small ka farak khatam)
+
+        // Ex 3: Text na milne par
+        console.log(text.search("Python")); // Output: -1
+
+
+        // --- B. match() ---
+        // Kaam: Matches ko array ke roop me nikalta hai, nahi toh null deta hai.
+        const phrase = "The rain in Spain stays mainly in the plain";
+
+        // Ex 1: Single match array
+        console.log(phrase.match("ain")[0]); // Output: "ain"
+
+        // Ex 2: Global match (Jitne baar 'ain' aaya sab nikalna '/g' se)
+        console.log(phrase.match(/ain/g)); // Output: ['ain', 'ain', 'ain', 'ain']
+
+        // Ex 3: Match na milne par null
+        console.log(phrase.match("xyz")); // Output: null
+
+
+        // --- C. startsWith() & endsWith() ---
+        // Kaam: Check karta hai string kisi word se shuru ya khatam ho rahi hai ya nahi (true/false).
+        const filename = "resume.pdf";
+
+        // Ex 1: startsWith check
+        console.log(filename.startsWith("res")); // Output: true
+
+        // Ex 2: endsWith check
+        console.log(filename.endsWith(".pdf")); // Output: true
+
+        // Ex 3: False condition check
+        console.log(filename.endsWith(".doc")); // Output: false
+    </pre>
+</body>
+</html>
