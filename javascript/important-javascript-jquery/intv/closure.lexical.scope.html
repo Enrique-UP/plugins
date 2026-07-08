@@ -11,7 +11,9 @@
         क्लोजर एक ऐसा फ़ंक्शन है जिसके पास पैरेंट फ़ंक्शन बंद होने के बाद भी पैरेंट स्कोप तक पहुंच होती है।
         Or
         In other words, closure is created when a child function keep the environment of the parent scope even after the parent function has already executed 
-        दूसरे शब्दों में, क्लोजर तब बनता है जब एक चाइल्ड फ़ंक्शन पैरेंट फ़ंक्शन के पहले ही निष्पादित होने के बाद भी पैरेंट स्कोप के वातावरण को बनाए रखता है
+        दूसरे शब्दों में, क्लोजर तब बनता है जब एक चाइल्ड फ़ंक्शन पैरेंट फ़ंक्शन के पहले ही निष्पादित होने के बाद भी पैरेंट स्कोप के वातावरण को बनाए रखता है|
+        or
+        A closure is a function that remembers and can access variables from its outer function even after the outer function has finished executing (किसी योजना, कार्य या निर्देश को पूरा करना).
         
         
         <b>// Example 1</b>
@@ -48,7 +50,7 @@
         function x(){
             var a = 10;
             function y(){
-                document.write(a + "<br>");
+                document.write(a);
             }
             y();
         }
@@ -58,7 +60,7 @@
         function a(){
             var a = 1000;
             function b(){
-                document.write(a + "<br>");
+                document.write(a);
             }
             a = 111;
             return b;
@@ -71,7 +73,7 @@
         function demo(){
             var demo1 = 1000;
             return function demo2(){
-                document.write(demo1 + "<br>");
+                document.write(demo1);
             };
         }
         //demo();
@@ -85,7 +87,7 @@
             function demosInner(){
                 var bb = 100;
                 function demosInner1(){
-                    document.write(aa,bb + "<br>");
+                    document.write(aa,bb);
                 }
                 demosInner1();
             }
@@ -157,7 +159,7 @@
         function x(){
             var a = 10;
             function y(){
-                document.write(a + "<br>");
+                document.write(a);
             }
             y();
         }
@@ -167,7 +169,7 @@
         function a(){
             var a = 1000;
             function b(){
-                document.write(a + "<br>");
+                document.write(a);
             }
             a = 111;
             return b;
@@ -180,7 +182,7 @@
         function demo(){
             var demo1 = 1000;
             return function demo2(){
-                document.write(demo1 + "<br>");
+                document.write(demo1);
             };
         }
         //demo();
@@ -194,7 +196,7 @@
             function demosInner(){
                 var bb = 100;
                 function demosInner1(){
-                    document.write(aa,bb + "<br>");
+                    document.write(aa,bb);
                 }
                 demosInner1();
             }

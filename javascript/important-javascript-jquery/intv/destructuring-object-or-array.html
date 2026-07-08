@@ -7,32 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-<pre>
-// array
-const user = ["Enrique", "20", "CEO"];
-const [name, age, post] = user;
-console.log(name);
-console.log(age);
-console.log(post);
-
-// object
-const detail = {
-    n: "Enrique",
-    a: "20",
-    p: "CEO"
-};
-const {n, a, p} = detail;
-console.log(n);
-console.log(a);
-console.log(p);
-</pre>    
-    <script>
+    <pre>
         // array
-        const user = ["Enrique", "20", "CEO"];
+        const user = ["Alex", "30", "GM"];
         const [name, age, post] = user;
-        console.log(name);
-        console.log(age);
-        console.log(post);
+        console.log(name, age, post); // Alex 30 GM
 
         // object
         const detail = {
@@ -40,10 +19,23 @@ console.log(p);
             a: "20",
             p: "CEO"
         };
-        const {n, a, p} = detail;
-        console.log(n);
-        console.log(a);
-        console.log(p);
+        let {n:name1, a:age1, p:post1} = detail;
+        console.log(name1, age1, post1 = "MD"); // Enrique 20 MD
+    </pre>    
+    <script>
+        // array
+        const user = ["Alex", "30", "GM"];
+        const [name, age, post] = user;
+        console.log(name, age, post); // Alex 30 GM
+
+        // object
+        const detail = {
+            n: "Enrique",
+            a: "20",
+            p: "CEO"
+        };
+        let {n:name1, a:age1, p:post1} = detail;
+        console.log(name1, age1, post1 = "MD"); // Enrique 20 MD
     </script>
 </body>
 </html>

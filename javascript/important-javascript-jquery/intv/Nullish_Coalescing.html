@@ -11,32 +11,71 @@
             speed: 0,
             graphics: "",
             showTutorial: false,
-            difficulty: null // User hasn't chosen, use default
+            difficulty: null // undefined, User hasn't chosen, use default
         };
 
         // --- Using the OR operator (||) ---
         const speedOr = userSettings.speed || 50; 
-        console.log("OR Speed:", speedOr); 
-        // ❌ Logs: 50
+        console.log("OR Speed:", speedOr); // 50
 
-        const graphicsOr = userSettings.graphics || "High"; 
-        console.log("OR Graphics:", graphicsOr); 
-        // ❌ Logs: "High"
-
+        const graphicsOr = userSettings.graphics || "High";
+        console.log("OR Graphics:", graphicsOr); // "High"
 
         // --- Using the Nullish Coalescing operator (??) ---
         // FIXED: Removed '??' from the variable names
         const speedNullish = userSettings.speed ?? 50; 
-        console.log("Nullish Speed:", speedNullish); 
-        //  Logs: 0 (Correct! 0 is not null or undefined)
+        console.log("Nullish Speed:", speedNullish); // 0 (Correct! 0 is not null or undefined)
 
         const graphicsNullish = userSettings.graphics ?? "High"; 
-        console.log("Nullish Graphics:", graphicsNullish); 
-        //  Logs: "" (Correct! An empty string is not nullish)
+        console.log("Nullish Graphics:", graphicsNullish); // "" (Correct! An empty string is not nullish)
 
         const difficultyNullish = userSettings.difficulty ?? "Medium"; 
-        console.log("Nullish Difficulty:", difficultyNullish); 
-        //  Logs: "Medium" (Correct! The value was null, so it fell back to default)
+        console.log("Nullish Difficulty:", difficultyNullish); // "Medium" (Correct! The value was null, so it fell back to default)
+
+
+
+
+
+
+        let username = null;
+        let displayName = username ?? "Guest";
+        console.log(displayName); // Output: "Guest"
+
+
+        let playerScore = 0;
+        // OR operator (||) ke sath:
+        let score1 = playerScore || 10; 
+        console.log(score1); // Output: 10 (Galti! Score 0 tha, par 10 ho gaya)
+        // Nullish Coalescing (??) ke sath:
+        let score2 = playerScore ?? 10;
+        console.log(score2); // Output: 0 (Sahi! Kyunki 0 null ya undefined nahi hai)
+
+
+        let userStatus = ""; // User ne status blank choda hai
+        let status1 = userStatus || "Available";
+        console.log(status1); // Output: "Available" (OR ne khali string ko overwrite kar diya)
+        let status2 = userStatus ?? "Available";
+        console.log(status2); // Output: "" (Nullish ne khali string ko accept kiya)
+
+
+        let apiResponse = {
+            theme: "dark",
+            fontSize: undefined // User ne font size set nahi kiya
+        };
+        let currentFontSize = apiResponse.fontSize ?? 16;
+        console.log(currentFontSize); // Output: 16 (Kyunki fontSize undefined tha)
+        let currentTheme = apiResponse.theme ?? "light";
+        console.log(currentTheme); // Output: "dark" (Kyunki theme pehle se 'dark' defined thi)
+
+
+        function calculateBackup() {
+            console.log("Heavy calculation running...");
+            return 100;
+        }
+        let configuration = 45;
+        // configuration nullish nahi hai, isliye function run hi nahi hoga
+        let finalConfig = configuration ?? calculateBackup();
+        console.log(finalConfig); // Output: 45
     </pre>
     <script>
         const userSettings = {
@@ -48,27 +87,66 @@
 
         // --- Using the OR operator (||) ---
         const speedOr = userSettings.speed || 50; 
-        console.log("OR Speed:", speedOr); 
-        // ❌ Logs: 50
+        console.log("OR Speed:", speedOr); // 50
 
-        const graphicsOr = userSettings.graphics || "High"; 
-        console.log("OR Graphics:", graphicsOr); 
-        // ❌ Logs: "High"
-
+        const graphicsOr = userSettings.graphics || "High";
+        console.log("OR Graphics:", graphicsOr); // "High"
 
         // --- Using the Nullish Coalescing operator (??) ---
         // FIXED: Removed '??' from the variable names
         const speedNullish = userSettings.speed ?? 50; 
-        console.log("Nullish Speed:", speedNullish); 
-        //  Logs: 0 (Correct! 0 is not null or undefined)
+        console.log("Nullish Speed:", speedNullish); // 0 (Correct! 0 is not null or undefined)
 
         const graphicsNullish = userSettings.graphics ?? "High"; 
-        console.log("Nullish Graphics:", graphicsNullish); 
-        //  Logs: "" (Correct! An empty string is not nullish)
+        console.log("Nullish Graphics:", graphicsNullish); // "" (Correct! An empty string is not nullish)
 
         const difficultyNullish = userSettings.difficulty ?? "Medium"; 
-        console.log("Nullish Difficulty:", difficultyNullish); 
-        //  Logs: "Medium" (Correct! The value was null, so it fell back to default)
+        console.log("Nullish Difficulty:", difficultyNullish); // "Medium" (Correct! The value was null, so it fell back to default)
+
+
+
+
+
+
+        let username = null;
+        let displayName = username ?? "Guest";
+        console.log(displayName); // Output: "Guest"
+
+
+        let playerScore = 0;
+        // OR operator (||) ke sath:
+        let score1 = playerScore || 10; 
+        console.log(score1); // Output: 10 (Galti! Score 0 tha, par 10 ho gaya)
+        // Nullish Coalescing (??) ke sath:
+        let score2 = playerScore ?? 10;
+        console.log(score2); // Output: 0 (Sahi! Kyunki 0 null ya undefined nahi hai)
+
+
+        let userStatus = ""; // User ne status blank choda hai
+        let status1 = userStatus || "Available";
+        console.log(status1); // Output: "Available" (OR ne khali string ko overwrite kar diya)
+        let status2 = userStatus ?? "Available";
+        console.log(status2); // Output: "" (Nullish ne khali string ko accept kiya)
+
+
+        let apiResponse = {
+            theme: "dark",
+            fontSize: undefined // User ne font size set nahi kiya
+        };
+        let currentFontSize = apiResponse.fontSize ?? 16;
+        console.log(currentFontSize); // Output: 16 (Kyunki fontSize undefined tha)
+        let currentTheme = apiResponse.theme ?? "light";
+        console.log(currentTheme); // Output: "dark" (Kyunki theme pehle se 'dark' defined thi)
+
+
+        function calculateBackup() {
+            console.log("Heavy calculation running...");
+            return 100;
+        }
+        let configuration = 45;
+        // configuration nullish nahi hai, isliye function run hi nahi hoga
+        let finalConfig = configuration ?? calculateBackup();
+        console.log(finalConfig); // Output: 45
     </script>
 </body>
 </html>

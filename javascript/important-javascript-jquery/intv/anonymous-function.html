@@ -8,38 +8,14 @@
 </head>
 <body>
     <h1>Anonymous functions are functions without names.<br>
-        Anonymous functions can be used as an argument to other functions or as an immediately invoked function execution.</h1>
+        Anonymous functions can be used as an argument to other functions or as an immediately invoked function execution.
+        <br>
+        In JavaScript, an anonymous function is simply a function that does not have a name.
+    </h1>
+    <button>Click me</button>
     <pre>
-let show = function() {
-    document.write('Anonymous function' + '<br>');
-};
-show();
-
-// IIFE (Immediately Invoked Function Expression) function
-// An IIFE (Immediately Invoked Function Expression) is a function that runs the moment it is invoked or called in the JavaScript event loop.
-(function() {
-    document.write('Anonymous function' + '<br>');
-})();
-
-
-let person = {
-    firstName: 'John',
-    lastName: 'Doe'
-};
-(function () {
-    document.write(person.firstName + ' ' + person.lastName);
-})(person);
-
-
-let add = function (a, b) {
-    return a + b;
-};
-// Or
-let add = (a, b) => a + b;
-    </pre>
-    <script>
         let show = function() {
-            document.write('Anonymous function' + '<br>');
+            console.log('Anonymous function');
         };
         show();
 
@@ -47,7 +23,7 @@ let add = (a, b) => a + b;
         // IIFE (Immediately Invoked Function Expression) function
         // An IIFE (Immediately Invoked Function Expression) is a function that runs the moment it is invoked or called in the JavaScript event loop.
         (function() {
-            document.write('Anonymous function' + '<br>');
+            console.log('Anonymous function');
         })();
 
         
@@ -56,7 +32,7 @@ let add = (a, b) => a + b;
             lastName: 'Doe'
         };
         (function () {
-            document.write(person.firstName + ' ' + person.lastName);
+            console.log(person.firstName + ' ' + person.lastName);
         })(person);
 
 
@@ -65,6 +41,111 @@ let add = (a, b) => a + b;
         };
         // Or
         // let add = (a, b) => a + b;
+
+
+        // Anonymous function assigned to a variable
+        const greet = function(name) {
+            return `Hello, ${name}!`;
+        };
+        console.log(greet("Alice")); // Output: Hello, Alice!
+
+        // Anonymous arrow function
+        const add1 = (a, b) => a + b;
+        console.log(add1(5, 3)); // Output: 8
+
+        
+
+
+        const numbers = [1, 2, 3, 4];
+        // The function inside map() is anonymous
+        const doubled = numbers.map(function(num) {
+            return num * 2;
+        });
+        console.log(doubled); // [ 1, 4, 9, 16 ]
+        // Even cleaner with an anonymous arrow function:
+        const squared = numbers.map(num => num * num);
+        console.log(squared); // Output: [1, 4, 9, 16]
+
+
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            console.log('Button was clicked!');
+        });
+
+
+        (function() {
+            const localSecret = "I am hidden!";
+            console.log("This runs right away!");
+        })();
+        // localSecret cannot be accessed out here
+    </pre>
+    <script>
+        let show = function() {
+            console.log('Anonymous function');
+        };
+        show();
+
+        
+        // IIFE (Immediately Invoked Function Expression) function
+        // An IIFE (Immediately Invoked Function Expression) is a function that runs the moment it is invoked or called in the JavaScript event loop.
+        (function() {
+            console.log('Anonymous function');
+        })();
+
+        
+        let person = {
+            firstName: 'John',
+            lastName: 'Doe'
+        };
+        (function () {
+            console.log(person.firstName + ' ' + person.lastName);
+        })(person);
+
+
+        let add = function (a, b) {
+            return a + b;
+        };
+        // Or
+        // let add = (a, b) => a + b;
+
+
+        // Anonymous function assigned to a variable
+        const greet = function(name) {
+            return `Hello, ${name}!`;
+        };
+        console.log(greet("Alice")); // Output: Hello, Alice!
+
+        // Anonymous arrow function
+        const add1 = (a, b) => a + b;
+        console.log(add1(5, 3)); // Output: 8
+
+        
+
+
+        const numbers = [1, 2, 3, 4];
+        // The function inside map() is anonymous
+        const doubled = numbers.map(function(num) {
+            return num * 2;
+        });
+        console.log(doubled); // [ 1, 4, 9, 16 ]
+        // Even cleaner with an anonymous arrow function:
+        const squared = numbers.map(num => num * num);
+        console.log(squared); // Output: [1, 4, 9, 16]
+
+
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            console.log('Button was clicked!');
+        });
+
+
+        (function() {
+            const localSecret = "I am hidden!";
+            console.log("This runs right away!");
+        })();
+        // localSecret cannot be accessed out here
     </script>
 </body>
 </html>

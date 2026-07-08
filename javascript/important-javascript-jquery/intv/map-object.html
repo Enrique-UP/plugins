@@ -1,42 +1,82 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>JavaScript Map Objects</h2>
-<p>Creating a Map from an Array:</p>
+  <h2>JavaScript Map Objects</h2>
+  <p>Creating a Map from an Array:</p>
+  <pre>
+    // Create a Map by new Map()
+    const fruits = new Map([
+      ["apples", 500],
+      ["bananas", 300],
+      ["oranges", 200]
+    ]);
+    console.log(fruits); // Map(3) { apples → 500, bananas → 300, oranges → 200 }
+    console.log("-----------------------------");
+    console.log(fruits.get("apples")); // 500
+    console.log("-----------------------------");
+    console.log(fruits.size); // 3
+  
+    console.log("-----------------------------");
 
-<p id="demo"></p>
+    const fruits1 = new Map();
+    // Set Map Values
+    fruits1.set("apples", 800);
+    fruits1.set("bananas", 300);
+    fruits1.set("oranges", 200);
+    let numb = fruits1.get("apples");
+    console.log(numb); // 800
+  
+    console.log("-----------------------------");
 
-<script>
-// Create a Map
-const fruits = new Map([
-  ["apples", 500],
-  ["bananas", 300],
-  ["oranges", 200]
-]);
+    const letters = new Set(["a","b","c"]);
+    letters.add("d");
+    letters.add("e");
+    letters.add("f");
+    // List all Elements
+    let text = "";
+    letters.forEach (function(value) {
+      text += value + " ";
+    });
+    console.log(text); // a b c d e f 
+  </pre>
 
-document.getElementById("demo").innerHTML = fruits.get("apples");
-</script>
 
+  <script>
+    // Create a Map by new Map()
+    const fruits = new Map([
+      ["apples", 500],
+      ["bananas", 300],
+      ["oranges", 200]
+    ]);
+    console.log(fruits); // Map(3) { apples → 500, bananas → 300, oranges → 200 }
+    console.log("-----------------------------");
+    console.log(fruits.get("apples")); // 500
+    console.log("-----------------------------");
+    console.log(fruits.size); // 3
+  
+    console.log("-----------------------------");
 
-<h2>JavaScript Sets</h2>
-<p>Add values to a Set:</p>
+    const fruits1 = new Map();
+    // Set Map Values
+    fruits1.set("apples", 800);
+    fruits1.set("bananas", 300);
+    fruits1.set("oranges", 200);
+    let numb = fruits1.get("apples");
+    console.log(numb); // 800
+  
+    console.log("-----------------------------");
 
-<p id="demo1"></p>
-
-<script>
-// Create a Set
-const letters = new Set(["a","b","c"]);
-letters.add("d");
-letters.add("e");
-letters.add("f");
-// List all Elements
-let text = "";
-letters.forEach (function(value) {
-  text += value + "<br>";
-})
-
-document.getElementById("demo1").innerHTML = text;
-</script>
+    const letters = new Set(["a","b","c"]);
+    letters.add("d");
+    letters.add("e");
+    letters.add("f");
+    // List all Elements
+    let text = "";
+    letters.forEach (function(value) {
+      text += value + " ";
+    });
+    console.log(text); // a b c d e f 
+  </script>
 </body>
 </html>
 

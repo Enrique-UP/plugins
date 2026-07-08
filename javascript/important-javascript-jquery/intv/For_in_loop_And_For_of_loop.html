@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre>
+    const fruits = ['apple', 'banana', 'orange'];
+    for (const index in fruits) {
+        console.log(index); // "0", "1", "2"
+    }
+    for (const fruit of fruits) {
+      console.log(fruit); // "apple", "banana", "orange"
+    }
+    console.log("=============================================================");
+
+    const user = { name: 'Enrique', role: 'CEO' };
+    for (const key in user) {
+        console.log(key); // "name", "role"
+    }
+    console.log("---");
+    for (const key in user) {
+        console.log(user[key]); // "Enrique", "CEO"
+    }
+    console.log("---");
+    for (const value of Object.values(user)){
+      console.log(value); // "Enrique", "CEO"
+    }
+    console.log("---");
+    for (const [key, value] of Object.entries(user)){
+      console.log(key +" = "+ value);
+      // name = Enrique
+      // role = CEO
+    }
+    console.log("=============================================================");
+
+
+    const cars = ["BMW", "Volvo", "Mini"];
+    let text1 = "";
+    let text2 = "";
+    for (let x in cars) {
+      text1 += x + "___";
+      text2 += cars[x] + "___";
+    }
+    console.log(text1); // BMW___Volvo___Mini___
+    console.log(text2); // 0___1___2___
+
+
+    console.log("=============================================================");
+
+
+    const cars1 = ["BMW", "Volvo", "Mini"];
+    let text3 = "";
+    for (let x of cars1) {
+      text3 += x + "___";
+    }
+    console.log(text3); // BMW___Volvo___Mini___
+</pre>
+<script>
+  const fruits = ['apple', 'banana', 'orange'];
+  for (const index in fruits) {
+      console.log(index); // "0", "1", "2"
+  }
+  for (const fruit of fruits) {
+    console.log(fruit); // "apple", "banana", "orange"
+  }
+  console.log("=============================================================");
+
+  const user = { name: 'Enrique', role: 'CEO' };
+  for (const key in user) {
+      console.log(key); // "name", "role"
+  }
+  console.log("---");
+  for (const key in user) {
+      console.log(user[key]); // "Enrique", "CEO"
+  }
+  console.log("---");
+  for (const value of Object.values(user)){
+    console.log(value); // "Enrique", "CEO"
+  }
+  console.log("---");
+  for (const [key, value] of Object.entries(user)){
+    console.log(key +" = "+ value);
+    // name = Enrique
+    // role = CEO
+  }
+  console.log("=============================================================");
+
+
+  const cars = ["BMW", "Volvo", "Mini"];
+  let text1 = "";
+  let text2 = "";
+  for (let x in cars) {
+    text1 += x + "___";
+    text2 += cars[x] + "___";
+  }
+  console.log(text1); // BMW___Volvo___Mini___
+  console.log(text2); // 0___1___2___
+
+
+  console.log("=============================================================");
+
+
+  const cars1 = ["BMW", "Volvo", "Mini"];
+  let text3 = "";
+  for (let x of cars1) {
+    text3 += x + "___";
+  }
+  console.log(text3); // BMW___Volvo___Mini___
+</script>
+
+</body>
+</html>

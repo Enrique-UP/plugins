@@ -6,35 +6,59 @@
     <title>Document</title>
 </head>
 <body>
+    <pre>
+        let hello = "Hello"; 
+        function salutation() {  
+            let name = "Aayush";  
+            console.log(`${hello} ${name}!`);  
+        }salutation(); // Hello Aayush!
+
+        
+        function salutation1() {  
+            let name = "Aayush"; 
+            function greet() { 
+                console.log(`Hello ${name}!`); 
+            } 
+            greet();  
+        }salutation1(); // Hello Aayush!
+
+
+        function salutation2() { 
+            let name = 'Aayush';
+            function greet2() { 
+                console.log(`Hello ${name}!`); 
+            } 
+            return greet2; 
+        }        
+        let wish = salutation2(); 
+        wish(); // Hello Aayush!
+    </pre>
     <script>
-    let hello = "Hello"; 
-    function salutation() {  
-        let name = "Aayush";  
-        document.write(`${hello} ${name}!<br>`);  
-    }
-    salutation();
+        let hello = "Hello"; 
+        function salutation() {  
+            let name = "Aayush";  
+            console.log(`${hello} ${name}!`);  
+        }salutation(); // Hello Aayush!
 
-    
-    function salutation1() {  
-        let name = "Aayush"; 
-        function greet() { 
-            document.write(`Hello ${name}!<br>`); 
-        } 
-        greet();  
-    }
-    salutation1();
+        
+        function salutation1() {  
+            let name = "Aayush"; 
+            function greet() { 
+                console.log(`Hello ${name}!`); 
+            } 
+            greet();  
+        }salutation1(); // Hello Aayush!
 
 
-    function salutation2() { 
-        let name = 'Aayush';
-        function greet2() { 
-            document.write(`Hello ${name}!<br>`); 
-        } 
-        return greet2; 
-    } 
-    
-    let wish = salutation2(); 
-    wish();
+        function salutation2() { 
+            let name = 'Aayush';
+            function greet2() { 
+                console.log(`Hello ${name}!`); 
+            } 
+            return greet2; 
+        }        
+        let wish = salutation2(); 
+        wish(); // Hello Aayush!
     </script>
 </body>
 </html>
