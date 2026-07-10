@@ -135,4 +135,5 @@ section i[class="fa"] {font-family: inherit;}
 [class*="links"]:not(.links-2){}
 ===================================================================================================================================
 display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));
+display: grid;grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 ===================================================================================================================================
