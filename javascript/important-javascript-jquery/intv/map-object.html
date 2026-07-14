@@ -3,6 +3,9 @@
 <body>
   <h2>JavaScript Map Objects</h2>
   <p>Creating a Map from an Array:</p>
+  <p id="demo"></p>
+  <br>
+  <br>
   <pre>
     // Create a Map by new Map()
     const fruits = new Map([
@@ -15,6 +18,18 @@
     console.log(fruits.get("apples")); // 500
     console.log("-----------------------------");
     console.log(fruits.size); // 3
+
+    // Destructing
+    let text1 = "";
+    for (const [key, value] of fruits) {
+      text1 += "<p>" + key + " is " + value + "</p>";
+    }
+
+    // Display the Values
+    document.getElementById("demo").innerHTML = text1;
+    // apples is 500
+    // bananas is 300
+    // oranges is 200
   
     console.log("-----------------------------");
 
@@ -53,6 +68,18 @@
     console.log(fruits.get("apples")); // 500
     console.log("-----------------------------");
     console.log(fruits.size); // 3
+
+    // Destructing
+    let text1 = "";
+    for (const [key, value] of fruits) {
+      text1 += "<p>" + key + " is " + value + "</p>";
+    }
+
+    // Display the Values
+    document.getElementById("demo").innerHTML = text1;
+    // apples is 500
+    // bananas is 300
+    // oranges is 200
   
     console.log("-----------------------------");
 

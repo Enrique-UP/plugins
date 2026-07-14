@@ -14,13 +14,21 @@
         console.log(name, age, post); // Alex 30 GM
 
         // object
-        const detail = {
-            n: "Enrique",
-            a: "20",
-            p: "CEO"
+        const person = {
+            name:"Enrique",
+            age:40,
+            post:"DM",
+            details: function(){
+                return `I am ${this.name} ${this.age} years old and in ${this.post}.`;
+            }	
         };
-        let {n:name1, a:age1, p:post1} = detail;
-        console.log(name1, age1, post1 = "MD"); // Enrique 20 MD
+        const {name:n, age:a, post:s, details:d, country = "US"} = person;
+        console.log(n); // Enrique
+        console.log(a); // 40
+        console.log(s); // DM
+        console.log(country); // US
+        console.log(d.call(person)); // I am Enrque 40 years old and in DM.
+        console.log(person.details()); // I am Enrque 40 years old and in DM.
     </pre>    
     <script>
         // array
@@ -29,13 +37,21 @@
         console.log(name, age, post); // Alex 30 GM
 
         // object
-        const detail = {
-            n: "Enrique",
-            a: "20",
-            p: "CEO"
+        const person = {
+            name:"Enrique",
+            age:40,
+            post:"DM",
+            details: function(){
+                return `I am ${this.name} ${this.age} years old and in ${this.post}.`;
+            }	
         };
-        let {n:name1, a:age1, p:post1} = detail;
-        console.log(name1, age1, post1 = "MD"); // Enrique 20 MD
+        const {name:n, age:a, post:s, details:d, country = "US"} = person;
+        console.log(n); // Enrique
+        console.log(a); // 40
+        console.log(s); // DM
+        console.log(country); // US
+        console.log(d.call(person)); // I am Enrque 40 years old and in DM.
+        console.log(person.details()); // I am Enrque 40 years old and in DM.
     </script>
 </body>
 </html>
