@@ -28,8 +28,35 @@ go to terminal => tsc.cmd demo.ts -w
 npm install typescript -g
 tsc.cmd --init
 now created tsconfig.json file
+
+create folder with name of js
+create folder with name of ts => create file with name script.ts
+
 tsc.cmd --w
 
+Now 4 files will be in output but i want only 2 file .map, .js
+
+Goto to tsconfig.json => ctrl a => paste
+{
+  "compilerOptions": {
+    "rootDir": "./ts",
+    "outDir": "./js",
+
+    "target": "ES6",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+
+    /* Outputs */
+    "sourceMap": true,
+    "declaration": false,
+
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+
+you can start work in ts file this will be compile as js file.
+===========================================
 tsconfig.json setting => go to tsfonfig.json file => add below code after "},"
 "include": [
     "ts/"

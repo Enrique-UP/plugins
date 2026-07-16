@@ -7,6 +7,57 @@
 </head>
 <body>
     <pre>
+        // Explicit type annotations
+
+        // String
+        let greeting: string = "Hello, TypeScript!";
+        console.log(greeting); // Hello, TypeScript!
+
+        // Number
+        let userCount: number = 42;
+        console.log(userCount); // 42
+
+        // Boolean
+        let isLoading: boolean = true;
+        console.log(isLoading); // true
+
+        // Array of numbers
+        let scores: number[] = [100, 95, 98];
+        console.log(scores); // [ 100, 95, 98 ]
+
+        function greet(name: string): string {
+            return `Hello, ${name}!`;
+        }
+        greet("Alice"); // Hello, Alice!
+
+
+        // TypeScript infers 'string'
+        let username = "alice";
+        console.log(username);
+
+        // TypeScript infers 'number'
+        let score = 100;
+        console.log(score);
+
+        // TypeScript infers 'boolean[]'
+        let flags = [true, false, true];
+        console.log(flags);
+
+        // TypeScript infers return type as 'number'
+        function add(a: number, b: number) {
+            return a + b;
+        }
+        console.log(add(5, 3));
+        
+        
+        
+        
+        
+        
+        
+        
+
+        ============================================
         /**
         * TYPESCRIPT EXAMPLES & CHEATSHEET
         * * Yeh file saare basic se lekar advanced TypeScript concepts ko cover karti hai.

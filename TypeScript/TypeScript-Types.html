@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Types Cheat-Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            color: #007acc;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #007acc;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .category-row {
+            background-color: #e6f2ff !important;
+            font-weight: bold;
+            color: #005999;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #d63384;
+        }
+        .code-block {
+            color: #007acc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>TypeScript Types Ki Ultimate Cheat-Sheet 🚀</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Type Name</th>
+                <th>Kaam Kya Hai? (Description)</th>
+                <th>Code Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Core Primitives -->
+            <tr class="category-row">
+                <td colspan="4">Core Primitives (Basic & Simple)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:string</code></td>
+                <td>Text ya words ko store karne ke liye.</td>
+                <td><code class="code-block">const name: string = "Brave";</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:number</code></td>
+                <td>Har tarah ke numbers (integers aur decimals) ke liye.</td>
+                <td><code class="code-block">const age: number = 26;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:boolean</code></td>
+                <td>Sirf haan ya naa (true ya false) ke liye.</td>
+                <td><code class="code-block">const isCoder: boolean = true;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:null</code></td>
+                <td>Intentional khali value (jaan-bujhkar empty rakhna).</td>
+                <td><code class="code-block">const car: null = null;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:undefined</code></td>
+                <td>Uninitialized value (jiski value abhi tak decide nahi hui).</td>
+                <td><code class="code-block">let x: undefined = undefined;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:bigint</code></td>
+                <td>Bahut bade integers ke liye (jo normal number se bade hon).</td>
+                <td><code class="code-block">const bigNum: bigint = 9007199n;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:symbol</code></td>
+                <td>Ek unique identity/key banane ke liye.</td>
+                <td><code class="code-block">const sym: symbol = Symbol("id");</code></td>
+            </tr>
+
+            <!-- TypeScript Special -->
+            <tr class="category-row">
+                <td colspan="4">TypeScript Special (TS Exclusives)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:any</code></td>
+                <td>Kuch bhi chalega (Type safety ko band kar deta hai - Avoid it).</td>
+                <td><code class="code-block">let data: any = "hello"; data = 12;</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:unknown</code></td>
+                <td>Type-safe any. Pehle check karo ki isme kya hai, tabhi use hoga.</td>
+                <td><code class="code-block">let val: unknown = "Enrique";</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:void</code></td>
+                <td>Jab koi function kuch bhi return nahi karta.</td>
+                <td><code class="code-block">function log(): void { console.log("Hi"); }</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:never</code></td>
+                <td>Jo kaam kabhi khatam hi nahi hota (jaise infinite loop ya errors).</td>
+                <td><code class="code-block">function err(): never { throw "error"; }</code></td>
+            </tr>
+
+            <!-- Complex Types -->
+            <tr class="category-row">
+                <td colspan="4">Complex Types (Structure & Groups)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>Type[]</code> / <code>Array[Type]</code></td>
+                <td>Ek hi type ke multiple items ki list ke liye.</td>
+                <td>
+<pre>
+<code class="code-block">const marks: number[] = [90, 85, 70];</code>
+
+<code class="code-block">const students: Array&lt;string&gt; = ["Amit", "Rahul", "Priya"];</code>
+
+<code class="code-block">const students: string[] = ["Amit", "Rahul", "Priya"];</code>
+
+<code class="code-block">const attendance: boolean[] = [true, false, true, true];</code>
+
+<code class="code-block">const attendance: Array&lt;boolean&gt; = [true, false, true, true];</code>
+
+<code class="code-block">const mixedData: (string | number)[] = ["Amit", 90, "Priya", 85];</code>
+
+<code class="code-block">const mixedData: Array&lt;string | number&gt; = ["Amit", 90, "Priya", 85];</code>
+
+<code class="code-block">
+const classA: Student[] = [
+    { name: "Amit", rollNo: 101 },
+    { name: "Priya", rollNo: 102 }
+];
+</code>
+
+<code class="code-block">
+const classA: Array&lt;Student&gt; = [
+    { name: "Amit", rollNo: 101 },
+    { name: "Priya", rollNo: 102 }
+];
+</code>
+</pre>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>[Type, Type]</code> (Tuple)</td>
+                <td>Fixed length aur fixed positions wale array ke liye.</td>
+                <td>
+                    <code class="code-block">const coordinate: [number, number] = [12, 45];</code>
+                    <br>
+                    <code class="code-block">const response: [number, string] = [404, "Not Found"];</code>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>:object</code></td>
+                <td>Kisi bhi complex key-value structure ke liye.</td>
+                <td><code class="code-block">const user: object = { name: "Enrique" };</code></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>enum</code></td>
+                <td>
+                    Agar aap koi value assign nahi karte hain, to TypeScript automatic 0 se shuru karke number assign kar deta hai:
+                    <br>
+                </td>
+                <td>
+                    <pre>
+                        <code class="code-block">
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+};
+let currentDirection = CardinalDirections.North;
+// North is the first value so it logs '0'
+console.log(currentDirection); // 0
+                        </code>
+                        <code class="code-block">
+enum CardinalDirections {
+  North = 1,
+  East,
+  South,
+  West
+};
+
+// logs 1 since we initialized the first value to something other than '0'
+console.log(CardinalDirections.North); // 1
+
+// logs 4 as it continued on from the initial '1' value
+console.log(CardinalDirections.West); // 4                            
+                        </code>
+                        <code class="code-block">
+enum StatusCodes {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400
+};
+
+// logs 404
+console.log(StatusCodes.NotFound); // 404
+
+// logs 200
+console.log(StatusCodes.Success); // 200                            
+                        </code>
+                        <code class="code-block">
+enum CardinalDirections {
+  North = 'North',
+  East = "East",
+  South = "South",
+  West = "West"
+};
+
+// logs "North"
+console.log(CardinalDirections.North);
+
+// logs "West"
+console.log(CardinalDirections.West);                            
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
