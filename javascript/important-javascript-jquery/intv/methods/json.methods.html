@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate JavaScript JSON Methods Master Sheet</title>
+</head>
+<body>
+    <h1>JavaScript JSON Methods - Ultimate Cheat Sheet</h1>
+    <p>Press <strong>F12</strong> and go to the <strong>Console</strong> tab to see all outputs.</p>
+
+    <pre>
+        console.log("%c====== MASTER JSON METHODS ======", "color: darkgreen; font-weight: bold; font-size: 16px;");
+
+        // --- SECTION 1: JSON.stringify() (Object to String) ---
+        // Jab hume client (browser) se data server par bhejna ho, ya LocalStorage mein save karna ho, 
+        // toh hum JavaScript Object ko Text/String mein badalte hain.
+
+        console.log("\n--- 1. JSON.stringify() ---");
+        
+        const userProfile = {
+            id: 404,
+            name: "Vikas Kumar",
+            isPremium: true,
+            skills: ["JavaScript", "React", "Node.js"],
+            address: { city: "Delhi", pin: 110001 }
+        };
+
+        // Normal Object ko JSON String mein convert karna
+        const jsonString = JSON.stringify(userProfile);
+        console.log("Type of jsonString:", typeof jsonString); // Output: string
+        console.log("JSON String Output:\n", jsonString);
+        // Output: {"id":404,"name":"Vikas Kumar","isPremium":true,"skills":["JavaScript","React","Node.js"],"address":{"city":"Delhi","pin":110001}}
+
+
+        // --- ADVANCED TRICKS WITH STRINGIFY ---
+        
+        // Trick A: Prettify (Sundar format mein display karne ke liye space add karna)
+        // Syntax: JSON.stringify(object, replacer, spaces)
+        const prettyJson = JSON.stringify(userProfile, null, 4); 
+        console.log("Pretty JSON (with 4 spaces):\n", prettyJson);
+
+        // Trick B: Function aur Undefined drop ho jaate hain!
+        const experimentalObj = {
+            data: "Valid",
+            secret: undefined,
+            greet: function() { return "Hello"; }
+        };
+        console.log("Functions/Undefined ignored:", JSON.stringify(experimentalObj));
+        // Output: {"data":"Valid"} (secret aur greet gayab ho gaye!)
+
+
+        // --- SECTION 2: JSON.parse() (String to Object) ---
+        // Jab server se response (API data) aata hai, ya LocalStorage se data nikalte hain, 
+        // toh woh string hota hai. Use wapas JavaScript Object banane ke liye iska use karte hain.
+
+        console.log("\n--- 2. JSON.parse() ---");
+
+        const rawServerResponse = '{"product":"iPhone 15","price":79999,"instock":true}';
+
+        // JSON String ko wapas Object mein badalna
+        const productObj = JSON.parse(rawServerResponse);
+        console.log("Type of productObj:", typeof productObj); // Output: object
+        console.log("Product Name:", productObj.product);       // Output: iPhone 15
+        console.log("Product Price:", productObj.price);         // Output: 79999
+
+
+        // --- SECTION 3: REAL-WORLD USE CASE (Deep Cloning) ---
+        console.log("\n--- SECTION 3: DEEP CLONE TRICK ---");
+        
+        // JavaScript mein `Object.assign()` ya Spread Operator (`...`) sirf shallow copy karte hain (nested object reference copy ho jata hai).
+        // Lekin JSON methods ka use karke hum bina library ke ek perfect DEEP COPY bana sakte hain!
+
+        const original = { item: "Laptop", details: { ram: "16GB", storage: "512GB" } };
+        
+        // Deep copy banane ka tarika:
+        const deepCopy = JSON.parse(JSON.stringify(original));
+        
+        // Agar hum nested value change karein:
+        deepCopy.details.ram = "32GB";
+        
+        console.log("Original RAM (Unchanged):", original.details.ram); // Output: 16GB
+        console.log("Deep Copy RAM (Changed):", deepCopy.details.ram);   // Output: 32GB
+
+
+        // --- SECTION 4: ERROR HANDLING (Pro Tip) ---
+        console.log("\n--- SECTION 4: ERROR HANDLING ---");
+
+        // Agar JSON String ka format galat hai (jaise single quotes use kiye hon), toh JSON.parse() crash ho jata hai.
+        // Isliye ise hamesha try-catch block mein rakhna chahiye.
+
+        const badJsonString = "{ 'name': 'Amit' }"; // Galat hai! JSON mein hamesha double quotes ("") chahiye.
+
+        try {
+            const data = JSON.parse(badJsonString);
+        } catch (error) {
+            console.log("%cParsing Failed Catch Block Executed!", "color: red;", error.message);
+            // Output: Unexpected token ' in JSON at position 2
+        }
+
+    </pre>
+</body>
+</html>

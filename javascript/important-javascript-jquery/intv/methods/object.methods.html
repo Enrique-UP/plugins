@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate JavaScript Object Methods Master Sheet</title>
+</head>
+<body>
+    <h1>JavaScript Object Methods - Ultimate Cheat Sheet</h1>
+    <p>Press <strong>F12</strong> and go to the <strong>Console</strong> tab to see all outputs.</p>
+
+    <pre>
+        console.log("%c====== MASTER OBJECT METHODS ======", "color: darkmagenta; font-weight: bold; font-size: 16px;");
+
+        // --- SECTION 1: TRAVERSAL & EXTRACTION METHODS (Keys, Values, Entries) ---
+
+        // 1. Object.keys() - Object ki saari keys (properties) ko ek array mein deta hai
+        console.log("\n--- 1. Object.keys() ---");
+        const user = { id: 101, name: "Rahul", role: "Admin" };
+        console.log(Object.keys(user));                  // Output: ["id", "name", "role"]
+        console.log(Object.keys({}));                     // Output: [] (Khali object par khali array)
+        console.log(Object.keys({ a: 1, b: 2 }).length);  // Output: 2 (Object ki length check karne ka tarika)
+
+        // 2. Object.values() - Object ki saari values ko ek array mein deta hai
+        console.log("\n--- 2. Object.values() ---");
+        const prices = { apple: 100, mango: 150, banana: 40 };
+        console.log(Object.values(prices));              // Output: [100, 150, 40]
+        console.log(Object.values(user));                // Output: [101, "Rahul", "Admin"]
+        console.log(Object.values({ name: "Amit" }));    // Output: ["Amit"]
+
+        // 3. Object.entries() - Keys aur Values dono ka ek 2D array [key, value] bana kar deta hai
+        console.log("\n--- 3. Object.entries() ---");
+        const items = { item: "Laptop", qty: 2 };
+        console.log(Object.entries(items));              // Output: [["item", "Laptop"], ["qty", 2]]
+        console.log(Object.entries(items)[0]);           // Output: ["item", "Laptop"] (Pehla pair)
+        console.log(Object.entries({}));                 // Output: []
+
+        // 4. Object.fromEntries() - [key, value] ke array ko vapas ek normal Object mein badalta hai
+        console.log("\n--- 4. Object.fromEntries() ---");
+        const arr = [["status", "active"], ["code", 200]];
+        console.log(Object.fromEntries(arr));            // Output: { status: "active", code: 200 }
+        const mapData = new Map([["a", 1], ["b", 2]]);
+        console.log(Object.fromEntries(mapData));       // Output: { a: 1, b: 2 }
+        console.log(Object.fromEntries([["x", 9]]));     // Output: { x: 9 }
+
+
+        // --- SECTION 2: COPYING & MERGING METHODS ---
+
+        // 5. Object.assign() - Ek ya zyada objects ko aapas mein merge karta hai (Copy banata hai)
+        console.log("\n--- 5. Object.assign() ---");
+        const target = { a: 1 };
+        const source = { b: 2, c: 3 };
+        console.log(Object.assign(target, source));      // Output: { a: 1, b: 2, c: 3 }
+        const clone = Object.assign({}, target);         // Output: { a: 1, b: 2, c: 3 } (Shallow Copy)
+        console.log(Object.assign({ a: 5 }, { a: 10 })); // Output: { a: 10 } (Duplicate key par override karega)
+
+
+        // --- SECTION 3: SECURITY & PROTECTION METHODS ---
+
+        // 6. Object.freeze() - Object ko poori tarah freeze kar deta hai (No add, no delete, no change)
+        console.log("\n--- 6. Object.freeze() ---");
+        const config = { theme: "dark", version: 1.0 };
+        Object.freeze(config);
+        config.theme = "light";                          // Change karne ki koshish (Fail)
+        config.lang = "en";                              // Add karne ki koshish (Fail)
+        console.log(config);                             // Output: { theme: "dark", version: 1.0 }
+
+        // 7. Object.isFrozen() - Check karta hai ki object freeze hai ya nahi (true/false)
+        console.log("\n--- 7. Object.isFrozen() ---");
+        console.log(Object.isFrozen(config));            // Output: true
+        console.log(Object.isFrozen(user));              // Output: false
+        console.log(Object.isFrozen({}));                // Output: false
+
+        // 8. Object.seal() - Object ko seal karta hai (Value change ho sakti hai, par nayi key add ya delete nahi hogi)
+        console.log("\n--- 8. Object.seal() ---");
+        const profile = { username: "alex12" };
+        Object.seal(profile);
+        profile.username = "alex_pro";                   // Modifying allowed
+        profile.age = 20;                                // Add NOT allowed
+        delete profile.username;                         // Delete NOT allowed
+        console.log(profile);                            // Output: { username: "alex_pro" }
+
+        // 9. Object.isSealed() - Check karta hai ki object seal hai ya nahi (true/false)
+        console.log("\n--- 9. Object.isSealed() ---");
+        console.log(Object.isSealed(profile));           // Output: true
+        console.log(Object.isSealed(user));              // Output: false
+        console.log(Object.isSealed(config));            // Output: true (Frozen objects are also sealed by default)
+
+        // 10. Object.preventExtensions() - Nayi properties add karne se rokta hai (Delete aur Edit allowed hai)
+        console.log("\n--- 10. Object.preventExtensions() ---");
+        const car = { brand: "Tesla" };
+        Object.preventExtensions(car);
+        car.model = "Model S";                           // Add NOT allowed
+        car.brand = "BMW";                               // Edit allowed
+        delete car.brand;                                // Delete allowed
+        console.log(car);                                // Output: {} (Kyunki brand delete ho gaya aur model add nahi hua)
+
+        // 11. Object.isExtensible() - Check karta hai ki kya object mein naye elements add kiye ja sakte hain
+        console.log("\n--- 11. Object.isExtensible() ---");
+        console.log(Object.isExtensible({}));            // Output: true
+        console.log(Object.isExtensible(car));           // Output: false
+        console.log(Object.isExtensible(config));        // Output: false
+
+
+        // --- SECTION 4: ADVANCED PROPERTY PROPERTY METHODS ---
+
+        // 12. Object.defineProperty() - Kisi object mein nayi property ko advanced rules (like read-only) ke sath add karna
+        console.log("\n--- 12. Object.defineProperty() ---");
+        const emp = {};
+        Object.defineProperty(emp, 'salary', {
+            value: 50000,
+            writable: false                             // Ab is value ko badla nahi ja sakta
+        });
+        emp.salary = 90000;
+        console.log(emp.salary);                         // Output: 50000
+
+        // 13. Object.getOwnPropertyNames() - Object ke saari properties ke naam array mein deta hai (chahe unhe loop na kiya ja sake)
+        console.log("\n--- 13. Object.getOwnPropertyNames() ---");
+        console.log(Object.getOwnPropertyNames(user));   // Output: ["id", "name", "role"]
+        console.log(Object.getOwnPropertyNames(emp));    // Output: ["salary"]
+        console.log(Object.getOwnPropertyNames([]));     // Output: ["length"] (Array ka length property bhi de deta hai)
+
+        // 14. Object.hasOwn() / hasOwnProperty() - Check karta hai ki key object ki apni hai ya prototype se aayi hai
+        console.log("\n--- 14. Object.hasOwn() ---");
+        const student = { name: "Karan", age: 18 };
+        console.log(Object.hasOwn(student, "name"));     // Output: true
+        console.log(Object.hasOwn(student, "salary"));   // Output: false
+        console.log(Object.hasOwn(student, "toString")); // Output: false (Kyunki toString main object ka nahi, inherited hai)
+
+        // 15. Object.create() - Kisi purane object ko base bana kar naya object (Inheritance) taiyar karta hai
+        console.log("\n--- 15. Object.create() ---");
+        const animal = { eats: true };
+        const dog = Object.create(animal);               // dog ne animal ki properties le li
+        dog.bark = true;
+        console.log(dog.bark);                           // Output: true
+        console.log(dog.eats);                           // Output: true (Animal se inherit hua)
+        console.log(Object.hasOwn(dog, "eats"));         // Output: false (Kyunki eats iska apna nahi hai)
+
+    </pre>
+</body>
+</html>

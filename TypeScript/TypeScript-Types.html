@@ -195,7 +195,90 @@ const classA: Array&lt;Student&gt; = [
                 <td></td>
                 <td><code>:object</code></td>
                 <td>Kisi bhi complex key-value structure ke liye.</td>
-                <td><code class="code-block">const user: object = { name: "Enrique" };</code></td>
+                <td>
+                    <code class="code-block">const user: object = { name: "Enrique" };</code>
+                    <code class="code-block">
+                        <pre>
+interface Student {
+    name: string;
+    age: number;
+    place: string;
+}
+const students: Student[] = [
+    {
+        name: "Enrique",
+        age: 40,
+        place: "Delhi"
+    },
+    {
+        name: "Sohan",
+        age: 45,
+        place: "Agra"
+    },
+    {
+        name: "Rohan",
+        age: 50,
+        place: "Mumbai"
+    }
+];
+console.log(students);
+console.log("------------------------------");
+
+type Student = {
+    name: string;
+    age: number;
+    place: string;
+};
+const students: Student[] = [
+    {
+        name: "Enrique",
+        age: 40,
+        place: "Delhi"
+    },
+    {
+        name: "Sohan",
+        age: 45,
+        place: "Agra"
+    },
+    {
+        name: "Rohan",
+        age: 50,
+        place: "Mumbai"
+    }
+];
+console.log("------------------------------");
+
+const students: {
+    name: string;
+    age: number;
+    place: string;
+}[] = [
+    {
+        name: "Enrique",
+        age: 40,
+        place: "Delhi"
+    },
+    {
+        name: "Sohan",
+        age: 45,
+        place: "Agra"
+    },
+    {
+        name: "Rohan",
+        age: 50,
+        place: "Mumbai"
+    }
+];
+
+students.forEach((student: Student) => {
+    console.log(student.name);
+    console.log(student.age);
+    console.log(student.place);
+});
+
+                        </pre>
+                    </code>
+                </td>
             </tr>
             <tr>
                 <td></td>

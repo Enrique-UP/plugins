@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods Examples</title>
+</head>
+<body>
+    <h1>JavaScript String Methods Cheat Sheet</h1>
+    <p>Press <strong>F12</strong> and go to the <strong>Console</strong> tab to see the outputs.</p>
+
+    <pre>
+        console.log("%c--- JS STRING METHODS EXAMPLES ---", "color: blue; font-weight: bold; font-size: 16px;");
+
+        // 1. String length
+        console.log("\n--- 1. String length ---");
+        console.log("Hello".length);                    // Output: 5
+        console.log("JS is fun".length);                 // Output: 9
+        console.log("".length);                          // Output: 0
+
+        // 2. String charAt()
+        console.log("\n--- 2. String charAt() ---");
+        console.log("JavaScript".charAt(0));             // Output: "J"
+        console.log("Hello".charAt(4));                  // Output: "o"
+        console.log("Code".charAt(10));                  // Output: "" (Empty string if index out of bound)
+
+        // 3. String charCodeAt()
+        console.log("\n--- 3. String charCodeAt() ---");
+        console.log("ABC".charCodeAt(0));                // Output: 65 (ASCII/UTF-16 value of 'A')
+        console.log("abc".charCodeAt(0));                // Output: 97 (ASCII/UTF-16 value of 'a')
+        console.log("Hi".charCodeAt(5));                 // Output: NaN (Index out of bound)
+
+        // 4. String codePointAt()
+        console.log("\n--- 4. String codePointAt() ---");
+        console.log("ABC".codePointAt(0));               // Output: 65
+        console.log("😊".codePointAt(0));                // Output: 128522 (Handles emoji/surrogate pairs properly)
+        console.log("Hello".codePointAt(1));             // Output: 101 ('e')
+
+        // 5. String concat()
+        console.log("\n--- 5. String concat() ---");
+        console.log("Hello".concat(" ", "World"));        // Output: "Hello World"
+        console.log("A".concat("B", "C", "D"));          // Output: "ABCD"
+        console.log("Total: ".concat(100));              // Output: "Total: 100"
+
+        // 6. String at()
+        console.log("\n--- 6. String at() ---");
+        console.log("Developer".at(0));                  // Output: "D"
+        console.log("Developer".at(-1));                 // Output: "r" (Supports negative indexing from end)
+        console.log("Developer".at(-3));                 // Output: "e"
+
+        // 7. String [ ] (Property Access)
+        console.log("\n--- 7. String [ ] ---");
+        console.log("React"[0]);                         // Output: "R"
+        console.log("Node"[3]);                          // Output: "e"
+        console.log("Vue"[5]);                           // Output: undefined (Out of bound returns undefined)
+
+        // 8. String slice()
+        console.log("\n--- 8. String slice() ---");
+        console.log("Frontend".slice(0, 4));             // Output: "Fron" (End index excluded)
+        console.log("Frontend".slice(4));                // Output: "tend" (Extracts till the end)
+        console.log("Frontend".slice(-4));               // Output: "tend" (Negative index counts from end)
+
+        // 9. String substring()
+        console.log("\n--- 9. String substring() ---");
+        console.log("Backend".substring(0, 4));          // Output: "Back"
+        console.log("Backend".substring(4, 0));          // Output: "Back" (Swaps arguments if start > end)
+        console.log("Backend".substring(4));             // Output: "end"
+
+        // 10. String substr() [Deprecated but still works]
+        console.log("\n--- 10. String substr() ---");
+        console.log("Fullstack".substr(0, 4));           // Output: "Full" (Second param is length)
+        console.log("Fullstack".substr(4, 5));           // Output: "stack"
+        console.log("Fullstack".substr(-5, 3));          // Output: "sta" (Starts from 5th from end, takes 3 chars)
+
+        // 11. String toUpperCase()
+        console.log("\n--- 11. String toUpperCase() ---");
+        console.log("hello".toUpperCase());              // Output: "HELLO"
+        console.log("Html5".toUpperCase());              // Output: "HTML5"
+        console.log("JS".toUpperCase());                 // Output: "JS"
+
+        // 12. String toLowerCase()
+        console.log("\n--- 12. String toLowerCase() ---");
+        console.log("HELLO".toLowerCase());              // Output: "hello"
+        console.log("CSS3".toLowerCase());               // Output: "css3"
+        console.log("js".toLowerCase());                 // Output: "js"
+
+        // 13. String isWellFormed()
+        console.log("\n--- 13. String isWellFormed() ---");
+        console.log("Hello".isWellFormed());             // Output: true
+        console.log("𠮷".isWellFormed());                // Output: true (Valid emoji/surrogate pair)
+        console.log("\uD83D".isWellFormed());            // Output: false (Lone surrogate is malformed)
+
+        // 14. String toWellFormed()
+        console.log("\n--- 14. String toWellFormed() ---");
+        console.log("Good".toWellFormed());              // Output: "Good"
+        console.log("\uD83D".toWellFormed());            // Output: "" (Replaces lone surrogate with replacement char)
+        console.log("Hi \uD83D Bye".toWellFormed());     // Output: "Hi  Bye"
+
+        // 15. String trim()
+        console.log("\n--- 15. String trim() ---");
+        console.log("  hello  ".trim());                 // Output: "hello" (Removes spaces from both sides)
+        console.log("\tweb\n".trim());                    // Output: "web" (Removes tabs and newlines too)
+        console.log("no spaces".trim());                 // Output: "no spaces"
+
+        // 16. String trimStart()
+        console.log("\n--- 16. String trimStart() ---");
+        console.log("  hello  ".trimStart());            // Output: "hello  "
+        console.log("   code".trimStart());              // Output: "code"
+        console.log("text".trimStart());                 // Output: "text"
+
+        // 17. String trimEnd()
+        console.log("\n--- 17. String trimEnd() ---");
+        console.log("  hello  ".trimEnd());              // Output: "  hello"
+        console.log("code   ".trimEnd());                // Output: "code"
+        console.log("text".trimEnd());                   // Output: "text"
+
+        // 18. String padStart()
+        console.log("\n--- 18. String padStart() ---");
+        console.log("5".padStart(4, "0"));               // Output: "0005" (Pads from start to make total length 4)
+        console.log("7".padStart(3, "X"));               // Output: "XX7"
+        console.log("123".padStart(2, "0"));             // Output: "123" (No padding as length is already > 2)
+
+        // 19. String padEnd()
+        console.log("\n--- 19. String padEnd() ---");
+        console.log("5".padEnd(4, "0"));                 // Output: "5000"
+        console.log("7".padEnd(3, "X"));                 // Output: "7XX"
+        console.log("abc".padEnd(5, "-"));               // Output: "abc--"
+
+        // 20. String repeat()
+        console.log("\n--- 20. String repeat() ---");
+        console.log("Ha".repeat(3));                     // Output: "HaHaHa"
+        console.log("?".repeat(5));                      // Output: "?????"
+        console.log("Bye".repeat(0));                    // Output: ""
+
+        // 21. String replace()
+        console.log("\n--- 21. String replace() ---");
+        console.log("Welcome to Delhi".replace("Delhi", "Mumbai")); // Output: "Welcome to Mumbai"
+        console.log("apple apple".replace("apple", "orange"));     // Output: "orange apple" (Only replaces first match)
+        console.log("Hello World".replace("world", "JS"));         // Output: "Hello World" (Case-sensitive, no match)
+
+        // 22. String replaceAll()
+        console.log("\n--- 22. String replaceAll() ---");
+        console.log("cats and cats".replaceAll("cats", "dogs"));   // Output: "dogs and dogs" (Replaces all matches)
+        console.log("1-2-3-4".replaceAll("-", "/"));               // Output: "1/2/3/4"
+        console.log("apple".replaceAll("p", "x"));                 // Output: "axxle"
+
+        // 23. String split()
+        console.log("\n--- 23. String split() ---");
+        console.log("HTML,CSS,JS".split(","));           // Output: ["HTML", "CSS", "JS"] (Splits into an array)
+        console.log("Hello".split(""));                  // Output: ["H", "e", "l", "l", "o"] (Splits every character)
+        console.log("Code Flow".split(" "));             // Output: ["Code", "Flow"] (Splits by space)
+        
+    </pre>
+</body>
+</html>

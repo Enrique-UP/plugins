@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate JavaScript Number & Global Methods Master Sheet</title>
+</head>
+<body>
+    <h1>JavaScript Number & Global Methods - Ultimate Cheat Sheet</h1>
+    <p>Press <strong>F12</strong> and go to the <strong>Console</strong> tab to see all outputs.</p>
+
+    <pre>
+        console.log("%c====== MASTER NUMBER & GLOBAL METHODS ======", "color: darkcyan; font-weight: bold; font-size: 16px;");
+
+        // --- SECTION 1: PROTOTYPE METHODS (Jo directly kisi number variable par lagte hain) ---
+        console.log("\n--- SECTION 1: NUMBER PROTOTYPE METHODS ---");
+
+        // 1. toFixed() - Decimal ke baad kitne digits rakhne hain yeh fix karta hai (String return karta hai)
+        console.log("\n--- 1. toFixed() ---");
+        const pi = 3.14159;
+        console.log(pi.toFixed(2));                 // Output: "3.14" (Price formatting ke liye best hai)
+        console.log(pi.toFixed(0));                 // Output: "3" (Round off karke poora number)
+        const num = 2.5;
+        console.log(num.toFixed(2));                // Output: "2.50" (Extra zeros add kar deta hai)
+
+        // 2. toPrecision() - Total kitne digits (decimal se pehle aur baad ke mila kar) rakhne hain yeh set karta hai
+        console.log("\n--- 2. toPrecision() ---");
+        const dist = 123.456;
+        console.log(dist.toPrecision(4));           // Output: "123.5" (Total 4 digits rakhe aur round kiya)
+        console.log(dist.toPrecision(2));           // Output: "1.2e+2" (Scientific notation agar number bada ho)
+
+        // 3. toString() - Kisi number ko string mein badal deta hai. Isse Base-2 (Binary) ya Base-16 (Hex) bhi nikal sakte hain!
+        console.log("\n--- 3. toString() ---");
+        const count = 25;
+        console.log(count.toString());              // Output: "25" (Normal String)
+        console.log((10).toString(2));              // Output: "1010" (10 ka Binary representation!)
+        console.log((255).toString(16));            // Output: "ff" (Hexadecimal format)
+
+
+        // --- SECTION 2: GLOBAL METHODS (Jo bina kisi object ke direct use hote hain) ---
+        console.log("\n--- SECTION 2: GLOBAL METHODS ---");
+
+        // 4. parseInt() - String ko poore number (Integer) mein badalta hai. Decimal hata deta hai.
+        console.log("\n--- 4. parseInt() ---");
+        console.log(parseInt("42"));                // Output: 42
+        console.log(parseInt("42.99"));             // Output: 42 (Decimal part drop kar diya)
+        console.log(parseInt("100px"));             // Output: 100 (String ke start se number nikal leta hai)
+        console.log(parseInt("abc42"));             // Output: NaN (Agar start mein hi letters hon toh fail)
+
+        // 5. parseFloat() - String ko decimal wale number (Floating-point) mein badalta hai.
+        console.log("\n--- 5. parseFloat() ---");
+        console.log(parseFloat("3.14"));            // Output: 3.14
+        console.log(parseFloat("12.5rem"));          // Output: 12.5 (CSS units nikalne ke liye useful)
+        console.log(parseFloat("310"));             // Output: 310 (Normal integer bhi handle karta hai)
+
+        // 6. isNaN() - Check karta hai ki koi value "Not-a-Number" hai ya nahi (Lekin iska behavior thoda ajeeb hai)
+        console.log("\n--- 6. isNaN() ---");
+        console.log(isNaN(NaN));                    // Output: true
+        console.log(isNaN("hello"));                // Output: true (Kyunki "hello" number nahi ban sakta)
+        console.log(isNaN(123));                    // Output: false (Kyunki yeh valid number hai)
+
+
+        // --- SECTION 3: MODERN NUMBER METHODS (ES6 ke safer methods, Number. ke sath use hote hain) ---
+        console.log("\n--- SECTION 3: MODERN NUMBER METHODS (Safer) ---");
+
+        // 7. Number.isNaN() - Yeh purane isNaN() se behtar hai, yeh BINAA type conversion ke strict check karta hai
+        console.log("\n--- 7. Number.isNaN() ---");
+        console.log(Number.isNaN("hello"));         // Output: false (Kyunki "hello" strictly NaN type nahi hai)
+        console.log(Number.isNaN(NaN));             // Output: true
+
+        // 8. Number.isInteger() - Check karta hai ki number poora integer hai ya decimal wala
+        console.log("\n--- 8. Number.isInteger() ---");
+        console.log(Number.isInteger(10));          // Output: true
+        console.log(Number.isInteger(10.5));        // Output: false
+        console.log(Number.isInteger("10"));        // Output: false (String ko convert nahi karega)
+
+        // 9. Number.isFinite() - Check karta hai ki number finite (limit mein) hai ya Infinite
+        console.log("\n--- 9. Number.isFinite() ---");
+        console.log(Number.isFinite(1000));         // Output: true
+        console.log(Number.isFinite(Infinity));     // Output: false
+        console.log(Number.isFinite(1 / 0));        // Output: false (Maths mein 1/0 infinity hota hai)
+
+
+        // --- SECTION 4: BONUS VALUE CONVERSION ---
+        console.log("\n--- SECTION 4: BONUS NUMBER CONVERSION ---");
+
+        // 10. Number() Constructor vs Unary Plus (+)
+        console.log(Number("55"));                  // Output: 55
+        console.log(+"77");                         // Output: 77 (Shortest tareeq string ko number banane ka)
+        console.log(Number(true));                  // Output: 1 (Boolean to number)
+        console.log(Number(false));                 // Output: 0
+
+    </pre>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate JavaScript String Methods Master Sheet</title>
+</head>
+<body>
+    <h1>JavaScript String Methods - Ultimate Master Sheet</h1>
+    <p>Press <strong>F12</strong> and open the <strong>Console</strong> tab to see all outputs.</p>
+
+    <script>
+        console.log("%c====== MASTER STRING METHODS ====== ", "color: red; font-weight: bold; font-size: 18px;");
+
+        // --- SECTION 1: BASIC & EXTRACTING METHODS ---
+
+        // 1. String length
+        console.log("\n--- 1. String length ---");
+        console.log("Hello".length);                    // Output: 5
+        console.log("JS is fun".length);                 // Output: 9
+        console.log("".length);                          // Output: 0
+
+        // 2. String charAt()
+        console.log("\n--- 2. String charAt() ---");
+        console.log("JavaScript".charAt(0));             // Output: "J"
+        console.log("Hello".charAt(4));                  // Output: "o"
+        console.log("Code".charAt(10));                  // Output: ""
+
+        // 3. String charCodeAt()
+        console.log("\n--- 3. String charCodeAt() ---");
+        console.log("ABC".charCodeAt(0));                // Output: 65
+        console.log("abc".charCodeAt(0));                // Output: 97
+        console.log("Hi".charCodeAt(5));                 // Output: NaN
+
+        // 4. String codePointAt()
+        console.log("\n--- 4. String codePointAt() ---");
+        console.log("ABC".codePointAt(0));               // Output: 65
+        console.log("😊".codePointAt(0));                // Output: 128522
+        console.log("Hello".codePointAt(1));             // Output: 101
+
+        // 5. String at()
+        console.log("\n--- 5. String at() ---");
+        console.log("Developer".at(0));                  // Output: "D"
+        console.log("Developer".at(-1));                 // Output: "r"
+        console.log("Developer".at(-3));                 // Output: "e"
+
+        // 6. String [ ] (Property Access)
+        console.log("\n--- 6. String [ ] ---");
+        console.log("React"[0]);                         // Output: "R"
+        console.log("Node"[3]);                          // Output: "e"
+        console.log("Vue"[5]);                           // Output: undefined
+
+        // 7. String slice()
+        console.log("\n--- 7. String slice() ---");
+        console.log("Frontend".slice(0, 4));             // Output: "Fron"
+        console.log("Frontend".slice(4));                // Output: "tend"
+        console.log("Frontend".slice(-4));               // Output: "tend"
+
+        // 8. String substring()
+        console.log("\n--- 8. String substring() ---");
+        console.log("Backend".substring(0, 4));          // Output: "Back"
+        console.log("Backend".substring(4, 0));          // Output: "Back"
+        console.log("Backend".substring(4));             // Output: "end"
+
+        // 9. String substr()
+        console.log("\n--- 9. String substr() ---");
+        console.log("Fullstack".substr(0, 4));           // Output: "Full"
+        console.log("Fullstack".substr(4, 5));           // Output: "stack"
+        console.log("Fullstack".substr(-5, 3));          // Output: "sta"
+
+
+        // --- SECTION 2: TRANSFORMATION & PAD METHODS ---
+
+        // 10. String toUpperCase()
+        console.log("\n--- 10. String toUpperCase() ---");
+        console.log("hello".toUpperCase());              // Output: "HELLO"
+        console.log("Html5".toUpperCase());              // Output: "HTML5"
+        console.log("JS".toUpperCase());                 // Output: "JS"
+
+        // 11. String toLowerCase()
+        console.log("\n--- 11. String toLowerCase() ---");
+        console.log("HELLO".toLowerCase());              // Output: "hello"
+        console.log("CSS3".toLowerCase());               // Output: "css3"
+        console.log("js".toLowerCase());                 // Output: "js"
+
+        // 12. String concat()
+        console.log("\n--- 12. String concat() ---");
+        console.log("Hello".concat(" ", "World"));        // Output: "Hello World"
+        console.log("A".concat("B", "C"));               // Output: "ABC"
+        console.log("Total: ".concat(100));              // Output: "Total: 100"
+
+        // 13. String trim()
+        console.log("\n--- 13. String trim() ---");
+        console.log("  hello  ".trim());                 // Output: "hello"
+        console.log("\tweb\n".trim());                    // Output: "web"
+        console.log("no spaces".trim());                 // Output: "no spaces"
+
+        // 14. String trimStart()
+        console.log("\n--- 14. String trimStart() ---");
+        console.log("  hello  ".trimStart());            // Output: "hello  "
+        console.log("   code".trimStart());              // Output: "code"
+        console.log("text".trimStart());                 // Output: "text"
+
+        // 15. String trimEnd()
+        console.log("\n--- 15. String trimEnd() ---");
+        console.log("  hello  ".trimEnd());              // Output: "  hello"
+        console.log("code   ".trimEnd());                // Output: "code"
+        console.log("text".trimEnd());                   // Output: "text"
+
+        // 16. String padStart()
+        console.log("\n--- 16. String padStart() ---");
+        console.log("5".padStart(4, "0"));               // Output: "0005"
+        console.log("7".padStart(3, "X"));               // Output: "XX7"
+        console.log("123".padStart(2, "0"));             // Output: "123"
+
+        // 17. String padEnd()
+        console.log("\n--- 17. String padEnd() ---");
+        console.log("5".padEnd(4, "0"));                 // Output: "5000"
+        console.log("7".padEnd(3, "X"));                 // Output: "7XX"
+        console.log("abc".padEnd(5, "-"));               // Output: "abc--"
+
+        // 18. String repeat()
+        console.log("\n--- 18. String repeat() ---");
+        console.log("Ha".repeat(3));                     // Output: "HaHaHa"
+        console.log("?".repeat(5));                      // Output: "????"
+        console.log("Bye".repeat(0));                    // Output: ""
+
+
+        // --- SECTION 3: SEARCH & REPLACEMENT METHODS ---
+
+        // 19. String indexOf()
+        console.log("\n--- 19. String indexOf() ---");
+        console.log("Hello World".indexOf("o"));          // Output: 4
+        console.log("Code for Code".indexOf("Code", 1));  // Output: 9
+        console.log("JavaScript".indexOf("Python"));      // Output: -1
+
+        // 20. String lastIndexOf()
+        console.log("\n--- 20. String lastIndexOf() ---");
+        console.log("Hello World".lastIndexOf("o"));      // Output: 7
+        console.log("apple pie apple".lastIndexOf("apple")); // Output: 10
+        console.log("Frontend".lastIndexOf("x"));         // Output: -1
+
+        // 21. String includes()
+        console.log("\n--- 21. String includes() ---");
+        console.log("Coding is fun".includes("fun"));     // Output: true
+        console.log("Coding is fun".includes("Fun"));     // Output: false
+        console.log("JavaScript".includes("Script", 4));   // Output: true
+
+        // 22. String startsWith()
+        console.log("\n--- 22. String startsWith() ---");
+        console.log("Welcome to home".startsWith("Welcome")); // Output: true
+        console.log("Welcome to home".startsWith("home"));    // Output: false
+        console.log("Welcome to home".startsWith("to", 8));   // Output: true
+
+        // 23. String endsWith()
+        console.log("\n--- 23. String endsWith() ---");
+        console.log("Learning JS".endsWith("JS"));        // Output: true
+        console.log("Learning JS".endsWith("Learning"));  // Output: false
+        console.log("Learning JS".endsWith("Learning", 8)); // Output: true
+
+        // 24. String search()
+        console.log("\n--- 24. String search() ---");
+        console.log("I love JavaScript".search("Java"));   // Output: 7
+        console.log("I love JavaScript".search(/javascript/i)); // Output: 7
+        console.log("Hello".search("World"));             // Output: -1
+
+        // 25. String match()
+        console.log("\n--- 25. String match() ---");
+        console.log("Red, Green, Red".match(/Red/g));     // Output: ["Red", "Red"]
+        console.log("Hello 123".match(/\d+/g));           // Output: ["123"]
+        console.log("Hello".match("World"));              // Output: null
+
+        // 26. String matchAll()
+        console.log("\n--- 26. String matchAll() ---");
+        console.log([..."test1test2".matchAll(/test(\d)/g)].map(m => m[0])); // Output: ["test1", "test2"]
+        console.log([..."abc".matchAll(/x/g)]);           // Output: []
+        console.log([..."hello".matchAll(/l/g)].length);   // Output: 2
+
+        // 27. String replace()
+        console.log("\n--- 27. String replace() ---");
+        console.log("Welcome to Delhi".replace("Delhi", "Mumbai")); // Output: "Welcome to Mumbai"
+        console.log("apple apple".replace("apple", "orange"));     // Output: "orange apple"
+        console.log("Hello World".replace("world", "JS"));         // Output: "Hello World"
+
+        // 28. String replaceAll()
+        console.log("\n--- 28. String replaceAll() ---");
+        console.log("cats and cats".replaceAll("cats", "dogs"));   // Output: "dogs and dogs"
+        console.log("1-2-3-4".replaceAll("-", "/"));               // Output: "1/2/3/4"
+        console.log("apple".replaceAll("p", "x"));                 // Output: "axxle"
+
+        // 29. String split()
+        console.log("\n--- 29. String split() ---");
+        console.log("HTML,CSS,JS".split(","));           // Output: ["HTML", "CSS", "JS"]
+        console.log("Hello".split(""));                  // Output: ["H", "e", "l", "l", "o"]
+        console.log("Code Flow".split(" "));             // Output: ["Code", "Flow"]
+
+
+        // --- SECTION 4: ADVANCED & UTILITY METHODS ---
+
+        // 30. String isWellFormed()
+        console.log("\n--- 30. String isWellFormed() ---");
+        console.log("Hello".isWellFormed());             // Output: true
+        console.log("𠮷".isWellFormed());                // Output: true
+        console.log("\uD83D".isWellFormed());            // Output: false
+
+        // 31. String toWellFormed()
+        console.log("\n--- 31. String toWellFormed() ---");
+        console.log("Good".toWellFormed());              // Output: "Good"
+        console.log("\uD83D".toWellFormed());            // Output: ""
+        console.log("Hi \uD83D Bye".toWellFormed());     // Output: "Hi  Bye"
+
+        // 32. String localeCompare()
+        console.log("\n--- 32. String localeCompare() ---");
+        console.log("a".localeCompare("b"));              // Output: -1
+        console.log("c".localeCompare("b"));              // Output: 1
+        console.log("a".localeCompare("a"));              // Output: 0
+
+        // 33. String toString()
+        console.log("\n--- 33. String toString() ---");
+        console.log((new String("Hello")).toString());    // Output: "Hello"
+        console.log("Direct String".toString());          // Output: "Direct String"
+        console.log(typeof "test".toString());            // Output: "string"
+
+        // 34. String valueOf()
+        console.log("\n--- 34. String valueOf() ---");
+        console.log((new String("JS")).valueOf());        // Output: "JS"
+        console.log("Hello".valueOf());                   // Output: "Hello"
+        console.log(typeof "test".valueOf());             // Output: "string"
+
+    </script>
+</body>
+</html>
