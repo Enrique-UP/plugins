@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+    .parent {
+      container-name: myContainer;
+      container-type: inline-size;
+      width: 100%;
+      background:salmon;
+    }
+	.child{background:brown;}
+    /* Styles applied when .parent is 400px or smaller */
+    @container myContainer (width >= 400px) {
+      .child {width: 50%;background:red;border:4px solid #000;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div class="child">
+      <h2>A header</h2>
+      <p>Some text.</p>
+    </div>
+  </div>
+
+</body>
+</html>

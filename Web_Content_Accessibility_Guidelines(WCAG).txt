@@ -1,0 +1,20 @@
+Website mein WCAG implement karne ke liye aapko yeh 7 mukhya steps poore karne honge:
+
+Step 1: HTML ka sahi structure banayein Aapko apni website mein standard HTML tags ka istemal karna hoga. Har page par sirf ek H1 heading honi chahiye aur uske baad sequence mein H2, H3 ka use karein. Header, nav, main, aur footer jaise semantic tags ka hi prayog karein taaki screen reader site ko sahi se samajh sakein.
+
+Step 2: Color Contrast sahi kareinText aur background ka rang aisa hona chahiye jo saaf dikhe. WCAG AA level ke mutabik normal text ka contrast ratio kam se kam 4.5:1 (1:1= white background=white color) hona chahiye. Isko check karne ke liye aap online Web AIM Contrast Checker tool ka istemal kar sakte hain.
+
+Step 3: Keyboard navigation chalu karein Website poori tarah bina mouse ke sirf keyboard se chalni chahiye. Tab key dabane par user har ek link aur button par ja sake aur Enter se use click kar sake. Jo element abhi select hai uske charo taraf ek saaf outline dikhni chahiye jise focus visible kehte hain.
+
+Step 4: Forms aur Buttons ko accessible banayein Har ek input box ke sath ek saaf text label hona chahiye taaki pata chale ki wahan kya bharna hai. Agar user form bharte waqt koi galti karta hai toh error message saaf aksharon mein likha hua aana chahiye na ki sirf box ka rang laal ho jaye.
+
+Step 5: Images mein Alt Text jodein Website par lagayi gayi har ek photo ke code mein alt attribute lagayein. Is alt text mein likhein ki photo kis cheez ki hai taaki blind users ke screen reader use bolkar suna sakein. Agar koi photo sirf design ke liye hai toh alt ko khali chodein par use delete na karein.
+
+Step 6: Media ke sath Captions dein Agar aapki website par koi video chal rahi hai toh uske niche subtitles yaani captions zaroor hone chahiye. Audio files ke liye poora text transcript sath mein dein taaki sun na pane wale log bhi jankari padh sakein. Koi bhi video ya audio apne aap bina click kiye play nahi hona chahiye.
+
+Testing tools se audit karein Code likhne ke baad chrome browser mein WAVE extension ya axe DevTools install karke apni website ko scan karein. Yeh tools aapko turant bata denge ki website mein kahan kahan WCAG ke niyamon ka ullanghan ho raha hai taaki aap unhe theek kar sakein.
+
+3 Level
+A 		Lower Level 	:-  Isme website ko use karne ke liye sabse kamun-ya-nuntam shartein hoti hain.
+AA 		Medium Level 	:-  Ye sabse zyada use aur recommend kiya jane wala standard hai. Adhikatar kanooni niyam (legal requirements) isi level ko maangte hain taaki sabhi users ke liye website asani se chal sake.
+AAA 	High Level		:-  Ye accessibility ka sabse high standard hai. Isko har tarah ki website ya content par poura karna mushkil hota hai, isliye ise poori site ke liye anivarya nahi kiya jata.
