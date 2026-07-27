@@ -1,4 +1,5 @@
 Website mein WCAG implement karne ke liye aapko yeh 7 mukhya steps poore karne honge:
+Web Content Accessibility Guidelines
 
 Step 1: HTML ka sahi structure banayein Aapko apni website mein standard HTML tags ka istemal karna hoga. Har page par sirf ek H1 heading honi chahiye aur uske baad sequence mein H2, H3 ka use karein. Header, nav, main, aur footer jaise semantic tags ka hi prayog karein taaki screen reader site ko sahi se samajh sakein.
 
@@ -18,3 +19,4 @@ Testing tools se audit karein Code likhne ke baad chrome browser mein WAVE exten
 A 		Lower Level 	:-  Isme website ko use karne ke liye sabse kamun-ya-nuntam shartein hoti hain.
 AA 		Medium Level 	:-  Ye sabse zyada use aur recommend kiya jane wala standard hai. Adhikatar kanooni niyam (legal requirements) isi level ko maangte hain taaki sabhi users ke liye website asani se chal sake.
 AAA 	High Level		:-  Ye accessibility ka sabse high standard hai. Isko har tarah ki website ya content par poura karna mushkil hota hai, isliye ise poori site ke liye anivarya nahi kiya jata.
+							Ye accessibility ka sabse highest aur advanced level hai. Isko strict taur par har website ke liye laagu karna mushkil hota hai, isliye aam taur par ise kuch khas websites (jaise educational ya government portals) hi follow karti hain.
