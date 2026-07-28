@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>The call(), apply(), bind() Method</h2>
+<pre>
+    <code>
+        const person = {
+            fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + " " + city + " " + country;
+            }
+        }
+
+        const person1 = {
+            firstName:"John",
+            lastName: "Doe"
+        }
+
+        const person2 = {
+            firstName:"Mary",
+            lastName: "Doe"
+        }
+
+        const person3 = {
+            name: "John",
+            sayHello: function() {
+                return "Hello " + this.name;
+            }
+        };
+
+        // The call() method takes arguments separately.
+        console.log(person.fullName.call(person1, "Oslo", "Norway")); // John Doe Oslo Norway
+        console.log(person.fullName.call(person2, "Gurugram", "India")); // Mary Doe Gurugram India
+
+        // The apply() method takes arguments as an array.
+        console.log(person.fullName.apply(person1, ["Oslo", "Norway"])); // John Doe Oslo Norway
+        console.log(person.fullName.apply(person2, ["Gurugram", "India"])); // Mary Doe Gurugram India
+
+        const hello = person3.sayHello;
+        console.log(hello()); // Hello
+        const hello1 = person3.sayHello.bind(person3);
+        console.log(hello1()); // Hello John
+
+        const person4 = {
+            firstName:"John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        const member = {
+            firstName:"Hege",
+            lastName: "Nilsen",
+        }
+        let fullname = person4.fullName.bind(member);
+        console.log(fullname()); // Hege Nilsen
+    </code>
+</pre>
+
+<script>
+    const person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + " " + city + " " + country;
+        }
+    }
+
+    const person1 = {
+        firstName:"John",
+        lastName: "Doe"
+    }
+
+    const person2 = {
+        firstName:"Mary",
+        lastName: "Doe"
+    }
+
+    const person3 = {
+        name: "John",
+        sayHello: function() {
+            return "Hello " + this.name;
+        }
+    };
+
+    // The call() method takes arguments separately.
+    console.log(person.fullName.call(person1, "Oslo", "Norway")); // John Doe Oslo Norway
+    console.log(person.fullName.call(person2, "Gurugram", "India")); // Mary Doe Gurugram India
+
+    // The apply() method takes arguments as an array.
+    console.log(person.fullName.apply(person1, ["Oslo", "Norway"])); // John Doe Oslo Norway
+    console.log(person.fullName.apply(person2, ["Gurugram", "India"])); // Mary Doe Gurugram India
+
+    const hello = person3.sayHello;
+    console.log(hello()); // Hello
+    const hello1 = person3.sayHello.bind(person3);
+    console.log(hello1()); // Hello John
+    
+    const person4 = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    const member = {
+        firstName:"Hege",
+        lastName: "Nilsen",
+    }
+    let fullname = person4.fullName.bind(member);
+    console.log(fullname()); // Hege Nilsen
+</script>
+
+</body>
+</html>

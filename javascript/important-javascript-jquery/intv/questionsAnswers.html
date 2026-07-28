@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <pre>
+    <code>
+      ==================================================================
+        FRONTEND DEVELOPER INTERVIEW QUESTIONS & ANSWERS
+      ==================================================================
+
+      ------------------------------------------------------------------
+      1. HTML QUESTIONS
+      ------------------------------------------------------------------
+      Q1: Semantic HTML kya hota hai aur iska kya fayda hai?
+      Answer: Semantic HTML ka matlab hai aese tags use karna jo browser 
+      aur developer dono ko unka sahi matlab batayein. Jaise &lt;div&gt; ki 
+      jagah &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, aur &lt;footer&gt; use karna. 
+      Iska fayda ye hai ki isse SEO (Search Engine Optimization) behtar 
+      hota hai aur website screen-readers ke liye accessible banti hai.
+
+      Q2: LocalStorage, SessionStorage aur Cookies me kya farq hai?
+      Answer: 
+      - LocalStorage: Data tab tak browser me save rehta hai jab tak user 
+        khud ise delete na kare. Isme 5MB-10MB data save ho sakta hai.
+      - SessionStorage: Data sirf tab tak rehta hai jab tak tab ya window 
+        open hai. Tab close hote hi data delete ho jata hai.
+      - Cookies: Isme chota data (4KB) store hota hai aur iski ek expiry 
+        date hoti hai. Ye server ke paas har request ke sath bheja jata hai.
+
+      ------------------------------------------------------------------
+      2. CSS QUESTIONS
+      ------------------------------------------------------------------
+      Q3: CSS Box Model kya hota hai?
+      Answer: Har HTML element ko CSS me ek box ki tarah dekha jata hai. 
+      Is box me 4 parts hote hain (andar se bahar ki taraf):
+      1. Content: Jahan text ya image dikhti hai.
+      2. Padding: Content aur Border ke beech ka khali space.
+      3. Border: Padding ke bahar ki boundary line.
+      4. Margin: Border ke bahar ka space, jo doosre elements se doori banata hai.
+
+      Q4: Flexbox aur CSS Grid me kya antar hai?
+      Answer: 
+      - Flexbox: 1-Dimensional (1D) hota hai. Ye ya toh row (horizontal) 
+        me kaam karta hai ya column (vertical) me. Normal layouts ke liye best hai.
+      - CSS Grid: 2-Dimensional (2D) hota hai. Ye ek sath rows aur columns 
+        dono me kaam karta hai. Ye bade aur complex web pages ke liye best hai.
+
+      ------------------------------------------------------------------
+      3. JAVASCRIPT QUESTIONS
+      ------------------------------------------------------------------
+      Q5: let, const, aur var me kya difference hai?
+      Answer: 
+      - var: Function-scoped hota hai, ise re-declare aur update kiya ja 
+        sakta hai, aur ye hoist hota hai.
+      - let: Block-scoped {} hota hai, ise update toh kar sakte hain par 
+        re-declare nahi kar sakte.
+      - const: Bhi block-scoped hota hai, ise na toh update kiya ja sakta 
+        hai aur na hi re-declare (ye value fixed rehta hai).
+
+      Q6: Promises aur Async/Await kya hote hain?
+      Answer: Dono ka use asynchronous operations (jaise API se data lana) 
+      ko handle karne ke liye hota hai:
+      - Promise: Ek object hai jo kisi operation ke future result (Success/Fail) 
+        ko dikhata hai. Isme .then() aur .catch() use hota hai.
+      - Async/Await: Ye Promises ko likhne ka ek naya aur saaf (clean) tariqa 
+        hai. async function ke andar await keyword lagane se asynchronous code 
+        synchronous ki tarah dikhne lagta hai.
+
+      Q7: Arrow functions aur Regular functions me kya farq hai?
+      Answer: Arrow function ka syntax chota hota hai (() => {}). Sabse bada 
+      farq 'this' keyword ka hai. Regular function ka apna khud ka 'this' hota 
+      hai, jabki Arrow function ka apna 'this' nahi hota; ye apne parent scope 
+      (lexical scope) se 'this' ko leta hai.
+
+      ------------------------------------------------------------------
+      4. REACT QUESTIONS
+      ------------------------------------------------------------------
+      Q8: Virtual DOM kya hai aur React iska use kyu karta hai?
+      Answer: Virtual DOM asli DOM ka ek lightweight copy (blueprint) hota hai 
+      memory me. Jab bhi state change hoti hai, React pehle Virtual DOM ko update 
+      karta hai. Fir wo purane aur naye Virtual DOM ko compare karta hai (Diffing) 
+      aur sirf us hisse ko asli browser DOM me update karta hai jo sach me badla hai. 
+      Is wajah se React bahut fast hai.
+
+      Q9: State aur Props me kya antar hai?
+      Answer: 
+      - State: Ye component ka apna personal aur private data hota hai jise 
+        component ke andar hi change kiya ja sakta hai (useState ke zariye).
+      - Props: Properties ka short form hai. Ye data ko ek component se doosre 
+        (Parent se Child) component me pass karne ke liye use hota hai. Props 
+        read-only hote hain.
+
+      Q10: useState aur useEffect Hooks kya karte hain?
+      Answer: 
+      - useState: Component me local state variables create karne ke liye use 
+        hota hai taaki data update hone par UI badal sake.
+      - useEffect: Iska use side-effects handle karne ke liye hota hai, jaise 
+        API se data fetch karna ya DOM ko manually change karna.
+
+      Q11: React me 'key' prop ka kya kaam hai aur ye kyu zaroori hai?
+      Answer: Jab hum kisi array par .map() chalakar elements ki list render 
+      karte hain, toh har element ko ek unique 'key' dena zaroori hota hai. Is 
+      'key' ki madad se React pehchanta hai ki list ka kaun sa item badla, add 
+      hua, ya delete hua hai.
+
+      ------------------------------------------------------------------
+      5. CODING QUESTION
+      ------------------------------------------------------------------
+      Q12: map() aur filter() me kya farq hai? Ek code example do.
+      Answer: 
+      - map(): Array ke har element par ek function chalata hai aur ek naya 
+        array return karta hai jisme naye values hote hain.
+      - filter(): Array ke un elements ko chunta hai jo ek condition ko pass 
+        khate hain aur ek naya filtered array return karta hai.
+
+      Code Example:
+      const numbers = [1, 2, 3, 4];
+      const doubled = numbers.map(num => num * 2); // [2, 4, 6, 8]
+      const evens = numbers.filter(num => num % 2 === 0); // [2, 4]
+      ==================================================================
+    </code>
+  </pre>
+</body>
+</html>

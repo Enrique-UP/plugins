@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Inline JavaScript Examples</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="console.log('Page body fully loaded.')">
+    <button onclick="alert('Button clicked!')">Click Me</button>
+    <br>
+    <p id="demo" onclick="this.innerHTML='Text changed!'">Click this text to change it.</p>
+    <br>
+    <button onclick="myCustomFunction()">Run Function</button>
+    <br>
+    <div onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'">Hover over me!</div>
+    <br>
+    <button onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1)'">Press Me</button>
+    <br>
+    <br>
+    <input type="text" oninput="document.getElementById('output').innerText = this.value">
+    <p id="output"></p>
+    <br>
+    <select onchange="alert('You selected: ' + this.value)">
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+    </select>
+    <br>
+    <br>
+    <input type="text" 
+       onfocus="this.style.border='2px solid blue'" 
+       onblur="this.style.border='1px solid black'" 
+       placeholder="Click to focus">
+    <br><br>
+    <form onsubmit="if(document.getElementById('pwd').value == '') { alert('Password cannot be empty!'); return false; }">
+        <input type="password" id="pwd">
+        <button type="submit">Submit</button>
+    </form>
+    <br><br>
+    <input type="text" onkeydown="if(event.key === 'Enter') alert('Enter key pressed!')">
+    <br><br>
+    <input type="text" onkeyup="console.log('Current value length: ' + this.value.length)">
+    <br><br>
+    <video controls onplay="alert('Video has started playing!')">
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+    <br><br>
+    <audio controls onended="console.log('Audio finished playback.')">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+    <br><br>
+    <img src="nonexistent-image.jpg" onerror="this.src='fallback-placeholder.png'; alt='Image failed to load';">
+</body>
+</html>

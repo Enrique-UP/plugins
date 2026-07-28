@@ -3,25 +3,39 @@
 <body>
 
 <pre>
-<code>
-const getTajValue = (isUpdated = false) => {
-  if (isUpdated) {
-    return "Delhi";
-  }
-  return "Mumbai";
-};
-document.write(getTajValue(true) +" , "+ getTajValue()); // Delhi , Mumbai
-</code>
+  <code>
+    const getTajValue = (isUpdated = true) => {
+      if (isUpdated) {
+        return "Delhi";
+      }
+      return "Mumbai";
+    };
+    document.write(getTajValue(true)); // Delhi
+    document.write(getTajValue(false)); // Mumbai
+    document.write(getTajValue()); // Delhi
+  </code>
 </pre>
-
+<p>
+  <button onClick="update()">Click here</button>
+</p>
+<p id="dis">&nbsp;</p>
+<p><a onClick="this.innerHTML = getTajValue()" style="border:1px solid #ccc;background:#eee;padding:4px;">Click here</a></p>
 <script>
-const getTajValue = (isUpdated = false) => {
-  if (isUpdated) {
-    return "Delhi";
+  const getTajValue = (isUpdated = true) => {
+    if (isUpdated) {
+      return "Delhi";
+    }
+    return "Mumbai";
+  };
+  document.write(getTajValue(true)); // Delhi
+  document.write("<br>");
+  document.write(getTajValue(false)); // Mumbai
+  document.write("<br>");
+  document.write(getTajValue()); // Delhi
+
+  function update(){
+    document.querySelector("#dis").innerHTML = getTajValue();
   }
-  return "Mumbai";
-};
-document.write(getTajValue(true) +" , "+ getTajValue()); // Delhi , Mumbai
 </script>
 
 </body>

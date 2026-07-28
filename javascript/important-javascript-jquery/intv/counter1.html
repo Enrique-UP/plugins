@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short & Professional Counter</title>
+</head>
+<body>
+    <p style="display: flex; justify-content: center; flex-direction: column; text-align: center;">
+        <span>
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+        </span>
+        <br>
+        <span id="counterShow">0</span>
+    </p>
+
+    <!-- 1. type="module" likhne se saare variables automatic private ho gaye -->
+    <script type="module">
+        let count = 0, timer = null;
+
+        const startBtn = document.getElementById("startBtn");
+        const stopBtn = document.getElementById("stopBtn");
+        const counterShow = document.getElementById("counterShow");
+
+        startBtn.onclick = () => {
+            if (timer) return; // Double click check
+            startBtn.disabled = true;
+            
+            timer = setInterval(() => {
+                counterShow.textContent = ++count; // Short method to update text
+            }, 250);
+        };
+
+        stopBtn.onclick = () => {
+            clearInterval(timer);
+            timer = null;
+            startBtn.disabled = false;
+        };
+    </script>
+</body>
+</html>
