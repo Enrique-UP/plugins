@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<pre>
+		(function(){
+			const details = ["Enrique", 34, "Uttar Pradesh"];
+			for(let i in details){
+				console.log(i, details[i]);
+			}
+			// 0 Enrique
+			// 1 34
+			// 2 Uttar Pradesh
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for(let i of details){
+				console.log(i, details[i]);
+			}
+			// Enrique undefined
+			// 34 undefined
+			// Uttar Pradesh undefined
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for(let i of details.keys()){
+				console.log(i, details[i]);
+			}
+			// 0 Enrique
+			// 1 34
+			// 2 Uttar Pradesh
+			
+			
+			
+			console.log("--------------------------------------------------------------------------------------------------------------------------------------");
+			
+			
+			
+			
+			const details1 = {
+				name:"Enrique",
+				age:34,
+				place:"Uttar Pradesh"
+			};
+			for(let i in details1){
+				console.log(i, details1[i]);
+			}
+			// name Enrique
+			// age 34
+			// place Uttar Pradesh
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for (let [key, value] of Object.entries(details1)) {
+				console.log(key, value);
+			}
+			// name Enrique
+			// age 34
+			// place Uttar Pradesh
+			
+			
+			
+			console.log("--------------------------------------------------------------------------------------------------------------------------------------");
+		})();
+	</pre>
+    <script>
+        (function(){
+			const details = ["Enrique", 34, "Uttar Pradesh"];
+			for(let i in details){
+				console.log(i, details[i]);
+			}
+			// 0 Enrique
+			// 1 34
+			// 2 Uttar Pradesh
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for(let i of details){
+				console.log(i, details[i]);
+			}
+			// Enrique undefined
+			// 34 undefined
+			// Uttar Pradesh undefined
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for(let i of details.keys()){
+				console.log(i, details[i]);
+			}
+			// 0 Enrique
+			// 1 34
+			// 2 Uttar Pradesh
+			
+			
+			
+			console.log("--------------------------------------------------------------------------------------------------------------------------------------");
+			
+			
+			
+			
+			const details1 = {
+				name:"Enrique",
+				age:34,
+				place:"Uttar Pradesh"
+			};
+			for(let i in details1){
+				console.log(i, details1[i]);
+			}
+			// name Enrique
+			// age 34
+			// place Uttar Pradesh
+			
+			console.log("-------------------------------------------------------------------");
+			
+			for (let [key, value] of Object.entries(details1)) {
+				console.log(key, value);
+			}
+			// name Enrique
+			// age 34
+			// place Uttar Pradesh
+			
+			
+			
+			console.log("--------------------------------------------------------------------------------------------------------------------------------------");
+		})();
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,8 @@
     //   // code block to be executed
     // }
 
+    // 1. for...in Loop (Keys / Indexes ke liye)
+
     const person = {fname:"John", lname:"Doe", age:25}; 
     let txt = "";
     for (let x in person) {
@@ -74,6 +76,8 @@
 
     console.log("=============================================================");
 
+    // 2. for...of Loop (Values ke liye)
+
     // for (variable of iterable) {
     //   // code block to be executed
     // }
@@ -84,7 +88,7 @@
     }
     console.log(text3); // BMW Volvo Mini 
 
-
+    console.log("=============================================================");
     
     let language = "JavaScript";
 
@@ -103,12 +107,38 @@
     // i
     // p
     // t
+    console.log("=============================================================");
+    const personDemo = {
+        name: "Enrique",
+        age: 34,
+        post: "Software Developer",
+        place: "Delhi",
+        fullName: function() {
+            return this.name + " Brave"; // "Brave" se pehle space bhi de diya hai taaki naam theek lage
+        }
+    };
+
+    for (let i in personDemo) {
+        // Check karte hain ki property ek function toh nahi hai
+        if (typeof personDemo[i] === 'function') {
+            console.log(i + " - " + personDemo[i]()); // Function ko call karke value nikalenge
+        } else {
+            console.log(i + " - " + personDemo[i]);
+        }
+    }
+    // name - Enrique
+    // age - 34
+    // post - Software Developer
+    // place - Delhi
+    // fullName - Enrique Brave
 </pre>
 <script>
   // The for...in loop is primarily used for objects to access their property names (keys).
   // for (key in object) {
   //   // code block to be executed
   // }
+
+  // 1. for...in Loop (Keys / Indexes ke liye)
 
   const person = {fname:"John", lname:"Doe", age:25}; 
   let txt = "";
@@ -124,7 +154,7 @@
   const numbers = [45, 4, 9, 16, 25];
   let txt1 = "";
   for (let x in numbers) {
-    txt1 += numbers[x] + "<br>"; 
+    txt1 += numbers[x] + " "; 
   }
   console.log(txt1);
   // 45
@@ -177,6 +207,8 @@
 
   console.log("=============================================================");
 
+  // 2. for...of Loop (Values ke liye)
+
   // for (variable of iterable) {
   //   // code block to be executed
   // }
@@ -187,13 +219,13 @@
   }
   console.log(text3); // BMW Volvo Mini 
 
-
+  console.log("=============================================================");
   
   let language = "JavaScript";
 
   let text = "";
   for (let x of language) {
-    text += x + "<br>";
+    text += x + " ";
   }
   console.log(text);
   // J
@@ -206,6 +238,30 @@
   // i
   // p
   // t
+  console.log("=============================================================");
+  const personDemo = {
+      name: "Enrique",
+      age: 34,
+      post: "Software Developer",
+      place: "Delhi",
+      fullName: function() {
+          return this.name + " Brave"; // "Brave" se pehle space bhi de diya hai taaki naam theek lage
+      }
+  };
+
+  for (let i in personDemo) {
+      // Check karte hain ki property ek function toh nahi hai
+      if (typeof personDemo[i] === 'function') {
+          console.log(i + " - " + personDemo[i]()); // Function ko call karke value nikalenge
+      } else {
+          console.log(i + " - " + personDemo[i]);
+      }
+  }
+  // name - Enrique
+  // age - 34
+  // post - Software Developer
+  // place - Delhi
+  // fullName - Enrique Brave
 </script>
 
 </body>

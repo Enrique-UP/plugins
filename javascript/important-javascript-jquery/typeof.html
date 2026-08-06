@@ -7,55 +7,161 @@
 *{padding:0;margin:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
 body{font-family:Arial, Helvetica, sans-serif;padding-top:30px;padding-bottom:20px;}
 p{width:100%;float:left;margin-bottom:10px;padding:0 15px;}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 </style>
 </head>
 <body>
-<p id="demo1"></p>
-<p id="demo2"></p>
-<p id="demo3"></p>
-<p id="demo4"></p>
-<p id="demo5"></p>
-<p id="demo8"></p>
-<p id="demo6"></p>
-<p id="demo7"></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Example</th>
+                <th>typeof Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>String</td>
+                <td>"Hello", typeof "Hello"</td>
+                <td>"string"</td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td>34 (aur NaN), typeof NaN, typeof 34</td>
+                <td>"number"</td>
+            </tr>
+            <tr>
+                <td>Boolean</td>
+                <td>true / false, typeof true</td>
+                <td>"boolean"</td>
+            </tr>
+            <tr>
+                <td>Undefined</td>
+                <td>let x;, typeof undefined</td>
+                <td>"undefined"</td>
+            </tr>
+            <tr>
+                <td>Object</td>
+                <td>{} , [] , null</td>
+                <td>"object"</td>
+            </tr>
+            <tr>
+                <td>Function</td>
+                <td>typeof function() {}</td>
+                <td>"function"</td>
+            </tr>
+            <tr>
+                <td>BigInt</td>
+                <td>123n, typeof 12345678901234567890n</td>
+                <td>"bigint"</td>
+            </tr>
+            <tr>
+                <td>Symbol</td>
+                <td>typeof Symbol('id')</td>
+                <td>"symbol"</td>
+            </tr>
+        </tbody>
+    </table>
+    <pre>
+            var a = 10; // Number
+            var b = "10"; // String
+            var c; // Undefined
+            var d = null;
+
+            var e = 10 // Boolean True/False;
+            var ee = 15;
+            var result = (e == 15);
+            var result1 = (e !== 15);
+
+            var f = ["HTML", "CSS", "JS"]; // Array
+
+            var g = {Language:"HTML", Car:"Audi", Color:"Red"};
+            document.getElementById("demo1").innerHTML = typeof a;
+            console.log(a);
+
+            document.getElementById("demo2").innerHTML = typeof b;
+            console.log(b);
+
+            document.getElementById("demo3").innerHTML = typeof c;
+            console.log(c);
+
+            document.getElementById("demo4").innerHTML = typeof d;
+            console.log(d);
+
+            document.getElementById("demo5").innerHTML = typeof result;
+            console.log(result);
+
+            document.getElementById("demo8").innerHTML = typeof result1;
+            console.log(result1);
+
+            document.getElementById("demo6").innerHTML = typeof f;
+            console.log(f);
+
+            document.getElementById("demo7").innerHTML = typeof g;
+            console.log(g);
+    </pre>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo8"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
 
 <script type="text/javascript">
-var a = 10; // Number
-var b = "10"; // String
-var c; // Undefined
-var d = null;
+    var a = 10; // Number
+    var b = "10"; // String
+    var c; // Undefined
+    var d = null;
 
-var e = 10 // Boolean True/False;
-var ee = 15;
-var result = (e == 15);
-var result1 = (e !== 15);
+    var e = 10 // Boolean True/False;
+    var ee = 15;
+    var result = (e == 15);
+    var result1 = (e !== 15);
 
-var f = ["HTML", "CSS", "JS"]; // Array
+    var f = ["HTML", "CSS", "JS"]; // Array
 
-var g = {Language:"HTML", Car:"Audi", Color:"Red"};
-document.getElementById("demo1").innerHTML = typeof a;
-console.log(a);
+    var g = {Language:"HTML", Car:"Audi", Color:"Red"};
+    document.getElementById("demo1").innerHTML = typeof a;
+    console.log(a);
 
-document.getElementById("demo2").innerHTML = typeof b;
-console.log(b);
+    document.getElementById("demo2").innerHTML = typeof b;
+    console.log(b);
 
-document.getElementById("demo3").innerHTML = typeof c;
-console.log(c);
+    document.getElementById("demo3").innerHTML = typeof c;
+    console.log(c);
 
-document.getElementById("demo4").innerHTML = typeof d;
-console.log(d);
+    document.getElementById("demo4").innerHTML = typeof d;
+    console.log(d);
 
-document.getElementById("demo5").innerHTML = typeof result;
-console.log(result);
+    document.getElementById("demo5").innerHTML = typeof result;
+    console.log(result);
 
-document.getElementById("demo8").innerHTML = typeof result1;
-console.log(result1);
+    document.getElementById("demo8").innerHTML = typeof result1;
+    console.log(result1);
 
-document.getElementById("demo6").innerHTML = typeof f;
-console.log(f);
+    document.getElementById("demo6").innerHTML = typeof f;
+    console.log(f);
 
-document.getElementById("demo7").innerHTML = typeof g;
-console.log(g);
+    document.getElementById("demo7").innerHTML = typeof g;
+    console.log(g);
 </script>
 </body>
 </html>
