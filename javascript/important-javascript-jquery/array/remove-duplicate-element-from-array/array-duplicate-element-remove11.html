@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-txt="lorem">Isum</li>
+        <li data-txt="ipsum">Lorem</li>
+        <li data-txt="sit">ameet</li>
+        <li data-txt="ameet">cons</li>
+        <li data-txt="cons">sit</li>
+        <li data-txt="lorem">Isum</li>
+        <li data-txt="ipsum">Lorem</li>
+        <li data-txt="sit">ameet</li>
+        <li data-txt="ameet">cons</li>
+        <li data-txt="cons">sit</li>
+    </ul>
+    <script>
+        (function(){
+            let details = [];
+            document.querySelectorAll("ul > li").forEach(function(e, i){
+                details.push(e.innerText);
+            });
+            console.log(details); // [ "Isum", "Lorem", "ameet", "cons", "sit", "Isum", "Lorem", "ameet", "cons", "sit" ]
+			let removeDuplicate = [...new Set(details)];
+			console.log(removeDuplicate); // [ "Isum", "Lorem", "ameet", "cons", "sit" ]
+			document.querySelector("ul").insertAdjacentHTML("afterend", "<ol></ol>");
+			removeDuplicate.forEach(function(e, i){
+				document.querySelector("ol").innerHTML += `<li>${e}</li>`;
+			});
+        })();
+
+        (function(){
+            let details1 = [];
+            document.querySelectorAll("ul > li").forEach(function(e, i){
+                details1.push({
+                    text: e.innerText,
+                    dta: e.getAttribute("data-txt")
+                });
+            });
+            console.log(details1); // [ { text: "Isum", dta: "lorem" }, { text: "Lorem", dta: "ipsum" }, { text: "ameet", dta: "sit" }, { text: "cons", dta: "ameet" }, { text: "sit", dta: "cons" }, { text: "Isum", dta: "lorem" }, { text: "Lorem", dta: "ipsum" }, { text: "ameet", dta: "sit" }, { text: "cons", dta: "ameet" }, { text: "sit", dta: "cons" } ]
+            const removeDup = [...new Map(details1.map((e) => [e.text, e])).values()];
+            console.log(removeDup); // [ { text: "Isum", dta: "lorem" }, { text: "Lorem", dta: "ipsum" }, { text: "ameet", dta: "sit" }, { text: "cons", dta: "ameet" }, { text: "sit", dta: "cons" } ]
+            document.querySelector("ol").insertAdjacentHTML("afterend", "<ol class='obj'></ol>");
+            removeDup.forEach(function(e, i){
+                document.querySelector("ol.obj").innerHTML += `<li data-list=${e.dta}>${e.text}</li>`;
+            });
+        })();
+    </script>
+</body>
+</html>
