@@ -1,0 +1,61 @@
+JavaScript seekhne ke liye aapko Basic se Advanced levels tak in topics ko cover karna hoga:
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Phase 1: JavaScript Basics (Fundamentals)
+Yahan se aapko programming ki shuruat karni hai. Isme aap syntax aur logic banana seekhenge:
+
+Variables & Constants: let, const, aur var ka use aur inme difference.
+
+Data Types: Primitive types (String, Number, Boolean, Undefined, Null) aur Non-primitive types (Objects, Arrays).
+
+Operators: Arithmetic (+, -), Assignment (=), Comparison (==, ===), aur Logical (&&, ||, !) operators.
+
+Conditional Statements: if, else if, else, aur switch statements (conditions ke hisab se code chalana).
+
+Loops: for, while, aur do-while loops (repeatitive tasks ke liye).
+
+Functions: Function declaration, expression, arrow functions, aur parameters/arguments.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Phase 2: Intermediate JavaScript & DOM Manipulation
+Yahan aap web page ke sath interact karna aur data ko handle karna seekhenge:
+
+Arrays & Objects Methods: Array ke advanced methods jaise map(), filter(), reduce(), forEach(), aur Object manipulation.
+
+DOM (Document Object Model): HTML elements ko JavaScript ke zariye select karna aur badalna (getElementById, querySelector, etc.).
+
+Event Handling: User ke actions par action lena jaise click, submit, mouseover, keydown.
+
+Scope & Closures: Global scope, local scope, aur closures ka concept (interview ke liye bohot important).
+
+Hoisting & This Keyword: JavaScript kaise variables ko memory me upar le jata hai aur this keyword kaise kaam karta hai.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Phase 3: Advanced JavaScript
+Jab aapke basics clear ho jayein, tab aapko yeh complex concepts seekhne honge:
+
+Asynchronous JavaScript:
+
+Callbacks aur Callback Hell.
+
+Promises (resolve, reject, .then(), .catch()).
+
+Async / Await (API handling ke liye sabse zyada use hota hai).
+
+API Fetching: fetch() method ya Axios ka use karke server se data lana aur web page par dikhana.
+
+Error Handling: try, catch, aur finally blocks ka use karke bugs ko handle karna.
+
+ES6+ Features: Destructuring, Spread (...) aur Rest operators, Template literals, Modules (import/export).
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Phase 4: Modern JS & Next Steps (Kahan aage badhein?)
+JavaScript sikhne ke baad aap kis field me jana chahte hain, uske hisab se aage badhein:
+
+Frontend Frameworks: React.js, Vue.js, ya Angular (UI banane ke liye).
+
+Backend (Node.js): Server-side programming aur database (MongoDB/SQL) ke sath kaam karne ke liye.
+
+Projects Banayein: Bina projects ke coding nahi aayegi. Shuruwat me yeh banayein:
+
+To-Do List App
+
+Weather App (API ka use karke)
+
+Calculator
