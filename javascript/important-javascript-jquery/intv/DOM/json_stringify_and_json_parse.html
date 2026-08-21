@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON.stringify() is used to convert a JavaScript object into a JSON string, while JSON.parse() is used to convert a JSON string back into a JavaScript object.</h1>
+    <pre>
+        const person = {
+            name: "Enrique",
+            age: 30
+        };
+        console.log(person.name); // Enrique
+        console.log(person); // Object { name: "Enrique", age: 30 }
+        
+        
+        // Object → String
+        const str = JSON.stringify(person);
+        console.log(str); // '{"name":"Enrique","age":30}'
+
+
+        // String → Object
+        const obj = JSON.parse(str);
+        console.log(obj); // Object { name: "Enrique", age: 30 }
+        console.log(obj.name); // Enrique
+    </pre>
+    <script>
+        const person = {
+            name: "Enrique",
+            age: 30
+        };
+        console.log(person.name); // Enrique
+        console.log(person); // Object { name: "Enrique", age: 30 }
+        
+        
+        // Object → String
+        const str = JSON.stringify(person);
+        console.log(str); // '{"name":"Enrique","age":30}'
+
+
+        // String → Object
+        const obj = JSON.parse(str);
+        console.log(obj); // Object { name: "Enrique", age: 30 }
+        console.log(obj.name); // Enrique
+    </script>
+</body>
+</html>
