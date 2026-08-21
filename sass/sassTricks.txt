@@ -21,3 +21,34 @@
 [class*="logos-"][class*="5"] .logosArea {width: 20%;}
 [class*="logos-"][class*="6"] .logosArea {width: 16.6667%;}
 ===========================================================
+
+
+.img{display:flex;
+	&.start{align-items: flex-start;}
+    &.center{align-self: center;}
+    &.end{align-self: flex-end;}
+}
+Output:-------
+.img {display: flex;}
+.img.start {align-items: flex-start;}
+.img.center {align-self: center;}
+.img.end {align-self: flex-end;}
+
+--------------
+
+.imgs{display:flex;align-items: flex-start;}
+.imgc{display:flex;align-items: center;}
+.imge{display:flex;align-items: flex-end;}
+
+--------------
+.img-{display:flex;
+  &s{align-items:flex-start;}
+  &c{align-items:center;}
+  &e{align-items:flex-end;}
+}
+Output:-------
+.img- {display: flex;}
+.img-s {align-items: flex-start;}
+.img-c {align-items: center;}
+.img-e {align-items: flex-end;}
+===========================================================
